@@ -1566,3 +1566,223 @@ Wenn Haftungsgrenze (RDG) und Empfänger zusammen offen sind, ist der Zuschnitt 
 ### Zusammenfassung
 Gepackt als Dose 47. Scaffolding unter `07-demos/legio-klar/`, Kern unter `src/engine/legio-klar/` (10 Vitest-Tests).
 
+
+---
+
+## Umgedrehtes Vibecoding (`lab-kids-vibecoding-c2`) — Reviewer 14.10.2026
+
+* **Herkunft:** Lab-Survivor (Session amelie-lab-1d, Inversion), Existenzprüfung `verengt` (Prüfprotokoll, Abschnitt „Lab-Survivors Kinder-Vibecoding — 14.10.2026“). Félix 14.10.2026: als Materialsammlung weiterverfolgen.
+* **Bewertet:** zwei Zuschnitte. **A** = geprüfter, deterministischer Bug-Katalog für KI-erzeugte Kinderspiele (Scratch/JS), jeder Bug per Test belegt (rot vor Fix, grün nach Fix), Lösungsschlüssel, Verweis KLP Informatik NRW 5/6, CC0, Git-Repo für Lehrkräfte. **B** = statische Offline-Seite „Bug-Werkstatt“: Kind startet das Spiel, sieht den roten Prüfstand in Kindersprache („Der Ball soll an der Wand abprallen“), repariert in Blöcken (Blockly), Lampe wird grün; Katalog A als Daten darunter.
+* **Doppel-/Friedhofsprüfung:** `bib find Bug-Katalog Debugging Fehlersuche Scratch` → nur die eigene Protokollzeile; `find --any Programmieren Informatikunterricht Lehrkräfte Parsons Schüler` → kein Grab, keine Dose (Nachbar `ghost-replay` thematisch fern). Kein Wiedergänger, kein Baustein einer vorhandenen Dose.
+
+### Eigene Gegen-Suche (6 Suchen, 3 Abrufe)
+* **Empfänger zuerst:** GI-FG IBN Materialsammlung [Seite] fg-ibn.gi.de/publikationen/stellungnahmen/materialsammlung: „im kompletten Umbau“, Git-Repo code.teckids.org/gi-fg-ibnw/matsam [Seite]: 586 Commits, letzter 30.07.2026 (André Hilbig), Beitrag per Fork und Pull Request, OER-Anspruch, Lizenz auf der Startseite nicht genannt, überwiegend TeX, nach Thema gegliedert; Scratch oder Fehlersuche nicht erkennbar. Echter Einreichungsweg, aber Format TeX, nicht Test-Repo.
+* **Besetzung im Mechanismus (neu, schärfer als die Scout-Zeile):** Uni Passau (Fraser u. a.): **LitterBox** (Linter, Katalog „Common Bugs in Scratch Programs“, arXiv 2112.00858, erklärt Fehlvorstellungen) [Schnipsel], **Whisker** (automatisierte Tests für Scratch; Studie 2024: 28 Lehrkräfte schreiben blockbasierte Tests für ein Scratch-Spiel, Genauigkeit 0,93; Flakiness bei zufallsbasierten Spielen als bekanntes Problem) [Schnipsel], primary::programming (Lehrkräfte, Feedback auf Scratch-Code) [Schnipsel]. Damit sind „Fehlerkatalog für Kinderprogramme“ und „Bug per Test belegt“ in Scratch beide Forschungsbestand (Typ D) mit Werkzeug.
+* **Schulmaterial:** DebugMe (ScratchEd), Scratch-Debugging-Guide, Oak (Scout); tutory.de „Fehleranalyse von Programmen in Scratch“ [Schnipsel]; K12 „Debugging with AI“ (Mittel-/Oberstufe, kaputte Skripte, KI-Fix beurteilen, 15 $) [Schnipsel] — der KI-Winkel selbst ist als Unterrichtsstunde kommerziell da (englisch, nicht KLP).
+* **KLP-Anker:** Kompetenzerwartung KLP Informatik 5/6 NRW, Inhaltsfeld Algorithmen: „überprüfen die Wirkungsweise eines Algorithmus durch zielgerichtetes Testen (MI)“ (Test-Kompetenz), daneben „implementieren Algorithmen in einer visuellen Programmiersprache (MI)“ (visuelle Sprache). Wortlaut am Primärtext gegengelesen (siehe Nachtrag); der KLP nummeriert die Kompetenzen nicht, frühere Kurzkennungen aus einer Schul-Abschrift sind ersetzt.
+
+### Die harten Fragen
+1. **Ist der testbelegte Katalog mehr als „Chatbot, bau einen Bug ein“?** Kaum, für die Lehrkraft. Der Testbeleg sichert drei Dinge: Bug ist echt, hat genau eine Ursache, Lösung ist geprüft. Die ersten beiden prüft eine Lehrkraft in Scratch mit einem Klick auf die grüne Flagge; nur die „eine Ursache“ ist bei Chatbot-Bugs wirklich unsicher. Der didaktische Wert eines Bugs kommt aus der Fehlvorstellung dahinter, und die ist bei Passau (LitterBox-Muster) schon katalogisiert. **Der Testbeleg schützt vor allem den Pfleger, nicht die Lehrkraft.** Die Playbook-Regel (Rest-Lücke per Chatbot füllbar → keine Dose) greift für Zuschnitt A. Einzige Wendung, die trägt: Die Test-Kompetenz des KLP verlangt, dass **Kinder** testen; dann ist der Test nicht Beleg, sondern Lerngegenstand. Das führt zu B.
+2. **Besetzung:** Fehlersuche an fertigen Kinderprojekten ist dicht (Scout), der Test-Mechanismus für Scratch ebenfalls (Whisker, LitterBox). Offen bleiben nur: deutsch, KLP-NRW-verlinkt, CC0, KI-Herkunft der Spiele. Die KI-Herkunft ist bisher Dekoration: Niemand hat gezeigt, dass KI-erzeugte Kinderspiele eine eigene Fehlerklasse haben, die nicht schon in „Common Bugs in Scratch Programs“ steht.
+3. **Formkonflikt in A:** KLP 5/6 verlangt eine visuelle Sprache („implementieren Algorithmen in einer visuellen Programmiersprache“). JS-Bugs passen nicht zu Klasse 5/6, Scratch-Bugs brauchen Whisker für „rot/grün“, und zufallsbasierte Spiele machen solche Tests flaky (in der Whisker-Literatur selbst benannt). „Rot vor Fix, grün nach Fix“ ist genau der schwierige Teil, nicht der leichte.
+
+### Scorecard Zuschnitt A (Bug-Katalog als Repo)
+
+| Vektor | Score | Begründung |
+|---|:---:|---|
+| V1 Novelty | 2 | Kombination DebugMe + LitterBox-Katalog + Whisker-Test mit KI-Etikett; Chatbot-Ersatz für die Lehrkraft naheliegend. |
+| V2 Complexity (Fitness) | 4 | Statisches Repo mit CI-Tests, kein Server; Scratch-Variante bräuchte Whisker (schwerer). |
+| V3 Possibility | 3 | Inhaltlich trivial machbar, aber Formkonflikt KLP visuell vs. JS-Tests und Flakiness bei Spielen. |
+| V4 Longevity | 3 | KLP 5/6 seit 2021 stabil, Repo rottet nicht; das KI-Etikett altert mit jedem Modellwechsel. |
+| V5 Civic SWOT | 3 | Stark: CC0, keine Kinderdaten, echter PR-Weg (matsam). Achillesferse: Chatbot und Schulbuchverlage liefern dasselbe auf Zuruf. |
+| V6 Tech Tree | 3 | Wurzeln da (Scratch, LitterBox, Whisker), Stamm ist Inhalt statt Werkzeug, Äste schmal. |
+| V7 Ground Truth | 3 | KLP-Test-Kompetenz als Lehrplananker (damals nur Sekundärkopie); Bedarf der Lehrkräfte nirgends belegt (kein Typ-B-Engpass). |
+| **Kern V1–V7** | **21/35** | Gate verfehlt, V1 < 3. |
+| V8 Fun | 2 | `none` im ersten Schritt: Lehrkraft liest einen Katalog. |
+| **Gesamt** | **23/40** | |
+
+### Scorecard Zuschnitt B (Offline-Seite „Bug-Werkstatt“, Katalog als Daten)
+
+| Vektor | Score | Begründung |
+|---|:---:|---|
+| V1 Novelty | 2 | In-Browser-Reparieren bis die Prüfung grün ist macht Code.org-Debugging und Blockly Games; Whisker-Lehrkraft-Tests sind der Forschungszwilling. Lücke nur Sprache, KLP, CC0, Offline. |
+| V2 Complexity (Fitness) | 4 | Tier 1: Blockly + Canvas + Eigenschafts-Tests im Browser, keine Konten, läuft im Schulnetz offline. |
+| V3 Possibility | 4 | Löst den Formkonflikt (visuelle Sprache) und macht die Test-Kompetenz zum Spielzug; deterministische Tests, wenn die Spiele mit fester Zufallssaat laufen. |
+| V4 Longevity | 3 | Statisch, aber eine Mini-IDE mit Blockly-Version braucht Pflege; Lehrplan stabil. |
+| V5 Civic SWOT | 3 | Datenschutz bei Kindern sauber, keine Installation; Schwäche: Lehrkräfte bleiben bei Scratch, das sie kennen. |
+| V6 Tech Tree | 4 | Stamm testbar (Spiel + Prüfstand + Bug als Daten), Äste: Lehrkräfte schreiben Bugs als JSON, LitterBox-Muster als Taxonomie. |
+| V7 Ground Truth | 3 | wie A. |
+| **Kern V1–V7** | **23/35** | Gate verfehlt um 1, und V1 < 3 sperrt ohnehin. |
+| V8 Fun | 4 | `play`/`mastery`: Spiel bricht, Kind repariert, Lampe wird grün. |
+| **Gesamt** | **27/40** | |
+
+**B ist der bessere Zuschnitt** (+2 Kern, +2 Fun), weil der Test dort Lerngegenstand für die Test-Kompetenz des KLP ist und nicht nur Pflegebeleg. A allein ist keine Dose; A ist der Datenbaustein von B.
+
+### Triage-Urteil: `Needs Research` (Zuschnitt B, 23/35, gesamt 27/40)
+Kein Grab, weil die eine Frage, die V1 hebt, prüfbar ist und nicht beantwortet wurde. Zuschnitt A allein wäre Friedhof (cause `gebaut`, killer `forschung`: Passau LitterBox/Whisker + DebugMe), wird aber nicht getrennt begraben, weil er als Daten in B aufgeht.
+
+**Was das Gate öffnen könnte (in dieser Reihenfolge):**
+1. **Datentest „KI-typische Fehler“ (hebt V1 auf 3):** 20 Kinderspiel-Wünsche (Klasse-5/6-Formulierung) von zwei Modellen erzeugen lassen, Fehler gegen die Muster aus „Common Bugs in Scratch Programs“ klassifizieren. Erst wenn ≥ 30 % der Fehler außerhalb der bekannten Muster liegen (z. B. erfundene Blöcke, plausibel-falsche Spiellogik), trägt das Wort „KI“ etwas. Sonst ist es ein gewöhnlicher Debugging-Kurs.
+2. **Besetzt-Test Code.org/Blockly Games/Passau auf Deutsch (V1):** Gibt es eine freie deutsche Debugging-Strecke mit automatischer Prüfung für Klasse 5/6 (Code.org-Kurse auf Deutsch, primary::programming-Material)? Ein Treffer → Grab.
+3. **V7:** Wortlaut der Test-Kompetenz am lehrplannavigator.nrw.de gegenlesen (erledigt, siehe Nachtrag); einen dokumentierten Bedarf finden (fg-ibn-Stellungnahme zu KI, Informatiktag-Workshop, QUA-LiS-Material zur Test-Kompetenz).
+Mit 1 und 3 positiv: V1 3, V7 4 → 25/35, Gate erreicht.
+
+### Empfänger
+* **Rang 1: GI-FG Informatische Bildung in NRW**, Weg = Pull Request auf code.teckids.org/gi-fg-ibnw/matsam (aktiv, PR-Workflow belegt [Seite]). Sprecher laut Scout Daniel Losch (nicht zweitbelegt), aktiver Committer André Hilbig [Seite]. Lizenz des Repos vor CC0-Beitrag klären (CC0 lässt sich in jede OER-Lizenz einbringen, umgekehrt nicht). Formfrage: TeX-Sammlung, eine HTML-Seite muss als Material mit Begleitblatt eingereicht werden.
+* **Nicht Empfänger, sondern Besetzt-Test und möglicher Mitstreiter:** Informatikdidaktik Uni Passau (LitterBox, Whisker). Wenn der Datentest positiv ist, wären sie die fachlich stärkste Gegenleserin (Bayern, kein NRW-Mandat).
+* r/lehrerzimmer (kein Informatik-Fokus), r/CSEducation (englisch, KLP-Bezug wertlos): nachrangig, Regeln vor Post im Browser lesen.
+
+### Lehre
+* Der Testbeleg eines Materials ist ein Qualitätsmerkmal für den Pfleger, kein Mehrwert für den Empfänger, solange der Empfänger den Fehler mit einem Klick selbst sieht. Er wird erst Wert, wenn der Test selbst Lerngegenstand ist (hier die Test-Kompetenz des KLP).
+* Bei K-12-Programmierideen nach der Schulpraxis zusätzlich die **Informatikdidaktik-Forschung mit Werkzeug** suchen (Passau: LitterBox, Whisker); die Scout-Suche hatte sie nicht, und sie besetzt genau den Mechanismus.
+* „KI-erzeugt“ als Merkmal muss sich an einer eigenen Fehlerklasse beweisen, sonst ist es ein Etikett (vgl. Lab-Retro 01.10.2026: Technik als „Warum jetzt“).
+
+### Nachtrag 14.10.2026 (später): Neubewertung Zuschnitt B nach Gate-Check des Scouts [stand-in]
+
+**Neue Belege (Scout):**
+* **KLP-Primärtext** [Seite] lehrplannavigator.nrw.de/system/files/media/document/file/si_kl5u6_if_klp_2021_07_01.pdf: keine Nummerierung; Inhaltsfeld Algorithmen, 7. Spiegelstrich „überprüfen die Wirkungsweise eines Algorithmus durch zielgerichtetes Testen (MI)“; „implementieren Algorithmen in einer visuellen Programmiersprache (MI)“; Leistungsbewertung nennt die Aufgabenart „Fehlersuche und -korrektur in einem vorgegebenen Algorithmus oder Programmausschnitt“. **Einschränkung:** „Testen“ meint im KLP, dass Kinder Testfälle wählen und Erwartung mit Ergebnis vergleichen, nicht automatisierte Tests. Ein vorgefertigter Prüfstand, der rot/grün meldet, nimmt den Kindern genau diese Wahl ab; der Test als Lerngegenstand ist eine Zutat von Amélie, keine Forderung des Lehrplans.
+* **Bedarf** [Seite] TUM Didaktik der Informatik (Leitung Prof. Dr. Tilman Michaeli): Debugging sei „sowohl im Klassenzimmer als auch in der informatikdidaktischen Forschung ein unterrepräsentiertes Thema“, wenige Studien, Materialien und Konzepte; Dissertation Michaeli 2021 „Debugging im Informatikunterricht“ (Lehrkräften fehlen Zeit, Konzepte, Materialien) [Schnipsel]. Keine Stimme einer NRW-Lehrkraft.
+* **Besetzung (neu):** eduki „Debugging-Arbeitsheft Klasse 5–6“ (Papier, 2,95 €) [Seite]; IPN Kiel „Testen und Anpassen von Algorithmen“ (Sek I, Lizenz unbekannt) [Seite].
+
+**Eigene Abrufe (Reviewer):**
+* **IT4Kids „Cubis Algorithmen-Werkstatt“** (Lernsoftware Cubi, „kostenlos vollen Zugriff“, Jgs. 5–7; für NRW unter „Informatik, Jgs. 5/6“ mit Thema „Fehlersuche & Testen“) [Seite] it-for-kids.org/entwicklerreihe/ und /unterrichtsmaterialien-fuer-klasse-5-bis-7/. Paket heruntergeladen (cubi.i4k.org/um/UR_Werkstatt, Material_SEK_Algorithmen-Werkstatt.zip, 31,6 MB): eigene Station `Werkstatt - Teil 2/Begleitmaterial/04_Fehlersuche/` mit zwei Arbeitsblättern („Variablen raten“, „Wüstenjagd“), je **Lösungsblatt**, und QR-Codes zu Cubi-Leveln; in Teil 1 zusätzlich „Fehlersuche1“-QR-Codes. **Inhalt der PDFs nicht lesbar** (Schriften kodiert, kein PDF-Werkzeug in der Umgebung) [Struktur, nicht Inhalt]. Lizenz nicht genannt (AGB-PDF nicht gelesen). Ob Cubi den Erfolg eines Levels automatisch prüft, ist offen.
+* **TUM Unterrichtswerkstatt Informatik** [Seite] edu.sot.tum.de/ddi/fuer-lehrkraefte/unterrichtswerkstatt/: Jahresprogramm nach dem TICE-Modell (Raspberry Pi Computing Education Research Centre, Cambridge), Lehrkräfte erforschen eigene Unterrichtsfragen in vier Workshops; **kein Material, kein Debugging-Angebot**, Bewerbung 2026/27 (fünf Plätze) endete am 02.10.2026; Kontakt unterrichtswerkstatt-informatik@sot.tum.de. Kein Nachbar, als Empfänger nur indirekt (Lehrkraft könnte die Werkstatt als Forschungsfrage nutzen).
+
+**Neubewertung Zuschnitt B:**
+
+| Vektor | alt | neu | Begründung |
+|---|:---:|:---:|---|
+| V1 Novelty | 2 | **2** | Die Rest-Lücke „deutsch, kostenlos, NRW 5/6, visuell, Fehlersuche mit Lösung“ füllt IT4Kids/Cubi zu großen Teilen (Struktur gelesen). Übrig: CC0, offline ohne Anbieter-Software, sichtbarer Prüfstand, KI-Herkunft (unbewiesen). Nicht 1, weil der Inhalt der Station ungelesen ist. |
+| V2 Complexity | 4 | **4** | unverändert. |
+| V3 Possibility | 4 | **4** | Machbar; die Lehrplanpassung ist schwächer als gedacht (siehe Einschränkung), das trifft V5, nicht die Machbarkeit. Prüfstand muss „erwartet / tatsächlich“ zeigen und Kinder Testfälle wählen lassen, sonst arbeitet er gegen die Kompetenz. |
+| V4 Longevity | 3 | **3** | unverändert. |
+| V5 Civic SWOT | 3 | **3** | Neue Achillesferse: IT4Kids ist gemeinnützig, kostenlos, deutsch, mit Mini-Fortbildungen und Länderzuordnung im Feld; ein Amélie-Geschenk konkurriert mit einem gepflegten Angebot. Nicht tiefer, weil CC0 und Offline echte Unterschiede sind. |
+| V6 Tech Tree | 4 | **4** | unverändert. |
+| V7 Ground Truth | 3 | **4** | KLP-Wortlaut am Primärtext gelesen, Aufgabenart „Fehlersuche und -korrektur“ steht in der Leistungsbewertung (Lehrplananker Typ A für die Fähigkeit), Materialmangel von einem Lehrstuhl ausdrücklich benannt (nahe Typ B). Nicht 5: Der Bedarf ist Forschungsstimme, keine NRW-Lehrkraft, und er gilt für Debugging-Material allgemein, nicht für diesen Zuschnitt, den IT4Kids teilweise schon bedient. |
+| **Kern** | 23 | **24/35** | **Gate nicht erfüllt:** V1 = 2 verletzt die Regel „kein Kernvektor < 3“. Die 24 ist rechnerisch, kein Dose-Ready-Signal. |
+| V8 Fun | 4 | **4** | `play`/`mastery`, unverändert. |
+| **Gesamt** | 27 | **28/40** | |
+
+**Urteil bleibt `Needs Research`.** V7 ist gestiegen, aber der Engpass war nie die Belegdichte, sondern V1, und der ist durch IT4Kids eher enger geworden. Ich hebe nicht auf Dose Ready: Ein Forschungsbefund „zu wenig Material“ von 2021 bis heute begründet keine Neuheit, wenn ein freies deutsches NRW-zugeordnetes Fehlersuche-Modul danebenliegt.
+
+**Was jetzt entscheidet (in dieser Reihenfolge):**
+1. **IT4Kids-Station lesen** (PDF-Werkzeug nötig; AGB-PDF für die Lizenz). Prüft Cubi den Erfolg eines Fehlersuche-Levels automatisch und ist die Station frei nutzbar → **Friedhof** (cause `gebaut`, killer `gemeinnuetzig`, foundBy `deutsch`, stage `kandidat`; resurrectIfDe: „Wenn ein KI-typischer Fehlertyp nachgewiesen ist, den Cubi und die Passauer Muster nicht abdecken, oder IT4Kids das Angebot einstellt“ / resurrectIfEn: „If an AI-typical bug class is shown that neither Cubi nor the Passau patterns cover, or IT4Kids discontinues the offering“). Nur Papier ohne automatische Prüfung → V1 bleibt 2, weiter mit Schritt 2.
+2. **Datentest KI-typische Fehler** (wie oben): einziger Hebel für V1 = 3.
+3. Erst mit V1 ≥ 3 neu vorlegen; dann rechnerisch ≥ 25/35.
+
+**Empfänger, aktualisiert:** Rang 1 unverändert GI-FG IBN (matsam, Pull Request). TUM DDI (Michaeli) als fachliche Gegenleserin für Debugging-Didaktik, nicht als NRW-Empfänger; die Unterrichtswerkstatt ist kein Materialkanal. IT4Kids ist Besetzt-Test, kein Empfänger.
+
+**Lehre:** Bei Schulideen die Länder-Zuordnungsseiten kostenloser Anbieter (IT4Kids, Code.org, Passau) vor dem Datentest öffnen; ein Thema „Fehlersuche & Testen“ in einer Länderliste ist ein stärkeres Besetzt-Signal als jedes arXiv-Paper. Und: Lehrplan-„Testen“ ist Erwartung gegen Ergebnis durch das Kind, nicht ein Testlauf, der dem Kind das Prüfen abnimmt.
+
+## Jobcenter / Grundsicherung — Reviewer 14.10.2026 [stand-in]
+
+**Kennzeichnung:** `[stand-in]` (Claude-Subagent statt Live-Lauf, Vertex gestoppt). Reviewer der Teamrunde „SGB II nach der Reform vom 01.07.2026“. Eingang: konsolidierte Liste des Orchestrators (M1, M1b, M2–M4, sieben Bestätigungs-Kills), Kollider-Log (Abschnitt „Jobcenter / Grundsicherung 14.10.2026“), Inversions-Log Run 9, Scout-Zusammenfassung des Orchestrators.
+
+**Primärtexte, diesmal vollständig gelesen** (vom Orchestrator per Ghostscript extrahiert):
+* **BA, Fachliche Weisungen § 32 SGB II, Stand 01.07.2026** [Seite: arbeitsagentur.de/datei/fw-32-sgb-ii-ab-juli-2026_ba057692.pdf]. Hinweis zur Zählung: Die Randziffern im Text weichen um eins von der Absatznummer ab. „Wiederholtes MV, jedes zählt, wahrgenommene Termine setzen nicht zurück“ = **Rz 32.5**; „Unterbrechung → Neubeginn, Dauer unerheblich“ = **Rz 32.6** (Abs. 8: Versagung nach § 66 SGB I setzt nicht zurück); Aufstocker = Rz 32.7.
+* **„Einladungen und Rechtsfolgen in der neuen Grundsicherung“, Stand 29.06.2026, gez. Degener** [Seite: tacheles-sozialhilfe.de/files/Aktuelles/2026/…7-2026.pdf]. Liegt laut Suchtreffer auch unter **jobcenter.wuppertal.de** [Schnipsel], ist also eine **Arbeitshilfe des Jobcenters Wuppertal**, kein Tacheles-Text. Für ein Werkzeug ist das eine Quelle vom Typ B mit örtlicher Geltung.
+
+**Eigene Suchen (8 Abrufe, Budget eingehalten):** 2 WebSearch zur Existenz eines Zählers oder Minderungsrechners (keine Treffer, nur Ratgeber gegen-hartz.de, nexvyra.de, rechtsanwalt-und-sozialrecht.de, lexetius [Schnipsel]); 1 WebSearch jobcenter.guru/buergergeld.org (nichts Einschlägiges [Schnipsel]); WebFetch gesetze-im-internet.de § 43 [Seite; nichtamtliche Fassung, **ohne Stand-Vermerk**]; WebFetch buzer.de § 43 [Seite]; 1 WebSearch Tacheles-Kontakt (Fehltreffer) + WebFetch tacheles-sozialhilfe.de/impressum.html [Seite]; 1 WebSearch KdU-Grenzen als offene Tabelle (keine bundesweite CSV [Schnipsel]). Dazu `bib find` (Meldeversäumnis, Angemessenheit, Tafel Aufnahme, Abhilfe, Weisungen Diff, Untätigkeit), `grab werte`, Abgleich mit `src/engine/gruendungsnavigator/` und `07-demos/gruendungsnavigator/data/normen.json`.
+
+### Gegenprobe: Kann ein deterministischer Automat jeden Fall reproduzieren?
+
+Ich habe einen Wegwerf-Automaten (Scratchpad, nicht im Repo, ~50 Zeilen) gegen 10 Fälle laufen lassen. Ergebnis: **Ja für die Zählung, mit drei Stellen, die keine Rechenregel sind, sondern ein Quellenkonflikt oder eine Lücke.**
+
+1. **Quellenkonflikt Unterbrechung:** FW Rz 32.6: „Die Dauer der Unterbrechung ist unerheblich.“ Wuppertaler Arbeitshilfe Ziff. 2: wiederholt, „sofern der Leistungsbezug seit dem ersten MV nicht **mindestens einen Kalendermonat** unterbrochen wurde“. Gleicher Fall (10 Tage Unterbrechung), zwei Ergebnisse (erstes MV gegen 30 %). Das Werkzeug darf das **nicht** entscheiden: Es zeigt beide Lesarten mit Fundstelle und „prüfen lassen“. Vor dem Packen den Wortlaut von § 31a/§ 32 an der Amtsquelle auf eine Monatsregel lesen.
+2. **Lücke § 66 SGB I und die Dreierfolge:** Rz 32.6 Abs. 8 sagt nur, dass die Versagung die Zählung nicht neu beginnt. Ob sie die **Folge** nach § 7b Abs. 4 unterbricht, steht in keinem der beiden Texte (FW § 7b nicht gelesen).
+3. **Örtliche Praxis Übergang:** Arbeitshilfe Ziff. 1 Fall b (Termin ab 01.07. mit alter Belehrung, schon festgestelltes MV → 10 % für einen Monat) ist eine Wuppertaler Auslegung; die FW sagen dazu nichts. Als Quelle „JC Wuppertal“ kennzeichnen, nicht als Bundesregel.
+
+Alles andere ist reine Zustandslogik: zwei Zähler (Anzahl seit 01.07.2026 im ununterbrochenen Bezug; Folge ohne wahrgenommenen Termin/anerkannten wichtigen Grund), Stichtag, Bekanntgabe am 4. Tag nach Aufgabe zur Post (Arbeitshilfe Ziff. 3/4; die Werktag-/Fristlogik steckt schon im `gruendungsnavigator`), Reihenfolge-Vorbedingung Rz 32.25c, Belehrungsstufe (RFB 1 / RFB 2 „30 %“ / RFB 3 „NE“) gegen den Zählstand.
+
+**Urteilsfragen, die das Werkzeug nur als Eingabe nimmt und nie entscheidet:** wichtiger Grund (Rz 32.15) und AU gegen Attest (Rz 32.16); außergewöhnliche Härte (Rz 32.19, § 31a Abs. 3), auch die Wuppertaler Vermutung „Kind unter 15 → grundsätzlich Härte“ (Ziff. 6); Zugang und Bekanntgabe, wenn bestritten; Ermessensfehler der Meldeaufforderung (Rz 32.2: „nicht ausreichend begründet → kein MV“); Kenntnis der Rechtsfolgen ohne schriftliche Belehrung (Rz 32.12); Anhaltspunkte für psychische Erkrankung (persönliche Anhörung, Rz 32.14); Art der Unterbrechung (Hilfebedürftigkeit entfallen, Verzicht, NE nach Warnmonat gegenüber § 66 SGB I); ob eine Vorsprache „persönlich im zuständigen Jobcenter“ stattfand (Tatsache, Beleg beim Nutzer).
+
+### Fixtures aus den Primärtexten (für Ticket 01)
+
+| # | Quelle | Eingabe (Kurzform) | Erwartete Ausgabe |
+|---|---|---|---|
+| F1 | FW Rz 32.5 | MV · wahrgenommen · MV | 2. MV ist wiederholt → 30 % RB, 1 Monat; Folge = 1 (keine NE) |
+| F2 | FW Rz 32.5 + 32.19; Arbeitshilfe Ziff. 6 | MV · MV mit festgestellter Härte · MV | Härte-MV zählt, keine Minderung; 3. MV → NE prüfen |
+| F3 | FW Rz 32.6 gegen Arbeitshilfe Ziff. 2 | MV · Unterbrechung 10 Tage (Erwerb) · MV | FW: erstes MV; Arbeitshilfe: wiederholt → **Konflikt anzeigen** |
+| F4 | FW Rz 32.6 Abs. 8 | MV · Versagung § 66 SGB I · MV | keine Neuzählung → wiederholt; Folge: **offen** |
+| F5 | FW Rz 32.29; Arbeitshilfe Ziff. 2 | MV festgestellt 20.06.2026 · MV 15.07.2026 | altes MV zählt nicht → erstes MV, nur Feststellungsbescheid |
+| F6 | Arbeitshilfe Ziff. 1; § 65a Abs. 2 | Termin 25.06.2026 versäumt | altes Recht (Fassung bis 30.06.2026) |
+| F7a–c | Arbeitshilfe Ziff. 1 a)–c) | Termin ≥ 01.07. mit alter Belehrung: a) ohne Vor-MV b) mit festgestelltem Vor-MV c) Zugang nach 30.06. | a) keine 10 %, ggf. Feststellung b) 10 % für einen Monat (örtlich) c) keine Minderung, ggf. Feststellung |
+| F8 | FW Rz 32.25a; Arbeitshilfe Ziff. 4 | MV · MV · (2. festgestellt und bekanntgegeben) · MV mit RFB 3 | keine 30 %, NE nach § 7b Abs. 4 prüfen, persönliche Anhörung anbieten (Rz 32.14, Ziff. 5 d) |
+| F9 | FW Rz 32.25c; Arbeitshilfe Ziff. 4 Kasten | 3. Einladung vor Bekanntgabe des Bescheids zum 2. MV | „Reihenfolge prüfen lassen“; laut Arbeitshilfe erneut mit vorheriger RFB einladen |
+| F10 | Arbeitshilfe Ziff. 4 Kasten | nach 30 %-Minderung Termin wahrgenommen | Folge = 0, nächste Einladung RFB 2, nicht RFB 3 |
+| F11 | Arbeitshilfe Ziff. 4 letzter Absatz | Vorsprache ohne Einladung zwischen MV 2 und 3 | zählt nicht als wahrgenommener Termin, Folge läuft weiter |
+| F12 | Arbeitshilfe Ziff. 4 | Vorsprache vor Erlass des NE-Feststellungsbescheids | keine NE |
+| F13 | FW Rz 32.25b; § 7b Abs. 4 S. 5 | NE festgestellt, persönliche Vorsprache im Folgemonat | gilt als durchgehend erreichbar; 30 % für diesen Monat |
+| F14 | Arbeitshilfe Ziff. 4 | NE festgestellt, keine Vorsprache | Monat 1: Regelbedarf entfällt (ggf. 1 €), Mehrbedarfe und KdU laufen; ab Monat 2: Anspruch entfällt bis zur Vorsprache |
+| F15a–c | Arbeitshilfe Ziff. 7 a)–c) | BWZ bis 31.12.2026; Feststellung 15.10. / 15.12.; 3. Einladung 05.01.2027 | a) Nov. ohne RB, Dez. alles weg b) keine Wirkung im BWZ c) NE im neuen BWZ möglich (bei WBA) |
+| F16a–c | Arbeitshilfe Ziff. 8 a)–c) | WBA nach / vor NE-Feststellung, unbearbeitet / bearbeitet | Ausgabe nur: „Mitwirkungsschreiben, persönliche Vorsprache“; Versagung/Entziehung entscheidet das JC |
+| F17 | FW Rz 32.27; Arbeitshilfe Ziff. 3 | zwei § 32-Minderungen im selben Monat; § 31 + § 32 überlappend | nicht addiert / zusammen höchstens 30 % RB; KdU nie gemindert (Rz 32.22); 1-€-Regel (Rz 32.24) |
+| F18 | FW Rz 32.6 Spiegelstrich 2 | NE nach Ablauf des Warnmonats, danach neuer Bezug, MV | Unterbrechung → erstes MV |
+| F19 | FW Rz 32.5 + 32.25a | MV · wahrg. · MV · wahrg. · MV | 2. und 3. je 30 %, keine NE |
+| G1 | Gegenprobe absichtlich falsch | Eingabe „wichtiger Grund: anerkannt“ fehlt, Nutzer wählt „geltend gemacht, offen“ | Werkzeug rechnet beide Äste und sagt nie, welcher gilt |
+
+### Scorecards
+
+| Nr | Kandidat | V1 | V2 | V3 | V4 | V5 | V6 | V7 | V8 | Kern /35 | Gesamt /40 | Urteil |
+|---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|---|
+| M1 | Meldeversäumnis-Zähler (Doppelfund Kollider + Inversion) | 3 | 5 | 4 | 3 | 3 | 4 | 4 | 2 | **26** | 28 | **Dose Ready (bedingt)** |
+| M1b | M1 + Abzugs-Summenprüfer (§ 43, § 42a, § 31b) | 3 | 5 | 3 | 3 | 3 | 4 | 3 | 2 | **24** | 26 | Gate rechnerisch erreicht, **nicht empfohlen** |
+| M2 | KdU-Angemessenheitsgrenzen-Register (Doppelfund Scout + Inversion) | 2 | 3 | 3 | 2 | 2 | 3 | 3 | 2 | 18 | 20 | Needs Research |
+| M3 | Widerspruchs-Abhilfe-Spiegel (Doppelfund Scout + Inversion) | 2 | 3 | 2 | 3 | 2 | 2 | 2 | 1 | 16 | 17 | Friedhof |
+| M4 | Tafel-Aufnahmebarometer (nur Kollider) | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 14 | 16 | Friedhof |
+
+**M1 Meldeversäumnis-Zähler, je Vektor:**
+- **V1 = 3.** Exploratory. Die Lücke lässt sich ohne Technik sagen: „Wer einen Termin versäumt hat, kann aus den Briefen nicht ablesen, welche Rechtsfolge ein weiterer versäumter Termin hätte.“ In drei eigenen Suchen und rund sechs Engine-Suchen fand sich kein Zähler, nur Merkblätter (alles [Schnipsel], also ein Negativbefund). Kein Inversions-Bonus (4), weil die Ausgabe kein Beweismittel ist.
+- **V2 = 5.** Tier 1, reine Zustandslogik, lokal, ohne Upload. Datums- und Normkern aus `gruendungsnavigator` wiederverwendbar.
+- **V3 = 4.** Zählung deterministisch (Gegenprobe oben). Why-now: Stichtag 01.07.2026, FW vom 01.07.2026, Zählstand am 30.06.2026 zurückgesetzt. Abzug: ein Quellenkonflikt (F3), eine Lücke (F4), neun Urteilsfragen als Eingaben.
+- **V4 = 3.** Nationales Recht, aber das Meldeversäumnis-Recht wurde 2019 (BVerfG), 2023 und 2026 umgebaut. Halbwertszeit 2 bis 3 Jahre, Regeltabelle braucht Normstand-Wächter. Ein Wartungsträger fehlt.
+- **V5 = 3.** S: CC0, keine Daten, zwei Zählungen sichtbar, Zitat je Schritt. W/Achillesferse: **falsche Beruhigung kostet hier die ganze Leistung einschließlich KdU** (F14). Darum gibt das Werkzeug den Satz zur persönlichen Vorsprache im Warnmonat **immer** aus und sagt nie „kein Risiko“. T: dieselbe Community, die den Gründungsnavigator „AI Slop“ nannte (r/Grundsicherung, 13.10.2026). Transparenz-Kasten und Prüfakte sind Pflicht, zur Laufzeit keine KI.
+- **V6 = 4.** Wurzeln vorhanden (GN: Werktage, Bekanntgabe, Normregister, Sprachwächter `assertKeinVersprechen`). Stamm = Automat + Fixtures F1–F19. Äste: Fallblatt für Beratungsstellen, später der 30-%-Deckel (M1b) als Modul.
+- **V7 = 4.** Typ A (§ 32, § 7b Abs. 4, § 65a Abs. 2 SGB II; BGBl. 2026 I Nr. 107) + BA-Weisung als Volltext + Behörden-Arbeitshilfe mit durchgerechneten Fällen. Nicht 5, weil Wortlaut nicht maschinell an der Amtsquelle gehalten, FW § 7b (Rz 7b.74) und FW §§ 31–31b nicht gelesen und F3 offen ist.
+- **V8 = 2.** `mastery`/`discovery` schwach: Das Aha ist der getrennte Doppelstand. Spielsprache verbietet der Ton (Kollider-Warnung, richtig).
+
+**M1b (+ Abzugs-Summenprüfer):** § 43 an zwei Stellen gelesen: Abs. 2 10 % (Erstattung nach § 41a oder § 48 Abs. 1 S. 2 Nr. 3 i. V. m. § 50 SGB X), sonst 30 %, zusammen mit laufenden Aufrechnungen und § 42a Abs. 2 höchstens 30 %; Abs. 3 keine Aufrechnung, solange nach § 31b um mindestens 30 % gemindert wird, sonst nur bis zur Differenz [Seite: gesetze-im-internet.de, **ohne Stand-Vermerk**]. buzer.de zeigt die Fassung des 13. SGB-II-ÄndG ab 01.07.2026 und als Änderung **nur einen neuen Abs. 1** [Seite]. Abs. 2/3 sind also wohl unverändert, bestätigt ist das aber nur über eine Drittseite. Die Rate nach § 42a (5 %?) habe ich nicht geprüft, FW § 43 (auf die Rz 32.28 verweist) nicht gelesen. V3 3 (Euro-Beträge brauchen Regelbedarf, Bescheiddaten, 1-€-Regel, KdU-Untergrenze) und V7 3. Gefahr: Mit Euro-Beträgen rutscht das in den besetzten **Bescheid-Nachrechner** (Grab `paragraphen-dolmetscher`, Rechner-Portale). Die 24/35 sind nur rechnerisch. Lernlog §6 „Zuschnitt schlägt Umfang“: **M1 allein ist der bessere Zuschnitt.** Der Deckel kommt als Ticket 02 nur in Prozent, ohne Euro: „§ 31/§ 32/§ 43/§ 42a zusammen höchstens 30 % RB, KdU nie“.
+
+**M2 KdU-Register:** V1 2 (Offenbach deckt 223/237 Orte, Thomé ~350 Fundstellen; Rest-Lücke ist nur Lizenz und Format). V2 3 (Tier 2, aber rund 400 Träger mit jährlichen Änderungen). V3 3 (heterogene PDFs; Datenbankrecht der Offenbacher Tabelle § 87a UrhG, kommunale Konzepte evtl. amtliche Werke § 5 UrhG, ungeklärt). V4 2 (Werte veralten jährlich, ohne Pfleger ein Archetyp „Beteiligungs-Ermüdung“). V5 2 (falscher Grenzwert führt zu falscher Umzugsentscheidung). V6 3. V7 3 (keine bundesweite offene Tabelle gefunden [Schnipsel]). **Needs Research:** (1) Offenbach fragen, ob Lizenz/Download vorgesehen ist (wenn ja: Friedhof `beim-empfaenger`/`gemeinnuetzig`); (2) Datentest 10 Kreise, Spaltenvarianten zählen; (3) Prüfen, ob die 1,5-fach-Regel (§ 22 Abs. 1 S. 6) dort fehlt; nur das wäre ein Baustein für Offenbach, keine eigene Dose.
+
+**M3 Abhilfe-Spiegel → Friedhof.** Primärtabelle nicht gefunden, Quoten nur für 300 von 404 Jobcentern, Abhilfe zur Hälfte wegen nachgereichter Unterlagen (Quote ≠ Fehlerquote). Die einzige Nutzung, die öffentlich ankäme, ist das Ranking, das Amélie ausschließt. `cause: praemisse` · `killer: keiner` · `foundBy: deutsch` · `stage: kandidat` · origin `inversion`. resurrectIfDe: „Wenn die BA eine maschinenlesbare Tabelle der Widerspruchserledigungen je Jobcenter mit Abhilfegrund (Fehler gegen nachgereichte Unterlagen) veröffentlicht und eine Beratungsstelle ein nicht-rankendes Monitoring ausdrücklich verlangt.“ resurrectIfEn: “If the BA publishes a machine-readable per-Jobcenter table of objection outcomes split by reason (error vs. late documents) and an advice body explicitly asks for non-ranking monitoring.”
+
+**M4 Tafel-Aufnahmebarometer → Friedhof.** Kein Träger meldet, keine Meldepflicht, wöchentlicher Status braucht einen Schreibweg (Tier 3/4) oder Ehrenamtspflege. Tafeln könnten die Veröffentlichung von Stopps ablehnen. 2018 baubar. `cause: praemisse` · `killer: keiner` · `foundBy: deutsch` · `stage: kandidat` · origin `bisoziation`. resurrectIfDe: „Wenn Tafel Deutschland oder ein Landesverband einen Aufnahmestatus je Tafel selbst erhebt (z. B. in der eco-Plattform) und ihn veröffentlichen will.“ resurrectIfEn: “If Tafel Deutschland or a regional federation itself collects an intake status per food bank (e.g. in its eco platform) and wants it public.”
+
+**Bestätigungen (ohne volle Scorecard):**
+- **FW-Diff → Friedhof `beim-empfaenger`, killer `behoerde`** (Entscheidung im Streit Scout `unklar` gegen Inversion `besetzt`): Die FW § 32 selbst beginnt mit „Wesentliche Änderungen“ je Fassung (01.07.2026, 28.03.2024, 01.01.2023, 02.12.2019) [Seite, gelesen]. Die BA liefert die Änderungsliste, Thomé spiegelt die Weisungen. foundBy `empfaenger`. resurrectIf: „Wenn eine Beratungsstelle Randziffer-genaue Diffs verlangt, die die BA-Änderungsliste nicht hergibt.“
+- **Untätigkeits-Uhr → Friedhof** (`mode`, killer `gemeinnuetzig`; Arbeitslosenselbsthilfe Oldenburg [Seite]). **Laufzeit-Fahrplan → Baustein von `gruendungsnavigator`** (Fristen § 88 SGG, § 42 SGB I als weitere Zeilen in `berechneFristen`), keine eigene Dose.
+- **Seitenindex-Deckblatt → Baustein** von `gruendungsnavigator` (Unterlagen-Mappe), nur mit dem Satz „Deckblatt ist kein Zugangsnachweis“.
+- **Tafel-Berechtigungsblatt → Friedhof** `praemisse` (Selbstausstellung beweist nichts, nur Behördendokument zählt).
+- **Bescheid-Verständlichkeit → Friedhof** `beim-empfaenger`/`behoerde`. **Regelbedarf-Mischindex 2027 → Friedhof** `mode`/`behoerde` (amtlich ohnehin). **Bescheid-Nachrechner → Friedhof** `gebaut`/`kommerziell` (Rechner-Portale; Grab `paragraphen-dolmetscher`).
+
+### Baustein-Frage M1 gegen `gruendungsnavigator`
+
+GN nennt § 32 nur als Normkarte (`normen.json`, `sgb2_32`), zählt nicht; Zielgruppe sind Gründer vor einem Gespräch. Der Zähler betrifft alle Leistungsberechtigten (Rz 32.3: auch nicht Erwerbsfähige) und wird von Beratungsstellen benutzt. **Urteil: eigene Dose, technisch ein Schwestermodul**, das den GN-Kern importiert (Datum/Werktag/Bekanntgabe, Normregister-Schema, Sprachwächter, Normstand-Wächter, `check:gn-zitate`-Muster). Kein neuer Kern, kein Modul in der GN-Seite: Ein Gründer-Werkzeug würde den Zähler verstecken.
+
+**Empfängerkonflikt (Félix):** Beide Dosen zielen auf Tacheles. Nach der Regel „höchstens eine Dose pro Empfängergruppe“ geht entweder M1 an Tacheles und GN an eine Gründungsberatung, oder M1 an die Sozialrechts-Hilfe Offenbach e.V. (Person nicht verifiziert). Empfehlung: **M1 an Tacheles**, weil die Wuppertaler Arbeitshilfe dort liegt und der Zähler sie prüfbar macht.
+
+### Empfehlung zum Packen M1 (nicht gepackt)
+
+- **id:** `meldeversaeumnis-zaehler`
+- **Zuschnitt:** nur Zählung und Folgenstufe mit Zitat, kein Euro-Betrag, keine Formulierungshilfe für die Anhörung, kein Upload, keine KI zur Laufzeit. Zwei Zähler getrennt anzeigen. Bei F3/F4/F7b Quelle nennen, „Quellen widersprechen sich / offen – prüfen lassen“.
+- **Empfänger:** Tacheles e.V., Wuppertal. Vorstand Harald Thomé; verantwortliche Redaktion Harald Thomé, Regine Blazevic, Frank Jäger; info@tacheles-sozialhilfe.org (Impressum [Seite], 14.10.2026). Das ist eine **Sammeladresse mit verifizierter Rolle, keine Ansprechperson für ein Werkzeug**. Wer bei Tacheles Werkzeuge annimmt, ist ungeklärt. Keine Lizenzangabe auf der Seite („© Tacheles e.V.“). Zweitempfänger Sozialrechts-Hilfe Offenbach e.V. (nicht verifiziert).
+- **Erster Schritt (Ticket 01):** `src/engine/meldeversaeumnis/` als reiner Zustandsautomat mit Fixtures F1–F19 + Gegenprobe G1 (Vitest), GN-Datumskern importiert. Vorher FW § 7b (Rz 7b.74) und FW §§ 31–31b Kap. 4.1.1/5 lesen und F4 schließen, § 31a/§ 32 an gesetze-im-internet.de auf eine Monatsregel prüfen (F3). Sprachwächter verbietet „rechtswidrig“, „kein Risiko“, „Sie müssen nicht“. Erst danach eine Seite.
+- **Förderbrücke (Hinweis):** Prototype Fund / Civic Coding; vor Nennung an der Primärseite prüfen.
+
+**RDG-Grenze:** Das Werkzeug gibt Normtext, Weisungs-Randziffer und den sich aus den **eingegebenen** Tatsachen ergebenden Zählstand aus, also eine allgemeine Rechenregel ohne Prüfung des Einzelfalls. Es beurteilt nicht, ob ein wichtiger Grund, eine Härte, ein Zugang oder eine fehlerfreie Ermessensausübung vorliegt, und gibt keine Empfehlung, ob Widerspruch eingelegt werden soll. Software, die als allgemeines Werkzeug angeboten wird, ist nach BGH I ZR 113/20 (Smartlaw, 09.09.2021) keine „Tätigkeit in konkreten fremden Angelegenheiten“ (§ 2 Abs. 1 RDG). Das Aktenzeichen stammt aus meinem Vorwissen und ist in dieser Runde nicht nachgelesen. Bei Tacheles als Empfänger gilt zusätzlich § 6 RDG (unentgeltlich, mit juristisch qualifizierter Anleitung), das ist deren Sache. Jede Ausgabe endet mit „Dies ist keine Rechtsberatung. Ihren Fall prüft eine Sozialberatung.“ **Vor Versand mit dem Empfänger abstimmen** (wie beim GN offen).
+
+### Lehren
+- **Arbeitshilfe gegen Weisung lesen, nicht nur Weisung:** Die einzige echte Kante (Monatsregel gegen „Dauer unerheblich“) fand erst der Abgleich zweier Primärtexte. Für Zustandsautomaten aus Verwaltungsrecht gilt: mindestens zwei Behördentexte nebeneinander; Widersprüche werden Fixtures, keine Fußnoten.
+- **Herkunft von Fremd-PDFs prüfen:** Das „Tacheles-Merkblatt“ ist eine Jobcenter-Arbeitshilfe. Für die Zitierung (Typ B örtlich) und für die Mail an Tacheles ändert das den Ton.
+- **Doppelfund ist kein Freifahrtschein, hier aber gedeckt:** Die Inversion hatte § 7b Abs. 4 gefunden, der Kollider nicht. Gegenprobe und Fixtures kamen erst mit dem Volltext.
+
+### Quellenmeldung
+| id (Vorschlag) | Titel | Typ/Kategorie (vom Bibliothekar mit `bib quellen formate` zu setzen) | wie | Ertrag | Status |
+|---|---|---|---|---|---|
+| `ba-fw-32-sgb-ii-2026-07` | BA Fachliche Weisungen § 32 SGB II, Stand 01.07.2026 | Norm/Weisung, Behörde | https://www.arbeitsagentur.de/datei/fw-32-sgb-ii-ab-juli-2026_ba057692.pdf, PDF → Text mit Ghostscript (WebFetch liefert Binärstrom) | M1 Fixtures F1–F5, F8, F13, F17–F19; FW-Diff-Grab | gelesen [Seite] |
+| `jc-wuppertal-einladungen-rechtsfolgen-2026` | JC Wuppertal, „Einladungen und Rechtsfolgen in der neuen Grundsicherung“, Stand 29.06.2026 | Arbeitshilfe, Behörde (örtlich) | https://tacheles-sozialhilfe.de/files/Aktuelles/2026/Einladungen-und-Rechsfolgen-in-der-neuen-Grundsicherung%207-2026.pdf; Spiegel https://jobcenter.wuppertal.de/Einladungen-und-Rechsfolgen-in-der-neuen-Grundsicherung.pdf [Schnipsel] | M1 Fixtures F3, F6–F16; Quellenkonflikt Unterbrechung | gelesen [Seite] |
+| `tacheles-impressum` | Tacheles e.V. Impressum | Empfänger | https://tacheles-sozialhilfe.de/impressum.html | Rolle Vorstand/Redaktion, Sammeladresse; keine Lizenz | gelesen [Seite] |
+| `buzer-sgb-ii-43` | buzer.de § 43 SGB II mit Änderungshistorie | Norm (Drittseite) | https://www.buzer.de/43_SGB_II.htm | 13. ÄndG ändert nur Abs. 1 | gelesen [Seite] |
+| `gii-sgb-ii-43` | gesetze-im-internet.de § 43 SGB II | Norm (amtlich, nichtamtliche Fassung) | https://www.gesetze-im-internet.de/sgb_2/__43.html | Abs. 2/3 Wortlaut; kein Stand-Vermerk | gelesen [Seite] |
+| `gegen-hartz-dreimal-plus-eins` | gegen-hartz.de „Ab jetzt ‚Dreimal plus eins‘“ | Ratgeber | https://www.gegen-hartz.de/news/grundsicherung-ab-jetzt-dreimal-plus-eins-sanktionen-der-jobcenter | Besetzt-Gegenprobe M1 (erklärt, rechnet nicht) | [Schnipsel] |
