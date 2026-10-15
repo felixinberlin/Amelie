@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-inversion-inversion-20261015-construction-workers-de-670e945ca7cb2033",
+  "plan_id": "lab-2026-10-15-amelie-lab-inversion-inversion-20261015-construction-workers-de-670e945ca7cb2033",
+  "engine": "review",
+  "model": "Codex (stand-in; searches: WebSearch; no Vertex)",
+  "existence_check": false,
+  "survivors": {
+    "count": 0,
+    "status": "keine"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-inversion-inversion-20261015-construction-workers-de-670e945ca7cb2033.md",
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-inversion-inversion-20261015-construction-workers-de-670e945ca7cb2033.inbox.json",
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-inversion-inversion-20261015-construction-workers-de-670e945ca7cb2033.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 3,
+  "touches_memory": false,
+  "contracts": {
+    "inversion-record": "1.1.0"
+  },
+  "contract_version": "1.0.0"
+}
