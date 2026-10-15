@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-inversion-inversion-20261015T173000-bau-gadgets-5bc56ae642edf8ae",
+  "plan_id": "lab-2026-10-15-amelie-lab-inversion-inversion-20261015T173000-bau-gadgets-5bc56ae642edf8ae",
+  "engine": "review",
+  "model": "claude-subagent (stand-in, Vertex unavailable; searches: WebSearch)",
+  "existence_check": false,
+  "survivors": {
+    "count": 0,
+    "status": "keine"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-inversion-inversion-20261015T173000-bau-gadgets-5bc56ae642edf8ae.md",
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-inversion-inversion-20261015T173000-bau-gadgets-5bc56ae642edf8ae.inbox.json",
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-inversion-inversion-20261015T173000-bau-gadgets-5bc56ae642edf8ae.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 3,
+  "touches_memory": false,
+  "contracts": {
+    "inversion-record": "1.1.0"
+  },
+  "contract_version": "1.0.0"
+}
