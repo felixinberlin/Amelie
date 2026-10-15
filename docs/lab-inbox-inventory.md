@@ -4,12 +4,12 @@ Erzeugt mit `node scripts/inventory-lab-inbox.mjs` aus den validierten immutable
 
 Domains umfassen alle parsebaren URL-Felder, auch Konkurrentenlinks und Hintergrundquellen. Quote-Status stammt unverändert vom Lab; wiederholte identische Findings werden einmal gezählt. Fehlende Felder beweisen keine fehlende Recherche. Wörtliche Bestands-ID-Erwähnungen sind Hinweise zum Nachlesen; ausbleibende Treffer schließen Überschneidungen nicht aus.
 
-Gesamt: **75 Batches / 168 Ideen**. Status: archived: 34; needs_research: 31; processed: 10.
+Gesamt: **79 Batches / 169 Ideen**. Status: archived: 34; needs_research: 31; processed: 10; received: 4.
 
 | Engine | Batches | Ideen |
 | --- | ---: | ---: |
-| inversion | 17 | 39 |
-| lacunar | 23 | 78 |
+| inversion | 19 | 39 |
+| lacunar | 25 | 79 |
 | mark | 19 | 40 |
 | review | 11 | 0 |
 | scarcity | 5 | 11 |
@@ -383,6 +383,38 @@ Verarbeitungsnotiz: Archiviert 14.10.2026: unverifizierte Brandenburg-Dateien (1
 | C1 | HofBausatz: Ein 49-Euro-Selbstbau-Kit (pre-flashed ESP32-S3, 5W-Solarzelle, LiFePO4, IP65-Schnappschelle), das Agrardieseltanks und Maschinenschuppen per On-Device-TinyML auf Kanister-, Schlauch- und Hebelwerkzeug-Trajektorien überwacht, Diebe via 12V-Stroboskop-Relais lokal verjagt und ein signiertes 800-Byte-Telegram-Event über 1-Euro-IoT-SIM meldet. |
 | C2 | HalmWacht: Autonomer Solar-Pfahl-Visorknoten für Wald-Feld-Kanten, der Einwechselungen von Schwarzwildrotten und Vegetationsknickungen in Sonnenblumen- und Maiskulturen in Echtzeit klassifiziert und manipulationssichere 1,2KB-Schadensprotokolle zur fristgerechten Beweissicherung nach BJagdG generiert. |
 | C3 | FirstWacht: Magnetisch am Gerüst oder First montierbarer Solar-Edge-Node, der Flattern und Risse temporärer Notabdichtungen sowie Sparrendurchbiegungen bei PV-Palettenlasten per lokaler Bildverarbeitung überwacht und bei drohendem Wasserschaden oder Verzug 1KB-Warnungen absetzt. |
+
+### amelie-lab-inversion-inversion-20261014T133847-kids-lieberose-honi-e044f747d7376bf0
+
+Engine: inversion; Status: received; Ideen: 0.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-14-amelie-lab-inversion-inversion-20261014T133847-kids-lieberose-honi-e044f747d7376bf0.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-14-amelie-lab-inversion-inversion-20261014T133847-kids-lieberose-honi-e044f747d7376bf0.md)
+
+Absicht: Kinder lernen Programmieren durch Gaming und Vibecoding im Jugendklub in Lieberose, Brandenburg; Bauern, Landwirtschaft und Honig/Imkerei als reale Partner, Materialien und Aufgaben einbeziehen. Praktisch vor Ort umsetzbar, Kinder verstehen und testen selbst statt nur KI-Code zu bestellen.
+
+URL-Domains im Originalrecord: academy.openai.com, ai.google.dev, cms.karuna-ev.de, cms.scratchfoundation.org, code.org, developers.googleblog.com, epaper.wittich.de, fobizz.com, ol.wittich.de, openai.com, studio.code.org, www.dahme-spreewald.de, www.gesetze-im-internet.de, www.land-aktiv.de, www.lieberose-oberspreewald.de, www.lwg.bayern.de, www.scratchfoundation.org. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
+
+Wörtlich erwähnte Bestands-IDs: [Dose: bugs-spaced-repetition](../05-dosen/bugs-spaced-repetition.md), [Dose: ghost-replay](../05-dosen/ghost-replay.md).
+
+Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
+
+### amelie-lab-inversion-inversion-20261014T140238-kids-repair-library-5f33a667ee7c5615
+
+Engine: inversion; Status: received; Ideen: 0.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-14-amelie-lab-inversion-inversion-20261014T140238-kids-repair-library-5f33a667ee7c5615.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-14-amelie-lab-inversion-inversion-20261014T140238-kids-repair-library-5f33a667ee7c5615.md)
+
+Absicht: Kinder von 10–14 Jahren lernen Programmieren durch Vibecoding und eigene Spiele in einer öffentlichen Bibliothek mit Repair-Café: kaputte Spielzeuge und ungefährliche Alltagsgegenstände, Reparaturwissen älterer Ehrenamtlicher, kleine Teams mit gemeinsam genutzten Rechnern. Kinder sollen Verhalten vorhersagen, selbst verändern und mit realen Beobachtungen prüfen. Dies ist ein gewähltes Szenario, kein behaupteter lokaler Bedarf oder bestätigter Partner.
+
+URL-Domains im Originalrecord: ai.google.dev, bibliotheksportal.de, cms.scratchfoundation.org, fobizz.com, forum.code.org, lbz.rlp.de, support.code.org, www.ifixit.com, www.raspberrypi.org, www.repaircafe.org, www.scratchfoundation.org, www.stadt-diez.de. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
+
+Wörtlich erwähnte Bestands-IDs: [Dose: agent-postmortem-recorder](../05-dosen/agent-postmortem-recorder.md), [Dose: ghost-replay](../05-dosen/ghost-replay.md), [Dose: raeucher-sim](../05-dosen/raeucher-sim.md), [Grab: repair-cafe-diagnose](../src/data/graeber.json), [Grab: nachschraub-probe](../src/data/graeber.json).
+
+Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
 ### amelie-lab-lacunar-lacunar-20260929T203438-f693a3-31d72a38da35a809
 
@@ -898,6 +930,40 @@ Verarbeitungsnotiz: Archiviert 14.10.2026: unverifizierte Brandenburg-Dateien (1
 | C1 | DachWächter: Modularer DIY-Bausatz für Handwerker (Dachdecker/Zimmermann) zur optischen Gerüst- und Notabdichtungs-Telemetrie. Erfasst sub-gradige Gerüstneigung, Flatterfrequenz sturmgefährdeter Unterspannbahnen und nächtlichen Kupferdiebstahl mit <€28 BOM. |
 | C2 | BeregnungsAuge: Autonome optische Schlauchtrommel- und Druckpegel-Telemetrie für märkische Sandböden. Misst Trommelumdrehungen, Schlauchspul-Überlappung und liest analoge Bourdon-Manometer berührungslos mit <€28 BOM aus. |
 | C3 | HelioDrop: Autonome Sonnenblumen-Heliotropismus- und Wildschwein-Korridor-Telemetrie. Erfasst Blütenteller-Neigung (Kornfüllung/Trockenstress) und nachtaktive Wildschweinrotten auf 100-Hektar-Schlägen ohne Funkloch-Probleme. |
+
+### amelie-lab-lacunar-lacunar-20261014T133659-kids-lieberose-honig-309b5b89076b7c99
+
+Engine: lacunar; Status: received; Ideen: 1.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-14-amelie-lab-lacunar-lacunar-20261014T133659-kids-lieberose-honig-309b5b89076b7c99.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-14-amelie-lab-lacunar-lacunar-20261014T133659-kids-lieberose-honig-309b5b89076b7c99.md)
+
+Absicht: Kinder lernen Programmieren durch Gaming und Vibecoding im Jugendklub in Lieberose, Brandenburg; Bauern, Landwirtschaft und Honig/Imkerei als reale Partner, Materialien und Aufgaben einbeziehen. Praktisch vor Ort umsetzbar, Kinder verstehen und testen selbst statt nur KI-Code zu bestellen.
+
+URL-Domains im Originalrecord: app.fobizz.com, aprendoenlinea.mineduc.gob.cl, arbeit.wfbb.de, arxiv.org, assets.codeclubau.org, code.org, coderdojo-saar.de, createai.microbit.org, de.wikipedia.org, deutscherimkerbund.de, digbi.net, epaper.wittich.de, fobizz.com, fobizz.pryvus.dev, forwardedu.com, informatikdidaktik.cs.uni-saarland.de, klugipop.de, landwirtschaft.hessen.de, makecode.microbit.org, microbit.eeducation.at, microbit.org, projects.raspberrypi.org, stage-createai.microbit.org, studio.code.org, support.code.org, support.microbit.org, www.demokratiebildung.info, www.digitale-chancen.de, www.diy.org, www.fhgr.ch, www.imker-brandenburgs.de, www.kitanetz.de, www.klett.de, www.lieberose-oberspreewald.de, www.maerkische-heide.de, www.medienservice.sachsen.de, www.microbit.org, www.noemedia.at, www.pedocs.de, www.regio-v.at, www.regionales.sachsen.de, www.schularena.com, www.spi-fachschulen.de, www.stadt-muencheberg.de, www.ullmannmedien.com. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
+
+Wörtlich erwähnte Bestands-IDs: keine.
+
+| Lokale ID | Originaltitel / Idee |
+| --- | --- |
+| C1 | Honigspiel mit Ausschlussfehlern: Kinder messen sichere Demonstrationsproben und schreiben zuerst erwartete Ergebnisse; KI baut danach den fehlerhaften Prüfcode, den Teams widerlegen. |
+
+### amelie-lab-lacunar-lacunar-20261014T140225-kids-repair-library-682e9cb6475057e9
+
+Engine: lacunar; Status: received; Ideen: 0.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-14-amelie-lab-lacunar-lacunar-20261014T140225-kids-repair-library-682e9cb6475057e9.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-14-amelie-lab-lacunar-lacunar-20261014T140225-kids-repair-library-682e9cb6475057e9.md)
+
+Absicht: Kinder von 10–14 Jahren lernen Programmieren durch Vibecoding und eigene Spiele in einer öffentlichen Bibliothek mit Repair-Café: kaputte Spielzeuge und ungefährliche Alltagsgegenstände, Reparaturwissen älterer Ehrenamtlicher, kleine Teams mit gemeinsam genutzten Rechnern. Kinder sollen Verhalten vorhersagen, selbst verändern und mit realen Beobachtungen prüfen. Dies ist ein gewähltes Szenario, kein behaupteter lokaler Bedarf oder bestätigter Partner.
+
+URL-Domains im Originalrecord: arxiv.org, bmjopen.bmj.com, code.org, coding-for-tomorrow.de, dashboard.repairmonitor.org, documents1.worldbank.org, doi.org, effectivehealthcare.ahrq.gov, en.wikipedia.org, faculty.washington.edu, forum.code.org, lesson-plans.code.org, link.springer.com, magazine.raspberrypi.com, magazines-static.raspberrypi.org, manuals.plus, mdpi-res.com, pmc.ncbi.nlm.nih.gov, projects.raspberrypi.org, pubmed.ncbi.nlm.nih.gov, repaircafe.org, rvninternationalschool.com, scratched.gse.harvard.edu, static.raspberrypi.org, studio.code.org, support.code.org, training-hub.raspberrypi.org, wovi.world, www.aimodels.fyi, www.bmj.com, www.cultureofrepair.org, www.mdpi.com, www.raspberrypi.org, www.repaircafe.org, www.repairmonitor.org, www.scratched.gse.harvard.edu, www.tes.com, www.usenix.org, www.zapcode.dev. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
+
+Wörtlich erwähnte Bestands-IDs: [Dose: denkmal-verlaufsblick](../05-dosen/denkmal-verlaufsblick.md), [Dose: klang-stethoskop](../05-dosen/klang-stethoskop.md), [Grab: nachschraub-probe](../src/data/graeber.json), [Grab: reparaturformular-generator](../src/data/graeber.json), [Grab: bergsonnenuhr-peiler](../src/data/graeber.json).
+
+Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
 ### amelie-lab-mark-mark-20260930T140813-8c17dc-6b3a0db0ad90c4a3
 
