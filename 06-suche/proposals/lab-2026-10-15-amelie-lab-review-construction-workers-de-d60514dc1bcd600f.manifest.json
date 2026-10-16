@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-review-construction-workers-de-d60514dc1bcd600f",
+  "plan_id": "lab-2026-10-15-amelie-lab-review-construction-workers-de-d60514dc1bcd600f",
+  "engine": "review",
+  "model": "not recorded",
+  "existence_check": false,
+  "survivors": {
+    "count": 0,
+    "status": "keine"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-review-construction-workers-de-d60514dc1bcd600f.md",
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-review-construction-workers-de-d60514dc1bcd600f.inbox.json",
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-review-construction-workers-de-d60514dc1bcd600f.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 0,
+  "touches_memory": false,
+  "contracts": {
+    "review-record": "not recorded"
+  },
+  "contract_version": "1.0.0"
+}
