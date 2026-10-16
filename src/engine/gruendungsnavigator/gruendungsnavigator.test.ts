@@ -379,8 +379,8 @@ describe('Demo: Gesprächsnavigator (Daten von index.html, Referenzpaket Webentw
 });
 
 describe('Normregister (normen.json, beide Seiten)', () => {
-  it('59 Normen, jede mit gesetze-im-internet- und dejure-Link, Fassung, Prüfdatum und genau einer Kennzeichnung', () => {
-    expect(Object.keys(L).length).toBe(59);
+  it('61 Normen, jede mit gesetze-im-internet- und dejure-Link, Fassung, Prüfdatum und genau einer Kennzeichnung', () => {
+    expect(Object.keys(L).length).toBe(61);
     for (const [id, n] of Object.entries(L)) {
       expect(n.u, id).toMatch(/^https:\/\/www\.gesetze-im-internet\.de\//);
       expect(n.d, id).toMatch(/^https:\/\/dejure\.org\/gesetze\//);

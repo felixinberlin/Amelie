@@ -61,14 +61,16 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 - 9 Stationen vom Antrag bis zum Ausstieg.
 - 29 Fragen mit 107 Antworten, je mit Reaktion, nächstem Schritt, Frist und Normtext.
 - Fristen-Zeitstrahl.
-- 59 Normen (ein Register für beide Seiten) mit Link zu gesetze-im-internet.de und dejure.org. Wörtliches ist zitiert, Sinngemäßes als „Kurzfassung“ markiert.
+- 61 Normen (ein Register für beide Seiten) mit Link zu gesetze-im-internet.de und dejure.org. Wörtliches ist zitiert, Sinngemäßes als „Kurzfassung“ markiert.
 
 **Jobcenter-Hilfe** (`jobcenter-hilfe.html`, für alle im Bezug, Einstieg „Was ist los?“):
 - **Meldetermin verpasst:** Termine, Vorsprachen und Unterbrechungen eintragen. Der Zähler führt zwei Stände getrennt: das wievielte Versäumnis nach § 32 (ab dem zweiten 30 % für einen Monat, Beginn nach § 31b und § 37 Abs. 2 SGB X) und die Folge nach § 7b Abs. 4 (drei in Folge: Nichterreichbarkeit, Warnmonat, persönliche Meldung). Wichtiger Grund, Härte und Belehrung sind Eingaben; „offen“ rechnet beide Ausgänge. Wo die BA-Weisung und die Wuppertaler Arbeitshilfe sich widersprechen, rechnet er die Weisung und zeigt die andere Lesart. Was kein Text regelt, sagt er. Der Satz zur persönlichen Meldung steht in jedem Ergebnis.
 - **Geld zurück:** Widerspruchsfrist, Überprüfungsantrag (bis vier Jahre nach dem Bekanntgabejahr, Nachzahlung höchstens ab dem 1. Januar des Vorjahres), 50-€-Grenze, Höchstbetrag der Aufrechnung (10 % oder 30 %, zusammen höchstens 30 %, bei laufender Minderung weniger).
 - **Miete:** Karenzzeit mit Verlängerung, 1,5-fach-Deckel, Übergangszeit nach der Aufforderung zur Kostensenkung.
 - **Bescheid und Fristen**, **Unterlagen** (Voraussetzungen des § 66 Abs. 3 SGB I als Liste, neue Ausschlussregel § 41a Abs. 3, nachweisbar abgeben), **Vermögen** (Freibetrag nach Alter je Person, Übertragung in der Bedarfsgemeinschaft).
-- Jedes Ergebnis zeigt das Gesetz im Wortlaut. Keine Euro-Nachrechnung eines Bescheids, keine Urteile, keine Formulierung von Widersprüchen.
+- **Brief schreiben:** Widerspruch, Überprüfungsantrag, Vorschuss, Akteneinsicht, Bitte um schriftliche Bestätigung. Feste Sätze, die sich auf eine Norm stützen, dazu nur die eigenen Tatsachen; ohne Tatsachen „Die Begründung reiche ich nach“. Keine Urteile, keine erzeugten Argumente (eine Wortsperre prüft das). Dazu der Hinweis, wogegen ein Widerspruch die Wirkung nicht aufhält (§ 39 SGB II) und wann doch (§ 86a SGG).
+- **In den Kalender:** jede berechnete Frist als Kalenderdatei mit Erinnerung zwei Tage vorher. **Gespräche festhalten:** eigenes Protokoll mit Datum, Kanal, Person, Inhalt, Nachweis. **Für die Beratung drucken:** nur die Ergebnisse auf Papier.
+- Jedes Ergebnis zeigt das Gesetz im Wortlaut. Keine Euro-Nachrechnung eines Bescheids, keine Urteile.
 
 **Kern** (`src/engine/gruendungsnavigator/`):
 - Monatsfristen nach §§ 187, 188 BGB, mit Verschiebung auf den Werktag (§ 64 Abs. 3 SGG; Feiertage per Osterformel, Landesfeiertage zuschaltbar).

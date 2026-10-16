@@ -4,3 +4,5 @@ export * from './paket';
 export { zaehleMeldeversaeumnisse, PFLICHT_HINWEIS, DECKEL_HINWEIS, GRENZE_HINWEIS, STICHTAG } from './meldeversaeumnis';
 export { pruefeVermoegen, vermoegensFreibetrag, pruefeUnterkunft, pruefeAufrechnung, unterBagatellgrenze, ueberpruefung } from './rechner';
 export { berechneFristen, erwerbstaetigenFreibetrag, assertKeinVersprechen } from './gruendungsnavigator';
+export { erzeugeBrief, BRIEF_TITEL } from './briefe';
+export { erzeugeIcs } from './kalender';

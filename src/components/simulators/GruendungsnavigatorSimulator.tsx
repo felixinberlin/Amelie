@@ -71,8 +71,8 @@ export const GruendungsnavigatorSimulator: React.FC<Props> = ({ lang, isEmbedded
           <span>
             <span className="block font-bold text-sm text-[var(--m-ink)]">{de ? 'Fall-Landkarte öffnen' : 'Open case map'} <ExternalLink className="inline w-3 h-3" /></span>
             <span className="block text-xs text-[var(--m-ink-soft,#6b5b4b)] mt-1">{de
-              ? '9 Stationen vom Antrag bis zum Ausstieg, 107 Antworten mit Frist und Normtext, Fristen-Zeitstrahl, 59 Normen.'
-              : '9 stations from application to exit, 107 answers with deadline and statute text, deadline timeline, 59 statutes.'}</span>
+              ? '9 Stationen vom Antrag bis zum Ausstieg, 107 Antworten mit Frist und Normtext, Fristen-Zeitstrahl, 61 Normen.'
+              : '9 stations from application to exit, 107 answers with deadline and statute text, deadline timeline, 61 statutes.'}</span>
           </span>
         </a>
       </div>

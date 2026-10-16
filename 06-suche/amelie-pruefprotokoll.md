@@ -1264,6 +1264,8 @@ Mitgebrachte Idee von Félix mit lauffähigem Prototyp, in Teilideen zerlegt (me
 
 `gruendungsnavigator`: Urteil G1 unverändert (`verengt`). Die Dose ist zur „Gründungsnavigator & Jobcenter-Hilfe“ erweitert: neue Seite `public/gruendungsnavigator/jobcenter-hilfe.html` mit Meldeversäumnis-Zähler (`meldeversaeumnis.ts`, 26 Fixtures; Kandidat M1 `meldeversaeumnis-zaehler` aus der Jobcenter-Runde) und Rechnern (`rechner.ts`: Vermögen § 12, Unterkunft § 22, Aufrechnung § 43, Bagatelle § 40, Überprüfung § 40 SGB II / § 44 SGB X), 59 Normen im Register. Offene Rechtsfragen werden als ungeregelt angezeigt, nicht entschieden. **Korrektur:** Die Normkarte § 40 SGB II sagte „ein Jahr statt vier“; richtig ist Antrag bis vier Jahre nach Ende des Bekanntgabejahres, Nachzahlung nur ein Jahr (Wortlaut-Zitat stimmte, die Überschrift nicht). Zitat-Abgleich 47/47 (43 maschinell gegen gesetze-im-internet.de, 4 von Hand). Bedarfsbelege und Rechtsquellen im Register gebucht (Runde „Jobcenter-Hilfe 16.10.2026“). Nichts versendet.
 
+
+**Nachtrag 16.10.2026 (zweite Runde):** Briefe aus festen Bausteinen (Widerspruch, Überprüfung, Vorschuss, Akteneinsicht, schriftliche Bestätigung; keine Urteile, Wortsperre), Fristen als Kalenderdatei, Kontakt-Protokoll, Druck für die Beratung. § 39 SGB II, § 86a SGG und § 25 SGB X wörtlich ins Register (61 Normen). Urteil G1 unverändert.
 ## Fernöstliche Spielsehnsüchte & Historische Forensik — 11.10.2026
 
 Empirische Recherche fernöstlicher und globaler Gaming-Wünsche (Heybox, Zhihu, Bilibili, TapTap, r/truegaming, r/CozyGamers): Verlangen nach unbestechlicher Deduktion ohne leuchtende Markierungen, handwerklichen Reparatur-Mechaniken und anti-involutionärem Tiefgang.

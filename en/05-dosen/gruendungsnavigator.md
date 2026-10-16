@@ -61,14 +61,16 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 - 9 stations from application to exit.
 - 29 questions with 107 answers, each with reaction, next step, deadline and statute text.
 - A deadline timeline.
-- 59 statutes (one register for both pages) linked to gesetze-im-internet.de and dejure.org. Verbatim text is quoted; paraphrase is marked "Kurzfassung" (summary).
+- 61 statutes (one register for both pages) linked to gesetze-im-internet.de and dejure.org. Verbatim text is quoted; paraphrase is marked "Kurzfassung" (summary).
 
 **Job Centre Help** (`jobcenter-hilfe.html`, for everyone on benefits, starting with "What is going on?"):
 - **Missed appointment:** enter appointments, visits and interruptions. The counter keeps two counts apart: the number of misses under section 32 (from the second one 30 % for a month, start under section 31b and section 37(2) SGB X) and the series under section 7b(4) (three in a row: not reachable, warning month, in-person visit). Important reason, hardship and warning are inputs; "open" computes both outcomes. Where the BA instructions and the Wuppertal guidance disagree, it computes the instructions and shows the other reading. What no text regulates, it says. The sentence about the in-person visit is in every result.
 - **Money back:** objection deadline, review request (up to four years after the year of notification, back payment at most from 1 January of the previous year), €50 minimum, maximum deduction (10 % or 30 %, together at most 30 %, less during a cut).
 - **Rent:** grace year with extension, 1.5× cap, transition after the request to cut costs.
 - **Notice and deadlines**, **documents** (conditions of section 66(3) SGB I as a list, new cut-off section 41a(3), proof of delivery), **savings** (allowance by age per person, transfer within the household).
-- Every result shows the statute verbatim. No recalculation of a notice in euros, no case law, no wording of objections.
+- **Write a letter:** objection, review request, advance payment, file access, request for written confirmation. Fixed sentences backed by a statute plus only the person's own facts; without facts "I will send the reasons later". No case law, no generated arguments (a word filter checks this). Plus a note on what an objection does not suspend (section 39 SGB II) and when it does (section 86a SGG).
+- **Add to calendar:** every computed deadline as a calendar file with a reminder two days before. **Keep a record:** own log with date, channel, person, content, proof. **Print for the advice centre:** only the results on paper.
+- Every result shows the statute verbatim. No recalculation of a notice in euros, no case law.
 
 **Kernel** (`src/engine/gruendungsnavigator/`):
 - Month deadlines per sections 187 and 188 BGB, shifted to the next working day (section 64(3) SGG). Holidays come from the Easter formula; state holidays can be added.

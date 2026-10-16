@@ -13,7 +13,7 @@ Quelle der ausgelieferten Dateien: `public/gruendungsnavigator/` (Vite kopiert `
 |---|---|
 | Gesprächsnavigator | Vorbereitung, Telefon-Entscheidungsbaum (7 Fragen, 23 Antworten), Fragenkatalog (34 allgemeine Fragen plus Zusatzfragen des Branchenpakets, im Beispiel Webentwicklung 42, mit anpassbaren Beispielantworten), Branchenpakete mit eigener Fassung, Download und Upload, Rechte-Karten (30 typische Antworten des Gegenübers), Zusammenfassungs-Mail, Präsentationsmodus ohne Taktik-Notizen |
 | Jobcenter-Hilfe | Für alle im Bezug, Einstieg „Was ist los?“: Meldeversäumnis-Zähler (§ 32, § 7b Abs. 4), Geld zurück (Fristen, Überprüfung, 50-€-Grenze, Aufrechnung), Miete (Karenzzeit, 1,5-fach-Deckel), Bescheid und Fristen, Unterlagen, Vermögen |
-| Fall-Landkarte | 9 Stationen vom Antrag bis zum Ausstieg als SVG, 29 Fragen, 107 Antworten mit Reaktion, nächstem Schritt, Frist und Normtext; Fristen-Zeitstrahl; 59 Normen; dasselbe Branchenpaket wie im Gesprächsnavigator |
+| Fall-Landkarte | 9 Stationen vom Antrag bis zum Ausstieg als SVG, 29 Fragen, 107 Antworten mit Reaktion, nächstem Schritt, Frist und Normtext; Fristen-Zeitstrahl; 61 Normen; dasselbe Branchenpaket wie im Gesprächsnavigator |
 
 ## Auf dem Handy
 
@@ -30,7 +30,7 @@ Beide Seiten sind fürs Handy gebaut. Prüfbefehl `npm run check:mobile` (360 un
 
 | Datei | Inhalt |
 |---|---|
-| `data/normen.json` | Normregister beider Seiten: 59 Normen mit §-Angabe, Links zu gesetze-im-internet.de und dejure.org, genau eins von Wortlaut (`q`) oder Kurzfassung (`k`), Fassung und Prüfdatum |
+| `data/normen.json` | Normregister beider Seiten: 61 Normen mit §-Angabe, Links zu gesetze-im-internet.de und dejure.org, genau eins von Wortlaut (`q`) oder Kurzfassung (`k`), Fassung und Prüfdatum |
 | `data/navigator.json` | Telefonbaum, Fragen, Rechte-Karten, Mitbring-Liste, Ablauf, Kennzahlen; Texte mit Platzhaltern wie `{{beruf}}` oder `{{zuschuss}}` |
 | `data/landkarte.json` | Stationen, Fragen und Antworten der Fall-Landkarte, Fristen |
 | `data/pakete/*.json` | Branchenpakete: Werte für die Platzhalter, Überschreibungen einzelner Texte, Zusatzfragen, Mitbring-Liste, „Selbst klären“-Punkte |
@@ -51,6 +51,10 @@ Für alle im Grundsicherungsgeld, nicht nur für Gründer. Anlass war die Bedarf
 - `meldeversaeumnis.ts`: Zustandsautomat für die Zählung nach § 32 und die Folge nach § 7b Abs. 4. 26 Fixtures aus BA-Weisungen (§§ 7b, 31–32, Stand 01.07.2026), Gesetz, Gesetzesbegründung (BT-Drs. 21/3541) und der Arbeitshilfe des Jobcenters Wuppertal (als örtlich gekennzeichnet). Widersprüche zwischen Weisung und Arbeitshilfe werden angezeigt; Fragen, die kein Text regelt, ebenso. Offene Eingaben (wichtiger Grund, Härte, Belehrung) rechnen beide Ausgänge.
 - `rechner.ts`: Vermögensfreibetrag nach Alter (§ 12 Abs. 2), Unterkunft (§ 22 Abs. 1: Karenzzeit, 1,5-fach-Deckel, sechs Monate), Aufrechnung (§ 43), Bagatellgrenze (§ 40 Abs. 1 S. 3), Überprüfungsantrag (§ 40 Abs. 1 S. 2, § 44 Abs. 4 SGB X).
 - `gruendungsnavigator.ts`: Fristen (Widerspruch, Klage, Untätigkeit, Vorschuss).
+- `briefe.ts`: Briefe aus festen Bausteinen (Widerspruch, Überprüfung, Vorschuss, Akteneinsicht, schriftliche Bestätigung) plus eigene Tatsachen; eine Wortsperre verhindert Aktenzeichen, Gerichtsnamen und Drohungen.
+- `kalender.ts`: Fristen als iCalendar-Datei (RFC 5545: ganztägig, Erinnerung zwei Tage vorher, Faltung nach Oktetten, stabile UID).
+
+Auf der Seite außerdem: Gespräche festhalten (eigenes Protokoll), „Für die Beratung drucken“ (nur Ergebnisse).
 
 Wiederverwendet ist nur, was frei ist (Gesetz, Weisungen als Zitat mit Randziffer). GETTSIM (AGPL) dient höchstens als Testorakel, die KdU-Sammlungen von Thomé und Offenbach werden verlinkt, nicht kopiert. Grenzen: keine Euro-Nachrechnung eines Bescheids (Grab `bescheid-nachrechner`), keine Urteile, keine Widerspruchstexte.
 

@@ -36,13 +36,13 @@
   "geprueftAm": "2026-10-16"
  },
  "sgb10_25": {
-  "t": "§ 25 SGB X",
+  "t": "§ 25 Abs. 1, 5 SGB X",
   "n": "Akteneinsicht",
   "u": "https://www.gesetze-im-internet.de/sgb_10/__25.html",
   "d": "https://dejure.org/gesetze/SGB_X/25.html",
-  "k": "Beteiligte dürfen die Verfahrensakten einsehen, soweit das zur Wahrung ihrer rechtlichen Interessen erforderlich ist.",
   "fassung": "geltende Fassung am Prüftag",
-  "geprueftAm": "2026-10-11"
+  "geprueftAm": "2026-10-16",
+  "q": "Die Behörde hat den Beteiligten Einsicht in die das Verfahren betreffenden Akten zu gestatten, soweit deren Kenntnis zur Geltendmachung oder Verteidigung ihrer rechtlichen Interessen erforderlich ist. […] Soweit die Akteneinsicht zu gestatten ist, können die Beteiligten Auszüge oder Abschriften selbst fertigen oder sich Ablichtungen durch die Behörde erteilen lassen."
  },
  "sgb10_33": {
   "t": "§ 33 Abs. 2 SGB X",
@@ -377,6 +377,15 @@
   "fassung": "SGB II i. d. F. vom 16.04.2026 (BGBl. I Nr. 107), in Kraft 01.07.2026",
   "geprueftAm": "2026-10-16"
  },
+ "sgb2_39": {
+  "t": "§ 39 SGB II",
+  "n": "Keine aufschiebende Wirkung",
+  "u": "https://www.gesetze-im-internet.de/sgb_2/__39.html",
+  "d": "https://dejure.org/gesetze/SGB_II/39.html",
+  "q": "Keine aufschiebende Wirkung haben Widerspruch und Anfechtungsklage gegen einen Verwaltungsakt, 1. der Leistungen der Grundsicherung für Arbeitsuchende aufhebt, zurücknimmt, widerruft, entzieht, die Pflichtverletzung und die Minderung des Auszahlungsanspruchs feststellt oder Leistungen zur Eingliederung in Arbeit oder Pflichten erwerbsfähiger Leistungsberechtigter bei der Eingliederung in Arbeit regelt,",
+  "fassung": "SGB II i. d. F. vom 16.04.2026 (BGBl. I Nr. 107), in Kraft 01.07.2026",
+  "geprueftAm": "2026-10-16"
+ },
  "sgb2_40": {
   "t": "§ 40 Abs. 1 Satz 2 SGB II",
   "n": "Überprüfung: Antrag bis vier Jahre, Nachzahlung ein Jahr",
@@ -482,6 +491,15 @@
   "u": "https://www.gesetze-im-internet.de/sgg/__84.html",
   "d": "https://dejure.org/gesetze/SGG/84.html",
   "q": "Der Widerspruch ist binnen eines Monats, nachdem der Verwaltungsakt dem Beschwerten bekanntgegeben worden ist, … einzureichen.",
+  "fassung": "geltende Fassung am Prüftag",
+  "geprueftAm": "2026-10-16"
+ },
+ "sgg86a": {
+  "t": "§ 86a Abs. 1 SGG",
+  "n": "Aufschiebende Wirkung (Grundsatz)",
+  "u": "https://www.gesetze-im-internet.de/sgg/__86a.html",
+  "d": "https://dejure.org/gesetze/SGG/86a.html",
+  "q": "Widerspruch und Anfechtungsklage haben aufschiebende Wirkung.",
   "fassung": "geltende Fassung am Prüftag",
   "geprueftAm": "2026-10-16"
  },

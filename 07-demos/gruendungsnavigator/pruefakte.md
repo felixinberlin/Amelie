@@ -83,6 +83,13 @@ Der Reviewer der Runde vom 14.10.2026 wies zwei Ideen dem Gründungsnavigator zu
 
 **Nicht geprüft:** Keine Juristin, keine Sozialberatung hat Zähler oder Rechner gelesen (Ticket 02). Die Regelbedarfsbeträge 2026 trägt die Person selbst ein. Ob ein Widerspruch eine Rückforderung aufschiebt (§ 39 SGB II), ist nicht gelesen und steht deshalb nirgends.
 
+## 3d. Briefe, Kalender, Protokoll (16.10.2026, zweite Runde)
+
+- **Briefe** (`briefe.ts`): fünf Arten, je ein Test mit vollständigen Feldern (nichts fehlt, Normen im Register, Wortsperre und Sprachwächter grün), Test für leere Felder, Gegenproben (Datum im falschen Format, unbekannte Briefart, ein eingeschmuggeltes Aktenzeichen würde gefunden). Ein Grammatikfehler im Betreff („gegen Ihr Bescheid“) fiel erst im Browser auf; jetzt hält ihn ein Test.
+- **§ 39 SGB II und § 86a SGG** am 16.10.2026 an gesetze-im-internet.de gelesen und wörtlich ins Register genommen. Vorher stand im Entwurf der Seite ein ungelesener Satz zur aufschiebenden Wirkung; er wurde vor dem Commit gestrichen und erst nach dem Lesen neu und mit Zitat formuliert.
+- **Kalender** (`kalender.ts`): Maskierung, Faltung bei 75 Oktetten ohne geteilte Umlaute, stabile UID, Gegenproben (ungültiges Datum, leerer Titel, falscher Zeitstempel). Im Browser heruntergeladen und gelesen.
+- **Kontakt-Protokoll** und **Drucken für die Beratung**: im Browser bei 360 px geprüft.
+
 ## 4. Handy
 
 Prüfbefehl: `npm run check:mobile` (Skript `scripts/check-mobile.mjs`, braucht Chromium). Er lädt jede Seite unter `public/` über HTTP bei 360 und 390 px und prüft waagrechtes Scrollen, JS-Fehler, fehlgeschlagene Ladevorgänge und den Viewport-Meta. Stand 11.10.2026: beide Seiten in Ordnung.
