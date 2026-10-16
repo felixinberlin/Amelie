@@ -4,8 +4,8 @@
 // Strategie: Seiten zuerst aus dem Netz (damit Korrekturen an Normtexten sofort
 // ankommen), bei Ausfall aus dem Speicher. Symbol und Manifest aus dem Speicher.
 // Persönliche Eingaben liegen im localStorage, nie hier.
-const CACHE = 'gruendungsnavigator-2026-10-13';
-const DATEIEN = ['./', './index.html', './fall-landkarte.html', './manifest.webmanifest', './icon.svg'];
+const CACHE = 'gruendungsnavigator-2026-10-16';
+const DATEIEN = ['./', './index.html', './fall-landkarte.html', './jobcenter-hilfe.html', './manifest.webmanifest', './icon.svg'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(DATEIEN)).then(() => self.skipWaiting()));

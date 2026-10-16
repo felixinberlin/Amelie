@@ -379,8 +379,8 @@ describe('Demo: Gesprächsnavigator (Daten von index.html, Referenzpaket Webentw
 });
 
 describe('Normregister (normen.json, beide Seiten)', () => {
-  it('45 Normen, jede mit gesetze-im-internet- und dejure-Link, Fassung, Prüfdatum und genau einer Kennzeichnung', () => {
-    expect(Object.keys(L).length).toBe(45);
+  it('59 Normen, jede mit gesetze-im-internet- und dejure-Link, Fassung, Prüfdatum und genau einer Kennzeichnung', () => {
+    expect(Object.keys(L).length).toBe(59);
     for (const [id, n] of Object.entries(L)) {
       expect(n.u, id).toMatch(/^https:\/\/www\.gesetze-im-internet\.de\//);
       expect(n.d, id).toMatch(/^https:\/\/dejure\.org\/gesetze\//);
@@ -440,6 +440,33 @@ describe('Drift-Wächter: Die Seiten enthalten genau die Daten aus 07-demos/grue
   it('das Webentwicklungs-Paket ist zuerst gewählt (der ursprüngliche Beispielfall)', () => {
     expect(nav.pakete[0].id).toBe('webentwicklung');
     expect(karte.pakete[0].id).toBe('webentwicklung');
+  });
+});
+
+describe('Jobcenter-Hilfe (jobcenter-hilfe.html)', () => {
+  const HILFE = readFileSync(resolve(ROOT, 'public/gruendungsnavigator/jobcenter-hilfe.html'), 'utf8');
+  const daten = eingebaut<{ geprueft: string; normen: unknown }>(HILFE);
+
+  it('enthält das Normregister aus normen.json und den gebündelten Kern mit allen Rechnern', () => {
+    expect(daten.normen).toEqual(NORMEN);
+    for (const f of ['zaehleMeldeversaeumnisse', 'pruefeUnterkunft', 'pruefeAufrechnung', 'pruefeVermoegen', 'ueberpruefung', 'berechneFristen']) expect(HILFE, f).toContain(f);
+  });
+
+  it('jede Norm, die die Seite nennt, steht im Register', () => {
+    const genannt = [...HILFE.matchAll(/lawHTML\(\[([^\]]*)\]\)/g)].flatMap((m) => [...m[1].matchAll(/"([a-z0-9_]+)"/g)].map((x) => x[1]));
+    expect(genannt.length).toBeGreaterThan(10);
+    for (const id of genannt) expect(NORMEN, id).toHaveProperty(id);
+  });
+
+  it('Transparenz-Kasten, keine Rechtsberatung, Prüfakte, Offline, Manifest', () => {
+    for (const satz of ['class="transparenz"', 'Mit KI-Unterstützung geschrieben', 'Nicht geprüft:', 'Keine Rechtsberatung', 'pruefakte.md', 'navigator.serviceWorker.register("sw.js")', '<link rel="manifest" href="manifest.webmanifest">', 'id="offline-status"']) {
+      expect(HILFE, satz).toContain(satz);
+    }
+  });
+
+  it('verspricht nichts', () => {
+    const text = HILFE.slice(HILFE.indexOf('<body>'), HILFE.indexOf('<script id="gn-daten"'));
+    expect(() => assertKeinVersprechen(text)).not.toThrow();
   });
 });
 

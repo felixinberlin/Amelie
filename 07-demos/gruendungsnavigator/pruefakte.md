@@ -1,6 +1,6 @@
 # Prüfakte: Gründungsnavigator
 
-**Dose:** [`gruendungsnavigator`](../../05-dosen/gruendungsnavigator.md) · **Stand:** 13.10.2026 · CC0
+**Dose:** [`gruendungsnavigator`](../../05-dosen/gruendungsnavigator.md) · **Stand:** 16.10.2026 · CC0
 
 Alles, was über diese Dose geprüft wurde, an einem Ort: Urteil, Vektoren, Zitate, Handy, offene Bedingungen. Die Quellen der Einträge stehen jeweils dabei.
 
@@ -63,6 +63,25 @@ Der Reviewer der Runde vom 14.10.2026 wies zwei Ideen dem Gründungsnavigator zu
 
 - **Vorschuss nach § 42 SGB I** als Zeile im Fristenrechner: „die Vorschußzahlung beginnt spätestens nach Ablauf eines Kalendermonats nach Eingang des Antrags“, Wortlaut am 16.10.2026 an gesetze-im-internet.de gelesen. Der Monat wird wie die übrigen Fristen gerechnet; das ist eine Lesart. Ob § 42 SGB I neben der vorläufigen Entscheidung nach § 41a SGB II greift, entscheidet der Kern nicht; die Zeile sagt das selbst. Tests mit Monatsende-Fall und Gegenprobe (ohne Antragsdatum keine Zeile).
 - **Deckblatt mit Seitenindex:** Seitenbereiche rechnet `seitenIndex`, ungültige Seitenzahlen (0, negativ, Bruch, keine Zahl) werden abgelehnt (Gegenproben). Der Satz „kein Zugangsnachweis“ steht in der Oberfläche, auf dem Blatt selbst ein Feld für die Eingangsbestätigung. Im Browser bei 360 px geprüft.
+
+## 3c. Jobcenter-Hilfe für alle (16.10.2026)
+
+**Auftrag:** „We need the best jobcenter help tin in the world, don't be afraid of using other work“, dann „Lets help the people“.
+
+**Recherche (drei parallele Aufträge):**
+- *Bedarf:* 85,5 % aller Minderungen 2025 waren Meldeversäumnisse (BA-Presseinfo 13/2026, [Seite]); Rückforderung und Miete sind die häufigsten Widerspruchsthemen; knapp die Hälfte der erfolgreichen Widersprüche lag an nachgereichten Unterlagen (BA-Presseinfo 3/2026, [Seite]). Reddit war aus der Cloud nicht erreichbar.
+- *Wiederverwendung:* Kaum etwas ist CC0-fähig. Gesetz und Gesetzesbegründung sind frei; BA-Weisungen werden mit Randziffer zitiert und verlinkt (Rechtslage nach § 5 UrhG offen, BA behält sich Rechte vor). GETTSIM ist AGPL (nur Testorakel, nicht kopiert, noch nicht angebunden), Thomé CC BY-NC-SA, Offenbach und Tacheles ohne Lizenz: nur verlinkt.
+- *Rechtsfragen des Zählers:* BA-Weisungen §§ 7b, 31–32 (Stand 01.07.2026; § 7b nur als Spiegel bei Thomé), Gesetzesbegründung BT-Drs. 21/3541, Wuppertaler Arbeitshilfe gelesen. Ergebnis: Die Monatsregel zur Unterbrechung steht nur in der Arbeitshilfe. Zwei weitere Widersprüche gefunden (Härte und Folge; Feststellung im letzten Monat des Bewilligungszeitraums). Vier Fragen regelt kein Text; der Zähler zeigt sie als „nicht geregelt“.
+
+**Geprüft:**
+- Meldeversäumnis-Zähler: 26 Fixtures, je mit Quelle, plus Gegenproben (ungültige Daten werfen, Reihenfolge der Eingabe egal, offene Eingaben rechnen beide Ausgänge, Sprachwächter mit eigener Wortliste). Mutationsprobe: zwei absichtlich falsche Regeln wurden von 1 bzw. 3 Tests gefunden.
+- Rechner (Vermögen, Unterkunft, Aufrechnung, Bagatelle, Überprüfung): je Regel ein Test aus dem Gesetzeswortlaut, Gegenproben mit ungültigen Werten.
+- Zitat-Abgleich mit 59 Normen: 43 maschinell, 4 nicht abrufbare Seiten per curl von Hand verglichen: 47/47.
+- Seite im Browser bei 360 px: alle Module mit echten Eingaben, Fehlermeldung bei ungültiger Zahl, gespeicherter Zustand, offline, kein waagrechtes Scrollen, keine JS-Fehler.
+
+**Korrigiert:** Die Normkarte § 40 SGB II hieß „Überprüfung: ein Jahr statt vier“ und die Fall-Landkarte sagte nach verpasster Frist „ein Jahr statt vier“. Das Zitat stimmte, die Überschrift nicht: Der Antrag geht bis vier Jahre nach Ende des Bekanntgabejahres, nur die Nachzahlung ist auf ein Jahr begrenzt. Wer einen zwei Jahre alten Bescheid hatte, hätte daraus schließen können, es sei zu spät.
+
+**Nicht geprüft:** Keine Juristin, keine Sozialberatung hat Zähler oder Rechner gelesen (Ticket 02). Die Regelbedarfsbeträge 2026 trägt die Person selbst ein. Ob ein Widerspruch eine Rückforderung aufschiebt (§ 39 SGB II), ist nicht gelesen und steht deshalb nirgends.
 
 ## 4. Handy
 

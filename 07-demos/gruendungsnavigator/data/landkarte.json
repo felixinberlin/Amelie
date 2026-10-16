@@ -1032,8 +1032,8 @@
        "t": "Frist verpasst",
        "s": "Überprüfungsantrag",
        "say": "Hiermit beantrage ich die Überprüfung des Bescheids vom [Datum] nach § 44 SGB X.",
-       "next": "Im SGB II gilt dafür ein Jahr statt vier.",
-       "frist": "1 Jahr (§ 40 SGB II)",
+       "next": "Den Antrag können Sie bis vier Jahre nach Ende des Jahres stellen, in dem der Bescheid bekannt gegeben wurde. Nachgezahlt wird aber höchstens für das Vorjahr des Antrags und das laufende Jahr: darum nicht warten.",
+       "frist": "bis 4 Jahre nach Ende des Bekanntgabejahres; Nachzahlung höchstens 1 Jahr (§ 40 SGB II)",
        "laws": [
         "sgb10_44",
         "sgb2_40"
@@ -1539,7 +1539,7 @@
   },
   {
    "f": "Überprüfungsantrag (SGB II)",
-   "ab": "1 Jahr",
+   "ab": "bis 4 Jahre nach Ende des Bekanntgabejahres; Nachzahlung 1 Jahr",
    "wer": "Jobcenter",
    "law": "sgb2_40",
    "x": 5,

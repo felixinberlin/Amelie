@@ -278,8 +278,8 @@ export function berechneFristen(e: FristEingabe): FristEintrag[] {
     out.push({
       id: 'vorschuss',
       art: 'spaetestens',
-      titelDe: 'Vorschuss: Zahlung beginnt spätestens',
-      titelEn: 'Advance payment: begins at the latest',
+      titelDe: 'Vorschuss: Beginn der Zahlung',
+      titelEn: 'Advance payment: start of payment',
       datum: plusTage(roh, 1),
       normId: 'sgb1_42',
       begruendungDe: 'Nur wenn der Anspruch dem Grunde nach besteht und die Höhe voraussichtlich längere Zeit braucht. Dann muss der Vorschuss auf Antrag gezahlt werden, spätestens nach Ablauf eines Kalendermonats nach Eingang des Antrags. Ob das neben der vorläufigen Entscheidung (§ 41a SGB II) gilt, mit einer Beratung klären.',

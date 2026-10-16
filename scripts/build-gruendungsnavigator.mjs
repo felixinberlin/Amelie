@@ -45,7 +45,7 @@ const geprueft = geprueftIso.split('-').reverse().join('.');
 
 const kern = (
   await build({
-    entryPoints: [resolve(ROOT, 'src/engine/gruendungsnavigator/paket.ts')],
+    entryPoints: [resolve(ROOT, 'src/engine/gruendungsnavigator/seite.ts')],
     bundle: true,
     format: 'iife',
     globalName: 'GNKern',
@@ -56,12 +56,13 @@ const kern = (
   })
 ).outputFiles[0].text.trim();
 
-const KOPF = '/* Erzeugt von scripts/build-gruendungsnavigator.mjs aus src/engine/gruendungsnavigator/paket.ts. Nicht von Hand ändern. */\n';
+const KOPF = '/* Erzeugt von scripts/build-gruendungsnavigator.mjs aus src/engine/gruendungsnavigator/seite.ts. Nicht von Hand ändern. */\n';
 const alsJson = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
 
 const seiten = {
   'index.html': { daten: { geprueft, normen, navigator, pakete } },
   'fall-landkarte.html': { daten: { geprueft, normen, landkarte, pakete } },
+  'jobcenter-hilfe.html': { daten: { geprueft, normen } },
 };
 
 function einsetzen(html, id, inhalt, datei) {

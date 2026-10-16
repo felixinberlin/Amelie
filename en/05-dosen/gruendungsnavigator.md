@@ -6,18 +6,18 @@ review_score: 26/35
 architecture_tier: Tier 1
 source_type: Type A
 ---
-# Start-up Navigator
+# Start-up Navigator and Job Centre Help
 
 *(German: Gründungsnavigator)*
 
-**One sentence:** A free web app that prepares people on basic income support who want to become self-employed for the **conversation** with the job centre (Jobcenter). It shows what to say, what the other side may answer, which statute applies (quoted verbatim and linked) and which deadline is running. Everything stays in the browser.
+**One sentence:** A free web app that prepares people on basic income support who want to become self-employed for the **conversation** with the job centre (Jobcenter). It shows what to say, what the other side may answer, which statute applies (quoted verbatim and linked) and which deadline is running. Plus **Job Centre Help for everyone on benefits**: a missed-appointment counter, deadlines, repayment and deductions, rent, documents, savings. Everything stays in the browser, no AI at runtime.
 
 **As of:** 11 October 2026 · **Recheck by:** October 2027 and after every SGB II amendment
 **Recipient:** **Tacheles e.V.** (Wuppertal; welfare advice, SGB II material collection) for expert review of the statute texts and inclusion in their collection. Secondarily **Sozialrat Deutschland e.V.** (relaunching its AI tools, nothing on self-employment yet). **No contact person verified; check on the association's website before sending. No verification, no mail. No mail drafted.**
 **Verdict:** 🎁 **gift**. The prototype runs and the kernel is tested.
 **Review:** 26/35 (gate 24) · V8 fun 2 · Tier 1 · Type A (statute text) · details: `06-suche/amelie-classification-log.md`, "Gründungsnavigator — Reviewer 11.10.2026"
 
-**Live demo (works on phones):** [Conversation navigator](https://felixinberlin.github.io/Amelie/gruendungsnavigator/) · [Case map](https://felixinberlin.github.io/Amelie/gruendungsnavigator/fall-landkarte.html) · Tin: https://felixinberlin.github.io/Amelie/#dose=gruendungsnavigator
+**Live demo (works on phones):** [Conversation navigator](https://felixinberlin.github.io/Amelie/gruendungsnavigator/) · [Case map](https://felixinberlin.github.io/Amelie/gruendungsnavigator/fall-landkarte.html) · [Job Centre Help](https://felixinberlin.github.io/Amelie/gruendungsnavigator/jobcenter-hilfe.html) · Tin: https://felixinberlin.github.io/Amelie/#dose=gruendungsnavigator
 
 ---
 
@@ -34,6 +34,12 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 - **AI help is unreliable today.** Job centres and social courts report AI-written letters with wrong sections and invented rulings (Higher Social Court NRW annual press conference 2026, reported by LTO 24 Apr 2026; gegen-hartz.de 9 Aug 2026: 501,667 objections in 2025).
 
 **Who suffers:** People on benefits who want to start a business, especially those without a companion or legal knowledge. Also advice centres, which answer the same questions by hand every time.
+
+**Beyond founders (needs research 16 Oct 2026):**
+- In 2025 there were 461,400 benefit cuts, 394,600 of them (85.5 %) for missed appointments, against only about 31,000 for refusing work or measures (BA press release 13/2026). Since 1 July 2026 every repeated miss costs 30 % of the standard rate; after three in a row the whole benefit including rent can stop. The letters do not show the count.
+- Repayment demands are the most frequent objection topic (17.5 %), rent and heating the second (13.8 %) and the most frequent topic in lawsuits.
+- Almost half of the 147,213 successful objections in 2025 succeeded because documents were handed in late (BA press release 3/2026).
+- Since 1 July 2026, evidence after the objection procedure no longer counts (section 41a(3)), savings allowances depend on age (section 12(2)), and rent is capped at 1.5 times the limit even in the first year (section 22(1)).
 
 ## Why now
 
@@ -55,7 +61,14 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 - 9 stations from application to exit.
 - 29 questions with 107 answers, each with reaction, next step, deadline and statute text.
 - A deadline timeline.
-- 45 statutes (one register for both pages) linked to gesetze-im-internet.de and dejure.org. Verbatim text is quoted; paraphrase is marked "Kurzfassung" (summary).
+- 59 statutes (one register for both pages) linked to gesetze-im-internet.de and dejure.org. Verbatim text is quoted; paraphrase is marked "Kurzfassung" (summary).
+
+**Job Centre Help** (`jobcenter-hilfe.html`, for everyone on benefits, starting with "What is going on?"):
+- **Missed appointment:** enter appointments, visits and interruptions. The counter keeps two counts apart: the number of misses under section 32 (from the second one 30 % for a month, start under section 31b and section 37(2) SGB X) and the series under section 7b(4) (three in a row: not reachable, warning month, in-person visit). Important reason, hardship and warning are inputs; "open" computes both outcomes. Where the BA instructions and the Wuppertal guidance disagree, it computes the instructions and shows the other reading. What no text regulates, it says. The sentence about the in-person visit is in every result.
+- **Money back:** objection deadline, review request (up to four years after the year of notification, back payment at most from 1 January of the previous year), €50 minimum, maximum deduction (10 % or 30 %, together at most 30 %, less during a cut).
+- **Rent:** grace year with extension, 1.5× cap, transition after the request to cut costs.
+- **Notice and deadlines**, **documents** (conditions of section 66(3) SGB I as a list, new cut-off section 41a(3), proof of delivery), **savings** (allowance by age per person, transfer within the household).
+- Every result shows the statute verbatim. No recalculation of a notice in euros, no case law, no wording of objections.
 
 **Kernel** (`src/engine/gruendungsnavigator/`):
 - Month deadlines per sections 187 and 188 BGB, shifted to the next working day (section 64(3) SGG). Holidays come from the Easter formula; state holidays can be added.
@@ -75,14 +88,14 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 
 ## First step
 
-**Ticket 01 is done (13 Oct 2026): the page is a template.** All sample content lives in sector packs (JSON) under `07-demos/gruendungsnavigator/data/pakete/`: web development, assembly and small repairs, mobile coffee stand, graphic design, everyday companion for older people, online trade in second-hand books (all fictional) and an empty pack. The statute register (45 statutes, one for both pages), phone tree, questions and case map are data that the tested kernel fills; a build step embeds data and kernel into the pages, which stay single files and work offline. On the page: choose a pack, create your own version in a form, download it as JSON and load it again. Met: schema and pack checks (57 tests with counter-tests), quotation check 31/31, graph and deadline tests, language guard over all packs, 360 px. Open: the stopwatch test with a second person. Details: `07-demos/gruendungsnavigator/ticket-01-vorlage.md`.
+**Ticket 01 is done (13 Oct 2026): the page is a template** with sector packs (web development, assembly, coffee stand, graphic design, everyday companion, online trade, empty); details `07-demos/gruendungsnavigator/ticket-01-vorlage.md`. **Extended on 16 Oct 2026 into Job Centre Help for everyone** (see sketch). The start-up navigator and the missed-appointment counter now go to one recipient as one tin; the recipient conflict from the job-centre round (check protocol M1) is resolved.
 
-**Ticket 02: field test and expert reading.** Two people without programming skills create their own version with the page (stopwatch, notes), and a qualified body (welfare advice service or chamber) reads one sector pack.
+**Ticket 02: expert reading and field test.** A welfare advice service (Tacheles or an unemployment advice centre) reads the missed-appointment counter with its 26 fixtures and answers the open legal questions; two people without programming skills use the pages with a stopwatch.
 
 **Done when:**
-1. Two test records are in the audit file, both under 30 minutes or with the obstacle fixed.
-2. At least one sector pack has been read by a qualified body and the changes are in.
-3. `npm run lint`, `npm test` and `npm run check:mobile` are green.
+1. A qualified person has read the counter and their answers are in the kernel as fixtures or as explicitly open points.
+2. Two test records are in the audit file: founding (own version in 30 minutes) and missed appointment (count from one's own letters in 15 minutes).
+3. `npm run lint`, `npm test`, `npm run check:mobile` and `npm run check:gn-zitate` are green.
 
 ## Where it breaks
 
@@ -98,6 +111,8 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 **Tone:** A tool that reads like a threat does harm. Presentation mode enforces the cooperative version.
 
 **Trust (first feedback, 13 Oct 2026):** On r/Grundsicherung the first reactions were "AI slop" and: "Please stop trusting an AI on legal questions … if you trust the result blindly, it often turns into rubbish." The objection is fair. A tool for people affected must say what has been checked and what has not. Remedy since then: a transparency box (written with AI assistance, no AI at runtime, quotations checked against the official source, wording not checked by lawyers, see a welfare advice service first), a check note on every quotation, "not verbatim" on every summary, and a link to the audit file.
+
+**Missed-appointment counter, open legal questions** (only a lawyer or the BA can answer them): whether a refusal under section 66 SGB I breaks the series; whether a recognised hardship breaks the series (instructions yes, Wuppertal no); how a finding in the last month of the approval period works; whether notification moves at weekends. The counter does not decide these silently but shows the question.
 
 **Disclosed:**
 - The need rests on secondary sources only (gegen-hartz.de, LTO); the IAB study has not been read.
@@ -119,6 +134,8 @@ Research on 11 Oct 2026 (check protocol G1–G4, the reviewer's counter-searches
 - **Reviewer counter-searches** (4, snippets): no conversation-preparation tool found, only advice articles and the official BA app.
 
 **Remaining gap:** the conversation rather than the letter, for founders, with checked statute texts and a view you can show the other side.
+
+**For Job Centre Help (research 16 Oct 2026):** No missed-appointment counter exists; rechner-hub.de only computes a euro amount without history, gegen-hartz.de and buergergeld.org only explain. Reused is what is free: statute, BA instructions (quoted with paragraph number), explanatory memorandum. Not copied, only linked or used for comparison: GETTSIM (AGPL, test oracle only), Thomé's KdU collection (CC BY-NC-SA), Sozialrechts-Hilfe Offenbach and Tacheles (all rights reserved), Wikipedia (CC BY-SA). Models abroad: Advicenow and Citizens Advice (guided objections, sanctions), Turn2us and entitledto (anonymous, kept up to date by specialists).
 
 ## Funding bridge (hint only)
 

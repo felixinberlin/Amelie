@@ -45,6 +45,16 @@ export const GruendungsnavigatorSimulator: React.FC<Props> = ({ lang, isEmbedded
   return (
     <div className={`space-y-5 ${isEmbedded ? '' : 'p-4'}`}>
       <div className="grid gap-3 sm:grid-cols-2">
+        <a href={`${BASE}jobcenter-hilfe.html`} target="_blank" rel="noopener noreferrer"
+          className="flex items-start gap-3 rounded-xl border border-[var(--m-line-strong)] bg-[var(--m-surface)] p-4 hover:border-[var(--m-copper)] transition-colors sm:col-span-2">
+          <ShieldCheck className="w-5 h-5 mt-0.5 text-[var(--m-accent)] shrink-0" />
+          <span>
+            <span className="block font-bold text-sm text-[var(--m-ink)]">{de ? 'Jobcenter-Hilfe für alle öffnen' : 'Open Job Centre Help for everyone'} <ExternalLink className="inline w-3 h-3" /></span>
+            <span className="block text-xs text-[var(--m-ink-soft,#6b5b4b)] mt-1">{de
+              ? 'Meldeversäumnis-Zähler (§ 32, § 7b), Rückforderung und Aufrechnung, Miete, Fristen, Unterlagen, Vermögen. Offline, ohne KI zur Laufzeit.'
+              : 'Missed-appointment counter (sections 32, 7b), repayment and deductions, rent, deadlines, documents, savings. Offline, no AI at runtime.'}</span>
+          </span>
+        </a>
         <a href={BASE} target="_blank" rel="noopener noreferrer"
           className="flex items-start gap-3 rounded-xl border border-[var(--m-line-strong)] bg-[var(--m-surface)] p-4 hover:border-[var(--m-copper)] transition-colors">
           <MessagesSquare className="w-5 h-5 mt-0.5 text-[var(--m-accent)] shrink-0" />
@@ -61,8 +71,8 @@ export const GruendungsnavigatorSimulator: React.FC<Props> = ({ lang, isEmbedded
           <span>
             <span className="block font-bold text-sm text-[var(--m-ink)]">{de ? 'Fall-Landkarte öffnen' : 'Open case map'} <ExternalLink className="inline w-3 h-3" /></span>
             <span className="block text-xs text-[var(--m-ink-soft,#6b5b4b)] mt-1">{de
-              ? '9 Stationen vom Antrag bis zum Ausstieg, 107 Antworten mit Frist und Normtext, Fristen-Zeitstrahl, 45 Normen.'
-              : '9 stations from application to exit, 107 answers with deadline and statute text, deadline timeline, 45 statutes.'}</span>
+              ? '9 Stationen vom Antrag bis zum Ausstieg, 107 Antworten mit Frist und Normtext, Fristen-Zeitstrahl, 59 Normen.'
+              : '9 stations from application to exit, 107 answers with deadline and statute text, deadline timeline, 59 statutes.'}</span>
           </span>
         </a>
       </div>
