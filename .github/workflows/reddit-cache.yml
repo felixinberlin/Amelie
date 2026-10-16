@@ -37,7 +37,13 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add public/data/reddit.json
           git commit -m "Reddit-Cache: nächtlicher Lauf"
-          git push origin HEAD:main
+          # Das Holen dauert ~15 Minuten; kommt in der Zeit ein Push auf main,
+          # wird der eigene Commit neu aufgesetzt (bei reddit.json gewinnt dieser Lauf).
+          for try in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push origin HEAD:main && break
+            [ "$try" = 3 ] && exit 1
+            sleep $((try * 10))
+          done
           # Pushes mit GITHUB_TOKEN lösen keinen Deploy aus, deshalb explizit.
           gh workflow run deploy.yml --ref main
         env:
