@@ -4,15 +4,15 @@ Erzeugt mit `node scripts/inventory-lab-inbox.mjs` aus den validierten immutable
 
 Domains umfassen alle parsebaren URL-Felder, auch Konkurrentenlinks und Hintergrundquellen. Quote-Status stammt unverändert vom Lab; wiederholte identische Findings werden einmal gezählt. Fehlende Felder beweisen keine fehlende Recherche. Wörtliche Bestands-ID-Erwähnungen sind Hinweise zum Nachlesen; ausbleibende Treffer schließen Überschneidungen nicht aus.
 
-Gesamt: **79 Batches / 169 Ideen**. Status: archived: 34; needs_research: 31; processed: 10; received: 4.
+Gesamt: **88 Batches / 171 Ideen**. Status: archived: 34; needs_research: 31; processed: 10; received: 13.
 
 | Engine | Batches | Ideen |
 | --- | ---: | ---: |
-| inversion | 19 | 39 |
-| lacunar | 25 | 79 |
-| mark | 19 | 40 |
-| review | 11 | 0 |
-| scarcity | 5 | 11 |
+| inversion | 22 | 39 |
+| lacunar | 27 | 80 |
+| mark | 20 | 41 |
+| review | 12 | 0 |
+| scarcity | 7 | 11 |
 
 ## Wiederholte Titel
 
@@ -413,6 +413,54 @@ URL-Domains im Originalrecord: ai.google.dev, bibliotheksportal.de, cms.scratchf
 Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: agent-postmortem-recorder](../05-dosen/agent-postmortem-recorder.md), [Dose: ghost-replay](../05-dosen/ghost-replay.md), [Dose: raeucher-sim](../05-dosen/raeucher-sim.md), [Grab: repair-cafe-diagnose](../src/data/graeber.json), [Grab: nachschraub-probe](../src/data/graeber.json).
+
+Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
+
+### amelie-lab-inversion-inversion-20261015-construction-workers-de-670e945ca7cb2033
+
+Engine: inversion; Status: received; Ideen: 0.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-15-amelie-lab-inversion-inversion-20261015-construction-workers-de-670e945ca7cb2033.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-15-amelie-lab-inversion-inversion-20261015-construction-workers-de-670e945ca7cb2033.md)
+
+Absicht: Bauarbeiter in Deutschland: eine vollständige Erkundungsrunde zu belegten Aufgaben, vorhandenen Hilfen und möglichen öffentlichen Werkzeugen, besonders für Beschäftigte mit mobilen Arbeitsverhältnissen. Keine Vertex-Aufrufe, keine Google Maps; WebSearch und Primärabruf.
+
+URL-Domains im Originalrecord: ai.google.dev, api.international.soka-bau.de, apppage.net, apps.apple.com, arbeitszeit-app.de, betriebsseelsorge.de, blog.google, blog.soka-bau.de, bmas.bund.de, buildmyevidence.vercel.app, de.wikipedia.org, deepmind.google, developers.googleblog.com, devpost.com, discuss.ai.google.dev, edworkforce.house.gov, en.wikipedia.org, ez-time.app, fairworkcenter.org, firstlibrarian.blogspot.com, hilfe-arbeitgeber-onlineservice.soka-bau.de, international.soka-bau.de, learning.soka-bau.de, library.fes.de, ndlon.org, olsconnect.powerappsportals.us, opus.lib.uts.edu.au, play.google.com, s1c1aabc72b3efce1.jimcontent.com, table.media, timeshape.de, wagejustice.org, wm.baden-wuerttemberg.de, workerjustice.org, workerwagerights.com, www.adityavashistha.com, www.arbeitsagentur.de, www.arbeitsmarktreform.de, www.australianunions.org.au, www.bmas.de, www.bundestag.de, www.cavanaugh-law.net, www.dashandwerk.de, www.dgb.de, www.diecsc.be, www.dol.gov, www.fair-arbeiten.eu, www.faire-integration.de, www.faire-mobilitaet.de, www.faire-woche.de, www.faire.com, www.faiyr.app, www.fisherphillips.com, www.ilo.org, www.in.nrw, www.lawfficespace.com, www.millersville.edu, www.mobifair.eu, www.mobil-mit-behinderung.de, www.nelp.org, www.reddit.com, www.scribd.com, www.soka-bau.de, www.timetac.com, www.ultimo-verlag.de, www.univision.com, www.workersjustice.org, www.zdb.de, www.zeiterfassung-fdm.de, zeiterfassung.app. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
+
+Wörtlich erwähnte Bestands-IDs: [Dose: denkmal-verlaufsblick](../05-dosen/denkmal-verlaufsblick.md), [Dose: dose-nurse-shift-guardian](../05-dosen/dose-nurse-shift-guardian.md).
+
+Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
+
+### amelie-lab-inversion-inversion-20261015T173000-bau-gadgets-5bc56ae642edf8ae
+
+Engine: inversion; Status: received; Ideen: 0.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-15-amelie-lab-inversion-inversion-20261015T173000-bau-gadgets-5bc56ae642edf8ae.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-15-amelie-lab-inversion-inversion-20261015T173000-bau-gadgets-5bc56ae642edf8ae.md)
+
+Absicht: Gadgets am Bau: Was Bauarbeiter heute schon am Körper, am Werkzeug oder auf der Baustelle tragen (Smart-Helme, Wearables, Laser-Empfänger, Werkzeug-Tracker, Akku-Systeme mit App, Smartglasses, Diktier-/Funkgeräte) — welches dieser Systeme lässt sich so umdrehen, dass es dem Arbeiter selbst dient statt dem Betrieb, offline und mit eigener Hardware unter 150 €?
+
+URL-Domains im Originalrecord: aseestant.ceon.rs, bgbau-medien.de, bilder01.dabag.ch, cirrusresearch.co.uk, core.ac.uk, dguv.de, events.engineering.oregonstate.edu, jcaa.caa-aca.ca, lavg.brandenburg.de, maintworld.com, old.maintworld.com, presse.dguv.de, publica.fraunhofer.de, publikationen.dguv.de, shop-fgh.thies-co.de, shop.thies-co.de, stacks.cdc.gov, toolbrothers.de, toolbrothers.nl, www-igd.igd.fraunhofer.de, www.athene-center.de, www.bgbau.de, www.constructionenquirer.com, www.dguv.de, www.hsmsearch.com, www.ihk-siegen.de, www.international-construction.com, www.ioa.org.uk, www.komnet.nrw.de, www.ncbi.nlm.nih.gov, www.pbctoday.co.uk, www.reca.pl, www.theconstructionindex.co.uk, www.umu.se. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
+
+Wörtlich erwähnte Bestands-IDs: keine.
+
+Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
+
+### amelie-lab-inversion-inversion-20261015T190000-bau-bezahlt-d6c0d132f15b024c
+
+Engine: inversion; Status: received; Ideen: 0.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-15-amelie-lab-inversion-inversion-20261015T190000-bau-bezahlt-d6c0d132f15b024c.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-15-amelie-lab-inversion-inversion-20261015T190000-bau-bezahlt-d6c0d132f15b024c.md)
+
+Absicht: Bezahlt werden am Bau: Maurer, Putzer und Fliesenleger im Akkord oder als Kolonne werden oft nach Menge bezahlt (m², Stück, 'per thousand bricks' in Großbritannien, Aufmaß nach VOB/C). Wer misst, wer zählt, wer zieht Öffnungen ab — und wie kann der Arbeiter selbst mit dem Handy oder einem billigen Gadget seine Menge belegen, damit ihm kein Geld verloren geht, ohne Zusatzarbeit?
+
+URL-Domains im Originalrecord: akumar.com, apps.apple.com, bau.de, bau.net, bme.vgtu.lt, building.co.uk, caadria2024.org, caselaw.nationalarchives.gov.uk, cite.case.law, conisbroughanddenabyhistory.org.uk, constructionmanagement.co.uk, decisions.civilresolutionbc.ca, docs.infor.com, eli.gov.pl, evergabe.de, finehomebuilding.com, forum.buildhub.org.uk, forum.creuniversity.com, jobjump.net, journals.vilniustech.lt, lr.eu.psf.lt, lrakn.de, measuresquare.com, myjobquote.co.uk, mywage.co.za, new.risingsunartscentre.org, oanor.com, pracuj.pl, publica.fraunhofer.de, publications.rwth-aachen.de, rcimag.co.uk, secure.dgb.de, spanish.alibaba.com, superbiz.se.pl, support.worldcoffeeresearch.org, www.ableskills.co.uk, www.anwalt24.de, www.aplikuj.pl, www.bauexpertenforum.de, www.baunetzwissen.de, www.bauprofessor.de, www.bayern.landtag.de, www.bendigoadvertiser.com.au, www.boeckler.de, www.bosch-professional.com, www.building.co.uk, www.checkbook.org, www.clean-invoice.com, www.constructionenquirer.com, www.diynot.com, www.flooringclarity.com, www.gehalt.de, www.gvoon.de, www.hausbau-forum.de, www.houzz.com, www.iaarc.org, www.mtrlegal.com, www.myjobquote.co.uk, www.oebv.at, www.onboard-jobs.co.uk, www.repository.cam.ac.uk, www.roechling.com, www.self-build.co.uk, www.softguide.de, www.stepstone.de, www.tacto.ai, www.trade2base.com, www.trustedshops.de, www.windowanddoor.com, www.winworker.de, www.wko.at, zigaflow.com. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
+
+Wörtlich erwähnte Bestands-IDs: [Dose: abbundzeichen-fundbuch](../05-dosen/abbundzeichen-fundbuch.md), [Dose: denkmal-verlaufsblick](../05-dosen/denkmal-verlaufsblick.md).
 
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
@@ -965,6 +1013,40 @@ Wörtlich erwähnte Bestands-IDs: [Dose: denkmal-verlaufsblick](../05-dosen/denk
 
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
+### amelie-lab-lacunar-lacunar-20261015T173000-bau-vision-55725e91c77294e3
+
+Engine: lacunar; Status: received; Ideen: 1.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-15-amelie-lab-lacunar-lacunar-20261015T173000-bau-vision-55725e91c77294e3.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-15-amelie-lab-lacunar-lacunar-20261015T173000-bau-vision-55725e91c77294e3.md)
+
+Absicht: KI-Vision für Bauarbeiter: Welche Aufgabe auf der Baustelle könnte eine Kamera mit einem lokal laufenden Bildmodell (Handy, Kamera-Clip, günstige Smartglasses) für den Arbeiter selbst lösen — kollidiert mit einem fernen Fachgebiet, das dasselbe Sehproblem schon gelöst hat? Offline, arbeiterseitig, keine Überwachung, keine Sicherheitsfreigabe.
+
+URL-Domains im Originalrecord: app.olivibra.com, bau.de, bau.net, cdn.mediapool.wackerneusongroup.com, delibra.bg.polsl.pl, digital.ub.uni-paderborn.de, doaj.org, evergabe.de, mediatum.ub.tum.de, patents.google.com, rapid-floor.de, rosap.ntl.bts.gov, rucore.libraries.rutgers.edu, www.aimil.com, www.bauexpertenforum.de, www.baunetzwissen.de, www.beton.org, www.din.de, www.hausjournal.net, www.heinze.de, www.iaarc.org, www.jsce.or.jp, www.kann.de, www.loxforum.com, www.txdot.gov, www.wackerneuson.de, www.zeppelin-rental.de. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
+
+Wörtlich erwähnte Bestands-IDs: [Grab: holz-sortierklasse-vorort](../src/data/graeber.json), [Grab: dop-scanner-stahl](../src/data/graeber.json), [Grab: elektroschrott-demontage-lotse](../src/data/graeber.json).
+
+| Lokale ID | Originaltitel / Idee |
+| --- | --- |
+| C2 | Rüttelplan vorab: Foto der bewehrten Schalung, das Handy legt aus Flaschen-Ø ein Eintauchraster darauf (registriert an Bewehrung und Schalungskanten statt an AR-Markern); beim Betonieren zeigt die Livesicht (Handy am Stativ/Clip) den nächsten geplanten Punkt und hakt erkannte Eintauchungen ab; alles lokal, nichts hochgeladen. |
+
+### amelie-lab-lacunar-lacunar-20261015T190000-bau-sicher-22da412cb6ae4167
+
+Engine: lacunar; Status: received; Ideen: 0.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-15-amelie-lab-lacunar-lacunar-20261015T190000-bau-sicher-22da412cb6ae4167.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-15-amelie-lab-lacunar-lacunar-20261015T190000-bau-sicher-22da412cb6ae4167.md)
+
+Absicht: Sicher bauen beim Wiederaufbau nach Erdbeben: Maestros de obra und Selbstbauer (Kolumbien nach dem Beben vom August 2026, Peru, Nepal) bauen ausgesteiftes Mauerwerk, oft mit Fehlern an Ringankern, Bügeln und Ziegeln, und Zuschüsse hängen an Abnahmen. Welches billige, unsichtbare Handy-Werkzeug hilft dem Maurer selbst, den Fehler vor dem Betonieren zu sehen — kollidiert mit einem fernen Fachgebiet, das dasselbe Prüfproblem gelöst hat? Nie eine Abnahme oder Statikfreigabe.
+
+URL-Domains im Originalrecord: ai.google.dev, andina.pe, appgoblin.info, apps.apple.com, bibliotecadigital.udea.edu.co, camjol.info, canaln.pe, civilespro.gumroad.com, countthings.com, developer.tekla.com, docsearch.algolia.com, dspace.ups.edu.ec, es.scribd.com, fieldtech.trimble.com, forasoft.com, forumdacasa.com, garuda.kemdikbud.go.id, github.com, image-ppubs.uspto.gov, infectioncontroltoday.com, infotechnology.fhwa.dot.gov, iris.unicampania.it, journal.acorn.org.au, kathmandupost.com, link.springer.com, lppm.itb.ac.id, materials.measur.ca, mitigation.eeri.org, moodle.upm.es, mwm.ai, open-exam-prep.com, pcte.com.au, pr.www.ipros.com, proactivo.com.pe, pruebas.educatic.unam.mx, pub.dev, public-library.safetyculture.io, reliefweb.int, repositorio.pucp.edu.pe, repositorioacademico.upc.edu.pe, ruor.uottawa.ca, snyk.io, strucalc.com, techsupport.sds2.com, tesis.pucp.edu.pe, testingindonesia.co.id, thehimalayantimes.com, trome.com, vivienda.com.co, webdes.acerosarequipa.com, webstore.ansi.org, www.aorn.org, www.bluradio.com, www.cismid.uni.edu.pe, www.clinician.com, www.elcolombiano.com, www.elpais.com.co, www.eng-tips.com, www.falabella.com.pe, www.homecenter.com.co, www.ideastatica.com, www.infralens.in, www.jica.go.jp, www.jsdelivr.com, www.nepjol.info, www.ntn24.com, www.pci.org, www.pix4d.com, www.preventionweb.net, www.screeningeagle.com, www.sodimac.com.pe, www.stryker.com, www.zapopan.gob.mx, zenodo.org. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
+
+Wörtlich erwähnte Bestands-IDs: keine.
+
+Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
+
 ### amelie-lab-mark-mark-20260930T140813-8c17dc-6b3a0db0ad90c4a3
 
 Engine: mark; Status: archived; Ideen: 2.
@@ -1366,6 +1448,24 @@ Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgef
 | V2 | ResilienzLotse – Psychosozialer Peer-Navigator & Krisenbegleitung (§ 16a Nr. 3 SGB II) |
 | V3 | KiezEltern – Notfall-Betreuungspool & BuT-Automatisierung für Alleinerziehende |
 
+### amelie-lab-mark-mark-20261015T200000-bau-top2-2fa26bdf339b4231
+
+Engine: mark; Status: received; Ideen: 1.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-15-amelie-lab-mark-mark-20261015T200000-bau-top2-2fa26bdf339b4231.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-15-amelie-lab-mark-mark-20261015T200000-bau-top2-2fa26bdf339b4231.md)
+
+Absicht: Félix (Amélie-Lab, Thema Bau-Gadgets & KI-Vision, nach Round 2): kommerzielle Prüfung der zwei besten Kandidaten des Round-2-Richters. V1: eigene Vibrations-Belastungsspur der Beschäftigten für ein späteres BK-2103/2104-Verfahren. V2: Öffnungs-Gegenrechnung, ein Foto der fertigen Wand ergibt die eigene m²-Zahl der Kolonne nach der Übermessregel der VOB/C DIN 18330 für den Leistungslohn. Bindend: Zahlungsbereitschaftstest (wer zahlt, Preisanker, Amortisation in Arbeiterbegriffen mit Rechnung, Kaufweg, Einwand des konservativen Gewerks); ohne Zahler kein Dossier.
+
+URL-Domains im Originalrecord: bau.de, constructionmanagement.co.uk, igbau.de, publikationen.dguv.de, www.arbeitsrechte.de, www.auftragsbank.de, www.bauprofessor.de, www.bgbau.de, www.bosch-professional.com, www.bpb.de, www.dguv.de, www.digit.fyi, www.iww.de, www.levitt-safety.com, www.notebookcheck.com, www.pcwelt.de, www.scottishfinancialnews.com, www.softguide.de, www.theconstructionindex.co.uk, www.volders.de. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): verified: 1.
+
+Wörtlich erwähnte Bestands-IDs: keine.
+
+| Lokale ID | Originaltitel / Idee |
+| --- | --- |
+| V2 | Öffnungs-Gegenrechnung: die eigene m²-Zahl der Kolonne nach DIN 18330 |
+
 ### amelie-lab-review-altbau-thermal-30a7a326ad0dbe1d
 
 Engine: review; Status: needs_research; Ideen: 0.
@@ -1417,6 +1517,22 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): verified: 8.
 Wörtlich erwähnte Bestands-IDs: keine.
 
 Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
+
+Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
+
+### amelie-lab-review-construction-workers-de-d60514dc1bcd600f
+
+Engine: review; Status: received; Ideen: 0.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-15-amelie-lab-review-construction-workers-de-d60514dc1bcd600f.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-15-amelie-lab-review-construction-workers-de-d60514dc1bcd600f.md)
+
+Absicht: Welche belegten Aufgaben und Zusatzlücken bestehen für Bauarbeiter in Deutschland bei eigenen Nachweisen und Beratung?
+
+URL-Domains im Originalrecord: ai.google.dev, devpost.com, igbau.de, ndlon.org, www.bgbau.de, www.faire-mobilitaet.de, www.soka-bau.de. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): unchecked: 10.
+
+Wörtlich erwähnte Bestands-IDs: keine.
 
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
@@ -1669,3 +1785,35 @@ Verarbeitungsnotiz: Archiviert 14.10.2026: unverifizierte Brandenburg-Dateien (1
 | C1 | FeldWacht-DIY (SchwarzwildSchneise): Eigensicherer €38 DIY-Vision-Bausatz im IP67-Spelsberg-Gehäuse auf DIN-Hutschiene mit 32700-LiFePO4-Zelle und 5W-Solarpanel zur Erkennung von Schwarzwild im Funkloch via 12-Byte LoRaWAN. |
 | C2 | ReetWacht / BalkenAuge: Eigensicherer €52 Denkmalschutz- & ATEX-Bausatz mit Niedrigstlux-DSSC-Solarzellen und 50F-Superkondensatoren zur optischen Überwachung von Dachbalkendurchbiegung und Glimmnestern. |
 | C3 | GlutHorizont: Forsttauglicher €44 Baumstamm-Mikrosensor-Bausatz mit vertikalem bifazialem 75°-Solarband und LTO-Zellen zur Erkennung bodennaher Glimmrauch-Vektoren unter der Kiefernkrone bei Waldbrandstufe 5. |
+
+### amelie-lab-scarcity-scarcity-20261015T173000-bau-constraint-e2d82d90d1a63f03
+
+Engine: scarcity; Status: received; Ideen: 0.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-15-amelie-lab-scarcity-scarcity-20261015T173000-bau-constraint-e2d82d90d1a63f03.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-15-amelie-lab-scarcity-scarcity-20261015T173000-bau-constraint-e2d82d90d1a63f03.md)
+
+Absicht: Bauarbeiter auf der Baustelle: eine harte, belegte Einschränkung ihres Arbeitsalltags (z. B. Handschuhe, Lärm über 85 dB, kein Netz im Rohbau/Keller, Staub auf Linsen, mehrsprachige Kolonnen) wählen und daraus Gadget- oder KI-Vision-Werkzeuge erfinden, die ohne diese Einschränkung zusammenbrechen würden — arbeiterseitig, offline, eigene Hardware unter 150 €.
+
+URL-Domains im Originalrecord: b2b-at.vwr.com, bgn-branchenwissen.de, blog.founders.illinois.edu, blog.google, blog.tensorflow.org, courses.physics.illinois.edu, dguv.de, docs.edgeimpulse.com, geekchamp.com, gesetze.legal, github.com, goo.gle, lavg.brandenburg.de, lxgesetze.de, medien.bgetem.de, mlsysbook.ai, mobilemarketingmagazine.com, presse.dguv.de, pub.dega-akustik.de, publikationen.dguv.de, scuttle.klotz.me, tu-dresden.de, umwelt-online.de, vorschriften.bgn-branchenwissen.de, voxbooster.com, www.aerzteblatt.de, www.api-lanaudiere.ucs.inrs.ca, www.bauindustrie.de, www.baulinks.de, www.baustoffshop.de, www.bgbau.de, www.deutsche-handwerks-zeitung.de, www.dguv.de, www.fonearena.com, www.gesetze-im-internet.de, www.googlewatchblog.de, www.husqvarna.com, www.iwantek.com, www.komnet.nrw.de, www.mimikama.org, www.netzwelt.de, www.t-online.de, www.woodworker.de. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
+
+Wörtlich erwähnte Bestands-IDs: keine.
+
+Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
+
+### amelie-lab-scarcity-scarcity-20261015T190000-bau-zeit-427a6cc30a3db50a
+
+Engine: scarcity; Status: received; Ideen: 0.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-15-amelie-lab-scarcity-scarcity-20261015T190000-bau-zeit-427a6cc30a3db50a.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-15-amelie-lab-scarcity-scarcity-20261015T190000-bau-zeit-427a6cc30a3db50a.md)
+
+Absicht: Arbeitszeit sparen am Bau: Was man erst sieht, wenn man es aufbricht (hohler Putz, Hohlstellen, verdeckte Leitungen, unbekannte Schichten) kostet Maurern und Putzern bei Sanierung und Reparatur Zeit, Nacharbeit und Streit ums Geld. Wähle eine harte, belegte Einschränkung dieser Art und erfinde billige, unsichtbare Werkzeuge (Handy, Klopfen, Licht, Ton), die ohne diese Einschränkung sinnlos wären.
+
+URL-Domains im Originalrecord: appgoblin.info, apps.apple.com, bau.de, bau.net, bizhub365.com, camdocs.camden.gov.uk, developers.google.com, digital.ub.uni-paderborn.de, imabarikita-h.esnet.ed.jp, imabarinishi-h.esnet.ed.jp, image-ppubs.uspto.gov, inventx.mmu.edu.my, it.mathworks.com, jp.mathworks.com, kawanoishi-h.esnet.ed.jp, logs.awe.cpanel.net, meister-job.de, mergeek.com, midsuffolk.gov.uk, mwm.ai, nap.nationalacademies.org, patents.google.com, ph01.tci-thaijo.org, thewearify.com, www.bizhub365.com, www.bluestacks.com, www.city.imabari.ehime.jp, www.city.sapporo.jp, www.fh-potsdam.de, www.hamuch.com, www.hausbau-forum.de, www.ihbc.org.uk, www.ipros.com, www.mathworks.com, www.maxit.de, www.mc-bauchemie.de, www.mlit.go.jp, www.mybuilder.com, www.myjobquote.co.uk, www.nap.edu, www.newforestnpa.gov.uk, www.periodproperty.co.uk, www.pref.ehime.jp, www.pref.saga.lg.jp, www.realhomes.com, www.spelthorne.gov.uk, www.tendringdc.gov.uk, www.woodworkingnetwork.com. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
+
+Wörtlich erwähnte Bestands-IDs: keine.
+
+Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.

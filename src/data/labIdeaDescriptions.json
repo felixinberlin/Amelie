@@ -1690,6 +1690,26 @@
         "title": "Let children find bugs in an AI game",
         "description": "Children would measure safe honey demonstration samples and first write down the results they expect. They would then test an AI built checking game with deliberate bugs and show when it makes the wrong decision."
       }
+    },
+    "amelie-lab-lacunar-lacunar-20261015T173000-bau-vision-55725e91c77294e3:C2": {
+      "de": {
+        "title": "Rüttelplan vorab für das Betonieren",
+        "description": "Vor dem Betonieren fotografiert die Kolonne die bewehrte Schalung, und das Handy legt ein Raster der Stellen darauf, an denen der Rüttler eintauchen muss. Beim Betonieren zeigt es den nächsten Punkt und hakt erledigte ab, damit keine Stelle unverdichtet bleibt. Alles läuft lokal."
+      },
+      "en": {
+        "title": "Plan the vibrator points before pouring concrete",
+        "description": "Before pouring, the crew photographs the reinforced formwork and the phone lays a grid of points where the poker vibrator must go in. During the pour it shows the next point and ticks off finished ones, so no spot stays uncompacted. Everything runs on the device."
+      }
+    },
+    "amelie-lab-mark-mark-20261015T200000-bau-top2-2fa26bdf339b4231:V2": {
+      "de": {
+        "title": "Eigene Quadratmeter-Zahl für Maurerkolonnen",
+        "description": "Eine Offline-App rechnet für Maurer im Akkord die Wandfläche nach der Regel der DIN 18330: Öffnungen bis 2,50 m² werden übermessen, größere abgezogen. So kommt die Kolonne mit ihrer eigenen Zahl zum gemeinsamen Aufmaß und verliert kein Geld durch falsche Abzüge."
+      },
+      "en": {
+        "title": "Masonry crews' own square metre count",
+        "description": "An offline app works out wall area for piecework bricklayers using the DIN 18330 rule: openings up to 2.50 m² are not deducted, larger ones are. The crew brings its own figure to the joint measurement and does not lose pay through wrong deductions."
+      }
     }
   }
 }
