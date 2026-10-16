@@ -1,0 +1,426 @@
+{
+  "batch_id": "amelie-lab-inversion-inversion-20261015T173000-bau-gadgets-5bc56ae642edf8ae",
+  "contract_version": "1.0.0",
+  "created_at": "2026-10-15T14:51:38+00:00",
+  "engine": "inversion",
+  "existence_check": false,
+  "ideas": [],
+  "intent": "Gadgets am Bau: Was Bauarbeiter heute schon am Körper, am Werkzeug oder auf der Baustelle tragen (Smart-Helme, Wearables, Laser-Empfänger, Werkzeug-Tracker, Akku-Systeme mit App, Smartglasses, Diktier-/Funkgeräte) — welches dieser Systeme lässt sich so umdrehen, dass es dem Arbeiter selbst dient statt dem Betrieb, offline und mit eigener Hardware unter 150 €?",
+  "lab_id": "amelie-lab",
+  "model": "claude-subagent (stand-in, Vertex unavailable; searches: WebSearch)",
+  "record": {
+    "accounting": {
+      "cost_usd": 0.0,
+      "model_calls": 0,
+      "search_calls": 7,
+      "search_queries": 7
+    },
+    "contract_version": "1.1.0",
+    "created_at": "2026-10-15T14:51:38+00:00",
+    "intent": "Gadgets am Bau: Was Bauarbeiter heute schon am Körper, am Werkzeug oder auf der Baustelle tragen (Smart-Helme, Wearables, Laser-Empfänger, Werkzeug-Tracker, Akku-Systeme mit App, Smartglasses, Diktier-/Funkgeräte) — welches dieser Systeme lässt sich so umdrehen, dass es dem Arbeiter selbst dient statt dem Betrieb, offline und mit eigener Hardware unter 150 €?",
+    "log_entry": "<!-- proposed by the Lab's Inversion agent, run inversion-20261015T173000-bau-gadgets; nothing was written to Amélie -->\n| 2026-10-15 | Lab | Reactec HAVwear / R-Link (Vibrations-Wearable mit Arbeitgeber-Plattform), LärmVibrationsArbSchV § 9 (Klasse C) | OP-2 | 8 | 0 (ungeprüft): none | Beschäftigte behalten über Betriebswechsel keine eigene Spur ihrer Vibrationsbelastung; Bedarf und Gewicht im BK-Verfahren unbelegt. |\n\n### Inversion run inversion-20261015T173000-bau-gadgets — 2026-10-15 (intent: Gadgets am Bau: Was Bauarbeiter heute schon am Körper, am Werkzeug oder auf der Baustelle tragen (Smart-Helme, Wearables, Laser-Empfänger, Werkzeug-Tracker, Akku-Systeme mit App, Smartglasses, Diktier)\n- **Learned:** Hand-Arm-Vibration ist der Gadget-Fall mit klarer Asymmetrie (Arbeitgeber-Cloud gegen Gesundheitsrisiko der Beschäftigten), aber die Smartwatch-Dosisschätzung ist seit 2016 Forschungsstand (AGIS/IFA) und kein neuer Auslöser.\n- **Mistake:** Der Kandidatensatz baute fast ganz auf einem Messverfahren auf; als dessen Neuheit fiel, fielen C1 und C3 gemeinsam. PDFs konnten nicht gelesen werden, die Belege sind Suchschnipsel.\n- **Next time:** Zuerst klären, ob eigene Aufzeichnungen Versicherter im BK-Verfahren 2103/2104 überhaupt verwertet werden (BG-BAU-Berufskrankheitenabteilung, Merkblatt, Fallbericht), erst dann über Hardware nachdenken; dazu PDF-Text (AGIS-Abschlussbericht, IFA-Smartwatch-Beitrag 2020) lesbar machen.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): Gibt es Apps oder Smartwatches, mit denen Beschäftigte ihre eigene tägliche Hand-Arm-Vibrationsbelastung selbst aufzeichnen, ohne Arbeitgeber-Cloud? -> https://events.engineering.oregonstate.edu/node/86, https://publica.fraunhofer.de/handle/publica/406871, https://www-igd.igd.fraunhofer.de/files/media/biblio/2016/2016_matthies_agis_automatic_tool_detection_and_hand-arm_vibration_estimation.pdf, https://presse.dguv.de/projektdatenbank/0375/2017_02_03_agis_abschlussbericht_f.pdf\n  - C2 (ok): Wo finden Bauarbeiter die Vibrationskennwerte ihrer Maschinen, und gibt es Datenbanken oder Apps mit Herstellerangaben zur Hand-Arm-Vibration? -> https://publikationen.dguv.de/widgets/pdf/download/article/2210, https://LAVG.Brandenburg.de/sixcms/media.php/9/Mbl_HAV_VO.pdf, https://publikationen.dguv.de/widgets/pdf/download/article/2389, https://publikationen.dguv.de/widgets/pdf/download/article/2232\n  - C3 (ok): Wie ermittelt die Unfallversicherung bei Verdacht auf BK 2103/2104 die frühere Vibrationsbelastung, und welche eigenen Aufzeichnungen der Versicherten zählen? -> https://dguv.de/ifa%3B/forschung/projektverzeichnis/ifa_4160.jsp, https://www.dguv.de/ifa;/forschung/projektverzeichnis/ifa_4160.jsp, https://dguv.de/ifa/forschung/projektverzeichnis/ifa_4160.jsp, https://dguv.de/ifa%3B/forschung/projektverzeichnis/bgia_4098.jsp\n",
+    "model": "claude-subagent (stand-in, Vertex unavailable; searches: WebSearch)",
+    "plan": {
+      "area": "Am Körper oder Werkzeug getragene Baustellen-Gadgets, deren Daten heute beim Betrieb oder Hersteller landen, umgedreht zugunsten der Beschäftigten (offline, eigene Hardware unter 150 €).",
+      "class_hint": "C",
+      "contract_version": "1.0.0",
+      "mode_list": [
+        "Smart-Helm mit Sturzerkennung, der die Bauleitung alarmiert.",
+        "Kamera erkennt fehlende Schutzausrüstung auf der Baustelle.",
+        "Werkzeug-Tracker per Bluetooth-Tag gegen Diebstahl.",
+        "Hitzestress-Wearable mit Warnung an den Vorarbeiter.",
+        "Smartglasses mit Bauplan-Overlay (Augmented Reality).",
+        "Sprachdiktat für das Bautagebuch.",
+        "Echtzeit-Übersetzer für mehrsprachige Kolonnen.",
+        "Lärmmess-App mit Dezibel-Anzeige.",
+        "Akku-App zum Sperren und Orten von Maschinen.",
+        "Laser-Empfänger mit Smartphone-Anbindung zum Nivellieren.",
+        "Zeiterfassung per Geofence am Bauzaun.",
+        "Kollisionswarner zwischen Bagger und Fußgänger."
+      ],
+      "notes": "Claude-Stand-in, Suchen per WebSearch (Schnipsel, PDFs nicht lesbar: kein pdftotext/pypdf im Arbeitsbereich). Gadget-Familie: Vibrationsdosimeter am Handgelenk und vernetzte Akku-Werkzeuge. Speicherprüfung (bib find) vor der Kandidatenbildung: 'hand-arm' ohne Treffer, 'vibration' nur Haushalts-Geräuschdiagnose. Lohn-/Stundennachweise des früheren Laufs bewusst ausgeschlossen. Kein Places-Aufruf. Einziger Operator: OP-2.",
+      "target_queries": [
+        "Wie meldet das am Handgelenk getragene Hand-Arm-Vibrationsmessgerät HAVwear von Reactec seine Daten, und wer sieht sie?",
+        "Welche Auslöse- und Grenzwerte gelten am Bau für Hand-Arm-Vibration, und wie schätzen BG BAU und IFA die Tagesbelastung aus Einwirkzeit und Kennwert ab?",
+        "Zeigen Akku-Werkzeug-Apps wie Milwaukee ONE-KEY, Hilti oder Bosch dem Anwender Laufzeit oder Vibrationstagesdosis an?"
+      ]
+    },
+    "prior_art": [
+      {
+        "answer": "Laut Suchschnipseln: AGIS (Fraunhofer IGD mit IFA, Projekt FF-FP 0375, abgeschlossen 03/2016) erkennt auf einer unveränderten handelsüblichen Smartwatch per Mikrofon und Beschleunigungssensor das Werkzeug und schätzt die Tagesdosis (72 % Erkennung bei vier Werkzeugen, A(8) rund 11 % überschätzt). Oregon State: Pilot-Framework mit Warn-App. Ein Produkt für Beschäftigte ohne Arbeitgeber-Cloud wurde nicht gefunden; das ist kein Nachweis einer Lücke.",
+        "candidate_id": "C1",
+        "pages": [
+          "https://events.engineering.oregonstate.edu/node/86",
+          "https://publica.fraunhofer.de/handle/publica/406871",
+          "https://www-igd.igd.fraunhofer.de/files/media/biblio/2016/2016_matthies_agis_automatic_tool_detection_and_hand-arm_vibration_estimation.pdf",
+          "https://presse.dguv.de/projektdatenbank/0375/2017_02_03_agis_abschlussbericht_f.pdf",
+          "https://www.athene-center.de/forschung/publikationen/hand-arm-vibration-estimation-using-a-commercial-s-3895",
+          "https://www.dguv.de/ifa%3b/forschung/projektverzeichnis/ff-fp0375-2.jsp",
+          "https://events.engineering.oregonstate.edu/sites/expo.engr.oregonstate.edu/files/hav_monitoring_project_report.pdf",
+          "https://www.dguv.de/ifa/;/forschung/projektverzeichnis/ff-fp0375-2.jsp"
+        ],
+        "question": "Gibt es Apps oder Smartwatches, mit denen Beschäftigte ihre eigene tägliche Hand-Arm-Vibrationsbelastung selbst aufzeichnen, ohne Arbeitgeber-Cloud?",
+        "status": "ok"
+      },
+      {
+        "answer": "Laut Suchschnipseln: Herstellerkennwerte stehen nach Maschinenrichtlinie in der Betriebsanleitung, weichen aber vom Praxiswert ab und werden in der Gefährdungsbeurteilung korrigiert; IFA-Datenbank VIBEX (seit den 1980ern) steht Unfallversicherungsträgern auf Anfrage zur Verfügung; Orientierungswertlisten (BG-Report 6/2006, BGHM) und eine europäische Datenbank (umetech.niwl.se) werden genannt. Keine App gefunden.",
+        "candidate_id": "C2",
+        "pages": [
+          "https://publikationen.dguv.de/widgets/pdf/download/article/2210",
+          "https://LAVG.Brandenburg.de/sixcms/media.php/9/Mbl_HAV_VO.pdf",
+          "https://publikationen.dguv.de/widgets/pdf/download/article/2389",
+          "https://publikationen.dguv.de/widgets/pdf/download/article/2232",
+          "https://publikationen.dguv.de/widgets/pdf/download/article/2351",
+          "https://publikationen.dguv.de/widgets/pdf/download/article/2184",
+          "https://presse.dguv.de/medien/fb-holzundmetall/publikationen-dokumente/infoblaetter/infobl_deutsch/017_vibration.pdf",
+          "https://presse.dguv.de/medien/fb-holzundmetall/publikationen-dokumente/infoblaetter/infobl_deutsch/063_ankopplungskraefte.pdf",
+          "https://dguv.de/ifa%3B/forschung/projektverzeichnis/bgia_4116.jsp",
+          "https://dguv.de/ifa/forschung/projektverzeichnis/bgia_4116.jsp"
+        ],
+        "question": "Wo finden Bauarbeiter die Vibrationskennwerte ihrer Maschinen, und gibt es Datenbanken oder Apps mit Herstellerangaben zur Hand-Arm-Vibration?",
+        "status": "ok"
+      },
+      {
+        "answer": "Laut Suchschnipseln: IFA-Projekt 4160 stellt Messdaten in einen Kataster, der mit der Arbeitsanamnesesoftware der Unfallversicherungsträger kompatibel ist (BG BAU an Messungen beteiligt); BGIA 4098 nennt Schlagschrauber, Bohr-/Schlaghämmer, Stampfer, Schleifer und hält die bewertete Beschleunigung allein für das BK-Verfahren nicht ausreichend. Über das Gewicht eigener Aufzeichnungen der Versicherten fand sich nichts.",
+        "candidate_id": "C3",
+        "pages": [
+          "https://dguv.de/ifa%3B/forschung/projektverzeichnis/ifa_4160.jsp",
+          "https://www.dguv.de/ifa;/forschung/projektverzeichnis/ifa_4160.jsp",
+          "https://dguv.de/ifa/forschung/projektverzeichnis/ifa_4160.jsp",
+          "https://dguv.de/ifa%3B/forschung/projektverzeichnis/bgia_4098.jsp",
+          "https://dguv.de/ifa;/forschung/projektverzeichnis/bgia_4098.jsp",
+          "https://dguv.de/ifa/forschung/projektverzeichnis/bgia_4098.jsp",
+          "https://www.dguv.de/d72773",
+          "https://www.dguv.de/ifa%3B/forschung/projektverzeichnis/bgia_1092.jsp",
+          "https://dguv.de/ifa/forschung/projektverzeichnis/bgia_1092.jsp",
+          "https://www.dguv.de/ifa%3b/forschung/projektverzeichnis/bgia_1092-2.jsp"
+        ],
+        "question": "Wie ermittelt die Unfallversicherung bei Verdacht auf BK 2103/2104 die frühere Vibrationsbelastung, und welche eigenen Aufzeichnungen der Versicherten zählen?",
+        "status": "ok"
+      }
+    ],
+    "result": {
+      "contract_version": "1.1.0",
+      "kills": [
+        {
+          "candidate_id": "C1",
+          "failed_checks": [
+            "why_now",
+            "problem_evidence"
+          ],
+          "reason": "Der Kernmechanismus (unveränderte Smartwatch, Mikrofon plus Beschleunigung, Werkzeugerkennung, Tagesdosis) wurde schon 2016 von Fraunhofer IGD und IFA (AGIS, FF-FP 0375) gezeigt; offline und beim Arbeiter ist nur ein Betriebsmodus. Ein datierter Bericht, dass Bauarbeiter eine eigene Spur verlangen, fehlt."
+        },
+        {
+          "candidate_id": "C2",
+          "failed_checks": [
+            "in_mode_or_dense",
+            "problem_evidence"
+          ],
+          "reason": "Kennwerte stehen in der Anleitung und in Orientierungslisten; laut DGUV weichen sie vom Praxiswert ab und werden in der Gefährdungsbeurteilung korrigiert. Das Ablesen einer Tabelle aus einem Foto leistet ein allgemeiner Chatbot; ein belegter Bedarf fehlt."
+        },
+        {
+          "candidate_id": "C3",
+          "failed_checks": [
+            "problem_evidence",
+            "why_now"
+          ],
+          "reason": "Die Unfallversicherung arbeitet mit Kataster-Werten und Arbeitsanamnesesoftware (IFA 4160); ob eigene Aufzeichnungen der Versicherten im BK-Verfahren Gewicht hätten, war nicht zu finden. Der Auszug hängt zudem am Messverfahren aus C1, dessen Auslöser nicht neu ist."
+        }
+      ],
+      "log_row": {
+        "anchor_class": "C",
+        "best_gap": "Beschäftigte behalten über Betriebswechsel keine eigene Spur ihrer Vibrationsbelastung; Bedarf und Gewicht im BK-Verfahren unbelegt.",
+        "candidates": 8,
+        "operator": "OP-2",
+        "survivors": 0,
+        "target": "Reactec HAVwear / R-Link (Vibrations-Wearable mit Arbeitgeber-Plattform), LärmVibrationsArbSchV § 9"
+      },
+      "retro": {
+        "learned": "Hand-Arm-Vibration ist der Gadget-Fall mit klarer Asymmetrie (Arbeitgeber-Cloud gegen Gesundheitsrisiko der Beschäftigten), aber die Smartwatch-Dosisschätzung ist seit 2016 Forschungsstand (AGIS/IFA) und kein neuer Auslöser.",
+        "mistake": "Der Kandidatensatz baute fast ganz auf einem Messverfahren auf; als dessen Neuheit fiel, fielen C1 und C3 gemeinsam. PDFs konnten nicht gelesen werden, die Belege sind Suchschnipsel.",
+        "next_time": "Zuerst klären, ob eigene Aufzeichnungen Versicherter im BK-Verfahren 2103/2104 überhaupt verwertet werden (BG-BAU-Berufskrankheitenabteilung, Merkblatt, Fallbericht), erst dann über Hardware nachdenken; dazu PDF-Text (AGIS-Abschlussbericht, IFA-Smartwatch-Beitrag 2020) lesbar machen."
+      },
+      "survivors": []
+    },
+    "run_id": "inversion-20261015T173000-bau-gadgets",
+    "state_missing": [],
+    "target": {
+      "candidates": [
+        {
+          "check_queries": [
+            "Gibt es Apps oder Smartwatches, mit denen Beschäftigte ihre eigene tägliche Hand-Arm-Vibrationsbelastung selbst aufzeichnen, ohne Arbeitgeber-Cloud?",
+            "Wie unzuverlässig sind Selbstangaben zur Einwirkzeit vibrierender Maschinen?"
+          ],
+          "id": "C1",
+          "idea": "Eigene Vibrationsspur: Eine handelsübliche Smartwatch erkennt lokal per Mikrofon und Beschleunigungssensor, welche Maschine läuft und wie lange, und rechnet mit dem Kennwert der Anleitung Tagespunkte nach BG-BAU-Schema; Daten bleiben auf der Uhr.",
+          "recipient": "IFA (Institut für Arbeitsschutz der DGUV), Sachgebiet Vibrationen, Sankt Augustin",
+          "recipient_kind": "institution",
+          "why_now": "Kleine Audio- und Bewegungsklassifikatoren laufen seit 2023/24 auf Uhren-NPUs ohne Netz; günstige Smartwatches unter 150 € haben Mikrofon und Beschleunigungssensor."
+        },
+        {
+          "check_queries": [
+            "Wo finden Bauarbeiter die Vibrationskennwerte ihrer Maschinen, und gibt es Datenbanken oder Apps mit Herstellerangaben zur Hand-Arm-Vibration?"
+          ],
+          "id": "C2",
+          "idea": "Typenschild- und Anleitungsfoto ergibt lokal den deklarierten Vibrationskennwert und die Unsicherheit K, abgelegt als eigene Werkzeugliste der Kolonne.",
+          "recipient": "BG BAU, Präventionsbereich Lärm und Vibration (Handlungshilfe Vibrationen)",
+          "recipient_kind": "institution",
+          "why_now": "Mehrsprachige Bild-Text-Modelle der Gemma-3n-Klasse (2025) lesen Tabellen aus Fotos auf dem Telefon, ohne Netz."
+        },
+        {
+          "check_queries": [
+            "Wie ermittelt die Unfallversicherung bei Verdacht auf BK 2103/2104 die frühere Vibrationsbelastung, und welche eigenen Aufzeichnungen der Versicherten zählen?"
+          ],
+          "id": "C3",
+          "idea": "Jahresauszug der eigenen Vibrationsbelastung (Maschine, Dauer, Datum, Baustelle grob) als Ausdruck für eine spätere Berufskrankheiten-Anzeige, unabhängig vom jeweiligen Arbeitgeber.",
+          "recipient": "IG BAU, Arbeits- und Gesundheitsschutz beim Bundesvorstand",
+          "recipient_kind": "association",
+          "why_now": "Lokale Langzeitspeicherung und Klassifikation auf dem eigenen Gerät (Uhren-NPU, 2023/24) machen eine mehrjährige Spur ohne Herstellerkonto möglich."
+        },
+        {
+          "check_queries": [
+            "Wie werden Abbruchhammer-Einsätze in Kolonnen heute aufgeteilt, um den Vibrations-Grenzwert einzuhalten?"
+          ],
+          "id": "C4",
+          "idea": "Kolonnen-Rotation: Das Telefon des Vorarbeiters zählt lokal, wie lange jeder Einzelne den Abbruchhammer hatte, und schlägt den Wechsel vor, bevor jemand 400 Punkte erreicht; nichts geht nach oben.",
+          "recipient": "BG BAU, Präventionsbereich Lärm und Vibration",
+          "recipient_kind": "institution",
+          "why_now": "BLE-Nahbereichsortung (Bluetooth 5.x, Channel Sounding seit 2024) erlaubt Zuordnung Maschine–Person ohne Server."
+        },
+        {
+          "check_queries": [
+            "Welche Rolle spielt Kälte beim Vibrationssyndrom und welche Hinweise gibt die Unfallversicherung?"
+          ],
+          "id": "C5",
+          "idea": "Kälte-Vibrations-Hinweis: Uhr erkennt kalte Hände plus laufende Maschine und erinnert an Pause und warme Handschuhe, als Warnung ohne Freigabe.",
+          "recipient": "IFA Sachgebiet Vibrationen",
+          "recipient_kind": "institution",
+          "why_now": "Hauttemperatur- und Bewegungssensoren in Uhren unter 150 € seit 2023 plus lokale Ereigniserkennung."
+        },
+        {
+          "check_queries": [
+            "Welche Laufzeitdaten senden vernetzte Akku-Werkzeuge per Bluetooth an Apps?"
+          ],
+          "id": "C6",
+          "idea": "Akku-Telemetrie umdrehen: Das eigene Telefon empfängt offline die Bluetooth-Signale vernetzter Akku-Werkzeuge und notiert Laufzeiten für den eigenen Belastungslog statt fürs Inventar.",
+          "recipient": "IFA Sachgebiet Vibrationen",
+          "recipient_kind": "institution",
+          "why_now": "Vernetzte Akku-Plattformen (ONE-KEY u. a.) senden seit wenigen Jahren BLE-Daten; lokale Dekodierung auf Android ohne Konto."
+        },
+        {
+          "check_queries": [
+            "Wie beeinflusst die Andruckkraft die Hand-Arm-Vibrationsbelastung?"
+          ],
+          "id": "C7",
+          "idea": "Ankopplungskraft-Hinweis: Uhr schätzt aus Unterarmbewegung, ob übermäßig gedrückt wird, was die Vibrationsübertragung erhöht, und zeigt es dem Träger allein.",
+          "recipient": "IFA Sachgebiet Vibrationen",
+          "recipient_kind": "institution",
+          "why_now": "Bewegungsmodelle auf Uhren-NPUs (2024) können Greif- und Druckmuster ohne Cloud klassifizieren."
+        },
+        {
+          "check_queries": [
+            "Wie wird Hand-Arm-Vibration in der überbetrieblichen Bauausbildung unterrichtet?"
+          ],
+          "id": "C8",
+          "idea": "Berufsschul-Übungsset: Auszubildende messen eine Woche ihre eigene Maschinenzeit mit einer Leihuhr und vergleichen sie mit ihrer Schätzung.",
+          "recipient": "Berufsförderungswerk der Bauindustrie, überbetriebliche Ausbildungszentren",
+          "recipient_kind": "institution",
+          "why_now": "Günstige Uhren mit lokalem Klassifikator (2024) machen einen Klassensatz unter 150 € je Gerät möglich."
+        }
+      ],
+      "contract_version": "1.1.0",
+      "operator": "OP-2",
+      "shortlist": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "target": {
+        "anchor_class": "C",
+        "blind_spot": "Was Beschäftigte über Jahre und Betriebswechsel hinweg selbst behalten, interessiert keinen Lizenzkäufer; Selbstangaben zur Einwirkzeit gelten als unzuverlässig.",
+        "name": "Reactec HAVwear / R-Link: Hand-Arm-Vibrations-Wearable am Handgelenk mit Arbeitgeber-Analyseplattform (Bezug LärmVibrationsArbSchV § 9, A(8) 2,5/5 m/s²)",
+        "source_label": "The Construction Index, Bericht zu Reactec HAVwear (Fachpresse, Suchschnipsel); Abruf 15.10.2026",
+        "source_url": "https://www.theconstructionindex.co.uk/news/view/the-havs-meter-you-wear-on-your-wrist",
+        "where_data_stops": "Die Messreihe liegt in der Arbeitgeber-Cloud; die IFA-Datenbank VIBEX steht nur Unfallversicherungsträgern auf Anfrage offen; Herstellerkennwerte stehen in Betriebsanleitungen.",
+        "who_carries_burden": "Beschäftigte mit Abbruchhammer, Bohrhammer, Stampfer und Schleifer tragen das Gesundheitsrisiko (BK 2103/2104); die BG-BAU-Handlungshilfe zeigt 1620 Punkte für 2,5 h Abbruchhammer bei 400 Punkten Grenze.",
+        "who_pays": "Der Betrieb kauft Uhr und Analyse-Lizenz; Reactec und die Hersteller profitieren. Laut Fachpresse werden die Daten automatisch beim Arbeitgeber gesammelt und Vorgesetzten live angezeigt."
+      },
+      "thesis": "Das Expositionsmodell, das der Betrieb per Lizenz über seine Leute legt, wird zur eigenen, lokal gespeicherten Belastungsspur der Beschäftigten, die beim Betriebswechsel mitgeht."
+    },
+    "tool_calls": [
+      {
+        "call_id": "inversion-20261015T173000-bau-gadgets-t01",
+        "pages": [
+          "https://www.pbctoday.co.uk/news/?p=53666",
+          "https://www.hsmsearch.com/company_list/reactec_ltd/page/5",
+          "https://cirrusresearch.co.uk/blog/?p=8319",
+          "https://www.pbctoday.co.uk/news/health-safety-news/fight-vibration-injuries/53666/",
+          "https://www.hsmsearch.com/page_779516.asp",
+          "https://www.international-construction.com/news/reactec-wearable-to-reduce-workplace-health-risks/8025792.article",
+          "https://www.theconstructionindex.co.uk/news/view/the-havs-meter-you-wear-on-your-wrist",
+          "https://www.constructionenquirer.com/?p=120755",
+          "https://maintworld.com/HSE/Hand-Arm-Vibration-Syndrome-risk-potentially-chronically-underestimated",
+          "https://old.maintworld.com/HSE/Hand-Arm-Vibration-Syndrome-risk-potentially-chronically-underestimated"
+        ],
+        "status": "ok",
+        "summary": "Wie meldet das am Handgelenk getragene Hand-Arm-Vibrationsmessgerät HAVwear von Reactec seine Daten, und wer sieht sie?",
+        "tool": "search"
+      },
+      {
+        "call_id": "inversion-20261015T173000-bau-gadgets-t02",
+        "pages": [
+          "https://www.ihk-siegen.de/fileadmin/user_upload/Internationales_Recht/vibration_flyer.pdf",
+          "https://www.bgbau.de/fileadmin/Medien-Objekte/Medien/Bausteine/d_501/d_501.pdf",
+          "https://www.bgbau.de/fileadmin/Service/Bildungsangebote/Handlungshilfe_Vibrationen_07.12.2017.pdf",
+          "https://dguv.de/ifa%3B/fachinfos/vibrationen/index.jsp",
+          "https://www.komnet.nrw.de/_sitetools/dialog/43635",
+          "https://dguv.de/ifa/fachinfos/vibrationen/index.jsp",
+          "https://publikationen.dguv.de/widgets/pdf/download/article/2511",
+          "https://bgbau-medien.de/handlungshilfen_gb/daten/pdf/handlung_vibration.pdf"
+        ],
+        "status": "ok",
+        "summary": "Welche Auslöse- und Grenzwerte gelten am Bau für Hand-Arm-Vibration, und wie schätzen BG BAU und IFA die Tagesbelastung aus Einwirkzeit und Kennwert ab?",
+        "tool": "search"
+      },
+      {
+        "call_id": "inversion-20261015T173000-bau-gadgets-t03",
+        "pages": [
+          "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9301294/",
+          "https://jcaa.caa-aca.ca/index.php/jcaa/article/download/2344/2093/2483",
+          "https://core.ac.uk/works/8965290",
+          "https://www.ioa.org.uk/system/files/proceedings/24._hawker_a.pdf",
+          "https://stacks.cdc.gov/view/cdc/8408/cdc_8408_DS1.pdf",
+          "https://aseestant.ceon.rs/index.php/jaes/article/download/22694/15174",
+          "https://stacks.cdc.gov/view/cdc/192187/cdc_192187_DS1.pdf",
+          "https://www.umu.se/en/research/projects/exposure-assessment-model-for-hand-arm-transmitted-vibrations-considering-exposure-variability-and-determinants/",
+          "https://stacks.cdc.gov/view/cdc/37432/cdc_37432_DS1.pdf"
+        ],
+        "status": "ok",
+        "summary": "Wie genau schätzen Beschäftigte ihre eigene Benutzungsdauer vibrierender Handmaschinen, verglichen mit gemessener Abzugszeit?",
+        "tool": "search"
+      },
+      {
+        "call_id": "inversion-20261015T173000-bau-gadgets-t04",
+        "pages": [
+          "https://publikationen.dguv.de/widgets/pdf/download/article/3203",
+          "https://www.dguv.de/medien/ifa/de/pub/grl/pdf/ernst_kaulbars_vdi_2020.pdf",
+          "https://shop-fgh.thies-co.de/Sortimente/Elektrowerkzeuge/Milwaukee/Maschinen/Betonverdichter/Vibrationsbohle",
+          "https://toolbrothers.de/da/products/milwaukee-m18-onepd-akku-schlagbohrschrauber-18v-135-nm-brushless-solo-mit-one-key-technologie-koffer-ohne-zubehor",
+          "https://shop.thies-co.de/Akku-Vibrationsbohle-MXFPSC-0/4933479771",
+          "https://toolbrothers.nl/da/products/milwaukee-m18-onepd-akku-schlagbohrschrauber-18v-135-nm-brushless-solo-mit-one-key-technologie-koffer-ohne-zubehor",
+          "https://toolbrothers.de/da/products/milwaukee-m18-onefsz-802x-akku-recipro-sabelsage-18-v-brushless-2x-akku-8-0-ah-ladegerat-hd-box",
+          "https://bilder01.dabag.ch/documents/kataloge/milwaukee/mi_4090_30.pdf",
+          "https://www.reca.pl/shop/pl/produkty/M18ONEDD3-0X-Akku-Bohrschrauber-XXX-4698492799000-1"
+        ],
+        "status": "ok",
+        "summary": "Zeigen Akku-Werkzeug-Apps wie Milwaukee ONE-KEY, Hilti oder Bosch dem Anwender Laufzeit oder Vibrationstagesdosis an?",
+        "tool": "search"
+      },
+      {
+        "call_id": "inversion-20261015T173000-bau-gadgets-t05",
+        "pages": [
+          "https://events.engineering.oregonstate.edu/node/86",
+          "https://publica.fraunhofer.de/handle/publica/406871",
+          "https://www-igd.igd.fraunhofer.de/files/media/biblio/2016/2016_matthies_agis_automatic_tool_detection_and_hand-arm_vibration_estimation.pdf",
+          "https://presse.dguv.de/projektdatenbank/0375/2017_02_03_agis_abschlussbericht_f.pdf",
+          "https://www.athene-center.de/forschung/publikationen/hand-arm-vibration-estimation-using-a-commercial-s-3895",
+          "https://www.dguv.de/ifa%3b/forschung/projektverzeichnis/ff-fp0375-2.jsp",
+          "https://events.engineering.oregonstate.edu/sites/expo.engr.oregonstate.edu/files/hav_monitoring_project_report.pdf",
+          "https://www.dguv.de/ifa/;/forschung/projektverzeichnis/ff-fp0375-2.jsp"
+        ],
+        "status": "ok",
+        "summary": "Prior-Art C1: Gibt es Apps oder Smartwatches, mit denen Beschäftigte ihre eigene tägliche Hand-Arm-Vibrationsbelastung selbst aufzeichnen, ohne Arbeitgeber-Cloud?",
+        "tool": "search"
+      },
+      {
+        "call_id": "inversion-20261015T173000-bau-gadgets-t06",
+        "pages": [
+          "https://publikationen.dguv.de/widgets/pdf/download/article/2210",
+          "https://LAVG.Brandenburg.de/sixcms/media.php/9/Mbl_HAV_VO.pdf",
+          "https://publikationen.dguv.de/widgets/pdf/download/article/2389",
+          "https://publikationen.dguv.de/widgets/pdf/download/article/2232",
+          "https://publikationen.dguv.de/widgets/pdf/download/article/2351",
+          "https://publikationen.dguv.de/widgets/pdf/download/article/2184",
+          "https://presse.dguv.de/medien/fb-holzundmetall/publikationen-dokumente/infoblaetter/infobl_deutsch/017_vibration.pdf",
+          "https://presse.dguv.de/medien/fb-holzundmetall/publikationen-dokumente/infoblaetter/infobl_deutsch/063_ankopplungskraefte.pdf",
+          "https://dguv.de/ifa%3B/forschung/projektverzeichnis/bgia_4116.jsp",
+          "https://dguv.de/ifa/forschung/projektverzeichnis/bgia_4116.jsp"
+        ],
+        "status": "ok",
+        "summary": "Prior-Art C2: Wo finden Bauarbeiter die Vibrationskennwerte ihrer Maschinen, und gibt es Datenbanken oder Apps mit Herstellerangaben zur Hand-Arm-Vibration?",
+        "tool": "search"
+      },
+      {
+        "call_id": "inversion-20261015T173000-bau-gadgets-t07",
+        "pages": [
+          "https://dguv.de/ifa%3B/forschung/projektverzeichnis/ifa_4160.jsp",
+          "https://www.dguv.de/ifa;/forschung/projektverzeichnis/ifa_4160.jsp",
+          "https://dguv.de/ifa/forschung/projektverzeichnis/ifa_4160.jsp",
+          "https://dguv.de/ifa%3B/forschung/projektverzeichnis/bgia_4098.jsp",
+          "https://dguv.de/ifa;/forschung/projektverzeichnis/bgia_4098.jsp",
+          "https://dguv.de/ifa/forschung/projektverzeichnis/bgia_4098.jsp",
+          "https://www.dguv.de/d72773",
+          "https://www.dguv.de/ifa%3B/forschung/projektverzeichnis/bgia_1092.jsp",
+          "https://dguv.de/ifa/forschung/projektverzeichnis/bgia_1092.jsp",
+          "https://www.dguv.de/ifa%3b/forschung/projektverzeichnis/bgia_1092-2.jsp"
+        ],
+        "status": "ok",
+        "summary": "Prior-Art C3: Wie ermittelt die Unfallversicherung bei Verdacht auf BK 2103/2104 die frühere Vibrationsbelastung, und welche eigenen Aufzeichnungen der Versicherten zählen?",
+        "tool": "search"
+      },
+      {
+        "call_id": "inversion-20261015T173000-bau-gadgets-t08",
+        "status": "ok",
+        "summary": "bib find --stamm vibration",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "inversion-20261015T173000-bau-gadgets-t09",
+        "status": "ok",
+        "summary": "bib find --stamm hand-arm",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "inversion-20261015T173000-bau-gadgets-t10",
+        "status": "ok",
+        "summary": "bib find --stamm smartwatch",
+        "tool": "bib_find"
+      }
+    ],
+    "topic_check": [
+      {
+        "hits": [
+          "Nur Hintergrund-Treffer (Förderlandschaft, Lab-Vorschläge), kein Helm-Gadget im Bestand."
+        ],
+        "term": "helm"
+      },
+      {
+        "hits": [
+          "Chaos Clock (Prüfprotokoll, Kalender-Add-on mit Wearable-Daten), kein Bau-Bezug."
+        ],
+        "term": "wearable"
+      },
+      {
+        "hits": [
+          "BedenkenBlitz (Sprachmemo + Foto → VOB/B-Bedenkenanmeldung)",
+          "AusweichZonen-Lotse",
+          "Friedhof: Holz-Sortierklasse vor Ort, DoP-Scanner Stahl"
+        ],
+        "term": "baustelle"
+      },
+      {
+        "hits": [
+          "KlangStethoskop (Geräuschdiagnose Haushaltsgeräte, FFT-/Vibrations-Apps)",
+          "Smart Thumper (Schnittholz per Schlag/Vibration)"
+        ],
+        "term": "vibration"
+      },
+      {
+        "hits": [],
+        "term": "hand-arm"
+      }
+    ]
+  },
+  "revision": "5bc56ae642edf8ae441b87e85ffbe9e8c6cab8e2042e80138213073c3bcda120",
+  "run_id": "inversion-20261015T173000-bau-gadgets"
+}

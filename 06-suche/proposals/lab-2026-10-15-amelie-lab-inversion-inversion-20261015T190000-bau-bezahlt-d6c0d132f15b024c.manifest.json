@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-inversion-inversion-20261015T190000-bau-bezahlt-d6c0d132f15b024c",
+  "plan_id": "lab-2026-10-15-amelie-lab-inversion-inversion-20261015T190000-bau-bezahlt-d6c0d132f15b024c",
+  "engine": "review",
+  "model": "claude-subagent (stand-in, Vertex unavailable; searches: WebSearch)",
+  "existence_check": false,
+  "survivors": {
+    "count": 0,
+    "status": "keine"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-inversion-inversion-20261015T190000-bau-bezahlt-d6c0d132f15b024c.md",
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-inversion-inversion-20261015T190000-bau-bezahlt-d6c0d132f15b024c.inbox.json",
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-inversion-inversion-20261015T190000-bau-bezahlt-d6c0d132f15b024c.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 4,
+  "touches_memory": false,
+  "contracts": {
+    "inversion-record": "1.1.0"
+  },
+  "contract_version": "1.0.0"
+}

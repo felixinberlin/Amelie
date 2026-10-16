@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-lacunar-lacunar-20261015T190000-bau-sicher-22da412cb6ae4167",
+  "plan_id": "lab-2026-10-15-amelie-lab-lacunar-lacunar-20261015T190000-bau-sicher-22da412cb6ae4167",
+  "engine": "review",
+  "model": "claude-subagent (stand-in, Vertex unavailable; searches: WebSearch)",
+  "existence_check": false,
+  "survivors": {
+    "count": 0,
+    "status": "keine"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-lacunar-lacunar-20261015T190000-bau-sicher-22da412cb6ae4167.md",
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-lacunar-lacunar-20261015T190000-bau-sicher-22da412cb6ae4167.inbox.json",
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-lacunar-lacunar-20261015T190000-bau-sicher-22da412cb6ae4167.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 5,
+  "touches_memory": false,
+  "contracts": {
+    "lacunar-record": "1.3.0"
+  },
+  "contract_version": "1.0.0"
+}

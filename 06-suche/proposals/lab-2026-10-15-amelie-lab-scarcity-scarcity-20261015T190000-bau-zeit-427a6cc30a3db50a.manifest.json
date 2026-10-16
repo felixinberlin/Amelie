@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-scarcity-scarcity-20261015T190000-bau-zeit-427a6cc30a3db50a",
+  "plan_id": "lab-2026-10-15-amelie-lab-scarcity-scarcity-20261015T190000-bau-zeit-427a6cc30a3db50a",
+  "engine": "review",
+  "model": "claude-subagent (stand-in, Vertex unavailable; searches: WebSearch)",
+  "existence_check": false,
+  "survivors": {
+    "count": 0,
+    "status": "keine"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-scarcity-scarcity-20261015T190000-bau-zeit-427a6cc30a3db50a.md",
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-scarcity-scarcity-20261015T190000-bau-zeit-427a6cc30a3db50a.inbox.json",
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-scarcity-scarcity-20261015T190000-bau-zeit-427a6cc30a3db50a.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 4,
+  "touches_memory": false,
+  "contracts": {
+    "scarcity-record": "1.1.0"
+  },
+  "contract_version": "1.0.0"
+}

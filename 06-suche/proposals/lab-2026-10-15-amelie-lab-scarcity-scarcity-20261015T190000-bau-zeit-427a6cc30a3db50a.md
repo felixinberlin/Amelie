@@ -1,0 +1,529 @@
+# Proposals from plan lab-2026-10-15-amelie-lab-scarcity-scarcity-20261015T190000-bau-zeit-427a6cc30a3db50a
+
+Packet: amelie-lab-scarcity-scarcity-20261015T190000-bau-zeit-427a6cc30a3db50a · Candidate: amelie-lab-scarcity-scarcity-20261015T190000-bau-zeit-427a6cc30a3db50a
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] scarcity: amelie-lab-scarcity-scarcity-20261015T190000-bau-zeit-427a6cc30a3db50a. Absicht: Arbeitszeit sparen am Bau: Was man erst sieht, wenn man es aufbricht (hohler Putz, Hohlstellen, verdeckte Leitungen, unbekannte Schichten) kostet Maurern und Putzern bei Sanierung und Reparatur Zeit, Nacharbeit und Streit ums Geld. Wähle eine harte, belegte Einschränkung dieser Art und erfinde billige, unsichtbare Werkzeuge (Handy, Klopfen, Licht, Ton), die ohne diese Einschränkung sinnlos wären.. Modell: claude-subagent (stand-in, Vertex unavailable; searches: WebSearch). Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "cost_usd": 0.0,
+  "model_calls": 0,
+  "search_calls": 17,
+  "search_queries": 17
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld constraint, Teil 1 (laut gespeicherter Datei):
+{
+  "constraint": {
+    "closed_workaround": "Die ganze Wand abschlagen und neu verputzen (dann wäre die Fläche aus dem Plan bekannt und nichts zu suchen): das verbietet die Mindest-Eingriffs-Regel bzw. es braucht vorher eine Genehmigung.",
+    "constraint_class": "informational",
+    "evidence_quote": "The extent of repair necessary should be carefully ascertained by tapping the surface. Render that has detached from the backing will produce a hollow sound and may be noticeably loose. Only the very minimum should be taken off.",
+    "source_label": "New Forest National Park Authority, Leitfaden ‚Plasters and renders' (Historic Buildings, Upload 03/2018; abgerufen 15.10.2026)",
+    "source_url": "https://www.newforestnpa.gov.uk/app/uploads/2018/03/HistoricBuildings_plastersandrenders_00143.pdf",
+    "statement": "An historischen Putzen darf nur so wenig wie nötig abgenommen werden, und wie viel nötig ist, wird allein durch Abklopfen vor Ort ermittelt (hohler Klang = abgelöst); wer statt Flickstellen eine ganze Wand neu verputzt, braucht bei gelisteten Gebäuden vorher eine Genehmigung. Der Umfang der Arbeit steht damit erst fest, wenn die Wand abgeklopft und geöffnet ist.",
+    "who_bears_it": "Putzer und Maurer in der Altbau- und Denkmalreparatur, die Fläche und Preis vor dem Öffnen nennen müssen und nach dem Abschlagen mit dem Auftraggeber über die tatsächlich abgenommenen Quadratmeter abrechnen.",
+    "why_binding_now": "Der Leitfaden gilt in englischen Denkmal- und Nationalparkverfahren unverändert; dieselbe Regel steht im Surrey-Merkblatt (‚as much of the original render as possible must be retained'), und ganze Wände neu zu putzen löst eine Genehmigungspflicht aus, über die die Behörde, nicht der Eigentümer, entscheidet."
+  },
+  "contract_version": "1.0.0",
+  "rejected_soft": [
+    "‚Hohlstellen sieht man erst beim Abschlagen' als allgemeine Klage: in den Foren nur als KI-kommentierte Beiträge, keine harte Grenze.",
+    "Camden-Methodenstatement (12 New End, ca. 35 % abgelöst, Umfang bis zur Abnahme unsicher): passt genau, aber das Dokument war nicht abrufbar, nur Suchschnipsel.",
+    "Japans Pflicht zur Fassaden-Vollklopfprüfung alle zehn Jahre: hart, aber sie trifft Gebäudeeigentümer und Prüfer, nicht Putzer bei der Reparatur.",
+    "VOB/C DIN 18350 ‚Abrechnung nach ausgeführten Maßen': nur aus Forenbeiträgen zitiert, Normtext nicht abgerufen.",
+    "Verdeckte Leitungen beim Schlitzen: real, aber in diesem Lauf nicht mit einer Seite belegt."
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.1.0"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-10-15T19:00:00Z"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Arbeitszeit sparen am Bau: Was man erst sieht, wenn man es aufbricht (hohler Putz, Hohlstellen, verdeckte Leitungen, unbekannte Schichten) kostet Maurern und Putzern bei Sanierung und Reparatur Zeit, Nacharbeit und Streit ums Geld. Wähle eine harte, belegte Einschränkung dieser Art und erfinde billige, unsichtbare Werkzeuge (Handy, Klopfen, Licht, Ton), die ohne diese Einschränkung sinnlos wären."
+- [06-suche/amelie-lab-protokoll.md] Originalfeld invention, Teil 1 (laut gespeicherter Datei):
+{
+  "candidates": [
+    {
+      "check_queries": [
+        "app measure area of marked patch on wall from photo with reference card square metres offline plasterer quote"
+      ],
+      "id": "C1",
+      "idea": "Klopfumriss in Quadratmeter: Der Putzer klopft wie gewohnt ab und zieht Kreide um die hohlen Stellen; dann ein Foto der Wand mit einem flach angelegten A4-Blatt, Finger fährt die Kreidelinie nach, das Handy summiert die hohlen m² je Wand und multipliziert mit seinen zwei Preisen (hohl/mürbe abschlagen vs. fest stemmen). Offline, ein Foto, eine Zahl fürs Angebot.",
+      "recipient": "Bundesverband Ausbau und Fassade im ZDB (Stuckateur- und Putzerhandwerk) bzw. SPAB (UK, Reparaturkurse für Handwerker)",
+      "recipient_kind": "association",
+      "why_now": "Flächenmessung auf einem Foto mit A4-Maßstab läuft heute als Allzweck-App auf dem Handy (Partometer); ab wann offline und auf Android brauchbar, ist in den Treffern nicht datiert.",
+      "without_constraint": "Dürfte man die ganze Wand abschlagen, wäre die Fläche die Wandfläche aus dem Plan oder dem Zollstock; ein Umriss-Messer hätte nichts zu messen."
+    },
+    {
+      "check_queries": [
+        "Aufmaß Putz abgeschlagene Fläche dokumentieren Foto vor dem Verputzen gemeinsames Aufmaß nachträglich nicht feststellbar App"
+      ],
+      "id": "C2",
+      "idea": "Abschlag-Nachweisblatt: Nach dem Abschlagen und vor dem Neuputz dasselbe Foto mit A4-Blatt; das Handy misst die tatsächlich offene Fläche, stellt sie neben die Angebotsfläche aus C1 und macht ein einseitiges PDF (Datum, Foto, m², Differenz) für das gemeinsame Aufmaß, ohne Konto, ohne Cloud.",
+      "recipient": "Bundesverband Ausbau und Fassade im ZDB; Handwerkskammern (Betriebsberatung Kalkulation)",
+      "recipient_kind": "association",
+      "why_now": "Foto plus Maßstab plus PDF-Erzeugung auf dem Handy ist alltäglich; neu ist nur die Bindung an das Verschwinden des Befunds, ein datierter Technikwechsel ist nicht belegt.",
+      "without_constraint": "Ohne Mindest-Eingriff würde die ganze Wand abgenommen: die abgerechnete Fläche wäre die Wandfläche, die auch nach dem Neuputz noch nachmessbar ist; ein Nachweis des Verschwindenden wäre unnötig."
+    },
+    {
+      "check_queries": [
+        "phone app record tap sounds compare to reference tap on same wall hollow render plasterer tap test helper noisy site"
+      ],
+      "id": "C3",
+      "idea": "Wandeigener Klopfvergleich: Zwei Kalibrierklopfer auf DIESER Wand (eine sicher feste, eine sicher hohle Stelle), danach zeigt das Handy bei jedem Hammerschlag nur grün (klingt wie fest) oder grau (klingt wie hohl) und vibriert kurz. Für laute Baustellen, Gehörschutz und Lehrlinge, die die Grenze noch nicht hören; das Ohr des Putzers bleibt die Entscheidung.",
+      "recipient": "SPAB (UK) bzw. Bundesverband Ausbau und Fassade; Ausbildungszentren der Stuckateure",
+      "recipient_kind": "association",
+      "why_now": "On-Device-Audioklassifikation ist als Android-Baustein verfügbar (MediaPipe Audio Classifier, Seite undatiert); eine Wand-Kalibrier-App für Trockenbau gibt es auf dem iPhone (Wallrap). Datierung für Altputz offen.",
+      "without_constraint": "Wenn ohnehin alles abgenommen wird, ist es gleich, wo genau die Grenze zwischen hohl und fest verläuft; der Vergleich hätte keine Aufgabe."
+    },
+    {
+      "check_queries": [
+        "Hohlstellen Putz vergrößern sich zwischen Angebot und Ausführung Nachtrag Fläche größer als im Angebot"
+      ],
+      "id": "C4",
+      "idea": "Wachstumsabgleich: Das Kreide-Umriss-Foto vom Besichtigungstag wird am ersten Arbeitstag (Wochen später) neu aufgenommen und überlagert; das Handy zeigt, welche Fläche seit dem Angebot dazugekommen ist, damit ‚gewachsen' und ‚verschätzt' getrennt dastehen.",
+      "recipient": "Bundesverband Ausbau und Fassade im ZDB",
+      "recipient_kind": "association",
+      "why_now": "Bildüberlagerung mit Maßstabskarte ist alte Technik; kein datierter Wechsel belegt.",
+      "without_constraint": "Bei Komplettabnahme spielt die Entwicklung einzelner Hohlstellen zwischen Angebot und Ausführung keine Rolle; die Fläche bleibt die Wand."
+    },
+    {
+      "check_queries": [
+        "Putzschichten Dicke messen Probestelle Foto Maßstab Schichtenfolge Altputz Befund Abfallmenge Putz abschlagen pro m²"
+      ],
+      "id": "C5",
+      "idea": "Probestellen-Schichtlineal: An der ohnehin vorgeschriebenen kleinen Probestelle ein Foto der offenen Kante mit aufgelegtem Papiermaßstab; der Putzer tippt die Schichtgrenzen an, das Handy notiert Schichtfolge und Dicke je Schicht und rechnet mit der hohlen Fläche aus C1 Schuttmenge (m³, Big-Bags) und Stunden zu seinem eigenen m²-Satz.",
+      "recipient": "Bundesverband Ausbau und Fassade; WTA (Wissenschaftlich-Technische Arbeitsgemeinschaft für Bauwerkserhaltung)",
+      "recipient_kind": "association",
+      "why_now": "Foto mit Maßstab ist alt; neu wäre nur die Kopplung von Probestelle und Hohlfläche. Kein datierter Technikwechsel belegt.",
+      "without_constraint": "Ohne Mindest-Eingriff und Probestelle schlägt man alles ab und rechnet mit Normdicke und Wandfläche; das Lineal wäre ein Zollstock-Ersatz ohne Nutzen."
+    },
+    {
+      "check_queries": [
+        "raking light photograph detect bulging detached render plaster before tapping survey"
+      ],
+      "id": "C6",
+      "idea": "Streiflicht-Vorsuche: Taschenlampe des Handys flach an der Wand, Raum abgedunkelt; eine Fotoserie hebt Beulen und Risse hervor, die oft über Hohlstellen liegen, und markiert ‚hier zuerst klopfen', damit bei großen Flächen weniger blind geklopft wird.",
+      "recipient": "SPAB (UK); IHBC",
+      "recipient_kind": "association",
+      "why_now": "Handykamera und Taschenlampe sind seit Langem da; ein datierter Fortschritt (z. B. Relief aus Mehrfachbeleuchtung auf dem Gerät) ist nicht belegt.",
+      "without_constraint": "Wird ohnehin alles abgenommen, muss niemand vorher wissen, wo hohl ist; eine Vorsuche wäre verschwendete Zeit."
+    },
+    {
+      "check_queries": [
+        "listed building render repair patch or whole wall consent threshold work stopped hollow render more than expected"
+      ],
+      "id": "C7",
+      "idea": "Flickstellen-Anteil je Wand: Aus den Umrissen (C1) zeigt das Handy den Anteil hohler Fläche je Wand als eine Zahl; steigt er so, dass aus Flickstellen faktisch eine ganze Wand wird, sieht der Putzer das vor Arbeitsbeginn und kann den Eigentümer bitten, die Behörde zu fragen, statt mitten in der Arbeit stillzustehen. Keine Aussage, ob eine Genehmigung nötig ist.",
+      "recipient": "SPAB (UK); Historic England Advice-Team",
+      "recipient_kind": "association",
+      "why_now": "Keine neue Technik nötig; die Notwendigkeit kommt allein aus der Regel. Kein datierter Technikwechsel.",
+      "without_constraint": "Ohne die Unterscheidung ‚Flickstelle genehmigungsfrei, ganze Wand genehmigungspflichtig' wäre der Anteil eine bloße Statistik ohne Folge."
+    }
+  ],
+  "contract_version": "1.1.0",
+  "shortlist": [
+    "C1",
+    "C2",
+    "C3",
+    "C5"
+  ],
+  "thesis": "Wenn nur das Nötigste abgenommen werden darf und das Nötige nur per Klopfen vor Ort feststeht, wird die Grenze zwischen hohl und fest zur Grenze von Arbeit und Lohn: sie muss vor dem Öffnen gemessen und vor dem Neuputz festgehalten werden, weil sie danach verschwindet."
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"<!-- proposed by the Lab's Scarcity agent, run scarcity-20261015T190000-bau-zeit; nothing was written to Amélie -->\n| 2026-10-15 | Lab | Altputz nur so weit entfernen wie hohl (Mindestumfang), Umfang erst beim Öffnen sichtbar (informational) | 7 | 0 (ungeprüft): none | Putzer können die beim Abschlagen offen gelegte Mehrfläche nach dem Neuputz nicht mehr nachweisen; Bedarf nur als schwaches Forenbild belegt (parkt). |\n\n### Scarcity run scarcity-20261015T190000-bau-zeit — 2026-10-15 (intent: Arbeitszeit sparen am Bau: Was man erst sieht, wenn man es aufbricht (hohler Putz, Hohlstellen, verdeckte Leitungen, unbekannte Schichten) kostet Maurern und Putzern bei Sanierung und Reparatur Zeit, )\n- **Learned:** Die Fläche-aus-Foto-Funktion gibt es seit 2013/2019 als Partometer; eine Kombination daraus mit zwei Preisen ist kein neuer Schnitt. Stricter für Messkerne, die eine Allzweck-App schon hat.\n- **Mistake:** Der Generator hielt Wallrap für L2 wegen Trockenbau; die Seite nennt aber keinen Wandtyp, sodass der Mechanismus gleich ist. Looser war der Fehler nicht, die Einordnung als L1/L2 fehlte nur geprüfte Fakten.\n- **Next time:** Erst die App-Store-Seiten der Nachbarn lesen (Version, Jahr, Plattform), dann Kandidaten schneiden; für C2 gezielt Regiestunden gegen m²-Abrechnung von Putzern erfragen. Looser bei Evidenz abroad, stricter bei Messkernen mit Vorläufer.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): app measure area of marked patch on wall from photo with reference card square metres offline plasterer quote -> https://www.ipros.com/en/cg1/Apps/measurement/, https://apps.apple.com/us/app/right-measure-calculate-measures-automatically-using/id1092661938?uo=4, https://apps.apple.com/app/id1092661938, https://apps.apple.com/app/id689675004\n  - C2 (ok): Aufmaß Putz abgeschlagene Fläche dokumentieren Foto vor dem Verputzen gemeinsames Aufmaß nachträglich nicht feststellbar App -> https://bau.de/forum/aussenwaende/12658.php, https://bau.net/forum/aussenwaende/12658.php, https://bau.de/forum/innenwaende/10233.php, https://bau.de/forum/innenwaende/10965.php\n  - C3 (ok): phone app record tap sounds compare to reference tap on same wall hollow render plasterer tap test helper noisy site -> https://inventx.mmu.edu.my/ajax/SS003.html, https://inventx.mmu.edu.my/archive/2025/ajax/SS003.html, https://mergeek.com/latest/PZ5ExWbeDqRArD6g, https://apps.apple.com/nl/app/wallrap/id6777078648\n  - C5 (ok): Putzschichten Dicke messen Probestelle Foto Maßstab Schichtenfolge Altputz Befund Restaurator App Abfallmenge Putz abschlagen Tonnen pro m² -> https://bau.de/forum/aussenwaende/10257.php, https://bau.de/forum/aussenwaende/10715.php, https://bau.de/forum/ausbauarbeiten/11122.php, https://bau.de/forum/innenwaende/12517.php\n"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"claude-subagent (stand-in, Vertex unavailable; searches: WebSearch)"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld prior_art, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "answer": "Partometer (iPhone, 2,99 $) misst Flächen frei umfahrener Formen auf einem Foto mit A4-Blatt oder Kreditkarte als Maßstab in derselben Ebene; Right Measure und MyMeter ähnlich (Abo/Kauf). Offline-Betrieb nirgends bestätigt, keine Android-Variante in den Treffern, kein Bezug zu Putz, Angebot oder zwei Preisen je m². Lead: der Messkern liegt als Allzweck-App vor (Stufe für den Richter zu bestimmen, eher L1 für den Messkern, nicht für den Arbeitsablauf).",
+    "candidate_id": "C1",
+    "pages": [
+      "https://www.ipros.com/en/cg1/Apps/measurement/",
+      "https://apps.apple.com/us/app/right-measure-calculate-measures-automatically-using/id1092661938?uo=4",
+      "https://apps.apple.com/app/id1092661938",
+      "https://apps.apple.com/app/id689675004",
+      "https://apps.apple.com/jp/app/right-measure-calculate-measures-automatically-using/id1092661938?l=en-US",
+      "https://apps.apple.com/jp/app/right-measure-calculate-measures-automatically-using/id1092661938?l=ja",
+      "https://apps.apple.com/us/app/-/id689675004",
+      "https://apps.apple.com/us/app/-/id6744528187",
+      "https://mwm.ai/apps/planimeter-pro-for-map-measure/476039389",
+      "https://appgoblin.info/apps/689675004"
+    ],
+    "question": "app measure area of marked patch on wall from photo with reference card square metres offline plasterer quote",
+    "status": "ok"
+  },
+  {
+    "answer": "Keine App gefunden. Forenbeiträge (bau.de, mit eingebetteten KI-Kommentaren, daher schwach) raten, den Untergrund vor dem Verputzen mit Fotos zu dokumentieren und bei Abweichung ein gemeinsames Aufmaß mit Foto und Unterschrift zu machen; zur Abrechnungsgrundlage widersprechen sich die Beiträge. Lead für Bedarf (practitioner, schwach), kein Prior-Art-Treffer.",
+    "candidate_id": "C2",
+    "pages": [
+      "https://bau.de/forum/aussenwaende/12658.php",
+      "https://bau.net/forum/aussenwaende/12658.php",
+      "https://bau.de/forum/innenwaende/10233.php",
+      "https://bau.de/forum/innenwaende/10965.php",
+      "https://bau.de/forum/aussenwaende/15488.php",
+      "https://bau.net/forum/innenwaende/10233.php",
+      "https://bau.de/forum/innenwaende/11729.php",
+      "https://bau.de/forum/innenwaende/10698.php",
+      "https://bau.net/forum/innenwaende/10965.php"
+    ],
+    "question": "Aufmaß Putz abgeschlagene Fläche dokumentieren Foto vor dem Verputzen gemeinsames Aufmaß nachträglich nicht feststellbar App",
+    "status": "ok"
+  },
+  {
+    "answer": "Wallrap (iPhone) kalibriert je Wand mit einem bekannt hohlen und einem bekannt festen Klopfpunkt und ordnet jeden weiteren Klopfer als hohl/Kante/fest ein; Zweck Ständerwerk/Trockenbau, laut Entwickler störanfällig bei Lärm und bei Putz auf Latten. Seismo AI (Multimedia University, InventX 2025, Studierendenprojekt): 15-s-Aufnahme Münzklopfen → Hohl-Wahrscheinlichkeit. Lead: Mechanismus ‚Vergleich mit eigener Wand' existiert für Trockenbau; für Altputz auf Mauerwerk kein Treffer.",
+    "candidate_id": "C3",
+    "pages": [
+      "https://inventx.mmu.edu.my/ajax/SS003.html",
+      "https://inventx.mmu.edu.my/archive/2025/ajax/SS003.html",
+      "https://mergeek.com/latest/PZ5ExWbeDqRArD6g",
+      "https://apps.apple.com/nl/app/wallrap/id6777078648",
+      "https://apps.apple.com/in/app/wallrap/id6777078648",
+      "https://apps.apple.com/ng/app/wallrap/id6777078648",
+      "https://apps.apple.com/us/app/wallrap/id6777078648",
+      "https://logs.awe.cpanel.net/?p=27053",
+      "https://thewearify.com/?p=103533"
+    ],
+    "question": "phone app record tap sounds compare to reference tap on same wall hollow render plasterer tap test helper noisy site",
+    "status": "ok"
+  },
+  {
+    "answer": "Keine App und keine Mengenangabe je m² gefunden. Putzdicke wird laut Forum mit Putzdickenmessgerät oder Bohrkern geprüft und mit Foto und Messprotokoll dokumentiert; FH Potsdam beschreibt eine studentische Fassadenaufnahme mit Schadenskartierung und Putzanalytik. Lead, kein Prior-Art-Treffer; Suche war zu breit (zwei Fragen in einer).",
+    "candidate_id": "C5",
+    "pages": [
+      "https://bau.de/forum/aussenwaende/10257.php",
+      "https://bau.de/forum/aussenwaende/10715.php",
+      "https://bau.de/forum/ausbauarbeiten/11122.php",
+      "https://bau.de/forum/innenwaende/12517.php",
+      "https://bau.de/forum/estrich-bodenbelaege/15186.php",
+      "https://www.fh-potsdam.de/en/media/7407/download",
+      "https://bau.net/forum/aussenwaende/10715.php",
+      "https://bau.net/forum/aussenwaende/10257.php",
+      "https://bau.de/forum/keller/12385.php"
+    ],
+    "question": "Putzschichten Dicke messen Probestelle Foto Maßstab Schichtenfolge Altputz Befund Restaurator App Abfallmenge Putz abschlagen Tonnen pro m²",
+    "status": "ok"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "contract_version": "1.1.0",
+  "kills": [
+    {
+      "candidate_id": "C1",
+      "failed_checks": [
+        "why_now"
+      ],
+      "reason": "Töten (L1 für iPhone): Partometer (2,99 USD, Foto mit A4/Kreditkarte als Maßstab, Freihand-Flächenmodus, Zeichenmodus seit 01/2019, Erstversion 2013) leistet den Messkern in derselben Form; Android und Offline-Betrieb waren auf den gelesenen Seiten nicht bestätigt (Lücke nur der Android-Nachbau). Der Rest, Fläche mal zwei Preise, ist ein Taschenrechner (Modus). A7-Zahl 150 EUR je 10 m² ist Preisrechnung, kein Zeitgewinn gegenüber Zollstock belegt."
+    },
+    {
+      "candidate_id": "C2",
+      "failed_checks": [],
+      "reason": "[PARKED] deciding question: Gibt es zwei unabhängige Erstberichte von Putzern, dass Mehrfläche beim Abschlagen nach dem Neuputz nicht bezahlt wurde? | kills it if: Mehrfläche bei losem Putz üblich nach Stunden mit Rapport läuft (Suche j04 zeigt das in Foren schon teilweise). A7 Lohn: 10 auf 18 m² = 120-240 EUR bei 15-30 EUR/m². Prior Art L1-nah: Partometer misst, das PDF ist ein Formular-Modus. Beleg: schwaches practitioner, kein case."
+    },
+    {
+      "candidate_id": "C3",
+      "failed_checks": [
+        "already_in_memory",
+        "why_now"
+      ],
+      "reason": "Töten (d + a): Das Feld Handy-Ton zu verdecktem Zustand ist in Amélies Gedächtnis dicht (Stand 29.09.2026), und Wallrap (iPhone, 2,99 USD, Version 1.0 im Juni, keine Konten, kein Netz) vergleicht gespeicherte Klopf-Spuren je Wand genau nach diesem Schnitt, nur für Ständer und Rahmen (L1-nah, Altputz offen). Der Zeitgewinn (10-20 Min je Wand) ist unbelegt, ein Test im Lärm über 85 dB gäbe dem Ohr mit Gehörschutz kaum etwas voraus."
+    },
+    {
+      "candidate_id": "C5",
+      "failed_checks": [],
+      "reason": "[PARKED] deciding question: Nennen Putzer in mindestens zwei Berichten falsch geschätzte Schichtdicke oder Schuttmenge als Ursache von Mehrarbeit? | kills it if: Kalkulationshilfen Pauschalen je m² empfehlen (dann nur Rechner). A7 Zeit/Lohn: Zahl unbelegt. Prior Art: keine App gefunden. Beleg: nur institutional (NFNPA). Schwächster der geparkten, nahe an Dokumentation für andere."
+    }
+  ],
+  "log_row": {
+    "best_gap": "Putzer können die beim Abschlagen offen gelegte Mehrfläche nach dem Neuputz nicht mehr nachweisen; Bedarf nur als schwaches Forenbild belegt (parkt).",
+    "candidates": 7,
+    "constraint": "Altputz nur so weit entfernen wie hohl (Mindestumfang), Umfang erst beim Öffnen sichtbar",
+    "constraint_class": "informational",
+    "survivors": 0
+  },
+  "retro": {
+    "learned": "Die Fläche-aus-Foto-Funktion gibt es seit 2013/2019 als Partometer; eine Kombination daraus mit zwei Preisen ist kein neuer Schnitt. Stricter für Messkerne, die eine Allzweck-App schon hat.",
+    "mistake": "Der Generator hielt Wallrap für L2 wegen Trockenbau; die Seite nennt aber keinen Wandtyp, sodass der Mechanismus gleich ist. Looser war der Fehler nicht, die Einordnung als L1/L2 fehlte nur geprüfte Fakten.",
+    "next_time": "Erst die App-Store-Seiten der Nachbarn lesen (Version, Jahr, Plattform), dann Kandidaten schneiden; für C2 gezielt Regiestunden gegen m²-Abrechnung von Putzern erfragen. Looser bei Evidenz abroad, stricter bei Messkernen mit Vorläufer."
+  },
+  "survivors": []
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"scarcity-20261015T190000-bau-zeit"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-t01",
+    "pages": [
+      "https://digital.ub.uni-paderborn.de/download/pdf/8176968.pdf",
+      "https://bau.de/forum/innenwaende/10965.php",
+      "https://digital.ub.uni-paderborn.de/download/pdf/8186243.pdf",
+      "https://bau.de/forum/schaden/13283.php",
+      "https://digital.ub.uni-paderborn.de/download/pdf/8186245.pdf",
+      "https://digital.ub.uni-paderborn.de/download/pdf/8186247.pdf",
+      "https://bau.de/forum/innenwaende/11729.php",
+      "https://bau.de/forum/sonst/10283.php",
+      "https://bau.de/forum/normen/10303.php"
+    ],
+    "status": "ok",
+    "summary": "hohlliegender Putz abschlagen Abrechnung nach Aufmaß Nachtrag Streit Hohlstellen erst beim Abschlagen",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-t02",
+    "pages": [
+      "https://camdocs.camden.gov.uk/CMWebDrawer/Record/10925737/file/document",
+      "https://camdocs.camden.gov.uk/CMWebDrawer/Record/10951219/file/document",
+      "https://camdocs.camden.gov.uk/CMWebDrawer/Record/6486289/file/document",
+      "https://camdocs.camden.gov.uk/CMWebDrawer/Record/8801300/file/document",
+      "https://camdocs.camden.gov.uk/CMWebDrawer/Record/10742988/file/document",
+      "https://camdocs.camden.gov.uk/CMWebDrawer/Record/6613100/file/document",
+      "https://camdocs.camden.gov.uk/CMWebDrawer/Record/10740944/file/document",
+      "https://camdocs.camden.gov.uk/CMWebDrawer/Record/5407116/file/document",
+      "https://camdocs.camden.gov.uk/CMWebDrawer/Record/10713478/file/document"
+    ],
+    "status": "ok",
+    "summary": "Camden method statement render tap mallet chalk extent uncertain until removal drummy render (Abruf des Dokuments 10925737 per curl und WebFetch gescheitert: Verbindung abgelehnt; nur Suchschnipsel)",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-t03",
+    "pages": [
+      "https://bau.de/forum/innenwaende/12490.php",
+      "https://www.mc-bauchemie.de:443/assets/downloads/products/de-DE/allgemeine_verarbeitungshinweise/Elegant_MRP_DE_DE_DE_GAA.pdf",
+      "https://bau.de/forum/innenwaende/11310.php",
+      "https://bau.net/forum/innenwaende/12490.php",
+      "https://prd-media.crb.ch/media/10101/Fassadendämmung für den Profi im Altbau.pdf",
+      "https://bau.de/forum/innenwaende/11184.php",
+      "https://bau.de/forum/innenwaende/10766.php",
+      "https://www.maxit.de/fileadmin/user_upload/Downloads/Putze_und_Farben/710931_maxit_Innenwand_im_Fokus_A4_2024_web_s.pdf",
+      "https://bau.net/forum/innenwaende/11310.php"
+    ],
+    "status": "ok",
+    "summary": "Altputz Hohlstellen abklopfen Untergrundprüfung Merkblatt Putzinstandsetzung Umfang erst nach dem Abschlagen erkennbar",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-t04",
+    "pages": [
+      "https://www.tendringdc.gov.uk/sites/default/files/documents/planning/heritage,%20conservation%20%26%20trees/TDC_PLASTERANDRENDER.pdf",
+      "https://www.spelthorne.gov.uk/sites/default/files/migration/media/2308/Mortars-Plasters-and-Renders/pdf/advisory_leaflet_7_mortars_plasters_and_renders.pdf",
+      "https://www.realhomes.com/us/advice/fixing-problems-with-old-plaster",
+      "https://www.realhomes.com/advice/fixing-problems-with-old-plaster",
+      "https://www.ihbc.org.uk/caring/elements/walls",
+      "https://camdocs.camden.gov.uk/CMWebDrawer/Record/10090442/file/document",
+      "https://www.newforestnpa.gov.uk/app/uploads/2018/03/HistoricBuildings_plastersandrenders_00143.pdf",
+      "https://www.newforestnpa.gov.uk/document/plasters-and-renders/",
+      "https://midsuffolk.gov.uk/renders-and-plasters-on-historic-buildings"
+    ],
+    "status": "ok",
+    "summary": "historic buildings plasters and renders guidance extent of repair ascertained by tapping hollow sound only the very minimum should be taken off listed building consent (NFNPA-PDF per curl geladen, Text lokal extrahiert und gelesen)",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-t05",
+    "pages": [
+      "https://www.bizhub365.com/find/plasterer/hastings/cost/",
+      "https://www.myjobquote.co.uk/costs/remove-render",
+      "https://www.periodproperty.co.uk/forum/threads/lime-render-costs-help.12724",
+      "https://www.periodproperty.co.uk/forum/threads/lime-render-costs-help.12724/latest",
+      "https://www.mybuilder.com/questions/v/24229/would-i-be-able-to-have-a-previously-painted-house-rendered",
+      "https://www.hamuch.com/rates/plasterer",
+      "https://www.bizhub365.com/find/plasterer/stockport/cost/",
+      "https://bizhub365.com/find/plasterer/basildon/cost/",
+      "https://www.bizhub365.com/find/plasterer/hornsea/cost/"
+    ],
+    "status": "ok",
+    "summary": "plasterer quote hollow render per square metre extra once render removed more blown than expected forum",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-t06",
+    "pages": [
+      "https://bau.de/forum/schaden/13283.php",
+      "https://bau.de/forum/innenwaende/11057.php",
+      "https://bau.net/forum/schaden/13283.php",
+      "https://meister-job.de/putz-broeckelt-ab/",
+      "https://bau.net/forum/innenwaende/11057.php",
+      "https://bau.net/forum/innenwaende/10766.php",
+      "https://bau.de/forum/aussenwaende/15362.php",
+      "https://bau.de/forum/handwerk/10138.php",
+      "https://bau.de/forum/innenwaende/10804.php"
+    ],
+    "status": "ok",
+    "summary": "Putzsanierung Angebot Hohlstellen Prozent der Fläche geschätzt Abschlagen nach Aufwand Stuckateur Kosten mehr als gedacht",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-t07",
+    "pages": [
+      "https://www.pref.ehime.jp/uploaded/attachment/6071.pdf",
+      "https://kawanoishi-h.esnet.ed.jp/file/9052",
+      "https://www.city.imabari.ehime.jp/gyousei/siteikanri/siteikanri-r05/001/tuika/tuika7.pdf",
+      "https://imabarikita-h.esnet.ed.jp/file/8287",
+      "https://imabarinishi-h.esnet.ed.jp/uploads/jimu/nyusatu_kinenkan/3_siyosho.pdf",
+      "https://www.mlit.go.jp/common/001288930.pdf",
+      "https://www.city.sapporo.jp/kodomo-mirai/nyuusatsu/bid-item/2024/documents/shiyousho_1.pdf",
+      "https://www.pref.saga.lg.jp/kyouiku/kiji003116672/3_116672_up_ahmlzmn4.pdf",
+      "https://www.city.sapporo.jp/kikaku/shomu/ippankyousou/documents/shiyousyo_020928-1.pdf"
+    ],
+    "status": "ok",
+    "summary": "外壁 全面打診 調査 打診棒 1日 何㎡ 浮き 範囲 マーキング 費用 (Japan: Fassaden-Klopfprüfung, Flächenleistung, Kosten)",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-t08",
+    "pages": [
+      "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/4519245",
+      "https://inventx.mmu.edu.my/ajax/SS003.html",
+      "https://inventx.mmu.edu.my/archive/2025/ajax/SS003.html",
+      "https://ph01.tci-thaijo.org/index.php/rmutijo/article/view/119183",
+      "https://www.woodworkingnetwork.com/fdmc-magazine/shop/testing-wood-your-phone",
+      "https://www.nap.edu/read/22609/chapter/21",
+      "https://nap.nationalacademies.org/read/22609/chapter/21",
+      "https://www.ipros.com/en/cg2/Hitting sound checker",
+      "https://patents.google.com/patent/US3762496A",
+      "https://nap.nationalacademies.org/read/22609/chapter/13"
+    ],
+    "status": "ok",
+    "summary": "smartphone app tapping sound hollow plaster tile delamination detection microphone map 打音 アプリ",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-t09",
+    "pages": [
+      "https://www.mathworks.com/help/simulink/supportpkg/android_ref/classify-human-voice-using-yamnet-on-android-device.html",
+      "https://developers.google.com/edge/mediapipe/solutions/audio/audio_classifier/android?authuser=1",
+      "https://developers.google.com/edge/mediapipe/solutions/audio/audio_classifier/android?authuser=5",
+      "https://it.mathworks.com/help/simulink/supportpkg/android_ref/classify-human-voice-using-yamnet-on-android-device.html",
+      "https://developers.google.com/edge/mediapipe/solutions/audio/audio_classifier/android?authuser=2",
+      "https://jp.mathworks.com/help/simulink/supportpkg/android_ref/classify-human-voice-using-yamnet-on-android-device.html",
+      "https://developers.google.com/edge/mediapipe/solutions/audio/audio_classifier/android?authuser=3",
+      "https://developers.google.com/edge/mediapipe/solutions/audio/audio_classifier/android?authuser=8",
+      "https://developers.google.com/edge/mediapipe/solutions/audio/audio_classifier/android"
+    ],
+    "status": "ok",
+    "summary": "MediaPipe Audio Classifier on-device Android YAMNet released offline custom model 2023",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-t10",
+    "status": "ok",
+    "summary": "bib find --stamm klopf / hohlstelle / putz / kalkmörtel / verdeckt (Kopie von Amélie im Scratchpad): Treffer Kalkmörtel-Rechner (lime-mortar-historic-masonry-calc, Mischungsverhältnis), Holz-Klopfton-Grab, Walnuss-Klopftest; kein Treffer zu Hohlputz-Fläche",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-t11",
+    "pages": [
+      "https://www.ipros.com/en/cg1/Apps/measurement/",
+      "https://apps.apple.com/us/app/right-measure-calculate-measures-automatically-using/id1092661938?uo=4",
+      "https://apps.apple.com/app/id1092661938",
+      "https://apps.apple.com/app/id689675004",
+      "https://apps.apple.com/jp/app/right-measure-calculate-measures-automatically-using/id1092661938?l=en-US",
+      "https://apps.apple.com/jp/app/right-measure-calculate-measures-automatically-using/id1092661938?l=ja",
+      "https://apps.apple.com/us/app/-/id689675004",
+      "https://apps.apple.com/us/app/-/id6744528187",
+      "https://mwm.ai/apps/planimeter-pro-for-map-measure/476039389",
+      "https://appgoblin.info/apps/689675004"
+    ],
+    "status": "ok",
+    "summary": "Prior-Art C1: app measure area of marked patch on wall from photo with reference card square metres offline plasterer quote",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-t12",
+    "pages": [
+      "https://bau.de/forum/aussenwaende/12658.php",
+      "https://bau.net/forum/aussenwaende/12658.php",
+      "https://bau.de/forum/innenwaende/10233.php",
+      "https://bau.de/forum/innenwaende/10965.php",
+      "https://bau.de/forum/aussenwaende/15488.php",
+      "https://bau.net/forum/innenwaende/10233.php",
+      "https://bau.de/forum/innenwaende/11729.php",
+      "https://bau.de/forum/innenwaende/10698.php",
+      "https://bau.net/forum/innenwaende/10965.php"
+    ],
+    "status": "ok",
+    "summary": "Prior-Art C2: Aufmaß Putz abgeschlagene Fläche dokumentieren Foto vor dem Verputzen gemeinsames Aufmaß nachträglich nicht feststellbar App",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-t13",
+    "pages": [
+      "https://inventx.mmu.edu.my/ajax/SS003.html",
+      "https://inventx.mmu.edu.my/archive/2025/ajax/SS003.html",
+      "https://mergeek.com/latest/PZ5ExWbeDqRArD6g",
+      "https://apps.apple.com/nl/app/wallrap/id6777078648",
+      "https://apps.apple.com/in/app/wallrap/id6777078648",
+      "https://apps.apple.com/ng/app/wallrap/id6777078648",
+      "https://apps.apple.com/us/app/wallrap/id6777078648",
+      "https://logs.awe.cpanel.net/?p=27053",
+      "https://thewearify.com/?p=103533"
+    ],
+    "status": "ok",
+    "summary": "Prior-Art C3: phone app record tap sounds compare to reference tap on same wall hollow render plasterer tap test helper noisy site",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-t14",
+    "pages": [
+      "https://bau.de/forum/aussenwaende/10257.php",
+      "https://bau.de/forum/aussenwaende/10715.php",
+      "https://bau.de/forum/ausbauarbeiten/11122.php",
+      "https://bau.de/forum/innenwaende/12517.php",
+      "https://bau.de/forum/estrich-bodenbelaege/15186.php",
+      "https://www.fh-potsdam.de/en/media/7407/download",
+      "https://bau.net/forum/aussenwaende/10715.php",
+      "https://bau.net/forum/aussenwaende/10257.php",
+      "https://bau.de/forum/keller/12385.php"
+    ],
+    "status": "ok",
+    "summary": "Prior-Art C5: Putzschichten Dicke messen Probestelle Foto Maßstab Schichtenfolge Altputz Befund Restaurator App Abfallmenge Putz abschlagen Tonnen pro m²",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-j01",
+    "pages": [
+      "https://apps.apple.com/us/app/wallrap/id6777078648"
+    ],
+    "status": "ok",
+    "summary": "Richter-Abruf (WebFetch): Wallrap App Store, Material, offline, Datum (L1-Frage zu C3)",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-j02",
+    "pages": [
+      "https://apps.apple.com/app/id689675004"
+    ],
+    "status": "ok",
+    "summary": "Richter-Abruf (WebFetch): Partometer App Store, Freihandfläche, Android, Jahr (L1-Frage zu C1)",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-j03",
+    "pages": [
+      "https://apps.apple.com/app/id689675004",
+      "https://www.bluestacks.com/campaign/com.vistechprojects.partometer/es",
+      "https://apps.apple.com/app/id579961082",
+      "https://appgoblin.info/apps/689675004"
+    ],
+    "status": "ok",
+    "summary": "Richter-Suche: Android-App Fläche aus Foto mit A4-Referenz und Freihandumriss, offline",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015T190000-bau-zeit-j04",
+    "pages": [
+      "https://bau.de/forum/innenwaende/11302.php",
+      "https://bau.de/forum/aussenwaende/14091.php",
+      "https://bau.de/forum/schaden/15030.php",
+      "https://meister-job.de/putz-broeckelt-ab/",
+      "https://www.hausbau-forum.de/threads/kosten-kalkinnenputz-viel-zu-hoch.j8k8m0/"
+    ],
+    "status": "ok",
+    "summary": "Richter-Suche: Putz Mehrfläche beim Abschlagen, m² gegen Stundenlohn (bedeutet C2 Bedarf)",
+    "tool": "search"
+  }
+]
