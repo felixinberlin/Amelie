@@ -582,3 +582,30 @@
 {"at":"2026-10-15T14:16:49.482Z","event":"op","plan_id":"abbundzeichen-implementation-20261015","actor":"bibliothekar","agent":"bibliothekar","runde":"Abbundzeichen Umsetzung 15.10.2026","op":"source.rate","target":"dsd-kulturspur-abbundzeichen-volltext","detail":"bewertet 2 3 5 5 3 3"}
 {"at":"2026-10-15T14:16:49.482Z","event":"op","plan_id":"abbundzeichen-implementation-20261015","actor":"bibliothekar","agent":"bibliothekar","runde":"Abbundzeichen Umsetzung 15.10.2026","op":"source.rate","target":"raking-light-bill-hardy-arabic-assembly","detail":"bewertet 2 3 5 5 3 3"}
 {"at":"2026-10-15T14:16:49.482Z","event":"apply","plan_id":"abbundzeichen-implementation-20261015","key":"abbundzeichen-implementation-20261015","actor":"bibliothekar","ops":5,"files":8}
+{"at":"2026-10-16T23:03:35.555Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter / Grundsicherung — 14.10.2026","cmd":"protokoll add","id":"meldeversaeumnis-zaehler"}
+{"at":"2026-10-16T23:03:35.764Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter / Grundsicherung — 14.10.2026","cmd":"protokoll add","id":"meldeversaeumnis-zaehler-abzugspruefer"}
+{"at":"2026-10-16T23:03:35.998Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter / Grundsicherung — 14.10.2026","cmd":"protokoll add","id":"kdu-grenzen-register"}
+{"at":"2026-10-16T23:03:36.226Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter / Grundsicherung — 14.10.2026","cmd":"protokoll add","id":"abhilfe-spiegel"}
+{"at":"2026-10-16T23:03:36.463Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter / Grundsicherung — 14.10.2026","cmd":"protokoll add","id":"tafel-aufnahmebarometer"}
+{"at":"2026-10-16T23:03:36.690Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter / Grundsicherung — 14.10.2026","cmd":"protokoll add","id":"fw-diff"}
+{"at":"2026-10-16T23:03:36.981Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter / Grundsicherung — 14.10.2026","cmd":"protokoll add","id":"untaetigkeits-uhr"}
+{"at":"2026-10-16T23:03:37.201Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter / Grundsicherung — 14.10.2026","cmd":"protokoll add","id":"tafel-berechtigungsblatt"}
+{"at":"2026-10-16T23:03:37.428Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter / Grundsicherung — 14.10.2026","cmd":"protokoll add","id":"bescheid-verstaendlichkeit"}
+{"at":"2026-10-16T23:03:37.660Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter / Grundsicherung — 14.10.2026","cmd":"protokoll add","id":"regelbedarf-mischindex"}
+{"at":"2026-10-16T23:03:37.880Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter / Grundsicherung — 14.10.2026","cmd":"protokoll add","id":"bescheid-nachrechner"}
+{"at":"2026-10-16T23:03:38.098Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter / Grundsicherung — 14.10.2026","cmd":"protokoll add","id":"laufzeit-fahrplan"}
+{"at":"2026-10-16T23:03:38.337Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter / Grundsicherung — 14.10.2026","cmd":"protokoll add","id":"seitenindex-deckblatt"}
+{"at":"2026-10-16T23:04:19.936Z","event":"cli","actor":"bibliothekar","cmd":"grab add","ids":["abhilfe-spiegel","tafel-aufnahmebarometer","fw-diff","untaetigkeits-uhr","tafel-berechtigungsblatt","bescheid-verstaendlichkeit","regelbedarf-mischindex","bescheid-nachrechner"]}
+{"at":"2026-10-16T23:05:29.184Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","id":"ba-fw-32-sgb-ii-2026-07"}
+{"at":"2026-10-16T23:05:29.283Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","id":"jc-wuppertal-einladungen-rechtsfolgen-2026"}
+{"at":"2026-10-16T23:05:29.377Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","id":"tacheles-impressum"}
+{"at":"2026-10-16T23:05:29.473Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","id":"buzer-sgb-ii-43"}
+{"at":"2026-10-16T23:05:29.568Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","id":"gii-sgb-ii-43"}
+{"at":"2026-10-16T23:05:29.660Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","id":"gegen-hartz-dreimal-plus-eins"}
+{"at":"2026-10-16T23:05:29.794Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","id":"arbeitslosenselbsthilfe-untaetigkeitsklage"}
+{"at":"2026-10-16T23:05:29.888Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","id":"thome-bundesweite-dienstanweisungen-kdu"}
+{"at":"2026-10-16T23:05:30.018Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","id":"sozialrechts-hilfe-offenbach-kdu"}
+{"at":"2026-10-16T23:05:30.163Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","id":"ba-presse-widerspruchsquote-2026-03"}
+{"at":"2026-10-16T23:05:30.270Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","id":"tafel-deutschland-eco-plattform"}
+{"at":"2026-10-16T23:05:30.368Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","id":"hartz4widerspruch-de"}
+{"at":"2026-10-16T23:05:30.377Z","event":"cli","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","cmd":"quellen import","count":12}

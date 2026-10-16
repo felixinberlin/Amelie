@@ -44,7 +44,7 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 ## Skizze
 
 **Gesprächsnavigator** (`public/gruendungsnavigator/index.html`):
-- **Vorbereitung:** Angaben nur im Browser, Grundregeln, Mitbring-Liste. **Branchenpaket** wählen (sechs erfundene Beispiele und eine leere Vorlage) oder eine eigene Fassung anlegen, herunterladen und wieder laden.
+- **Vorbereitung:** Angaben nur im Browser, Grundregeln, Mitbring-Liste, **Deckblatt mit Seitenindex** für die Unterlagen-Mappe (Anlagen mit Seitenbereichen, Feld für die Eingangsbestätigung; der Hinweis „kein Zugangsnachweis“ steht daneben). **Branchenpaket** wählen (sechs erfundene Beispiele und eine leere Vorlage) oder eine eigene Fassung anlegen, herunterladen und wieder laden.
 - **Telefonat:** Entscheidungsbaum mit 7 Fragen und 23 möglichen Antworten. Jede Antwort hat Formulierung, Hintergrund und zitierte Norm. Dazu Fortschrittsbalken und Live-Protokoll.
 - **Termin:** 34 allgemeine Fragen plus die Zusatzfragen des Pakets (im Beispiel Webentwicklung 42) mit anpassbaren Beispielantworten, Beleg und Norm. Übungsfortschritt und Druckfassung.
 - **Rechte-Karten:** 30 typische Antworten des Gegenübers („Das fördern wir nicht“, „Unterschreiben Sie hier“). Ein Tipp zeigt Anliegen, Normtext und formalen nächsten Schritt. Vier Gruppen zum Filtern; allein 9 Karten gegen das Abwimmeln: „Dafür bin ich nicht zuständig“, „Da müssen Sie zur Agentur für Arbeit“, „Das nehme ich so nicht an“, „Rufen Sie die Hotline an“, „Ihre Ansprechperson ist nicht da“, „Ich leite das weiter“ und weitere, jeweils mit der Pflicht zur Weiterleitung (§ 16 Abs. 2 SGB I) oder zur Annahme (§ 20 Abs. 3 SGB X) im Wortlaut.
@@ -55,11 +55,11 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 - 9 Stationen vom Antrag bis zum Ausstieg.
 - 29 Fragen mit 107 Antworten, je mit Reaktion, nächstem Schritt, Frist und Normtext.
 - Fristen-Zeitstrahl.
-- 44 Normen (ein Register für beide Seiten) mit Link zu gesetze-im-internet.de und dejure.org. Wörtliches ist zitiert, Sinngemäßes als „Kurzfassung“ markiert.
+- 45 Normen (ein Register für beide Seiten) mit Link zu gesetze-im-internet.de und dejure.org. Wörtliches ist zitiert, Sinngemäßes als „Kurzfassung“ markiert.
 
 **Kern** (`src/engine/gruendungsnavigator/`):
 - Monatsfristen nach §§ 187, 188 BGB, mit Verschiebung auf den Werktag (§ 64 Abs. 3 SGG; Feiertage per Osterformel, Landesfeiertage zuschaltbar).
-- Widerspruch (1 Monat, ohne Belehrung 1 Jahr), Klage, Untätigkeit (6 bzw. 3 Monate).
+- Widerspruch (1 Monat, ohne Belehrung 1 Jahr), Klage, Untätigkeit (6 bzw. 3 Monate), Vorschuss nach § 42 SGB I (Zahlung spätestens einen Monat nach dem Vorschussantrag, mit dem Hinweis, dass das Verhältnis zur vorläufigen Entscheidung nach § 41a SGB II zu klären ist).
 - Gewerbe- und Finanzamtsanzeige, Einstiegsgeld-Höchstdauer, Jahresprüfung nach § 10 Abs. 2 Nr. 5, Festsetzungsfiktion § 41a Abs. 5.
 - Reihenfolgeprüfer Antrag/Start (§ 37 Abs. 2). Fehlt ein Datum, lautet das Ergebnis „unbekannt“.
 - Freibetrag nach § 11b Abs. 2, 3.
@@ -74,7 +74,7 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 
 ## Erster Schritt
 
-**Ticket 01 ist erledigt (13.10.2026): Die Seite ist Vorlage.** Alle Beispielinhalte liegen in Branchenpaketen (JSON) unter `07-demos/gruendungsnavigator/data/pakete/`: Webentwicklung, Montage und Kleinreparaturen, Mobiler Kaffeestand, Grafikdesign, Alltagsbegleitung, Onlinehandel mit gebrauchten Büchern (alle erfunden) und ein leeres Paket. Normregister (44 Normen, eins für beide Seiten), Telefonbaum, Fragen und Fall-Landkarte sind Daten, die der getestete Kern füllt; ein Build-Schritt baut Daten und Kern in die Seiten ein, die einzelne Dateien bleiben und offline laufen. Auf der Seite: Paket wählen, eigene Fassung im Formular erstellen, als JSON herunterladen und wieder laden. Erfüllt: Schema und Paketprüfung (57 Tests mit Gegenproben), Zitat-Abgleich 31/31, Graph- und Fristentests, Sprachwächter über alle Pakete, 360 px. Offen: der Stoppuhr-Test mit einer zweiten Person. Details: `07-demos/gruendungsnavigator/ticket-01-vorlage.md`.
+**Ticket 01 ist erledigt (13.10.2026): Die Seite ist Vorlage.** Alle Beispielinhalte liegen in Branchenpaketen (JSON) unter `07-demos/gruendungsnavigator/data/pakete/`: Webentwicklung, Montage und Kleinreparaturen, Mobiler Kaffeestand, Grafikdesign, Alltagsbegleitung, Onlinehandel mit gebrauchten Büchern (alle erfunden) und ein leeres Paket. Normregister (45 Normen, eins für beide Seiten), Telefonbaum, Fragen und Fall-Landkarte sind Daten, die der getestete Kern füllt; ein Build-Schritt baut Daten und Kern in die Seiten ein, die einzelne Dateien bleiben und offline laufen. Auf der Seite: Paket wählen, eigene Fassung im Formular erstellen, als JSON herunterladen und wieder laden. Erfüllt: Schema und Paketprüfung (57 Tests mit Gegenproben), Zitat-Abgleich 31/31, Graph- und Fristentests, Sprachwächter über alle Pakete, 360 px. Offen: der Stoppuhr-Test mit einer zweiten Person. Details: `07-demos/gruendungsnavigator/ticket-01-vorlage.md`.
 
 **Ticket 02: Praxistest und Gegenlesen.** Zwei Personen ohne Programmierkenntnis erstellen mit der Seite ihre eigene Fassung (Stoppuhr, Protokoll), und eine fachkundige Stelle (Sozialberatung oder Kammer) liest ein Branchenpaket gegen.
 

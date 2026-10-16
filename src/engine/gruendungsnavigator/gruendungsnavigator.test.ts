@@ -23,6 +23,8 @@ import {
   pruefeBaum,
   geheBaum,
   assertKeinVersprechen,
+  seitenIndex,
+  DECKBLATT_HINWEIS_DE,
   parseIso,
   GELTUNGSGRENZE_DE,
   GELTUNGSGRENZE_EN,
@@ -166,6 +168,21 @@ describe('Fristen', () => {
     expect(berechneFristen({ bewilligungsEnde: '2027-04-30' })[0].datum).toBe('2028-04-30');
   });
 
+  it('Vorschuss (§ 42 SGB I): Zahlung spätestens nach Ablauf eines Monats ab Eingang, nur als Lesart mit Hinweis', () => {
+    const v = berechneFristen({ vorschussAntrag: '2026-10-16' }).find((x) => x.id === 'vorschuss')!;
+    expect(v.art).toBe('spaetestens');
+    expect(v.datum).toBe('2026-11-17');
+    expect(v.normId).toBe('sgb1_42');
+    expect(v.begruendungDe).toContain('§ 41a SGB II');
+    expect(v.begruendungDe).toContain('Anspruch dem Grunde nach');
+    // Monatsende: 31.01. + 1 Monat = 28.02. (§ 188 Abs. 3 BGB), Zahlung ab 01.03.
+    expect(berechneFristen({ vorschussAntrag: '2027-01-31' })[0].datum).toBe('2027-03-01');
+  });
+
+  it('Vorschuss: ohne Antragsdatum keine Zeile (Gegenprobe)', () => {
+    expect(berechneFristen({ antrag: '2026-10-16' }).some((x) => x.id === 'vorschuss')).toBe(false);
+  });
+
   it('ohne Daten keine Fristen, nichts geschätzt', () => {
     expect(berechneFristen({})).toEqual([]);
   });
@@ -178,6 +195,30 @@ describe('Fristen', () => {
     expect(f[0].art).toBe('hinweis');
     const daten = f.filter((x) => x.datum).map((x) => x.datum!);
     expect([...daten].sort()).toEqual(daten);
+  });
+});
+
+// ------------------------------------------------------------------ Unterlagen-Mappe
+
+describe('Seitenindex für das Deckblatt der Unterlagen-Mappe', () => {
+  it('Anlage 1 beginnt auf Seite 2, Bereiche schließen lückenlos an', () => {
+    const r = seitenIndex([{ titel: 'Antrag', seiten: 1 }, { titel: 'Businessplan', seiten: 13 }, { titel: 'Lebenslauf', seiten: 2 }]);
+    expect(r.zeilen.map((z) => [z.nr, z.von, z.bis])).toEqual([[1, 2, 2], [2, 3, 15], [3, 16, 17]]);
+    expect(r.gesamt).toBe(17);
+  });
+
+  it('leere Mappe: nur das Deckblatt', () => {
+    expect(seitenIndex([])).toEqual({ zeilen: [], gesamt: 1 });
+  });
+
+  it.each([0, -1, 1.5, Number.NaN])('Gegenprobe: Seitenzahl %s wird abgelehnt, nicht geraten', (n) => {
+    expect(() => seitenIndex([{ titel: 'X', seiten: n }])).toThrow(/Seitenzahl/);
+  });
+
+  it('der Hinweis sagt, dass das Deckblatt kein Zugangsnachweis ist, und nennt den Weg dazu', () => {
+    expect(DECKBLATT_HINWEIS_DE).toContain('kein Zugangsnachweis');
+    expect(DECKBLATT_HINWEIS_DE).toContain('Eingang');
+    expect(() => assertKeinVersprechen(DECKBLATT_HINWEIS_DE)).not.toThrow();
   });
 });
 
@@ -229,10 +270,10 @@ describe('Erwerbstätigenfreibetrag (§ 11b Abs. 2, 3 SGB II)', () => {
 
 describe('Normstand', () => {
   it('ist am Prüftag und elf Monate später aktuell, nach zwölf Monaten veraltet', () => {
-    expect(RECHTSSTAND.geprueftAm).toBe('2026-10-11');
-    expect(normstandVeraltet('2026-10-11')).toBe(false);
-    expect(normstandVeraltet('2027-09-11')).toBe(false);
-    expect(normstandVeraltet('2027-10-12')).toBe(true);
+    expect(RECHTSSTAND.geprueftAm).toBe('2026-10-16');
+    expect(normstandVeraltet('2026-10-16')).toBe(false);
+    expect(normstandVeraltet('2027-09-16')).toBe(false);
+    expect(normstandVeraltet('2027-10-17')).toBe(true);
   });
 });
 
@@ -338,8 +379,8 @@ describe('Demo: Gesprächsnavigator (Daten von index.html, Referenzpaket Webentw
 });
 
 describe('Normregister (normen.json, beide Seiten)', () => {
-  it('44 Normen, jede mit gesetze-im-internet- und dejure-Link, Fassung, Prüfdatum und genau einer Kennzeichnung', () => {
-    expect(Object.keys(L).length).toBe(44);
+  it('45 Normen, jede mit gesetze-im-internet- und dejure-Link, Fassung, Prüfdatum und genau einer Kennzeichnung', () => {
+    expect(Object.keys(L).length).toBe(45);
     for (const [id, n] of Object.entries(L)) {
       expect(n.u, id).toMatch(/^https:\/\/www\.gesetze-im-internet\.de\//);
       expect(n.d, id).toMatch(/^https:\/\/dejure\.org\/gesetze\//);

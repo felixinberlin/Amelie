@@ -1474,6 +1474,14 @@
    "lbl": "1 Monat"
   },
   {
+   "f": "Vorschuss spätestens",
+   "ab": "1 Kalendermonat ab Vorschussantrag",
+   "wer": "Jobcenter",
+   "law": "sgb1_42",
+   "x": 2,
+   "lbl": "1 Monat"
+  },
+  {
    "f": "Untätigkeit Widerspruch",
    "ab": "3 Monate ab Widerspruch",
    "wer": "Sozialgericht",

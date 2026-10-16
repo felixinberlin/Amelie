@@ -54,51 +54,51 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/graeber.json` (`DISCARDED_DATA`) mit `npm run friedhof` (läuft nach `npm run bib -- grab add` von selbst). Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**154 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 144 dokumentierten Fundwegen kamen 16 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 11 %.
+**162 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 152 dokumentierten Fundwegen kamen 16 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 11 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 74 | 48 % |
-| Beim Empfänger selbst | 32 | 21 % |
-| Falsche Prämisse | 18 | 12 % |
-| Reality-Check | 18 | 12 % |
-| Keine neue Fähigkeit | 10 | 6 % |
+| Schon gebaut | 75 | 46 % |
+| Beim Empfänger selbst | 34 | 21 % |
+| Falsche Prämisse | 21 | 13 % |
+| Reality-Check | 18 | 11 % |
+| Keine neue Fähigkeit | 12 | 7 % |
 | Duplikat | 2 | 1 % |
 
 **Welche Suche traf**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Deutsche Suche | 64 | 42 % |
-| Englische Suche | 44 | 29 % |
-| Empfänger-Suche | 19 | 12 % |
-| Ohne Suche | 12 | 8 % |
+| Deutsche Suche | 70 | 43 % |
+| Englische Suche | 44 | 27 % |
+| Empfänger-Suche | 21 | 13 % |
+| Ohne Suche | 12 | 7 % |
 | Nicht dokumentiert | 10 | 6 % |
-| Eigener Atlas / Protokoll | 4 | 3 % |
+| Eigener Atlas / Protokoll | 4 | 2 % |
 | Forum / Nische | 1 | 1 % |
 
 **Woher sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Bisoziation | 65 | 42 % |
-| Primärquelle | 42 | 27 % |
-| Inversion | 19 | 12 % |
+| Bisoziation | 67 | 41 % |
+| Primärquelle | 42 | 26 % |
+| Inversion | 23 | 14 % |
 | Brainstorm | 16 | 10 % |
-| Ideenliste | 8 | 5 % |
-| Modell-Katalog | 4 | 3 % |
+| Ideenliste | 10 | 6 % |
+| Modell-Katalog | 4 | 2 % |
 
 **Wer sie schon hatte**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 41 | 27 % |
-| Niemand | 31 | 20 % |
-| Forschung | 26 | 17 % |
-| Behörde | 23 | 15 % |
-| Gemeinnützige | 20 | 13 % |
+| Firma | 42 | 26 % |
+| Niemand | 34 | 21 % |
+| Behörde | 26 | 16 % |
+| Forschung | 26 | 16 % |
+| Gemeinnützige | 21 | 13 % |
 | Community / Indie | 11 | 7 % |
 | Eigener Bestand | 2 | 1 % |
 
@@ -106,7 +106,7 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 151 | 98 % |
+| Kandidat | 159 | 98 % |
 | Dose gepackt | 2 | 1 % |
 | Mail entworfen | 1 | 1 % |
 
@@ -119,6 +119,14 @@ Die Ursachen genauer:
 | Generischer Staubmaßnahmen-Lotse | 15.10.2026 | Beim Empfänger selbst | Behörde | Empfänger-Suche | Primärquelle | Kandidat | Eine fachlich dokumentierte Tätigkeitsentscheidung ist durch WINGIS und vorhandene offizielle Staubhilfen nicht abgedeckt und der Empfänger bestätigt den Bedarf. |
 | Mauerlast-Tageskonto | 15.10.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Bisoziation | Kandidat | BAuA bestätigt eine notwendige Arbeitslagen-/Tätigkeitskombination, die LMM-HHT und LMM-Multi-E nicht abbilden und die fachlich valide berechnet werden kann. |
 | Nasssäge-Wasserwechsel-Übergabe | 15.10.2026 | Keine neue Fähigkeit | Niemand | Englische Suche | Bisoziation | Kandidat | Feldstudie belegt einen ungelösten Gerätewechsel-/Übergabefehler, den vorhandene Checklisten mit Zeitstempel nicht darstellen können. |
+| Bescheid-Nachrechner / Berechnungsbogen-Parser | 14.10.2026 | Schon gebaut | Firma | Deutsche Suche | Inversion | Kandidat | Wenn die Rechner-Portale ihre Dienste einstellen oder eine Beratungsstelle ein werbefreies Offline-Werkzeug ausdrücklich verlangt. |
+| Bescheid-Verständlichkeit | 14.10.2026 | Beim Empfänger selbst | Behörde | Empfänger-Suche | Ideenliste | Kandidat | Wenn die BA oder ein Jobcenter ein Verständlichkeitsziel mit offener Prüfung ausschreibt und kein Anbieter es erfüllt. |
+| Fachliche-Weisungen-Diff (alt/neu je Randziffer) | 14.10.2026 | Beim Empfänger selbst | Behörde | Empfänger-Suche | Inversion | Kandidat | Wenn eine Beratungsstelle Randziffer-genaue Diffs verlangt, die die BA-Änderungsliste nicht hergibt. |
+| Regelbedarf-Mischindex 2027 | 14.10.2026 | Keine neue Fähigkeit | Behörde | Deutsche Suche | Ideenliste | Kandidat | Wenn die amtliche Fortschreibung erst nach Fristen veröffentlicht wird, die Betroffene für Entscheidungen brauchen, und eine Beratungsstelle das fordert. |
+| Tafel-Aufnahmebarometer | 14.10.2026 | Falsche Prämisse | Niemand | Deutsche Suche | Bisoziation | Kandidat | Wenn Tafel Deutschland oder ein Landesverband einen Aufnahmestatus je Tafel selbst erhebt (z. B. in der eco-Plattform) und ihn veröffentlichen will. |
+| Tafel-Berechtigungsblatt (selbst ausgestellt) | 14.10.2026 | Falsche Prämisse | Niemand | Deutsche Suche | Bisoziation | Kandidat | Wenn eine Behörde oder ein Träger ein ausstellbares Berechtigungsdokument (Aussteller) einführt und nur die Darstellung fehlt. |
+| Untätigkeits-Uhr (§ 88 SGG) | 14.10.2026 | Keine neue Fähigkeit | Gemeinnützige | Deutsche Suche | Inversion | Kandidat | Wenn die Fristen sich ändern oder eine Beratungsstelle bestätigt, dass Ratgeber und Fristenrechner den Bedarf nicht decken. |
+| Widerspruchs-Abhilfe-Spiegel je Jobcenter | 14.10.2026 | Falsche Prämisse | Niemand | Deutsche Suche | Inversion | Kandidat | Wenn die BA eine maschinenlesbare Tabelle der Widerspruchserledigungen je Jobcenter mit Abhilfegrund (Fehler gegen nachgereichte Unterlagen) veröffentlicht und eine Beratungsstelle ein nicht-rankendes Monitoring ausdrücklich verlangt. |
 | Elektroschrott-Demontage-Lotse | 11.10.2026 | Schon gebaut | Forschung | Deutsche Suche | Primärquelle | Kandidat | Wenn offene Standards für handgeführte Demontage-Assistenz bei Reparatur-Initiativen entstehen. |
 | Adaptive, risikobasierte Audit-Planung für Holz-CoC | 01.10.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat | Wenn FSC oder PEFC eine offene, risikobasierte Audit-Planung für kleine Zertifikatsinhaber suchen. |
 | CE/DoP-Scanner für Stahlprodukte (Leistungserklärung gegen Projektanforderung) | 01.10.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Inversion | Kandidat | Wenn nach Inkrafttreten des DPP für Bauprodukte (CPR 2024/3110) kein freier Leser existiert, der DoPC-Werte gegen ein Leistungsverzeichnis hält, und ein Aparejadores-Kollegium danach fragt. |

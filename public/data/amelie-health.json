@@ -1,13 +1,13 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-15T14:19:02.674Z",
+  "generatedAt": "2026-10-16T23:10:42.187Z",
   "repository": {
-    "commit": "35a58bbb",
-    "branch": "main"
+    "commit": "2e49b7c",
+    "branch": "claude/nifty-ride-xtktbm"
   },
   "inventory": {
     "doses": 47,
-    "graves": 154,
+    "graves": 162,
     "demos": 14,
     "researchEntries": 36,
     "candidateIdeas": 20,
@@ -34,12 +34,12 @@
       "audio": 1
     },
     "graveCategory": {
-      "gebaut": 74,
-      "beim-empfaenger": 32,
+      "gebaut": 75,
+      "beim-empfaenger": 34,
       "reality-check": 18,
       "duplikat": 2,
-      "mode": 10,
-      "praemisse": 18
+      "mode": 12,
+      "praemisse": 21
     }
   },
   "checks": [
@@ -151,11 +151,11 @@
       "id": "DRIFT-AGENTS.md-Gräber-58",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 58 Gräber, but deterministic source scanner finds 154.",
+      "message": "AGENTS.md claims 58 Gräber, but deterministic source scanner finds 162.",
       "file": "AGENTS.md",
       "details": {
         "claim": "58 beerdigte Ideen",
-        "actual": 154,
+        "actual": 162,
         "type": "stale_count"
       }
     },
@@ -163,11 +163,11 @@
       "id": "DRIFT-AGENTS.md-Gräber-9",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 154.",
+      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 162.",
       "file": "AGENTS.md",
       "details": {
         "claim": "9 Gräber",
-        "actual": 154,
+        "actual": 162,
         "type": "stale_count"
       }
     },

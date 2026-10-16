@@ -57,6 +57,13 @@ Geprüft: Zahlen in sich stimmig (Tests oben), alle sieben Pakete im Browser bei
 
 Nicht geprüft: Die Branchenangaben (Preise, Stundensätze, Abläufe, „Selbst klären“-Punkte wie Handwerkskammer, Reisegewerbekarte, Künstlersozialkasse, Anerkennung für den Entlastungsbetrag, Verpackungsregister) stammen aus allgemeinem Wissen, nicht aus einer Primärquelle und nicht von einer Kammer oder Beratungsstelle. Sie sind darum als Fragen formuliert („klären Sie bei …“) und nennen keine Paragrafen. Vor einer Empfehlung an Betroffene sollte je Branche eine fachkundige Stelle drüberlesen.
 
+## 3b. Bausteine aus der Jobcenter-Runde (16.10.2026)
+
+Der Reviewer der Runde vom 14.10.2026 wies zwei Ideen dem Gründungsnavigator zu (Prüfprotokoll M11, M12):
+
+- **Vorschuss nach § 42 SGB I** als Zeile im Fristenrechner: „die Vorschußzahlung beginnt spätestens nach Ablauf eines Kalendermonats nach Eingang des Antrags“, Wortlaut am 16.10.2026 an gesetze-im-internet.de gelesen. Der Monat wird wie die übrigen Fristen gerechnet; das ist eine Lesart. Ob § 42 SGB I neben der vorläufigen Entscheidung nach § 41a SGB II greift, entscheidet der Kern nicht; die Zeile sagt das selbst. Tests mit Monatsende-Fall und Gegenprobe (ohne Antragsdatum keine Zeile).
+- **Deckblatt mit Seitenindex:** Seitenbereiche rechnet `seitenIndex`, ungültige Seitenzahlen (0, negativ, Bruch, keine Zahl) werden abgelehnt (Gegenproben). Der Satz „kein Zugangsnachweis“ steht in der Oberfläche, auf dem Blatt selbst ein Feld für die Eingangsbestätigung. Im Browser bei 360 px geprüft.
+
 ## 4. Handy
 
 Prüfbefehl: `npm run check:mobile` (Skript `scripts/check-mobile.mjs`, braucht Chromium). Er lädt jede Seite unter `public/` über HTTP bei 360 und 390 px und prüft waagrechtes Scrollen, JS-Fehler, fehlgeschlagene Ladevorgänge und den Viewport-Meta. Stand 11.10.2026: beide Seiten in Ordnung.

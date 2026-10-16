@@ -3397,6 +3397,38 @@
       "funDe": "Mondtore und Gitterfenster zu platzieren und zu sehen, wie sich Landschaft, Schattenwurf und Regenklang organisch einpassen, ist pures Zen.",
       "funEn": "Placing moon gates and lattice windows to watch landscape vistas, shadow play, and rain acoustics harmoniously align is pure Zen.",
       "note": "Recherche fernöstlicher Spielwünsche (1631 AD Gartenphilosophie 计成《园冶》)"
+    },
+    "meldeversaeumnis-zaehler": {
+      "v": [
+        3,
+        5,
+        4,
+        3,
+        3,
+        4,
+        4
+      ],
+      "fun": 2,
+      "funSource": "mastery",
+      "funDe": "Das Aha ist der getrennte Doppelstand; die Spielsprache verbietet der Ton.",
+      "funEn": "The aha is the separate double count; the tone rules out game language.",
+      "note": "Reviewer-Scorecard 14.10.2026"
+    },
+    "kdu-grenzen-register": {
+      "v": [
+        2,
+        3,
+        3,
+        2,
+        2,
+        3,
+        3
+      ],
+      "fun": 2,
+      "funSource": "none",
+      "funDe": "Ein Register mit Fundstellen liefert eine nüchterne Auskunft.",
+      "funEn": "A register with sources yields a sober answer.",
+      "note": "Reviewer-Scorecard 14.10.2026"
     }
   }
 }

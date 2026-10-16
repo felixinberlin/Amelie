@@ -11,6 +11,9 @@
 
 import { VERSPRECHENSWOERTER } from './gruendungsnavigator';
 
+// Für die Seite mitgebündelt (Deckblatt der Unterlagen-Mappe)
+export { seitenIndex, DECKBLATT_HINWEIS_DE } from './gruendungsnavigator';
+
 // ---------------------------------------------------------------- Typen
 
 export interface ZuschussPosten {

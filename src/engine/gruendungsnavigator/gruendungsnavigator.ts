@@ -17,12 +17,12 @@
 // prüfen, dass jede hier benutzte ID dort existiert.
 //
 // Keine Rechtsberatung. Rechtsstand: SGB II in der Fassung vom 16.04.2026
-// (BGBl. I Nr. 107), in Kraft seit 01.07.2026; Normtexte geprüft 11.10.2026.
+// (BGBl. I Nr. 107), in Kraft seit 01.07.2026; Normtexte geprüft 11.10.2026, Wortlaut-Zitate erneut 16.10.2026.
 
 export const RECHTSSTAND = {
   fassung: 'SGB II i. d. F. des Dreizehnten Änderungsgesetzes vom 16.04.2026 (BGBl. I Nr. 107), in Kraft 01.07.2026',
-  geprueftAm: '2026-10-11',
-  geprueftGegen: 'dejure.org (gesetze-im-internet.de antwortete am Prüftag mit 503)',
+  geprueftAm: '2026-10-16',
+  geprueftGegen: 'gesetze-im-internet.de (Zitat-Abgleich npm run check:gn-zitate; nicht abrufbare Seiten per curl von Hand)',
 } as const;
 
 export const GELTUNGSGRENZE_DE =
@@ -163,6 +163,8 @@ export interface FristEingabe {
   einstiegsgeldBeginn?: IsoDatum;
   /** Letzter Tag des (vorläufigen) Bewilligungszeitraums */
   bewilligungsEnde?: IsoDatum;
+  /** Tag, an dem ein Antrag auf Vorschuss (§ 42 Abs. 1 Satz 2 SGB I) einging */
+  vorschussAntrag?: IsoDatum;
   /** Landesfeiertage, z. B. Berlin 08.03. */
   zusatzFeiertage?: IsoDatum[];
 }
@@ -265,6 +267,23 @@ export function berechneFristen(e: FristEingabe): FristEintrag[] {
       normId: 'sgg88',
       begruendungDe: 'Nicht vor Ablauf von drei Monaten seit dem Widerspruch.',
       begruendungEn: 'Not before three months have passed since the objection.',
+    });
+  }
+
+  if (e.vorschussAntrag) {
+    // „die Vorschußzahlung beginnt spätestens nach Ablauf eines Kalendermonats nach Eingang des Antrags“.
+    // Monat wie die übrigen Fristen gerechnet (§§ 187, 188 BGB); ob § 42 SGB I neben der vorläufigen
+    // Entscheidung nach § 41a SGB II greift, entscheidet der Kern nicht.
+    const roh = plusMonate(e.vorschussAntrag, 1);
+    out.push({
+      id: 'vorschuss',
+      art: 'spaetestens',
+      titelDe: 'Vorschuss: Zahlung beginnt spätestens',
+      titelEn: 'Advance payment: begins at the latest',
+      datum: plusTage(roh, 1),
+      normId: 'sgb1_42',
+      begruendungDe: 'Nur wenn der Anspruch dem Grunde nach besteht und die Höhe voraussichtlich längere Zeit braucht. Dann muss der Vorschuss auf Antrag gezahlt werden, spätestens nach Ablauf eines Kalendermonats nach Eingang des Antrags. Ob das neben der vorläufigen Entscheidung (§ 41a SGB II) gilt, mit einer Beratung klären.',
+      begruendungEn: 'Only if the entitlement exists in principle and fixing the amount is likely to take longer. Then the advance must be paid on application, at the latest after one calendar month from receipt of the application. Whether this applies alongside a provisional decision (section 41a SGB II): ask an advice centre.',
     });
   }
 
@@ -455,6 +474,42 @@ export function geheBaum(schritte: BaumSchritt[], wahl: Record<string, string>):
     i = a.next ?? schritte.length;
   }
   return { pfad, normen, endeBei: null };
+}
+
+// ---------------------------------------------------------------- Unterlagen-Mappe
+
+export interface MappenPosten {
+  titel: string;
+  seiten: number;
+}
+
+export interface IndexZeile {
+  nr: number;
+  titel: string;
+  von: number;
+  bis: number;
+  seiten: number;
+}
+
+/** Steht auf jedem Deckblatt: Es belegt nicht, dass die Unterlagen angekommen sind. */
+export const DECKBLATT_HINWEIS_DE =
+  'Dieses Deckblatt ist kein Zugangsnachweis. Lassen Sie sich den Eingang bestätigen: Eingangsstempel auf einer Kopie oder die Eingangsbestätigung von jobcenter.digital.';
+
+/**
+ * Seitenindex für eine Unterlagen-Mappe: Anlage 1 beginnt auf `ersteSeite`
+ * (Seite 1 ist das Deckblatt). Seitenzahlen müssen ganze Zahlen ab 1 sein,
+ * sonst wirft die Funktion; geraten wird nichts.
+ */
+export function seitenIndex(posten: MappenPosten[], ersteSeite = 2): { zeilen: IndexZeile[]; gesamt: number } {
+  if (!Number.isInteger(ersteSeite) || ersteSeite < 1) throw new Error(`Ungültige erste Seite: ${ersteSeite}`);
+  let seite = ersteSeite;
+  const zeilen = posten.map((p, i) => {
+    if (!Number.isInteger(p.seiten) || p.seiten < 1) throw new Error(`Anlage ${i + 1} (${p.titel}): Seitenzahl ${p.seiten} ist keine ganze Zahl ab 1`);
+    const z = { nr: i + 1, titel: p.titel, von: seite, bis: seite + p.seiten - 1, seiten: p.seiten };
+    seite += p.seiten;
+    return z;
+  });
+  return { zeilen, gesamt: seite - 1 };
 }
 
 // ---------------------------------------------------------------- Sprachwächter

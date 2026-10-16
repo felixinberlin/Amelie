@@ -12,7 +12,7 @@ Quelle der ausgelieferten Dateien: `public/gruendungsnavigator/` (Vite kopiert `
 | Seite | Inhalt |
 |---|---|
 | Gesprächsnavigator | Vorbereitung, Telefon-Entscheidungsbaum (7 Fragen, 23 Antworten), Fragenkatalog (34 allgemeine Fragen plus Zusatzfragen des Branchenpakets, im Beispiel Webentwicklung 42, mit anpassbaren Beispielantworten), Branchenpakete mit eigener Fassung, Download und Upload, Rechte-Karten (30 typische Antworten des Gegenübers), Zusammenfassungs-Mail, Präsentationsmodus ohne Taktik-Notizen |
-| Fall-Landkarte | 9 Stationen vom Antrag bis zum Ausstieg als SVG, 29 Fragen, 107 Antworten mit Reaktion, nächstem Schritt, Frist und Normtext; Fristen-Zeitstrahl; 44 Normen; dasselbe Branchenpaket wie im Gesprächsnavigator |
+| Fall-Landkarte | 9 Stationen vom Antrag bis zum Ausstieg als SVG, 29 Fragen, 107 Antworten mit Reaktion, nächstem Schritt, Frist und Normtext; Fristen-Zeitstrahl; 45 Normen; dasselbe Branchenpaket wie im Gesprächsnavigator |
 
 ## Auf dem Handy
 
@@ -29,7 +29,7 @@ Beide Seiten sind fürs Handy gebaut. Prüfbefehl `npm run check:mobile` (360 un
 
 | Datei | Inhalt |
 |---|---|
-| `data/normen.json` | Normregister beider Seiten: 44 Normen mit §-Angabe, Links zu gesetze-im-internet.de und dejure.org, genau eins von Wortlaut (`q`) oder Kurzfassung (`k`), Fassung und Prüfdatum |
+| `data/normen.json` | Normregister beider Seiten: 45 Normen mit §-Angabe, Links zu gesetze-im-internet.de und dejure.org, genau eins von Wortlaut (`q`) oder Kurzfassung (`k`), Fassung und Prüfdatum |
 | `data/navigator.json` | Telefonbaum, Fragen, Rechte-Karten, Mitbring-Liste, Ablauf, Kennzahlen; Texte mit Platzhaltern wie `{{beruf}}` oder `{{zuschuss}}` |
 | `data/landkarte.json` | Stationen, Fragen und Antworten der Fall-Landkarte, Fristen |
 | `data/pakete/*.json` | Branchenpakete: Werte für die Platzhalter, Überschreibungen einzelner Texte, Zusatzfragen, Mitbring-Liste, „Selbst klären“-Punkte |
@@ -43,9 +43,13 @@ Mitgeliefert: **Webentwicklung** (der ursprüngliche Beispielfall), **Montage un
 
 **Pfade für Überschreibungen:** `telefon/<schritt>/<antwort>`, `fragen/<frage-id>`, `rechte/<karten-id>`, `landkarte/<station>[/<frage>[/<antwort>]]` (Nummern ab 0).
 
+## Deckblatt der Unterlagen-Mappe
+
+Unter „Mitbringen zum Termin“: Unterlagen anhaken, Seiten zählen, „Deckblatt drucken“. Das Deckblatt nennt Name, BG-Nummer, Anlagen mit Seitenbereichen (Anlage 1 ab Seite 2), die Gesamtseitenzahl und ein Feld für die Eingangsbestätigung. Daneben steht: **Das Deckblatt ist kein Zugangsnachweis**; den Eingang bestätigt erst ein Stempel auf der Kopie oder jobcenter.digital. Die Seitenrechnung ist `seitenIndex` im Kern und lehnt ungültige Seitenzahlen ab, statt zu raten. Baustein aus der Jobcenter-Runde vom 14.10.2026 (Prüfprotokoll M12), ebenso der Vorschuss nach § 42 SGB I (M11).
+
 ## Kern und Tests
 
-`src/engine/gruendungsnavigator/` rechnet, was man nicht raten soll: Monatsfristen mit Werktag-Verschiebung (Widerspruch, Klage, Untätigkeit, Finanzamt, Einstiegsgeld-Höchstdauer, Jahresprüfung § 10), Reihenfolge Antrag/Start (§ 37 Abs. 2, sonst „unbekannt“), Freibetrag § 11b. `paket.ts` füllt die Platzhalter aus dem Paket und prüft Pakete; esbuild bündelt ihn in die Seiten, im Browser läuft also derselbe Code wie in den Tests. `gruendungsnavigator.test.ts` prüft Umfang, Baumstruktur, jeden Normverweis, Wortlaut-oder-Kurzfassung und keine Versprechenswörter am Referenzpaket Webentwicklung, dazu einen Drift-Wächter (in die Seiten eingebaute Daten = Dateien in `data/`). `paket.test.ts` prüft jedes Paket und hat zu jeder Regel eine Gegenprobe mit absichtlich falschem Eingang. Im Lint: `check:gn` (Seiten aktuell gebaut). `npx vitest run src/engine/gruendungsnavigator` (Vitest). Im Amélie-Frontend als Simulator „Gründungsnavigator & Fristenrechner“.
+`src/engine/gruendungsnavigator/` rechnet, was man nicht raten soll: Monatsfristen mit Werktag-Verschiebung (Widerspruch, Klage, Untätigkeit, Vorschuss nach § 42 SGB I, Finanzamt, Einstiegsgeld-Höchstdauer, Jahresprüfung § 10), Reihenfolge Antrag/Start (§ 37 Abs. 2, sonst „unbekannt“), Freibetrag § 11b. `paket.ts` füllt die Platzhalter aus dem Paket und prüft Pakete; esbuild bündelt ihn in die Seiten, im Browser läuft also derselbe Code wie in den Tests. `gruendungsnavigator.test.ts` prüft Umfang, Baumstruktur, jeden Normverweis, Wortlaut-oder-Kurzfassung und keine Versprechenswörter am Referenzpaket Webentwicklung, dazu einen Drift-Wächter (in die Seiten eingebaute Daten = Dateien in `data/`). `paket.test.ts` prüft jedes Paket und hat zu jeder Regel eine Gegenprobe mit absichtlich falschem Eingang. Im Lint: `check:gn` (Seiten aktuell gebaut). `npx vitest run src/engine/gruendungsnavigator` (Vitest). Im Amélie-Frontend als Simulator „Gründungsnavigator & Fristenrechner“.
 
 ## Rechtsstand
 
