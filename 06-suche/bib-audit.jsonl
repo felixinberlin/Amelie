@@ -609,3 +609,39 @@
 {"at":"2026-10-16T23:05:30.270Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","id":"tafel-deutschland-eco-plattform"}
 {"at":"2026-10-16T23:05:30.368Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","id":"hartz4widerspruch-de"}
 {"at":"2026-10-16T23:05:30.377Z","event":"cli","actor":"bibliothekar","agent":"bibliothekar","runde":"Jobcenter / Grundsicherung 14.10.2026","cmd":"quellen import","count":12}
+{"at":"2026-10-16T23:39:58.647Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"ba-presse-widerspruchsquote-2026-03"}
+{"at":"2026-10-16T23:39:58.764Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"lsg-nrw-jahrespressekonferenz-2026-lto-b"}
+{"at":"2026-10-16T23:39:58.866Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"ba-presseinfo-13-2026-leistungsminderung"}
+{"at":"2026-10-16T23:39:58.961Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"ombuds-und-schlichtungsstelle-jobcenter"}
+{"at":"2026-10-16T23:39:59.053Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"landkreis-leipzig-aenderungen-im-sgb-ii"}
+{"at":"2026-10-16T23:39:59.147Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"tacheles-sanktionsfrei-rav-pm-eilverfahr"}
+{"at":"2026-10-16T23:39:59.266Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"tacheles-alarmruf-rechtsschutz-26-07-202"}
+{"at":"2026-10-16T23:39:59.360Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"thome-newsletter-35-2026"}
+{"at":"2026-10-16T23:39:59.454Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"elo-forum-org-forenuebersicht"}
+{"at":"2026-10-16T23:39:59.558Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"bagfw-umfrage-erreichbarkeit-jobcenter-2"}
+{"at":"2026-10-16T23:39:59.674Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"gegen-hartz-de-fristfalle-41a-und-anlage"}
+{"at":"2026-10-16T23:39:59.768Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"reddit-r-grundsicherung-und-r-buergergel"}
+{"at":"2026-10-16T23:39:59.868Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"gettsim"}
+{"at":"2026-10-16T23:39:59.969Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"ba-impressum-nutzungsrechte"}
+{"at":"2026-10-16T23:40:00.064Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"ba-leichte-sprache-grundsicherungsgeld"}
+{"at":"2026-10-16T23:40:00.157Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"wikipedia-grundsicherungsgeld"}
+{"at":"2026-10-16T23:40:00.253Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"neuris-rechtsinformationsportal-api"}
+{"at":"2026-10-16T23:40:00.357Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"bkg-behoerdenzustaendigkeitsbereiche-ope"}
+{"at":"2026-10-16T23:40:00.457Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"buergergeld-org-rechner"}
+{"at":"2026-10-16T23:40:00.554Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"advicenow-briefwerkzeuge"}
+{"at":"2026-10-16T23:40:00.655Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"turn2us-benefits-calculator"}
+{"at":"2026-10-16T23:40:00.752Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"citizens-advice-sanktion-anfechten"}
+{"at":"2026-10-16T23:40:00.851Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"thome-bundesweite-dienstanweisungen-kdu"}
+{"at":"2026-10-16T23:40:00.952Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"sozialrechts-hilfe-offenbach-kdu"}
+{"at":"2026-10-16T23:40:01.049Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"tacheles-impressum"}
+{"at":"2026-10-16T23:40:01.147Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"buergerchat-github-jeannineshiu-buergerc"}
+{"at":"2026-10-16T23:40:01.244Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"fachliche-weisungen-ba-sgg-ii"}
+{"at":"2026-10-16T23:40:01.343Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"ba-fw-7b-sgb-ii-stand-01-07-2026-rz-7b-7"}
+{"at":"2026-10-16T23:40:01.442Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"ba-weisung-202606009-ueberarbeitung-fw-7"}
+{"at":"2026-10-16T23:40:01.536Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"ba-fw-31-31a-31b-sgb-ii-stand-01-07-2026"}
+{"at":"2026-10-16T23:40:01.631Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"bt-drs-21-3541-gesetzentwurf-13-sgb-ii-a"}
+{"at":"2026-10-16T23:40:01.727Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"bt-drs-21-4522-beschlussempfehlung"}
+{"at":"2026-10-16T23:40:01.825Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"rechner-hub-de-kuerzungsrechner"}
+{"at":"2026-10-16T23:40:01.922Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"ba-fw-32-sgb-ii-2026-07"}
+{"at":"2026-10-16T23:40:02.020Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"jc-wuppertal-einladungen-rechtsfolgen-2026"}
+{"at":"2026-10-16T23:40:02.032Z","event":"cli","actor":"bibliothekar","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","cmd":"quellen import","count":35}

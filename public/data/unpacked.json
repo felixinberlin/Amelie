@@ -2624,6 +2624,7 @@
   },
   {
     "id": "meldeversaeumnis-zaehler",
+    "packedDoseId": "gruendungsnavigator",
     "title": "Meldeversäumnis-Zähler",
     "titleEn": "Missed-appointment counter",
     "round": "Jobcenter / Grundsicherung 14.10.2026",
@@ -2637,8 +2638,8 @@
     "sourceType": "Civic & Ecology",
     "sourceDe": "BA Fachliche Weisungen § 32 SGB II (Stand 01.07.2026); Arbeitshilfe JC Wuppertal „Einladungen und Rechtsfolgen“ (29.06.2026); § 7b Abs. 4 SGB II",
     "sourceEn": "BA directives on section 32 SGB II (as of 1 July 2026); Jobcenter Wuppertal working aid (29 June 2026); section 7b(4) SGB II",
-    "evidenceDe": "Reviewer 26/35, „Dose Ready (bedingt)“, nicht gepackt: Empfängerkonflikt mit gruendungsnavigator bei Tacheles ist Félix’ Entscheidung. Kein Zähler gefunden, nur Merkblätter [Schnipsel]. FW und Arbeitshilfe gelesen [Seite]; offen: Quellenkonflikt Unterbrechung (Rz 32.6 gegen „mindestens ein Kalendermonat“), Lücke § 66 SGB I, FW § 7b ungelesen.",
-    "evidenceEn": "Reviewer 26/35, \"Dose Ready (conditional)\", not packed: recipient conflict with gruendungsnavigator at Tacheles is Félix’s decision. No counter found, only leaflets [snippet]. Directive and working aid read [page]; open: source conflict on interruption (Rz 32.6 vs. \"at least one calendar month\"), gap on section 66 SGB I, FW section 7b unread.",
+    "evidenceDe": "Reviewer 26/35, „Dose Ready (bedingt)“, seit 16.10.2026 als Modul der Dose gruendungsnavigator gebaut (Empfängerkonflikt aufgelöst). Kein Zähler gefunden, nur Merkblätter [Schnipsel]. FW und Arbeitshilfe gelesen [Seite]; offen: Quellenkonflikt Unterbrechung (Rz 32.6 gegen „mindestens ein Kalendermonat“), Lücke § 66 SGB I, FW § 7b ungelesen.",
+    "evidenceEn": "Reviewer 26/35, \"Dose Ready (conditional)\", built on 16 Oct 2026 as a module of the gruendungsnavigator dose (recipient conflict resolved). No counter found, only leaflets [snippet]. Directive and working aid read [page]; open: source conflict on interruption (Rz 32.6 vs. \"at least one calendar month\"), gap on section 66 SGB I, FW section 7b unread.",
     "reviewDate": "04/2027",
     "problemDe": "Wer einen Termin versäumt hat, kann aus den Briefen nicht ablesen, welche Rechtsfolge ein weiterer versäumter Termin hätte.",
     "problemEn": "Anyone who missed an appointment cannot tell from the letters what a further missed appointment would trigger.",

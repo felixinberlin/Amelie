@@ -17036,15 +17036,15 @@
       "urls": [],
       "zugang": {
         "art": "web",
-        "erreichbar": "unbekannt",
-        "wie": ""
+        "erreichbar": "ja",
+        "wie": "pdf"
       },
       "enthaelt": "Weisungen und Auslegungshilfen für Jobcenter zur Umsetzung des SGB II",
       "fokus": "Ermessensspielräume, KdU, Mehrbedarfe, Sanktionsgrenzen",
-      "status": "gesperrt",
+      "status": "angekratzt",
       "statusNotiz": "",
-      "evidenz": "schnipsel",
-      "zuletzt": "2026-10-11",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
       "ertrag": {
         "dosen": [],
         "graeber": [],
@@ -17070,6 +17070,13 @@
           "notiz": "Jobcenter-Recherche: WAF/Bot-Block verhindert automatisierte Abfragen.",
           "status": "gesperrt",
           "planId": "pr-intake-sources-20261011"
+        },
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Weisungen 2026 per PDF erreichbar.",
+          "status": "angekratzt"
         }
       ]
     },
@@ -17204,7 +17211,7 @@
       "status": "angekratzt",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-11",
+      "zuletzt": "2026-10-16",
       "ertrag": {
         "dosen": [],
         "graeber": [],
@@ -17230,6 +17237,13 @@
           "agent": "ideen-scout",
           "runde": "Gründungsnavigator — 11.10.2026",
           "notiz": "Gerichte als Typ-C-Quelle: benannte Schwäche wurde zur Idee G2.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "NRW 2025 Eilverfahren +55 % auf 7.615, Verfahrensdauer 15,6 Monate, KI-Schriftsätze mit nicht existenter Rechtsprechung.",
           "status": "angekratzt"
         }
       ]
@@ -17309,7 +17323,7 @@
       "status": "angekratzt",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-11",
+      "zuletzt": "2026-10-16",
       "ertrag": {
         "dosen": [],
         "graeber": [],
@@ -17335,6 +17349,13 @@
           "agent": "ideen-scout",
           "runde": "Gründungsnavigator — 11.10.2026",
           "notiz": "Besetzt G3, Andockpunkt für G1.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "MIT-Lizenz, 19 Golden-Fragen als mögliches Testmaterial.",
           "status": "angekratzt"
         }
       ]
@@ -21538,7 +21559,9 @@
       "evidenz": "seite",
       "zuletzt": "2026-10-16",
       "ertrag": {
-        "dosen": [],
+        "dosen": [
+          "gruendungsnavigator"
+        ],
         "graeber": [
           "fw-diff"
         ],
@@ -21564,6 +21587,13 @@
           "agent": "bibliothekar",
           "runde": "Jobcenter / Grundsicherung 14.10.2026",
           "notiz": "Vollständig gelesen; FW § 7b und FW §§ 31 bis 31b noch nicht.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Ertrag nachgetragen: Zähler gebaut 16.10.2026.",
           "status": "durchsucht"
         }
       ]
@@ -21593,7 +21623,9 @@
       "evidenz": "seite",
       "zuletzt": "2026-10-16",
       "ertrag": {
-        "dosen": [],
+        "dosen": [
+          "gruendungsnavigator"
+        ],
         "graeber": [],
         "kandidaten": [
           "meldeversaeumnis-zaehler"
@@ -21617,6 +21649,13 @@
           "agent": "bibliothekar",
           "runde": "Jobcenter / Grundsicherung 14.10.2026",
           "notiz": "Ist eine Jobcenter-Arbeitshilfe, kein Tacheles-Text; örtliche Geltung, widerspricht FW Rz 32.6 bei der Unterbrechung.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Ertrag nachgetragen: Zähler gebaut 16.10.2026.",
           "status": "durchsucht"
         }
       ]
@@ -21669,6 +21708,13 @@
           "agent": "bibliothekar",
           "runde": "Jobcenter / Grundsicherung 14.10.2026",
           "notiz": "Sammeladresse mit verifizierter Rolle, keine Ansprechperson für Werkzeuge.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Keine Lizenz angegeben; nur verlinken.",
           "status": "durchsucht"
         }
       ]
@@ -21930,6 +21976,13 @@
           "runde": "Jobcenter / Grundsicherung 14.10.2026",
           "notiz": "Keine Struktur, viele Zeilen ohne PDF; Aktualität nur regelmäßig.",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Texte CC BY-NC-SA 3.0 DE laut Impressum; nur verlinken, nicht kopieren (nicht CC0-kompatibel).",
+          "status": "durchsucht"
         }
       ]
     },
@@ -21981,6 +22034,13 @@
           "runde": "Jobcenter / Grundsicherung 14.10.2026",
           "notiz": "Ansprechperson, URL und Lizenz im Reviewer-Log nicht belegt, nicht verifiziert.",
           "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Portal neue-grundsicherung-hilfe.de, alle Rechte vorbehalten; nur verlinken.",
+          "status": "angekratzt"
         }
       ]
     },
@@ -21998,7 +22058,7 @@
       ],
       "zugang": {
         "art": "web",
-        "erreichbar": "teilweise",
+        "erreichbar": "ja",
         "wie": ""
       },
       "enthaelt": "Widerspruchsquote 2,1 Prozent, Klagequote 0,2 Prozent, Quoten nur für 300 von 404 Jobcentern",
@@ -22032,6 +22092,1325 @@
           "agent": "bibliothekar",
           "runde": "Jobcenter / Grundsicherung 14.10.2026",
           "notiz": "Keine Regionaltabelle; Primärtabelle der BA nicht gefunden.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "2025: 501.667 Widersprüche, 53.164 Klagen, 147.213 Änderungen, 42.303 fehlerhafte Rechtsanwendung, knapp die Hälfte wegen nachgereichter Unterlagen; Themen KdU, Aufhebung/Erstattung, Einkommen/Vermögen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "ba-presseinfo-13-2026-leistungsminderung",
+      "name": "BA Presseinfo 13/2026 Leistungsminderungen 2025",
+      "typ": "E",
+      "kategorie": "statistik",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.arbeitsagentur.de/presse/2026-13-zahl-der-leistungsminderungen-ist-2025-gegenueber-dem-vorjahr-gestiegen"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "461.400 Minderungen 2025, 85,5 % Meldeversäumnisse (394.600), 31.000 Arbeit/Maßnahme, 224.100 Betroffene",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Bedarfsbeleg Meldeversäumnis-Zähler; Ertrag Dose gruendungsnavigator.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "ombuds-und-schlichtungsstelle-jobcenter",
+      "name": "Ombuds- und Schlichtungsstelle Jobcenter Münster Jahresbericht 2025",
+      "typ": "E",
+      "kategorie": "statistik",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://oparl.stadt-muenster.de/bodies/0001/downloadfiles/00584118.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "pdf"
+      },
+      "enthaelt": "Themenzählung aus 88 Beratungen (Bescheide 55, KdU 23, Erreichbarkeit 17, Unterlagen 17)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Themenzählung aus 88 Beratungen gelesen.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "landkreis-leipzig-aenderungen-im-sgb-ii",
+      "name": "Landkreis Leipzig Änderungen im SGB II ab 1.7.2026",
+      "typ": "E",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.landkreisleipzig.de/files/user_upload/Landkreis/Jobcenter/Aktuelles/AEnderungen_im_SGB_II_ab_1.7.2026.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "pdf"
+      },
+      "enthaelt": "Behördenübersicht der Reform",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "sekundär; Freibeträge § 12 und Deckel § 22 am 16.10.2026 am Gesetz bestätigt.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "tacheles-sanktionsfrei-rav-pm-eilverfahr",
+      "name": "Tacheles/Sanktionsfrei/RAV PM Eilverfahren mehr als verdoppelt 10.09.2026",
+      "typ": "E",
+      "kategorie": "statistik",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://tacheles-sozialhilfe.de/aktuelles/archiv/existenznot-vor-gericht-eilverfahren-gegen-jobcenter-mehr-als-verdoppelt-organisationen-warnen-vor-weiteren-sozialen-einschnitten.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Pressemitteilung: Eilverfahren gegen Jobcenter mehr als verdoppelt",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Primärexpertise GKS Consult nicht gesehen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "tacheles-alarmruf-rechtsschutz-26-07-202",
+      "name": "Tacheles Alarmruf Rechtsschutz 26.07.2026",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://tacheles-sozialhilfe.de/aktuelles/archiv/alarmruf-effektiver-rechtsschutz-fuer-arme-menschen-ist-gefaehrdet.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Alarmruf zum gefährdeten Rechtsschutz armer Menschen",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Empfänger sieht KI-Werkzeuge als Teil des Problems.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "thome-newsletter-35-2026",
+      "name": "Thomé Newsletter 35/2026",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://tacheles-sozialhilfe.de/newsticker/thome-newsletter-35-2026-vom-11-10-2026.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Newsletter mit offenem Brief zu § 7b Abs. 4",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Offener Brief zu § 7b Abs. 4 (Vorsprache scheitert am Sicherheitsdienst).",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "elo-forum-org-forenuebersicht",
+      "name": "elo-forum.org Forenübersicht",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.elo-forum.org/forums/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Forenübersicht mit Themenzählung der Betroffenen",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Häufigkeitsproxy (kumuliert).",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "bagfw-umfrage-erreichbarkeit-jobcenter-2",
+      "name": "BAGFW-Umfrage Erreichbarkeit Jobcenter 2022",
+      "typ": "E",
+      "kategorie": "statistik",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.der-paritaetische.de/alle-meldungen/bagfw-umfrage-sozialer-beratungsstellen-zeigt-jobcenter-sind-nur-eingeschraenkt-erreichbar-fuer-leistungsberechtigte/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Umfrage sozialer Beratungsstellen zur Erreichbarkeit der Jobcenter",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Umfrage 2022, Jobcenter nur eingeschränkt erreichbar.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "gegen-hartz-de-fristfalle-41a-und-anlage",
+      "name": "gegen-hartz.de Fristfalle § 41a und Anlage Vermögen (21./22.06.2026)",
+      "typ": "X",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.gegen-hartz.de/news/grundsicherungsgeld-neue-fristfalle-fuer-vorlaeufige-buergergeld-bescheide"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Artikel zur Fristfalle § 41a und Anlage Vermögen",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "§ 41a Abs. 3 S. 5 am 16.10.2026 am Gesetz bestätigt.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "reddit-r-grundsicherung-und-r-buergergel",
+      "name": "reddit r/Grundsicherung und r/Buergergeld",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://old.reddit.com/r/Grundsicherung/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "gesperrt",
+        "wie": ""
+      },
+      "enthaelt": "Subreddits r/Grundsicherung und r/Buergergeld",
+      "fokus": "",
+      "status": "gesperrt",
+      "statusNotiz": "",
+      "evidenz": "unbekannt",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "aus der Cloud nicht erreichbar (16.10.2026).",
+          "status": "gesperrt"
+        }
+      ]
+    },
+    {
+      "id": "gettsim",
+      "name": "GETTSIM",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://github.com/iza-institute-of-labor-economics/gettsim"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "repo"
+      },
+      "enthaelt": "AGPL-Steuer-Transfer-Modell (Regelbedarf, § 11b, Vermögensfreibeträge; keine Sanktionen, Reform 07/2026 fehlt)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "AGPL: nur Testorakel, nie kopieren.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "ba-impressum-nutzungsrechte",
+      "name": "BA-Impressum Nutzungsrechte",
+      "typ": "E",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.arbeitsagentur.de/impressum"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Nutzungsrechte der Bundesagentur für Arbeit",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Weisungen nur zitieren und verlinken.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "ba-leichte-sprache-grundsicherungsgeld",
+      "name": "BA Leichte Sprache Grundsicherungsgeld",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.arbeitsagentur.de/leichte-sprache/grundsicherung-und-grundsicherungsgeld"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Leichte-Sprache-Seiten der BA zum Grundsicherungsgeld",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "nur verlinken.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "wikipedia-grundsicherungsgeld",
+      "name": "Wikipedia Grundsicherungsgeld",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://de.wikipedia.org/wiki/Grundsicherungsgeld"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Wikipedia-Artikel zum Grundsicherungsgeld",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "CC BY-SA, nicht CC0.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "neuris-rechtsinformationsportal-api",
+      "name": "NeuRIS Rechtsinformationsportal API",
+      "typ": "A",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://docs.rechtsinformationen.bund.de/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "API des Rechtsinformationsportals des Bundes",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Lizenz nicht angegeben.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "bkg-behoerdenzustaendigkeitsbereiche-ope",
+      "name": "BKG Behördenzuständigkeitsbereiche Open",
+      "typ": "E",
+      "kategorie": "datensatz",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://sg.geodatenzentrum.de/public/gdz/dokumentation/deu/bzb-open.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Zuständigkeitsbereiche der Behörden als Geodaten",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Lizenz nicht bestätigt; Basis für Offline-Jobcenter-Finder.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "buergergeld-org-rechner",
+      "name": "buergergeld.org Rechner",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.buergergeld.org/rechner/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Online-Rechner zum Bürgergeld",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Besetzt-Gegenprobe, Rechnerseite gelesen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "advicenow-briefwerkzeuge",
+      "name": "Advicenow Briefwerkzeuge",
+      "typ": "H",
+      "kategorie": "auslandsregulierung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.advicenow.org.uk/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Briefvorlagen und Werkzeuge britischer Beratung",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Wiederverwendbare Briefwerkzeuge im Ausland, nur Schnipsel.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "turn2us-benefits-calculator",
+      "name": "Turn2us Benefits Calculator",
+      "typ": "H",
+      "kategorie": "auslandsregulierung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.turn2us.org.uk/get-support/benefits-calculator"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Britischer Leistungsrechner",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Leistungsrechner im Ausland, nur Schnipsel.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "citizens-advice-sanktion-anfechten",
+      "name": "Citizens Advice Sanktion anfechten",
+      "typ": "H",
+      "kategorie": "auslandsregulierung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.citizensadvice.org.uk/benefits/universal-credit/sanctions/challenging-a-sanction/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Anleitung zur Anfechtung einer Sanktion in Großbritannien",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Sanktion anfechten im UK, nur Schnipsel.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "ba-fw-7b-sgb-ii-stand-01-07-2026-rz-7b-7",
+      "name": "BA FW § 7b SGB II Stand 01.07.2026 (Rz 7b.72 bis 7b.93)",
+      "typ": "E",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.harald-thome.de/files/pdf/media/sgb-ii-hinweise/FW%207b%20-%2001.07.2026.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "pdf"
+      },
+      "enthaelt": "Fachliche Weisung zu Meldeversäumnissen und Rechtsfolgen",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [
+          "gruendungsnavigator"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Gelesen über Thomé-Spiegel, amtliche PDF nicht gefunden; Meldeversäumnis-Zähler.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "ba-weisung-202606009-ueberarbeitung-fw-7",
+      "name": "BA Weisung 202606009 Überarbeitung FW § 7b",
+      "typ": "E",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.arbeitsagentur.de/datei/weisung-202606009_ba057937.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "pdf"
+      },
+      "enthaelt": "Überarbeitung der Fachlichen Weisung zu § 7b",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [
+          "gruendungsnavigator"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Gelesen.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "ba-fw-31-31a-31b-sgb-ii-stand-01-07-2026",
+      "name": "BA FW §§ 31, 31a, 31b SGB II Stand 01.07.2026",
+      "typ": "E",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.arbeitsagentur.de/datei/fw-sgb-ii-31-31a-31b_ba057702.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "pdf"
+      },
+      "enthaelt": "Fachliche Weisung zu Pflichtverletzungen und Minderung",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [
+          "gruendungsnavigator"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Gelesen Kap. 4.1 und 5.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "bt-drs-21-3541-gesetzentwurf-13-sgb-ii-a",
+      "name": "BT-Drs. 21/3541 Gesetzentwurf 13. SGB-II-ÄndG",
+      "typ": "E",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://dserver.bundestag.de/btd/21/035/2103541.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "pdf"
+      },
+      "enthaelt": "Gesetzentwurf mit Begründung zu § 7b und § 32",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [
+          "gruendungsnavigator"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Gelesen zu § 7b und § 32.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "bt-drs-21-4522-beschlussempfehlung",
+      "name": "BT-Drs. 21/4522 Beschlussempfehlung",
+      "typ": "E",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://dserver.bundestag.de/btd/21/045/2104522.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "pdf"
+      },
+      "enthaelt": "Beschlussempfehlung zum 13. SGB-II-ÄndG",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [
+          "gruendungsnavigator"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Nur per grep durchsucht.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "rechner-hub-de-kuerzungsrechner",
+      "name": "rechner-hub.de Kürzungsrechner",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://rechner-hub.de/buergergeld-kuerzung-rechner/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Rechner zur Bürgergeld-Kürzung",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-16",
+      "ertrag": {
+        "dosen": [
+          "gruendungsnavigator"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-16"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-16",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Hilfe 16.10.2026",
+          "notiz": "Besetzt-Gegenprobe: kein Zähler für Meldeversäumnisse.",
           "status": "angekratzt"
         }
       ]
