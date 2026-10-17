@@ -40,12 +40,12 @@ export const DOSE_SIMULATOR_MAP: Record<string, DoseSimulatorInfo> = {
   },
   'gruendungsnavigator': {
     key: 'gruendungsnavigator',
-    titleDe: 'Gründungsnavigator & Fristenrechner',
-    titleEn: 'Start-up Navigator & Deadline Calculator',
-    titleEs: 'Navegador de creación de empresa y calculadora de plazos',
-    descriptionDe: 'Jobcenter-Gespräch vorbereiten: Telefonbaum, 43 Fragen im Beispiel Webentwicklung, 30 Rechte-Karten, Fall-Landkarte mit 61 Normen, sechs Branchenpakete und eigene Fassung; Jobcenter-Hilfe für alle mit Meldeversäumnis-Zähler, Rückforderung, Miete und Vermögen; dazu ein getesteter Fristenrechner (SGG, SGB II) und der Freibetrag nach § 11b SGB II. Alles bleibt im Browser.',
-    descriptionEn: 'Prepare the job-centre conversation: phone tree, 43 questions in the web-development example, 30 rights cards, case map with 61 statutes, six sector packs and your own version; Job Centre Help for everyone with a missed-appointment counter, repayment, rent and savings; plus a tested deadline calculator (SGG, SGB II) and the allowance under section 11b SGB II. Everything stays in the browser.',
-    descriptionEs: 'Preparar la conversación con el Jobcenter: árbol telefónico, 43 preguntas en el ejemplo de desarrollo web, 30 tarjetas de derechos, mapa del caso con 61 normas, seis paquetes por sector y versión propia; además una calculadora de plazos probada. Todo queda en el navegador.',
+    titleDe: 'Gründungsnavigator & Jobcenter-Hilfe',
+    titleEn: 'Start-up Navigator & Job Centre Help',
+    titleEs: 'Navegador de creación de empresa y ayuda Jobcenter',
+    descriptionDe: 'Jobcenter-Gespräch vorbereiten: Telefonbaum, 43 Fragen im Beispiel Webentwicklung, 30 Rechte-Karten, Fall-Landkarte mit 61 Normen, sechs Branchenpakete und eigene Fassung; Jobcenter-Hilfe für alle mit Meldeversäumnis-Zähler, Rückforderung, Miete und Vermögen; dazu ein getesteter Fristenrechner (SGG, SGB II). Seit 17.10.2026 im eigenen Repository felixinberlin/jobcenter-hilfe; alles bleibt im Browser.',
+    descriptionEn: 'Prepare the job-centre conversation: phone tree, 43 questions in the web-development example, 30 rights cards, case map with 61 statutes, six sector packs and your own version; Job Centre Help for everyone with a missed-appointment counter, repayment, rent and savings; plus a tested deadline calculator (SGG, SGB II). Own repository felixinberlin/jobcenter-hilfe since 17 Oct 2026; everything stays in the browser.',
+    descriptionEs: 'Preparar la conversación con el Jobcenter: árbol telefónico, 43 preguntas en el ejemplo de desarrollo web, 30 tarjetas de derechos, mapa del caso con 61 normas, seis paquetes por sector y versión propia; además una calculadora de plazos probada. Repositorio propio felixinberlin/jobcenter-hilfe desde el 17.10.2026; todo queda en el navegador.',
     icon: '🧭',
   },
   'altbau-thermal': {

@@ -260,7 +260,7 @@ The Dose Packer sends the Demo Builder:
 | Missing `CC0` license footer | Grep for `CC0` in every new file before committing |
 | Deep-link pointing to bare homepage | Always append `#dose=<id>` to the Amélie GitHub Pages URL |
 | Engine tests check a copy of the demo data instead of the shipped page | Read the constants straight from the shipped file (`public/<id>/*.html` or the JSON the page loads) in the test; the first run of such a test found a contradiction between two pages (11.10.2026) |
-| Verbatim statute quotes checked only by eye | Add a quote check against the official source (pattern: `scripts/check-gruendungsnavigator-zitate.mjs`); count failed fetches separately from deviations |
+| Verbatim statute quotes checked only by eye | Add a quote check against the official source (pattern: `scripts/check-zitate.mjs` in https://github.com/felixinberlin/jobcenter-hilfe); count failed fetches separately from deviations |
 | Demo never opened at phone width | `npm run check:mobile` (360/390 px: no horizontal scroll, no JS errors, no failed loads); replace wide SVG diagrams with stacked cards on phones, bottom tab bar instead of a tall sticky header |
 | Counts in README/ticket copied from an older text | Count in the artifact; add a number guard test that scans README, dossiers and `dosen.ts` |
 | A check that cannot run reports green | Exit with a distinct code (e.g. 3 = not checked) and say so; a skipped check is never a pass |

@@ -32,24 +32,10 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
   'gruendungsnavigator': [
     {
       slug: 'demo', path: '07-demos/gruendungsnavigator/README.md',
-      titleDe: 'Demo: Gesprächsnavigator und Fall-Landkarte', titleEn: 'Demo: conversation navigator and case map',
-      noteDe: 'Zwei Handy-taugliche, offline-fähige HTML-Seiten ohne Server; getesteter Kern, der die Demo-Daten direkt aus dem HTML prüft.',
-      noteEn: 'Two phone-friendly, offline-capable HTML pages without a server; tested kernel that checks the demo data straight from the HTML.',
-      date: '11.10.2026', kind: 'md',
-    },
-    {
-      slug: 'pruefakte', path: '07-demos/gruendungsnavigator/pruefakte.md',
-      titleDe: 'Prüfakte: Urteil, Zitate, Tests, Handy', titleEn: 'Audit file: verdict, quotations, tests, mobile',
-      noteDe: 'Reviewer 26/35 (GN-B 29/35), Zitat-Abgleich gegen gesetze-im-internet.de mit den 4 korrigierten Stellen, Zahlen-Wächter, Handy-Check und der Stand der vier Versand-Bedingungen.',
-      noteEn: 'Reviewer 26/35 (GN-B 29/35), quotation check against gesetze-im-internet.de with the 4 corrected passages, number guard, mobile check and the status of the four pre-sending conditions.',
-      date: '11.10.2026', kind: 'md',
-    },
-    {
-      slug: 'ticket-01', path: '07-demos/gruendungsnavigator/ticket-01-vorlage.md',
-      titleDe: 'Ticket 01: Die Seite wird Vorlage', titleEn: 'Ticket 01: the page becomes a template',
-      noteDe: 'Persönliches in ein Branchenpaket, Normregister und Telefonbaum als Daten; sechs prüfbare Fertig-Kriterien, zwei davon schon erfüllt.',
-      noteEn: 'Personal content into a sector pack, statute register and phone tree as data; six checkable done criteria, two already met.',
-      date: '11.10.2026', kind: 'md',
+      titleDe: 'Das Werkzeug: Jobcenter-Hilfe (eigenes Repository)', titleEn: 'The tool: Job Centre Help (own repository)',
+      noteDe: 'Seit 17.10.2026 in github.com/felixinberlin/jobcenter-hilfe: Seiten, getesteter Kern, Prüfakte, Korrekturen. Hier nur der Verweis.',
+      noteEn: 'Since 17 Oct 2026 in github.com/felixinberlin/jobcenter-hilfe: pages, tested kernel, audit file, corrections. Only the pointer here.',
+      date: '17.10.2026', kind: 'md',
     },
     {
       slug: 'konzept', path: '02-recherche/gruendungsnavigator-konzept-2026-10-11.md',

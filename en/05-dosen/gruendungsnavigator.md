@@ -17,7 +17,7 @@ source_type: Type A
 **Verdict:** 🎁 **gift**. The prototype runs and the kernel is tested.
 **Review:** 26/35 (gate 24) · V8 fun 2 · Tier 1 · Type A (statute text) · details: `06-suche/amelie-classification-log.md`, "Gründungsnavigator — Reviewer 11.10.2026"
 
-**Live demo (works on phones):** [Conversation navigator](https://felixinberlin.github.io/Amelie/gruendungsnavigator/) · [Case map](https://felixinberlin.github.io/Amelie/gruendungsnavigator/fall-landkarte.html) · [Job Centre Help](https://felixinberlin.github.io/Amelie/gruendungsnavigator/jobcenter-hilfe.html) · Tin: https://felixinberlin.github.io/Amelie/#dose=gruendungsnavigator
+**Tool (own repository since 17 Oct 2026, [felixinberlin/jobcenter-hilfe](https://github.com/felixinberlin/jobcenter-hilfe)):** [Conversation navigator](https://felixinberlin.github.io/jobcenter-hilfe/) · [Case map](https://felixinberlin.github.io/jobcenter-hilfe/fall-landkarte.html) · [Job Centre Help](https://felixinberlin.github.io/jobcenter-hilfe/jobcenter-hilfe.html) · Tin: https://felixinberlin.github.io/Amelie/#dose=gruendungsnavigator
 
 ---
 
@@ -49,7 +49,7 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 
 ## Sketch
 
-**Conversation navigator** (`public/gruendungsnavigator/index.html`):
+**Conversation navigator** (`site/index.html` in the tool repo):
 - **Preparation:** personal details stay in the browser; ground rules; a checklist of what to bring; a **cover sheet with page index** for the document folder (attachments with page ranges, a box for confirming receipt; the note "not proof of receipt" sits next to it). Choose a **sector pack** (six fictional examples and an empty template) or create your own version, download it and load it again.
 - **Phone call:** a decision tree with 7 questions and 23 possible answers. Each answer has wording, background and the quoted statute, plus a progress bar and a live log.
 - **Appointment:** 35 general questions plus the pack's extra questions (43 in the web-development example) with editable sample answers, evidence and statute; practice progress and a print version.
@@ -72,7 +72,7 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 - **Add to calendar:** every computed deadline as a calendar file with a reminder two days before. **Keep a record:** own log with date, channel, person, content, proof. **Print for the advice centre:** only the results on paper.
 - Every result shows the statute verbatim. No recalculation of a notice in euros, no case law.
 
-**Kernel** (`src/engine/gruendungsnavigator/`):
+**Kernel** (`src/` in the tool repo):
 - Month deadlines per sections 187 and 188 BGB, shifted to the next working day (section 64(3) SGG). Holidays come from the Easter formula; state holidays can be added.
 - Advance payment under section 42 SGB I (payment at the latest one month after the application for it, with the note that its relation to a provisional decision under section 41a SGB II must be clarified).
 - Objection (1 month; 1 year without instructions on remedies), court action, failure to act (6 and 3 months).
@@ -90,14 +90,14 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 
 ## First step
 
-**Ticket 01 is done (13 Oct 2026): the page is a template** with sector packs (web development, assembly, coffee stand, graphic design, everyday companion, online trade, empty); details `07-demos/gruendungsnavigator/ticket-01-vorlage.md`. **Extended on 16 Oct 2026 into Job Centre Help for everyone** (see sketch). The start-up navigator and the missed-appointment counter now go to one recipient as one tin; the recipient conflict from the job-centre round (check protocol M1) is resolved.
+**Ticket 01 is done (13 Oct 2026): the page is a template** with sector packs (web development, assembly, coffee stand, graphic design, everyday companion, online trade, empty); details `docs/ticket-01.md` in the tool repo. **Extended on 16 Oct 2026 into Job Centre Help for everyone** (see sketch). The start-up navigator and the missed-appointment counter now go to one recipient as one tin; the recipient conflict from the job-centre round (check protocol M1) is resolved.
 
 **Ticket 02: expert reading and field test.** A welfare advice service (Tacheles or an unemployment advice centre) reads the missed-appointment counter with its 26 fixtures and answers the open legal questions; two people without programming skills use the pages with a stopwatch.
 
 **Done when:**
 1. A qualified person has read the counter and their answers are in the kernel as fixtures or as explicitly open points.
 2. Two test records are in the audit file: founding (own version in 30 minutes) and missed appointment (count from one's own letters in 15 minutes).
-3. `npm run lint`, `npm test`, `npm run check:mobile` and `npm run check:gn-zitate` are green.
+3. `npm run lint`, `npm test`, `npm run check:mobile` and `npm run check:zitate` (in the tool repo) are green.
 
 ## Where it breaks
 
@@ -145,8 +145,8 @@ Who could fund Ticket 01: **Prototype Fund** (whether CC0 fits its licence requi
 
 ## Prior art
 
-- Prototype: `public/gruendungsnavigator/` (chapter `07-demos/gruendungsnavigator/README.md`); concept `02-recherche/gruendungsnavigator-konzept-2026-10-11.md`; handover `06-suche/scout-an-bibliothekar-2026-10-11-gruendungsnavigator.md`.
-- Kernel and tests: `src/engine/gruendungsnavigator/` (Vitest, including drift, number and offline guards over both HTML pages).
+- Tool: https://github.com/felixinberlin/jobcenter-hilfe (pages `site/`, audit file `docs/pruefakte.md`; pointer chapter `07-demos/gruendungsnavigator/README.md`); concept `02-recherche/gruendungsnavigator-konzept-2026-10-11.md`; handover `06-suche/scout-an-bibliothekar-2026-10-11-gruendungsnavigator.md`.
+- Kernel and tests: `src/` in the tool repo (Vitest, including drift, number and offline guards over the pages). Until 17 Oct 2026 pages and kernel lived in Amélie (`public/gruendungsnavigator/`, `src/engine/gruendungsnavigator/`); the old addresses redirect.
 - Statute texts: SGB II as amended on 16 Apr 2026 (BGBl. I No. 107), in force 1 Jul 2026; sections 14, 16, 17, 39, 60 SGB I; 9, 13, 25, 33, 35, 44 SGB X; 66, 84, 87, 88, 183 SGG; 14 GewO; 138 AO; 19 UStG. Read on dejure.org and gesetze-im-internet.de (11 Oct 2026).
 - Sources in the register: LSG NRW / LTO, gegen-hartz.de, BürgerChat, Sozialrat, Münchner Gründungsbüro, Gründerplattform, jobcenter.guru, dejure.org (`06-suche/amelie-quellen.md`).
 - Side finding **section checker** (Paragrafen-Prüfer, G2, `verengt`): the statute register with version and quotation check is its core.

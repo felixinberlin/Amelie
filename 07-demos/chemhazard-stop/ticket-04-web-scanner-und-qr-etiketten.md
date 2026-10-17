@@ -36,7 +36,7 @@ Zwei Befunde bestimmen den Zuschnitt:
 
 ### Teil C: Offline
 
-- [ ] Demo-Seite installierbar und offline nutzbar (Manifest und Service Worker nach dem Muster `public/gruendungsnavigator/`), inklusive Produkt- und Regeldaten.
+- [ ] Demo-Seite installierbar und offline nutzbar (Manifest und Service Worker nach dem Muster `site/` in https://github.com/felixinberlin/jobcenter-hilfe), inklusive Produkt- und Regeldaten.
 
 ## 3. Was nicht dazugehört
 

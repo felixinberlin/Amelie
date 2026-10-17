@@ -17,7 +17,7 @@ source_type: Type A
 **Verdikt:** 🎁 verschenken. Prototyp läuft, Kern getestet.
 **Review:** 26/35 (Gate 24) · V8 Fun 2 · Tier 1 · Typ A (Normtext) · Details: `06-suche/amelie-classification-log.md`, „Gründungsnavigator — Reviewer 11.10.2026“
 
-**Live-Demo (Handy-tauglich):** [Gesprächsnavigator](https://felixinberlin.github.io/Amelie/gruendungsnavigator/) · [Fall-Landkarte](https://felixinberlin.github.io/Amelie/gruendungsnavigator/fall-landkarte.html) · [Jobcenter-Hilfe](https://felixinberlin.github.io/Amelie/gruendungsnavigator/jobcenter-hilfe.html) · Dose: https://felixinberlin.github.io/Amelie/#dose=gruendungsnavigator
+**Werkzeug (eigenes Repository seit 17.10.2026, [felixinberlin/jobcenter-hilfe](https://github.com/felixinberlin/jobcenter-hilfe)):** [Gesprächsnavigator](https://felixinberlin.github.io/jobcenter-hilfe/) · [Fall-Landkarte](https://felixinberlin.github.io/jobcenter-hilfe/fall-landkarte.html) · [Jobcenter-Hilfe](https://felixinberlin.github.io/jobcenter-hilfe/jobcenter-hilfe.html) · Dose: https://felixinberlin.github.io/Amelie/#dose=gruendungsnavigator
 
 ---
 
@@ -49,7 +49,7 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 
 ## Skizze
 
-**Gesprächsnavigator** (`public/gruendungsnavigator/index.html`):
+**Gesprächsnavigator** (`site/index.html` im Werkzeug-Repo):
 - **Vorbereitung:** Angaben nur im Browser, Grundregeln, Mitbring-Liste, **Deckblatt mit Seitenindex** für die Unterlagen-Mappe (Anlagen mit Seitenbereichen, Feld für die Eingangsbestätigung; der Hinweis „kein Zugangsnachweis“ steht daneben). **Branchenpaket** wählen (sechs erfundene Beispiele und eine leere Vorlage) oder eine eigene Fassung anlegen, herunterladen und wieder laden.
 - **Telefonat:** Entscheidungsbaum mit 7 Fragen und 23 möglichen Antworten. Jede Antwort hat Formulierung, Hintergrund und zitierte Norm. Dazu Fortschrittsbalken und Live-Protokoll.
 - **Termin:** 35 allgemeine Fragen plus die Zusatzfragen des Pakets (im Beispiel Webentwicklung 43) mit anpassbaren Beispielantworten, Beleg und Norm. Übungsfortschritt und Druckfassung.
@@ -72,7 +72,7 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 - **In den Kalender:** jede berechnete Frist als Kalenderdatei mit Erinnerung zwei Tage vorher. **Gespräche festhalten:** eigenes Protokoll mit Datum, Kanal, Person, Inhalt, Nachweis. **Für die Beratung drucken:** nur die Ergebnisse auf Papier.
 - Jedes Ergebnis zeigt das Gesetz im Wortlaut. Keine Euro-Nachrechnung eines Bescheids, keine Urteile.
 
-**Kern** (`src/engine/gruendungsnavigator/`):
+**Kern** (`src/` im Werkzeug-Repo):
 - Monatsfristen nach §§ 187, 188 BGB, mit Verschiebung auf den Werktag (§ 64 Abs. 3 SGG; Feiertage per Osterformel, Landesfeiertage zuschaltbar).
 - Widerspruch (1 Monat, ohne Belehrung 1 Jahr), Klage, Untätigkeit (6 bzw. 3 Monate), Vorschuss nach § 42 SGB I (Zahlung spätestens einen Monat nach dem Vorschussantrag, mit dem Hinweis, dass das Verhältnis zur vorläufigen Entscheidung nach § 41a SGB II zu klären ist).
 - Gewerbe- und Finanzamtsanzeige, Einstiegsgeld-Höchstdauer, Jahresprüfung nach § 10 Abs. 2 Nr. 5, Festsetzungsfiktion § 41a Abs. 5.
@@ -89,14 +89,14 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 
 ## Erster Schritt
 
-**Ticket 01 ist erledigt (13.10.2026): Die Seite ist Vorlage** mit Branchenpaketen (Webentwicklung, Montage, Kaffeestand, Grafikdesign, Alltagsbegleitung, Onlinehandel, leer); Details `07-demos/gruendungsnavigator/ticket-01-vorlage.md`. **Am 16.10.2026 erweitert zur Jobcenter-Hilfe für alle** (siehe Skizze). Damit gehen Gründungsnavigator und Meldeversäumnis-Zähler als eine Dose an einen Empfänger; der Empfängerkonflikt aus der Jobcenter-Runde (Prüfprotokoll M1) ist aufgelöst.
+**Ticket 01 ist erledigt (13.10.2026): Die Seite ist Vorlage** mit Branchenpaketen (Webentwicklung, Montage, Kaffeestand, Grafikdesign, Alltagsbegleitung, Onlinehandel, leer); Details `docs/ticket-01.md` im Werkzeug-Repo. **Am 16.10.2026 erweitert zur Jobcenter-Hilfe für alle** (siehe Skizze). Damit gehen Gründungsnavigator und Meldeversäumnis-Zähler als eine Dose an einen Empfänger; der Empfängerkonflikt aus der Jobcenter-Runde (Prüfprotokoll M1) ist aufgelöst.
 
 **Ticket 02: Gegenlesen und Praxistest.** Eine Sozialberatung (Tacheles oder eine Erwerbslosenberatung) liest den Meldeversäumnis-Zähler mit seinen 26 Fixtures gegen und beantwortet die offenen Rechtsfragen; zwei Personen ohne Programmierkenntnis nutzen die Seiten mit Stoppuhr.
 
 **Fertig, wenn:**
 1. Eine fachkundige Person den Zähler gegengelesen hat und ihre Antworten als Fixtures oder als ausdrücklich offene Punkte im Kern stehen.
 2. Zwei Protokolle in der Prüfakte stehen: Gründung (eigene Fassung in 30 Minuten) und Meldetermin (Zählstand aus den eigenen Briefen in 15 Minuten).
-3. `npm run lint`, `npm test`, `npm run check:mobile` und `npm run check:gn-zitate` grün sind.
+3. `npm run lint`, `npm test`, `npm run check:mobile` und `npm run check:zitate` (im Werkzeug-Repo) grün sind.
 
 ## Wo es kippt
 
@@ -144,8 +144,8 @@ Wer Ticket 01 finanzieren könnte: **Prototype Fund** (Vereinbarkeit CC0 mit der
 
 ## Vorarbeit
 
-- Prototyp: `public/gruendungsnavigator/` (Kapitel `07-demos/gruendungsnavigator/README.md`), Konzept `02-recherche/gruendungsnavigator-konzept-2026-10-11.md`, Übergabe `06-suche/scout-an-bibliothekar-2026-10-11-gruendungsnavigator.md`.
-- Kern und Tests: `src/engine/gruendungsnavigator/` (Vitest, inklusive Drift-, Zahlen- und Offline-Wächter über beide HTML-Seiten).
+- Werkzeug: https://github.com/felixinberlin/jobcenter-hilfe (Seiten `site/`, Prüfakte `docs/pruefakte.md`; Verweis-Kapitel `07-demos/gruendungsnavigator/README.md`), Konzept `02-recherche/gruendungsnavigator-konzept-2026-10-11.md`, Übergabe `06-suche/scout-an-bibliothekar-2026-10-11-gruendungsnavigator.md`.
+- Kern und Tests: `src/` im Werkzeug-Repo (Vitest, inklusive Drift-, Zahlen- und Offline-Wächter über die Seiten). Bis 17.10.2026 lagen Seiten und Kern in Amélie (`public/gruendungsnavigator/`, `src/engine/gruendungsnavigator/`); die alten Adressen leiten weiter.
 - Normtexte: SGB II i. d. F. vom 16.04.2026 (BGBl. I Nr. 107), in Kraft 01.07.2026; §§ 14, 16, 17, 39, 60 SGB I; §§ 9, 13, 25, 33, 35, 44 SGB X; §§ 66, 84, 87, 88, 183 SGG; § 14 GewO; § 138 AO; § 19 UStG. Gelesen auf dejure.org und gesetze-im-internet.de (11.10.2026).
 - Quellen im Register: LSG NRW / LTO, gegen-hartz.de, BürgerChat, Sozialrat, Münchner Gründungsbüro, Gründerplattform, jobcenter.guru, dejure.org (`06-suche/amelie-quellen.md`).
 - Nebenbefund **Paragrafen-Prüfer** (G2, `verengt`): Das Normregister mit Fassung und Zitat-Abgleich ist dessen Kern.
