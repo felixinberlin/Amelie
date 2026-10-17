@@ -92,7 +92,7 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 
 **Ticket 01 is done (13 Oct 2026): the page is a template** with sector packs (web development, assembly, coffee stand, graphic design, everyday companion, online trade, empty); details `docs/ticket-01.md` in the tool repo. **Extended on 16 Oct 2026 into Job Centre Help for everyone** (see sketch). The start-up navigator and the missed-appointment counter now go to one recipient as one tin; the recipient conflict from the job-centre round (check protocol M1) is resolved.
 
-**Ticket 02: expert reading and field test.** A welfare advice service (Tacheles or an unemployment advice centre) reads the missed-appointment counter with its 26 fixtures and answers the open legal questions; two people without programming skills use the pages with a stopwatch.
+**Ticket 02: expert reading and field test** (written up on 17 Oct 2026: [ticket](https://github.com/felixinberlin/jobcenter-hilfe/blob/main/docs/ticket-02.md), [review sheet for experts](https://github.com/felixinberlin/jobcenter-hilfe/blob/main/docs/pruefbogen.md), [issue #1](https://github.com/felixinberlin/jobcenter-hilfe/issues/1)). A welfare advice service (Tacheles or an unemployment advice centre) reads the missed-appointment counter with its 26 fixtures and answers the open legal questions; two people without programming skills use the pages with a stopwatch.
 
 **Done when:**
 1. A qualified person has read the counter and their answers are in the kernel as fixtures or as explicitly open points.

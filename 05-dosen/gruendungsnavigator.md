@@ -91,7 +91,7 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 
 **Ticket 01 ist erledigt (13.10.2026): Die Seite ist Vorlage** mit Branchenpaketen (Webentwicklung, Montage, Kaffeestand, Grafikdesign, Alltagsbegleitung, Onlinehandel, leer); Details `docs/ticket-01.md` im Werkzeug-Repo. **Am 16.10.2026 erweitert zur Jobcenter-Hilfe für alle** (siehe Skizze). Damit gehen Gründungsnavigator und Meldeversäumnis-Zähler als eine Dose an einen Empfänger; der Empfängerkonflikt aus der Jobcenter-Runde (Prüfprotokoll M1) ist aufgelöst.
 
-**Ticket 02: Gegenlesen und Praxistest.** Eine Sozialberatung (Tacheles oder eine Erwerbslosenberatung) liest den Meldeversäumnis-Zähler mit seinen 26 Fixtures gegen und beantwortet die offenen Rechtsfragen; zwei Personen ohne Programmierkenntnis nutzen die Seiten mit Stoppuhr.
+**Ticket 02: Gegenlesen und Praxistest** (seit 17.10.2026 ausgeschrieben: [Ticket](https://github.com/felixinberlin/jobcenter-hilfe/blob/main/docs/ticket-02.md), [Prüfbogen für Fachleute](https://github.com/felixinberlin/jobcenter-hilfe/blob/main/docs/pruefbogen.md), [Issue #1](https://github.com/felixinberlin/jobcenter-hilfe/issues/1)). Eine Sozialberatung (Tacheles oder eine Erwerbslosenberatung) liest den Meldeversäumnis-Zähler mit seinen 26 Fixtures gegen und beantwortet die offenen Rechtsfragen; zwei Personen ohne Programmierkenntnis nutzen die Seiten mit Stoppuhr.
 
 **Fertig, wenn:**
 1. Eine fachkundige Person den Zähler gegengelesen hat und ihre Antworten als Fixtures oder als ausdrücklich offene Punkte im Kern stehen.
