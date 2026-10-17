@@ -222,6 +222,19 @@ export function berechneFristen(e: FristEingabe): FristEintrag[] {
     });
   }
 
+  if (e.gruendung) {
+    // BA-Weisung zu § 10 SGB II, Rz 10.41b (Stand 01.07.2026): Prognose bei Gründung über 24 Monate,
+    // Prüfung nach 12 und 24 Monaten, spätestens nach 36 Monaten Deckung des Bedarfs.
+    const stufen: [number, string, string][] = [
+      [12, 'Prüfung: Entwickelt sich die Selbständigkeit wie geplant?', 'Nach der BA-Weisung zu § 10 (Rz 10.41b) prüft das Jobcenter nach 12 Monaten, ob sich die Selbständigkeit wie prognostiziert entwickelt. Monatsberichte und Zahlen bereithalten.'],
+      [24, 'Prüfung: Prognose für weitere 12 Monate', 'Nach 24 Monaten erstellt das Jobcenter eine Prognose für die nächsten 12 Monate (Rz 10.41b).'],
+      [36, 'Prüfung: Deckt die Selbständigkeit den Bedarf?', 'Spätestens 36 Monate nach der Gründung prüft das Jobcenter, ob der Bedarf der Bedarfsgemeinschaft gedeckt ist; sonst wird eine Neuorientierung angestrebt, etwa ein Verweis auf eine Beschäftigung (Rz 10.41b, 10.41c).'],
+    ];
+    for (const [m, titel, text] of stufen) {
+      out.push({ id: `gruendung-pruefung-${m}`, art: 'spaetestens', titelDe: titel, titelEn: `Review ${m} months after starting`, datum: plusMonate(e.gruendung, m), normId: 'sgb2_10', begruendungDe: text, begruendungEn: `Under the BA instructions on section 10 (para. 10.41b) the job centre reviews the self-employment ${m} months after it started.` });
+    }
+  }
+
   if (e.bescheidBekanntgabe) {
     const mitBelehrung = e.mitRechtsbehelfsbelehrung !== false;
     const w = fristEnde(e.bescheidBekanntgabe, mitBelehrung ? 1 : 12, ft);

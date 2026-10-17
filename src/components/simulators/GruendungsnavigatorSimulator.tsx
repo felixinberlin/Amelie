@@ -61,8 +61,8 @@ export const GruendungsnavigatorSimulator: React.FC<Props> = ({ lang, isEmbedded
           <span>
             <span className="block font-bold text-sm text-[var(--m-ink)]">{de ? 'Gesprächsnavigator öffnen' : 'Open conversation navigator'} <ExternalLink className="inline w-3 h-3" /></span>
             <span className="block text-xs text-[var(--m-ink-soft,#6b5b4b)] mt-1">{de
-              ? 'Telefonbaum (7 Fragen, 23 Antworten), 34 Fragen plus Zusatzfragen je Branche (Webentwicklung: 42), 30 Rechte-Karten, sechs Branchenpakete und eigene Fassung, Präsentationsmodus, Zusammenfassungs-Mail.'
-              : 'Phone decision tree (7 questions, 23 answers), 34 questions plus extra ones per sector (web development: 42), 30 rights cards, six sector packs and your own version, presentation mode, summary mail.'}</span>
+              ? 'Telefonbaum (7 Fragen, 23 Antworten), 35 Fragen plus Zusatzfragen je Branche (Webentwicklung: 43), 30 Rechte-Karten, sechs Branchenpakete und eigene Fassung, Präsentationsmodus, Zusammenfassungs-Mail.'
+              : 'Phone decision tree (7 questions, 23 answers), 35 questions plus extra ones per sector (web development: 43), 30 rights cards, six sector packs and your own version, presentation mode, summary mail.'}</span>
           </span>
         </a>
         <a href={`${BASE}fall-landkarte.html`} target="_blank" rel="noopener noreferrer"

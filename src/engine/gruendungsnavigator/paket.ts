@@ -203,6 +203,8 @@ export interface NavigatorDaten {
   ablauf: [string, string, string][];
   kennzahlen: [string, string][];
   texte: Record<string, string>;
+  /** Was das Jobcenter nach den BA-Weisungen prüft (optional) */
+  pruefung?: { stand: string; kriterien: { titel: string; grundlage: string; mitbringen: string; keinEinfluss: string; laws: string[] }[]; ehrlich: string[] };
 }
 
 export interface LandkartenDaten {
@@ -309,6 +311,8 @@ export function pruefePaket(
     p.push(`Jahr 2: Monatsgewinn ${euro(Math.round(w.gewinn[1] / 12))} unter der eigenen Schwelle ${euro(w.schwelleMonat)}, Ausstieg dann nicht plausibel`);
   }
   if (w.ausstieg.trim() && !/^\d+ bis \d+$/.test(w.ausstieg.trim())) p.push(`ausstieg "${w.ausstieg}": Form „14 bis 16“`);
+  const bis = /^\d+ bis (\d+)$/.exec(w.ausstieg.trim());
+  if (bis && +bis[1] > 24) p.push(`ausstieg "${w.ausstieg}": über dem Orientierungsrahmen von 24 Monaten, den die BA-Weisung zu § 16b (3.1.2.1, Stand 03.09.2026) für die Prognose nennt`);
 
   // Überschreibungen, Zusatzfragen, Normen
   const nav = klon(kontext.nav), karte = kontext.karte ? klon(kontext.karte) : null;

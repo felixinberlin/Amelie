@@ -183,6 +183,12 @@ describe('Fristen', () => {
     expect(berechneFristen({ antrag: '2026-10-16' }).some((x) => x.id === 'vorschuss')).toBe(false);
   });
 
+  it('Gründung: Prüfungen nach 12, 24 und spätestens 36 Monaten (BA-Weisung § 10, Rz 10.41b)', () => {
+    const f = berechneFristen({ gruendung: '2026-11-02' });
+    expect(f.filter((x) => x.id.startsWith('gruendung-pruefung-')).map((x) => x.datum)).toEqual(['2027-11-02', '2028-11-02', '2029-11-02']);
+    expect(f.find((x) => x.id === 'gruendung-pruefung-36')!.begruendungDe).toMatch(/Rz 10\.41b/);
+  });
+
   it('ohne Daten keine Fristen, nichts geschätzt', () => {
     expect(berechneFristen({})).toEqual([]);
   });
@@ -291,7 +297,7 @@ describe('Sprachwächter', () => {
       widerspruch: '2026-12-10', widerspruchsbescheidBekanntgabe: '2027-02-01', bezugsbeginn: '2026-07-01',
       einstiegsgeldBeginn: '2026-12-01', bewilligungsEnde: '2027-05-31',
     });
-    expect(f.length).toBe(11);
+    expect(f.length).toBe(14);
     for (const x of f) {
       for (const t of [x.titelDe, x.titelEn, x.begruendungDe, x.begruendungEn]) expect(() => assertKeinVersprechen(t)).not.toThrow();
     }
@@ -303,11 +309,11 @@ describe('Sprachwächter', () => {
 // ------------------------------------------------------------------ Demo-Drift
 
 describe('Demo: Gesprächsnavigator (Daten von index.html, Referenzpaket Webentwicklung)', () => {
-  it('Umfang: 7 Fragen, 23 Antworten, 34 allgemeine und 42 Fragen im Referenzpaket, 30 Rechte-Karten, davon 9 zu Zuständigkeit', () => {
+  it('Umfang: 7 Fragen, 23 Antworten, 35 allgemeine und 43 Fragen im Referenzpaket, 30 Rechte-Karten, davon 9 zu Zuständigkeit', () => {
     expect(STEPS.length).toBe(7);
     expect(STEPS.reduce((n, s) => n + s.answers.length, 0)).toBe(23);
-    expect(NAV_DATEN.fragen.length).toBe(34);
-    expect(QA.length).toBe(42);
+    expect(NAV_DATEN.fragen.length).toBe(35);
+    expect(QA.length).toBe(43);
     expect(RIGHTS.length).toBe(30);
     expect(RIGHTS.filter((r) => r.g === 'z').length).toBe(9);
     for (const r of RIGHTS) expect(NAV_DATEN.rechteGruppen.map(([k]) => k), r.id).toContain(r.g);

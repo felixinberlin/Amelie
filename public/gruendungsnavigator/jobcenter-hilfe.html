@@ -646,6 +646,16 @@ var GNKern = (() => {
         begruendungEn: "Within one month of starting the activity (tax registration questionnaire)."
       });
     }
+    if (e.gruendung) {
+      const stufen = [
+        [12, "Pr\xFCfung: Entwickelt sich die Selbst\xE4ndigkeit wie geplant?", "Nach der BA-Weisung zu \xA7 10 (Rz 10.41b) pr\xFCft das Jobcenter nach 12 Monaten, ob sich die Selbst\xE4ndigkeit wie prognostiziert entwickelt. Monatsberichte und Zahlen bereithalten."],
+        [24, "Pr\xFCfung: Prognose f\xFCr weitere 12 Monate", "Nach 24 Monaten erstellt das Jobcenter eine Prognose f\xFCr die n\xE4chsten 12 Monate (Rz 10.41b)."],
+        [36, "Pr\xFCfung: Deckt die Selbst\xE4ndigkeit den Bedarf?", "Sp\xE4testens 36 Monate nach der Gr\xFCndung pr\xFCft das Jobcenter, ob der Bedarf der Bedarfsgemeinschaft gedeckt ist; sonst wird eine Neuorientierung angestrebt, etwa ein Verweis auf eine Besch\xE4ftigung (Rz 10.41b, 10.41c)."]
+      ];
+      for (const [m, titel, text] of stufen) {
+        out.push({ id: `gruendung-pruefung-${m}`, art: "spaetestens", titelDe: titel, titelEn: `Review ${m} months after starting`, datum: plusMonate(e.gruendung, m), normId: "sgb2_10", begruendungDe: text, begruendungEn: `Under the BA instructions on section 10 (para. 10.41b) the job centre reviews the self-employment ${m} months after it started.` });
+      }
+    }
     if (e.bescheidBekanntgabe) {
       const mitBelehrung = e.mitRechtsbehelfsbelehrung !== false;
       const w = fristEnde(e.bescheidBekanntgabe, mitBelehrung ? 1 : 12, ft);
@@ -957,6 +967,8 @@ var GNKern = (() => {
       p.push(`Jahr 2: Monatsgewinn ${euro(Math.round(w.gewinn[1] / 12))} unter der eigenen Schwelle ${euro(w.schwelleMonat)}, Ausstieg dann nicht plausibel`);
     }
     if (w.ausstieg.trim() && !/^\d+ bis \d+$/.test(w.ausstieg.trim())) p.push(`ausstieg "${w.ausstieg}": Form \u201E14 bis 16\u201C`);
+    const bis = /^\d+ bis (\d+)$/.exec(w.ausstieg.trim());
+    if (bis && +bis[1] > 24) p.push(`ausstieg "${w.ausstieg}": \xFCber dem Orientierungsrahmen von 24 Monaten, den die BA-Weisung zu \xA7 16b (3.1.2.1, Stand 03.09.2026) f\xFCr die Prognose nennt`);
     const nav = klon(kontext.nav), karte = kontext.karte ? klon(kontext.karte) : null;
     for (const pfad of wendeUeberschreibungenAn(nav, karte, paket)) p.push(`\xDCberschreibung trifft nichts: ${pfad}`);
     const ids = new Set(kontext.nav.fragen.map((f) => f.id));

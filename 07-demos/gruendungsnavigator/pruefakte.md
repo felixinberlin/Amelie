@@ -113,6 +113,17 @@ r/Grundsicherung, Thread „Dafür bin ich nicht zuständig“, zwei Kommentare:
 
 Ein Test („Transparenz“) hält das fest. Auf Reddit wurde nicht geantwortet.
 
+## 4d. Zweite Rückmeldung: ein Sachbearbeiter (17.10.2026)
+
+Derselbe Thread, ein verifizierter Sachbearbeiter mit Jahren im Selbständigenteam:
+
+| Kommentar | Einordnung | Reaktion |
+|---|---|---|
+| „Vorbereitet wird man sein, bringt im Ernstfall aber wenig.“ | Berechtigt: Einstiegsgeld und § 16c sind Ermessen; keine Vorbereitung erzwingt eine Förderung. | Neue Karte „Was das Jobcenter prüft“: zehn Kriterien aus den Fachlichen Weisungen (§ 16b Stand 03.09.2026, § 16c Stand 20.07.2017, § 10 Rz 10.41b/c), je mit „worauf Vorbereitung keinen Einfluss hat“, und sieben ehrliche Sätze vorneweg. |
+| „Werbung für dein KI Tool“ | Regel 7 des Subreddits (keine Werbung) und Regel 9 (keine Rechtsberatung) gelten. | Keine weiteren Posts zum Werkzeug; Korrekturweg über ein Formular statt über Kommentare. |
+
+Die Weisungen binden gemeinsame Einrichtungen, nicht kommunale Träger; die Karte sagt das. Prüftermine 12/24/36 Monate (Rz 10.41b) stehen im Fristenrechner, die Paketprüfung warnt bei einer Ausstiegsprognose über 24 Monaten (FW § 16b 3.1.2.1).
+
 ## 5. Bedingungen vor Versand
 
 | Bedingung (Reviewer) | Stand |

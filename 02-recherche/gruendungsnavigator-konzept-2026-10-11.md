@@ -30,7 +30,7 @@ Eine kostenlose Web-App bereitet Menschen im Grundsicherungsgeld, die sich selbs
 |---|---|
 | Vorbereitung | Persönliche Angaben nur im Browser; Grundregeln; Mitbring-Liste |
 | Telefonat | Entscheidungsbaum: 7 Fragen, 23 mögliche Antworten, jeweils Formulierung, Hintergrund, zitierte Norm; Live-Protokoll; Tastatur 1–5 |
-| Fragen | 42 wahrscheinliche Fragen im Termin mit anpassbarer Antwort, Beleg und Norm; Übungsfortschritt; Druckfassung |
+| Fragen | 43 wahrscheinliche Fragen im Termin (Beispiel Webentwicklung, Stand 17.10.2026) mit anpassbarer Antwort, Beleg und Norm; Übungsfortschritt; Druckfassung |
 | Rechte-Karten | 30 typische Antworten des Gegenübers („Das fördern wir nicht“, „Unterschreiben Sie hier“); ein Klick zeigt Anliegen, Normtext und formalen nächsten Schritt |
 | Präsentationsmodus | Neutrale Ansicht für das Gegenüber: Überblick, Fragen & Antworten, Verfahren & Rechtsgrundlagen; Zitate und Taktik bleiben verborgen |
 | Zusammenfassung | Mail aus den Klicks mit korrekten Normverweisen; Danach-Liste |

@@ -11,7 +11,7 @@ Quelle der ausgelieferten Dateien: `public/gruendungsnavigator/` (Vite kopiert `
 
 | Seite | Inhalt |
 |---|---|
-| Gesprächsnavigator | Vorbereitung, Telefon-Entscheidungsbaum (7 Fragen, 23 Antworten), Fragenkatalog (34 allgemeine Fragen plus Zusatzfragen des Branchenpakets, im Beispiel Webentwicklung 42, mit anpassbaren Beispielantworten), Branchenpakete mit eigener Fassung, Download und Upload, Rechte-Karten (30 typische Antworten des Gegenübers), Zusammenfassungs-Mail, Präsentationsmodus ohne Taktik-Notizen |
+| Gesprächsnavigator | Vorbereitung, Telefon-Entscheidungsbaum (7 Fragen, 23 Antworten), Fragenkatalog (35 allgemeine Fragen plus Zusatzfragen des Branchenpakets, im Beispiel Webentwicklung 43, mit anpassbaren Beispielantworten), Branchenpakete mit eigener Fassung, Download und Upload, Rechte-Karten (30 typische Antworten des Gegenübers), Zusammenfassungs-Mail, Präsentationsmodus ohne Taktik-Notizen |
 | Jobcenter-Hilfe | Für alle im Bezug, Einstieg „Was ist los?“: Meldeversäumnis-Zähler (§ 32, § 7b Abs. 4), Geld zurück (Fristen, Überprüfung, 50-€-Grenze, Aufrechnung), Miete (Karenzzeit, 1,5-fach-Deckel), Bescheid und Fristen, Unterlagen, Vermögen |
 | Fall-Landkarte | 9 Stationen vom Antrag bis zum Ausstieg als SVG, 29 Fragen, 107 Antworten mit Reaktion, nächstem Schritt, Frist und Normtext; Fristen-Zeitstrahl; 61 Normen; dasselbe Branchenpaket wie im Gesprächsnavigator |
 

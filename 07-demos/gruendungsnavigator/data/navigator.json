@@ -638,6 +638,16 @@
    "id": "zuschuss"
   },
   {
+   "c": "Zahlen",
+   "q": "Warum ein Zuschuss und kein Darlehen?",
+   "a": "Mir ist bekannt, dass in der Regel ein Darlehen vergeben wird und ein Zuschuss, wenn er zielführender ist. Für einen Zuschuss spricht bei mir: [Ihre Gründe, z. B. überschaubarer Betrag von {{zuschuss}}, Tilgung würde die Anlaufphase belasten]. Andere Finanzierung habe ich versucht: [Bank, Mikrokredit, Förderprogramm, jeweils mit Ergebnis]. Wenn Sie ein Darlehen für richtig halten, bitte ich um die Begründung im Bescheid.",
+   "show": "Nachweise über Finanzierungsversuche (Ablehnung der Bank, Anfrage Mikrokredit), Kostenvoranschläge",
+   "laws": [
+    "sgb2_16c1"
+   ],
+   "id": "zuschuss-darlehen"
+  },
+  {
    "c": "Förderung & Recht",
    "q": "Auf Einstiegsgeld gibt es keinen Rechtsanspruch.",
    "a": "Das ist mir bewusst. Ich bitte um eine Ermessensentscheidung auf Grundlage meines Plans und um einen schriftlichen Bescheid mit Begründung.",
@@ -1439,5 +1449,109 @@
   "vorhabenText": "{{vorhabenText}}",
   "beantragtZuschuss": "Zuschuss für {{zuschussZweck}} nach § 16c Abs. 1 SGB II: {{zuschuss}} ({{zuschussKurz}})",
   "beispielHinweis": "Fragen, Antworten und Zahlen stammen aus einem erfundenen Beispiel: {{paketBeschreibung}} Person und Zahlen sind ausgedacht."
+ },
+ "pruefung": {
+  "stand": "Fachliche Weisungen der Bundesagentur für Arbeit zu § 16b SGB II (Stand 03.09.2026), § 16c SGB II (Stand 20.07.2017, von der BA weiter als gültig verlinkt) und § 10 SGB II (Stand 01.07.2026), gelesen am 17.10.2026. Sie binden die gemeinsamen Einrichtungen; zugelassene kommunale Träger und örtliche ermessenslenkende Weisungen können abweichen.",
+  "kriterien": [
+   {
+    "titel": "Antrag vor dem Start",
+    "grundlage": "„Die Antragstellung muss vor der tatsächlichen Aufnahme der Erwerbstätigkeit erfolgen.“ (BA-Weisung zu § 16b SGB II, Stand 03.09.2026, 3.1); für Sachgüter vor der Beschaffung (Weisung § 16c, Rz 16c.60).",
+    "mitbringen": "Nachweis, dass der Antrag vor Gewerbeanmeldung, Anzeige beim Finanzamt oder Kauf einging (Eingangsbestätigung).",
+    "keinEinfluss": "Ist die Tätigkeit schon aufgenommen, nennen die Weisungen keine Ausnahme.",
+    "laws": [
+     "sgb2_37"
+    ]
+   },
+   {
+    "titel": "Hauptberuflich",
+    "grundlage": "Hauptberuflich, „wenn sie mindestens 15 Stunden pro Woche umfasst“ und daneben keine Tätigkeit in zeitlich höherem Umfang läuft (BA-Weisung zu § 16b SGB II, Stand 03.09.2026, 3.3.2).",
+    "mitbringen": "Geplante Wochenstunden und jeden Nebenjob offen nennen.",
+    "keinEinfluss": "–",
+    "laws": [
+     "sgb2_16b"
+    ]
+   },
+   {
+    "titel": "Prognose: aus dem Bezug heraus",
+    "grundlage": "Die Tätigkeit muss geeignet sein, die eigene Hilfebedürftigkeit „nicht nur kurzfristig zu überwinden“; „Als Orientierungsrahmen … können bis zu 24 Monate angenommen werden.“ (BA-Weisung zu § 16b SGB II, Stand 03.09.2026, 3.1.2.1).",
+    "mitbringen": "Rentabilitätsvorschau, die zeigt, ab welchem Monat der Gewinn Ihren Bedarf aus dem Bescheid deckt.",
+    "keinEinfluss": "Die Prognose trifft die Integrationsfachkraft.",
+    "laws": [
+     "sgb2_16b"
+    ]
+   },
+   {
+    "titel": "Erforderlich",
+    "grundlage": "Ohne Einstiegsgeld wäre die Eingliederung „nicht, nicht zeitnah oder nicht dauerhaft möglich“; günstigere Alternativen werden geprüft (BA-Weisung zu § 16b SGB II, Stand 03.09.2026, 3.1.2.2).",
+    "mitbringen": "Wie lange Sie arbeitslos sind und warum es ohne die Förderung nicht oder nur langsamer geht.",
+    "keinEinfluss": "Die Bewertung von Mitnahmeeffekten.",
+    "laws": [
+     "sgb2_16b"
+    ]
+   },
+   {
+    "titel": "Tragfähigkeit",
+    "grundlage": "Tragfähig, wenn die Tätigkeit auf Gewinn ausgerichtet und geeignet ist, die Hilfebedürftigkeit in angemessener Zeit zu beenden; das Ergebnis ist „ins Verhältnis zum Bedarf“ zu setzen (BA-Weisung zu § 16b SGB II, Stand 03.09.2026, 3.3.4.1). Angefordert werden Businessplan, Lebenslauf, Kapitalbedarfs- und Finanzierungsplan, Umsatz- und Rentabilitätsvorschau für drei Jahre, Zulassungsnachweise; für § 16c auch ein Liquiditätsplan (Rz 16c.25).",
+    "mitbringen": "Genau diese Unterlagen, vollständig, mit Zahlen, die zu Ihrem Bedarf passen.",
+    "keinEinfluss": "„Eine Förderung ist ausgeschlossen, wenn sich Anhaltspunkte für eine fehlende persönliche Eignung oder Tragfähigkeit ergeben.“ (3.3.4)",
+    "laws": [
+     "sgb2_16c3"
+    ]
+   },
+   {
+    "titel": "Fachkundige Stelle",
+    "grundlage": "Kammern, Fachverbände, Kreditinstitute, Gründerinitiativen; „Die gemeinsame Einrichtung trifft die Entscheidung, an welche fachkundige Stelle sich die leistungsberechtigte Person … zu wenden hat.“ „Ein kostenfreies Verfahren für die Gründungsperson ist sicherzustellen.“ (BA-Weisung zu § 16b SGB II, Stand 03.09.2026, 3.3.4.1)",
+    "mitbringen": "Eine schon vorhandene aktuelle Stellungnahme; sie ist zu berücksichtigen (Rz 16c.23). Fragen, welche Stelle das Jobcenter will. Verlangt jemand Geld, darauf hinweisen.",
+    "keinEinfluss": "Auch bei positiver Stellungnahme kann abgelehnt werden (Rz 16c.23).",
+    "laws": [
+     "sgb2_16c3"
+    ]
+   },
+   {
+    "titel": "Persönliche Eignung",
+    "grundlage": "Unter anderem Ziele und Motivation, betriebswirtschaftliches Wissen, Branchenkenntnis, persönliche Rahmenbedingungen wie Familie und Gesundheit, realistischer Zeitaufwand, Umgang mit schwankendem Einkommen, besuchte Gründungsseminare (BA-Weisung zu § 16b SGB II, Stand 03.09.2026, 3.3.4.2).",
+    "mitbringen": "Seminarnachweise, Qualifikationen, Branchenerfahrung, Plan für Kinderbetreuung und Arbeitszeit.",
+    "keinEinfluss": "Die Gesamtbeurteilung.",
+    "laws": [
+     "sgb2_16b"
+    ]
+   },
+   {
+    "titel": "Ermessen, Dauer und Höhe",
+    "grundlage": "„ESG ist eine Ermessensleistung.“ Ob, wie lange und wie viel ist „einzeln und nachvollziehbar zu begründen“ und im Bescheid zu dokumentieren (BA-Weisung zu § 16b SGB II, Stand 03.09.2026, 2.5, 4.1.1). Grundbetrag höchstens 50 % des Regelbedarfs; Ergänzungen bei langer Arbeitslosigkeit und größerer Bedarfsgemeinschaft sind Soll-Regeln (Einstiegsgeld-Verordnung § 1).",
+    "mitbringen": "Belege zur Dauer der Arbeitslosigkeit und zur Größe der Bedarfsgemeinschaft.",
+    "keinEinfluss": "Ob, wie lange (bis 24 Monate) und wie viel gefördert wird.",
+    "laws": [
+     "sgb2_16b"
+    ]
+   },
+   {
+    "titel": "Sachgüter: notwendig, angemessen, meist als Darlehen",
+    "grundlage": "Notwendig heißt unverzichtbar und nicht anders zu beschaffen; zumutbare andere Finanzierung ist auszuschöpfen; „keine Luxusartikel, Grundausstattung ausreichend“ (Weisung § 16c, Rz 16c.33). „Im Regelfall werden … Darlehen gewährt“, ein Zuschuss, wenn er zielführender ist (Rz 16c.35). Laufende Betriebskosten werden nicht gefördert (Rz 16c.34).",
+    "mitbringen": "Liste je Anschaffung mit Zweck, warum die günstigere Variante nicht reicht, Nachweise über andere Finanzierungsversuche.",
+    "keinEinfluss": "Darlehen oder Zuschuss. Örtlich kann die Regelgrenze niedriger liegen als die gesetzlichen 5.000 € (Beispiel Jobcenter Wuppertal: in der Regel 2.500 €).",
+    "laws": [
+     "sgb2_16c1"
+    ]
+   },
+   {
+    "titel": "Nach dem Start",
+    "grundlage": "Prüfungen nach 12 und 24 Monaten, spätestens nach 36 Monaten; bei negativer Prognose Neuorientierung, etwa Verweis auf eine Beschäftigung (BA-Weisung zu § 10, Rz 10.41b, 10.41c).",
+    "mitbringen": "Geschäftszahlen laufend führen; sie werden „ausführlich“ gesichtet.",
+    "keinEinfluss": "Termine und Maßstab der Prüfungen.",
+    "laws": [
+     "sgb2_10"
+    ]
+   }
+  ],
+  "ehrlich": [
+   "Die Entscheidung trifft das Jobcenter nach Ermessen. Gute Vorbereitung erzwingt keine Förderung; auch mit positivem Gutachten kann abgelehnt werden.",
+   "Vorbereitung hilft dort, wo die Weisungen Unterlagen verlangen: Businessplan, Kapitalbedarf, Rentabilitätsvorschau für drei Jahre, Lebenslauf, Zulassungen. Vollständig vorgelegt, geht es schneller.",
+   "Vorbereitung verhindert den Fehler, der sich nicht mehr reparieren lässt: anmelden oder kaufen, bevor der Antrag gestellt ist.",
+   "Messen Sie Ihre Zahlen an Ihrem eigenen Bedarf aus dem Bescheid; genau daran misst das Jobcenter die Tragfähigkeit.",
+   "Sie können eine nachvollziehbare Begründung im Bescheid erwarten, warum gefördert wird oder nicht, wie lange und wie viel.",
+   "Welche fachkundige Stelle, ob Darlehen oder Zuschuss und wie hoch: Das regelt oft eine örtliche Weisung, die Sie nicht kennen. Fragen Sie danach.",
+   "Die internen Prüfschemata der Jobcenter sind nicht öffentlich. Diese Seite bildet nur die öffentlichen Kriterien ab und sagt keine Entscheidung voraus."
+  ]
  }
 }

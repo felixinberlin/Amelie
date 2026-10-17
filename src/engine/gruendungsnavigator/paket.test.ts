@@ -151,6 +151,9 @@ describe('pruefePaket: Gegenproben mit absichtlich falschem Eingang', () => {
   it('Gewinn im zweiten Jahr unter der eigenen Schwelle', () => {
     expect(probe((p) => { p.werte.schwelleMonat = 9000; })).toMatch(/unter der eigenen Schwelle/);
   });
+  it('Ausstieg über dem 24-Monats-Rahmen der BA-Weisung zu § 16b', () => {
+    expect(probe((p) => { p.werte.ausstieg = '20 bis 30'; })).toMatch(/Orientierungsrahmen von 24 Monaten/);
+  });
   it('Ausstieg in falscher Form', () => {
     expect(probe((p) => { p.werte.ausstieg = 'bald'; })).toMatch(/ausstieg/);
   });
