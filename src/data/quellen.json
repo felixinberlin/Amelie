@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "stand": "2026-10-16",
+  "stand": "2026-10-17",
   "katalog": {
     "status": [
       {
@@ -23414,6 +23414,308 @@
           "runde": "Jobcenter-Hilfe 16.10.2026",
           "notiz": "Besetzt-Gegenprobe: kein Zähler für Meldeversäumnisse.",
           "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "ba-fachliche-weisungen-16b-sgb-ii-einsti",
+      "name": "BA Fachliche Weisungen § 16b SGB II (Einstiegsgeld), Stand 03.09.2026",
+      "typ": "L",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Ermessenslenkung zum Einstiegsgeld, gegliedert nach Abschnitten statt Randziffern (3.1.2.1 Prognose, Orientierungsrahmen 24 Monate)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-17",
+      "ertrag": {
+        "dosen": [
+          "gruendungsnavigator"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-17"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-17",
+          "agent": "bibliothekar",
+          "runde": "Gründungsnavigator Weisungen 17.10.2026",
+          "notiz": "Gelesen 17.10.2026 für die Karte Was das Jobcenter prüft; URL auf arbeitsagentur.de nicht festgehalten.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "ba-weisung-202609002-aktualisierung-fw-1",
+      "name": "BA Weisung 202609002 (Aktualisierung FW § 16b SGB II)",
+      "typ": "L",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Änderungsweisung zur Fachlichen Weisung § 16b SGB II (Einstiegsgeld)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-17",
+      "ertrag": {
+        "dosen": [
+          "gruendungsnavigator"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-17"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-17",
+          "agent": "bibliothekar",
+          "runde": "Gründungsnavigator Weisungen 17.10.2026",
+          "notiz": "Gelesen 17.10.2026; URL auf arbeitsagentur.de nicht festgehalten.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "ba-fachliche-weisungen-16c-sgb-ii-leistu",
+      "name": "BA Fachliche Weisungen § 16c SGB II (Leistungen zur Eingliederung von Selbständigen), Stand 20.07.2017",
+      "typ": "L",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Ermessenslenkung zu Darlehen und Zuschüssen für Sachgüter an Selbständige; Stand 2017, vor der Reform 01.07.2026",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-17",
+      "ertrag": {
+        "dosen": [
+          "gruendungsnavigator"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-17"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-17",
+          "agent": "bibliothekar",
+          "runde": "Gründungsnavigator Weisungen 17.10.2026",
+          "notiz": "Gelesen 17.10.2026; Stand 2017, Aktualität gegenüber der Rechtslage 2026 offen.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "ba-fachliche-weisungen-10-sgb-ii-stand-0",
+      "name": "BA Fachliche Weisungen § 10 SGB II, Stand 01.07.2026 (Rz 10.41b/c)",
+      "typ": "L",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Zumutbarkeit; Rz 10.41b/c Überprüfung der Selbständigkeit nach 12, 24 und 36 Monaten",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-17",
+      "ertrag": {
+        "dosen": [
+          "gruendungsnavigator"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-17"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-17",
+          "agent": "bibliothekar",
+          "runde": "Gründungsnavigator Weisungen 17.10.2026",
+          "notiz": "Gelesen 17.10.2026; im Register vorher nicht vorhanden; URL auf arbeitsagentur.de nicht festgehalten.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "einstiegsgeld-verordnung-esgv-gesetze-im",
+      "name": "Einstiegsgeld-Verordnung (ESGV), gesetze-im-internet.de",
+      "typ": "L",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.gesetze-im-internet.de/esgv/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Bemessung und Dauer des Einstiegsgelds nach § 16b SGB II",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-17",
+      "ertrag": {
+        "dosen": [
+          "gruendungsnavigator"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-17"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-17",
+          "agent": "bibliothekar",
+          "runde": "Gründungsnavigator Weisungen 17.10.2026",
+          "notiz": "Gelesen 17.10.2026 für die Karte Was das Jobcenter prüft.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "jobcenter-wuppertal-ermessenslenkende-we",
+      "name": "Jobcenter Wuppertal Ermessenslenkende Weisung zu § 16c SGB II",
+      "typ": "L",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Örtliche ermessenslenkende Weisung zu Leistungen für Selbständige nach § 16c SGB II",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-17",
+      "ertrag": {
+        "dosen": [
+          "gruendungsnavigator"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-17"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-17",
+          "agent": "bibliothekar",
+          "runde": "Gründungsnavigator Weisungen 17.10.2026",
+          "notiz": "Gelesen 17.10.2026; lokale Quelle, örtliche Geltung; URL nicht festgehalten.",
+          "status": "durchsucht"
         }
       ]
     }

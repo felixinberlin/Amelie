@@ -7,7 +7,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 
 **Status:** `offen` (Nie gegraben oder nur als Anker genannt.) · `angekratzt` (Eine Suche oder ein Schnipsel; Publikationsliste nicht gelesen.) · `durchsucht` (Publikationsliste/Seite selbst gelesen.) · `erschöpft` (Anker dicht, kein weiterer Kandidat zu erwarten.) · `gesperrt` (Nicht (mehr) nutzen, z. B. Empfänger mit Nachfass-Sperre.)
 
-**Bestand:** 427 Quellen · 37 offen · 200 angekratzt · 163 durchsucht · 19 erschöpft · 8 gesperrt · Evidenz: 262 gelesen, 143 nur Schnipsel, 22 unbekannt.
+**Bestand:** 433 Quellen · 37 offen · 200 angekratzt · 169 durchsucht · 19 erschöpft · 8 gesperrt · Evidenz: 268 gelesen, 143 nur Schnipsel, 22 unbekannt.
 
 **Vektoren Q1–Q6** (1–5, Summe /30): Q1 Ergiebigkeit · Q2 Restpotenzial · Q3 Zugang · Q4 Belastbarkeit · Q5 Geländefreiheit · Q6 Anschluss. `auto` = aus Status/Evidenz/Ertrag abgeleitet, noch nicht bewertet.
 
@@ -402,6 +402,12 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 | **GETTSIM** `gettsim` | AGPL-Steuer-Transfer-Modell (Regelbedarf, § 11b, Vermögensfreibeträge; keine Sanktionen, Reform 07/2026 fehlt) | Webseite: repo | `durchsucht` *(16.10.2026: AGPL: nur Testorakel, nie kopieren.)* | 16.10.2026 | – | 21* |
 | **BA Leichte Sprache Grundsicherungsgeld** `ba-leichte-sprache-grundsicherungsgeld` | Leichte-Sprache-Seiten der BA zum Grundsicherungsgeld | Webseite | `durchsucht` *(16.10.2026: nur verlinken.)* | 16.10.2026 | – | 21* |
 | **Wikipedia Grundsicherungsgeld** `wikipedia-grundsicherungsgeld` | Wikipedia-Artikel zum Grundsicherungsgeld | Webseite | `angekratzt` *(16.10.2026: CC BY-SA, nicht CC0.)* | 16.10.2026 | – | 21* |
+| **BA Fachliche Weisungen § 16b SGB II (Einstiegsgeld), Stand 03.09.2026** `ba-fachliche-weisungen-16b-sgb-ii-einsti` | Ermessenslenkung zum Einstiegsgeld, gegliedert nach Abschnitten statt Randziffern (3.1.2.1 Prognose, Orientierungsrahmen 24 Monate) | Webseite | `durchsucht` *(17.10.2026: Gelesen 17.10.2026 für die Karte Was das Jobcenter prüft; URL auf arbeitsagentur.de nicht festgehalten.)* | 17.10.2026 | Dose `gruendungsnavigator` | 21* |
+| **BA Weisung 202609002 (Aktualisierung FW § 16b SGB II)** `ba-weisung-202609002-aktualisierung-fw-1` | Änderungsweisung zur Fachlichen Weisung § 16b SGB II (Einstiegsgeld) | Webseite | `durchsucht` *(17.10.2026: Gelesen 17.10.2026; URL auf arbeitsagentur.de nicht festgehalten.)* | 17.10.2026 | Dose `gruendungsnavigator` | 21* |
+| **BA Fachliche Weisungen § 16c SGB II (Leistungen zur Eingliederung von Selbständigen), Stand 20.07.2017** `ba-fachliche-weisungen-16c-sgb-ii-leistu` | Ermessenslenkung zu Darlehen und Zuschüssen für Sachgüter an Selbständige; Stand 2017, vor der Reform 01.07.2026 | Webseite | `durchsucht` *(17.10.2026: Gelesen 17.10.2026; Stand 2017, Aktualität gegenüber der Rechtslage 2026 offen.)* | 17.10.2026 | Dose `gruendungsnavigator` | 21* |
+| **BA Fachliche Weisungen § 10 SGB II, Stand 01.07.2026 (Rz 10.41b/c)** `ba-fachliche-weisungen-10-sgb-ii-stand-0` | Zumutbarkeit; Rz 10.41b/c Überprüfung der Selbständigkeit nach 12, 24 und 36 Monaten | Webseite | `durchsucht` *(17.10.2026: Gelesen 17.10.2026; im Register vorher nicht vorhanden; URL auf arbeitsagentur.de nicht festgehalten.)* | 17.10.2026 | Dose `gruendungsnavigator` | 21* |
+| **Einstiegsgeld-Verordnung (ESGV), gesetze-im-internet.de** `einstiegsgeld-verordnung-esgv-gesetze-im` | Bemessung und Dauer des Einstiegsgelds nach § 16b SGB II | Webseite | `durchsucht` *(17.10.2026: Gelesen 17.10.2026 für die Karte Was das Jobcenter prüft.)* | 17.10.2026 | Dose `gruendungsnavigator` | 21* |
+| **Jobcenter Wuppertal Ermessenslenkende Weisung zu § 16c SGB II** `jobcenter-wuppertal-ermessenslenkende-we` | Örtliche ermessenslenkende Weisung zu Leistungen für Selbständige nach § 16c SGB II | Webseite | `durchsucht` *(17.10.2026: Gelesen 17.10.2026; lokale Quelle, örtliche Geltung; URL nicht festgehalten.)* | 17.10.2026 | Dose `gruendungsnavigator` | 21* |
 
 **Suchstring:** `<Fach> Datenbank Referenz Schadensfälle` · `<Fach> Arbeitskreis Schulung` — **auf Deutsch zuerst**, wenn eine deutsche Institution das Feld trägt
 

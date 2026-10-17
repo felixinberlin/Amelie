@@ -645,3 +645,10 @@
 {"at":"2026-10-16T23:40:01.922Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"ba-fw-32-sgb-ii-2026-07"}
 {"at":"2026-10-16T23:40:02.020Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","id":"jc-wuppertal-einladungen-rechtsfolgen-2026"}
 {"at":"2026-10-16T23:40:02.032Z","event":"cli","actor":"bibliothekar","agent":"ideen-scout","runde":"Jobcenter-Hilfe 16.10.2026","cmd":"quellen import","count":35}
+{"at":"2026-10-17T10:38:19.186Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Gründungsnavigator Weisungen 17.10.2026","id":"ba-fachliche-weisungen-16b-sgb-ii-einsti"}
+{"at":"2026-10-17T10:38:19.269Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Gründungsnavigator Weisungen 17.10.2026","id":"ba-weisung-202609002-aktualisierung-fw-1"}
+{"at":"2026-10-17T10:38:19.350Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Gründungsnavigator Weisungen 17.10.2026","id":"ba-fachliche-weisungen-16c-sgb-ii-leistu"}
+{"at":"2026-10-17T10:38:19.447Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Gründungsnavigator Weisungen 17.10.2026","id":"ba-fachliche-weisungen-10-sgb-ii-stand-0"}
+{"at":"2026-10-17T10:38:19.528Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Gründungsnavigator Weisungen 17.10.2026","id":"einstiegsgeld-verordnung-esgv-gesetze-im"}
+{"at":"2026-10-17T10:38:19.605Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Gründungsnavigator Weisungen 17.10.2026","id":"jobcenter-wuppertal-ermessenslenkende-we"}
+{"at":"2026-10-17T10:38:19.613Z","event":"cli","actor":"bibliothekar","agent":"bibliothekar","runde":"Gründungsnavigator Weisungen 17.10.2026","cmd":"quellen import","count":6}
