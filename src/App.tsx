@@ -33,7 +33,8 @@ import { getTranslation } from './i18n';
 import { getActiveDosen } from './services/doseStorage';
 import { getDoseUrl } from './utils/doseUrl';
 import { SimulatorKey, DOSE_SIMULATOR_MAP } from './data/doseSimulators';
-import { Gift, FolderGit2 } from 'lucide-react';
+import { Gift, FolderGit2, Mail } from 'lucide-react';
+import { AMELIE_EMAIL } from './data/kontakt';
 
 export function App() {
   const location = useLocation();
@@ -430,6 +431,13 @@ export function App() {
                 <FolderGit2 className="w-3.5 h-3.5 text-[var(--m-green-2)]" />
                 <span>GitHub Pages (JSON & Markdown)</span>
               </button>
+              <a
+                href={`mailto:${AMELIE_EMAIL}`}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white border border-[var(--m-line)] hover:border-[var(--m-accent)] text-[var(--m-ink)] text-[11px] font-semibold transition-colors"
+              >
+                <Mail className="w-3.5 h-3.5 text-[var(--m-accent)]" />
+                <span>{AMELIE_EMAIL}</span>
+              </a>
               <span className="hidden sm:inline text-[var(--m-muted)]">·</span>
               <span className="italic font-amelie text-xs text-[var(--m-ink-2)]">« {t.ui.footer_quote} »</span>
               <span className="hidden sm:inline text-[var(--m-muted)]">·</span>

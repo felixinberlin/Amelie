@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { PlusCircle, Copy, Check, Download, Eye, Sparkles, AlertCircle } from 'lucide-react';
+import { PlusCircle, Copy, Check, Download, Eye, Sparkles, AlertCircle, Mail } from 'lucide-react';
 import { Language, Verdict } from '../types';
 import { AMELIE_PLEDGE } from '../data/manifest';
+import { AMELIE_EMAIL, amelieMailto } from '../data/kontakt';
 import { getTranslation } from '../i18n';
 
 interface DosePackerProps {
@@ -387,7 +388,7 @@ ${priorArt || '...'}
               {lang === 'de' ? 'Amélie-Einseiter ist bereit zum Verschenken' : lang === 'es' ? 'Hoja única Amélie lista para regalar' : 'Amélie One-Pager ready to gift'}
             </span>
 
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <button
                 onClick={copyMarkdown}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-stone-300 bg-white hover:bg-stone-50 text-xs font-semibold text-stone-800 transition-colors shadow-2xs"
@@ -412,6 +413,15 @@ ${priorArt || '...'}
                 <Download className="w-3.5 h-3.5" />
                 <span>{lang === 'de' ? '.md herunterladen' : lang === 'es' ? 'Descargar .md' : 'Download .md'}</span>
               </button>
+
+              <a
+                href={amelieMailto(`${lang === 'de' ? 'Dose' : lang === 'es' ? 'Lata' : 'Tin'}: ${title || '…'}`, generateMarkdown())}
+                title={lang === 'de' ? 'Lange Dosen werden in der Mail gekürzt: die .md-Datei dann anhängen.' : lang === 'es' ? 'Las latas largas se acortan en el correo: adjunte el archivo .md.' : 'Long tins are shortened in the mail: attach the .md file.'}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-stone-300 hover:border-stone-500 text-xs font-semibold text-stone-800 transition-colors"
+              >
+                <Mail className="w-3.5 h-3.5" />
+                <span>{lang === 'de' ? `An Amélie senden (${AMELIE_EMAIL})` : lang === 'es' ? `Enviar a Amélie (${AMELIE_EMAIL})` : `Send to Amélie (${AMELIE_EMAIL})`}</span>
+              </a>
 
               <button
                 onClick={() => setPreviewMode(false)}

@@ -30,6 +30,7 @@ import {
   Gift
 } from 'lucide-react';
 import { Language, CandidateIdea, CandidateStatus, Verdict } from '../types';
+import { amelieMailto } from '../data/kontakt';
 import { CANDIDATE_IDEAS_DATA } from '../data/unpacked';
 import { DoseVectorPanel } from './DoseVectorPanel';
 import { VECTOR_CATALOG, getCandidateVectors, vectorScore, totalScore, coreScore, vectorLabel, VectorKey } from '../data/vectors';
@@ -1336,7 +1337,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                 </div>
               </div>
 
-              <div className="flex justify-end gap-3 pt-4 border-t border-stone-200">
+              <div className="flex flex-wrap justify-end gap-3 pt-4 border-t border-stone-200">
                 <button
                   type="button"
                   onClick={() => setShowAddModal(false)}
@@ -1344,6 +1345,21 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                 >
                   {t.ui.close}
                 </button>
+                <a
+                  href={amelieMailto(`Idee: ${newTitle.trim() || '…'}`, [
+                    newTitle.trim(),
+                    newConcept.trim(),
+                    newProblem.trim() && `Problem: ${newProblem.trim()}`,
+                    newWhyNow.trim() && `Warum jetzt: ${newWhyNow.trim()}`,
+                    newRecipient.trim() && `Empfänger: ${newRecipient.trim()}`,
+                    newSource.trim() && `Quelle (${newSourceType}): ${newSource.trim()}`,
+                    newEvidence.trim() && `Evidenz: ${newEvidence.trim()}`,
+                    newTicket.trim() && `Ticket 01: ${newTicket.trim()}`,
+                  ].filter(Boolean).join('\n\n'))}
+                  className="px-4 py-2 border border-stone-300 rounded-xl text-stone-700 hover:bg-stone-50 font-medium"
+                >
+                  {lang === 'de' ? 'Per E-Mail an Amélie' : lang === 'es' ? 'Enviar a Amélie por correo' : 'Email to Amélie'}
+                </a>
                 <button
                   type="submit"
                   className="px-5 py-2 bg-stone-900 text-stone-50 rounded-xl hover:bg-stone-800 font-medium transition-colors shadow-xs cursor-pointer"

@@ -1775,10 +1775,10 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
             ? 'Para plugins de editor (TipTap, React, Obsidian) o versión pro: '
             : 'For turnkey editor plugins (TipTap, React, Obsidian) or pro integrations: '}
           <a
-            href="mailto:Felix@amelieproject.org?subject=Wet%20Ink%20Pro%20Integration"
+            href="mailto:Felix@projectamelie.org?subject=Wet%20Ink%20Pro%20Integration"
             className="text-stone-600 hover:text-amber-800 font-medium underline underline-offset-2 transition-colors cursor-pointer"
           >
-            Felix@amelieproject.org
+            Felix@projectamelie.org
           </a>
         </div>
       </div>
