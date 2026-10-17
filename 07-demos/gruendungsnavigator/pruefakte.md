@@ -120,7 +120,7 @@ Derselbe Thread, ein verifizierter Sachbearbeiter mit Jahren im Selbständigente
 | Kommentar | Einordnung | Reaktion |
 |---|---|---|
 | „Vorbereitet wird man sein, bringt im Ernstfall aber wenig.“ | Berechtigt: Einstiegsgeld und § 16c sind Ermessen; keine Vorbereitung erzwingt eine Förderung. | Neue Karte „Was das Jobcenter prüft“: zehn Kriterien aus den Fachlichen Weisungen (§ 16b Stand 03.09.2026, § 16c Stand 20.07.2017, § 10 Rz 10.41b/c), je mit „worauf Vorbereitung keinen Einfluss hat“, und sieben ehrliche Sätze vorneweg. |
-| „Werbung für dein KI Tool“ | Regel 7 des Subreddits (keine Werbung) und Regel 9 (keine Rechtsberatung) gelten. | Keine weiteren Posts zum Werkzeug; Korrekturweg über ein Formular statt über Kommentare. |
+| „Werbung für dein KI Tool“ | Regel 7 des Subreddits (keine Werbung) und Regel 9 (keine Rechtsberatung) gelten. | Keine weiteren Posts zum Werkzeug. Korrekturweg auf der Seite selbst: Knopf „Stimmt hier etwas nicht?“ an jedem Gesetzestext und Ergebnis (E-Mail, GitHub-Formular, Text kopieren). |
 
 Die Weisungen binden gemeinsame Einrichtungen, nicht kommunale Träger; die Karte sagt das. Prüftermine 12/24/36 Monate (Rz 10.41b) stehen im Fristenrechner, die Paketprüfung warnt bei einer Ausstiegsprognose über 24 Monaten (FW § 16b 3.1.2.1).
 

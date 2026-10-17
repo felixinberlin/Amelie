@@ -6,3 +6,5 @@ export { pruefeVermoegen, vermoegensFreibetrag, pruefeUnterkunft, pruefeAufrechn
 export { berechneFristen, erwerbstaetigenFreibetrag, assertKeinVersprechen } from './gruendungsnavigator';
 export { erzeugeBrief, BRIEF_TITEL } from './briefe';
 export { erzeugeIcs } from './kalender';
+export { korrekturMeldung } from './korrektur';
+export { bindeKorrektur } from './korrekturUi';

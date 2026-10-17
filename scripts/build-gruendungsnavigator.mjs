@@ -29,6 +29,7 @@ const ohneSchema = ({ $schema, ...rest }) => rest;
 const normen = json('normen.json');
 const navigator = json('navigator.json');
 const landkarte = json('landkarte.json');
+const kontakt = json('kontakt.json');
 
 // Reihenfolge im Auswahlfeld: Webentwicklung (der ursprüngliche Beispielfall) zuerst,
 // dann alphabetisch nach Titel, das leere Paket zuletzt.
@@ -60,9 +61,9 @@ const KOPF = '/* Erzeugt von scripts/build-gruendungsnavigator.mjs aus src/engin
 const alsJson = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
 
 const seiten = {
-  'index.html': { daten: { geprueft, normen, navigator, pakete } },
-  'fall-landkarte.html': { daten: { geprueft, normen, landkarte, pakete } },
-  'jobcenter-hilfe.html': { daten: { geprueft, normen } },
+  'index.html': { daten: { geprueft, normen, navigator, pakete, kontakt } },
+  'fall-landkarte.html': { daten: { geprueft, normen, landkarte, pakete, kontakt } },
+  'jobcenter-hilfe.html': { daten: { geprueft, normen, kontakt } },
 };
 
 function einsetzen(html, id, inhalt, datei) {

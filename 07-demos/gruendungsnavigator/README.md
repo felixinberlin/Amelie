@@ -58,6 +58,12 @@ Auf der Seite außerdem: Gespräche festhalten (eigenes Protokoll), „Für die 
 
 Wiederverwendet ist nur, was frei ist (Gesetz, Weisungen als Zitat mit Randziffer). GETTSIM (AGPL) dient höchstens als Testorakel, die KdU-Sammlungen von Thomé und Offenbach werden verlinkt, nicht kopiert. Grenzen: keine Euro-Nachrechnung eines Bescheids (Grab `bescheid-nachrechner`), keine Urteile, keine Widerspruchstexte.
 
+## „Stimmt hier etwas nicht?“ (seit 17.10.2026)
+
+An jedem Gesetzestext, jedem Ergebnis der Jobcenter-Hilfe und jeder Antwort im Navigator steht ein kleiner Knopf. Er öffnet ein Fenster mit Abschnitt und Auszug (eine Markierung im Text hat Vorrang), einem Feld für den Vorschlag und drei Wegen: **E-Mail** (öffnet das Mailprogramm mit fertigem Text), **GitHub** (füllt das Formular `.github/ISSUE_TEMPLATE/korrektur-jobcenter-hilfe.yml` vor) und **Text kopieren**. Nichts wird automatisch gesendet. Der Link „Korrektur melden“ im Fuß öffnet dasselbe Fenster.
+
+Ziel steht in `data/kontakt.json`: `repo`, `issueVorlage` und `korrekturMail`. Solange `korrekturMail` leer ist, fehlt der E-Mail-Weg. Nach einer Änderung: `npm run build:gn`. Kern `src/engine/gruendungsnavigator/korrektur.ts` (Links, Kürzung auf 7000 bzw. 1800 Zeichen) und `korrekturUi.ts` (Fenster), Tests in `korrektur.test.ts` (jsdom), darunter ein Drift-Test gegen das Issue-Formular.
+
 ## Deckblatt der Unterlagen-Mappe
 
 Unter „Mitbringen zum Termin“: Unterlagen anhaken, Seiten zählen, „Deckblatt drucken“. Das Deckblatt nennt Name, BG-Nummer, Anlagen mit Seitenbereichen (Anlage 1 ab Seite 2), die Gesamtseitenzahl und ein Feld für die Eingangsbestätigung. Daneben steht: **Das Deckblatt ist kein Zugangsnachweis**; den Eingang bestätigt erst ein Stempel auf der Kopie oder jobcenter.digital. Die Seitenrechnung ist `seitenIndex` im Kern und lehnt ungültige Seitenzahlen ab, statt zu raten. Baustein aus der Jobcenter-Runde vom 14.10.2026 (Prüfprotokoll M12), ebenso der Vorschuss nach § 42 SGB I (M11).
