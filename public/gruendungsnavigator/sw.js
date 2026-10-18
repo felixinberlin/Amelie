@@ -1,4 +1,4 @@
-// Der Gründungsnavigator ist nach https://felixinberlin.github.io/jobcenter-hilfe/ umgezogen.
+// Die alte Gründungsnavigator-Seite ist durch eine Vorschau ersetzt (die App selbst ist noch nicht öffentlich).
 // Dieser Service Worker ersetzt den alten, leert dessen Speicher und meldet sich ab.
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', (e) => {

@@ -1270,6 +1270,8 @@ Mitgebrachte Idee von Félix mit lauffähigem Prototyp, in Teilideen zerlegt (me
 
 **Nachtrag 17.10.2026 (Auslagerung):** Das Werkzeug liegt jetzt im eigenen Repository https://github.com/felixinberlin/jobcenter-hilfe (CC0, ohne Git-Geschichte). Die Dose `gruendungsnavigator` bleibt in Amélie und verweist dorthin; alte Adressen leiten weiter. Urteil G1 unverändert (`verengt`). Nichts versendet.
 
+**Nachtrag 18.10.2026 (Vorschau):** Das Werkzeug-Repository ist privat, weil daraus eine App wird; die Seiten unter `felixinberlin.github.io/jobcenter-hilfe/` liefern 404. In Amélie steht stattdessen eine kleine Vorschau `public/gruendungsnavigator/index.html` (Widerspruchsfrist mit Landesfeiertagen, drei Rechte-Karten mit Wortlaut aus dem geprüften Register, Übersicht der App, Transparenz-Kasten; Test `src/utils/jobcenterVorschau.test.ts`). Simulator, Dossiers und Buch verweisen auf die Vorschau statt auf das private Repository. Urteil G1 unverändert (`verengt`). Nichts versendet.
+
 ## Fernöstliche Spielsehnsüchte & Historische Forensik — 11.10.2026
 
 Empirische Recherche fernöstlicher und globaler Gaming-Wünsche (Heybox, Zhihu, Bilibili, TapTap, r/truegaming, r/CozyGamers): Verlangen nach unbestechlicher Deduktion ohne leuchtende Markierungen, handwerklichen Reparatur-Mechaniken und anti-involutionärem Tiefgang.
