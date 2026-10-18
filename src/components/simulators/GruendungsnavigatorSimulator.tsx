@@ -1,75 +1,64 @@
-import React, { useState } from 'react';
-import { ExternalLink, FolderGit2, Map, MessagesSquare, ShieldCheck } from 'lucide-react';
+import React from 'react';
+import { ExternalLink, Mail, ShieldCheck, Smartphone } from 'lucide-react';
 import { Language } from '../../types';
+import { amelieMailto } from '../../data/kontakt';
 
 interface Props {
   lang: Language;
   isEmbedded?: boolean;
 }
 
-// Das Werkzeug lebt seit 17.10.2026 im eigenen Repository; die Dose verweist nur noch dorthin.
-const BASE = 'https://felixinberlin.github.io/jobcenter-hilfe/';
-const REPO = 'https://github.com/felixinberlin/jobcenter-hilfe';
+// Das Werkzeug wird eine App (Repo felixinberlin/jobcenter-hilfe seit 18.10.2026 privat).
+// Amélie zeigt bis dahin eine kleine Vorschau: Widerspruchsfrist und drei Rechte-Karten.
+const VORSCHAU = `${import.meta.env.BASE_URL}gruendungsnavigator/`;
+
+const APP_TEILE_DE = [
+  'Bescheid prüfen (Miete, Heizung, Warmwasser, Freibeträge)',
+  'Anträge ausfüllen bis zum amtlichen PDF (HA, WBA, EK, EKS, BB)',
+  'Meldeversäumnis-Zähler (§ 32, § 7b Abs. 4 SGB II)',
+  'Rückforderung, Aufrechnung, Überprüfungsantrag',
+  'Miete, Vermögen, Unterlagen, Briefe, Kontakt-Protokoll',
+  'Gründungsnavigator mit 30 Rechte-Karten und Branchenpaketen, Fall-Landkarte',
+];
+const APP_TEILE_EN = [
+  'Check a notice (rent, heating, hot water, allowances)',
+  'Fill in applications up to the official PDF (HA, WBA, EK, EKS, BB)',
+  'Missed-appointment counter (sections 32, 7b(4) SGB II)',
+  'Repayment, deductions, review request',
+  'Rent, savings, documents, letters, contact log',
+  'Start-up navigator with 30 rights cards and sector packs, case map',
+];
 
 export const GruendungsnavigatorSimulator: React.FC<Props> = ({ lang, isEmbedded = false }) => {
   const de = lang !== 'en';
-  const [zeigeDemo, setZeigeDemo] = useState(false);
 
   return (
     <div className={`space-y-5 ${isEmbedded ? '' : 'p-4'}`}>
-      <div className="grid gap-3 sm:grid-cols-2">
-        <a href={`${BASE}jobcenter-hilfe.html`} target="_blank" rel="noopener noreferrer"
-          className="flex items-start gap-3 rounded-xl border border-[var(--m-line-strong)] bg-[var(--m-surface)] p-4 hover:border-[var(--m-copper)] transition-colors sm:col-span-2">
-          <ShieldCheck className="w-5 h-5 mt-0.5 text-[var(--m-accent)] shrink-0" />
-          <span>
-            <span className="block font-bold text-sm text-[var(--m-ink)]">{de ? 'Jobcenter-Hilfe für alle öffnen' : 'Open Job Centre Help for everyone'} <ExternalLink className="inline w-3 h-3" /></span>
-            <span className="block text-xs text-[var(--m-ink-soft,#6b5b4b)] mt-1">{de
-              ? 'Meldeversäumnis-Zähler (§ 32, § 7b), Rückforderung und Aufrechnung, Miete, Fristen, Unterlagen, Vermögen. Offline, ohne KI zur Laufzeit.'
-              : 'Missed-appointment counter (sections 32, 7b), repayment and deductions, rent, deadlines, documents, savings. Offline, no AI at runtime.'}</span>
-          </span>
-        </a>
-        <a href={BASE} target="_blank" rel="noopener noreferrer"
-          className="flex items-start gap-3 rounded-xl border border-[var(--m-line-strong)] bg-[var(--m-surface)] p-4 hover:border-[var(--m-copper)] transition-colors">
-          <MessagesSquare className="w-5 h-5 mt-0.5 text-[var(--m-accent)] shrink-0" />
-          <span>
-            <span className="block font-bold text-sm text-[var(--m-ink)]">{de ? 'Gesprächsnavigator öffnen' : 'Open conversation navigator'} <ExternalLink className="inline w-3 h-3" /></span>
-            <span className="block text-xs text-[var(--m-ink-soft,#6b5b4b)] mt-1">{de
-              ? 'Telefonbaum (7 Fragen, 23 Antworten), 35 Fragen plus Zusatzfragen je Branche (Webentwicklung: 43), 30 Rechte-Karten, sechs Branchenpakete und eigene Fassung, Präsentationsmodus, Zusammenfassungs-Mail.'
-              : 'Phone decision tree (7 questions, 23 answers), 35 questions plus extra ones per sector (web development: 43), 30 rights cards, six sector packs and your own version, presentation mode, summary mail.'}</span>
-          </span>
-        </a>
-        <a href={`${BASE}fall-landkarte.html`} target="_blank" rel="noopener noreferrer"
-          className="flex items-start gap-3 rounded-xl border border-[var(--m-line-strong)] bg-[var(--m-surface)] p-4 hover:border-[var(--m-copper)] transition-colors">
-          <Map className="w-5 h-5 mt-0.5 text-[var(--m-accent)] shrink-0" />
-          <span>
-            <span className="block font-bold text-sm text-[var(--m-ink)]">{de ? 'Fall-Landkarte öffnen' : 'Open case map'} <ExternalLink className="inline w-3 h-3" /></span>
-            <span className="block text-xs text-[var(--m-ink-soft,#6b5b4b)] mt-1">{de
-              ? '9 Stationen vom Antrag bis zum Ausstieg, 107 Antworten mit Frist und Normtext, Fristen-Zeitstrahl, 61 Normen.'
-              : '9 stations from application to exit, 107 answers with deadline and statute text, deadline timeline, 61 statutes.'}</span>
-          </span>
-        </a>
-        <a href={REPO} target="_blank" rel="noopener noreferrer"
-          className="flex items-start gap-3 rounded-xl border border-[var(--m-line-strong)] bg-[var(--m-surface)] p-4 hover:border-[var(--m-copper)] transition-colors sm:col-span-2">
-          <FolderGit2 className="w-5 h-5 mt-0.5 text-[var(--m-accent)] shrink-0" />
-          <span>
-            <span className="block font-bold text-sm text-[var(--m-ink)]">{de ? 'Quellcode, Prüfakte und Korrekturen' : 'Source code, audit file and corrections'} <ExternalLink className="inline w-3 h-3" /></span>
-            <span className="block text-xs text-[var(--m-ink-soft,#6b5b4b)] mt-1">{de
-              ? 'Eigenes Repository felixinberlin/jobcenter-hilfe (CC0): getesteter Kern mit Fristenrechner, Normregister, Prüfakte, Korrektur-Formular.'
-              : 'Own repository felixinberlin/jobcenter-hilfe (CC0): tested kernel with deadline calculator, statute register, audit file, correction form.'}</span>
-          </span>
-        </a>
+      <div className="flex items-start gap-3 rounded-xl border border-[var(--m-line-strong)] bg-[var(--m-surface)] p-4">
+        <Smartphone className="w-5 h-5 mt-0.5 text-[var(--m-accent)] shrink-0" />
+        <div className="text-sm text-[var(--m-ink)]">
+          <p className="font-bold">{de ? 'Jobcenter-Hilfe wird eine App.' : 'Job Centre Help is becoming an app.'}</p>
+          <p className="text-xs text-[var(--m-ink-soft,#6b5b4b)] mt-1">{de
+            ? 'Hier eine kleine Vorschau zum Ausprobieren: Widerspruchsfrist mit Feiertagen je Bundesland und drei Rechte-Karten mit Gesetz im Wortlaut. In der App steckt mehr:'
+            : 'Here is a small preview to try (German): objection deadline with holidays per state and three rights cards with the statute quoted verbatim. The app holds more:'}</p>
+          <ul className="list-disc pl-5 mt-2 text-xs space-y-0.5">
+            {(de ? APP_TEILE_DE : APP_TEILE_EN).map((t) => <li key={t}>{t}</li>)}
+          </ul>
+          <div className="flex flex-wrap gap-2 mt-3">
+            <a href={VORSCHAU} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs font-typewriter font-bold px-3 py-1.5 rounded-lg border border-[var(--m-line-strong)] bg-[var(--m-surface)] hover:border-[var(--m-copper)]">
+              {de ? 'Vorschau im eigenen Fenster' : 'Open preview in its own window'} <ExternalLink className="w-3 h-3" />
+            </a>
+            <a href={amelieMailto(de ? 'Jobcenter-Hilfe: Bitte Bescheid sagen, wenn die App da ist' : 'Job Centre Help: please let me know when the app is out')}
+              className="inline-flex items-center gap-1 text-xs font-typewriter font-bold px-3 py-1.5 rounded-lg border border-[var(--m-line-strong)] bg-[var(--m-surface)] hover:border-[var(--m-copper)]">
+              <Mail className="w-3 h-3" /> {de ? 'Bescheid sagen, wenn die App da ist' : 'Tell me when the app is out'}
+            </a>
+          </div>
+        </div>
       </div>
 
-      <div>
-        <button type="button" onClick={() => setZeigeDemo((v) => !v)}
-          className="text-xs font-typewriter font-bold px-3 py-1.5 rounded-lg border border-[var(--m-line-strong)] bg-[var(--m-surface)] hover:border-[var(--m-copper)]">
-          {zeigeDemo ? (de ? 'Demo ausblenden' : 'Hide demo') : (de ? 'Gesprächsnavigator hier einbetten' : 'Embed conversation navigator here')}
-        </button>
-        {zeigeDemo && (
-          <iframe src={BASE} title={de ? 'Gründungsnavigator' : 'Start-up navigator'} loading="lazy"
-            className="mt-3 w-full h-[720px] rounded-xl border border-[var(--m-line-strong)] bg-white" />
-        )}
-      </div>
+      <iframe src={VORSCHAU} title={de ? 'Jobcenter-Hilfe · Vorschau' : 'Job Centre Help · preview'} loading="lazy"
+        className="w-full h-[720px] rounded-xl border border-[var(--m-line-strong)] bg-white" />
 
       <p className="flex items-start gap-2 text-[11px] text-stone-500">
         <ShieldCheck className="w-3.5 h-3.5 mt-0.5 shrink-0" />

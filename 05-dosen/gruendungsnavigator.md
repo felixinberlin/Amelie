@@ -17,7 +17,7 @@ source_type: Type A
 **Verdikt:** 🎁 verschenken. Prototyp läuft, Kern getestet.
 **Review:** 26/35 (Gate 24) · V8 Fun 2 · Tier 1 · Typ A (Normtext) · Details: `06-suche/amelie-classification-log.md`, „Gründungsnavigator — Reviewer 11.10.2026“
 
-**Werkzeug (eigenes Repository seit 17.10.2026, [felixinberlin/jobcenter-hilfe](https://github.com/felixinberlin/jobcenter-hilfe)):** [Gesprächsnavigator](https://felixinberlin.github.io/jobcenter-hilfe/) · [Fall-Landkarte](https://felixinberlin.github.io/jobcenter-hilfe/fall-landkarte.html) · [Jobcenter-Hilfe](https://felixinberlin.github.io/jobcenter-hilfe/jobcenter-hilfe.html) · Dose: https://felixinberlin.github.io/Amelie/#dose=gruendungsnavigator
+**Werkzeug:** wird eine App (Repository `felixinberlin/jobcenter-hilfe` seit 18.10.2026 privat). Bis dahin eine [Vorschau](https://felixinberlin.github.io/Amelie/gruendungsnavigator/) mit Widerspruchsfrist und drei Rechte-Karten · Dose: https://felixinberlin.github.io/Amelie/#dose=gruendungsnavigator
 
 ---
 
@@ -91,7 +91,7 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 
 **Ticket 01 ist erledigt (13.10.2026): Die Seite ist Vorlage** mit Branchenpaketen (Webentwicklung, Montage, Kaffeestand, Grafikdesign, Alltagsbegleitung, Onlinehandel, leer); Details `docs/ticket-01.md` im Werkzeug-Repo. **Am 16.10.2026 erweitert zur Jobcenter-Hilfe für alle** (siehe Skizze). Damit gehen Gründungsnavigator und Meldeversäumnis-Zähler als eine Dose an einen Empfänger; der Empfängerkonflikt aus der Jobcenter-Runde (Prüfprotokoll M1) ist aufgelöst.
 
-**Ticket 02: Gegenlesen und Praxistest** (seit 17.10.2026 ausgeschrieben: [Ticket](https://github.com/felixinberlin/jobcenter-hilfe/blob/main/docs/ticket-02.md), [Prüfbogen für Fachleute](https://github.com/felixinberlin/jobcenter-hilfe/blob/main/docs/pruefbogen.md), [Issue #1](https://github.com/felixinberlin/jobcenter-hilfe/issues/1)). Eine Sozialberatung (Tacheles oder eine Erwerbslosenberatung) liest den Meldeversäumnis-Zähler mit seinen 26 Fixtures gegen und beantwortet die offenen Rechtsfragen; zwei Personen ohne Programmierkenntnis nutzen die Seiten mit Stoppuhr.
+**Ticket 02: Gegenlesen und Praxistest** (seit 17.10.2026 im Werkzeug-Repository ausgeschrieben: Ticket, Prüfbogen für Fachleute, Issue #1; das Repository ist seit 18.10.2026 privat). Eine Sozialberatung (Tacheles oder eine Erwerbslosenberatung) liest den Meldeversäumnis-Zähler mit seinen 26 Fixtures gegen und beantwortet die offenen Rechtsfragen; zwei Personen ohne Programmierkenntnis nutzen die Seiten mit Stoppuhr.
 
 **Fertig, wenn:**
 1. Eine fachkundige Person den Zähler gegengelesen hat und ihre Antworten als Fixtures oder als ausdrücklich offene Punkte im Kern stehen.
@@ -144,7 +144,7 @@ Wer Ticket 01 finanzieren könnte: **Prototype Fund** (Vereinbarkeit CC0 mit der
 
 ## Vorarbeit
 
-- Werkzeug: https://github.com/felixinberlin/jobcenter-hilfe (Seiten `site/`, Prüfakte `docs/pruefakte.md`; Verweis-Kapitel `07-demos/gruendungsnavigator/README.md`), Konzept `02-recherche/gruendungsnavigator-konzept-2026-10-11.md`, Übergabe `06-suche/scout-an-bibliothekar-2026-10-11-gruendungsnavigator.md`.
+- Werkzeug: `felixinberlin/jobcenter-hilfe` (privat seit 18.10.2026; Seiten `site/`, Prüfakte `docs/pruefakte.md`; Vorschau `public/gruendungsnavigator/index.html`, Verweis-Kapitel `07-demos/gruendungsnavigator/README.md`), Konzept `02-recherche/gruendungsnavigator-konzept-2026-10-11.md`, Übergabe `06-suche/scout-an-bibliothekar-2026-10-11-gruendungsnavigator.md`.
 - Kern und Tests: `src/` im Werkzeug-Repo (Vitest, inklusive Drift-, Zahlen- und Offline-Wächter über die Seiten). Bis 17.10.2026 lagen Seiten und Kern in Amélie (`public/gruendungsnavigator/`, `src/engine/gruendungsnavigator/`); die alten Adressen leiten weiter.
 - Normtexte: SGB II i. d. F. vom 16.04.2026 (BGBl. I Nr. 107), in Kraft 01.07.2026; §§ 14, 16, 17, 39, 60 SGB I; §§ 9, 13, 25, 33, 35, 44 SGB X; §§ 66, 84, 87, 88, 183 SGG; § 14 GewO; § 138 AO; § 19 UStG. Gelesen auf dejure.org und gesetze-im-internet.de (11.10.2026).
 - Quellen im Register: LSG NRW / LTO, gegen-hartz.de, BürgerChat, Sozialrat, Münchner Gründungsbüro, Gründerplattform, jobcenter.guru, dejure.org (`06-suche/amelie-quellen.md`).

@@ -3,14 +3,252 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gründungsnavigator ist umgezogen</title>
-<meta http-equiv="refresh" content="0; url=https://felixinberlin.github.io/jobcenter-hilfe/">
-<link rel="canonical" href="https://felixinberlin.github.io/jobcenter-hilfe/">
-<script>location.replace("https://felixinberlin.github.io/jobcenter-hilfe/" + location.search + location.hash);</script>
-<style>body{font:16px/1.5 system-ui,sans-serif;margin:0;padding:24px 16px;background:#f6f6f3;color:#1d1d1b}@media (prefers-color-scheme:dark){body{background:#141413;color:#ecebe6}a{color:#7fb0ff}}</style>
+<title>Jobcenter-Hilfe · Vorschau</title>
+<meta name="description" content="Kleine Vorschau der App Jobcenter-Hilfe: Widerspruchsfrist ausrechnen, drei Rechte-Karten fürs Jobcenter-Gespräch. Läuft im Browser, ohne Konto, ohne KI.">
+<link rel="canonical" href="https://felixinberlin.github.io/Amelie/gruendungsnavigator/">
+<style>
+:root{--bg:#f6f6f3;--surface:#fff;--ink:#1d1d1b;--soft:#5d5a52;--line:#dedbd2;--accent:#1f5fbf;--accent-ink:#fff;--warn:#8a5a00;--warn-bg:#fff6e0;--ok-bg:#eaf3ea;--quote:#f1efe8}
+@media (prefers-color-scheme:dark){:root{--bg:#141413;--surface:#1f1f1d;--ink:#ecebe6;--soft:#b3b0a6;--line:#3a3935;--accent:#7fb0ff;--accent-ink:#0d1a2e;--warn:#f0c46a;--warn-bg:#2e2510;--ok-bg:#1c2a1c;--quote:#2a2926}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:760px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.6rem;line-height:1.2;margin:.2em 0 .3em}
+h2{font-size:1.2rem;margin:0 0 .5em}
+h3{font-size:1rem;margin:0}
+p{margin:.5em 0}
+a{color:var(--accent)}
+.badge{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.02em;padding:3px 10px;border-radius:999px;background:var(--accent);color:var(--accent-ink)}
+.lead{color:var(--soft)}
+section{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input[type=date],select{font:inherit;width:100%;max-width:280px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.wahl{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:4px}
+.wahl label,.check{font-weight:400;margin:0;display:flex;align-items:center;gap:6px}
+.check{margin-top:12px;align-items:flex-start}
+.check input{margin-top:5px}
+.ergebnis{margin-top:14px;padding:12px 14px;border-radius:10px;background:var(--ok-bg)}
+.ergebnis strong.gross{display:block;font-size:1.35rem}
+.hinweis{margin-top:8px;padding:10px 12px;border-radius:10px;background:var(--warn-bg);color:var(--ink);font-size:.92rem}
+.hinweis b{color:var(--warn)}
+details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:10px 0;background:var(--bg)}
+summary{cursor:pointer;font-weight:700}
+blockquote{margin:8px 0;padding:8px 12px;border-left:3px solid var(--accent);background:var(--quote);border-radius:0 8px 8px 0;font-size:.94rem}
+.vermerk{font-size:.8rem;color:var(--soft)}
+ul.app{padding-left:1.1em;margin:.4em 0}
+ul.app li{margin:.25em 0}
+.klein{font-size:.88rem;color:var(--soft)}
+.knopf{display:inline-block;margin-top:8px;padding:10px 16px;border-radius:10px;background:var(--accent);color:var(--accent-ink);font-weight:700;text-decoration:none}
+footer{font-size:.85rem;color:var(--soft);margin-top:24px}
+</style>
 </head>
 <body>
-<p>Gründungsnavigator ist umgezogen: <a href="https://felixinberlin.github.io/jobcenter-hilfe/">https://felixinberlin.github.io/jobcenter-hilfe/</a></p>
-<p>Ihre gespeicherten Eingaben bleiben erhalten (gleiche Adresse felixinberlin.github.io).</p>
+<main>
+<span class="badge">Vorschau · die App kommt bald</span>
+<h1>Jobcenter-Hilfe</h1>
+<p class="lead">Freie Werkzeuge für Menschen, die Bürgergeld bzw. Grundsicherungsgeld (SGB II) beziehen, und für alle, die sie beraten. Hier zwei kleine Stücke daraus zum Ausprobieren. Alles läuft in Ihrem Browser; nichts wird gespeichert oder verschickt.</p>
+
+<section id="frist" aria-labelledby="frist-titel">
+<h2 id="frist-titel">Bis wann kann ich Widerspruch einlegen?</h2>
+<p class="klein">Gegen einen Bescheid des Jobcenters haben Sie in der Regel einen Monat Zeit (§ 84 Abs. 1 SGG). Der Monat beginnt mit der Bekanntgabe, nicht mit dem Datum im Briefkopf.</p>
+
+<label>Wie kam der Bescheid?</label>
+<div class="wahl" role="radiogroup">
+  <label><input type="radio" name="weg" value="post" checked> Mit der Post</label>
+  <label><input type="radio" name="weg" value="hand"> Persönlich übergeben</label>
+</div>
+
+<label for="datum" id="datum-label">Tag der Aufgabe zur Post (meist das Datum auf dem Bescheid)</label>
+<input type="date" id="datum">
+
+<label for="land">Bundesland des Jobcenters (für Feiertage)</label>
+<select id="land">
+  <option value="">bitte wählen (sonst nur bundesweite Feiertage)</option>
+  <option value="BW">Baden-Württemberg</option><option value="BY">Bayern</option><option value="BE">Berlin</option>
+  <option value="BB">Brandenburg</option><option value="HB">Bremen</option><option value="HH">Hamburg</option>
+  <option value="HE">Hessen</option><option value="MV">Mecklenburg-Vorpommern</option><option value="NI">Niedersachsen</option>
+  <option value="NW">Nordrhein-Westfalen</option><option value="RP">Rheinland-Pfalz</option><option value="SL">Saarland</option>
+  <option value="SN">Sachsen</option><option value="ST">Sachsen-Anhalt</option><option value="SH">Schleswig-Holstein</option>
+  <option value="TH">Thüringen</option>
+</select>
+
+<label class="check"><input type="checkbox" id="ohne-belehrung"> Im Bescheid fehlt die Rechtsbehelfsbelehrung (der Absatz „Gegen diesen Bescheid …“)</label>
+
+<div id="ausgabe" aria-live="polite"></div>
+<p class="vermerk">Rechenhilfe, keine Rechtsberatung. Im Zweifel rechnet die Vorschau mit dem früheren Tag. Maßgeblich sind der Bescheid und seine Rechtsbehelfsbelehrung. Am sichersten: früh einreichen und den Eingang bestätigen lassen.</p>
+</section>
+
+<section id="karten" aria-labelledby="karten-titel">
+<h2 id="karten-titel">Was sage ich, wenn …</h2>
+<p class="klein">Drei von 30 Rechte-Karten aus der App: ein Satz für das Gespräch, das Gesetz im Wortlaut und der nächste Schritt.</p>
+
+<details>
+<summary>„Dafür bin ich nicht zuständig.“</summary>
+<p><b>Sie können sagen:</b> Dann bitte ich Sie, meinen Antrag an die zuständige Stelle weiterzuleiten und mir Namen und Kontakt zu nennen.</p>
+<blockquote>„Anträge, die bei einem unzuständigen Leistungsträger, bei einer für die Sozialleistung nicht zuständigen Gemeinde oder bei einer amtlichen Vertretung der Bundesrepublik Deutschland im Ausland gestellt werden, sind unverzüglich an den zuständigen Leistungsträger weiterzuleiten.“<br>
+<a href="https://www.gesetze-im-internet.de/sgb_1/__16.html" target="_blank" rel="noopener">§ 16 Abs. 2 Satz 1 SGB I</a></blockquote>
+<p><b>Nächster Schritt:</b> Der Antrag gilt ab dem Eingang als gestellt. Kontakt der zuständigen Stelle notieren.</p>
+<p class="vermerk">Wortlaut geprüft gegen gesetze-im-internet.de am 16.10.2026.</p>
+</details>
+
+<details>
+<summary>„Das nehme ich so nicht an.“</summary>
+<p><b>Sie können sagen:</b> Bitte nehmen Sie meinen Antrag trotzdem entgegen und bestätigen Sie mir das Eingangsdatum. Ob er Erfolg hat, entscheiden Sie danach; fehlende Angaben reiche ich nach.</p>
+<blockquote>„Die Behörde darf die Entgegennahme von Erklärungen oder Anträgen, die in ihren Zuständigkeitsbereich fallen, nicht deshalb verweigern, weil sie die Erklärung oder den Antrag in der Sache für unzulässig oder unbegründet hält.“<br>
+<a href="https://www.gesetze-im-internet.de/sgb_10/__20.html" target="_blank" rel="noopener">§ 20 Abs. 3 SGB X</a></blockquote>
+<p><b>Nächster Schritt:</b> Immer eine Kopie mitbringen und den Eingang darauf stempeln lassen. Online: über jobcenter.digital senden und die Bestätigung speichern.</p>
+<p class="vermerk">Wortlaut geprüft gegen gesetze-im-internet.de am 16.10.2026.</p>
+</details>
+
+<details>
+<summary>„In Ihre Akte können Sie nicht schauen.“</summary>
+<p><b>Sie können sagen:</b> Ich möchte Einsicht in meine Akte zu diesem Verfahren nehmen. Bitte nennen Sie mir einen Termin.</p>
+<blockquote>„Die Behörde hat den Beteiligten Einsicht in die das Verfahren betreffenden Akten zu gestatten, soweit deren Kenntnis zur Geltendmachung oder Verteidigung ihrer rechtlichen Interessen erforderlich ist.“<br>
+<a href="https://www.gesetze-im-internet.de/sgb_10/__25.html" target="_blank" rel="noopener">§ 25 Abs. 1 SGB X</a></blockquote>
+<p><b>Nächster Schritt:</b> Die Bitte schriftlich stellen und das Verfahren nennen (etwa das Datum des Bescheids). Auszüge oder Abschriften dürfen Sie selbst anfertigen.</p>
+<p class="vermerk">Wortlaut geprüft gegen gesetze-im-internet.de am 16.10.2026.</p>
+</details>
+</section>
+
+<section aria-labelledby="app-titel">
+<h2 id="app-titel">Was die App kann</h2>
+<ul class="app">
+  <li><b>Bescheid prüfen:</b> Kürzungen bei Miete und Heizung, Mehrbedarf für Warmwasser, Freibeträge.</li>
+  <li><b>Anträge ausfüllen:</b> Hauptantrag, Weiterbewilligung, Anlage EK und EKS, besondere Bedarfe; heraus kommt das amtliche PDF.</li>
+  <li><b>Meldetermin verpasst:</b> zählt Meldeversäumnisse und zeigt, welche Folge das Gesetz vorsieht.</li>
+  <li><b>Rückforderung und Aufrechnung:</b> 50-€-Grenze, Grenzen von 10 und 30 %, Überprüfungsantrag.</li>
+  <li><b>Miete, Vermögen, Unterlagen:</b> Karenzzeit, Schonvermögen nach Alter, was das Jobcenter vor einer Einstellung tun muss.</li>
+  <li><b>Briefe:</b> Widerspruch, Überprüfung, Vorschuss, Akteneinsicht, aus festen Bausteinen.</li>
+  <li><b>Fristen</b> mit Feiertagen, auch als Kalendereintrag; ein <b>Kontakt-Protokoll</b> für Telefonate und Termine.</li>
+  <li><b>Gründungsnavigator:</b> das Jobcenter-Gespräch vor einer Selbständigkeit vorbereiten, mit Branchenpaketen.</li>
+  <li><b>Fall-Landkarte:</b> der Weg vom Antrag bis zum Ausstieg aus dem Bezug, mit dem Gesetz an jeder Station.</li>
+</ul>
+<p class="klein">Offline nutzbar, ohne Konto, ohne Tracking. Ihre Eingaben bleiben auf Ihrem Gerät.</p>
+<a class="knopf" id="interesse" href="mailto:Felix@projectamelie.org?subject=Jobcenter-Hilfe%3A%20Bitte%20Bescheid%20sagen%2C%20wenn%20die%20App%20da%20ist">Bescheid sagen, wenn die App da ist</a>
+<p class="klein">Öffnet Ihr Mailprogramm. Bitte keine Angaben zu Ihrem Fall schicken.</p>
+</section>
+
+<section aria-labelledby="transparenz-titel">
+<h2 id="transparenz-titel">Was hier geprüft ist und was nicht</h2>
+<ul class="app">
+  <li><b>Keine Rechtsberatung.</b> Für Ihren Fall: eine Sozialberatung oder Erwerbslosenberatung (<a href="https://adresse.tacheles-sozialhilfe.de/" target="_blank" rel="noopener">Verzeichnis von Tacheles e.V.</a>) oder eine Anwältin oder ein Anwalt für Sozialrecht.</li>
+  <li><b>Mit KI-Unterstützung geschrieben, zur Laufzeit keine KI.</b> Was hier steht, ist fester Text und getesteter Code; kein Chatbot.</li>
+  <li><b>Geprüft:</b> Die Gesetzeszitate im Wortlaut (gegen gesetze-im-internet.de) und die Fristberechnung (mit Tests). <b>Nicht geprüft:</b> Kurzfassungen und Formulierungen; eine fachliche Gegenlesung durch eine Sozialberatung steht noch aus.</li>
+</ul>
+</section>
+
+<footer>
+Ein Geschenk aus <a href="https://felixinberlin.github.io/Amelie/#dose=gruendungsnavigator">Amélie</a> (Dose „Gründungsnavigator &amp; Jobcenter-Hilfe“). Rechtsstand SGB II ab 01.07.2026.
+</footer>
+</main>
+
+<script id="frist-kern">
+// Fristkern der Vorschau. Gerechnet wird in UTC mit ISO-Daten 'YYYY-MM-DD'.
+// Konservativ: Wo das Recht unklar ist oder ein Feiertag nur regional gilt,
+// rechnet die Vorschau mit dem früheren Tag.
+var FristKern = (function () {
+  function parse(d) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d || '');
+    if (!m) return null;
+    var x = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+    return x.getUTCMonth() === +m[2] - 1 ? x : null;
+  }
+  function iso(x) { return x.toISOString().slice(0, 10); }
+  function plusTage(d, n) { var x = parse(d); x.setUTCDate(x.getUTCDate() + n); return iso(x); }
+  // §§ 187, 188 BGB: gleicher Tag n Monate später, sonst letzter Tag des Monats.
+  function plusMonate(d, n) {
+    var x = parse(d), tag = x.getUTCDate();
+    var z = new Date(Date.UTC(x.getUTCFullYear(), x.getUTCMonth() + n, 1));
+    var letzter = new Date(Date.UTC(z.getUTCFullYear(), z.getUTCMonth() + 1, 0)).getUTCDate();
+    z.setUTCDate(Math.min(tag, letzter));
+    return iso(z);
+  }
+  function ostern(j) {
+    var a = j % 19, b = Math.floor(j / 100), c = j % 100, d = Math.floor(b / 4), e = b % 4;
+    var f = Math.floor((b + 8) / 25), g = Math.floor((b - f + 1) / 3), h = (19 * a + b - d - g + 15) % 30;
+    var i = Math.floor(c / 4), k = c % 4, l = (32 + 2 * e + 2 * i - h - k) % 7, m = Math.floor((a + 11 * h + 22 * l) / 451);
+    var mon = Math.floor((h + l - 7 * m + 114) / 31), tag = ((h + l - 7 * m + 114) % 31) + 1;
+    return iso(new Date(Date.UTC(j, mon - 1, tag)));
+  }
+  function bussUndBettag(j) {
+    // Mittwoch vor dem 23. November
+    var x = new Date(Date.UTC(j, 10, 22));
+    while (x.getUTCDay() !== 3) x.setUTCDate(x.getUTCDate() - 1);
+    return iso(x);
+  }
+  // Nur landesweite Feiertage; regionale (z. B. Mariä Himmelfahrt in Teilen Bayerns) zählen nicht.
+  var LAND = {
+    BW: ['01-06', 'fron', '11-01'], BY: ['01-06', 'fron', '11-01'], BE: ['03-08'], BB: ['10-31'],
+    HB: ['10-31'], HH: ['10-31'], HE: ['fron'], MV: ['03-08', '10-31'], NI: ['10-31'], NW: ['fron', '11-01'],
+    RP: ['fron', '11-01'], SL: ['fron', '08-15', '11-01'], SN: ['10-31', 'buss'], ST: ['01-06', '10-31'],
+    SH: ['10-31'], TH: ['09-20', '10-31']
+  };
+  function feiertage(j, land) {
+    var o = ostern(j);
+    var f = [j + '-01-01', plusTage(o, -2), plusTage(o, 1), j + '-05-01', plusTage(o, 39), plusTage(o, 50), j + '-10-03', j + '-12-25', j + '-12-26'];
+    (LAND[land] || []).forEach(function (t) {
+      if (t === 'fron') f.push(plusTage(o, 60));
+      else if (t === 'buss') f.push(bussUndBettag(j));
+      else f.push(j + '-' + t);
+    });
+    return f;
+  }
+  function istWerktag(d, land) {
+    var w = parse(d).getUTCDay();
+    return w !== 0 && w !== 6 && feiertage(+d.slice(0, 4), land).indexOf(d) < 0;
+  }
+  function naechsterWerktag(d, land) { while (!istWerktag(d, land)) d = plusTage(d, 1); return d; }
+
+  /**
+   * weg: 'post' (datum = Aufgabe zur Post) oder 'hand' (datum = Übergabe).
+   * Post: Bekanntgabe am vierten Tag (§ 37 Abs. 2 SGB X); ob sich dieser Tag bei
+   * Wochenende verschiebt, ist umstritten, darum keine Verschiebung (früherer Tag).
+   * Fristende: ein Monat (mit Belehrung) oder ein Jahr (ohne, § 66 Abs. 2 SGG);
+   * fällt es auf Wochenende/Feiertag, der nächste Werktag (§ 64 Abs. 3 SGG).
+   */
+  function widerspruchsfrist(e) {
+    if (!parse(e.datum)) return null;
+    var bekanntgabe = e.weg === 'hand' ? e.datum : plusTage(e.datum, 4);
+    var roh = e.ohneBelehrung ? plusMonate(bekanntgabe, 12) : plusMonate(bekanntgabe, 1);
+    var ende = naechsterWerktag(roh, e.land);
+    return {
+      bekanntgabe: bekanntgabe,
+      bekanntgabeAmWochenende: e.weg !== 'hand' && !istWerktag(bekanntgabe, e.land),
+      ende: ende,
+      verschobenVon: ende === roh ? null : roh,
+      norm: e.ohneBelehrung ? '§ 66 Abs. 2 SGG' : '§ 84 Abs. 1 SGG'
+    };
+  }
+  return { plusMonate: plusMonate, ostern: ostern, feiertage: feiertage, istWerktag: istWerktag, widerspruchsfrist: widerspruchsfrist };
+})();
+</script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var TAGE = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+  function lang(d) {
+    var p = d.split('-');
+    return TAGE[new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])).getUTCDay()] + ', ' + p[2] + '.' + p[1] + '.' + p[0];
+  }
+  function weg() { return document.querySelector('input[name=weg]:checked').value; }
+  function zeige() {
+    $('datum-label').textContent = weg() === 'hand' ? 'Tag, an dem Sie den Bescheid bekommen haben' : 'Tag der Aufgabe zur Post (meist das Datum auf dem Bescheid)';
+    var r = FristKern.widerspruchsfrist({ datum: $('datum').value, weg: weg(), land: $('land').value, ohneBelehrung: $('ohne-belehrung').checked });
+    var out = $('ausgabe');
+    if (!r) { out.innerHTML = ''; return; }
+    var h = '<div class="ergebnis"><span>Widerspruch muss eingegangen sein bis</span><strong class="gross">' + lang(r.ende) + '</strong>' +
+      '<span class="klein">Bekanntgabe: ' + lang(r.bekanntgabe) + (weg() === 'post' ? ' (vierter Tag nach der Aufgabe zur Post, § 37 Abs. 2 SGB X)' : '') + ' · Frist: ' + r.norm + '</span></div>';
+    if (r.verschobenVon) h += '<div class="hinweis">Das rechnerische Ende (' + lang(r.verschobenVon) + ') ist kein Werktag; die Frist endet am nächsten Werktag (§ 64 Abs. 3 SGG).</div>';
+    if (r.bekanntgabeAmWochenende) h += '<div class="hinweis"><b>Umstritten:</b> Der vierte Tag fällt auf ein Wochenende oder einen Feiertag. Ob er sich dann verschiebt, ist nicht einheitlich entschieden. Die Vorschau rechnet mit dem früheren Tag.</div>';
+    if (weg() === 'post') h += '<div class="hinweis">Kam der Brief nachweislich später an, zählt der spätere Tag. Das Jobcenter muss im Zweifel den Zugang beweisen.</div>';
+    if ($('ohne-belehrung').checked) h += '<div class="hinweis">Ohne korrekte Belehrung läuft grundsätzlich ein Jahr. Trotzdem nicht abwarten und mit einer Beratung klären.</div>';
+    h += '<p class="klein">In der App: dazu der Brief-Baustein „Widerspruch“, die Frist als Kalendereintrag und weitere Fristen (Klage, Untätigkeit, Vorschuss).</p>';
+    out.innerHTML = h;
+  }
+  ['datum', 'land', 'ohne-belehrung'].forEach(function (id) { $(id).addEventListener('input', zeige); $(id).addEventListener('change', zeige); });
+  document.querySelectorAll('input[name=weg]').forEach(function (r) { r.addEventListener('change', zeige); });
+  try { $('datum').value = new Date().toISOString().slice(0, 10); } catch (e) {}
+  zeige();
+})();
+</script>
 </body>
 </html>

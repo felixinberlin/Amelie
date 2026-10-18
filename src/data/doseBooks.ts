@@ -32,10 +32,10 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
   'gruendungsnavigator': [
     {
       slug: 'demo', path: '07-demos/gruendungsnavigator/README.md',
-      titleDe: 'Das Werkzeug: Jobcenter-Hilfe (eigenes Repository)', titleEn: 'The tool: Job Centre Help (own repository)',
-      noteDe: 'Seit 17.10.2026 in github.com/felixinberlin/jobcenter-hilfe: Seiten, getesteter Kern, Prüfakte, Korrekturen. Hier nur der Verweis.',
-      noteEn: 'Since 17 Oct 2026 in github.com/felixinberlin/jobcenter-hilfe: pages, tested kernel, audit file, corrections. Only the pointer here.',
-      date: '17.10.2026', kind: 'md',
+      titleDe: 'Das Werkzeug: Jobcenter-Hilfe (wird eine App)', titleEn: 'The tool: Job Centre Help (becoming an app)',
+      noteDe: 'Seit 17.10.2026 eigenes Repository, seit 18.10.2026 privat, weil daraus eine App wird. In Amélie bleibt eine kleine Vorschau (public/gruendungsnavigator/).',
+      noteEn: 'Own repository since 17 Oct 2026, private since 18 Oct 2026 because it is becoming an app. Amélie keeps a small preview (public/gruendungsnavigator/).',
+      date: '18.10.2026', kind: 'md',
     },
     {
       slug: 'konzept', path: '02-recherche/gruendungsnavigator-konzept-2026-10-11.md',

@@ -17,7 +17,7 @@ source_type: Type A
 **Verdict:** 🎁 **gift**. The prototype runs and the kernel is tested.
 **Review:** 26/35 (gate 24) · V8 fun 2 · Tier 1 · Type A (statute text) · details: `06-suche/amelie-classification-log.md`, "Gründungsnavigator — Reviewer 11.10.2026"
 
-**Tool (own repository since 17 Oct 2026, [felixinberlin/jobcenter-hilfe](https://github.com/felixinberlin/jobcenter-hilfe)):** [Conversation navigator](https://felixinberlin.github.io/jobcenter-hilfe/) · [Case map](https://felixinberlin.github.io/jobcenter-hilfe/fall-landkarte.html) · [Job Centre Help](https://felixinberlin.github.io/jobcenter-hilfe/jobcenter-hilfe.html) · Tin: https://felixinberlin.github.io/Amelie/#dose=gruendungsnavigator
+**Tool:** becoming an app (repository `felixinberlin/jobcenter-hilfe` private since 18 Oct 2026). Until then a [preview](https://felixinberlin.github.io/Amelie/gruendungsnavigator/) (German) with the objection deadline and three rights cards · Tin: https://felixinberlin.github.io/Amelie/#dose=gruendungsnavigator
 
 ---
 
@@ -92,7 +92,7 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 
 **Ticket 01 is done (13 Oct 2026): the page is a template** with sector packs (web development, assembly, coffee stand, graphic design, everyday companion, online trade, empty); details `docs/ticket-01.md` in the tool repo. **Extended on 16 Oct 2026 into Job Centre Help for everyone** (see sketch). The start-up navigator and the missed-appointment counter now go to one recipient as one tin; the recipient conflict from the job-centre round (check protocol M1) is resolved.
 
-**Ticket 02: expert reading and field test** (written up on 17 Oct 2026: [ticket](https://github.com/felixinberlin/jobcenter-hilfe/blob/main/docs/ticket-02.md), [review sheet for experts](https://github.com/felixinberlin/jobcenter-hilfe/blob/main/docs/pruefbogen.md), [issue #1](https://github.com/felixinberlin/jobcenter-hilfe/issues/1)). A welfare advice service (Tacheles or an unemployment advice centre) reads the missed-appointment counter with its 26 fixtures and answers the open legal questions; two people without programming skills use the pages with a stopwatch.
+**Ticket 02: expert reading and field test** (written up on 17 Oct 2026 in the tool repository: ticket, review sheet for experts, issue #1; the repository is private since 18 Oct 2026). A welfare advice service (Tacheles or an unemployment advice centre) reads the missed-appointment counter with its 26 fixtures and answers the open legal questions; two people without programming skills use the pages with a stopwatch.
 
 **Done when:**
 1. A qualified person has read the counter and their answers are in the kernel as fixtures or as explicitly open points.
@@ -145,7 +145,7 @@ Who could fund Ticket 01: **Prototype Fund** (whether CC0 fits its licence requi
 
 ## Prior art
 
-- Tool: https://github.com/felixinberlin/jobcenter-hilfe (pages `site/`, audit file `docs/pruefakte.md`; pointer chapter `07-demos/gruendungsnavigator/README.md`); concept `02-recherche/gruendungsnavigator-konzept-2026-10-11.md`; handover `06-suche/scout-an-bibliothekar-2026-10-11-gruendungsnavigator.md`.
+- Tool: `felixinberlin/jobcenter-hilfe` (private since 18 Oct 2026; pages `site/`, audit file `docs/pruefakte.md`; preview `public/gruendungsnavigator/index.html`, pointer chapter `07-demos/gruendungsnavigator/README.md`); concept `02-recherche/gruendungsnavigator-konzept-2026-10-11.md`; handover `06-suche/scout-an-bibliothekar-2026-10-11-gruendungsnavigator.md`.
 - Kernel and tests: `src/` in the tool repo (Vitest, including drift, number and offline guards over the pages). Until 17 Oct 2026 pages and kernel lived in Amélie (`public/gruendungsnavigator/`, `src/engine/gruendungsnavigator/`); the old addresses redirect.
 - Statute texts: SGB II as amended on 16 Apr 2026 (BGBl. I No. 107), in force 1 Jul 2026; sections 14, 16, 17, 39, 60 SGB I; 9, 13, 25, 33, 35, 44 SGB X; 66, 84, 87, 88, 183 SGG; 14 GewO; 138 AO; 19 UStG. Read on dejure.org and gesetze-im-internet.de (11 Oct 2026).
 - Sources in the register: LSG NRW / LTO, gegen-hartz.de, BürgerChat, Sozialrat, Münchner Gründungsbüro, Gründerplattform, jobcenter.guru, dejure.org (`06-suche/amelie-quellen.md`).
