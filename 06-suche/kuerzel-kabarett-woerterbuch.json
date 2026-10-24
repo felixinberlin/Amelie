@@ -1419,6 +1419,159 @@
       "text": "Sin Guita, Bastante Indignado, Investigo. Busco Beneficios, Exijo Klaridad, Evito Kafkianas Sorpresas.",
       "origin": "prior",
       "locale": "es"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "So geht's besser: Im Internet bekommen Betroffene endlich klare Erklärungen, kostenlos sogar.",
+      "origin": "prior",
+      "locale": "de",
+      "tone": "positive"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Schon genug Blabla! Ick interpretier Behördenbriefe, bevor endlose Kürzel echte Kopfschmerzen schaffen.",
+      "origin": "prior",
+      "locale": "de-BE",
+      "tone": "berlin"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Samma, geht's bescheuerter? Ich interpretier Behördenblabla, bevor endlose Kürzel echte Kopfschmerzen schaffen.",
+      "origin": "prior",
+      "locale": "de-NRW",
+      "tone": "ruhr"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Sakra, genug Bürokratie! I interpretier Behördenbriefe, bevor endlose Kürzel echte Kopfschmerzen schaffen.",
+      "origin": "prior",
+      "locale": "de-BY",
+      "tone": "bavarian"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Sogar geniale Bots irren irgendwann bei Behördenbriefen: endlose Kürzel, echt kein Spaß.",
+      "origin": "prior",
+      "locale": "de",
+      "tone": "ai-satire"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Sogar gestandene Bürokraten irren irgendwann bei Bescheiden: endlose Kürzel, echt krasser Scheiß.",
+      "origin": "prior",
+      "locale": "de",
+      "tone": "sharp"
+    },
+    {
+      "codes": [
+        "EKS",
+        "BB",
+        "EK",
+        "SGB",
+        "II"
+      ],
+      "text": "Eklige Krise, Scheiße! Bonus? Blabla! Endlose Kürzel. Schon Genug Bürokratie! Ich Implodiere.",
+      "origin": "prior",
+      "locale": "de",
+      "tone": "inverted"
+    },
+    {
+      "codes": [
+        "BB",
+        "EKS",
+        "SGB",
+        "II"
+      ],
+      "text": "Boah, Behörden! Echt Kein Spaß. Scheiß Geile Bürokratie. Ick Implodier!",
+      "origin": "prior",
+      "locale": "de-BE",
+      "tone": "inverted"
+    },
+    {
+      "codes": [
+        "EK",
+        "BB",
+        "EKS"
+      ],
+      "text": "Endlose Kürzel. Bürokratische Briefe. Existenz? Keine Sicherheit.",
+      "origin": "prior",
+      "locale": "de",
+      "tone": "serious"
+    },
+    {
+      "codes": [
+        "EK",
+        "EKS",
+        "BB",
+        "II",
+        "SGB"
+      ],
+      "text": "Endlich Kohle? Eher Keine Scheine. Bitte Betteln. Ich Implodiere. Scheiß Geile Bürokratie.",
+      "origin": "prior",
+      "locale": "de",
+      "tone": "inverted"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Seriously, Guys, Bureaucracy Is Insane. Bloody Bollocks! Every Kafkaesque Email Kills Sanity.",
+      "origin": "prior",
+      "locale": "en-GB",
+      "tone": "british"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Stop Government Bullshit! It's Insane. Bring Back Empathy, Kindness, Equality, Knowledge, Support.",
+      "origin": "prior",
+      "locale": "en",
+      "tone": "punk"
     }
   ]
 }
