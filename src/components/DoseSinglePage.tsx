@@ -64,7 +64,6 @@ import {
   TischSchiedsrichterSimulator,
   KristallwachstumSimulator,
   ChemHazardSimulator,
-  GruendungsnavigatorSimulator,
   LegioKlarSimulator,
 } from './simulators';
 
@@ -643,7 +642,6 @@ ${bookChapters
               {simInfo.key === 'schiedsrichter' && <TischSchiedsrichterSimulator lang={lang} isEmbedded />}
               {simInfo.key === 'kristall' && <KristallwachstumSimulator lang={lang} />}
               {simInfo.key === 'chemhazard' && <ChemHazardSimulator lang={lang} isEmbedded />}
-              {simInfo.key === 'gruendungsnavigator' && <GruendungsnavigatorSimulator lang={lang} isEmbedded />}
               {simInfo.key === 'legioklar' && <LegioKlarSimulator lang={lang} isEmbedded />}
             </div>
           )}

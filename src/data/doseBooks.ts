@@ -29,29 +29,6 @@ export interface BookChapter {
 }
 
 export const DOSE_BOOKS: Record<string, BookChapter[]> = {
-  'gruendungsnavigator': [
-    {
-      slug: 'demo', path: '07-demos/gruendungsnavigator/README.md',
-      titleDe: 'Das Werkzeug: Jobcenter-Hilfe (wird eine App)', titleEn: 'The tool: Job Centre Help (becoming an app)',
-      noteDe: 'Seit 17.10.2026 eigenes Repository, seit 18.10.2026 privat, weil daraus eine App wird. In Amélie bleibt eine kleine Vorschau (public/gruendungsnavigator/).',
-      noteEn: 'Own repository since 17 Oct 2026, private since 18 Oct 2026 because it is becoming an app. Amélie keeps a small preview (public/gruendungsnavigator/).',
-      date: '18.10.2026', kind: 'md',
-    },
-    {
-      slug: 'konzept', path: '02-recherche/gruendungsnavigator-konzept-2026-10-11.md',
-      titleDe: 'Konzept und Besetzt-Prüfung', titleEn: 'Concept and occupancy check',
-      noteDe: 'Problem, Rechtslage seit 01.07.2026, Nachbarn (jobcenter.guru, BürgerChat, Sozialrat), Empfängervorschläge, Nebenbefund Paragrafen-Prüfer.',
-      noteEn: 'Problem, legal situation since 1 Jul 2026, neighbours (jobcenter.guru, BürgerChat, Sozialrat), recipient proposals, side finding section checker.',
-      date: '11.10.2026', kind: 'md',
-    },
-    {
-      slug: 'scout', path: '06-suche/scout-an-bibliothekar-2026-10-11-gruendungsnavigator.md',
-      titleDe: 'Scout-Übergabe: Urteile G1–G4 und Quellen', titleEn: 'Scout handover: verdicts G1–G4 and sources',
-      noteDe: 'Welche Normtexte am 11.10.2026 gelesen wurden, acht gebuchte Quellen, Hinweise zu bestehenden Gräbern.',
-      noteEn: 'Which statute texts were read on 11 Oct 2026, eight booked sources, notes on existing graves.',
-      date: '11.10.2026', kind: 'md',
-    },
-  ],
   'eurobirdcast': [
     {
       slug: 'movement-map', path: '07-demos/eurobirdcast/map/README.md',

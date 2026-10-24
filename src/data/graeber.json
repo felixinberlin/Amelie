@@ -3913,5 +3913,31 @@
     "diedOn": "2026-10-14",
     "resurrectIfDe": "Wenn die Rechner-Portale ihre Dienste einstellen oder eine Beratungsstelle ein werbefreies Offline-Werkzeug ausdrücklich verlangt.",
     "resurrectIfEn": "If the calculator portals shut down or an advice body explicitly asks for an ad-free offline tool."
+  },
+  {
+    "id": "gruendungsnavigator",
+    "title": "Gründungsnavigator & Jobcenter-Hilfe",
+    "originalIdeaDe": "Lokale Gesprächsvorbereitung für Selbständige im Grundsicherungsbezug und Jobcenter-Hilfe mit Fristen, Rechte-Karten und Meldeversäumnis-Zähler.",
+    "originalIdeaEn": "Local conversation preparation for self-employed benefit recipients and job-centre help with deadlines, rights cards and a missed-appointment counter.",
+    "whyDiscardedDe": "Eigene kommerzielle App existiert (in Entwicklung), daher keine frei zu verschenkende Amélie-Dose mehr. Eigene Ausgliederung auf ausdrücklichen Nutzerwunsch vom 24.10.2026; kein Fund fremder Konkurrenz und keine Behauptung eines Launchs.",
+    "whyDiscardedEn": "An own commercial app exists (in development), so this is no longer an Amélie gift. Own spin-out at the user’s explicit request on 24 Oct 2026; not a discovery of external competition or a claim that the app has launched.",
+    "lessonDe": "Eine eigene kommerzielle Ausgliederung muss auch aus Galerie, Direktseiten, Vorschau, Simulator, Exporten und lokalen Wiederimporten verschwinden. Forschungshistorie und frühere CC0-Veröffentlichungen bleiben erhalten.",
+    "lessonEn": "An own commercial spin-out must also leave the gallery, direct pages, preview, simulator, exports and local reimports. Research history and earlier CC0 publications remain intact.",
+    "domain": "Zivilgesellschaft / Jobcenter",
+    "evidence": [
+      "Expliziter Nutzerauftrag vom 24.10.2026; dokumentiert in PR #209: https://github.com/felixinberlin/Amelie/pull/209",
+      "08-friedhof/grabbeigaben/gruendungsnavigator.md",
+      "08-friedhof/grabbeigaben/gruendungsnavigator-en.md"
+    ],
+    "cause": "gebaut",
+    "killer": "kommerziell",
+    "foundBy": "eigener-bestand",
+    "origin": "quelle",
+    "stage": "dose",
+    "bornIn": "Gründungsnavigator — Normtext-Recherche 11.10.2026",
+    "diedOn": "2026-10-24",
+    "resurrectIfDe": "Nur nach ausdrücklicher neuer Nutzerentscheidung über eine eigenständige öffentliche CC0-Dose; keine automatische Wiederaufnahme des kommerziellen Entwicklungsprojekts.",
+    "resurrectIfEn": "Only after an explicit new user decision about a separate public CC0 gift; never automatically reinstate the commercial development project.",
+    "nachruf": "08-friedhof/grabbeigaben/gruendungsnavigator.md"
   }
 ]

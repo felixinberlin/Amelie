@@ -33,7 +33,7 @@ export function setStorageProvider(provider: StorageProvider): void {
 
 export { getActiveDosen, saveDoseLocal, resetDosenStorage } from './doseStorage';
 export { getActiveCandidates, saveCandidateLocal } from './candidateStorage';
-import { getActiveDosen } from './doseStorage';
+import { getActiveDosen, isRetiredDose } from './doseStorage';
 import { getActiveCandidates } from './candidateStorage';
 
 /**
@@ -154,7 +154,7 @@ export function importDatabaseFromJson(jsonStr: string): { importedDosen: number
     const map = new Map<string, DoseItem>();
     current.forEach((d) => map.set(d.id, d));
     parsed.dosen.forEach((d: DoseItem) => {
-      if (d.id && d.title) {
+      if (d.id && d.title && !isRetiredDose(d.id)) {
         map.set(d.id, d);
         importedDosen++;
       }
@@ -167,7 +167,7 @@ export function importDatabaseFromJson(jsonStr: string): { importedDosen: number
     const mapC = new Map<string, CandidateIdea>();
     currentCands.forEach((c) => mapC.set(c.id, c));
     parsed.unpackedCandidates.forEach((c: CandidateIdea) => {
-      if (c.id && c.title) {
+      if (c.id && c.title && !isRetiredDose(c.id)) {
         mapC.set(c.id, c);
         importedCandidates++;
       }

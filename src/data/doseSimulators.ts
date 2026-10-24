@@ -12,7 +12,6 @@ export type SimulatorKey =
   | 'schiedsrichter'
   | 'kristall'
   | 'chemhazard'
-  | 'gruendungsnavigator'
   | 'legioklar';
 
 
@@ -37,16 +36,6 @@ export const DOSE_SIMULATOR_MAP: Record<string, DoseSimulatorInfo> = {
     descriptionEn: 'Interactive decoder for notice board Legionella lab reports (TrinkwV): UBA risk matrix, DVGW W 551 temperature checks and instant tenant defect notices under § 536c BGB.',
     descriptionEs: 'Decodificador interactivo de informes de laboratorio de Legionella en avisos de escalera: matriz de riesgo UBA y notificación de defectos para inquilinos.',
     icon: '🚰',
-  },
-  'gruendungsnavigator': {
-    key: 'gruendungsnavigator',
-    titleDe: 'Gründungsnavigator & Jobcenter-Hilfe',
-    titleEn: 'Start-up Navigator & Job Centre Help',
-    titleEs: 'Navegador de creación de empresa y ayuda Jobcenter',
-    descriptionDe: 'Jobcenter-Gespräch vorbereiten: Telefonbaum, 43 Fragen im Beispiel Webentwicklung, 30 Rechte-Karten, Fall-Landkarte mit 61 Normen, sechs Branchenpakete und eigene Fassung; Jobcenter-Hilfe für alle mit Meldeversäumnis-Zähler, Rückforderung, Miete und Vermögen; dazu ein getesteter Fristenrechner (SGG, SGB II). Das Werkzeug wird eine App (Repository seit 18.10.2026 privat); hier eine kleine Vorschau mit Widerspruchsfrist und drei Rechte-Karten; alles bleibt im Browser.',
-    descriptionEn: 'Prepare the job-centre conversation: phone tree, 43 questions in the web-development example, 30 rights cards, case map with 61 statutes, six sector packs and your own version; Job Centre Help for everyone with a missed-appointment counter, repayment, rent and savings; plus a tested deadline calculator (SGG, SGB II). The tool is becoming an app (repository private since 18 Oct 2026); here a small preview with the objection deadline and three rights cards; everything stays in the browser.',
-    descriptionEs: 'Preparar la conversación con el Jobcenter: árbol telefónico, 43 preguntas en el ejemplo de desarrollo web, 30 tarjetas de derechos, mapa del caso con 61 normas, seis paquetes por sector y versión propia; además una calculadora de plazos probada. La herramienta será una app (repositorio privado desde el 18.10.2026); aquí una pequeña vista previa con el plazo de recurso y tres tarjetas de derechos; todo queda en el navegador.',
-    icon: '🧭',
   },
   'altbau-thermal': {
     key: 'altbau',

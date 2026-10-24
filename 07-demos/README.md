@@ -4,7 +4,7 @@ Presentation layer only: nothing here changes a tin's claims, verdicts or recipi
 
 | Tin | What | Built | What is faked |
 |---|---|---|---|
-| `gruendungsnavigator` | Tool moved to its own repository on 2026-10-17 (`felixinberlin/jobcenter-hilfe`), private since 2026-10-18 because it is becoming an app. This folder keeps only the pointer chapter; `public/gruendungsnavigator/` holds a small preview (objection deadline, three rights cards, test `src/utils/jobcenterVorschau.test.ts`) | 2026-10-11 | Dose stays in Amélie; all changes to the tool go to the new repository |
+| `gruendungsnavigator` | Retired 2026-10-24 after an own commercial spin-out (app in development); historical dossiers in `08-friedhof/grabbeigaben/` | 2026-10-11 | No public preview, simulator or gift offer |
 | `altbau-thermal` | 8-slide pitch; interactive demo lives in the app ("Old Building" tab) | 2026-09-19 | Rule-of-thumb U-values, steady state only, no weather year, no floor-plan recognition |
 | `agent-postmortem-recorder` | Patch for claude-reflect (4 new files, 340 tests green) + maintainer notes; rendered in the tin's book | 2026-09-24 | Nothing faked — but Windows CI not run here, and clustering is word-based |
 | `abbundzeichen-fundbuch` | Sequence checker, single-file offline browser UI, editable manual records and JSON export; existing TS engine bundled with esbuild | 2026-10-15 | Synthetic examples plus one limited published I–IIII sequence segment; full historical register/interpretation validation and VA field mapping still open |

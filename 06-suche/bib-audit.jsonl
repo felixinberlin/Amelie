@@ -652,3 +652,6 @@
 {"at":"2026-10-17T10:38:19.528Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Gründungsnavigator Weisungen 17.10.2026","id":"einstiegsgeld-verordnung-esgv-gesetze-im"}
 {"at":"2026-10-17T10:38:19.605Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Gründungsnavigator Weisungen 17.10.2026","id":"jobcenter-wuppertal-ermessenslenkende-we"}
 {"at":"2026-10-17T10:38:19.613Z","event":"cli","actor":"bibliothekar","agent":"bibliothekar","runde":"Gründungsnavigator Weisungen 17.10.2026","cmd":"quellen import","count":6}
+{"at":"2026-10-24T17:12:22.155Z","event":"cli","actor":"bibliothekar","cmd":"grab add","ids":["gruendungsnavigator"]}
+{"at":"2026-10-24T17:12:22.374Z","event":"cli","cmd":"quellen retire-dose","actor":"bibliothekar","id":"gruendungsnavigator"}
+{"at":"2026-10-24T17:12:22.592Z","event":"cli","actor":"bibliothekar","runde":"Eigene Ausgliederung — 24.10.2026","cmd":"protokoll add","id":"gruendungsnavigator"}

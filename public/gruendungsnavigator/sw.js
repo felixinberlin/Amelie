@@ -1,4 +1,5 @@
-// Die alte Gründungsnavigator-Seite ist durch eine Vorschau ersetzt (die App selbst ist noch nicht öffentlich).
+// Gründungsnavigator ist seit 24.10.2026 aus dem öffentlichen Geschenkbestand entfernt.
+// Nur Cache-Abbau für frühere Installationen; keine App und keine Vorschau.
 // Dieser Service Worker ersetzt den alten, leert dessen Speicher und meldet sich ab.
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', (e) => {

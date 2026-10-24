@@ -1,11 +1,9 @@
+**Beerdigt am 24.10.2026.** Eigene kommerzielle App existiert (in Entwicklung), daher keine frei zu verschenkende Amélie-Dose mehr. Eigene Ausgliederung, kein fremder Konkurrent und kein behaupteter Launch. Der folgende Text dokumentiert den früheren Stand; Angebote, Tickets und Links darin sind historisch. Frühere CC0-Veröffentlichungen bleiben CC0.
+
+[English dossier](gruendungsnavigator-en.md) · [Datenstand](gruendungsnavigator-daten.ts.txt) · [Totenschein](../nachrufe.md#gruendungsnavigator)
+
 ---
-status: Available
-delivery_method: E-Mail
-target_maker: Tacheles e.V.
-review_score: 26/35
-architecture_tier: Tier 1
-source_type: Type A
----
+
 # Gründungsnavigator und Jobcenter-Hilfe
 
 *(englisch: Start-up Navigator)*

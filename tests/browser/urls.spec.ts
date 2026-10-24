@@ -5,6 +5,31 @@ import { resolve } from 'node:path';
 const pages: { path: string; title: string }[] = JSON.parse(readFileSync('dist/route-manifest.json', 'utf8'));
 const dose = '/Amelie/dosen/strassennamen-pruefer/';
 
+test('retired Jobcenter gift has no public routes and cannot return from browser storage', async ({ page, request }) => {
+  const retiredId = 'gruendungsnavigator';
+  expect(pages.some(p => p.path.includes(retiredId))).toBe(false);
+  for (const path of [
+    '/dosen/gruendungsnavigator/', '/dosen/gruendungsnavigator/book/demo/',
+    '/dosen/gruendungsnavigator/book/konzept/', '/dosen/gruendungsnavigator/book/scout/',
+    '/simulators/gruendungsnavigator/', '/gruendungsnavigator/',
+    '/gruendungsnavigator/index.html', '/gruendungsnavigator/jobcenter-hilfe.html',
+    '/gruendungsnavigator/fall-landkarte.html',
+  ]) expect((await request.get('/Amelie' + path)).status(), path).toBe(404);
+  const seed = JSON.parse(readFileSync('public/data/dosen.json', 'utf8'))[0];
+  await page.addInitScript(record => {
+    localStorage.setItem('amelie_custom_dosen', JSON.stringify([{ ...record, id: 'gruendungsnavigator', title: 'Former gift' }]));
+  }, seed);
+  for (const path of ['/Amelie/dosen/?dose=gruendungsnavigator', '/Amelie/#dose=gruendungsnavigator', '/Amelie/#sim=gruendungsnavigator']) {
+    await page.goto(path);
+    await expect(page.getByRole('heading', { name: 'Page not found' })).toBeVisible();
+  }
+  await page.goto('/Amelie/dosen/');
+  await expect(page.locator('article').first()).toBeVisible();
+  await expect(page.locator('article a[href*="gruendungsnavigator"]')).toHaveCount(0);
+  await page.goto('/Amelie/simulators/');
+  await expect(page.getByRole('link', { name: /Start-up Navigator|Gründungsnavigator/ })).toHaveCount(0);
+});
+
 test('every published route serves a real HTML file with valid assets', async ({ request }) => {
   expect(new Set(pages.map(p => p.path)).size).toBe(pages.length);
   for (const page of pages) {

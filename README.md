@@ -21,7 +21,7 @@ It started as a list of 19 ideas. Today it is three things:
 
 | | |
 |---|---|
-| Tins packed | **47** (5 delivered, 42 packed and waiting for a verified recipient) |
+| Tins packed | **46** (5 delivered, 41 packed and waiting for a verified recipient) |
 | Runnable demos | **14** (`07-demos/`) |
 | Ideas checked | **470** log lines: 26 open, 130 narrowed, 124 unclear, 133 already taken, 57 other |
 | Graveyard | **149** dead ideas, 74 of them because someone had already built them |
@@ -46,7 +46,6 @@ Full texts and status: [`src/data/deliveries.ts`](./src/data/deliveries.ts) and 
 
 ## Next concrete steps
 
-- **Gründungsnavigator** (first tin in the gallery): find a named contact at Tacheles e.V. and clarify the legal-advice boundary (RDG) before anything is sent.
 - **ChemGefahr-Stopp:** decide on the one-time correction to the cleaning sector; build [ticket 04](./07-demos/chemhazard-stop/ticket-04-web-scanner-und-qr-etiketten.md) (camera scan in the browser, QR labels for refill bottles) before writing to anyone new.
 - **Rule for every mail from now on:** describe only what is built and tested. The NABU Jena mail is the model.
 
@@ -92,7 +91,7 @@ A tin lives in two places: the Markdown dossier (`05-dosen/<id>.md`, `en/05-dose
 | `02-recherche/` | why it works this way: comparable projects, movements, closest relatives with contact routes, research behind each tin |
 | `03-zuordnung/` | who gets what: recipient matrix, delivery plan, every mail in `mails-q4-2026/` |
 | `04-werkzeug/` | templates (tin, cold email, repo README), XLIFF guide, email how-to |
-| `05-dosen/` | the 47 tins (German); English in `en/05-dosen/` |
+| `05-dosen/` | the 46 tins (German); English in `en/05-dosen/` |
 | `06-suche/` | how ideas are found and checked: check log (`amelie-pruefprotokoll.md`), search playbook, source register, funding landscape, engine logs, CLI handbooks |
 | `07-demos/` | runnable scaffolding per tin: README, tickets, data, schemas |
 | `08-friedhof/` | the graveyard: every dead idea with cause, killer, which search found out, and patterns across graves (data in `src/data/graeber.json`) |
