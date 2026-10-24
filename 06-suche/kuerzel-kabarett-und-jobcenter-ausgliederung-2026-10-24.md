@@ -27,6 +27,23 @@ Beim langen Satz ist die Initialfolge **SGBIIBBEKEKS** (3/2/2/2/3). Poster-Layou
 
 ---
 
+### Datenbasis — größeres Wörterbuch (24.10.2026)
+
+Die PR enthält jetzt **[das maschinenlesbare Kürzel-Wörterbuch](./kuerzel-kabarett-woerterbuch.json)** mit **65 Kürzel-/Buchstabengruppen**, **178 satirischen Erweiterungen** und **20 vollständigen Kompositionen** aus unserer Unterhaltung (DE, Berlinerisch/Ruhr/Bairisch, EN, ES; auch umgestellte Gruppen).
+
+- **Amtlich belegte Formulare:** HA, AH, WBA, VÄM, EK, EKS, VM, WEP, KI, KDU, BB, SV, VE, HG, MEB, UF, SE und UH1–UH3.
+- **Amtlich belegte Fachkürzel:** unter anderem AA, BG, BGB, BMAS, BSG, BuT, DRV, JC, KdU, KV, LSG, pAp, SG, VA, WDB, ZPO sowie SGB/SGG. Die Quellen-URLs liegen in der JSON-Datei; jede amtliche Bedeutung besitzt einen sourceKey.
+- **Spielblöcke:** II (als römischer Zahlblock aus SGB II), AMT, WTF, PDF, OMG, UFF, KAFKA, ELF und BRIEF; Spielblöcke werden **nicht** als Jobcenter-Formulare ausgegeben.
+- **Historische Kürzel** (etwa EAO/EinV) sind ausdrücklich so markiert und dürfen nicht als aktueller Vordruck erscheinen. **UH1–UH3** benötigen eine Ziffernregel statt des reinen Wortinitial-Checks.
+- **Kollision:** KDU (Formular) und KdU (Fachkürzel) teilen dieselben Anfangsbuchstaben, sind aber eigenständige Datensätze mit unterschiedlichen IDs.
+- **Kuratierung:** `origin: user | prior | new` trennt Lieblingssprüche von früheren Chat-Ideen und neuen Wortspielen; `favorite: true` schützt die ausgewählten Originalformulierungen. Das ist kein amtliches Sprachlexikon.
+- **Datenprüfung:** `node scripts/check-kuerzel-kabarett.mjs` prüft die Initialen aller Einträge und Kombinationen sowie den unveränderten Wortlaut der sechs Lieblingssprüche. Alle 178 + 20 Initialfolgen wurden beim Anlegen der PR vorab geprüft; den Node-Check bitte in CI/lokal ausführen.
+
+**Wichtig:** Im Editor ist jedes Wort eine Einheit; der Algorithmus extrahiert den ersten Unicode-Buchstaben pro Wort, ignoriert Satzzeichen und zählt Apostrophe innerhalb eines Wortes nicht neu. Beim Poster-Export muss die Hervorhebung aus dem tatsächlich geschriebenen Text abgeleitet werden, niemals aus einem separat manuell erfassten Acronym.
+
+Die Satire bleibt rechtlich klar von realen Formularnamen und Handlungsanweisungen getrennt. Der Bibliothekar-Auftrag zur kommerziellen Ausgliederung unten bleibt **unverändert**.
+
+---
 ## 2. Arbeitsauftrag an den Bibliothekar: bestehende Jobcenter-Dose beerdigen
 
 **Entscheidung des Nutzers:** Die Amélie-Dose **gruendungsnavigator / Gründungsnavigator & Jobcenter-Hilfe** gehört nicht länger in das freie Amélie-Geschenkportfolio. **Eine eigene kommerzielle App existiert inzwischen als separates Entwicklungsprojekt.** Nicht behaupten, sie sei bereits gelauncht oder verkaufe sich. Das ist eine **Ausgliederung**, kein Fund eines fremden Konkurrenten.
