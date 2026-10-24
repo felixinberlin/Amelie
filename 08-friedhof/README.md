@@ -54,13 +54,13 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/graeber.json` (`DISCARDED_DATA`) mit `npm run friedhof` (läuft nach `npm run bib -- grab add` von selbst). Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**162 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 152 dokumentierten Fundwegen kamen 16 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 11 %.
+**163 Gräber.** 4 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 153 dokumentierten Fundwegen kamen 17 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 11 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 75 | 46 % |
+| Schon gebaut | 76 | 47 % |
 | Beim Empfänger selbst | 34 | 21 % |
 | Falsche Prämisse | 21 | 13 % |
 | Reality-Check | 18 | 11 % |
@@ -76,7 +76,7 @@ Die Ursachen genauer:
 | Empfänger-Suche | 21 | 13 % |
 | Ohne Suche | 12 | 7 % |
 | Nicht dokumentiert | 10 | 6 % |
-| Eigener Atlas / Protokoll | 4 | 2 % |
+| Eigener Atlas / Protokoll | 5 | 3 % |
 | Forum / Nische | 1 | 1 % |
 
 **Woher sie kamen**
@@ -84,7 +84,7 @@ Die Ursachen genauer:
 | | Gräber | Anteil |
 |---|---:|---:|
 | Bisoziation | 67 | 41 % |
-| Primärquelle | 42 | 26 % |
+| Primärquelle | 43 | 26 % |
 | Inversion | 23 | 14 % |
 | Brainstorm | 16 | 10 % |
 | Ideenliste | 10 | 6 % |
@@ -94,7 +94,7 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 42 | 26 % |
+| Firma | 43 | 26 % |
 | Niemand | 34 | 21 % |
 | Behörde | 26 | 16 % |
 | Forschung | 26 | 16 % |
@@ -107,13 +107,14 @@ Die Ursachen genauer:
 | | Gräber | Anteil |
 |---|---:|---:|
 | Kandidat | 159 | 98 % |
-| Dose gepackt | 2 | 1 % |
+| Dose gepackt | 3 | 2 % |
 | Mail entworfen | 1 | 1 % |
 
 ### Alle Gräber (neueste zuerst)
 
 | Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis | Auferstehung wenn |
 |---|---|---|---|---|---|---|---|
+| Gründungsnavigator & Jobcenter-Hilfe | 24.10.2026 | Schon gebaut | Firma | Eigener Atlas / Protokoll | Primärquelle | Dose gepackt | Nur nach ausdrücklicher neuer Nutzerentscheidung über eine eigenständige öffentliche CC0-Dose; keine automatische Wiederaufnahme des kommerziellen Entwicklungsprojekts. |
 | Generische Abbruchziegel-Vorentscheidung | 15.10.2026 | Keine neue Fähigkeit | Niemand | Englische Suche | Inversion | Kandidat | Wiederverwendungsakteure benennen eine konkrete ungelöste Vorentscheidung und liefern veröffentlichte validierte Daten, aus denen Software sie ohne vorgetäuschte Materialfreigabe ableiten kann. |
 | Generischer Asbest-Vorarbeits-Informationscheck | 15.10.2026 | Beim Empfänger selbst | Behörde | Empfänger-Suche | Primärquelle | Kandidat | BG BAU bestätigt eine konkrete Informationsübergabe, die Asbesthaus und bestehende Checklisten nicht unterstützen; erforderliche Daten stehen verlässlich bereit. |
 | Generischer Staubmaßnahmen-Lotse | 15.10.2026 | Beim Empfänger selbst | Behörde | Empfänger-Suche | Primärquelle | Kandidat | Eine fachlich dokumentierte Tätigkeitsentscheidung ist durch WINGIS und vorhandene offizielle Staubhilfen nicht abgedeckt und der Empfänger bestätigt den Bedarf. |

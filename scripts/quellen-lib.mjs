@@ -115,6 +115,23 @@ export function logQuelle(data, o, { strict = false, heute = isoToday() } = {}) 
   return q;
 }
 
+/** Transfer source yields when a formerly active gift is buried; retain the history. */
+export function retireDose(data, id, { doseIds, graveIds }, { heute = isoToday() } = {}) {
+  if (doseIds.has(id) || !graveIds.has(id)) {
+    throw new Error(`„${id}“ muss zuerst aus den aktiven Dosen in den Friedhof überführt werden`);
+  }
+  const affected = data.quellen.filter((q) => q.ertrag.dosen.includes(id));
+  for (const q of affected) {
+    q.ertrag.dosen = q.ertrag.dosen.filter((dose) => dose !== id);
+    logQuelle(data, {
+      id: q.id, grab: [id], datum: heute, agent: 'bibliothekar',
+      runde: 'Dosen-Bestattung',
+      note: `Ertrag Dose ${id} → Grab ${id}; historische Quellenbefunde bleiben erhalten.`,
+    }, { heute });
+  }
+  return affected.length;
+}
+
 export function rateQuelle(data, o, { heute = isoToday() } = {}) {
   const q = findQuelle(data, o.id);
   if (o.q === undefined) throw new BibError({ code: 'FIELD_REQUIRED', field: 'q', message: 'q (Q1–Q6) ist Pflicht' });

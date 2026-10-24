@@ -17,7 +17,6 @@ import {
   TischSchiedsrichterSimulator,
   KristallwachstumSimulator,
   ChemHazardSimulator,
-  GruendungsnavigatorSimulator,
   LegioKlarSimulator,
 } from './simulators';
 
@@ -71,15 +70,6 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
 
           {/* Selector Tabs */}
           <div className="flex flex-wrap gap-1.5 p-1.5 bg-stone-100 rounded-xl border border-stone-200/80 self-start md:self-auto">
-            <Link to={withPreferences(simulatorPath('gruendungsnavigator'), location.search)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                activeTab === 'gruendungsnavigator'
-                  ? 'bg-white text-[var(--m-accent)] shadow-xs font-bold border border-[var(--m-accent)]/50'
-                  : 'text-stone-600 hover:text-stone-900'
-              }`}
-            >
-              🧭 {lang === 'de' ? 'Gründungsnavigator' : lang === 'es' ? 'Navegador de creación' : 'Start-up Navigator'}
-            </Link>
             <Link to={withPreferences(simulatorPath('altbau'), location.search)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 activeTab === 'altbau'
@@ -250,9 +240,6 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
       )}
       {activeTab === 'chemhazard' && (
         <ChemHazardSimulator lang={lang} />
-      )}
-      {activeTab === 'gruendungsnavigator' && (
-        <GruendungsnavigatorSimulator lang={lang} />
       )}
       {activeTab === 'legioklar' && (
         <LegioKlarSimulator lang={lang} />

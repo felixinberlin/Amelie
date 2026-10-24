@@ -11,13 +11,14 @@
 //   npm run quellen -- add --id <slug> --name "…" --typ O --kategorie norm --enthaelt "…" [--fokus "…"] [--status angekratzt]
 //                      [--evidenz schnipsel] [--art web] [--erreichbar ja] [--wie "…"] [--url …]… [--tag …]… [--rolle …]… [--q 3,4,3,3,4,3] [--agent …] [--runde "…"]
 //   npm run quellen -- md            (06-suche/amelie-quellen.md neu erzeugen)
+//   npm run quellen -- retire-dose <id> (Ertragsverweise einer bereits beerdigten Dose in Grabverweise überführen)
 //   npm run quellen -- check         (validieren + prüfen, dass die .md aktuell ist; Exit 1 bei Fehlern — Teil von npm run lint)
 //
 // Schreibende Befehle validieren vor dem Speichern und erzeugen die .md neu.
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { acquireLock, auditAppend, repoRoot } from './bib-store.mjs';
-import { loadQuellen, saveQuellen, validate, refIds, renderMarkdown, stats, scoreOf, empfehlung, isoToday, logQuelle, rateQuelle, addQuelle, QUELLEN_MD } from './quellen-lib.mjs';
+import { loadQuellen, saveQuellen, validate, refIds, renderMarkdown, stats, scoreOf, empfehlung, isoToday, logQuelle, rateQuelle, addQuelle, retireDose, QUELLEN_MD } from './quellen-lib.mjs';
 
 const [cmd = 'help', ...rest] = process.argv.slice(2);
 const flags = {};
@@ -34,7 +35,7 @@ const many = (k) => flags[k] ?? [];
 const die = (msg) => { console.error(msg); process.exit(1); };
 
 // Schreibbefehle nehmen dieselbe Sperre wie `bib apply` (Kindprozess von `bib quellen import` erbt sie über BIB_LOCK_TOKEN).
-if (['log', 'rate', 'add', 'md'].includes(cmd)) {
+if (['log', 'rate', 'add', 'md', 'retire-dose'].includes(cmd)) {
   try { acquireLock(repoRoot, { wait: Number(one('wait') ?? 0), actor: one('agent') ?? 'quellen-cli' }); } catch (e) { console.error(e.message); process.exit(13); }
 }
 const data = loadQuellen();
@@ -63,6 +64,14 @@ function filtered() {
 }
 
 switch (cmd) {
+  case 'retire-dose': {
+    try {
+      const count = retireDose(data, pos[0], refIds());
+      commit();
+      console.log(`Dose ${pos[0]} → Grab: ${count} Quellenverweise migriert.`);
+    } catch (e) { die(e.message); }
+    break;
+  }
   case 'list': {
     const s = one('sort') ?? 'name';
     const qs = filtered();

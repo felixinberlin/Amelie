@@ -95,3 +95,12 @@ Vier von neunzehn Ideen sind tot, und sie sind nicht zufällig verteilt:
 Das ist keine Einschränkung des Modells. Das ist sein Anwendungsbereich, und er ist ausgerechnet der, in dem Geschenke am meisten bewirken.
 
 **Konsequenz für den Loop:** Bei Tooling-Ideen ist das Zeitfenster kurz — sofort prüfen, sofort zustellen oder verwerfen. Bei zivilgesellschaftlichen Ideen ist es lang, dort lohnt Sorgfalt. Die 1:2-Budgetregel bleibt richtig, aber der Prüfschritt gehört **vor** das Packen, nicht danach: Eine Stunde Suche hätte diese vier Dosen von vornherein verhindert.
+
+
+## gruendungsnavigator
+
+**24.10.2026 · eigene kommerzielle Ausgliederung · vormals Dose**
+
+Eigene kommerzielle App existiert (in Entwicklung), daher keine frei zu verschenkende Amélie-Dose mehr. Das ist kein Fund fremder Konkurrenz und keine Behauptung eines kommerziellen Launchs. Auf ausdrücklichen Nutzerwunsch sind Galerieeintrag, Dosen- und Buchseiten, Simulator, Vorschau und aktive JSON-Exporte entfernt; alte Browserkopien dürfen die Dose nicht zurückbringen. Ein Cache-Abbau-Service-Worker bleibt für frühere Installationen erreichbar. Keine Mail angelegt oder versendet.
+
+Die [deutschen](grabbeigaben/gruendungsnavigator.md) und [englischen](grabbeigaben/gruendungsnavigator-en.md) Dossiers sowie [Datenstand](grabbeigaben/gruendungsnavigator-daten.ts.txt) und [Review](grabbeigaben/gruendungsnavigator-review.json) liegen als Grabbeigaben vor. Unabhängige Jobcenter-Forschung bleibt bestehen; der Meldeversäumnis-Kandidat verweist auf den historischen Befund statt auf eine aktive Dose. Frühere CC0-Veröffentlichungen und Git-Historie bleiben erhalten. Das private Entwicklungsprojekt ist nicht Teil dieser Migration.

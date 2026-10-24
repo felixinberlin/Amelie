@@ -1994,3 +1994,8 @@ Keine Registermutationen durch Reviewer; Bibliothekar übernimmt neue kanonische
 
 QUELLE BESTEHEND/HANDOFF: Naturwelt Heideradweg Projektchronik | typ=W | kategorie=empfaenger | status=durchsucht | evidenz=seite | zugang=ja | ertrag=– | urls=https://www.naturwelt-lieberose.de/kontakt/projektinformationen-heideradweg | note=Reviewer unabhängig direkt gelesen; ein gemeinsamer Quellenanker mehrerer Methoden, kein unabhängiger Mehrfachbedarfsbeleg. Q2-Plan/Fertigstatus und Metallunterbau/Holzverkleidung getrennt.
 QUELLE BESTEHEND/HANDOFF: Gedenkstätte Lieberose in Jamlitz Ausbauplanung | typ=W | kategorie=empfaenger | status=durchsucht | evidenz=seite | zugang=ja | ertrag=– | urls=https://www.lieberose-jamlitz-sbg.de/geschichte/seit-2023-gedenkstaette-lieberose-in-jamlitz/ | note=Reviewer direkt gelesen; Jamlitz, Ausbauziel 2029, einzelner Abbruch bereits erfolgt. Kein konkreter Softwarebedarf daraus belegt.
+
+
+## Gründungsnavigator — eigene Ausgliederung (24.10.2026)
+
+Auf ausdrücklichen Nutzerwunsch wird `gruendungsnavigator` aus dem öffentlichen Geschenkbestand in den Friedhof überführt. Eigene kommerzielle App existiert (in Entwicklung), daher keine frei zu verschenkende Amélie-Dose mehr. Keine fremde Konkurrenz, kein behaupteter Launch, keine neue Neuheits- oder Rechtsprüfung. Historische Vektoren und Frontmatter-Metadaten liegen in `08-friedhof/grabbeigaben/gruendungsnavigator-review.json`; kein neuer Score. Der Meldeversäumnis-Kandidat bleibt als unabhängiger Forschungsbefund mit Hinweis auf die beerdigte Träger-Dose erhalten; sonstige Jobcenter-Ideen bleiben unberührt.

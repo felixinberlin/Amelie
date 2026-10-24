@@ -1,7 +1,13 @@
 import { DoseItem } from '../types';
-import { DOSEN_DATA } from '../data/dosen';
+import { DOSEN_DATA, DISCARDED_DATA } from '../data/dosen';
 const STORAGE_KEY_DOSEN = 'amelie_custom_dosen';
 const STORAGE_KEY_CANDIDATES = 'amelie_custom_candidates';
+
+// A removed repository dose must not return as a locally created gift.
+// An explicitly revived seed dose still wins over its historical grave.
+const activeIds = new Set(DOSEN_DATA.map((dose) => dose.id));
+const retiredIds = new Set(DISCARDED_DATA.filter((grave) => !activeIds.has(grave.id)).map((grave) => grave.id));
+export const isRetiredDose = (id: string): boolean => retiredIds.has(id);
 
 /**
  * Load all Dosen (seed dataset merged with any locally created or edited Dosen).
@@ -17,6 +23,7 @@ export function getActiveDosen(): DoseItem[] {
         DOSEN_DATA.forEach((d) => map.set(d.id, d));
         // Overwrite or append custom ones, preserving repository integrity
         parsed.forEach((d) => {
+          if (!d || isRetiredDose(d.id)) return;
           const seed = map.get(d.id);
           if (seed) {
             map.set(d.id, {
@@ -54,6 +61,7 @@ export function resetDosenStorage(): void {
  * Save or update a Dose in local storage (GitHub Pages friendly).
  */
 export function saveDoseLocal(dose: DoseItem): void {
+  if (isRetiredDose(dose.id)) return;
   try {
     const current = getActiveDosen();
     const idx = current.findIndex((d) => d.id === dose.id);

@@ -77,3 +77,8 @@ npm run quellen -- list --rolle empfaenger    # Adressbuch
 npm run quellen -- list --erreichbar gesperrt # wo Agenten regelmäßig scheitern
 ```
 Frontend: `import { QUELLEN_DATA, quellenFuerDose, quellenEmpfehlung } from 'src/data/quellen'`.
+
+
+### Ertragsverweise bei einer Dosen-Bestattung
+
+`npm run quellen -- retire-dose <id>` überführt alle Ertragsverweise der bereits beerdigten Dose von `dosen` nach `graeber`. Der Befehl verlangt ein vorhandenes Grab und eine nicht mehr aktive Dose, protokolliert die Migration je betroffener Quelle und erzeugt `amelie-quellen.md` neu. Historische Verlaufseinträge bleiben unverändert. Wiederholung erzeugt keine doppelten Grabverweise.

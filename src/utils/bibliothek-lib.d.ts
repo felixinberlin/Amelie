@@ -70,4 +70,5 @@ declare module '*bib-ops.mjs' {
 declare module '*quellen-lib.mjs' {
   export function matchUrl(data: any, url: string): { id: string; name: string; matchedUrl: string; score: number; kind: string }[];
   export function loadQuellen(): any;
+  export function retireDose(data: any, id: string, refs: { doseIds: Set<string>; graveIds: Set<string> }, options?: { heute?: string }): number;
 }

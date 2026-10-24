@@ -1,11 +1,9 @@
+**Retired on 24 October 2026.** An own commercial app exists as a separate development project, so this is no longer an Amélie gift. This is an own spin-out, not external competition or a claim that the app has launched. The following dossier records the former state; offers, tickets and links are historical. Earlier CC0 publications remain CC0.
+
+[German dossier](gruendungsnavigator.md)
+
 ---
-status: Available
-delivery_method: E-Mail
-target_maker: Tacheles e.V. (Wuppertal), verify contact person before sending
-review_score: 26/35
-architecture_tier: Tier 1
-source_type: Type A
----
+
 # Start-up Navigator and Job Centre Help
 
 *(German: Gründungsnavigator)*

@@ -21,7 +21,7 @@ Angefangen hat es mit einer Liste von 19 Ideen. Heute sind es drei Dinge:
 
 | | |
 |---|---|
-| Dosen gepackt | **47** (5 zugestellt, 42 gepackt und warten auf eine geprüfte Empfängerperson) |
+| Dosen gepackt | **46** (5 zugestellt, 41 gepackt und warten auf eine geprüfte Empfängerperson) |
 | Lauffähige Demos | **14** (`07-demos/`) |
 | Geprüfte Ideen | **470** Protokollzeilen: 26 frei, 130 verengt, 124 unklar, 133 besetzt, 57 sonst |
 | Friedhof | **149** Gräber, 74 davon, weil es schon jemand gebaut hatte |
@@ -46,7 +46,6 @@ Volltexte und Status: [`src/data/deliveries.ts`](./src/data/deliveries.ts) und `
 
 ## Die nächsten konkreten Schritte
 
-- **Gründungsnavigator** (erste Dose der Galerie): Ansprechperson bei Tacheles e.V. finden und die RDG-Grenze klären, bevor irgendetwas versendet wird.
 - **ChemGefahr-Stopp:** über die einmalige Richtigstellung entscheiden; [Ticket 04](./07-demos/chemhazard-stop/ticket-04-web-scanner-und-qr-etiketten.md) bauen (Kamera-Scan im Browser, QR-Etiketten für Umfüllflaschen), bevor jemand Neues angeschrieben wird.
 - **Regel für jede Mail ab jetzt:** nur beschreiben, was gebaut und getestet ist. Vorbild ist die Mail an NABU Jena.
 
@@ -93,7 +92,7 @@ Eine Dose lebt an zwei Stellen: im Markdown (`05-dosen/<id>.md`, `en/05-dosen/<i
 | `02-recherche/` | warum es so läuft: vergleichbare Projekte, Bewegungen, nächste Verwandte mit Kontaktwegen, Recherche zu einzelnen Dosen |
 | `03-zuordnung/` | wer was bekommt: Matrix, Zustellplan, jede Mail in `mails-q4-2026/` |
 | `04-werkzeug/` | Vorlagen (Dose, Kaltmail, Repo-README), XLIFF-Leitfaden, Mail-Anleitung |
-| `05-dosen/` | die 47 Dosen (deutsch); englisch in `en/05-dosen/` |
+| `05-dosen/` | die 46 Dosen (deutsch); englisch in `en/05-dosen/` |
 | `06-suche/` | wie Ideen gefunden und geprüft werden: Prüfprotokoll, Suchplaybook, Quellen-Register, Förderlandschaft, Engine-Logs, Handbücher |
 | `07-demos/` | lauffähiges Scaffolding je Dose: README, Tickets, Daten, Schemata |
 | `08-friedhof/` | der Friedhof: jede gestorbene Idee mit Ursache, Killer, Fundweg und Mustern über alle Gräber (Daten in `src/data/graeber.json`) |

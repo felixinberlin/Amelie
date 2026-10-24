@@ -11,7 +11,6 @@ const DATE = '14.10.2026';
 export const JOBCENTER_ROUND_IDEAS: CandidateIdea[] = [
   {
     id: 'meldeversaeumnis-zaehler',
-    packedDoseId: 'gruendungsnavigator',
     title: 'Meldeversäumnis-Zähler',
     titleEn: 'Missed-appointment counter',
     round: ROUND,
@@ -25,8 +24,8 @@ export const JOBCENTER_ROUND_IDEAS: CandidateIdea[] = [
     sourceType: 'Civic & Ecology',
     sourceDe: 'BA Fachliche Weisungen § 32 SGB II (Stand 01.07.2026); Arbeitshilfe JC Wuppertal „Einladungen und Rechtsfolgen“ (29.06.2026); § 7b Abs. 4 SGB II',
     sourceEn: 'BA directives on section 32 SGB II (as of 1 July 2026); Jobcenter Wuppertal working aid (29 June 2026); section 7b(4) SGB II',
-    evidenceDe: 'Reviewer 26/35, „Dose Ready (bedingt)“, seit 16.10.2026 als Modul der Dose gruendungsnavigator gebaut (Empfängerkonflikt aufgelöst). Kein Zähler gefunden, nur Merkblätter [Schnipsel]. FW und Arbeitshilfe gelesen [Seite]; offen: Quellenkonflikt Unterbrechung (Rz 32.6 gegen „mindestens ein Kalendermonat“), Lücke § 66 SGB I, FW § 7b ungelesen.',
-    evidenceEn: 'Reviewer 26/35, "Dose Ready (conditional)", built on 16 Oct 2026 as a module of the gruendungsnavigator dose (recipient conflict resolved). No counter found, only leaflets [snippet]. Directive and working aid read [page]; open: source conflict on interruption (Rz 32.6 vs. "at least one calendar month"), gap on section 66 SGB I, FW section 7b unread.',
+    evidenceDe: 'Seit 24.10.2026 ist die frühere Träger-Dose nach eigener kommerzieller Ausgliederung im Friedhof; hier bleibt nur der unabhängige Forschungsbefund, kein verfügbares Werkzeug oder Geschenk. Reviewer 26/35, „Dose Ready (bedingt)“, seit 16.10.2026 als Modul der Dose gruendungsnavigator gebaut (Empfängerkonflikt aufgelöst). Kein Zähler gefunden, nur Merkblätter [Schnipsel]. FW und Arbeitshilfe gelesen [Seite]; offen: Quellenkonflikt Unterbrechung (Rz 32.6 gegen „mindestens ein Kalendermonat“), Lücke § 66 SGB I, FW § 7b ungelesen.',
+    evidenceEn: 'Since 24 Oct 2026 the former parent dose is in the cemetery following an own commercial spin-out; this entry retains independent research only, not an available tool or gift. Reviewer 26/35, "Dose Ready (conditional)", built on 16 Oct 2026 as a module of the gruendungsnavigator dose (recipient conflict resolved). No counter found, only leaflets [snippet]. Directive and working aid read [page]; open: source conflict on interruption (Rz 32.6 vs. "at least one calendar month"), gap on section 66 SGB I, FW section 7b unread.',
     reviewDate: '04/2027',
     problemDe: 'Wer einen Termin versäumt hat, kann aus den Briefen nicht ablesen, welche Rechtsfolge ein weiterer versäumter Termin hätte.',
     problemEn: 'Anyone who missed an appointment cannot tell from the letters what a further missed appointment would trigger.',

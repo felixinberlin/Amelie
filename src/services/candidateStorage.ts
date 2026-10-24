@@ -1,5 +1,6 @@
 import { CandidateIdea } from '../types';
 import { CANDIDATE_IDEAS_DATA } from '../data/unpacked';
+import { isRetiredDose } from './doseStorage';
 const STORAGE_KEY_CANDIDATES = 'amelie_custom_candidates';
 
 /**
@@ -17,7 +18,7 @@ export function getActiveCandidates(): CandidateIdea[] {
         const map = new Map<string, CandidateIdea>();
         CANDIDATE_IDEAS_DATA.forEach((c) => map.set(c.id, c));
         parsed.forEach((c) => {
-          if (c && c.id && !map.has(c.id)) map.set(c.id, c);
+          if (c && c.id && !isRetiredDose(c.id) && !map.has(c.id)) map.set(c.id, c);
         });
         return Array.from(map.values());
       }
@@ -32,6 +33,7 @@ export function getActiveCandidates(): CandidateIdea[] {
  * Save or update a Candidate Idea locally.
  */
 export function saveCandidateLocal(candidate: CandidateIdea): void {
+  if (isRetiredDose(candidate.id)) return;
   try {
     const current = getActiveCandidates();
     const idx = current.findIndex((c) => c.id === candidate.id);

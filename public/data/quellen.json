@@ -17646,12 +17646,12 @@
       "status": "angekratzt",
       "statusNotiz": "",
       "evidenz": "schnipsel",
-      "zuletzt": "2026-10-13",
+      "zuletzt": "2026-10-24",
       "ertrag": {
-        "dosen": [
+        "dosen": [],
+        "graeber": [
           "gruendungsnavigator"
         ],
-        "graeber": [],
         "kandidaten": []
       },
       "vektoren": {
@@ -17673,6 +17673,12 @@
           "runde": "Gründungsnavigator — Antwort 13.10.2026",
           "notiz": "Antwort 13.10.2026, Kommentare von Félix übermittelt (Reddit aus der Cloud gesperrt); Einwand berechtigt, Reaktion Transparenz-Kasten und Prüfvermerke, nicht auf Reddit geantwortet.",
           "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-24",
+          "agent": "bibliothekar",
+          "runde": "Dosen-Bestattung",
+          "notiz": "Ertrag Dose gruendungsnavigator → Grab gruendungsnavigator; historische Quellenbefunde bleiben erhalten."
         }
       ]
     },
@@ -21557,13 +21563,12 @@
       "status": "durchsucht",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-16",
+      "zuletzt": "2026-10-24",
       "ertrag": {
-        "dosen": [
-          "gruendungsnavigator"
-        ],
+        "dosen": [],
         "graeber": [
-          "fw-diff"
+          "fw-diff",
+          "gruendungsnavigator"
         ],
         "kandidaten": [
           "meldeversaeumnis-zaehler"
@@ -21595,6 +21600,12 @@
           "runde": "Jobcenter-Hilfe 16.10.2026",
           "notiz": "Ertrag nachgetragen: Zähler gebaut 16.10.2026.",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-24",
+          "agent": "bibliothekar",
+          "runde": "Dosen-Bestattung",
+          "notiz": "Ertrag Dose gruendungsnavigator → Grab gruendungsnavigator; historische Quellenbefunde bleiben erhalten."
         }
       ]
     },
@@ -21621,12 +21632,12 @@
       "status": "durchsucht",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-16",
+      "zuletzt": "2026-10-24",
       "ertrag": {
-        "dosen": [
+        "dosen": [],
+        "graeber": [
           "gruendungsnavigator"
         ],
-        "graeber": [],
         "kandidaten": [
           "meldeversaeumnis-zaehler"
         ]
@@ -21657,6 +21668,12 @@
           "runde": "Jobcenter-Hilfe 16.10.2026",
           "notiz": "Ertrag nachgetragen: Zähler gebaut 16.10.2026.",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-24",
+          "agent": "bibliothekar",
+          "runde": "Dosen-Bestattung",
+          "notiz": "Ertrag Dose gruendungsnavigator → Grab gruendungsnavigator; historische Quellenbefunde bleiben erhalten."
         }
       ]
     },
@@ -23125,12 +23142,12 @@
       "status": "durchsucht",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-16",
+      "zuletzt": "2026-10-24",
       "ertrag": {
-        "dosen": [
+        "dosen": [],
+        "graeber": [
           "gruendungsnavigator"
         ],
-        "graeber": [],
         "kandidaten": []
       },
       "vektoren": {
@@ -23152,6 +23169,12 @@
           "runde": "Jobcenter-Hilfe 16.10.2026",
           "notiz": "Gelesen über Thomé-Spiegel, amtliche PDF nicht gefunden; Meldeversäumnis-Zähler.",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-24",
+          "agent": "bibliothekar",
+          "runde": "Dosen-Bestattung",
+          "notiz": "Ertrag Dose gruendungsnavigator → Grab gruendungsnavigator; historische Quellenbefunde bleiben erhalten."
         }
       ]
     },
@@ -23177,12 +23200,12 @@
       "status": "durchsucht",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-16",
+      "zuletzt": "2026-10-24",
       "ertrag": {
-        "dosen": [
+        "dosen": [],
+        "graeber": [
           "gruendungsnavigator"
         ],
-        "graeber": [],
         "kandidaten": []
       },
       "vektoren": {
@@ -23204,6 +23227,12 @@
           "runde": "Jobcenter-Hilfe 16.10.2026",
           "notiz": "Gelesen.",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-24",
+          "agent": "bibliothekar",
+          "runde": "Dosen-Bestattung",
+          "notiz": "Ertrag Dose gruendungsnavigator → Grab gruendungsnavigator; historische Quellenbefunde bleiben erhalten."
         }
       ]
     },
@@ -23229,12 +23258,12 @@
       "status": "durchsucht",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-16",
+      "zuletzt": "2026-10-24",
       "ertrag": {
-        "dosen": [
+        "dosen": [],
+        "graeber": [
           "gruendungsnavigator"
         ],
-        "graeber": [],
         "kandidaten": []
       },
       "vektoren": {
@@ -23256,6 +23285,12 @@
           "runde": "Jobcenter-Hilfe 16.10.2026",
           "notiz": "Gelesen Kap. 4.1 und 5.",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-24",
+          "agent": "bibliothekar",
+          "runde": "Dosen-Bestattung",
+          "notiz": "Ertrag Dose gruendungsnavigator → Grab gruendungsnavigator; historische Quellenbefunde bleiben erhalten."
         }
       ]
     },
@@ -23281,12 +23316,12 @@
       "status": "durchsucht",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-16",
+      "zuletzt": "2026-10-24",
       "ertrag": {
-        "dosen": [
+        "dosen": [],
+        "graeber": [
           "gruendungsnavigator"
         ],
-        "graeber": [],
         "kandidaten": []
       },
       "vektoren": {
@@ -23308,6 +23343,12 @@
           "runde": "Jobcenter-Hilfe 16.10.2026",
           "notiz": "Gelesen zu § 7b und § 32.",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-24",
+          "agent": "bibliothekar",
+          "runde": "Dosen-Bestattung",
+          "notiz": "Ertrag Dose gruendungsnavigator → Grab gruendungsnavigator; historische Quellenbefunde bleiben erhalten."
         }
       ]
     },
@@ -23333,12 +23374,12 @@
       "status": "angekratzt",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-16",
+      "zuletzt": "2026-10-24",
       "ertrag": {
-        "dosen": [
+        "dosen": [],
+        "graeber": [
           "gruendungsnavigator"
         ],
-        "graeber": [],
         "kandidaten": []
       },
       "vektoren": {
@@ -23360,6 +23401,12 @@
           "runde": "Jobcenter-Hilfe 16.10.2026",
           "notiz": "Nur per grep durchsucht.",
           "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-24",
+          "agent": "bibliothekar",
+          "runde": "Dosen-Bestattung",
+          "notiz": "Ertrag Dose gruendungsnavigator → Grab gruendungsnavigator; historische Quellenbefunde bleiben erhalten."
         }
       ]
     },
@@ -23385,12 +23432,12 @@
       "status": "angekratzt",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-16",
+      "zuletzt": "2026-10-24",
       "ertrag": {
-        "dosen": [
+        "dosen": [],
+        "graeber": [
           "gruendungsnavigator"
         ],
-        "graeber": [],
         "kandidaten": []
       },
       "vektoren": {
@@ -23412,6 +23459,12 @@
           "runde": "Jobcenter-Hilfe 16.10.2026",
           "notiz": "Besetzt-Gegenprobe: kein Zähler für Meldeversäumnisse.",
           "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-24",
+          "agent": "bibliothekar",
+          "runde": "Dosen-Bestattung",
+          "notiz": "Ertrag Dose gruendungsnavigator → Grab gruendungsnavigator; historische Quellenbefunde bleiben erhalten."
         }
       ]
     },
@@ -23435,12 +23488,12 @@
       "status": "durchsucht",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-17",
+      "zuletzt": "2026-10-24",
       "ertrag": {
-        "dosen": [
+        "dosen": [],
+        "graeber": [
           "gruendungsnavigator"
         ],
-        "graeber": [],
         "kandidaten": []
       },
       "vektoren": {
@@ -23462,6 +23515,12 @@
           "runde": "Gründungsnavigator Weisungen 17.10.2026",
           "notiz": "Gelesen 17.10.2026 für die Karte Was das Jobcenter prüft; URL auf arbeitsagentur.de nicht festgehalten.",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-24",
+          "agent": "bibliothekar",
+          "runde": "Dosen-Bestattung",
+          "notiz": "Ertrag Dose gruendungsnavigator → Grab gruendungsnavigator; historische Quellenbefunde bleiben erhalten."
         }
       ]
     },
@@ -23485,12 +23544,12 @@
       "status": "durchsucht",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-17",
+      "zuletzt": "2026-10-24",
       "ertrag": {
-        "dosen": [
+        "dosen": [],
+        "graeber": [
           "gruendungsnavigator"
         ],
-        "graeber": [],
         "kandidaten": []
       },
       "vektoren": {
@@ -23512,6 +23571,12 @@
           "runde": "Gründungsnavigator Weisungen 17.10.2026",
           "notiz": "Gelesen 17.10.2026; URL auf arbeitsagentur.de nicht festgehalten.",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-24",
+          "agent": "bibliothekar",
+          "runde": "Dosen-Bestattung",
+          "notiz": "Ertrag Dose gruendungsnavigator → Grab gruendungsnavigator; historische Quellenbefunde bleiben erhalten."
         }
       ]
     },
@@ -23535,12 +23600,12 @@
       "status": "durchsucht",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-17",
+      "zuletzt": "2026-10-24",
       "ertrag": {
-        "dosen": [
+        "dosen": [],
+        "graeber": [
           "gruendungsnavigator"
         ],
-        "graeber": [],
         "kandidaten": []
       },
       "vektoren": {
@@ -23562,6 +23627,12 @@
           "runde": "Gründungsnavigator Weisungen 17.10.2026",
           "notiz": "Gelesen 17.10.2026; Stand 2017, Aktualität gegenüber der Rechtslage 2026 offen.",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-24",
+          "agent": "bibliothekar",
+          "runde": "Dosen-Bestattung",
+          "notiz": "Ertrag Dose gruendungsnavigator → Grab gruendungsnavigator; historische Quellenbefunde bleiben erhalten."
         }
       ]
     },
@@ -23585,12 +23656,12 @@
       "status": "durchsucht",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-17",
+      "zuletzt": "2026-10-24",
       "ertrag": {
-        "dosen": [
+        "dosen": [],
+        "graeber": [
           "gruendungsnavigator"
         ],
-        "graeber": [],
         "kandidaten": []
       },
       "vektoren": {
@@ -23612,6 +23683,12 @@
           "runde": "Gründungsnavigator Weisungen 17.10.2026",
           "notiz": "Gelesen 17.10.2026; im Register vorher nicht vorhanden; URL auf arbeitsagentur.de nicht festgehalten.",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-24",
+          "agent": "bibliothekar",
+          "runde": "Dosen-Bestattung",
+          "notiz": "Ertrag Dose gruendungsnavigator → Grab gruendungsnavigator; historische Quellenbefunde bleiben erhalten."
         }
       ]
     },
@@ -23637,12 +23714,12 @@
       "status": "durchsucht",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-17",
+      "zuletzt": "2026-10-24",
       "ertrag": {
-        "dosen": [
+        "dosen": [],
+        "graeber": [
           "gruendungsnavigator"
         ],
-        "graeber": [],
         "kandidaten": []
       },
       "vektoren": {
@@ -23664,6 +23741,12 @@
           "runde": "Gründungsnavigator Weisungen 17.10.2026",
           "notiz": "Gelesen 17.10.2026 für die Karte Was das Jobcenter prüft.",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-24",
+          "agent": "bibliothekar",
+          "runde": "Dosen-Bestattung",
+          "notiz": "Ertrag Dose gruendungsnavigator → Grab gruendungsnavigator; historische Quellenbefunde bleiben erhalten."
         }
       ]
     },
@@ -23687,12 +23770,12 @@
       "status": "durchsucht",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-17",
+      "zuletzt": "2026-10-24",
       "ertrag": {
-        "dosen": [
+        "dosen": [],
+        "graeber": [
           "gruendungsnavigator"
         ],
-        "graeber": [],
         "kandidaten": []
       },
       "vektoren": {
@@ -23714,6 +23797,12 @@
           "runde": "Gründungsnavigator Weisungen 17.10.2026",
           "notiz": "Gelesen 17.10.2026; lokale Quelle, örtliche Geltung; URL nicht festgehalten.",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-24",
+          "agent": "bibliothekar",
+          "runde": "Dosen-Bestattung",
+          "notiz": "Ertrag Dose gruendungsnavigator → Grab gruendungsnavigator; historische Quellenbefunde bleiben erhalten."
         }
       ]
     }
