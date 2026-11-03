@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T11:06:37.704Z",
+  "generatedAt": "2026-11-03T10:52:48.320Z",
   "period": "week",
   "source": "reddit.com Atom-Feeds (top.rss), Reihenfolge = Ranking; keine Scores",
   "feeds": [
@@ -7,7 +7,7 @@
       "sub": "SideProject",
       "group": "build",
       "period": "week",
-      "fetchedAt": "2026-11-02T11:06:37.704Z",
+      "fetchedAt": "2026-11-03T10:52:48.320Z",
       "stale": false,
       "error": null,
       "posts": [
@@ -36,6 +36,14 @@
           "excerpt": "I made converting files as simple as it can be, just drag a file on desktop or finder and tap shift to show conversion options for that file. Works completely offline. Existing features so far: - Works with multiple files. - Compress images, videos, audio and PDFs - Video and im…"
         },
         {
+          "id": "t3_1xlhyrz",
+          "title": "Bible Cross-References - An interactive explorer of 344,799 connections between Bible verses",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xlhyrz/bible_crossreferences_an_interactive_explorer_of/",
+          "author": "trekhleb",
+          "published": "2026-11-01T23:38:52+00:00",
+          "excerpt": "I built a small open-source web app to explore 344,799 cross-references between Bible verses. The idea was to make it easier to discover connections between different books and passages of the Bible through an interactive visualization. Try it: https://trekhleb.dev/bible-cross-r…"
+        },
+        {
           "id": "t3_1xkaewr",
           "title": "I made a free and interactive game where you try to cut a country’s population in half with one line",
           "url": "https://www.reddit.com/r/SideProject/comments/1xkaewr/i_made_a_free_and_interactive_game_where_you_try/",
@@ -52,12 +60,20 @@
           "excerpt": "Edit: thanks for all the feedback! I rebuilt the whole surface from plate tectonics and climate, and the project is now open source under the name Exolune: https://www.reddit.com/r/proceduralgeneration/comments/1xkibsb/comment/19rxz9rl2qfl1/?screen_view_count=2 https://github.co…"
         },
         {
-          "id": "t3_1xlhyrz",
-          "title": "Bible Cross-References - An interactive explorer of 344,799 connections between Bible verses",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xlhyrz/bible_crossreferences_an_interactive_explorer_of/",
-          "author": "trekhleb",
-          "published": "2026-11-01T23:38:52+00:00",
-          "excerpt": "I built a small open-source web app to explore 344,799 cross-references between Bible verses. The idea was to make it easier to discover connections between different books and passages of the Bible through an interactive visualization. Try it: https://trekhleb.dev/bible-cross-r…"
+          "id": "t3_1xly9r8",
+          "title": "I turned 100 old science fiction books into a database of 6,222 startup ideas",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xly9r8/i_turned_100_old_science_fiction_books_into_a/",
+          "author": "bios444",
+          "published": "2026-11-02T14:13:17+00:00",
+          "excerpt": "I had this strange idea: what if old science fiction books were actually archives of startups that were never built? So I created Startup Archaeology. I used AI to extract inventions, technologies, and imagined systems from 100 science fiction books published between 1818 and 19…"
+        },
+        {
+          "id": "t3_1xmhavi",
+          "title": "I made a gun simulator for phones",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xmhavi/i_made_a_gun_simulator_for_phones/",
+          "author": "baechoo24",
+          "published": "2026-11-03T02:41:32+00:00",
+          "excerpt": "Almost broke my wrist testing this. ----- Edit: Thanks for all the interest! Here are the download links if you'd like to try it: iOS / App Store Android / Google Play"
         },
         {
           "id": "t3_1xipu7g",
@@ -68,20 +84,12 @@
           "excerpt": "Hi all! Just wanted to share an update to my app Lifer. We recently just launched in USA & Canada and would love for you to try it out! I started building this around 12 months ago, and have put thousands of hours into it at this point. The idea is simple. Each bird has a rarity…"
         },
         {
-          "id": "t3_1xg5brg",
-          "title": "I'm a designer who can't code. I built the thing I always wanted anyway",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xg5brg/im_a_designer_who_cant_code_i_built_the_thing_i/",
-          "author": "Yo-Detox",
-          "published": "2026-10-26T18:40:29+00:00",
-          "excerpt": "Every designer I know has The Folder. Mine was called inspo_FINAL_v3. 4,000 screenshots, zero names, and I could never find anything in it. Pinterest wasn't much better. I'd search \"dashboard\" and get someone's kitchen. So one night I said to my wife, \"give me one weekend, I'm g…"
-        },
-        {
-          "id": "t3_1xfukwa",
-          "title": "\"If we wanted a vibe coded website, we could 'make' one ourselves, thanks.\" - was this rude or normal in today's world?",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xfukwa/if_we_wanted_a_vibe_coded_website_we_could_make/",
-          "author": "mrideaguy",
-          "published": "2026-10-26T11:48:20+00:00",
-          "excerpt": "Edit: I really appreciate all the responses and the feedbacks, ideas and constructive responses! The takeaways I have so far are - to have thicker skin because this is sales, (and i'm realizing i'm not built for sales) - customers get lots of these kinds of offers often and they…"
+          "id": "t3_1xke4h5",
+          "title": "I built a focus app that doesn’t try to make you more productive. It just helps you slow down.",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xke4h5/i_built_a_focus_app_that_doesnt_try_to_make_you/",
+          "author": "suniltarge",
+          "published": "2026-10-31T16:09:07+00:00",
+          "excerpt": "I’ve been thinking about how we approach focus. Almost every productivity app tries to help us do more, work faster, or squeeze more out of our day. But sometimes, I don’t need another app pushing me to be productive. I just need something that helps me slow down and concentrate…"
         },
         {
           "id": "t3_1xgrxgp",
@@ -92,20 +100,28 @@
           "excerpt": "Search only works if you remember what to search for. I often save a link without remembering the site or even the title. In a list, it’s as good as lost. On a map, I remember roughly where I left it. Same reason I remember what I was thinking when I return to a certain rock on…"
         },
         {
-          "id": "t3_1xke4h5",
-          "title": "I built a focus app that doesn’t try to make you more productive. It just helps you slow down.",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xke4h5/i_built_a_focus_app_that_doesnt_try_to_make_you/",
-          "author": "suniltarge",
-          "published": "2026-10-31T16:09:07+00:00",
-          "excerpt": "I’ve been thinking about how we approach focus. Almost every productivity app tries to help us do more, work faster, or squeeze more out of our day. But sometimes, I don’t need another app pushing me to be productive. I just need something that helps me slow down and concentrate…"
-        },
-        {
           "id": "t3_1xky79x",
           "title": "I built an app that writes “I built an app that” posts 🚀",
           "url": "https://www.reddit.com/r/SideProject/comments/1xky79x/i_built_an_app_that_writes_i_built_an_app_that/",
           "author": "Kyle_2099",
           "published": "2026-11-01T08:50:12+00:00",
           "excerpt": "I built an app that writes “I built an app that” posts for apps I built in a weekend and will abandon by Wednesday 🚀 Hey r/SideProject (and r/SaaS , r/indiehackers , r/startups , sorry mods), TL;DR: I built LaunchPad AI™ . You tell it about the app you vibe coded over a weekend…"
+        },
+        {
+          "id": "t3_1xk5nn0",
+          "title": "I built a free map of every Bengaluru startup hiring right now (9,000+ roles).",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xk5nn0/i_built_a_free_map_of_every_bengaluru_startup/",
+          "author": "Dry-Complaint-1934",
+          "published": "2026-10-31T09:21:12+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1xl697u",
+          "title": "I made a torrent client that searches multiple sites without leaving the terminal",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xl697u/i_made_a_torrent_client_that_searches_multiple/",
+          "author": "Waste_Net7628",
+          "published": "2026-11-01T15:43:41+00:00",
+          "excerpt": "hey guys, i made tork, a torrent client where you can search across multiple sites and download stuff without leaving your terminal just type what youre looking for, pick a result and hit enter. no jumping between sites or copying magnet links around. it puts everything in one p…"
         },
         {
           "id": "t3_1xi5g3g",
@@ -124,28 +140,12 @@
           "excerpt": "Orc painting, colors in Chroma Space a 3D color picker ."
         },
         {
-          "id": "t3_1xk5nn0",
-          "title": "I built a free map of every Bengaluru startup hiring right now (9,000+ roles).",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xk5nn0/i_built_a_free_map_of_every_bengaluru_startup/",
-          "author": "Dry-Complaint-1934",
-          "published": "2026-10-31T09:21:12+00:00",
-          "excerpt": ""
-        },
-        {
           "id": "t3_1xjc50u",
           "title": "I found a way to save on my electric bill",
           "url": "https://www.reddit.com/r/SideProject/comments/1xjc50u/i_found_a_way_to_save_on_my_electric_bill/",
           "author": "ramramlab",
           "published": "2026-10-30T10:53:23+00:00",
           "excerpt": "The bulb is off. The light is pure code. A WebGL shader paints it in real time, while MediaPipe finds your hands and body so the glow lands where it should. I first tried training a model on the bulb, but clear glass is really hard to track, so I stuck a green sticker on it inst…"
-        },
-        {
-          "id": "t3_1xjrvhe",
-          "title": "I made a free, open-source phone app that debloats your TV over Wi-Fi: no PC, no root. Just hit 5,000 downloads",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xjrvhe/i_made_a_free_opensource_phone_app_that_debloats/",
-          "author": "manish9461",
-          "published": "2026-10-30T21:25:10+00:00",
-          "excerpt": "My XGIMI projector's home screen was mostly ads, and debloating it meant a laptop and ADB commands, or handing my TV to a coding agent over the network. So I built Tellyscope , an open-source phone app that cleans up Android TVs. It turns off ads, trackers and bloat in a few tap…"
         },
         {
           "id": "t3_1xhoy41",
@@ -156,6 +156,14 @@
           "excerpt": "So, like most people, I tend to have an open-tab problem, where I keep tabs open with the intention of going back and reading/revisiting them, only to end up with dozens of open tabs. I’ve now been using SiftHive.io regularly, every day, to synthesize the most important bits fro…"
         },
         {
+          "id": "t3_1xjrvhe",
+          "title": "I made a free, open-source phone app that debloats your TV over Wi-Fi: no PC, no root. Just hit 5,000 downloads",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xjrvhe/i_made_a_free_opensource_phone_app_that_debloats/",
+          "author": "manish9461",
+          "published": "2026-10-30T21:25:10+00:00",
+          "excerpt": "My XGIMI projector's home screen was mostly ads, and debloating it meant a laptop and ADB commands, or handing my TV to a coding agent over the network. So I built Tellyscope , an open-source phone app that cleans up Android TVs. It turns off ads, trackers and bloat in a few tap…"
+        },
+        {
           "id": "t3_1xjvg1m",
           "title": "Got bored during a lecture, ended up testing my head-tracking wallpaper",
           "url": "https://www.reddit.com/r/SideProject/comments/1xjvg1m/got_bored_during_a_lecture_ended_up_testing_my/",
@@ -164,28 +172,12 @@
           "excerpt": "Got bored during a lecture, so here’s a demo of the project I’ve spent the past few months building: Holoscape. It uses your webcam to track your head and shift a 3D wallpaper’s perspective, making your screen feel like a window. I’ve been improving stability and performance—it…"
         },
         {
-          "id": "t3_1xl697u",
-          "title": "I made a torrent client that searches multiple sites without leaving the terminal",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xl697u/i_made_a_torrent_client_that_searches_multiple/",
-          "author": "Waste_Net7628",
-          "published": "2026-11-01T15:43:41+00:00",
-          "excerpt": "hey guys, i made tork, a torrent client where you can search across multiple sites and download stuff without leaving your terminal just type what youre looking for, pick a result and hit enter. no jumping between sites or copying magnet links around. it puts everything in one p…"
-        },
-        {
-          "id": "t3_1xgca4q",
-          "title": "Got really pissed of on Earnings Hub charging 200 bucks for earnings calendar. So, I created my own.",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xgca4q/got_really_pissed_of_on_earnings_hub_charging_200/",
-          "author": "NetworkEducational81",
-          "published": "2026-10-26T23:10:28+00:00",
-          "excerpt": "Hi, all I'm a developer and a part time trader. Couldn't find a usable earning calendar for companies earnings for free so came up with my own. EarningsHub UI is really close to what I want, but, wow, 200 bucks to see the tickers and some data is too much. Maybe I'm just dumb bu…"
-        },
-        {
-          "id": "t3_1xgja5m",
-          "title": "My weekend project: My Book Library",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xgja5m/my_weekend_project_my_book_library/",
-          "author": "Digiguysapps",
-          "published": "2026-10-27T04:39:38+00:00",
-          "excerpt": "In 2015, before a trip around the world, we donated our paper books to libraries and bought them again on Kindle. Since then, every book I buy is a Kindle book or an ePub. That works well for reading. But a few years later, a new friend visited and said he always likes to see wh…"
+          "id": "t3_1xlsjwc",
+          "title": "I released an app on Producthunt and would not do it again",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xlsjwc/i_released_an_app_on_producthunt_and_would_not_do/",
+          "author": "codebryo",
+          "published": "2026-11-02T09:18:23+00:00",
+          "excerpt": "So I built a free webapp that I actually use very activly on my own and some friends and family actually use it as well. So I decided to release it on producthunt as well and it was an absolute horrible experience. I got bombarded my people wanting to sell me upvotes and now sin…"
         },
         {
           "id": "t3_1xjy7vk",
@@ -204,12 +196,20 @@
           "excerpt": "Every time I scroll this sub, it feels like everyone is shipping AI wrappers in a weekend. Meanwhile, I’m over here building a niche site the slow, old-school way. No big Stripe screenshots to flex yet, just late nights and Notion docs. If you're working on something outside the…"
         },
         {
-          "id": "t3_1xj2103",
-          "title": "i built an engineering calculator that does realtime unit conversions",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xj2103/i_built_an_engineering_calculator_that_does/",
-          "author": "DifferenceLeather580",
-          "published": "2026-10-30T01:13:32+00:00",
-          "excerpt": "i've been working on my dream engineering calculator for a couple years now and finally want to share for feedback. It's called mathora and is a much better version of PTC MathCAD that has cloud sync and infinite canvas with a really cool unit switcher the goal was to make the b…"
+          "id": "t3_1xkiaum",
+          "title": "Update on my planet engine: the surface is now built from plate tectonics and climate",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xkiaum/update_on_my_planet_engine_the_surface_is_now/",
+          "author": "Fresh-Daikon-9408",
+          "published": "2026-10-31T18:56:18+00:00",
+          "excerpt": "A couple of days ago I shared my planet engine here, a personal project where you can fly from orbit down to the ground without any loading screen. Thanks again for all the feedback! It now has a name: Exolune. The rule from the start: a planet at 1:1 scale with the Earth, 6,378…"
+        },
+        {
+          "id": "t3_1xhwyk8",
+          "title": "I’m a dev. I built a site where you do stuff for bananas. Am I dumb?",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xhwyk8/im_a_dev_i_built_a_site_where_you_do_stuff_for/",
+          "author": "ZORGOBORGO",
+          "published": "2026-10-28T18:54:09+00:00",
+          "excerpt": "So, long story short - I'm a dev and I often need tests and reviews written by humans - AI sucks completely when it comes to breaking stuff and real insights. You do stuff for other humans to earn bananas (5-second first impressions, step-by-step signup runs, landing page roasts…"
         }
       ]
     },
@@ -217,18 +217,10 @@
       "sub": "startups",
       "group": "build",
       "period": "week",
-      "fetchedAt": "2026-11-02T11:06:37.704Z",
+      "fetchedAt": "2026-11-03T10:52:48.320Z",
       "stale": false,
       "error": null,
       "posts": [
-        {
-          "id": "t3_1xghw7q",
-          "title": "19 months into running a solo software agency. $3,000 in total revenue. Starting to question how long I can keep going. I will not promote.",
-          "url": "https://www.reddit.com/r/startups/comments/1xghw7q/19_months_into_running_a_solo_software_agency/",
-          "author": "DjangoDrive",
-          "published": "2026-10-27T03:26:13+00:00",
-          "excerpt": "About 1 year and 7 months ago, I started my journey as a solo developer, hoping to eventually turn it into a sustainable business. Since then, I've shipped 9 products, earned roughly $3,000 in total revenue, and still have no MRR. What kept me going was the occasional validation…"
-        },
         {
           "id": "t3_1xhc1v1",
           "title": "Bootstrapped + a couple of SAFEs, met with a room of HNWI starting my seed round and left that meeting with $1.5 million (I will not promote)",
@@ -262,12 +254,12 @@
           "excerpt": "Should i take this? I got offered a role at a startup and there's no employees, just the one founder. He is also working 9-5 alongside this to fund his buisness. Other operations are semi outsourced. He offered me a role right during the interview and said he didnt have time to…"
         },
         {
-          "id": "t3_1xgh1l0",
-          "title": "ARRlarp - incubator start-up scene - i will not promote",
-          "url": "https://www.reddit.com/r/startups/comments/1xgh1l0/arrlarp_incubator_startup_scene_i_will_not_promote/",
-          "author": "openllm",
-          "published": "2026-10-27T02:44:27+00:00",
-          "excerpt": "I recently had the pleasure of spending two weeks in SF for Tech Week and Disrupt. I got to meet a lot of incredibly bright people and had a lot of fun seeing the startup scene on the ground level. The one thing that I caught wind of was the amount of larping going on from withi…"
+          "id": "t3_1xmht1p",
+          "title": "Series A company with 160 people - red flag? I will not promote.",
+          "url": "https://www.reddit.com/r/startups/comments/1xmht1p/series_a_company_with_160_people_red_flag_i_will/",
+          "author": "jumper_123",
+          "published": "2026-11-03T03:05:17+00:00",
+          "excerpt": "series A company that currently has around 160 people and they’re trying to get to 200 by the end of the year. They last raised 32 million November 2025. I feel like that is a large company for only having 32 million. they are an AI company in San Francisco. Should I be concerne…"
         },
         {
           "id": "t3_1xl6x5c",
@@ -276,6 +268,14 @@
           "author": "no_spoon",
           "published": "2026-11-01T16:09:46+00:00",
           "excerpt": "Someone recently recommended me The Mom Test with some rules about talking to customers. I'm working on building a community for a new social app and trying to find the exact PMF, but i've been 6 months at it and I'm just as lost as day 1. The amount of cold outreach I've done i…"
+        },
+        {
+          "id": "t3_1xll7at",
+          "title": "Should I continue working for the my startup for equity after they can no longer afford to pay? (I will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1xll7at/should_i_continue_working_for_the_my_startup_for/",
+          "author": "Jetnjet",
+          "published": "2026-11-02T02:13:40+00:00",
+          "excerpt": "SWE at startup. Recently the company I’m working for has run out of money so they can no longer afford to pay me for potentially a few months up to who knows how long. The pay was never amazing but at least it was an income. Now they’re offering me to stay based on equity. I’ve…"
         },
         {
           "id": "t3_1xhu04d",
@@ -294,6 +294,14 @@
           "excerpt": "Saw a LinkedIn post from the CTO of sync labs (the lipsync/dubbing API, YC W24, did Wav2Lip back in the day). They want around 256 H200s or B300s, 32 nodes, 1-year minimum, and say big labs are taking all the capacity. Two things I can't comprehend. First, is it really this hard…"
         },
         {
+          "id": "t3_1xkqrcn",
+          "title": "Stop selling to founders - I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1xkqrcn/stop_selling_to_founders_i_will_not_promote/",
+          "author": "rt2828",
+          "published": "2026-11-01T01:25:55+00:00",
+          "excerpt": "The more I engage with our ICP, the more I am showing up as an ICP for many new companies trying to sell me services I either don’t care about, I can build myself, or can pay a market leader for. Given the market dynamics, I completely understand why it is so. Nevertheless, I hi…"
+        },
+        {
           "id": "t3_1xj6hz2",
           "title": "Feedback Friday",
           "url": "https://www.reddit.com/r/startups/comments/1xj6hz2/feedback_friday/",
@@ -310,14 +318,6 @@
           "excerpt": "I'm looking to hear from founders who have successfully taken genuinely new, foundational technology from invention to commercial adoption. I'm developing a deep-tech invention that doesn't fit neatly into an existing technology category. The underlying industry problems and com…"
         },
         {
-          "id": "t3_1xibgi3",
-          "title": "Which to pursue? I will not promote",
-          "url": "https://www.reddit.com/r/startups/comments/1xibgi3/which_to_pursue_i_will_not_promote/",
-          "author": "vasaya",
-          "published": "2026-10-29T05:31:19+00:00",
-          "excerpt": "Idea 1: A platform for people looking to develop or upgrade hospitality properties, featuring glamping sites, cabins, modular homes, eco-resorts, boutique stays, wellness installations, equipment like hot tubs, saunas, outdoor cinemas etc. Property developers, STR entrepreneurs…"
-        },
-        {
           "id": "t3_1xk85h1",
           "title": "My first users all came from one game community I belong to. How do I repeat that where I’m a stranger? [I will not promote]",
           "url": "https://www.reddit.com/r/startups/comments/1xk85h1/my_first_users_all_came_from_one_game_community_i/",
@@ -326,12 +326,12 @@
           "excerpt": "I run a crowdfunding platform for live streamers. Viewers pool money toward a challenge the streamer takes on, and the streamer gets paid if they complete it. Progress shows on stream through an OBS overlay. What worked: I’ve played Legion TD 2 for 5 and know its streamers. I in…"
         },
         {
-          "id": "t3_1xkqrcn",
-          "title": "Stop selling to founders - I will not promote",
-          "url": "https://www.reddit.com/r/startups/comments/1xkqrcn/stop_selling_to_founders_i_will_not_promote/",
-          "author": "rt2828",
-          "published": "2026-11-01T01:25:55+00:00",
-          "excerpt": "The more I engage with our ICP, the more I am showing up as an ICP for many new companies trying to sell me services I either don’t care about, I can build myself, or can pay a market leader for. Given the market dynamics, I completely understand why it is so. Nevertheless, I hi…"
+          "id": "t3_1xjficw",
+          "title": "If you don't have a sales team, here's a 1-hour-a-week outreach routine (I will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1xjficw/if_you_dont_have_a_sales_team_heres_a_1houraweek/",
+          "author": "coskunerkan",
+          "published": "2026-10-30T13:33:28+00:00",
+          "excerpt": "Most small businesses I talk to don't have a sales team. The owner sells in between everything else, so it only happens when there's a quiet week. Here's a routine that works with about an hour a week: 1. Pick one narrow type of customer. Not \"small businesses\". Something like \"…"
         },
         {
           "id": "t3_1xirnw6",
@@ -350,12 +350,20 @@
           "excerpt": "Originally studying mechanical engineering I always thought I would have a very predictable stable life, and working in a foreign country as one, I found it extremely boring and lonely then I one day I just came across to the movie “The Big Short” the dynamics, the industry, int…"
         },
         {
-          "id": "t3_1xfx5uu",
-          "title": "Distribution-first founders: how do you decide between fixing activation and adding reach? (I will not promote)",
-          "url": "https://www.reddit.com/r/startups/comments/1xfx5uu/distributionfirst_founders_how_do_you_decide/",
-          "author": "poppiboi",
-          "published": "2026-10-26T13:42:02+00:00",
-          "excerpt": "Context: B2B tool, week one after launch. 18 sign-ups, 7 completed setup, 5 used it, 1 came back. Traffic is back to baseline after the launch spike. My first-principles answer is \"fix activation first\": every new visitor today leaks at the same step, so reach just makes the lea…"
+          "id": "t3_1xlze2m",
+          "title": "How to monetize this. I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1xlze2m/how_to_monetize_this_i_will_not_promote/",
+          "author": "vasaya",
+          "published": "2026-11-02T14:57:25+00:00",
+          "excerpt": "I'm exploring the idea of a platform where venues and spaces can discover and book revenue-generating concepts, activations and experiences to bring into their locations. For example, a hotel with an underutilised rooftop could browse and book an F&B pop-up, live entertainment,…"
+        },
+        {
+          "id": "t3_1xlsmpw",
+          "title": "Looking for advice from people who have actualyl built something. I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1xlsmpw/looking_for_advice_from_people_who_have_actualyl/",
+          "author": "Ahmat22",
+          "published": "2026-11-02T09:23:30+00:00",
+          "excerpt": "Hi, Ive been kinda lost and don’t really know what I’m doing and almost wanna give up. I’ve tried to build a few products that failed. I just don’t know what to build. I wanna do something with my life and build something that helps people. I would love to get some advice from s…"
         },
         {
           "id": "t3_1xgun1y",
@@ -366,12 +374,12 @@
           "excerpt": "I kept tweaking ads and landing pages for a little product I run, and nothing moved. So I called five people who'd bought once and never came back, and I asked one question: what almost stopped you from buying? Three of them said the same thing, they didn't trust the checkout pa…"
         },
         {
-          "id": "t3_1xjficw",
-          "title": "If you don't have a sales team, here's a 1-hour-a-week outreach routine (I will not promote)",
-          "url": "https://www.reddit.com/r/startups/comments/1xjficw/if_you_dont_have_a_sales_team_heres_a_1houraweek/",
-          "author": "coskunerkan",
-          "published": "2026-10-30T13:33:28+00:00",
-          "excerpt": "Most small businesses I talk to don't have a sales team. The owner sells in between everything else, so it only happens when there's a quiet week. Here's a routine that works with about an hour a week: 1. Pick one narrow type of customer. Not \"small businesses\". Something like \"…"
+          "id": "t3_1xkj1xr",
+          "title": "I will not promote: How have you gotten sales in cybersecurity?",
+          "url": "https://www.reddit.com/r/startups/comments/1xkj1xr/i_will_not_promote_how_have_you_gotten_sales_in/",
+          "author": "Baby_f4ce",
+          "published": "2026-10-31T19:27:09+00:00",
+          "excerpt": "Good afternoon everyone, Is anyone here in Cybersecurity and/or government contracting who can share how they have gotten sales? I have a Cybersecurity startup specializing in penetration testing, threat hunting/SOC, incident response, and AI workflows. I have the service packag…"
         },
         {
           "id": "t3_1xh84qx",
@@ -382,12 +390,12 @@
           "excerpt": "For those who’ve had a waitlist up before launching, what did you find converted best on your landing page? I’m not sure a minimal page can convert, but as a solo founder there’s sometimes limited capacity to build a fully fleshed out landing page. Curious how other solo founder…"
         },
         {
-          "id": "t3_1xkj1xr",
-          "title": "I will not promote: How have you gotten sales in cybersecurity?",
-          "url": "https://www.reddit.com/r/startups/comments/1xkj1xr/i_will_not_promote_how_have_you_gotten_sales_in/",
-          "author": "Baby_f4ce",
-          "published": "2026-10-31T19:27:09+00:00",
-          "excerpt": "Good afternoon everyone, Is anyone here in Cybersecurity and/or government contracting who can share how they have gotten sales? I have a Cybersecurity startup specializing in penetration testing, threat hunting/SOC, incident response, and AI workflows. I have the service packag…"
+          "id": "t3_1xixpsu",
+          "title": "update: 2 b2b pilots out of ~25 cold calls (i will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1xixpsu/update_2_b2b_pilots_out_of_25_cold_calls_i_will/",
+          "author": "egudegi",
+          "published": "2026-10-29T22:04:47+00:00",
+          "excerpt": "thanks to everyone who told me to ask \"what does success look like\" in demos last time, that actually helped a lot. i've now done about 25 cold calls. never done sales before, i'm more of a marketing guy. got 3 demos out of it. two turned into pilots and i made them accounts, an…"
         },
         {
           "id": "t3_1xh5zs3",
@@ -406,20 +414,12 @@
           "excerpt": "Me and my co-founder are building a small hardware product: a screen-free study timer for your desk. Instead of a screen it shows your progress mechanically, little elements pop out while you work. There’s also an app that’s already live. I’m studying full-time and my co-founder…"
         },
         {
-          "id": "t3_1xixpsu",
-          "title": "update: 2 b2b pilots out of ~25 cold calls (i will not promote)",
-          "url": "https://www.reddit.com/r/startups/comments/1xixpsu/update_2_b2b_pilots_out_of_25_cold_calls_i_will/",
-          "author": "egudegi",
-          "published": "2026-10-29T22:04:47+00:00",
-          "excerpt": "thanks to everyone who told me to ask \"what does success look like\" in demos last time, that actually helped a lot. i've now done about 25 cold calls. never done sales before, i'm more of a marketing guy. got 3 demos out of it. two turned into pilots and i made them accounts, an…"
-        },
-        {
-          "id": "t3_1xll7at",
-          "title": "Should I continue working for the my startup for equity after they can no longer afford to pay? (I will not promote)",
-          "url": "https://www.reddit.com/r/startups/comments/1xll7at/should_i_continue_working_for_the_my_startup_for/",
-          "author": "Jetnjet",
-          "published": "2026-11-02T02:13:40+00:00",
-          "excerpt": "SWE at startup. Recently the company I’m working for has run out of money so they can no longer afford to pay me for potentially a few months up to who knows how long. The pay was never amazing but at least it was an income. Now they’re offering me to stay based on equity. I’ve…"
+          "id": "t3_1xklzo1",
+          "title": "Anyone 30+ gone through a period of life where you're all in on creating your business? (No family, friends, life etc) [I WILL NOT PROMOTE]",
+          "url": "https://www.reddit.com/r/startups/comments/1xklzo1/anyone_30_gone_through_a_period_of_life_where/",
+          "author": "Swordfish353535",
+          "published": "2026-10-31T21:33:13+00:00",
+          "excerpt": "Lol (No family, friends, life etc) makes me laugh cause it sounds so serious. But everyones stories is different for sure. If you come from a beautiful loving upbringing then it'll be different to my story for example. I come from extreme dysfunction, no family, first time I was…"
         }
       ]
     },
@@ -428,8 +428,8 @@
       "group": "build",
       "period": "week",
       "fetchedAt": "2026-11-02T11:06:37.704Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xhhhch",
@@ -638,8 +638,8 @@
       "group": "build",
       "period": "week",
       "fetchedAt": "2026-11-02T11:06:37.704Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xg61t6",
@@ -704,8 +704,8 @@
       "group": "ideas",
       "period": "week",
       "fetchedAt": "2026-11-02T11:06:37.704Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xho7n3",
@@ -914,8 +914,8 @@
       "group": "oss",
       "period": "week",
       "fetchedAt": "2026-11-02T11:06:37.704Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xfvgd7",
@@ -1124,8 +1124,8 @@
       "group": "oss",
       "period": "week",
       "fetchedAt": "2026-11-02T11:06:37.704Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xklaxs",
@@ -1334,8 +1334,8 @@
       "group": "oss",
       "period": "week",
       "fetchedAt": "2026-11-02T11:06:37.704Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xgae5q",
@@ -1544,8 +1544,8 @@
       "group": "ai",
       "period": "week",
       "fetchedAt": "2026-11-02T11:06:37.704Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xi0b7c",
@@ -1754,8 +1754,8 @@
       "group": "ai",
       "period": "week",
       "fetchedAt": "2026-11-02T11:06:37.704Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xjqyv2",
@@ -1964,8 +1964,8 @@
       "group": "civic",
       "period": "week",
       "fetchedAt": "2026-11-02T11:06:37.704Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xhulzk",
@@ -2087,7 +2087,7 @@
       "period": "week",
       "fetchedAt": null,
       "stale": true,
-      "error": "Feed ohne Einträge",
+      "error": "HTTP 403",
       "posts": []
     }
   ]
