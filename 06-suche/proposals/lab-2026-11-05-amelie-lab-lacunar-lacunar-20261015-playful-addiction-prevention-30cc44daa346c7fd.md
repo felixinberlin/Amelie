@@ -1,0 +1,467 @@
+# Proposals from plan lab-2026-11-05-amelie-lab-lacunar-lacunar-20261015-playful-addiction-prevention-30cc44daa346c7fd
+
+Packet: amelie-lab-lacunar-lacunar-20261015-playful-addiction-prevention-30cc44daa346c7fd · Candidate: amelie-lab-lacunar-lacunar-20261015-playful-addiction-prevention-30cc44daa346c7fd
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] lacunar: amelie-lab-lacunar-lacunar-20261015-playful-addiction-prevention-30cc44daa346c7fd. Absicht: Neue spielerische Ideen für langfristige Suchtprävention: make it fun; 12–18 Jahre in deutschen Jugendclubs und Schulen, kooperativ und offline oder hybrid.. Modell: Codex stand-in (Vertex unavailable; searches: WebSearch). Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "cost_usd": 0,
+  "model_calls": 0,
+  "search_calls": 6,
+  "search_queries": 13
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.3.0"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-10-15T15:00:00+02:00"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld frames, Teil 1 (laut gespeicherter Datei):
+{
+  "candidates": [
+    {
+      "check_queries": [
+        "Welche Anbieter bieten improvisiertes Suchtpräventionstheater, Rollenwechsel und das erneute Spielen alternativer Entscheidungen für Jugendliche?",
+        "Wollen Jugendliche diese kurze Episode freiwillig erneut spielen und eigene Varianten erfinden?"
+      ],
+      "friction_point": "Ein Materialset bringt Inhalte mit; ein Live-Hörspiel lässt Teilnehmende Welt und Klang selbst erfinden.",
+      "id": "C1",
+      "idea": "Rückspul-Radio: Ein Team vertont eine absurde Party auf dem Mond; ein Klang friert die Szene ein, zwei Alternativen werden mit veränderter Geräuschregie gespielt.",
+      "typical_probability": 0.05
+    },
+    {
+      "check_queries": [
+        "Welche Anbieter bieten kooperative Suchtpräventionsspiele, selbst gestaltete Spielwelten oder wiederkehrende Episoden für Jugendliche?",
+        "Wollen Jugendliche diese kurze Episode freiwillig erneut spielen und eigene Varianten erfinden?"
+      ],
+      "friction_point": "Ein persönliches Bekenntnis kann peinlich sein; eine fiktionale Figur kann ohne Offenlegung verschiedener Möglichkeiten handeln.",
+      "id": "C2",
+      "idea": "Stadt der tausend Auswege: Gruppen bauen aus Alltagsgeräuschen einen Stadtplan; jede Episode braucht drei unterschiedliche Wege aus einer erfundenen Stresssituation.",
+      "typical_probability": 0.05
+    },
+    {
+      "check_queries": [
+        "Welche Anbieter bieten kreative Hörspiel- und Geräuschmethoden sowie Rollenspiele für jugendliche Medienprävention?",
+        "Wollen Jugendliche diese kurze Episode freiwillig erneut spielen und eigene Varianten erfinden?"
+      ],
+      "friction_point": "Eine einmalige Veranstaltung endet; ein Ensemble kann eine erfundene Welt in kurzen Episoden wieder aufnehmen.",
+      "id": "C3",
+      "idea": "Pausenpiraten auf Sendung: Sprecher und Geräuschcrew besitzen unterschiedliche Aufträge; nur ein gemeinsam entwickelter Pausenklang lässt alle zum nächsten Kapitel kommen.",
+      "typical_probability": 0.05
+    },
+    {
+      "check_queries": [
+        "Welche Anbieter bieten improvisiertes Suchtpräventionstheater, Rollenwechsel und das erneute Spielen alternativer Entscheidungen für Jugendliche?",
+        "Wollen Jugendliche diese kurze Episode freiwillig erneut spielen und eigene Varianten erfinden?"
+      ],
+      "friction_point": "Ein Materialset bringt Inhalte mit; ein Live-Hörspiel lässt Teilnehmende Welt und Klang selbst erfinden.",
+      "id": "C4",
+      "idea": "Die stumme Nebenrolle: Ein Geräuschemacher darf eine fiktive Szene ohne Worte in Richtung Rückzug, Hilfe oder Alternative lenken.",
+      "typical_probability": 0.05
+    },
+    {
+      "check_queries": [
+        "Welche Anbieter bieten kooperative Suchtpräventionsspiele, selbst gestaltete Spielwelten oder wiederkehrende Episoden für Jugendliche?",
+        "Wollen Jugendliche diese kurze Episode freiwillig erneut spielen und eigene Varianten erfinden?"
+      ],
+      "friction_point": "Ein persönliches Bekenntnis kann peinlich sein; eine fiktionale Figur kann ohne Offenlegung verschiedener Möglichkeiten handeln.",
+      "id": "C5",
+      "idea": "Vertauschte Klangkoffer: Zwei Teams deuten dieselben drei Gegenstände als völlig andere Freizeitorte und verbinden sie zu einer gemeinsamen Route.",
+      "typical_probability": 0.05
+    },
+    {
+      "check_queries": [
+        "Welche Anbieter bieten kreative Hörspiel- und Geräuschmethoden sowie Rollenspiele für jugendliche Medienprävention?",
+        "Wollen Jugendliche diese kurze Episode freiwillig erneut spielen und eigene Varianten erfinden?"
+      ],
+      "friction_point": "Eine einmalige Veranstaltung endet; ein Ensemble kann eine erfundene Welt in kurzen Episoden wieder aufnehmen.",
+      "id": "C6",
+      "idea": "Der Chor der Einwände: Jede Nebenfigur bietet einen anderen harmlosen Einwand; das Ensemble erfindet einen Ausgang, der niemanden ausschließt.",
+      "typical_probability": 0.05
+    },
+    {
+      "check_queries": [
+        "Welche Anbieter bieten improvisiertes Suchtpräventionstheater, Rollenwechsel und das erneute Spielen alternativer Entscheidungen für Jugendliche?",
+        "Wollen Jugendliche diese kurze Episode freiwillig erneut spielen und eigene Varianten erfinden?"
+      ],
+      "friction_point": "Ein Materialset bringt Inhalte mit; ein Live-Hörspiel lässt Teilnehmende Welt und Klang selbst erfinden.",
+      "id": "C7",
+      "idea": "Die verschwundene Heldin: Ein Teammitglied kann aussetzen; die verbleibende Crew muss die Geschichte ohne Erklärung seiner Abwesenheit weiterspielen.",
+      "typical_probability": 0.05
+    },
+    {
+      "check_queries": [
+        "Welche Anbieter bieten kooperative Suchtpräventionsspiele, selbst gestaltete Spielwelten oder wiederkehrende Episoden für Jugendliche?",
+        "Wollen Jugendliche diese kurze Episode freiwillig erneut spielen und eigene Varianten erfinden?"
+      ],
+      "friction_point": "Ein persönliches Bekenntnis kann peinlich sein; eine fiktionale Figur kann ohne Offenlegung verschiedener Möglichkeiten handeln.",
+      "id": "C8",
+      "idea": "Geräusche aus der Zukunft: Ein späteres Kapitel sendet einen rätselhaften Klang zurück, dessen Bedeutung die Gruppe erst erfindet.",
+      "typical_probability": 0.05
+    },
+    {
+      "check_queries": [
+        "Welche Anbieter bieten kreative Hörspiel- und Geräuschmethoden sowie Rollenspiele für jugendliche Medienprävention?",
+        "Wollen Jugendliche diese kurze Episode freiwillig erneut spielen und eigene Varianten erfinden?"
+      ],
+      "friction_point": "Eine einmalige Veranstaltung endet; ein Ensemble kann eine erfundene Welt in kurzen Episoden wieder aufnehmen.",
+      "id": "C9",
+      "idea": "Ein Gegenstand, drei Auswege: Eine harmlose Requisite muss in drei wiederholten Szenen drei verschiedene alternative Aktivitäten ermöglichen.",
+      "typical_probability": 0.05
+    },
+    {
+      "check_queries": [
+        "Welche Anbieter bieten improvisiertes Suchtpräventionstheater, Rollenwechsel und das erneute Spielen alternativer Entscheidungen für Jugendliche?",
+        "Wollen Jugendliche diese kurze Episode freiwillig erneut spielen und eigene Varianten erfinden?"
+      ],
+      "friction_point": "Ein Materialset bringt Inhalte mit; ein Live-Hörspiel lässt Teilnehmende Welt und Klang selbst erfinden.",
+      "id": "C10",
+      "idea": "Die offene Sendestation: Neue Mitspielende übernehmen jede Woche eine Klangrolle und verändern einen Ort der fortlaufenden Geschichte.",
+      "typical_probability": 0.05
+    }
+  ],
+  "distance": 4,
+  "frame_a": {
+    "friction": "Material und Schulung sind vorhandene Ausgangspunkte; ob Jugendliche zwischen Workshops freiwillig wiederkommen und eigene Alternativen fortspielen wollen, bleibt im Anbietertext offen. Diese Reibung ist eine Entwurfshypothese, kein gemessener Mangel.",
+    "name": "What's on: geschulte Fachkräfte führen vielfältige Methoden zur Medienreflexion und alternativen Aktivitäten durch",
+    "slots": {
+      "constraints": "Schulung und Materialzugang; weder Ausleihkosten noch tatsächlicher Vorbereitungsaufwand vollständig dokumentiert.",
+      "emotions": "Motivation ist hier Gestaltungsziel, keine gemessene Nutzerreaktion.",
+      "goals": "Medienverhalten reflektieren und alternative Aktivitäten anregen.",
+      "materials": "Methodenkoffer und Übungen für Schulen und Jugendhilfe.",
+      "mechanics": "Geschulte Fachkräfte und fortgebildete Multiplikatoren moderieren Workshops.",
+      "rituals_timing": "Workshops oder Unterrichtseinheiten; langfristige freiwillige Wiederholung nicht dokumentiert."
+    },
+    "source_label": "Suchtkooperation NRW, Anbieterbeschreibung; abgerufen 15.10.2026",
+    "source_url": "https://suchtkooperation.nrw/service/aktuelles/neuer-methodenkoffer-whats-on"
+  },
+  "frame_b": {
+    "domain": "Bühnenkunst und handgemachte akustische Illusion",
+    "name": "Live-Hörspielwerkstatt: Geräuschregie, Ensemble und Szeneneinsatz",
+    "slots": {
+      "constraints": "Kein Einzelner kontrolliert gleichzeitig alle Stimmen und Geräusche; ein vereinbarter Einsatz synchronisiert die Beiträge.",
+      "emotions": "Überraschung, absurdes Misslingen und gemeinsames Erfinden als gewünschtes Spielerlebnis.",
+      "goals": "Gemeinsam eine hörbare fiktionale Welt herstellen.",
+      "materials": "Alltagsgegenstände als Geräuschinstrumente, Stimmen und Karten für Einsätze.",
+      "mechanics": "Ein Ensemble erzeugt Geräusche passend zu gesprochenen Szenen; geteilte Rollen machen denselben Gegenstand je nach Einsatz hörbar zu etwas anderem.",
+      "rituals_timing": "Kurze Szenen, Rollenwechsel und eine gemeinsame Aufführung; für diese Entwürfe als wiederkehrende Episode adaptiert."
+    }
+  },
+  "friction_points": [
+    "Ein Materialset bringt Inhalte mit; ein Live-Hörspiel lässt Teilnehmende Welt und Klang selbst erfinden.",
+    "Ein persönliches Bekenntnis kann peinlich sein; eine fiktionale Figur kann ohne Offenlegung verschiedener Möglichkeiten handeln.",
+    "Eine einmalige Veranstaltung endet; ein Ensemble kann eine erfundene Welt in kurzen Episoden wieder aufnehmen."
+  ],
+  "personas": [
+    {
+      "who": "Lina, hypothetische 14-Jährige im Jugendclub",
+      "would_do": "Steuert mit einer Dose die Windmaschine einer erfundenen Stadt und erfindet beim nächsten Termin einen neuen Ort."
+    },
+    {
+      "who": "Omar, hypothetischer 16-jähriger Geräuschemacher",
+      "would_do": "Gibt stumm Klangeinsätze, statt eigene Konsumerfahrungen erzählen zu müssen."
+    },
+    {
+      "who": "Mareike, hypothetische Jugendclub-Fachkraft",
+      "would_do": "Moderiert eine 15-Minuten-Episode und trennt erfundene Entscheidungen von fachlichen Gesundheitsinformationen."
+    }
+  ],
+  "shortlist": [
+    "C1",
+    "C2",
+    "C3"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Neue spielerische Ideen für langfristige Suchtprävention: make it fun; 12–18 Jahre in deutschen Jugendclubs und Schulen, kooperativ und offline oder hybrid."
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"<!-- proposed by the Lab's Lacunar agent, run lacunar-20261015-playful-addiction-prevention; nothing was written to Amélie -->\n| 15.10.2026 | What's on: spielerische Methoden in Schule und Jugendhilfe | Live-Hörspielwerkstatt: Geräuschregie, Ensemble und Szeneneinsatz | 4 | 10 | 3: 1. Rückspul-Radio: 4–8 Jugendliche spielen eine 12-Minuten-Klangkomödie, frieren sie per Signal ein und erfinden zwei andere Enden; sechs zweiwöchentliche Episoden behalten Figuren, tauschen Rollen und Schauplätze. (combinational); 2. Stadt der tausend Auswege: 4–10 Jugendliche erfinden mit Papierstadtplan und Alltagsgeräuschen Orte und drei gemeinsame Auswege aus fiktionalem Stress; monatlich 20 Minuten wächst die Stadt, neue Mitspielende können sofort eine Klangrolle übernehmen. (combinational); 3. Pausenpiraten auf Sendung: 4–8 Jugendliche lösen in 10–15 Minuten eine absurde Funkmission durch abgestimmte Pausen- und Neustartklänge; wöchentlich über sechs Termine wechseln Regie und Crew, die Gruppe schreibt die nächste Mission. (combinational) | Drei unvalidierte Spielkonzepte; freiwillige Wiederkehr und Präventionswirkung ungeklärt. | — (not checked yet) |\n\n### Lacunar run lacunar-20261015-playful-addiction-prevention — 15.10.2026 (intent: Neue spielerische Ideen für langfristige Suchtprävention: make it fun; 12–18 Jahre in deutschen Jugendclubs und Schulen, kooperativ und offline oder hybrid.)\n- **Learned:** 10 Kandidaten erzeugt, 3 prior-art-geprüfte Konzeptleads behalten, 0 verworfen; 6 WebSearch-Aufrufe mit 13 exakten Queries archiviert. Theater, kooperative Exit-Spiele und Hörspielwerkstätten sind konkrete funktionale Nachbarn; keine Neuheits- oder Wirksamkeitsaussage.\n- **Mistake:** Spielspaß und Wiederholung dürfen weder aus einer hübschen Mechanik noch aus Anbietertexten abgeleitet werden. Wiederkehr über sechs Episoden ist zunächst ein Testplan, langfristige Suchtprävention separat zu untersuchen.\n- **Next time:** Zwei Jugendgruppen mit Papierprototyp und vorhandener Kurzmethoden-Baseline drei Termine spielen lassen: beobachteter Spaß, freiwilliges Wiederkommen, Peer-Ausschluss und Aufwand; Fachkraft prüft Inhalte. Danach erst längere Evaluation mit getrennten Endpunkten zu Substanzen und Medien planen.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): Welche Anbieter bieten improvisiertes Suchtpräventionstheater, Rollenwechsel und das erneute Spielen alternativer Entscheidungen für Jugendliche? -> https://www.tpwerkstatt.de/programme, https://www.kmdd.de/angebote/theater-sehnsucht, https://frankfurt.de/-/media/frankfurtde/service-und-rathaus/verwaltung/aemter-und-institutionen/drogenreferat/pdf/handreichung-schulen.pdf, https://theater-requisit.de/angebot/schulen/\n  - C2 (ok): Welche Anbieter bieten kooperative Suchtpräventionsspiele, selbst gestaltete Spielwelten oder wiederkehrende Episoden für Jugendliche? -> https://www.praevention.at/fileadmin/user_upload/04_Institut/Taetigkeitsbericht2024.pdf, https://www.kadesch.de/leistungen/beratung-praevention/fachstelle-fuer-suchtpraevention-und-gesundheitsfoerderung/, https://www.suchtpraevention-sachsen.de/projekte/universelle-lebenskompetenzfoerderung/gluecksrauschen, https://www.karuna-prevents.de/\n  - C3 (ok): Welche Anbieter bieten kreative Hörspiel- und Geräuschmethoden sowie Rollenspiele für jugendliche Medienprävention? -> https://www.klicksafe.de/digitale-spiele, https://www.klicksafe.de/fileadmin/cms/download/Material/P%C3%A4d._Praxis/Zusatz_AB_Bew%C3%A4ltigungsstrategie_CM2017.pdf, https://www.klicksafe.de/mediensicher-in-die-schule, https://www.klicksafe.de/fileadmin/cms/download/Material/P%C3%A4d._Praxis/HR_Computerspiele_klicksafe.pdf\n"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"Codex stand-in (Vertex unavailable; searches: WebSearch)"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld plan, Teil 1 (laut gespeicherter Datei):
+{
+  "anchor_queries": [
+    "Welche spielerischen Präventionsmethoden werden Schulen und Jugendclubs tatsächlich angeboten?",
+    "Wie organisieren Anbieter peergeleitete und kreative Präventionsangebote?"
+  ],
+  "area": "Wiederkehrendes kooperatives Spiel für Suchtprävention, 12–18 Jahre",
+  "collider_hint": "Live-Hörspiel: geteilte Geräuschregie, sichtbare Einsätze, Wiederholung derselben Szene mit veränderter Klangspur.",
+  "mode_list": [
+    "Präventionsquiz",
+    "Escape Room mit Wissensrätseln",
+    "Abstinenz-Punktesammeln",
+    "KI-Beratungschat",
+    "Konsumtagebuch",
+    "Rauschbrillen-Parcours",
+    "Belohnungen für Bildschirmverzicht",
+    "Risiko-Selbsttest",
+    "Erklärvideo mit Quiz",
+    "Einmaliger Theaterbesuch"
+  ],
+  "notes": "Auf ausdrückliche Nutzersteuerung Konzeptspielraum statt Pflicht zu neuer KI: analoge Mechaniken zulässig, Nachfrage unbekannt. Vergleich gegen vorhandene Methodenkoffer, Theater und Hörspielwerkstätten; drei Prototypideen bleiben unvalidierte Leads."
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld prior_art, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "answer": "Theater Requisit und andere Anbieter verbinden Improvisation und Suchtprävention; Theater ist daher ein enger funktionaler Nachbar. Wiederkehrende selbst moderierte Geräusch-Replays sind damit weder nachgewiesen noch ausgeschlossen.",
+    "candidate_id": "C1",
+    "pages": [
+      "https://www.tpwerkstatt.de/programme",
+      "https://www.kmdd.de/angebote/theater-sehnsucht",
+      "https://frankfurt.de/-/media/frankfurtde/service-und-rathaus/verwaltung/aemter-und-institutionen/drogenreferat/pdf/handreichung-schulen.pdf",
+      "https://theater-requisit.de/angebot/schulen/",
+      "https://galli-backnang.de/praeventionstheater/",
+      "https://diejugendkirche.de/angebote-theater/",
+      "https://theater-requisit.de/ueber-uns/",
+      "https://frankfurt.de/themen/arbeit-bildung-und-wissenschaft/bildung/bildungsangebote-fuer-schulen/wegweiser-bildungsangebote/schultheater-studio-frankfurt/theaterworkshop-suchtpraevention",
+      "https://www.ensemble-lavie.de/produktionen/pr%C3%A4ventions-und-theaterprojekte/",
+      "https://www.praeventionstag.de/nano.cms/vortraege/id/3951",
+      "https://duesseldorfer-praeventionsnavigator.de/fantasymbil.php",
+      "https://www.suchtpraevention-sachsen.de/projekte/universelle-lebenskompetenzfoerderung/gluecksrauschen",
+      "https://www.peoples-theater.de/jugendliche/",
+      "https://theater-requisit.de/cms/wp-content/uploads/Ausbildungsbetriebe.pdf",
+      "https://de.wikipedia.org/wiki/Comic_On%21",
+      "https://www.praeventionstag.de/daten/module/media/dateien/400/Kongresskatalog_20_web-428.pdf",
+      "https://www.fachstelle.at/wp-content/uploads/2021/02/Suchtpraevention-in-der-Schule-Version.pdf",
+      "https://www.gewaltpraevention-noe.at/wp-content/uploads/2019/03/fgp-anbieterinnen-folder-2016-screen-doppel.pdf",
+      "https://www.theater-requisit.de/images/presse/Presse-Limburg.pdf",
+      "https://de.wikipedia.org/wiki/Theater_Total"
+    ],
+    "question": "Welche Anbieter bieten improvisiertes Suchtpräventionstheater, Rollenwechsel und das erneute Spielen alternativer Entscheidungen für Jugendliche?",
+    "status": "ok"
+  },
+  {
+    "answer": "Ginko beschreibt ein Exit-Spiel zur Suchtvorbeugung; weitere Anbieter nutzen kooperative Methoden. Rätselkooperation allein wäre keine Abgrenzung; selbst geschaffene fortlaufende Klangstadt bleibt ungetestete Variation.",
+    "candidate_id": "C2",
+    "pages": [
+      "https://www.praevention.at/fileadmin/user_upload/04_Institut/Taetigkeitsbericht2024.pdf",
+      "https://www.kadesch.de/leistungen/beratung-praevention/fachstelle-fuer-suchtpraevention-und-gesundheitsfoerderung/",
+      "https://www.suchtpraevention-sachsen.de/projekte/universelle-lebenskompetenzfoerderung/gluecksrauschen",
+      "https://www.karuna-prevents.de/",
+      "https://www.ginko-stiftung.de/Fachstelle/Home-kommunal/3019",
+      "https://guben.immanuel.de/suchtpraevention/",
+      "https://www.zollernalbkreis.de/site/LRA-ZAK-2017/get/documents_E-1298880956/lra_zak/LRA-ZAK-2018-Objekte/Amt/Jugendamt/Dateien/Kommunale%20Gesundheitskonferenz/Schulische%20Suchtpr%C3%A4vention%20im%20Zollernalbkreis%20Stand%2008-2017.pdf",
+      "https://lag-km.de/praevention/articles/perspektivo",
+      "https://medienbildung-muenchen.de/beitrag/mebm_rental_media/escape-room-koffer/",
+      "https://www.drogenhilfe.koeln/methodenkoffer-gluecksspiel/",
+      "https://www.praevention.at/institut/working-sober",
+      "https://suchtpraevention.webraum.rlp.de/vor-ort/",
+      "https://www.suchtpraevention-brb.de/projekte/der-gruene-koffer",
+      "https://www.okaj.ch/projekte/und-du-so",
+      "https://www.berlin-suchtpraevention.de/wp-content/uploads/2022/09/220908_Themenheft_67_September_2022_FINAL.pdf",
+      "https://www.crosspoint-duesseldorf.de/sites/default/files/anylink/CP_Angebotskatalog_2025_1.pdf",
+      "https://www.suchtgeschichte.nrw.de/download/Aktionstage/2024_Programm_OBK.pdf",
+      "https://de.wikipedia.org/wiki/Unlock%21",
+      "https://www.samowar.ch/horgen/site/assets/files/1107/2025_1_stark_doppelseiten.pdf",
+      "https://de.wikipedia.org/wiki/Escape_Game_%28Gesellschaftsspiel%29"
+    ],
+    "question": "Welche Anbieter bieten kooperative Suchtpräventionsspiele, selbst gestaltete Spielwelten oder wiederkehrende Episoden für Jugendliche?",
+    "status": "ok"
+  },
+  {
+    "answer": "Klicksafe bietet Rollenspiele, Hörspielanbieter gemeinsame Geräuschproduktion. Kreatives Audio und Medienpädagogik sind bekannte Bausteine; die kombinierte Pausenmechanik und Wiederkehr sind unvalidiert.",
+    "candidate_id": "C3",
+    "pages": [
+      "https://www.klicksafe.de/digitale-spiele",
+      "https://www.klicksafe.de/fileadmin/cms/download/Material/P%C3%A4d._Praxis/Zusatz_AB_Bew%C3%A4ltigungsstrategie_CM2017.pdf",
+      "https://www.klicksafe.de/mediensicher-in-die-schule",
+      "https://www.klicksafe.de/fileadmin/cms/download/Material/P%C3%A4d._Praxis/HR_Computerspiele_klicksafe.pdf",
+      "https://www.klicksafe.de/medienpaedagogik-in-den-sekundarstufen",
+      "https://www.klicksafe.de/back-to-school",
+      "https://rdl.de/sites/default/files/P%C3%A4dagogische%20Handreichung_H%C3%B6rspiel.pdf",
+      "https://www.kinderundjugendmedien.de/fachdidaktik/3179-hoerspieldidaktik?tmpl=component",
+      "https://www.lmz-bw.de/medienbildung/themen-von-a-bis-f/audio-arbeit/zuhoerbildung-in-kita-und-schule",
+      "https://www.medienpaedagogik-praxis.de/2012/12/09/horspiele-mit-dem-geschichtenkoffer/",
+      "https://www.perform.org.uk/child-development/drama-games/soundscape",
+      "https://www.vordenker.de/weigoni/mpaed.htm",
+      "https://www.diehoertheatrale.de/show-item/hoerspielworkshop-augen-zu-ohren-auf/",
+      "https://www.br.de/sogehtmedien/grundschule/grundschule-mit-team-timster-geraeusche-selber-machen-100.html",
+      "https://double-check.at/ressourcen/schultheatercoaches/materialien/bitte-ubertreiben",
+      "https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00026208/E27F7d01.pdf",
+      "https://www.verbraucherzentrale.de/sites/default/files/2023-10/vz_03_medien-sicher-nutzen_final.pdf",
+      "https://medienundbildung-rlp.de/fileadmin/dateien/Material/mec_Broschue_re_2014.pdf",
+      "https://de.wikipedia.org/wiki/Jeux_Dramatiques",
+      "https://de.wikipedia.org/wiki/Musiktheaterp%C3%A4dagogik"
+    ],
+    "question": "Welche Anbieter bieten kreative Hörspiel- und Geräuschmethoden sowie Rollenspiele für jugendliche Medienprävention?",
+    "status": "ok"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "kills": [],
+  "log_row": {
+    "anchor": "What's on: spielerische Methoden in Schule und Jugendhilfe",
+    "best_gap": "Drei unvalidierte Spielkonzepte; freiwillige Wiederkehr und Präventionswirkung ungeklärt.",
+    "candidates": 10,
+    "collider": "Live-Hörspielwerkstatt: Geräuschregie, Ensemble und Szeneneinsatz",
+    "distance": 4,
+    "survivors": 3
+  },
+  "retro": {
+    "learned": "10 Kandidaten erzeugt, 3 prior-art-geprüfte Konzeptleads behalten, 0 verworfen; 6 WebSearch-Aufrufe mit 13 exakten Queries archiviert. Theater, kooperative Exit-Spiele und Hörspielwerkstätten sind konkrete funktionale Nachbarn; keine Neuheits- oder Wirksamkeitsaussage.",
+    "mistake": "Spielspaß und Wiederholung dürfen weder aus einer hübschen Mechanik noch aus Anbietertexten abgeleitet werden. Wiederkehr über sechs Episoden ist zunächst ein Testplan, langfristige Suchtprävention separat zu untersuchen.",
+    "next_time": "Zwei Jugendgruppen mit Papierprototyp und vorhandener Kurzmethoden-Baseline drei Termine spielen lassen: beobachteter Spaß, freiwilliges Wiederkommen, Peer-Ausschluss und Aufwand; Fachkraft prüft Inhalte. Danach erst längere Evaluation mit getrennten Endpunkten zu Substanzen und Medien planen."
+  },
+  "survivors": [
+    {
+      "boden_type": "combinational",
+      "buildable": "Papierkarten und Alltagsgegenstände genügen; Moderation nach fachlich geprüfter Vorlage, keine Konsumdiagnose. Unvalidierter Test: 2 Gruppen mit je 6 Jugendlichen, drei Episoden gegen vorhandene Kurzmethoden; Spaß, freiwillige Wiederkehr, Redeanteile und Vorbereitungszeit prüfen, keine klinische Wirkung ableiten.",
+      "candidate_id": "C1",
+      "collider_mechanism": "Die Geräuschregie gibt einen gemeinsamen Einsatz: alle stoppen und spielen denselben Szenenanfang mit einer anderen Klangspur erneut. So werden mehrere erfundene Auswege tatsächlich gespielt; Humor entsteht durch neue Deutungen derselben Requisiten.",
+      "evidence_urls": [
+        "https://suchtkooperation.nrw/service/aktuelles/neuer-methodenkoffer-whats-on",
+        "https://www.diehoertheatrale.de/show-item/hoerspielworkshop-augen-zu-ohren-auf/",
+        "https://theater-requisit.de/angebot/schulen/"
+      ],
+      "gap": "Ob Jugendliche in kurzen, wiederkehrenden gemeinsamen Szenen mehrere sozial akzeptable Auswege erproben wollen, ist ungeklärt.",
+      "gap_stands_alone": false,
+      "idea": "Rückspul-Radio: 4–8 Jugendliche spielen eine 12-Minuten-Klangkomödie, frieren sie per Signal ein und erfinden zwei andere Enden; sechs zweiwöchentliche Episoden behalten Figuren, tauschen Rollen und Schauplätze.",
+      "rank": 1,
+      "removed_assumption": "Prävention muss richtige Antworten, persönliche Bekenntnisse oder Verzicht als Spielziel belohnen; hier wird eine gemeinsam erfundene Welt fortgesetzt.",
+      "who_has_problem": "Jugendliche und moderierende Schul- oder Jugendhilfefachkräfte sind dokumentierte Zielgruppen von What's on; Suchtpräventionsfachstellen passen als mögliche Empfänger. Individuelle Nachfrage, Zusage und Wiederkehrbereitschaft sind unbekannt.",
+      "why_now": "Ein analoger Prototyp war schon vor fünf Jahren möglich; kein neuer technischer Durchbruch wird behauptet. Auf ausdrücklichen Nutzerwunsch bleibt die Idee als spielerischer Konzeptlead erhalten; mögliche KI-Varianten sind optional."
+    },
+    {
+      "boden_type": "combinational",
+      "buildable": "Papierkarten und Alltagsgegenstände genügen; Moderation nach fachlich geprüfter Vorlage, keine Konsumdiagnose. Unvalidierter Test: 2 Gruppen mit je 6 Jugendlichen, drei Episoden gegen vorhandene Kurzmethoden; Spaß, freiwillige Wiederkehr, Redeanteile und Vorbereitungszeit prüfen, keine klinische Wirkung ableiten.",
+      "candidate_id": "C2",
+      "collider_mechanism": "Das Ensemble teilt Stimmen und Geräuschemachen auf, sodass kein Einzelner die Welt vollständig steuert. Ein Ort besteht erst, wenn beide Gruppen hörbar zusammenpassen; der Stadtplan erhält je Episode neue gemeinsam erfundene Auswege.",
+      "evidence_urls": [
+        "https://suchtkooperation.nrw/service/aktuelles/neuer-methodenkoffer-whats-on",
+        "https://www.diehoertheatrale.de/show-item/hoerspielworkshop-augen-zu-ohren-auf/",
+        "https://www.ginko-stiftung.de/Fachstelle/Home-kommunal/3019"
+      ],
+      "gap": "Ob selbst gestaltete gemeinsame Freizeitwelten über einzelne Workshops hinaus freiwillig fortgesetzt werden, ist ungeklärt.",
+      "gap_stands_alone": false,
+      "idea": "Stadt der tausend Auswege: 4–10 Jugendliche erfinden mit Papierstadtplan und Alltagsgeräuschen Orte und drei gemeinsame Auswege aus fiktionalem Stress; monatlich 20 Minuten wächst die Stadt, neue Mitspielende können sofort eine Klangrolle übernehmen.",
+      "rank": 2,
+      "removed_assumption": "Prävention muss richtige Antworten, persönliche Bekenntnisse oder Verzicht als Spielziel belohnen; hier wird eine gemeinsam erfundene Welt fortgesetzt.",
+      "who_has_problem": "Jugendliche und moderierende Schul- oder Jugendhilfefachkräfte sind dokumentierte Zielgruppen von What's on; Suchtpräventionsfachstellen passen als mögliche Empfänger. Individuelle Nachfrage, Zusage und Wiederkehrbereitschaft sind unbekannt.",
+      "why_now": "Ein analoger Prototyp war schon vor fünf Jahren möglich; kein neuer technischer Durchbruch wird behauptet. Auf ausdrücklichen Nutzerwunsch bleibt die Idee als spielerischer Konzeptlead erhalten; mögliche KI-Varianten sind optional."
+    },
+    {
+      "boden_type": "combinational",
+      "buildable": "Papierkarten und Alltagsgegenstände genügen; Moderation nach fachlich geprüfter Vorlage, keine Konsumdiagnose. Unvalidierter Test: 2 Gruppen mit je 6 Jugendlichen, drei Episoden gegen vorhandene Kurzmethoden; Spaß, freiwillige Wiederkehr, Redeanteile und Vorbereitungszeit prüfen, keine klinische Wirkung ableiten.",
+      "candidate_id": "C3",
+      "collider_mechanism": "Ein vereinbarter Geräuscheinsatz synchronisiert Sprecher und Klangcrew: eine Pause stoppt beide Rollen, eine neue gemeinsame Klangkombination setzt die Szene fort. Keine Person muss eine private Erfahrung offenlegen oder für einen Alleingang Punkte sammeln.",
+      "evidence_urls": [
+        "https://suchtkooperation.nrw/service/aktuelles/neuer-methodenkoffer-whats-on",
+        "https://www.diehoertheatrale.de/show-item/hoerspielworkshop-augen-zu-ohren-auf/",
+        "https://www.ins-netz-gehen.info/net-piloten/"
+      ],
+      "gap": "Ob Jugendliche Gruppendruck und eigene Pausenwünsche ohne private Offenlegung spielerisch aushandeln wollen, ist ungeklärt.",
+      "gap_stands_alone": false,
+      "idea": "Pausenpiraten auf Sendung: 4–8 Jugendliche lösen in 10–15 Minuten eine absurde Funkmission durch abgestimmte Pausen- und Neustartklänge; wöchentlich über sechs Termine wechseln Regie und Crew, die Gruppe schreibt die nächste Mission.",
+      "rank": 3,
+      "removed_assumption": "Prävention muss richtige Antworten, persönliche Bekenntnisse oder Verzicht als Spielziel belohnen; hier wird eine gemeinsam erfundene Welt fortgesetzt.",
+      "who_has_problem": "Jugendliche und moderierende Schul- oder Jugendhilfefachkräfte sind dokumentierte Zielgruppen von What's on; Suchtpräventionsfachstellen passen als mögliche Empfänger. Individuelle Nachfrage, Zusage und Wiederkehrbereitschaft sind unbekannt.",
+      "why_now": "Ein analoger Prototyp war schon vor fünf Jahren möglich; kein neuer technischer Durchbruch wird behauptet. Auf ausdrücklichen Nutzerwunsch bleibt die Idee als spielerischer Konzeptlead erhalten; mögliche KI-Varianten sind optional."
+    }
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"lacunar-20261015-playful-addiction-prevention"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "lacunar-20261015-playful-addiction-prevention-t01",
+    "pages": [
+      "https://www.ins-netz-gehen.info/beratung-hilfe/informationen/",
+      "https://www.ins-netz-gehen.info/downloads/",
+      "https://www.berlin-suchtpraevention.de/berliner-praeventionsparcours-cannabis-neu/",
+      "https://www.ins-netz-gehen.info/net-piloten/",
+      "https://www.berlin-suchtpraevention.de/themen/cannabis/",
+      "https://www.ins-netz-gehen.info/fileadmin/user_upload/Materialien/Flyer_BZgA_Mediennutzung_09-2023_Einzelseiten.pdf",
+      "https://www.ins-netz-gehen.info/fileadmin/user_upload/Materialien/BZgA_gut_hinsehen-gut_zuhoeren_aktiv_gestalten_Elternratgeber_20281000.pdf",
+      "https://www.ins-netz-gehen.de/fileadmin/user_upload/Materialien/2022_BZgA_Online_sein_mit_Mass_und_Spass_33215001.pdf",
+      "https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/5_Publikationen/Drogen_und_Sucht/Broschueren/2015_Drogenbericht_web_010715.pdf",
+      "https://www.ls-suchtfragen-lsa.de/projekte/bzga_klarsichtparcours/",
+      "https://www.berlin-suchtpraevention.de/15jahrefachstelle/suchtpraevention-zum-mitnehmen/",
+      "https://www.berlin-suchtpraevention.de/projekte/familie/suchtzuhause/interaktiver-ratgeber/",
+      "https://www.bioeg.de/forschung/studien/abgeschlossene-studien/studien-ab-1997/suchtpraevention/evaluation-des-klarsicht-mitmach-parcours-tabak-und-alkohol/",
+      "https://www.teltow-flaeming.de/praevention-tabak-alkohol",
+      "https://www.hebelschule-singen.org/2018/04/13/urban-skillz-passion-meets-school-leidenschaft-trifft-schule/",
+      "https://www.nls-online.de/portfolio/klarsicht-mitmachparcours-zur-tabak-und-alkoholpraevention-kofferversion/",
+      "https://de.wikipedia.org/wiki/So_geht_Medien",
+      "https://de.wikipedia.org/wiki/Medienscout",
+      "https://de.wikipedia.org/wiki/Spieleratgeber-NRW",
+      "https://de.wikipedia.org/wiki/Jugendmedienschutz"
+    ],
+    "status": "ok",
+    "summary": "Bestehende interaktive Suchtpräventionsmethoden und Jugendmedienangebote",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261015-playful-addiction-prevention-t02",
+    "pages": [
+      "https://wiki.improvresourcecenter.com/index.php?title=TheatreSports",
+      "https://suchtkooperation.nrw/service/aktuelles/neuer-methodenkoffer-whats-on",
+      "https://suchtkooperation.nrw/themen/gluexxit-wer-nicht-zockt-gewinnt",
+      "https://www.scribd.com/document/1069955164/Theatresports-2018-Manual",
+      "https://suchtkooperation.nrw/fileadmin/user_upload/Dokumentation_fuer_Homepage__005_.pdf",
+      "https://www.mediensuchtpraevention-nrw.de/projekte/checkpoint",
+      "https://www.whatson.nrw.de/",
+      "https://suchtkooperation.nrw/themen",
+      "https://lf-integrationundsucht.nrw/suchtkooperation-nrw/",
+      "https://suchtkooperation.nrw/fileadmin/user_upload/Konzept_2024.pdf",
+      "https://improvarchive.org/formats/theatresports",
+      "https://didyeah.com/facts/theatresports-made-competition-part-of-improv-but-not-a-written-dialogue",
+      "https://impro.global/formats/theatresports",
+      "https://suchtkooperation.nrw/fileadmin/user_upload/2024_Suchtpraevention_2024.pdf",
+      "https://gesundheitsfoerderung.bildung-rp.de/fileadmin/user_upload/gesundheitsfoerderung.bildung-rp.de/Suchtvorbeugung/46_BR_Auf-der-Suche-nach.pdf",
+      "https://en.wikipedia.org/wiki/Improvisational_theatre",
+      "https://it.wikipedia.org/wiki/Theatresports",
+      "https://en.wikipedia.org/wiki/Theatresports",
+      "http://www.Theatresports.org/",
+      "https://www.berlin-suchtpraevention.de/wp-content/uploads/2022/11/221110_Methodensammlung_Gluecksspiel_DigMedien_FINAL_Ansicht.pdf"
+    ],
+    "status": "ok",
+    "summary": "Methodenkoffer, kreative Kooperation und Bühnenmechanik",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261015-playful-addiction-prevention-t03",
+    "pages": [
+      "https://www.ins-netz-gehen.info/lehrkraefte-schule/unterrichtsmethoden/informationen-zu-den-net-piloten-fuer-lehrkraefte/",
+      "https://www.ins-netz-gehen.de/net-piloten/net-piloten-ausbildung/",
+      "https://www.ins-netz-gehen.de/net-piloten/interner-bereich-net-piloten/",
+      "https://www.ins-netz-gehen.info/net-piloten/informationen-rund-um-die-netpiloten/",
+      "https://www.ins-netz-gehen.info/fachkraefte/weiterbildung-digitale-medien/die-net-piloten-informationen-fuer-fachkraefte/",
+      "https://www.ins-netz-gehen.info/fileadmin/user_upload/Downloadbereich/6_Ausbildung_Net-Piloten_Projektwoche_2023.pdf",
+      "https://www.ins-netz-gehen.de/net-piloten/die-net-piloten-ein-innovatives-praeventionsprojekt-fuer-jugendliche/",
+      "https://www.ins-netz-gehen.de/net-piloten/net-piloten-projekt-fuer-schulklassen/",
+      "https://www.ins-netz-gehen.de/net-piloten/das-projekt-net-piloten/",
+      "https://www.drugcom.de/materialien/",
+      "https://www.drugcom.de/newsuebersicht/topthemen/verloren-in-der-virtuellen-welt/",
+      "https://www.ins-netz-gehen.info/beratung-hilfe/informationen/",
+      "https://www.ins-netz-gehen.de/fileadmin/user_upload/Downloads/PDF_Net-Piloten_Info_2022.pdf",
+      "https://www.drugcom.de/suche/",
+      "https://www.drugcom.de/fileadmin/user_upload/meta/downloads/Jahresbericht_drugcom_2016_bf.pdf",
+      "https://shop.bzga.de/pdf/33230005.pdf",
+      "https://www.hhg-bonn.de/download/mittelstufe/Ablaufplan_Ausbildung_Net-Piloten.pdf",
+      "https://shop.bzga.de/pdf/33215029.pdf",
+      "https://de.wikipedia.org/wiki/Drogenpr%C3%A4vention",
+      "https://de.wikipedia.org/wiki/Suchtpr%C3%A4vention"
+    ],
+    "status": "ok",
+    "summary": "Peer-Workshops und Materialien für Jugendliche",
+    "tool": "search"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld topic_check, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "hits": [],
+    "term": "improvis"
+  },
+  {
+    "hits": [],
+    "term": "hörspiel"
+  },
+  {
+    "hits": [],
+    "term": "suchttheater"
+  }
+]
