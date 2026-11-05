@@ -1,0 +1,303 @@
+# Proposals from plan lab-2026-11-05-amelie-lab-scarcity-scarcity-20261015-long-term-addiction-prevent-18cc84b1619e212b
+
+Packet: amelie-lab-scarcity-scarcity-20261015-long-term-addiction-prevent-18cc84b1619e212b · Candidate: amelie-lab-scarcity-scarcity-20261015-long-term-addiction-prevent-18cc84b1619e212b
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] scarcity: amelie-lab-scarcity-scarcity-20261015-long-term-addiction-prevent-18cc84b1619e212b. Absicht: Langfristige Suchtprävention in Deutschland: tragfähige Umsetzung, Evaluation und Ressourcen. Modell: Codex subagent (stand-in; searches: WebSearch; no Vertex). Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "cost_usd": 0.0,
+  "model_calls": 0,
+  "search_calls": 6,
+  "search_queries": 10
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld constraint, Teil 1 (laut gespeicherter Datei):
+{
+  "constraint": {
+    "closed_workaround": "Alle Jahreszahlen einfach zusammenzuführen oder fehlende Zuordnungen sprachmodellgestützt zu ergänzen würde nicht vergleichbare Daten als gleichartig behandeln.",
+    "constraint_class": "informational",
+    "evidence_quote": "Aufgrund von Änderungen in einzelnen Kategorien war ein vollständiger Vergleich jedoch nicht durchgängig möglich",
+    "source_label": "LSS BW, Bericht zur Suchtprävention 2024, November 2025, Einleitung S. 3",
+    "source_url": "https://lss-bw.de/wp-content/uploads/2025/11/2025_11_10_Dot.sys_Bericht_2024.pdf",
+    "statement": "Geänderte Kategorien verhindern bei den veröffentlichten Dot.sys-Jahresberichten einen durchgehend vollständigen Vergleich; aus den vorliegenden Tabellen lassen sich fehlende Zuordnungen nicht rekonstruieren.",
+    "who_bears_it": "Die AG Suchtprävention der LSS BW diskutiert und bewertet die jährlich von Fachstellen dokumentierten Maßnahmen; dies betrifft Aktivitätsberichterstattung, nicht automatisch Langzeitwirkung.",
+    "why_binding_now": "Der Bericht für 2024 benennt diese Grenze beim Vergleich mit 2021–2023 ausdrücklich; ein KI-Modell kann fehlende Kategorienzuordnungen nicht als Beobachtung erzeugen."
+  },
+  "contract_version": "1.0.0",
+  "rejected_soft": [
+    "Langfristige Prävention soll bequem sein.",
+    "Fachstellen brauchen grundsätzlich eine neue KI-App."
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.1.0"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-10-15T20:26:16.317340+00:00"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Langfristige Suchtprävention in Deutschland: tragfähige Umsetzung, Evaluation und Ressourcen"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld invention, Teil 1 (laut gespeicherter Datei):
+{
+  "candidates": [
+    {
+      "check_queries": [
+        "Welche Hilfen bietet die Landesstelle für Suchtfragen Baden-Württemberg zum Vergleich geänderter Dot.sys-Kategorien zwischen Jahresberichten?"
+      ],
+      "id": "C1",
+      "idea": "Eine geprüfte Vergleichsmatrix markiert für den jährlichen LSS-Bericht nur tatsächlich vergleichbare Dot.sys-Kategorien; unklare Zuordnungen bleiben offen.",
+      "recipient": "Landesstelle für Suchtfragen Baden-Württemberg, AG Suchtprävention",
+      "recipient_kind": "association",
+      "why_now": "Hypothese: Sprachmodelle könnten PDF-Belegstellen vorstrukturieren; keine Quelle belegt hier einen nach 2024 entfernten technischen Blocker. Vergleich und Prüfung waren 2018 manuell möglich.",
+      "without_constraint": "Bei vollständigen, stabil gleich definierten Kategorien entfällt die Vergleichsmatrix; gewöhnliches Subtrahieren gleichartiger Tabellen genügt."
+    },
+    {
+      "check_queries": [
+        "Welche Hilfen bieten BIÖG und Landesstellen, um bei Dot.sys-Berichten fehlende Erfassung von einer tatsächlichen Abnahme suchtpräventiver Maßnahmen zu unterscheiden?"
+      ],
+      "id": "C2",
+      "idea": "Ein Belegblatt trennt bei Jahresvergleichen fehlende Erfassung, geänderte Kategorien und echte beobachtete Unterschiede, ohne fehlende Werte zu schätzen.",
+      "recipient": "Landesstelle für Suchtfragen Baden-Württemberg, AG Suchtprävention",
+      "recipient_kind": "association",
+      "why_now": "Hypothese: Sprachmodelle könnten PDF-Belegstellen vorstrukturieren; keine Quelle belegt hier einen nach 2024 entfernten technischen Blocker. Vergleich und Prüfung waren 2018 manuell möglich.",
+      "without_constraint": "Bei vollständiger, vergleichbarer Erfassung entfällt die Trennung von Erfassungslücke und Beobachtung; das Belegblatt wird trivial."
+    },
+    {
+      "check_queries": [
+        "Welche Vorlagen nutzen Landesstellen für Suchtfragen, um die Grenzen von Dot.sys-Berichten gegenüber langfristigen Wirksamkeitsnachweisen zu dokumentieren?"
+      ],
+      "id": "C3",
+      "idea": "Eine Nachweisgrenzen-Karte trennt im Jahresbericht Maßnahmenzahlen und belegte Langzeitwirkung und nennt pro Aussage das fehlende Evaluationsdesign.",
+      "recipient": "Landesstelle für Suchtfragen Baden-Württemberg, AG Suchtprävention",
+      "recipient_kind": "association",
+      "why_now": "Hypothese: Sprachmodelle könnten PDF-Belegstellen vorstrukturieren; keine Quelle belegt hier einen nach 2024 entfernten technischen Blocker. Vergleich und Prüfung waren 2018 manuell möglich.",
+      "without_constraint": "Bei vollständig vergleichbaren Maßnahmenzahlen bleibt die Trennung von Aktivität und Wirkung dennoch wichtig; der Ansatz kollabiert nicht und wird verworfen."
+    },
+    {
+      "check_queries": [
+        "Welche manuell geprüften Zuordnungshilfen bestehen für geänderte Dot.sys-Kategorien?"
+      ],
+      "id": "C4",
+      "idea": "Ein Anfragegenerator erstellt aus nicht vergleichbaren Tabellen präzise Rückfragen an die zuständigen Datenhalter statt neue Trendwerte.",
+      "recipient": "Landesstelle für Suchtfragen Baden-Württemberg, AG Suchtprävention",
+      "recipient_kind": "association",
+      "why_now": "Hypothese: Sprachmodelle könnten PDF-Belegstellen vorstrukturieren; keine Quelle belegt hier einen nach 2024 entfernten technischen Blocker. Vergleich und Prüfung waren 2018 manuell möglich.",
+      "without_constraint": "Bei vollständigen und identisch definierten Eingaben fehlen die offenen Vergleichsfragen; der Generator hat keinen Auftrag."
+    },
+    {
+      "check_queries": [
+        "Welche manuell geprüften Zuordnungshilfen bestehen für geänderte Dot.sys-Kategorien?"
+      ],
+      "id": "C5",
+      "idea": "Eine versionierte Übergabedatei bewahrt die manuell geprüften Kategorienentscheidungen für den nächsten Jahresbericht.",
+      "recipient": "Landesstelle für Suchtfragen Baden-Württemberg, AG Suchtprävention",
+      "recipient_kind": "association",
+      "why_now": "Hypothese: Sprachmodelle könnten PDF-Belegstellen vorstrukturieren; keine Quelle belegt hier einen nach 2024 entfernten technischen Blocker. Vergleich und Prüfung waren 2018 manuell möglich.",
+      "without_constraint": "Bei unveränderlichen, vollständigen Kategorien entfällt die Versionsentscheidung; eine gewöhnliche Dateiablage reicht."
+    },
+    {
+      "check_queries": [
+        "Welche manuell geprüften Zuordnungshilfen bestehen für geänderte Dot.sys-Kategorien?"
+      ],
+      "id": "C6",
+      "idea": "Ein Sperrvermerk-Export verhindert, dass bekannte Kategorienbrüche in automatisch erstellten Trendgrafiken verschwinden.",
+      "recipient": "Landesstelle für Suchtfragen Baden-Württemberg, AG Suchtprävention",
+      "recipient_kind": "association",
+      "why_now": "Hypothese: Sprachmodelle könnten PDF-Belegstellen vorstrukturieren; keine Quelle belegt hier einen nach 2024 entfernten technischen Blocker. Vergleich und Prüfung waren 2018 manuell möglich.",
+      "without_constraint": "Bei identischen, vollständigen Kategorien existiert kein Kategorienbruch; der besondere Sperrvermerk entfällt."
+    }
+  ],
+  "contract_version": "1.1.0",
+  "shortlist": [
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "thesis": "Bei nicht durchgängig vergleichbaren Jahreskategorien muss jede Trendaussage ihren Vergleichsbereich und unbekannte Zuordnungen offenlegen."
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"<!-- proposed by the Lab's Scarcity agent, run scarcity-20261015-long-term-addiction-prevention; nothing was written to Amélie -->\n| 2026-10-15 | Lab | Geänderte Kategorien verhindern bei den veröffentlichten Dot.sys-Jahresberichten einen durchgehend vollständigen Vergleich; aus den vorliegenden Tabellen lassen sich fehlende Zuordnungen nicht rekonstruieren. (informational) | 6 | 0 (ungeprüft): none | — |\n\n### Scarcity run scarcity-20261015-long-term-addiction-prevention — 2026-10-15 (intent: Langfristige Suchtprävention in Deutschland: tragfähige Umsetzung, Evaluation und Ressourcen)\n- **Learned:** Konkrete Aufgabe: AG Suchtprävention bewertet im November-2025-Bericht Aktivitäten des Jahres 2024. Günstigste belegte Basis: Dot.sys-Auswertung, öffentliche PDF-Tabellen und fachliche Diskussion; Ressourcenmangel und kausale Langzeitwirkung wurden nicht daraus abgeleitet.\n- **Mistake:** Sechs Hypothesen, drei priorisierte Folgeprüfungen, sechs Abbrüche, null Überlebende; Quellenfunde sind keine unabhängigen Wirksamkeitsnachweise. Fehlende neue Technik allein wäre kein Abbruchgrund: Auch messbar weniger Zeit oder Fehler gegenüber Tabellenprüfung würde Nutzen begründen, ist hier jedoch nicht belegt.\n- **Next time:** Von der LSS zwei anonymisierte Fälle mit und zwei ohne Kategorienbruch samt manueller Entscheidung und Bearbeitungszeit sowie verfügbare Kategorienversionen erfragen; erst danach gegen die bestehende Tabellenprüfung testen. Null Überlebende schließt nur diesen Berichtsvergleichszweig.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): Welche Hilfen bietet die Landesstelle für Suchtfragen Baden-Württemberg zum Vergleich geänderter Dot.sys-Kategorien zwischen Jahresberichten? -> https://lss-bw.de/wp-content/uploads/2025/11/2025_11_10_Dot.sys_Bericht_2024.pdf, https://lss-bw.de/wp-content/uploads/2023/09/2023_08_29_Dotsys-Bericht_2022.pdf, https://sozialministerium.baden-wuerttemberg.de/de/gesundheit-pflege/sucht/qualitaetsprogramm-suchtpraevention-bw\n  - C2 (ok): Welche Hilfen bieten BIÖG und Landesstellen, um bei Dot.sys-Berichten fehlende Erfassung von einer tatsächlichen Abnahme suchtpräventiver Maßnahmen zu unterscheiden? -> https://lss-bw.de/wp-content/uploads/2025/11/2025_11_10_Dot.sys_Bericht_2024.pdf, https://www.dotsys-online.de/, https://www.hls-online.org/arbeitsbereiche/suchtpraevention/projekte/dotsys/\n  - C3 (ok): Welche Vorlagen nutzen Landesstellen für Suchtfragen, um die Grenzen von Dot.sys-Berichten gegenüber langfristigen Wirksamkeitsnachweisen zu dokumentieren? -> https://lss-bw.de/wp-content/uploads/2025/11/2025_11_10_Dot.sys_Bericht_2024.pdf, https://www.hls-online.org/arbeitsbereiche/suchtpraevention/projekte/dotsys/, https://sozialministerium.baden-wuerttemberg.de/de/gesundheit-pflege/sucht/qualitaetsprogramm-suchtpraevention-bw\n"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"Codex subagent (stand-in; searches: WebSearch; no Vertex)"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld prior_art, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "answer": "Der Bericht 2022 und der Bericht 2024 dokumentieren Vergleichsgrenzen; die jährliche fachliche Diskussion ist bereits Teil des Verfahrens. Eine vollständige geprüfte Zuordnungsmatrix wurde in diesen Treffern nicht belegt; das beweist keine Lücke.",
+    "candidate_id": "C1",
+    "pages": [
+      "https://lss-bw.de/wp-content/uploads/2025/11/2025_11_10_Dot.sys_Bericht_2024.pdf",
+      "https://lss-bw.de/wp-content/uploads/2023/09/2023_08_29_Dotsys-Bericht_2022.pdf",
+      "https://sozialministerium.baden-wuerttemberg.de/de/gesundheit-pflege/sucht/qualitaetsprogramm-suchtpraevention-bw"
+    ],
+    "question": "Welche Hilfen bietet die Landesstelle für Suchtfragen Baden-Württemberg zum Vergleich geänderter Dot.sys-Kategorien zwischen Jahresberichten?",
+    "status": "ok"
+  },
+  {
+    "answer": "Dot.sys und Landesstellen dokumentieren und werten Maßnahmen aus; die LSS benennt freiwillige Erfassung und technische Schwierigkeiten. Ein quantifizierter zusätzlicher Bedarf gegenüber fachlicher Tabellenprüfung bleibt unbekannt.",
+    "candidate_id": "C2",
+    "pages": [
+      "https://lss-bw.de/wp-content/uploads/2025/11/2025_11_10_Dot.sys_Bericht_2024.pdf",
+      "https://www.dotsys-online.de/",
+      "https://www.hls-online.org/arbeitsbereiche/suchtpraevention/projekte/dotsys/"
+    ],
+    "question": "Welche Hilfen bieten BIÖG und Landesstellen, um bei Dot.sys-Berichten fehlende Erfassung von einer tatsächlichen Abnahme suchtpräventiver Maßnahmen zu unterscheiden?",
+    "status": "ok"
+  },
+  {
+    "answer": "Dot.sys bietet Jahresauswertungen, Landesstellen benennen Aussagegrenzen und Schulungen ergänzen die Dokumentation. Maßnahmenzahlen allein sind kein Beleg langfristiger kausaler Wirkung; kein neuer technischer Blocker belegt.",
+    "candidate_id": "C3",
+    "pages": [
+      "https://lss-bw.de/wp-content/uploads/2025/11/2025_11_10_Dot.sys_Bericht_2024.pdf",
+      "https://www.hls-online.org/arbeitsbereiche/suchtpraevention/projekte/dotsys/",
+      "https://sozialministerium.baden-wuerttemberg.de/de/gesundheit-pflege/sucht/qualitaetsprogramm-suchtpraevention-bw"
+    ],
+    "question": "Welche Vorlagen nutzen Landesstellen für Suchtfragen, um die Grenzen von Dot.sys-Berichten gegenüber langfristigen Wirksamkeitsnachweisen zu dokumentieren?",
+    "status": "ok"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "kills": [
+    {
+      "candidate_id": "C1",
+      "failed_checks": [
+        "why_now",
+        "problem_evidence"
+      ],
+      "reason": "Ein konkreter Zusatzbedarf gegenüber PDF-Lektüre, Dot.sys-Auswertung und fachlicher Tabellenprüfung ist nicht belegt; kein nach 2024 beseitigter technischer Blocker und keine gemessene Ersparnis."
+    },
+    {
+      "candidate_id": "C2",
+      "failed_checks": [
+        "why_now",
+        "problem_evidence"
+      ],
+      "reason": "Ein konkreter Zusatzbedarf gegenüber PDF-Lektüre, Dot.sys-Auswertung und fachlicher Tabellenprüfung ist nicht belegt; kein nach 2024 beseitigter technischer Blocker und keine gemessene Ersparnis."
+    },
+    {
+      "candidate_id": "C3",
+      "failed_checks": [
+        "why_now",
+        "not_forced"
+      ],
+      "reason": "Die Unterscheidung von Aktivität und Langzeitwirkung bleibt auch ohne Kategorienbruch notwendig; damit scheitert der Kollapstest. Kein nach 2024 beseitigter technischer Blocker belegt."
+    },
+    {
+      "candidate_id": "C4",
+      "failed_checks": [
+        "why_now",
+        "problem_evidence"
+      ],
+      "reason": "Ein konkreter Zusatzbedarf gegenüber PDF-Lektüre, Dot.sys-Auswertung und fachlicher Tabellenprüfung ist nicht belegt; kein nach 2024 beseitigter technischer Blocker und keine gemessene Ersparnis."
+    },
+    {
+      "candidate_id": "C5",
+      "failed_checks": [
+        "why_now",
+        "problem_evidence"
+      ],
+      "reason": "Ein konkreter Zusatzbedarf gegenüber PDF-Lektüre, Dot.sys-Auswertung und fachlicher Tabellenprüfung ist nicht belegt; kein nach 2024 beseitigter technischer Blocker und keine gemessene Ersparnis."
+    },
+    {
+      "candidate_id": "C6",
+      "failed_checks": [
+        "why_now",
+        "problem_evidence"
+      ],
+      "reason": "Ein konkreter Zusatzbedarf gegenüber PDF-Lektüre, Dot.sys-Auswertung und fachlicher Tabellenprüfung ist nicht belegt; kein nach 2024 beseitigter technischer Blocker und keine gemessene Ersparnis."
+    }
+  ],
+  "log_row": {
+    "best_gap": "",
+    "candidates": 6,
+    "constraint": "Geänderte Kategorien verhindern bei den veröffentlichten Dot.sys-Jahresberichten einen durchgehend vollständigen Vergleich; aus den vorliegenden Tabellen lassen sich fehlende Zuordnungen nicht rekonstruieren.",
+    "constraint_class": "informational",
+    "survivors": 0
+  },
+  "retro": {
+    "learned": "Konkrete Aufgabe: AG Suchtprävention bewertet im November-2025-Bericht Aktivitäten des Jahres 2024. Günstigste belegte Basis: Dot.sys-Auswertung, öffentliche PDF-Tabellen und fachliche Diskussion; Ressourcenmangel und kausale Langzeitwirkung wurden nicht daraus abgeleitet.",
+    "mistake": "Sechs Hypothesen, drei priorisierte Folgeprüfungen, sechs Abbrüche, null Überlebende; Quellenfunde sind keine unabhängigen Wirksamkeitsnachweise. Fehlende neue Technik allein wäre kein Abbruchgrund: Auch messbar weniger Zeit oder Fehler gegenüber Tabellenprüfung würde Nutzen begründen, ist hier jedoch nicht belegt.",
+    "next_time": "Von der LSS zwei anonymisierte Fälle mit und zwei ohne Kategorienbruch samt manueller Entscheidung und Bearbeitungszeit sowie verfügbare Kategorienversionen erfragen; erst danach gegen die bestehende Tabellenprüfung testen. Null Überlebende schließt nur diesen Berichtsvergleichszweig."
+  },
+  "survivors": []
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"scarcity-20261015-long-term-addiction-prevention"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "scarcity-20261015-long-term-addiction-prevention-t01",
+    "pages": [
+      "https://www.gkv-spitzenverband.de/media/dokumente/krankenversicherung_1/praevention__selbsthilfe__beratung/praevention/praevention_leitfaden/20251218_Leitfaden_Pravention_2025_barrierefrei.pdf",
+      "https://www.gkv-spitzenverband.de/krankenversicherung/praevention_selbsthilfe_beratung/praevention_und_bgf/leitfaden_praevention/leitfaden_praevention.jsp",
+      "https://www.dhs.de/fileadmin/user_upload/pdf/Unsere_Arbeit/REITOX_BERICHT_2025_DE_WB_04_Praevention.pdf"
+    ],
+    "status": "ok",
+    "summary": "WebSearch: GKV-Fördergrenzen sowie DHS langfristige Umsetzung; 2 Suchanfragen",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015-long-term-addiction-prevention-t02",
+    "pages": [
+      "https://lss-bw.de/wp-content/uploads/2025/11/2025_11_10_Dot.sys_Bericht_2024.pdf",
+      "https://lss-bw.de/wp-content/uploads/2023/09/2023_08_29_Dotsys-Bericht_2022.pdf",
+      "https://www.dotsys-online.de/",
+      "https://sozialministerium.baden-wuerttemberg.de/de/gesundheit-pflege/sucht/qualitaetsprogramm-suchtpraevention-bw",
+      "https://www.gkv-spitzenverband.de/media/dokumente/krankenversicherung_1/praevention__selbsthilfe__beratung/praevention/praevention_leitfaden/20251218_Leitfaden_Pravention_2025_barrierefrei.pdf"
+    ],
+    "status": "ok",
+    "summary": "WebSearch: Verstetigungshilfen und Dot.sys-Dokumentation; 2 Suchanfragen; aktuellen GKV-PDF geöffnet",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015-long-term-addiction-prevention-t03",
+    "pages": [
+      "https://www.hls-online.org/arbeitsbereiche/suchtpraevention/projekte/dotsys/",
+      "https://sozialministerium.baden-wuerttemberg.de/de/gesundheit-pflege/sucht/qualitaetsprogramm-suchtpraevention-bw",
+      "https://lss-bw.de/wp-content/uploads/2024/12/2024_11_15_Dot.sys_Bericht_2023.pdf"
+    ],
+    "status": "ok",
+    "summary": "WebSearch: Kategorienvergleich, Export und Evaluation; 3 Suchanfragen",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015-long-term-addiction-prevention-t04",
+    "pages": [
+      "https://lss-bw.de/wp-content/uploads/2025/11/2025_11_10_Dot.sys_Bericht_2024.pdf",
+      "https://lss-bw.de/wp-content/uploads/2023/09/2023_08_29_Dotsys-Bericht_2022.pdf",
+      "https://sozialministerium.baden-wuerttemberg.de/de/gesundheit-pflege/sucht/qualitaetsprogramm-suchtpraevention-bw"
+    ],
+    "status": "ok",
+    "summary": "WebSearch prior-art C1: Welche Hilfen bietet die Landesstelle für Suchtfragen Baden-Württemberg zum Vergleich geänderter Dot.sys-Kategorien zwischen Jahresberichten?",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015-long-term-addiction-prevention-t05",
+    "pages": [
+      "https://lss-bw.de/wp-content/uploads/2025/11/2025_11_10_Dot.sys_Bericht_2024.pdf",
+      "https://www.dotsys-online.de/",
+      "https://www.hls-online.org/arbeitsbereiche/suchtpraevention/projekte/dotsys/"
+    ],
+    "status": "ok",
+    "summary": "WebSearch prior-art C2: Welche Hilfen bieten BIÖG und Landesstellen, um bei Dot.sys-Berichten fehlende Erfassung von einer tatsächlichen Abnahme suchtpräventiver Maßnahmen zu unterscheiden?",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-20261015-long-term-addiction-prevention-t06",
+    "pages": [
+      "https://lss-bw.de/wp-content/uploads/2025/11/2025_11_10_Dot.sys_Bericht_2024.pdf",
+      "https://www.hls-online.org/arbeitsbereiche/suchtpraevention/projekte/dotsys/",
+      "https://sozialministerium.baden-wuerttemberg.de/de/gesundheit-pflege/sucht/qualitaetsprogramm-suchtpraevention-bw"
+    ],
+    "status": "ok",
+    "summary": "WebSearch prior-art C3: Welche Vorlagen nutzen Landesstellen für Suchtfragen, um die Grenzen von Dot.sys-Berichten gegenüber langfristigen Wirksamkeitsnachweisen zu dokumentieren?",
+    "tool": "search"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld topic_check, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "hits": [],
+    "term": "Suchtprävention"
+  }
+]
