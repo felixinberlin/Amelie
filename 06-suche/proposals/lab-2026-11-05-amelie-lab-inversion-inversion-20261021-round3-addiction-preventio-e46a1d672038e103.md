@@ -1,0 +1,453 @@
+# Proposals from plan lab-2026-11-05-amelie-lab-inversion-inversion-20261021-round3-addiction-preventio-e46a1d672038e103
+
+Packet: amelie-lab-inversion-inversion-20261021-round3-addiction-preventio-e46a1d672038e103 · Candidate: amelie-lab-inversion-inversion-20261021-round3-addiction-preventio-e46a1d672038e103
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] inversion: amelie-lab-inversion-inversion-20261021-round3-addiction-preventio-e46a1d672038e103. Absicht: Eine weitere Runde zur langfristigen Suchtprävention: neue spielerische praktische Projekte für Jugendliche auf Deutsch, über Radio, Festival und administrative Übergaben hinaus. Analoge Nützlichkeit darf genügen; keine Pflicht zu neuer KI.. Modell: Codex subagent (stand-in; searches: WebSearch; no Lab provider calls). Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "cost_usd": 0,
+  "model_calls": 0,
+  "search_calls": 5,
+  "search_queries": 5
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.1.0"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-10-21T10:59:24+02:00"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Eine weitere Runde zur langfristigen Suchtprävention: neue spielerische praktische Projekte für Jugendliche auf Deutsch, über Radio, Festival und administrative Übergaben hinaus. Analoge Nützlichkeit darf genügen; keine Pflicht zu neuer KI."
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"<!-- proposed by the Lab's Inversion agent, run inversion-20261021-round3-addiction-prevention; nothing was written to Amélie -->\n| 2026-10-21 | Lab | § 11 SGB VIII: Mitgestaltung in der Jugendarbeit (Klasse A) | OP-4 | 6 | 2 (ungeprüft): 1. Club-Umbau auf Probe: Teams bauen einen Fantasie-Jugendclub aus Karton mit Rückzugsort, gemeinsamem Tisch und frei wählbarem Ausstieg; danach testet die Gruppe genau eine real genehmigte Raumänderung für zwei Wochen. (→ GJW, Verantwortliche der Beteiligungs-Methodensammlung; für Fachprüfung zuständig, keine Zusage. Raumentscheidung nur durch örtliche Einrichtungsleitung.); 2. Regelwerkstatt: Ein eigenes Papier-Bauspiel wird dreimal gespielt; Jugendliche verändern zwischen Runden jeweils eine Regel, damit freiwillige Pausen und Wiedereinstieg ohne Punktverlust möglich sind. (→ LAG Kunst und Medien NRW, Arbeitsbereich Prävention/Methodenkoffer: fachliche Prüfung; Durchführung nur mit örtlicher pädagogischer Fachkraft.) | Mitgestaltung tatsächlicher Alltagsbedingungen bleibt lokal zu prüfen; zwei analoge Projekt-Hypothesen für einen Vergleich mit vorhandenen Methoden. |\n\n### Inversion run inversion-20261021-round3-addiction-prevention — 2026-10-21 (intent: Eine weitere Runde zur langfristigen Suchtprävention: neue spielerische praktische Projekte für Jugendliche auf Deutsch, über Radio, Festival und administrative Übergaben hinaus. Analoge Nützlichkeit )\n- **Learned:** Vorhandene Beteiligungs-, Raum- und Spielewerkstätten sind der Ausgangspunkt; Neuheit des Namens ist kein Zusatznutzen. Sechs Hypothesen, drei vertieft, zwei ungetestete Projektleads, keine klinischen Aussagen.\n- **Mistake:** Gesetzliche Beteiligung könnte fälschlich als Beleg für lokalen Vollzugsmangel gelesen werden; dieser wurde nicht erhoben. Neuheitsmaßstab wurde ausdrücklich ausgesetzt, nicht bestanden.\n- **Next time:** Eine Einrichtung soll eine zulässig veränderbare Raumsituation oder einen Spielablauf samt Rechten und Ausgangsproblemen zeigen. Drei freiwillige Termine mit Baseline durchführen: Mitgestaltung, Pause/Wiedereinstieg, Wieder-Spielwunsch und Vorbereitungszeit; kein Konsumranking.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): Jugendarbeit Methodensammlung Jugendliche kooperativ Raum gestalten Modell bauen Rückzugsort Jugendzentrum Beteiligung -> https://www.kinderundjugendbeteiligung.bayern/wegweiser/, https://www.gjw.de/material-publikationen/beteiligung/junge-stimmen-staerken/beteiligung-in-der-praxis, https://www.gjw.de/material-publikationen/beteiligung/junge-stimmen-staerken/methodensammlung-themen-finden-und-bewerten, https://www.jugendarbeit.ch/de/213.php\n  - C2 (ok): Jugendarbeit Jugendliche Spieldesign Regeln verändern kooperative Spiele Methoden Konkurrenz -> https://kjwien.at/wp-content/uploads/sites/2/2025/09/PLUS_Gruppenleben.pdf, https://lag-km.de/praevention/articles/der-methodenkoffer, https://www.jugendarbeit.online/dpf_einheit/jeder-gewinnt-kooperative-spiele/, https://www.jugendleiter-blog.de/2026/02/22/projekt-brettspiel-entwickeln/\n  - C3 (ok): Jugendliche Werbung Alkohol Influencer Suchtprävention Werbewerkstatt eigene Werbung Methoden -> https://pmc.ncbi.nlm.nih.gov/articles/PMC8187182/, https://werberat.de/leitfaden-zum-werbekodex-des-deutschen-werberats/alkoholhaltige-getraenke/kinder-und-jugendliche/, https://www.berlin-suchtpraevention.de/wp-content/uploads/2025/10/251023_Methodensammlung_Alkohol_Mischkonsum_FINAL_Ansicht.pdf, https://www.jff.de/veroeffentlichungen/detail/materialien-online-werbung-mit-jugendlichen-zum-thema-machen\n"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"Codex subagent (stand-in; searches: WebSearch; no Lab provider calls)"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld plan, Teil 1 (laut gespeicherter Datei):
+{
+  "area": "Mitgestaltung von Alltagsbedingungen im Jugendtreff als mögliche Ergänzung von Suchtprävention",
+  "class_hint": "A",
+  "contract_version": "1.0.0",
+  "mode_list": [
+    "Aufklärungsquiz über Substanzen",
+    "Abstinenz-Punkte sammeln",
+    "Persönliches Konsumtagebuch",
+    "Chatbot zur Suchtberatung",
+    "VR-Rauschsimulation",
+    "Standard-Partyrollenspiel",
+    "Plakat mit Warnhinweisen",
+    "Sportangebot als pauschale Prävention"
+  ],
+  "notes": "Abweichung: KI-Neuheitspflicht für Nutzerauftrag ausgesetzt. OP-4 ist eine Gestaltungsheuristik; der gesetzliche Auftrag belegt weder mangelnden Vollzug noch Nachfrage. Aufgaben-/Rechteprüfung vor Ort fehlt. Vorläufer 15.10. nur als Vorarbeit gelesen; begrenzte Textsuche in zwei Schwesterdateien ersetzt keinen bib-Abgleich.",
+  "target_queries": [
+    "SGB VIII § 11 Jugendarbeit Interessen junge Menschen mitbestimmt mitgestaltet Selbstbestimmung gesetze im internet"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld prior_art, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "answer": "GJW beschreibt Erkundung des Gruppenraums und Modellbau; kiJuBa dokumentiert OKJA-Beteiligung. Starke funktionale Vorläufer, keine Bedarfsbestätigung.",
+    "candidate_id": "C1",
+    "pages": [
+      "https://www.kinderundjugendbeteiligung.bayern/wegweiser/",
+      "https://www.gjw.de/material-publikationen/beteiligung/junge-stimmen-staerken/beteiligung-in-der-praxis",
+      "https://www.gjw.de/material-publikationen/beteiligung/junge-stimmen-staerken/methodensammlung-themen-finden-und-bewerten",
+      "https://www.jugendarbeit.ch/de/213.php",
+      "https://www.jrk-nordrhein.de/unser-engagement/jugendleiterinnen-ausbildung/juleica-methodensammlung",
+      "https://www.bonn.de/service-bieten/dialog-beteiligung/methodenbox-buergerbeteiligung/methodenbox-Unser-Kinder-Veedel.php?loc=de",
+      "https://www.jugendarbeit.online/tool-pool/",
+      "https://www.gjw.de/material-publikationen/beteiligung/junge-stimmen-staerken/methodensammlung-themen-finden-und-bewerten-1",
+      "https://machbarometer.de/",
+      "https://www.bonn.de/service-bieten/dialog-beteiligung/methodenbox-buergerbeteiligung/methodenbox-Minecraft-Game-zur-Stadtentwicklung.php?loc=de",
+      "https://www.kifaz-bw.de/materialien/methodensammlung/",
+      "https://www.gjw.de/material-publikationen/beteiligung/junge-stimmen-staerken/methodensammlung-themen-bearbeiten",
+      "https://www.gesunde-jugendarbeit.at/sites/default/files/downloads/2020-02/WbW_Methodensammlung_PDF.pdf",
+      "https://jugend.dibk.at/ngsite/content/download/153093/3100680",
+      "https://www.jugendarbeit.ch/download/reftg_11_arbeitsheft.pdf",
+      "https://www.socialnet.de/files/materialien/attach/1201.pdf",
+      "https://de.wikipedia.org/wiki/Haus_Spilles",
+      "https://www.kulturellebildung-nrw.de/wp-content/uploads/2023/09/WERKBUCH_04.pdf",
+      "https://www.jugendarbeit.ch/download/2018_oja_agjf.pdf",
+      "https://de.wikipedia.org/wiki/Offene_Kinder-_und_Jugendarbeit"
+    ],
+    "question": "Jugendarbeit Methodensammlung Jugendliche kooperativ Raum gestalten Modell bauen Rückzugsort Jugendzentrum Beteiligung",
+    "status": "ok"
+  },
+  {
+    "answer": "LAG bietet kooperative Präventionsspiele; KJ-Wien beschreibt Regelveränderung und warnt vor automatischen Gemeinschaftseffekten. Die spezifische Pause-/Wiedereinstiegsregel bleibt ungetestet.",
+    "candidate_id": "C2",
+    "pages": [
+      "https://kjwien.at/wp-content/uploads/sites/2/2025/09/PLUS_Gruppenleben.pdf",
+      "https://lag-km.de/praevention/articles/der-methodenkoffer",
+      "https://www.jugendarbeit.online/dpf_einheit/jeder-gewinnt-kooperative-spiele/",
+      "https://www.jugendleiter-blog.de/2026/02/22/projekt-brettspiel-entwickeln/",
+      "https://www.jugendleiter-blog.de/spiele-jugendarbeit/",
+      "https://www.sciencedirect.com/science/article/pii/S0360131517302518",
+      "https://www.kita.de/wissen/erlebnispaedagogik-spiele/",
+      "https://www.praxis-jugendarbeit.de/jugendleiter-schulung/spiele-paedagogik.html",
+      "https://www.gjw.de/material-publikationen/beteiligung/junge-stimmen-staerken/beteiligung-in-der-praxis",
+      "https://de.wikipedia.org/wiki/Spielregel",
+      "https://akademie-eigensinn.de/paedagogische-spiele-mit-sinn-2",
+      "https://www.bertelsmann-stiftung.de/de/unsere-projekte/wertebildung/projektthemen/teamup-trainer/teamup-werte-mit-der-mannschaft-zum-thema-machen",
+      "https://www.kita.de/wissen/gruppenspiele-zur-staerkung-sozialer-kompetenzen-spielbaren-uebungen-fuer-empathie-teamfaehigkeit-kommunikation-konfliktloesung/",
+      "https://www.schule-bw.de/faecher-und-schularten/gesellschaftswissenschaftliche-und-philosophische-faecher/gemeinschaftskunde/bildungsplan-didaktik-und-methodik/spiel_gk.html",
+      "https://www.kjrs.de/fileadmin/user_upload/kjrs/downloads/dokumente_arbeitshilfen/juleica_hefter_gruppenpaedagogik.pdf",
+      "https://www.bbs-ehs-trier.de/schulformen/fs/fss/fss_Methodenpool_Sozialpaedagogik.pdf",
+      "https://www.pedocs.de/volltexte/2022/25855/pdf/Juleica-Handbuch_2017.pdf",
+      "https://www.thueringer-sportjugend.de/fileadmin/user_upload/Dateien/juleica_handbuch_2017.pdf",
+      "https://de.wikipedia.org/wiki/Spielmethodik",
+      "https://de.wikipedia.org/wiki/Spielerziehung"
+    ],
+    "question": "Jugendarbeit Jugendliche Spieldesign Regeln verändern kooperative Spiele Methoden Konkurrenz",
+    "status": "ok"
+  },
+  {
+    "answer": "JFF hat seit 2014 ein Werbeagentur-Szenario; Berliner Alkoholmethoden behandeln Marketing. Zusatznutzen des Kandidaten nicht gezeigt.",
+    "candidate_id": "C3",
+    "pages": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8187182/",
+      "https://werberat.de/leitfaden-zum-werbekodex-des-deutschen-werberats/alkoholhaltige-getraenke/kinder-und-jugendliche/",
+      "https://www.berlin-suchtpraevention.de/wp-content/uploads/2025/10/251023_Methodensammlung_Alkohol_Mischkonsum_FINAL_Ansicht.pdf",
+      "https://www.jff.de/veroeffentlichungen/detail/materialien-online-werbung-mit-jugendlichen-zum-thema-machen",
+      "https://www.suchtgeschichte.nrw.de/Kampagne/InstaVention",
+      "https://development.journals.infinite-science.de/index.php/dsk/article/view/2178",
+      "https://alkoholpolitik.de/konkret/werbung/1328-alkohol-e-zigaretten-und-cannabis-werbung-durch-social-media-influencer",
+      "https://springerlink.fh-diploma.de/article/10.1007/s00103-021-03335-8",
+      "https://www.lis.bremen.de/fortbildung/gesundheit-und-suchtpraevention/empfehlungen-der-suchtpraevention-und-materialien/arbeitsmaterialien-zum-thema-alkohol-22942",
+      "https://werberat.de/leitfaden-zum-werbekodex-des-deutschen-werberats/alkoholhaltige-getraenke/",
+      "https://jugend-und-bildung.de/aktuelles/alkoholwerbung-und-alkohol-und-social-media/",
+      "https://www.aktion-glasklar.de/jugendliche-ab-16-jahren/wie-alkoholwerbung-funktioniert",
+      "https://www.feelok.de/de_DE/jugendliche/themen/alkohol/wir_empfehlen/wissenswertes/gesetze/werbung.cfm",
+      "https://www.jff.de/fileadmin/user_upload/jff/veroeffentlichungen/PDFs/2018_hochgeladen/Materialien_Online-Werbung_mit_Jugendlichen_zum_Thema_machen_jff_website.pdf",
+      "https://shop.bzga.de/pdf/20450000.pdf",
+      "https://publiscologne.th-koeln.de/frontdoor/deliver/index/docId/2537/file/BA_Linder_Lea.pdf",
+      "https://de.wikipedia.org/wiki/Werbung",
+      "https://de.wikipedia.org/wiki/Medienscout",
+      "https://de.wikipedia.org/wiki/Suchtpr%C3%A4vention",
+      "https://de.wikipedia.org/wiki/Rebound_%28Pr%C3%A4vention%29"
+    ],
+    "question": "Jugendliche Werbung Alkohol Influencer Suchtprävention Werbewerkstatt eigene Werbung Methoden",
+    "status": "ok"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "contract_version": "1.1.0",
+  "kills": [
+    {
+      "candidate_id": "C3",
+      "failed_checks": [
+        "in_mode_or_dense",
+        "problem_evidence"
+      ],
+      "reason": "JFF bietet seit 2014 bereits ein Werbeagentur-Szenario; Berliner Methoden bearbeiten Alkoholwerbung. Als eigenständige neue Richtung zurückgestellt: kein Zusatzbedarf oder Vorteil gegenüber diesen Materialien gezeigt."
+    },
+    {
+      "candidate_id": "C4",
+      "failed_checks": [
+        "problem_evidence"
+      ],
+      "reason": "Nicht shortlistet und nicht eigenständig recherchiert; lokale Aufgabe, Rechte und Mehrwert fehlen. Zurückgestellt aus Budgetgründen, keine Widerlegung des Konzepts."
+    },
+    {
+      "candidate_id": "C5",
+      "failed_checks": [
+        "problem_evidence"
+      ],
+      "reason": "Nicht shortlistet und nicht eigenständig recherchiert; lokale Aufgabe, Rechte und Mehrwert fehlen. Zurückgestellt aus Budgetgründen, keine Widerlegung des Konzepts."
+    },
+    {
+      "candidate_id": "C6",
+      "failed_checks": [
+        "problem_evidence"
+      ],
+      "reason": "Nicht shortlistet und nicht eigenständig recherchiert; lokale Aufgabe, Rechte und Mehrwert fehlen. Zurückgestellt aus Budgetgründen, keine Widerlegung des Konzepts."
+    }
+  ],
+  "log_row": {
+    "anchor_class": "A",
+    "best_gap": "Mitgestaltung tatsächlicher Alltagsbedingungen bleibt lokal zu prüfen; zwei analoge Projekt-Hypothesen für einen Vergleich mit vorhandenen Methoden.",
+    "candidates": 6,
+    "operator": "OP-4",
+    "survivors": 2,
+    "target": "§ 11 SGB VIII: Mitgestaltung in der Jugendarbeit"
+  },
+  "retro": {
+    "learned": "Vorhandene Beteiligungs-, Raum- und Spielewerkstätten sind der Ausgangspunkt; Neuheit des Namens ist kein Zusatznutzen. Sechs Hypothesen, drei vertieft, zwei ungetestete Projektleads, keine klinischen Aussagen.",
+    "mistake": "Gesetzliche Beteiligung könnte fälschlich als Beleg für lokalen Vollzugsmangel gelesen werden; dieser wurde nicht erhoben. Neuheitsmaßstab wurde ausdrücklich ausgesetzt, nicht bestanden.",
+    "next_time": "Eine Einrichtung soll eine zulässig veränderbare Raumsituation oder einen Spielablauf samt Rechten und Ausgangsproblemen zeigen. Drei freiwillige Termine mit Baseline durchführen: Mitgestaltung, Pause/Wiedereinstieg, Wieder-Spielwunsch und Vorbereitungszeit; kein Konsumranking."
+  },
+  "survivors": [
+    {
+      "buildable": "Karton, Stifte und veränderbare Möbel genügen; die Leitung muss tatsächliche Änderungsrechte und zugängliche Alternativen vorher festlegen.",
+      "candidate_id": "C1",
+      "evidence_urls": [
+        "https://www.gesetze-im-internet.de/sgb_8/__11.html",
+        "https://www.gjw.de/material-publikationen/beteiligung/junge-stimmen-staerken/methodensammlung-themen-finden-und-bewerten"
+      ],
+      "gap": "Jugendliche benötigen Einfluss auf die Bedingungen ihres Treffpunkts; ob eine konkrete Einrichtung darin eine ungelöste Aufgabe hat, ist offen.",
+      "gap_stands_alone": true,
+      "idea": "Club-Umbau auf Probe: Teams bauen einen Fantasie-Jugendclub aus Karton mit Rückzugsort, gemeinsamem Tisch und frei wählbarem Ausstieg; danach testet die Gruppe genau eine real genehmigte Raumänderung für zwei Wochen.",
+      "rank": 1,
+      "recipient": "GJW, Verantwortliche der Beteiligungs-Methodensammlung; für Fachprüfung zuständig, keine Zusage. Raumentscheidung nur durch örtliche Einrichtungsleitung.",
+      "recipient_kind": "association",
+      "skeleton": "Keine lokale Nachfrage erhoben; als freiwilliger Gestaltungsversuch zu verstehen, ohne belegte Suchtwirkung. Ergänzt vorhandene Methoden, deren Vergleich im Pilot erforderlich ist.",
+      "who_has_problem": "§ 11 adressiert junge Menschen; GJW beschreibt Gruppenraum-Erkundung und Veränderungswünsche. Ein örtlicher Engpass wurde nicht nachgewiesen.",
+      "why_now": "Kein technischer Neuheitstrigger; analoge Weiterentwicklung im ausdrücklich erweiterten Nutzerauftrag."
+    },
+    {
+      "buildable": "Eigenes einfaches Bauspiel aus Papier; nur Regeln zwischen Runden ändern, niemand muss Belastung erklären. Vergleich mit vorhandenen kooperativen Methoden.",
+      "candidate_id": "C2",
+      "evidence_urls": [
+        "https://lag-km.de/praevention/articles/der-methodenkoffer",
+        "https://kjwien.at/wp-content/uploads/sites/2/2025/09/PLUS_Gruppenleben.pdf"
+      ],
+      "gap": "Bei gemeinsamen Aktivitäten können Aussetzen und Wiedereinstieg sozial teuer werden; Ausmaß und konkrete Fälle im Jugendclub sind noch zu erheben.",
+      "gap_stands_alone": true,
+      "idea": "Regelwerkstatt: Ein eigenes Papier-Bauspiel wird dreimal gespielt; Jugendliche verändern zwischen Runden jeweils eine Regel, damit freiwillige Pausen und Wiedereinstieg ohne Punktverlust möglich sind.",
+      "rank": 2,
+      "recipient": "LAG Kunst und Medien NRW, Arbeitsbereich Prävention/Methodenkoffer: fachliche Prüfung; Durchführung nur mit örtlicher pädagogischer Fachkraft.",
+      "recipient_kind": "association",
+      "skeleton": "Keine lokale Nachfrage erhoben; als freiwilliger Gestaltungsversuch zu verstehen, ohne belegte Suchtwirkung. Ergänzt vorhandene Methoden, deren Vergleich im Pilot erforderlich ist.",
+      "who_has_problem": "LAG Kunst und Medien nennt Rechte, Grenzverletzungen und Ressourcen bei 10–18-Jährigen als pädagogische Aufgabe; die spezielle Pausenfrage bleibt Hypothese.",
+      "why_now": "Schon 2018 analog machbar; behält sich nur als Nutzerprojekt-Hypothese, nicht als neue technische Möglichkeit."
+    }
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"inversion-20261021-round3-addiction-prevention"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld target, Teil 1 (laut gespeicherter Datei):
+{
+  "candidates": [
+    {
+      "check_queries": [
+        "Jugendarbeit Methodensammlung Jugendliche kooperativ Raum gestalten Modell bauen Rückzugsort Jugendzentrum Beteiligung"
+      ],
+      "id": "C1",
+      "idea": "Club-Umbau auf Probe: Teams bauen einen Fantasie-Jugendclub aus Karton mit Rückzugsort, gemeinsamem Tisch und frei wählbarem Ausstieg; danach testet die Gruppe genau eine real genehmigte Raumänderung für zwei Wochen.",
+      "recipient": "Gemeindejugendwerk, Verantwortliche der Beteiligungs-Methodensammlung",
+      "recipient_kind": "association",
+      "why_now": "Analoge Mittel waren schon vor 2018 verfügbar; jüngste KI ist für diesen Nutzerauftrag ausdrücklich kein Auswahlkriterium."
+    },
+    {
+      "check_queries": [
+        "Jugendarbeit Jugendliche Spieldesign Regeln verändern kooperative Spiele Methoden Konkurrenz"
+      ],
+      "id": "C2",
+      "idea": "Regelwerkstatt: Ein eigenes Papier-Bauspiel wird dreimal gespielt; Jugendliche verändern zwischen Runden jeweils eine Regel, damit freiwillige Pausen und Wiedereinstieg ohne Punktverlust möglich sind.",
+      "recipient": "LAG Kunst und Medien NRW, Arbeitsbereich Prävention",
+      "recipient_kind": "association",
+      "why_now": "Analoge Mittel waren schon vor 2018 verfügbar; jüngste KI ist für diesen Nutzerauftrag ausdrücklich kein Auswahlkriterium."
+    },
+    {
+      "check_queries": [
+        "Jugendliche Werbung Alkohol Influencer Suchtprävention Werbewerkstatt eigene Werbung Methoden"
+      ],
+      "id": "C3",
+      "idea": "Werbelabor für Unsinn: Teams vermarkten einen erfundenen nutzlosen Gegenstand mit Zugehörigkeitsversprechen; die Gegengruppe macht die Tricks sichtbar und baut die Werbung um.",
+      "recipient": "JFF, Abteilung Praxis",
+      "recipient_kind": "association",
+      "why_now": "Analoge Mittel waren schon vor 2018 verfügbar; jüngste KI ist für diesen Nutzerauftrag ausdrücklich kein Auswahlkriterium."
+    },
+    {
+      "check_queries": [
+        "Suchtprävention offene Jugendarbeit Jugendliche partizipativ Methoden Alkohol Werkstatt Fachstelle Berlin"
+      ],
+      "id": "C4",
+      "idea": "Tauschbare Gastgeberrollen: Jede Woche erfindet eine andere Kleingruppe ein zehnminütiges Begrüßungsritual, das auch stille Teilnahme zulässt.",
+      "recipient": "LAG Kunst und Medien NRW, Arbeitsbereich Prävention",
+      "recipient_kind": "association",
+      "why_now": "Analoge Mittel waren schon vor 2018 verfügbar; jüngste KI ist für diesen Nutzerauftrag ausdrücklich kein Auswahlkriterium."
+    },
+    {
+      "check_queries": [
+        "Suchtprävention offene Jugendarbeit Jugendliche partizipativ Methoden Alkohol Werkstatt Fachstelle Berlin"
+      ],
+      "id": "C5",
+      "idea": "Auszeit-Architektur: Eine Gruppe entwirft mobile Pauseninseln für einen fiktiven Treffpunkt und erprobt nur nach Hausfreigabe eine Variante.",
+      "recipient": "LAG Kunst und Medien NRW, Arbeitsbereich Prävention",
+      "recipient_kind": "association",
+      "why_now": "Analoge Mittel waren schon vor 2018 verfügbar; jüngste KI ist für diesen Nutzerauftrag ausdrücklich kein Auswahlkriterium."
+    },
+    {
+      "check_queries": [
+        "Suchtprävention offene Jugendarbeit Jugendliche partizipativ Methoden Alkohol Werkstatt Fachstelle Berlin"
+      ],
+      "id": "C6",
+      "idea": "Wunschladen ohne Kaufdruck: Jugendliche bauen einen Papierladen, in dem Anerkennung, Ruhe und Zugehörigkeit ohne Gegenleistung verhandelt werden.",
+      "recipient": "LAG Kunst und Medien NRW, Arbeitsbereich Prävention",
+      "recipient_kind": "association",
+      "why_now": "Analoge Mittel waren schon vor 2018 verfügbar; jüngste KI ist für diesen Nutzerauftrag ausdrücklich kein Auswahlkriterium."
+    }
+  ],
+  "contract_version": "1.1.0",
+  "operator": "OP-4",
+  "shortlist": [
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "target": {
+    "anchor_class": "A",
+    "blind_spot": "Mögliche Differenz zwischen Mitspielen und tatsächlicher Verfügung über Rahmenbedingungen; keine nachgewiesene Vollzugslücke.",
+    "name": "§ 11 SGB VIII: Mitbestimmung und Mitgestaltung in der Jugendarbeit",
+    "source_label": "Gesetze im Internet, § 11 SGB VIII, am 21.10.2026 recherchiert",
+    "source_url": "https://www.gesetze-im-internet.de/sgb_8/__11.html",
+    "where_data_stops": "Methoden liegen bereits öffentlich vor; Rechte zur Veränderung einzelner Räume oder Abläufe sind lokale, nicht erhobene Eingaben.",
+    "who_carries_burden": "Hypothese: Jugendliche und Fachkräfte handeln Mitgestaltung im Alltag aus; unbezahlte Zusatzlast ist nicht belegt.",
+    "who_pays": "Öffentliche und freie Träger stellen Jugendarbeit bereit; örtliche Finanzierung und Budget unbekannt."
+  },
+  "thesis": "Den Mitgestaltungsauftrag an einer tatsächlich änderbaren Alltagsbedingung einlösen lassen, statt Beteiligung auf das Befolgen fertiger Spielregeln zu beschränken."
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "inversion-20261021-round3-addiction-prevention-t1",
+    "pages": [
+      "https://www.gesetze-im-internet.de/sgb_8/__11.html",
+      "https://www.gesetze-im-internet.de/sgb_8/BJNR111630990.html",
+      "https://www.gesetze-im-internet.de/sgb_8/SGB_8.pdf",
+      "https://openlex.de/sgb-viii/11",
+      "https://www.gesetze-im-internet.de/sgb_8/__12.html",
+      "https://www.arbeitsagentur.de/datei/dok_ba034740.pdf",
+      "https://www.bmbfsfj.bund.de/resource/blob/94106/%2000a03f47fcbe076829ad6403b919e93b/kinder-und-jugendhilfegesetz-sgb-viii-data.pdf",
+      "https://de.openlegaldata.io/law/sgb-8/11",
+      "https://www.anwalt24.de/gesetze/sgb_viii/11",
+      "https://www.gesetze-mit-links.de/sgb_8/_11.html",
+      "https://www.haufe.de/id/norm/sgb-viii-kinder-und-jugendhilfe-11-15-erster-abschnitt-jugendarbeit-jugendsozialarbeit-erzieherischer-kinder-und-jugendschutz-HI985264.HI33815.html",
+      "https://dejure.org/gesetze/SGB_VIII/11.html",
+      "https://datenbank.nwb.de/Dokument/534036_11/",
+      "https://www.gesetze-im-internet.de/sgb_8/index.html",
+      "https://www.haufe.de/id/norm/sgb-viii-kinder-und-jugendhilfe-11-jugendarbeit-HI15138414_p11.html",
+      "https://hessischer-landtag.de/sites/default/files/dateien/2025-03/EKJ-KB-4-%C3%B6ff-Anlagen.pdf",
+      "https://www.bmfsfj.de/resource/blob/94106/ae9940d8c20b019959a5d9fb511de02b/kinder--und-jugendhilfegesetz---sgb-viii-data.pdf?its_url_id=10976",
+      "https://www.bmbfsfj.bund.de/resource/blob/94106/00a03f47fcbe076829ad6403b919e93b/kinder--und-jugendhilfegesetz---sgb-viii-data.pdf",
+      "https://de.wikipedia.org/wiki/Jugendbeteiligung",
+      "https://de.wikipedia.org/wiki/Jugendarbeit"
+    ],
+    "status": "ok",
+    "summary": "SGB VIII § 11 Jugendarbeit Interessen junge Menschen mitbestimmt mitgestaltet Selbstbestimmung gesetze im internet",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261021-round3-addiction-prevention-t2",
+    "pages": [
+      "https://www.berlin-suchtpraevention.de/themen/schule-und-jugendarbeit/",
+      "https://www.berlin-suchtpraevention.de/themen/alkohol/",
+      "https://www.berlin-suchtpraevention.de/",
+      "https://www.berlin-suchtpraevention.de/projekte/zertifikatskurs/",
+      "https://www.berlin.de/sen/bjf/hilfe-und-unterstuetzung/suchtpraevention/",
+      "https://www.berlin.de/ba-treptow-koepenick/politik-und-verwaltung/service-und-organisationseinheiten/qualitaetsentwicklung-planung-und-koordination-des-oeffentlichen-gesundheitsdienstes/artikel.1109175.php",
+      "https://www.ash-berlin.eu/weiterbildung/zentrum-fuer-weiterbildung/kurssuche/einzelansicht-kurs/?atyp=zk&uid=402",
+      "https://www.verbraucherbildung.de/materialkompass/unterrichtsmaterial-alkohol-und-mischkonsum",
+      "https://www.berlin.de/ba-neukoelln/politik-und-verwaltung/stelle-fuer-qualitaets-entwicklung-planung-und-koordination/angebote-der-suchtpraevention-289116.php",
+      "https://www.partizipation-und-bildung.de/jugendarbeit/projekte/",
+      "https://www.berlin-suchtpraevention.de/projekte/",
+      "https://familienportal.berlin.de/artikel/suchtberatung-und-suchtpraevention",
+      "https://sfbb.berlin-brandenburg.de/sixcms/media.php/304/SFBBJAHRESPROGRAMM_2024.4869562.pdf",
+      "https://www.berlin-suchtpraevention.de/wp-content/uploads/2022/06/220623_Themenheft_66_Juni_2022_hyper.pdf",
+      "https://sfbb.berlin-brandenburg.de/sixcms/media.php/304/SFBBJAHRESPROGRAMM_2024.pdf",
+      "https://www.berlin.de/ba-pankow/politik-und-verwaltung/service-und-organisationseinheiten/qualitaetsentwicklung-planung-und-koordination-des-oeffentlichen-gesundheitsdienstes/dokumente/suchtpraeventionskonzept-26-11-19.pdf",
+      "https://de.wikipedia.org/wiki/Alkoholpr%C3%A4ventionsprogramm",
+      "https://de.wikipedia.org/wiki/Offene_Kinder-_und_Jugendarbeit",
+      "https://de.wikipedia.org/wiki/Berlin_Institut_f%C3%BCr_Partizipation",
+      "https://de.wikipedia.org/wiki/Tannenhof_Berlin-Brandenburg"
+    ],
+    "status": "ok",
+    "summary": "Suchtprävention offene Jugendarbeit Jugendliche partizipativ Methoden Alkohol Werkstatt Fachstelle Berlin",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261021-round3-addiction-prevention-t3",
+    "pages": [
+      "https://www.kinderundjugendbeteiligung.bayern/wegweiser/",
+      "https://www.gjw.de/material-publikationen/beteiligung/junge-stimmen-staerken/beteiligung-in-der-praxis",
+      "https://www.gjw.de/material-publikationen/beteiligung/junge-stimmen-staerken/methodensammlung-themen-finden-und-bewerten",
+      "https://www.jugendarbeit.ch/de/213.php",
+      "https://www.jrk-nordrhein.de/unser-engagement/jugendleiterinnen-ausbildung/juleica-methodensammlung",
+      "https://www.bonn.de/service-bieten/dialog-beteiligung/methodenbox-buergerbeteiligung/methodenbox-Unser-Kinder-Veedel.php?loc=de",
+      "https://www.jugendarbeit.online/tool-pool/",
+      "https://www.gjw.de/material-publikationen/beteiligung/junge-stimmen-staerken/methodensammlung-themen-finden-und-bewerten-1",
+      "https://machbarometer.de/",
+      "https://www.bonn.de/service-bieten/dialog-beteiligung/methodenbox-buergerbeteiligung/methodenbox-Minecraft-Game-zur-Stadtentwicklung.php?loc=de",
+      "https://www.kifaz-bw.de/materialien/methodensammlung/",
+      "https://www.gjw.de/material-publikationen/beteiligung/junge-stimmen-staerken/methodensammlung-themen-bearbeiten",
+      "https://www.gesunde-jugendarbeit.at/sites/default/files/downloads/2020-02/WbW_Methodensammlung_PDF.pdf",
+      "https://jugend.dibk.at/ngsite/content/download/153093/3100680",
+      "https://www.jugendarbeit.ch/download/reftg_11_arbeitsheft.pdf",
+      "https://www.socialnet.de/files/materialien/attach/1201.pdf",
+      "https://de.wikipedia.org/wiki/Haus_Spilles",
+      "https://www.kulturellebildung-nrw.de/wp-content/uploads/2023/09/WERKBUCH_04.pdf",
+      "https://www.jugendarbeit.ch/download/2018_oja_agjf.pdf",
+      "https://de.wikipedia.org/wiki/Offene_Kinder-_und_Jugendarbeit"
+    ],
+    "status": "ok",
+    "summary": "Jugendarbeit Methodensammlung Jugendliche kooperativ Raum gestalten Modell bauen Rückzugsort Jugendzentrum Beteiligung",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261021-round3-addiction-prevention-t4",
+    "pages": [
+      "https://kjwien.at/wp-content/uploads/sites/2/2025/09/PLUS_Gruppenleben.pdf",
+      "https://lag-km.de/praevention/articles/der-methodenkoffer",
+      "https://www.jugendarbeit.online/dpf_einheit/jeder-gewinnt-kooperative-spiele/",
+      "https://www.jugendleiter-blog.de/2026/02/22/projekt-brettspiel-entwickeln/",
+      "https://www.jugendleiter-blog.de/spiele-jugendarbeit/",
+      "https://www.sciencedirect.com/science/article/pii/S0360131517302518",
+      "https://www.kita.de/wissen/erlebnispaedagogik-spiele/",
+      "https://www.praxis-jugendarbeit.de/jugendleiter-schulung/spiele-paedagogik.html",
+      "https://www.gjw.de/material-publikationen/beteiligung/junge-stimmen-staerken/beteiligung-in-der-praxis",
+      "https://de.wikipedia.org/wiki/Spielregel",
+      "https://akademie-eigensinn.de/paedagogische-spiele-mit-sinn-2",
+      "https://www.bertelsmann-stiftung.de/de/unsere-projekte/wertebildung/projektthemen/teamup-trainer/teamup-werte-mit-der-mannschaft-zum-thema-machen",
+      "https://www.kita.de/wissen/gruppenspiele-zur-staerkung-sozialer-kompetenzen-spielbaren-uebungen-fuer-empathie-teamfaehigkeit-kommunikation-konfliktloesung/",
+      "https://www.schule-bw.de/faecher-und-schularten/gesellschaftswissenschaftliche-und-philosophische-faecher/gemeinschaftskunde/bildungsplan-didaktik-und-methodik/spiel_gk.html",
+      "https://www.kjrs.de/fileadmin/user_upload/kjrs/downloads/dokumente_arbeitshilfen/juleica_hefter_gruppenpaedagogik.pdf",
+      "https://www.bbs-ehs-trier.de/schulformen/fs/fss/fss_Methodenpool_Sozialpaedagogik.pdf",
+      "https://www.pedocs.de/volltexte/2022/25855/pdf/Juleica-Handbuch_2017.pdf",
+      "https://www.thueringer-sportjugend.de/fileadmin/user_upload/Dateien/juleica_handbuch_2017.pdf",
+      "https://de.wikipedia.org/wiki/Spielmethodik",
+      "https://de.wikipedia.org/wiki/Spielerziehung"
+    ],
+    "status": "ok",
+    "summary": "Jugendarbeit Jugendliche Spieldesign Regeln verändern kooperative Spiele Methoden Konkurrenz",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261021-round3-addiction-prevention-t5",
+    "pages": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8187182/",
+      "https://werberat.de/leitfaden-zum-werbekodex-des-deutschen-werberats/alkoholhaltige-getraenke/kinder-und-jugendliche/",
+      "https://www.berlin-suchtpraevention.de/wp-content/uploads/2025/10/251023_Methodensammlung_Alkohol_Mischkonsum_FINAL_Ansicht.pdf",
+      "https://www.jff.de/veroeffentlichungen/detail/materialien-online-werbung-mit-jugendlichen-zum-thema-machen",
+      "https://www.suchtgeschichte.nrw.de/Kampagne/InstaVention",
+      "https://development.journals.infinite-science.de/index.php/dsk/article/view/2178",
+      "https://alkoholpolitik.de/konkret/werbung/1328-alkohol-e-zigaretten-und-cannabis-werbung-durch-social-media-influencer",
+      "https://springerlink.fh-diploma.de/article/10.1007/s00103-021-03335-8",
+      "https://www.lis.bremen.de/fortbildung/gesundheit-und-suchtpraevention/empfehlungen-der-suchtpraevention-und-materialien/arbeitsmaterialien-zum-thema-alkohol-22942",
+      "https://werberat.de/leitfaden-zum-werbekodex-des-deutschen-werberats/alkoholhaltige-getraenke/",
+      "https://jugend-und-bildung.de/aktuelles/alkoholwerbung-und-alkohol-und-social-media/",
+      "https://www.aktion-glasklar.de/jugendliche-ab-16-jahren/wie-alkoholwerbung-funktioniert",
+      "https://www.feelok.de/de_DE/jugendliche/themen/alkohol/wir_empfehlen/wissenswertes/gesetze/werbung.cfm",
+      "https://www.jff.de/fileadmin/user_upload/jff/veroeffentlichungen/PDFs/2018_hochgeladen/Materialien_Online-Werbung_mit_Jugendlichen_zum_Thema_machen_jff_website.pdf",
+      "https://shop.bzga.de/pdf/20450000.pdf",
+      "https://publiscologne.th-koeln.de/frontdoor/deliver/index/docId/2537/file/BA_Linder_Lea.pdf",
+      "https://de.wikipedia.org/wiki/Werbung",
+      "https://de.wikipedia.org/wiki/Medienscout",
+      "https://de.wikipedia.org/wiki/Suchtpr%C3%A4vention",
+      "https://de.wikipedia.org/wiki/Rebound_%28Pr%C3%A4vention%29"
+    ],
+    "status": "ok",
+    "summary": "Jugendliche Werbung Alkohol Influencer Suchtprävention Werbewerkstatt eigene Werbung Methoden",
+    "tool": "search"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld topic_check, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "hits": [
+      "Begrenzte rg-Textsuche in Inversionslog und Suchplaybook; Cannabisprävention und Spielregel-Codierung als verwandte Einträge. Kein vollständiger Bibliotheksabgleich; kein bib-Aufruf."
+    ],
+    "term": "Sucht/Jugend/Spielregel"
+  }
+]
