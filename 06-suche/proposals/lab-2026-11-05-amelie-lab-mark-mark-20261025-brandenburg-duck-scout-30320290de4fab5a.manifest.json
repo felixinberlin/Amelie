@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-mark-mark-20261025-brandenburg-duck-scout-30320290de4fab5a",
+  "plan_id": "lab-2026-11-05-amelie-lab-mark-mark-20261025-brandenburg-duck-scout-30320290de4fab5a",
+  "engine": "review",
+  "model": "Antigravity (stand-in; grounded web retrieval; multi-lens synthesis)",
+  "existence_check": false,
+  "survivors": {
+    "count": 1,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-mark-mark-20261025-brandenburg-duck-scout-30320290de4fab5a.md",
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-mark-mark-20261025-brandenburg-duck-scout-30320290de4fab5a.inbox.json",
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-mark-mark-20261025-brandenburg-duck-scout-30320290de4fab5a.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 0,
+  "touches_memory": false,
+  "contracts": {
+    "mark-record": "1.6.0"
+  },
+  "contract_version": "1.0.0"
+}
