@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-lacunar-lacunar-20261021-round3-addiction-prevention-572d9255c5cf1653",
+  "plan_id": "lab-2026-11-05-amelie-lab-lacunar-lacunar-20261021-round3-addiction-prevention-572d9255c5cf1653",
+  "engine": "review",
+  "model": "Codex subagent (stand-in; searches: WebSearch; no Lab provider calls)",
+  "existence_check": false,
+  "survivors": {
+    "count": 1,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-lacunar-lacunar-20261021-round3-addiction-prevention-572d9255c5cf1653.md",
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-lacunar-lacunar-20261021-round3-addiction-prevention-572d9255c5cf1653.inbox.json",
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-lacunar-lacunar-20261021-round3-addiction-prevention-572d9255c5cf1653.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 2,
+  "touches_memory": false,
+  "contracts": {
+    "lacunar-record": "1.3.0"
+  },
+  "contract_version": "1.0.0"
+}
