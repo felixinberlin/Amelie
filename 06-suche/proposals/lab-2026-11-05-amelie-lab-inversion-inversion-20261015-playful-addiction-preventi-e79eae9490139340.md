@@ -1,0 +1,408 @@
+# Proposals from plan lab-2026-11-05-amelie-lab-inversion-inversion-20261015-playful-addiction-preventi-e79eae9490139340
+
+Packet: amelie-lab-inversion-inversion-20261015-playful-addiction-preventi-e79eae9490139340 · Candidate: amelie-lab-inversion-inversion-20261015-playful-addiction-preventi-e79eae9490139340
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] inversion: amelie-lab-inversion-inversion-20261015-playful-addiction-preventi-e79eae9490139340. Absicht: Spielerische langfristige Suchtprävention für 12–18-Jährige in deutschen Jugendclubs und Schulen: Spaß, Jugendautorschaft und freiwillige Wiederkehr; analoge Prototypen ausdrücklich erlaubt.. Modell: Codex subagent (stand-in; searches: WebSearch; no Vertex). Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "cost_usd": 0.0,
+  "model_calls": 0,
+  "search_calls": 4,
+  "search_queries": 6
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.1.0"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-10-15T20:31:11.180411Z"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Spielerische langfristige Suchtprävention für 12–18-Jährige in deutschen Jugendclubs und Schulen: Spaß, Jugendautorschaft und freiwillige Wiederkehr; analoge Prototypen ausdrücklich erlaubt."
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"<!-- proposed by the Lab's Inversion agent, run inversion-20261015-playful-addiction-prevention; nothing was written to Amélie -->\n| 2026-10-15 | Lab | Moderiertes fiktives Gruppenrollenspiel im KlarSicht-Koffer, Station Talkshow (Klasse D) | OP-5 | 6 | 3 (ungeprüft): 1. Backstage-Kommando: 12–18-Jährige retten kooperativ ein absurdes fiktives Festival. 60 Minuten: 10 Min. eigene Figuren und Pannen schreiben, 25 Min. Ereignisse und Ressourcen tauschen, 15 Min. Finale zweimal anders spielen, 10 Min. entrollen; monatlich vier Folgen, jedes Mal andere Jugendautor*innen und neue Festivalorte. (→ Villa Schöpflin gGmbH, Tom-&-Lisa-Projektteam / Anna Lauer; denkbarer Co-Design-Empfänger, Interesse nicht bestätigt.); 2. Die verschwundene Zugabe: Drei Teams schreiben harmlose Alibis und Hinweise für einen fiktiven Bandabend. 60 Minuten: 10 Min. Geschichte, 15 Min. Karten bauen, 20 Min. gegenseitig Rätsel spielen, 10 Min. Auflösung, 5 Min. entrollen; alle vier Wochen tauschen Autorenteam und Detektivteam, statt dieselbe Lösung erneut zu suchen. (→ Fachstelle für Suchtprävention Berlin, Team Durchblick 3D / Berlin sucht Kim; denkbarer Co-Design-Empfänger, Interesse nicht bestätigt.); 3. Absurdes Freundschaftsministerium: Jugendliche improvisieren eine Comedy-Serie über eine Behörde, die Freundschaft genehmigen will. 60 Minuten: 10 Min. absurde Regeln erfinden, 25 Min. Szenen spielen, 15 Min. Stoppen und als solidarisches Ensemble neu spielen, 10 Min. entrollen; sechs vierzehntägige Folgen mit wechselnder Regie und Nebenrollen. (→ RequiSiT e.V., theaterpädagogische Leitung Nora Staeger; denkbarer Co-Design-Empfänger, Interesse nicht bestätigt.) | Ob Jugendliche nach einer ersten kooperativen Festivalrunde eine eigene Fortsetzung wünschen, ist noch ungeklärt. |\n\n### Inversion run inversion-20261015-playful-addiction-prevention — 2026-10-15 (intent: Spielerische langfristige Suchtprävention für 12–18-Jährige in deutschen Jugendclubs und Schulen: Spaß, Jugendautorschaft und freiwillige Wiederkehr; analoge Prototypen ausdrücklich erlaubt.)\n- **Learned:** Vier Suchaufrufe, sechs Fragen; sechs Spielhypothesen, drei vertiefte Anbieterabgleiche, drei unvalidierte Prototypen und drei zurückgestellte Ansätze. Party-Planspiel, Escape-Spiel und Improtheater existieren als Nachbarn; der Wiederkehrversuch wird getrennt geprüft.\n- **Mistake:** Spielangebote bereits als Spaßlosigkeit des Systems zu beschreiben wäre falsch; ebenso darf eine lustige Proberunde keine langfristige Präventionswirkung suggerieren. Neuheit ist auf ausdrücklichen Nutzerwunsch kein Ausschlusskriterium.\n- **Next time:** Mit zustimmender Fachkraft zwei freiwillige Gruppen je zwei Folgen testen: Interesse an Wiederkehr, Spaß und Vorbereitungsminuten dokumentieren; als günstigste Baseline dieselben Figuren und Karten rein analog moderieren. Langfristige gesundheitliche Wirkung braucht ein eigenes geeignetes Evaluationsdesign.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): site.villa-schoepflin.de Tom Lisa Party Planspiel Alkohol Jugendliche -> https://www.villa-schoepflin.de/tom-lisa, https://www.villa-schoepflin.de/files/villaschoepflin/pdf/Programmflyer_Tom%26Lisa_2024_Web.pdf, https://www.villa-schoepflin.de/files/villaschoepflin/pdf/TomLisa_Infoflyer_Screen.pdf, https://www.villa-schoepflin.de/en/offers/nationwide-offers/tom-lisa\n  - C2 (ok): site.berlin-suchtpraevention.de \"Berlin sucht Kim\" Escape Jugendliche -> https://www.berlin-suchtpraevention.de/themen/schule-und-jugendarbeit/, https://www.berlin-suchtpraevention.de/wp-content/uploads/2026/05/240718_Storyline_BerlinsuchtKim.pdf, https://www.berlin-suchtpraevention.de/wp-content/uploads/2024/12/241203_Themenheft_76_Dezember_2024_FINAL_hyper300.pdf, https://www.berlin-suchtpraevention.de/wp-content/uploads/2022/09/220908_Themenheft_67_September_2022_FINAL.pdf\n  - C3 (ok): site.ins-netz-gehen.info Theater Jugendliche Mediensucht Rollenspiel; site.dajeb.de Suchtprävention Improvisation Theater Jugendliche -> https://www.ins-netz-gehen.info/beratung-hilfe/informationen/, https://www.ins-netz-gehen.info/downloads/, https://www.ins-netz-gehen.info/fileadmin/user_upload/Materialien/BZgA_Gut_hinsehen_und_zuhoeren_fachkraefte.pdf, https://www.ins-netz-gehen.de/\n"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"Codex subagent (stand-in; searches: WebSearch; no Vertex)"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld plan, Teil 1 (laut gespeicherter Datei):
+{
+  "area": "Wiederholbares kooperatives Spiel statt Verwaltungsinstrumente für Suchtprävention",
+  "class_hint": "D",
+  "mode_list": [
+    "Konsumtagebuch mit Punkten",
+    "Abstinenz-Streak",
+    "Wissensquiz",
+    "Präventionschatbot",
+    "Warnplakatgenerator",
+    "Diagnose-Spiel",
+    "Rangliste der gesündesten Klasse",
+    "Tägliche Push-Ermahnung"
+  ],
+  "notes": "Nutzer erlaubt ausdrücklich gewöhnliche Moderation ohne neue Technik. Bezug: körperliches Rollenspiel, keine erfundene Vortragspflicht. Read-only Themenstand und Runde 1 berücksichtigt; diese verworf institutionelle Kontinuitätswerkzeuge, keine Jugendspieltests. Absichtliche Scope-Anpassung: Spielkonzepte statt nur neuer KI-Apps gemäß Nutzerauftrag; Anbieter-Nachfrage und Präventionswirkung bleiben unbewiesen.",
+  "target_queries": [
+    "Welchen bestehenden moderierten Spielablauf beschreibt der KlarSicht-Koffer?"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld prior_art, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "answer": "Tom & Lisa bietet schon kooperative Party-Simulation für Klassen 7/8; zwei Termine à 120 Minuten, Schulung und Methodenbox. Eine offene jugendgeschriebene Festivalserie wird hier nicht nachgewiesen; kein Existenzurteil.",
+    "candidate_id": "C1",
+    "pages": [
+      "https://www.villa-schoepflin.de/tom-lisa",
+      "https://www.villa-schoepflin.de/files/villaschoepflin/pdf/Programmflyer_Tom%26Lisa_2024_Web.pdf",
+      "https://www.villa-schoepflin.de/files/villaschoepflin/pdf/TomLisa_Infoflyer_Screen.pdf",
+      "https://www.villa-schoepflin.de/en/offers/nationwide-offers/tom-lisa",
+      "https://www.villa-schoepflin.de/files/villaschoepflin/pdf/220908_Flyer%20Website.pdf",
+      "https://www.villa-schoepflin.de/files/villaschoepflin/pdf/230817_Flyer_TomUndLisa.pdf",
+      "https://www.villa-schoepflin.de/halt-hart-am-limit",
+      "https://www.villa-schoepflin.de/files/villaschoepflin/pdf/Jahresberichte/Jahresbericht2019-VS-web.pdf",
+      "https://www.villa-schoepflin.de/angebote/landkreis-loerrach/schulen",
+      "https://www.villa-schoepflin.de/files/villaschoepflin/pdf/Jahresberichte/Jahresbericht2022_VS.pdf",
+      "https://www.villa-schoepflin.de/angebote/landkreis-loerrach/vereine-festveranstalte/-innen-gaststaettengewerbe-und-einzelhandel",
+      "https://www.villa-schoepflin.de/en/offers/im-landkreis-loerrach/schools",
+      "https://www.berlin-suchtpraevention.de/veranstaltungen/tom-lisa-workshop-zur-alkoholpraevention/",
+      "https://www.suchtpraevention-fortbildung.de/angebote/angebot?id=1302",
+      "https://www.villa-schoepflin.de/",
+      "https://www.hls-online.org/arbeitsbereiche/suchtpraevention/projekte/tom-lisa/",
+      "https://tis.li-hamburg.de/web/guest/catalog/detail?tspi=1079319_",
+      "https://tis.li-hamburg.de/web/guest/catalog/detail?tspi=1075699_"
+    ],
+    "question": "site.villa-schoepflin.de Tom Lisa Party Planspiel Alkohol Jugendliche",
+    "status": "ok"
+  },
+  {
+    "answer": "Berlin sucht Kim ist ein bestehendes kooperatives Escape-Angebot. Das ist direkte Nachbarschaft; wechselnde Jugendautorschaft und wiederholte Besuche sind hier keine nachgewiesenen Zusatznutzen.",
+    "candidate_id": "C2",
+    "pages": [
+      "https://www.berlin-suchtpraevention.de/themen/schule-und-jugendarbeit/",
+      "https://www.berlin-suchtpraevention.de/wp-content/uploads/2026/05/240718_Storyline_BerlinsuchtKim.pdf",
+      "https://www.berlin-suchtpraevention.de/wp-content/uploads/2024/12/241203_Themenheft_76_Dezember_2024_FINAL_hyper300.pdf",
+      "https://www.berlin-suchtpraevention.de/wp-content/uploads/2022/09/220908_Themenheft_67_September_2022_FINAL.pdf",
+      "https://apps.apple.com/de/app/berlin-sucht-kim/id6476762747",
+      "https://apps.apple.com/cy/app/berlin-sucht-kim/id6476762747",
+      "https://apps.apple.com/sa/app/berlin-sucht-kim/id6476762747",
+      "https://apps.apple.com/bg/app/berlin-sucht-kim/id6476762747",
+      "https://apps.apple.com/vn/app/berlin-sucht-kim/id6476762747",
+      "https://familienkiez.de/kiez-zentrum/47-familienzentrum-fischerinsel",
+      "https://familienkiez.de/ort/205-schiller-bibliothek",
+      "https://anonym-suchthilfe.de/substanzwarnung/3f2dc7afd64a/",
+      "https://familienkiez.de/ort/196-kurt-tucholsky-bibliothek-mitte",
+      "https://www.yumpu.com/de/document/view/8245612/berlin-sechstage-magnet-berliner-radsport-verband-ev/10",
+      "https://familienkiez.de/ort/189-humboldt-bibliothek"
+    ],
+    "question": "site.berlin-suchtpraevention.de \"Berlin sucht Kim\" Escape Jugendliche",
+    "status": "ok"
+  },
+  {
+    "answer": "RequiSiT beschreibt seit 1995 bestehendes Improtheater mit Suchtpräventionsbezug. Impro ist daher kein neuer Mechanismus; eine von Jugendlichen geschriebene wiederkehrende Comedygruppe bleibt ein ungeprüfter Prototyp.",
+    "candidate_id": "C3",
+    "pages": [
+      "https://www.ins-netz-gehen.info/beratung-hilfe/informationen/",
+      "https://www.ins-netz-gehen.info/downloads/",
+      "https://www.ins-netz-gehen.info/fileadmin/user_upload/Materialien/BZgA_Gut_hinsehen_und_zuhoeren_fachkraefte.pdf",
+      "https://www.ins-netz-gehen.de/",
+      "https://www.ins-netz-gehen.de/net-piloten/interner-bereich-net-piloten/",
+      "https://www.ins-netz-gehen.info/fileadmin/user_upload/Materialien/Flyer_BZgA_Mediennutzung_09-2023_Einzelseiten.pdf",
+      "https://www.ins-netz-gehen.de/fileadmin/user_upload/Materialien/2022_BZgA_Online_sein_mit_Mass_und_Spass_33215001.pdf",
+      "https://www.ins-netz-gehen.info/fileadmin/user_upload/Materialien/Broschuere_DHS_Digitale_Medien.pdf",
+      "https://www.ins-netz-gehen.de/beratung/beratung-fuer-eltern-lehr-fachkraefte/e-mail-beratung/",
+      "https://www.ins-netz-gehen.de/sitemap/",
+      "https://www.mediensuchtpraevention-nrw.de/projekte/netzpause--dein-abenteuer-ohne-bildschirm",
+      "https://www.dajeb.de/",
+      "https://www.bjke.de/ins-netz-gegangen.html",
+      "https://www.blsev.de/fachbereiche/suchtpraevention/net-piloten/",
+      "https://theater-requisit.de/ueber-uns/",
+      "https://www.theisstalschule.de/post/improvisationstheater-und-suchtpr%C3%A4vention-an-der-thei%C3%9Ftalschule",
+      "https://de.wikipedia.org/wiki/Comic_On%21",
+      "https://de.wikipedia.org/wiki/Das-Da-Theater",
+      "https://de.wikipedia.org/wiki/Improvisationstheater",
+      "https://de.wikipedia.org/wiki/Die_Gorillas"
+    ],
+    "question": "site.ins-netz-gehen.info Theater Jugendliche Mediensucht Rollenspiel; site.dajeb.de Suchtprävention Improvisation Theater Jugendliche",
+    "status": "ok"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "kills": [
+    {
+      "candidate_id": "C4",
+      "failed_checks": [
+        "problem_evidence"
+      ],
+      "reason": "Für diese Runde zurückgestellt: kein zusätzlicher geprüfter Anbieterablauf und kein eigener Nachfragetest; nicht als schlechte oder unwirksame Spielidee bewertet."
+    },
+    {
+      "candidate_id": "C5",
+      "failed_checks": [
+        "problem_evidence"
+      ],
+      "reason": "Für diese Runde zurückgestellt: kein zusätzlicher geprüfter Anbieterablauf und kein eigener Nachfragetest; nicht als schlechte oder unwirksame Spielidee bewertet."
+    },
+    {
+      "candidate_id": "C6",
+      "failed_checks": [
+        "problem_evidence"
+      ],
+      "reason": "Für diese Runde zurückgestellt: kein zusätzlicher geprüfter Anbieterablauf und kein eigener Nachfragetest; nicht als schlechte oder unwirksame Spielidee bewertet."
+    }
+  ],
+  "log_row": {
+    "anchor_class": "D",
+    "best_gap": "Ob Jugendliche nach einer ersten kooperativen Festivalrunde eine eigene Fortsetzung wünschen, ist noch ungeklärt.",
+    "candidates": 6,
+    "operator": "OP-5",
+    "survivors": 3,
+    "target": "Moderiertes fiktives Gruppenrollenspiel im KlarSicht-Koffer, Station Talkshow"
+  },
+  "retro": {
+    "learned": "Vier Suchaufrufe, sechs Fragen; sechs Spielhypothesen, drei vertiefte Anbieterabgleiche, drei unvalidierte Prototypen und drei zurückgestellte Ansätze. Party-Planspiel, Escape-Spiel und Improtheater existieren als Nachbarn; der Wiederkehrversuch wird getrennt geprüft.",
+    "mistake": "Spielangebote bereits als Spaßlosigkeit des Systems zu beschreiben wäre falsch; ebenso darf eine lustige Proberunde keine langfristige Präventionswirkung suggerieren. Neuheit ist auf ausdrücklichen Nutzerwunsch kein Ausschlusskriterium.",
+    "next_time": "Mit zustimmender Fachkraft zwei freiwillige Gruppen je zwei Folgen testen: Interesse an Wiederkehr, Spaß und Vorbereitungsminuten dokumentieren; als günstigste Baseline dieselben Figuren und Karten rein analog moderieren. Langfristige gesundheitliche Wirkung braucht ein eigenes geeignetes Evaluationsdesign."
+  },
+  "survivors": [
+    {
+      "buildable": "Papierkarten, Stifte und vorhandener Raum; freiwillige Beobachtungsrolle statt Auftrittszwang, keine Konsumgeständnisse. Moderator*in prüft Karten; Spaß, Aufwand und freiwillige Wiederkehr getrennt erheben, keine klinische Wirkung behaupten.",
+      "candidate_id": "C1",
+      "evidence_urls": [
+        "https://www.villa-schoepflin.de/tom-lisa",
+        "https://www.vortiv.de/praeventionsangebote/klarsicht-koffer/"
+      ],
+      "gap": "Ob Jugendliche nach einer ersten kooperativen Festivalrunde eine eigene Fortsetzung wünschen, ist noch ungeklärt.",
+      "gap_stands_alone": true,
+      "idea": "Backstage-Kommando: 12–18-Jährige retten kooperativ ein absurdes fiktives Festival. 60 Minuten: 10 Min. eigene Figuren und Pannen schreiben, 25 Min. Ereignisse und Ressourcen tauschen, 15 Min. Finale zweimal anders spielen, 10 Min. entrollen; monatlich vier Folgen, jedes Mal andere Jugendautor*innen und neue Festivalorte.",
+      "rank": 1,
+      "recipient": "Villa Schöpflin gGmbH, Tom-&-Lisa-Projektteam / Anna Lauer; denkbarer Co-Design-Empfänger, Interesse nicht bestätigt.",
+      "recipient_kind": "institution",
+      "who_has_problem": "Belegte Rolle: Fachkräfte und Jugendliche im entsprechenden bestehenden Anbieterangebot. Kein belegter Mangel dieses Angebots; es handelt sich um eine zu prüfende Spielhypothese.",
+      "why_now": "Bewusste Ausnahme gemäß Nutzerauftrag: auch vor 2024 analog realisierbar. Die Begründung für einen Versuch ist neue Jugendautorschaft, kein technischer Durchbruch."
+    },
+    {
+      "buildable": "Papierkarten, Stifte und vorhandener Raum; freiwillige Beobachtungsrolle statt Auftrittszwang, keine Konsumgeständnisse. Moderator*in prüft Karten; Spaß, Aufwand und freiwillige Wiederkehr getrennt erheben, keine klinische Wirkung behaupten.",
+      "candidate_id": "C2",
+      "evidence_urls": [
+        "https://www.berlin-suchtpraevention.de/themen/schule-und-jugendarbeit/",
+        "https://www.vortiv.de/praeventionsangebote/klarsicht-koffer/"
+      ],
+      "gap": "Wiederholtes Rätseln wird uninteressant, sobald Lösungen bekannt sind; ob wechselnde Jugendautorschaft hier Freude macht, ist ungeprüft.",
+      "gap_stands_alone": true,
+      "idea": "Die verschwundene Zugabe: Drei Teams schreiben harmlose Alibis und Hinweise für einen fiktiven Bandabend. 60 Minuten: 10 Min. Geschichte, 15 Min. Karten bauen, 20 Min. gegenseitig Rätsel spielen, 10 Min. Auflösung, 5 Min. entrollen; alle vier Wochen tauschen Autorenteam und Detektivteam, statt dieselbe Lösung erneut zu suchen.",
+      "rank": 2,
+      "recipient": "Fachstelle für Suchtprävention Berlin, Team Durchblick 3D / Berlin sucht Kim; denkbarer Co-Design-Empfänger, Interesse nicht bestätigt.",
+      "recipient_kind": "institution",
+      "who_has_problem": "Belegte Rolle: Fachkräfte und Jugendliche im entsprechenden bestehenden Anbieterangebot. Kein belegter Mangel dieses Angebots; es handelt sich um eine zu prüfende Spielhypothese.",
+      "why_now": "Bewusste Ausnahme gemäß Nutzerauftrag: auch vor 2024 analog realisierbar. Die Begründung für einen Versuch ist neue Jugendautorschaft, kein technischer Durchbruch."
+    },
+    {
+      "buildable": "Papierkarten, Stifte und vorhandener Raum; freiwillige Beobachtungsrolle statt Auftrittszwang, keine Konsumgeständnisse. Moderator*in prüft Karten; Spaß, Aufwand und freiwillige Wiederkehr getrennt erheben, keine klinische Wirkung behaupten.",
+      "candidate_id": "C3",
+      "evidence_urls": [
+        "https://theater-requisit.de/ueber-uns/",
+        "https://www.vortiv.de/praeventionsangebote/klarsicht-koffer/"
+      ],
+      "gap": "Ob Jugendliche wiederkehrende solidarische Comedy selbst gestalten möchten und sich dabei sicher fühlen, ist noch ungeklärt.",
+      "gap_stands_alone": true,
+      "idea": "Absurdes Freundschaftsministerium: Jugendliche improvisieren eine Comedy-Serie über eine Behörde, die Freundschaft genehmigen will. 60 Minuten: 10 Min. absurde Regeln erfinden, 25 Min. Szenen spielen, 15 Min. Stoppen und als solidarisches Ensemble neu spielen, 10 Min. entrollen; sechs vierzehntägige Folgen mit wechselnder Regie und Nebenrollen.",
+      "rank": 3,
+      "recipient": "RequiSiT e.V., theaterpädagogische Leitung Nora Staeger; denkbarer Co-Design-Empfänger, Interesse nicht bestätigt.",
+      "recipient_kind": "association",
+      "who_has_problem": "Belegte Rolle: Fachkräfte und Jugendliche im entsprechenden bestehenden Anbieterangebot. Kein belegter Mangel dieses Angebots; es handelt sich um eine zu prüfende Spielhypothese.",
+      "why_now": "Bewusste Ausnahme gemäß Nutzerauftrag: auch vor 2024 analog realisierbar. Die Begründung für einen Versuch ist neue Jugendautorschaft, kein technischer Durchbruch."
+    }
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"inversion-20261015-playful-addiction-prevention"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld target, Teil 1 (laut gespeicherter Datei):
+{
+  "candidates": [
+    {
+      "check_queries": [
+        "site.villa-schoepflin.de Tom Lisa Party Planspiel Alkohol Jugendliche",
+        "Wollen Jugendliche freiwillig eine zweite Folge spielen, und können Fachkräfte sie mit vorhandenen Materialien moderieren?"
+      ],
+      "id": "C1",
+      "idea": "Backstage-Kommando: 12–18-Jährige retten kooperativ ein absurdes fiktives Festival. 60 Minuten: 10 Min. eigene Figuren und Pannen schreiben, 25 Min. Ereignisse und Ressourcen tauschen, 15 Min. Finale zweimal anders spielen, 10 Min. entrollen; monatlich vier Folgen, jedes Mal andere Jugendautor*innen und neue Festivalorte.",
+      "recipient": "Villa Schöpflin gGmbH, Tom-&-Lisa-Projektteam / Anna Lauer; denkbarer Co-Design-Empfänger, Interesse nicht bestätigt.",
+      "recipient_kind": "institution",
+      "why_now": "Nutzerauftrag erlaubt analoge, nicht technisch neue Prototypen. Kartendruck und Moderation reichen; KI kann freigegebene Varianten vorschlagen, ist aber weder Voraussetzung noch Wirksamkeitsbeleg."
+    },
+    {
+      "check_queries": [
+        "site.berlin-suchtpraevention.de \"Berlin sucht Kim\" Escape Jugendliche",
+        "Wollen Jugendliche freiwillig eine zweite Folge spielen, und können Fachkräfte sie mit vorhandenen Materialien moderieren?"
+      ],
+      "id": "C2",
+      "idea": "Die verschwundene Zugabe: Drei Teams schreiben harmlose Alibis und Hinweise für einen fiktiven Bandabend. 60 Minuten: 10 Min. Geschichte, 15 Min. Karten bauen, 20 Min. gegenseitig Rätsel spielen, 10 Min. Auflösung, 5 Min. entrollen; alle vier Wochen tauschen Autorenteam und Detektivteam, statt dieselbe Lösung erneut zu suchen.",
+      "recipient": "Fachstelle für Suchtprävention Berlin, Team Durchblick 3D / Berlin sucht Kim; denkbarer Co-Design-Empfänger, Interesse nicht bestätigt.",
+      "recipient_kind": "institution",
+      "why_now": "Nutzerauftrag erlaubt analoge, nicht technisch neue Prototypen. Kartendruck und Moderation reichen; KI kann freigegebene Varianten vorschlagen, ist aber weder Voraussetzung noch Wirksamkeitsbeleg."
+    },
+    {
+      "check_queries": [
+        "site.ins-netz-gehen.info Theater Jugendliche Mediensucht Rollenspiel; site.dajeb.de Suchtprävention Improvisation Theater Jugendliche",
+        "Wollen Jugendliche freiwillig eine zweite Folge spielen, und können Fachkräfte sie mit vorhandenen Materialien moderieren?"
+      ],
+      "id": "C3",
+      "idea": "Absurdes Freundschaftsministerium: Jugendliche improvisieren eine Comedy-Serie über eine Behörde, die Freundschaft genehmigen will. 60 Minuten: 10 Min. absurde Regeln erfinden, 25 Min. Szenen spielen, 15 Min. Stoppen und als solidarisches Ensemble neu spielen, 10 Min. entrollen; sechs vierzehntägige Folgen mit wechselnder Regie und Nebenrollen.",
+      "recipient": "RequiSiT e.V., theaterpädagogische Leitung Nora Staeger; denkbarer Co-Design-Empfänger, Interesse nicht bestätigt.",
+      "recipient_kind": "association",
+      "why_now": "Nutzerauftrag erlaubt analoge, nicht technisch neue Prototypen. Kartendruck und Moderation reichen; KI kann freigegebene Varianten vorschlagen, ist aber weder Voraussetzung noch Wirksamkeitsbeleg."
+    },
+    {
+      "check_queries": [
+        "Welche Party-Planspiele stellt Villa Schöpflin Jugendlichen und Fachkräften bereit?",
+        "Wollen Jugendliche freiwillig eine zweite Folge spielen, und können Fachkräfte sie mit vorhandenen Materialien moderieren?"
+      ],
+      "id": "C4",
+      "idea": "Piratenradio ohne Sendung: Ein Team produziert live eine fiktive Pannenshow, das andere erfindet überraschende Werbeparodien; Rollen rotieren monatlich, nichts wird aufgenommen.",
+      "recipient": "Villa Schöpflin gGmbH, Tom-&-Lisa-Projektteam / Anna Lauer; denkbarer Co-Design-Empfänger, Interesse nicht bestätigt.",
+      "recipient_kind": "institution",
+      "why_now": "Nutzerauftrag erlaubt analoge, nicht technisch neue Prototypen. Kartendruck und Moderation reichen; KI kann freigegebene Varianten vorschlagen, ist aber weder Voraussetzung noch Wirksamkeitsbeleg."
+    },
+    {
+      "check_queries": [
+        "Welche kooperativen Suchtpräventions-Escape-Spiele stellt die Fachstelle Berlin bereit?",
+        "Wollen Jugendliche freiwillig eine zweite Folge spielen, und können Fachkräfte sie mit vorhandenen Materialien moderieren?"
+      ],
+      "id": "C5",
+      "idea": "Mondhotel: Jugendliche erfinden außerirdische Gäste und widersprüchliche Aufträge; gemeinsam müssen sie mit begrenzten Requisiten ein gastfreundliches Hotel eröffnen, jeden Monat neuer Planet.",
+      "recipient": "Fachstelle für Suchtprävention Berlin, Team Durchblick 3D / Berlin sucht Kim; denkbarer Co-Design-Empfänger, Interesse nicht bestätigt.",
+      "recipient_kind": "institution",
+      "why_now": "Nutzerauftrag erlaubt analoge, nicht technisch neue Prototypen. Kartendruck und Moderation reichen; KI kann freigegebene Varianten vorschlagen, ist aber weder Voraussetzung noch Wirksamkeitsbeleg."
+    },
+    {
+      "check_queries": [
+        "Welche Rollenspiel- und Improtheaterangebote erhalten Jugendliche über Präventionsanbieter?",
+        "Wollen Jugendliche freiwillig eine zweite Folge spielen, und können Fachkräfte sie mit vorhandenen Materialien moderieren?"
+      ],
+      "id": "C6",
+      "idea": "Der schlechte Superheldenclub: Gruppen schreiben komische Helden mit unpraktischen Kräften und retten ein Schulfest durch Hilfe-Annehmen; monatliche Fortsetzungen wechseln zwischen Comic und Standbildtheater.",
+      "recipient": "RequiSiT e.V., theaterpädagogische Leitung Nora Staeger; denkbarer Co-Design-Empfänger, Interesse nicht bestätigt.",
+      "recipient_kind": "association",
+      "why_now": "Nutzerauftrag erlaubt analoge, nicht technisch neue Prototypen. Kartendruck und Moderation reichen; KI kann freigegebene Varianten vorschlagen, ist aber weder Voraussetzung noch Wirksamkeitsbeleg."
+    }
+  ],
+  "operator": "OP-5",
+  "shortlist": [
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "target": {
+    "anchor_class": "D",
+    "blind_spot": "Hypothese zum Spielangebot: eigene Autorschaft und offene Fortsetzungen könnten freiwillige Wiederkehr interessant machen; die Quellen belegen diese Nachfrage nicht.",
+    "name": "Moderiertes fiktives Gruppenrollenspiel im KlarSicht-Koffer, Station Talkshow",
+    "source_label": "BIÖG/VORTIV, dokumentierter körperlicher Mitmach- und Gesprächsablauf",
+    "source_url": "https://www.vortiv.de/praeventionsangebote/klarsicht-koffer/",
+    "where_data_stops": "Spiel und Gespräch bleiben vor Ort. Prototypen behalten ausschließlich freiwillig gemeinsam erfundene Figuren und Hinweise bis zur nächsten Folge, keine persönlichen Konsumgeschichten.",
+    "who_carries_burden": "Fachkräfte und Peers moderieren einen bestehenden analogen Ablauf; unbezahlte Überlastung wird nicht behauptet. Jugendliche sind bereits beteiligt, daher wäre ein Gegensatz zu bloßem Frontalunterricht falsch.",
+    "who_pays": "Institutionen organisieren Material und geschulte Moderation. Ein zusätzlicher Finanzierungsbedarf für die hier entworfenen Spiele ist unbekannt."
+  },
+  "thesis": "Der zeitlich begrenzte körperliche Spielritus wird von einer moderierten Einzelgeschichte zu einer von Jugendlichen geschriebenen Fortsetzungsreihe mit verfallenden Requisiten und ohne Konten gedreht."
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "inversion-20261015-playful-addiction-prevention-t01",
+    "pages": [
+      "https://www.vortiv.de/praeventionsangebote/klarsicht-koffer/",
+      "https://www.berlin-suchtpraevention.de/themen/schule-und-jugendarbeit/",
+      "https://www.vortiv.de/fileadmin/user_upload/Mediacenter/KlarSicht-Koffer/BZGA_KlarSicht-Koffer_Praxisleitfaden.pdf",
+      "https://www.vortiv.de/fileadmin/user_upload/Mediacenter/KlarSicht-Koffer/Klarsicht-Koffer_Handbuch.pdf",
+      "https://www.berlin-suchtpraevention.de/wp-content/uploads/2024/12/241203_Themenheft_76_Dezember_2024_FINAL_hyper300.pdf",
+      "https://www.berlin-suchtpraevention.de/15jahrefachstelle/raus-aus-der-grauzone/",
+      "https://www.berlin-suchtpraevention.de/beratung/",
+      "https://www.berlin-suchtpraevention.de/themen/elternundfamilie/",
+      "https://www.berlin-suchtpraevention.de/projekte/familie/",
+      "https://www.berlin-suchtpraevention.de/projekte/",
+      "https://www.berlin-suchtpraevention.de/projekte/familie/suchtzuhause/interaktiver-ratgeber/",
+      "https://sucht-bw.de/portfolio-item/klarsicht-koffer/",
+      "https://www.hilf-mir.berlin/252?back=%2Fmap&latitude=52.5287&longitude=13.385547&q=&qCategories=1&qCategories=2&zoom=",
+      "https://apps.apple.com/de/app/berlin-sucht-kim/id6476762747",
+      "https://www.egglham.de/fileadmin/user_upload/Autoren/Home/Verleihbrosch%C3%BCre_Ansicht_2023.pdf",
+      "https://ftp.landkreis-zwickau.de/download/jugend/Jugendamt_Praevention_Materialpool.pdf",
+      "https://www.kjug-zeitschrift.de/de/c/docentry/31/download/a"
+    ],
+    "status": "ok",
+    "summary": "site.vortiv.de KlarSicht Koffer Stationen Rollenspiel Jugendliche | site.berlin-suchtpraevention.de escape room suchtprävention Jugendliche",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261015-playful-addiction-prevention-t02",
+    "pages": [
+      "https://www.villa-schoepflin.de/tom-lisa",
+      "https://www.villa-schoepflin.de/files/villaschoepflin/pdf/Programmflyer_Tom%26Lisa_2024_Web.pdf",
+      "https://www.villa-schoepflin.de/files/villaschoepflin/pdf/TomLisa_Infoflyer_Screen.pdf",
+      "https://www.villa-schoepflin.de/en/offers/nationwide-offers/tom-lisa",
+      "https://www.villa-schoepflin.de/files/villaschoepflin/pdf/220908_Flyer%20Website.pdf",
+      "https://www.villa-schoepflin.de/files/villaschoepflin/pdf/230817_Flyer_TomUndLisa.pdf",
+      "https://www.villa-schoepflin.de/halt-hart-am-limit",
+      "https://www.villa-schoepflin.de/files/villaschoepflin/pdf/Jahresberichte/Jahresbericht2019-VS-web.pdf",
+      "https://www.villa-schoepflin.de/angebote/landkreis-loerrach/schulen",
+      "https://www.villa-schoepflin.de/files/villaschoepflin/pdf/Jahresberichte/Jahresbericht2022_VS.pdf",
+      "https://www.villa-schoepflin.de/angebote/landkreis-loerrach/vereine-festveranstalte/-innen-gaststaettengewerbe-und-einzelhandel",
+      "https://www.villa-schoepflin.de/en/offers/im-landkreis-loerrach/schools",
+      "https://www.berlin-suchtpraevention.de/veranstaltungen/tom-lisa-workshop-zur-alkoholpraevention/",
+      "https://www.suchtpraevention-fortbildung.de/angebote/angebot?id=1302",
+      "https://www.villa-schoepflin.de/",
+      "https://www.hls-online.org/arbeitsbereiche/suchtpraevention/projekte/tom-lisa/",
+      "https://tis.li-hamburg.de/web/guest/catalog/detail?tspi=1079319_",
+      "https://tis.li-hamburg.de/web/guest/catalog/detail?tspi=1075699_"
+    ],
+    "status": "ok",
+    "summary": "site.villa-schoepflin.de Tom Lisa Party Planspiel Alkohol Jugendliche",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261015-playful-addiction-prevention-t03",
+    "pages": [
+      "https://www.berlin-suchtpraevention.de/themen/schule-und-jugendarbeit/",
+      "https://www.berlin-suchtpraevention.de/wp-content/uploads/2026/05/240718_Storyline_BerlinsuchtKim.pdf",
+      "https://www.berlin-suchtpraevention.de/wp-content/uploads/2024/12/241203_Themenheft_76_Dezember_2024_FINAL_hyper300.pdf",
+      "https://www.berlin-suchtpraevention.de/wp-content/uploads/2022/09/220908_Themenheft_67_September_2022_FINAL.pdf",
+      "https://apps.apple.com/de/app/berlin-sucht-kim/id6476762747",
+      "https://apps.apple.com/cy/app/berlin-sucht-kim/id6476762747",
+      "https://apps.apple.com/sa/app/berlin-sucht-kim/id6476762747",
+      "https://apps.apple.com/bg/app/berlin-sucht-kim/id6476762747",
+      "https://apps.apple.com/vn/app/berlin-sucht-kim/id6476762747",
+      "https://familienkiez.de/kiez-zentrum/47-familienzentrum-fischerinsel",
+      "https://familienkiez.de/ort/205-schiller-bibliothek",
+      "https://anonym-suchthilfe.de/substanzwarnung/3f2dc7afd64a/",
+      "https://familienkiez.de/ort/196-kurt-tucholsky-bibliothek-mitte",
+      "https://www.yumpu.com/de/document/view/8245612/berlin-sechstage-magnet-berliner-radsport-verband-ev/10",
+      "https://familienkiez.de/ort/189-humboldt-bibliothek"
+    ],
+    "status": "ok",
+    "summary": "site.berlin-suchtpraevention.de \"Berlin sucht Kim\" Escape Jugendliche",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261015-playful-addiction-prevention-t04",
+    "pages": [
+      "https://www.ins-netz-gehen.info/beratung-hilfe/informationen/",
+      "https://www.ins-netz-gehen.info/downloads/",
+      "https://www.ins-netz-gehen.info/fileadmin/user_upload/Materialien/BZgA_Gut_hinsehen_und_zuhoeren_fachkraefte.pdf",
+      "https://www.ins-netz-gehen.de/",
+      "https://www.ins-netz-gehen.de/net-piloten/interner-bereich-net-piloten/",
+      "https://www.ins-netz-gehen.info/fileadmin/user_upload/Materialien/Flyer_BZgA_Mediennutzung_09-2023_Einzelseiten.pdf",
+      "https://www.ins-netz-gehen.de/fileadmin/user_upload/Materialien/2022_BZgA_Online_sein_mit_Mass_und_Spass_33215001.pdf",
+      "https://www.ins-netz-gehen.info/fileadmin/user_upload/Materialien/Broschuere_DHS_Digitale_Medien.pdf",
+      "https://www.ins-netz-gehen.de/beratung/beratung-fuer-eltern-lehr-fachkraefte/e-mail-beratung/",
+      "https://www.ins-netz-gehen.de/sitemap/",
+      "https://www.mediensuchtpraevention-nrw.de/projekte/netzpause--dein-abenteuer-ohne-bildschirm",
+      "https://www.dajeb.de/",
+      "https://www.bjke.de/ins-netz-gegangen.html",
+      "https://www.blsev.de/fachbereiche/suchtpraevention/net-piloten/",
+      "https://theater-requisit.de/ueber-uns/",
+      "https://www.theisstalschule.de/post/improvisationstheater-und-suchtpr%C3%A4vention-an-der-thei%C3%9Ftalschule",
+      "https://de.wikipedia.org/wiki/Comic_On%21",
+      "https://de.wikipedia.org/wiki/Das-Da-Theater",
+      "https://de.wikipedia.org/wiki/Improvisationstheater",
+      "https://de.wikipedia.org/wiki/Die_Gorillas"
+    ],
+    "status": "ok",
+    "summary": "site.ins-netz-gehen.info Theater Jugendliche Mediensucht Rollenspiel | site.dajeb.de Suchtprävention Improvisation Theater Jugendliche",
+    "tool": "search"
+  }
+]
