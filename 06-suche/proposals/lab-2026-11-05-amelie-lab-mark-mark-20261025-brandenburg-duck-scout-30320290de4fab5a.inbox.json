@@ -1,0 +1,260 @@
+{
+  "batch_id": "amelie-lab-mark-mark-20261025-brandenburg-duck-scout-30320290de4fab5a",
+  "contract_version": "1.0.0",
+  "created_at": "2026-10-25T20:13:00Z",
+  "engine": "mark",
+  "existence_check": false,
+  "ideas": [
+    {
+      "local_id": "V1",
+      "record": {
+        "candidate_id": "V1",
+        "distribution_strategy": "Theken-Präsentation im regionalen Baustofffachhandel (Raab Karcher, Baustoff Union, Eurobaustoff-Partner) mit Demovideo auf Mini-Bildschirm ('Kein Kriechen mehr im Fehlboden'). Vorführungen auf Meisterschulen und Handwerkskammer-Veranstaltungen (HWK Potsdam, HWK Frankfurt/Oder).",
+        "evidence_grade": {
+          "facts": [
+            "Feetech STS3215 Servos liefern bis zu 19.5 kg.cm Drehmoment bei 7.4V und verfügen über 12-Bit Magnetsensoren zur genauen Zustandserfassung (https://feetechrc.com/product/sts3215-smart-servo/)",
+            "Open Duck Mini V2 realisiert bipedale Fortbewegung auf Basis von 14 STS3215 Servos und Raspberry Pi Zero 2 W für unter 400 Dollar Gesamthardware (https://github.com/apirrone/Open_Duck_Mini)",
+            "Pollen Robotics Microduck integriert Weitwinkel-Kamera, 8x8 ToF-Matrix, Dual-IMU und lokale KI-Beschleunigung in einem kompakten bipedalen 800g-Chassis für 399 Dollar (https://pollen-robotics.com/microduck/)"
+          ],
+          "hypotheses": [
+            "Ein Staubschutz-Faltenbalg reicht aus, um Quarz- und Gipsfeinstaub auf Baustellen zuverlässig von den Getriebewellen fernzuhalten."
+          ],
+          "inferences": [
+            "Handwerksmeister in Brandenburg bevorzugen Werkzeuge unter 800 Euro netto, weil diese als GWG sofort abgeschrieben werden können und keine langwierige Aktivierung über mehrere Jahre erfordern.",
+            "Bipedale Beine mit breiten TPU-Auflagen bieten gegenüber Rädern in Kriechkellern mit losem Schutt und weicher Dämmung überlegene Geländegängigkeit."
+          ]
+        },
+        "evidence_urls": [
+          "https://feetechrc.com/product/sts3215-smart-servo/",
+          "https://pollen-robotics.com/microduck/",
+          "https://github.com/apirrone/Open_Duck_Mini"
+        ],
+        "kill_criteria": [
+          "Wenn der Roboter auf loser 160mm Mineralwolle einsinkt und sich festfährt: Bipedal-Vorteil gegenüber Radfahrzeugen entfällt, Kill.",
+          "Wenn Feinstaub (Kalk/Gips) die Servogetriebe trotz Faltenbalg innerhalb von 10 Betriebsstunden blockiert: Baustellen-Tauglichkeit verfehlt, Kill.",
+          "Wenn Meisterbetriebe angeben, dass Endoskop-Schlangenkameras für 50 Euro ausreichen: Zahlungsbereitschaft für 690 Euro fehlt, Kill."
+        ],
+        "moat_and_defensibility": "Hohe Markteintrittsbarriere im Handwerk durch passgenaue Systainer-Verpackung, Baustellen-taugliche Staubabdichtung (Faltenbälge), garantierte Offline-Funktionalität und direkte Abrechenbarkeit als GWG.",
+        "mvp_specification": "Systainer-Set bestehend aus: 1) 1x HIR-01 Bipedal-Roboter mit 14 geschützten Feetech STS3215 Metallgetriebe-Servos und IP54-Staubmanschetten. 2) Compute: Raspberry Pi Zero 2 W mit vorinstallierter Sim-to-Real Schritt-Politik und lokalem Wi-Fi Hotspot. 3) Sensorik: Weitwinkel-Kamera mit IR-Nachtsicht-LEDs und 8x8 ToF-Lidar Matrix. 4) 2x NP-F550 Akkus für 2 Stunden Dauerbetrieb. 5) Robuster Funk-Controller und Smartphone-Saugnapfhalterung im Systainer-Deckel.",
+        "offering_kind": "hardware_device",
+        "pain_and_compliance": "Bei der Altbausanierung (19. Jh. Bauernhäuser, preußische Kappendecken, Holzbalkenlagen) müssen unzugängliche Drempel- und Kriechkeller-Räume auf Feuchtigkeit, Schwamm oder Marderbefall geprüft werden. Das manuelle Freilegen kostet 4 bis 6 Arbeitsstunden (260 bis 510 Euro) und verursacht Schmutz und Streit mit Bauherren. Der HIR-01 steigt durch eine 20x20 cm Revisionsöffnung über lose Balken und weiche Dämmung, überträgt Wärmebild und ToF-Abstandskarte direkt auf das Smartphone des Meisters (100% offline ohne Cloud-Zwang) und schützt die Gesundheit der Beschäftigten (BG BAU konform).",
+        "pricing_and_economics": "Verkaufspreis: 690,00 Euro netto (brutto 821,10 Euro). Steuerlich optimal platziert unter der 800-Euro-Grenze für Geringwertige Wirtschaftsgüter (GWG nach § 6 Abs. 2 EStG) für 100% Sofortabschreibung im Anschaffungsjahr. Amortisation: Bei Stundensätzen von 65 bis 85 Euro netto spart jeder vermiedene Rückbau mindestens 300 bis 500 Euro Lohnkosten. Nach 2 Einsätzen vollständig bezahlt. Stück-BOM: ca. 285 Euro netto bei Kleinserie von 50 Stück (Bruttomarge 58%).",
+        "tagline": "Ein robuster Bipedal-Läufer im Handwerker-Koffer, der über Balkenlagen und Glaswolle klettert, wo Räder verrecken — unter 800 Euro GWG-Grenze sofort von der Steuer absetzbar.",
+        "target_customer": "Inhabergeführte Meisterbetriebe im Bauhaupt- und Ausbaugewerbe (Dachdeckermeister, Zimmerermeister, SHK-Installateure, Gebäudeenergieberater) in Brandenburg und Berlin.",
+        "title": "HIR-01: Autonomer Hohlraum- & Balken-Inspektor im Tanos/Festool-kompatiblen Systainer"
+      }
+    }
+  ],
+  "intent": "Félix (Amélie-Lab, Thema Physical AI & Bipedal-Roboter für Brandenburger Handwerker): Kommerzielle Prüfung der Machbarkeit und Zahlungsbereitschaft von sub-400€ Bipedal-Läufern (Microduck / Open Duck Mini Technologie) im Bau- und Sanierungsgewerbe in Brandenburg. V1: HIR-01 Systainer-Kit (Autonomer Hohlraum- & Balken-Inspektor unter 800€ GWG-Sofortabschreibung). V2: Opfer-Roboter Inspektionsdienst für Hausschwamm und Asbest-Kriechkeller. Bindend: Zahlungsbereitschaftstest der Meisterbetriebe (GWG-Grenze, Amortisation in Handwerker-Stunden, Vertrieb über Baustoffhandel, Einwand: 'Bleibt im Dreck stecken').",
+  "lab_id": "amelie-lab",
+  "model": "Antigravity (stand-in; grounded web retrieval; multi-lens synthesis)",
+  "record": {
+    "audit": {
+      "candidates": [
+        {
+          "check_queries": [
+            "Geringwertige Wirtschaftsgüter Grenze 800 Euro Abschreibung",
+            "Stundensätze Handwerk Brandenburg Dachdecker SHK 2026"
+          ],
+          "competitors": [
+            "SuperDroid Inspection Crawlers | Teure Rad-/Ketten-Fahrzeuge (4.500-12.000 €) | https://www.superdroidrobots.com/",
+            "Testo Borescope-Schlangenkameras | Starre Kabelkameras (300-800 €) | https://www.testo.com/",
+            "Endoskopkameras fürs Smartphone | Billig-Kabelkameras (25-80 €) | https://amazon.de/"
+          ],
+          "economics": "Zeit: 4-6 Monate bis zum Feldtest | Investition: 15.000 Euro für 25 Prototypen und Systainer-Inlays | Laufende Kosten: 1.200 Euro/Monat Werkstatt/Lager | Rendite: 58% Bruttomarge bei 690 Euro Netto-Verkaufspreis gegen 285 Euro Stück-BOM",
+          "id": "V1",
+          "market_size_signal": "Über 40.000 eingetragene Handwerksbetriebe im Bau- und Ausbaugewerbe in Berlin-Brandenburg, davon ca. 6.500 Betriebe in den Kernzielgruppen Dach, Holzbau, SHK und Bautenschutz.",
+          "market_size_tag": "inferred",
+          "moat_intangible_assets": "high",
+          "moat_network_effects": "weak",
+          "moat_scale_economies": "moderate",
+          "moat_switching_costs": "moderate",
+          "offering_kind": "hardware_device",
+          "title": "HIR-01: Autonomer Hohlraum- & Balken-Inspektor im Tanos/Festool-kompatiblen Systainer",
+          "vector_defensibility": "Moderat bis hoch im Handwerker-Segment: Während die Software-Kernpolitik auf LeRobot/MuJoCo Open-Source basiert, liegen die echten Barrieren in der mechanischen Schmutzabdichtung, der Tanos-Systainer-Integration, der robusten Offline-Bedienapp und dem Fachhandels-Vertriebskanal.",
+          "vector_distribution": "Direktvertrieb über Handwerker-Fachmessen und Thekenplatzierung im Baustoffhandel (Raab Karcher, Baustoff Union, Richter+Frenzel) sowie YouTube-Handwerkerkanäle ('Meister zeigt Baustellen-Hack').",
+          "vector_monetization": "Einmalkauf 690,00 Euro netto pro Systainer-Set inklusive Akkus, Ladegerät, Funk-Controller und Smartphone-Halterung. Ersatzteil-Sets (2 Servos, Wechselschuhe) für 79,00 Euro netto.",
+          "vector_pain_wtp": "1 Wer zahlt: Der Inhaber des Handwerksbetriebs (Dachdecker, Zimmerer, SHK-Installateur, Altbausanierer) als Werkzeuganschaffung. 2 Preisanker: Industrielle Kriech-Inspektionscrawler (z. B. SuperDroid, Inuktun) kosten zwischen 4.500 und 12.000 Euro netto; Boreskop-Schlangen Kameras (z. B. Testo) kosten 300-800 Euro, sind aber starr und verheddern sich nach 3 Metern. Der HIR-01 liegt mit 690,00 Euro netto punktgenau unter der 800-Euro-GWG-Grenze. 3 Amortisation: Stundensatz für Geselle/Meister in Brandenburg liegt bei 65,00 bis 85,00 Euro netto pro Stunde. Eine manuelle Drempelöffnung (Ziegel aufnehmen, Lattung lösen, Dämmung entfernen) oder Kriechkeller-Erkundung bindet zwei Mitarbeiter für 3 bis 5 Stunden (Lohnkosten ca. 390 bis 850 Euro). Findet der HIR-01 den Rohrbruch oder Marderbefall in 15 Minuten durch eine Revisionsöffnung, hat sich das Gerät bereits nach dem ersten bis zweiten Einsatz amortisiert. 4 Kanal: Regionaler Baustoff- und Werkzeughandel, Handwerkskammer-Messen (z. B. Handwerkertag Cottbus/Potsdam), Baustellen-Vorführungen. 5 Einwand: 'Das Plastikding verreckt mir im Kalkstaub nach fünf Minuten.' Lösung: Faltenbalg-Schutzmanschetten (IP54) über den Gelenken und 100% Offline-Betrieb ohne Cloud-Abhängigkeit.",
+          "vector_time_to_ship": "4 bis 6 Monate bis zur ersten Kleinserie von 50 Einheiten: Spritzguss- oder formstabile SLS-Nylon-Schalen, Feetech STS3215 Servos mit Faltenbälgen, vorinstallierte Sim-to-Real Schritt-Politik auf Raspberry Pi Zero 2 W / RK3566.",
+          "who_operates": "actor"
+        },
+        {
+          "check_queries": [
+            "Hausschwamm Kriechkeller Gutachten Kosten Brandenburg"
+          ],
+          "competitors": [
+            "Manuelle Begehung mit PSA | Hohes Gesundheitsrisiko | https://bgbau.de/",
+            "Schlangenrohr-Kameras | Keine Reichweite | https://testo.com/"
+          ],
+          "economics": "Zeit: 2-3 Monate | Investition: 6.000 Euro Gerätepool | Laufende Kosten: 400 Euro/Monat | Rendite: Deckung ab 15 bezahlten Gutachtereinsätzen",
+          "id": "V2",
+          "market_size_signal": "Nischenmarkt für Altbausanierung und Schadstoffgutachten in Ostdeutschland.",
+          "market_size_tag": "inferred",
+          "moat_intangible_assets": "moderate",
+          "moat_network_effects": "weak",
+          "moat_scale_economies": "weak",
+          "moat_switching_costs": "weak",
+          "offering_kind": "service_b2b",
+          "title": "Opfer-Roboter Inspektionsdienst für Hausschwamm und Asbest-Kriechkeller",
+          "vector_defensibility": "Gering: Dienstleistung ist regional begrenzt und leicht durch andere Büros nachahmbar.",
+          "vector_distribution": "Kooperation mit dem Verband der Bausachverständigen und Umweltlaboren.",
+          "vector_monetization": "350,00 Euro Pauschale pro Hohlraum-Erkundungsfahrt oder 1.200 Euro Monatsmiete inklusive Ersatzgerät-Garantie.",
+          "vector_pain_wtp": "1 Wer zahlt: Bau-Sachverständige, Schadensgutachter und Spezial-Sanierungsbetriebe für Echten Hausschwamm und Brandschäden. 2 Preisanker: Gutachtertagessätze liegen bei 1.200 bis 1.800 Euro; Schadstoff-Sicherheitsausrüstung und Berufsgenossenschafts-Freigaben für das Betreten von Kriechkellern mit Asbestfasern kosten Unsummen. 3 Amortisation: Bei 350 Euro Gerätepreis kann der Roboter bei Einsturzgefahr oder schwerer Kontamination im Hohlraum verbleiben, ohne dass wirtschaftlicher Schaden entsteht.",
+          "vector_time_to_ship": "2 bis 3 Monate für eine modifizierte Sensorbestückung (Kombination aus Partikel-/Sporensensor, IR-Beleuchtung und 360-Grad-Videolog).",
+          "who_operates": "actor"
+        },
+        {
+          "check_queries": [],
+          "competitors": [],
+          "economics": "Verlustgeschäft",
+          "id": "V3",
+          "market_size_signal": "Konsumenten-Spielzeug-Friedhof",
+          "market_size_tag": "fact",
+          "moat_intangible_assets": "weak",
+          "moat_network_effects": "weak",
+          "moat_scale_economies": "weak",
+          "moat_switching_costs": "weak",
+          "offering_kind": "consumer_gadget",
+          "title": "B2C Consumer Desktop Duck Companion Robot",
+          "vector_defensibility": "Null",
+          "vector_distribution": "Verfehlt",
+          "vector_monetization": "Negativ",
+          "vector_pain_wtp": "Killed: Kein Brandenburger Handwerker kauft ein quakendes Schreibtischspielzeug; im Handwerk gibt es hierfür 0 Euro Zahlungsbereitschaft. Hohe Retourenquote durch Verschleiß und Neuheiten-Erschöpfung nach 2 Wochen.",
+          "vector_time_to_ship": "12 Monate",
+          "who_operates": "third_party"
+        }
+      ],
+      "contract_version": "1.5.0",
+      "kills": [
+        {
+          "candidate_id": "V3",
+          "failed_vectors": [
+            "pain_wtp",
+            "distribution",
+            "monetization"
+          ],
+          "reason": "B2C Spielzeug-Kandidat: Völlig am Handwerker-Bedarf vorbei, scheitert am 'Novelty Half-Life' und bietet keinen messbaren betriebswirtschaftlichen Nutzen auf Baustellen."
+        }
+      ],
+      "shortlist": [
+        "V1",
+        "V2"
+      ]
+    },
+    "contract_version": "1.6.0",
+    "created_at": "2026-10-25T20:13:00Z",
+    "intent": "Félix (Amélie-Lab, Thema Physical AI & Bipedal-Roboter für Brandenburger Handwerker): Kommerzielle Prüfung der Machbarkeit und Zahlungsbereitschaft von sub-400€ Bipedal-Läufern (Microduck / Open Duck Mini Technologie) im Bau- und Sanierungsgewerbe in Brandenburg. V1: HIR-01 Systainer-Kit (Autonomer Hohlraum- & Balken-Inspektor unter 800€ GWG-Sofortabschreibung). V2: Opfer-Roboter Inspektionsdienst für Hausschwamm und Asbest-Kriechkeller. Bindend: Zahlungsbereitschaftstest der Meisterbetriebe (GWG-Grenze, Amortisation in Handwerker-Stunden, Vertrieb über Baustoffhandel, Einwand: 'Bleibt im Dreck stecken').",
+    "model": "Antigravity (stand-in; grounded web retrieval; multi-lens synthesis)",
+    "plan": {
+      "candidate_seeds": [
+        {
+          "id": "SEED-HIR-SYSTAINER",
+          "origin": "inversion",
+          "title": "HIR-01 Kriech- & Drempel-Scout im Festool/Tanos Systainer unter der 800€ GWG-Grenze",
+          "why_commercial": "Direkter Hebel bei Handwerksmeistern: Klettert über unebene Balkenlagen und weiche Dämmwolle, wo Räder versagen; kostet unter 800 Euro netto und ist im Anschaffungsjahr zu 100% als GWG steuerlich sofort absetzbar."
+        },
+        {
+          "id": "SEED-SACRIFICIAL-SERVICE",
+          "origin": "inversion",
+          "title": "Opfer-Roboter Inspektionsdienst für einsturzgefährdete Fehlböden und Schimmelkeller",
+          "why_commercial": "Sanierer und Baugutachter vermeiden Personengefährdung in toxischen Hohlräumen; bei Totalschaden durch einstürzende Schlacke entsteht kein 10.000-Euro-Verlust."
+        }
+      ],
+      "commercial_angles": [
+        "Verkauf als fertiges Handwerker-Werkzeug im genormten Systainer-Koffer über den regionalen Baustofffachhandel (z. B. Hagebau, Baustoff Union, Raab Karcher)",
+        "GWG-Sofortabschreibung nach § 6 Abs. 2 EStG (unter 800 Euro netto) als entscheidendes Verkaufsargument beim Handwerksmeister",
+        "Kombination aus bipedaler Schreit-Mechanik und lokalen Offline-Inferenz-Modellen (Hotspot auf Baustellen-Smartphone, kein Cloud-Zwang im Brandenburger Funkloch)"
+      ],
+      "contract_version": "1.2.0",
+      "entities": [
+        {
+          "kind": "regulation",
+          "name": "EStG § 6 Abs. 2 (GWG)",
+          "source_hint": "gesetze-im-internet.de/estg/__6.html"
+        },
+        {
+          "kind": "regulation",
+          "name": "BG BAU Präventionsrichtlinien",
+          "source_hint": "bgbau.de"
+        },
+        {
+          "kind": "company",
+          "name": "Feetech RC STS3215",
+          "source_hint": "feetechrc.com/product/sts3215-smart-servo/"
+        },
+        {
+          "kind": "company",
+          "name": "Tanos / Festool Systainer",
+          "source_hint": "tanos.de"
+        },
+        {
+          "kind": "company",
+          "name": "Pollen Robotics / Hugging Face Microduck",
+          "source_hint": "pollen-robotics.com/microduck/"
+        }
+      ],
+      "market_queries": [
+        "Stundensätze Handwerk Brandenburg Dachdecker Zimmerer SHK 2026",
+        "Geringwertiges Wirtschaftsgut Grenze 800 Euro EStG Sofortabschreibung",
+        "Kosten Schadensanalyse Kriechkeller Hausschwamm Sanierung Brandenburg"
+      ],
+      "notes": "Keine Spielzeug- oder KI-Floskeln im Handwerker-Pitch. Fokus auf knallharte Arbeitszeit- und Arbeitssicherheitsvorteile (BG BAU, Bandscheibenschonung, Baustellen-Robustheit).",
+      "operators": [
+        "decompose",
+        "gap",
+        "transfer",
+        "feasibility",
+        "hypothesis",
+        "build_project"
+      ],
+      "theme": "HIR-01: Autonomer Hohlraum- und Balken-Inspektor für Brandenburger Handwerks- und Sanierungsbetriebe"
+    },
+    "result": {
+      "contract_version": "1.1.0",
+      "opportunities": [
+        {
+          "candidate_id": "V1",
+          "distribution_strategy": "Theken-Präsentation im regionalen Baustofffachhandel (Raab Karcher, Baustoff Union, Eurobaustoff-Partner) mit Demovideo auf Mini-Bildschirm ('Kein Kriechen mehr im Fehlboden'). Vorführungen auf Meisterschulen und Handwerkskammer-Veranstaltungen (HWK Potsdam, HWK Frankfurt/Oder).",
+          "evidence_grade": {
+            "facts": [
+              "Feetech STS3215 Servos liefern bis zu 19.5 kg.cm Drehmoment bei 7.4V und verfügen über 12-Bit Magnetsensoren zur genauen Zustandserfassung (https://feetechrc.com/product/sts3215-smart-servo/)",
+              "Open Duck Mini V2 realisiert bipedale Fortbewegung auf Basis von 14 STS3215 Servos und Raspberry Pi Zero 2 W für unter 400 Dollar Gesamthardware (https://github.com/apirrone/Open_Duck_Mini)",
+              "Pollen Robotics Microduck integriert Weitwinkel-Kamera, 8x8 ToF-Matrix, Dual-IMU und lokale KI-Beschleunigung in einem kompakten bipedalen 800g-Chassis für 399 Dollar (https://pollen-robotics.com/microduck/)"
+            ],
+            "hypotheses": [
+              "Ein Staubschutz-Faltenbalg reicht aus, um Quarz- und Gipsfeinstaub auf Baustellen zuverlässig von den Getriebewellen fernzuhalten."
+            ],
+            "inferences": [
+              "Handwerksmeister in Brandenburg bevorzugen Werkzeuge unter 800 Euro netto, weil diese als GWG sofort abgeschrieben werden können und keine langwierige Aktivierung über mehrere Jahre erfordern.",
+              "Bipedale Beine mit breiten TPU-Auflagen bieten gegenüber Rädern in Kriechkellern mit losem Schutt und weicher Dämmung überlegene Geländegängigkeit."
+            ]
+          },
+          "evidence_urls": [
+            "https://feetechrc.com/product/sts3215-smart-servo/",
+            "https://pollen-robotics.com/microduck/",
+            "https://github.com/apirrone/Open_Duck_Mini"
+          ],
+          "kill_criteria": [
+            "Wenn der Roboter auf loser 160mm Mineralwolle einsinkt und sich festfährt: Bipedal-Vorteil gegenüber Radfahrzeugen entfällt, Kill.",
+            "Wenn Feinstaub (Kalk/Gips) die Servogetriebe trotz Faltenbalg innerhalb von 10 Betriebsstunden blockiert: Baustellen-Tauglichkeit verfehlt, Kill.",
+            "Wenn Meisterbetriebe angeben, dass Endoskop-Schlangenkameras für 50 Euro ausreichen: Zahlungsbereitschaft für 690 Euro fehlt, Kill."
+          ],
+          "moat_and_defensibility": "Hohe Markteintrittsbarriere im Handwerk durch passgenaue Systainer-Verpackung, Baustellen-taugliche Staubabdichtung (Faltenbälge), garantierte Offline-Funktionalität und direkte Abrechenbarkeit als GWG.",
+          "mvp_specification": "Systainer-Set bestehend aus: 1) 1x HIR-01 Bipedal-Roboter mit 14 geschützten Feetech STS3215 Metallgetriebe-Servos und IP54-Staubmanschetten. 2) Compute: Raspberry Pi Zero 2 W mit vorinstallierter Sim-to-Real Schritt-Politik und lokalem Wi-Fi Hotspot. 3) Sensorik: Weitwinkel-Kamera mit IR-Nachtsicht-LEDs und 8x8 ToF-Lidar Matrix. 4) 2x NP-F550 Akkus für 2 Stunden Dauerbetrieb. 5) Robuster Funk-Controller und Smartphone-Saugnapfhalterung im Systainer-Deckel.",
+          "offering_kind": "hardware_device",
+          "pain_and_compliance": "Bei der Altbausanierung (19. Jh. Bauernhäuser, preußische Kappendecken, Holzbalkenlagen) müssen unzugängliche Drempel- und Kriechkeller-Räume auf Feuchtigkeit, Schwamm oder Marderbefall geprüft werden. Das manuelle Freilegen kostet 4 bis 6 Arbeitsstunden (260 bis 510 Euro) und verursacht Schmutz und Streit mit Bauherren. Der HIR-01 steigt durch eine 20x20 cm Revisionsöffnung über lose Balken und weiche Dämmung, überträgt Wärmebild und ToF-Abstandskarte direkt auf das Smartphone des Meisters (100% offline ohne Cloud-Zwang) und schützt die Gesundheit der Beschäftigten (BG BAU konform).",
+          "pricing_and_economics": "Verkaufspreis: 690,00 Euro netto (brutto 821,10 Euro). Steuerlich optimal platziert unter der 800-Euro-Grenze für Geringwertige Wirtschaftsgüter (GWG nach § 6 Abs. 2 EStG) für 100% Sofortabschreibung im Anschaffungsjahr. Amortisation: Bei Stundensätzen von 65 bis 85 Euro netto spart jeder vermiedene Rückbau mindestens 300 bis 500 Euro Lohnkosten. Nach 2 Einsätzen vollständig bezahlt. Stück-BOM: ca. 285 Euro netto bei Kleinserie von 50 Stück (Bruttomarge 58%).",
+          "tagline": "Ein robuster Bipedal-Läufer im Handwerker-Koffer, der über Balkenlagen und Glaswolle klettert, wo Räder verrecken — unter 800 Euro GWG-Grenze sofort von der Steuer absetzbar.",
+          "target_customer": "Inhabergeführte Meisterbetriebe im Bauhaupt- und Ausbaugewerbe (Dachdeckermeister, Zimmerermeister, SHK-Installateure, Gebäudeenergieberater) in Brandenburg und Berlin.",
+          "title": "HIR-01: Autonomer Hohlraum- & Balken-Inspektor im Tanos/Festool-kompatiblen Systainer"
+        }
+      ]
+    },
+    "run_id": "mark-20261025-brandenburg-duck-scout",
+    "state_missing": [
+      "no paid places API calls (local market verified via web research)"
+    ]
+  },
+  "revision": "30320290de4fab5a1b603c21a24bf5a349ad54629b72abd9612dc06fc44b7d5b",
+  "run_id": "mark-20261025-brandenburg-duck-scout"
+}

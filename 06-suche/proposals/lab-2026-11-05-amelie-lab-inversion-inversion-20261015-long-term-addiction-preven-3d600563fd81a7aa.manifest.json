@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-inversion-inversion-20261015-long-term-addiction-preven-3d600563fd81a7aa",
+  "plan_id": "lab-2026-11-05-amelie-lab-inversion-inversion-20261015-long-term-addiction-preven-3d600563fd81a7aa",
+  "engine": "review",
+  "model": "Codex subagent (stand-in; searches: WebSearch; no Vertex)",
+  "existence_check": false,
+  "survivors": {
+    "count": 0,
+    "status": "keine"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-inversion-inversion-20261015-long-term-addiction-preven-3d600563fd81a7aa.md",
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-inversion-inversion-20261015-long-term-addiction-preven-3d600563fd81a7aa.inbox.json",
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-inversion-inversion-20261015-long-term-addiction-preven-3d600563fd81a7aa.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 6,
+  "touches_memory": false,
+  "contracts": {
+    "inversion-record": "1.1.0"
+  },
+  "contract_version": "1.0.0"
+}

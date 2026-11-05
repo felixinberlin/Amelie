@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-lacunar-lacunar-20261015-playful-addiction-prevention-30cc44daa346c7fd",
+  "plan_id": "lab-2026-11-05-amelie-lab-lacunar-lacunar-20261015-playful-addiction-prevention-30cc44daa346c7fd",
+  "engine": "review",
+  "model": "Codex stand-in (Vertex unavailable; searches: WebSearch)",
+  "existence_check": false,
+  "survivors": {
+    "count": 3,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-lacunar-lacunar-20261015-playful-addiction-prevention-30cc44daa346c7fd.md",
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-lacunar-lacunar-20261015-playful-addiction-prevention-30cc44daa346c7fd.inbox.json",
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-lacunar-lacunar-20261015-playful-addiction-prevention-30cc44daa346c7fd.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 0,
+  "touches_memory": false,
+  "contracts": {
+    "lacunar-record": "1.3.0"
+  },
+  "contract_version": "1.0.0"
+}

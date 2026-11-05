@@ -1,0 +1,373 @@
+# Proposals from plan lab-2026-11-05-amelie-lab-inversion-inversion-20261014T090028-kids-vibecoding-3c808c19a7720827
+
+Packet: amelie-lab-inversion-inversion-20261014T090028-kids-vibecoding-3c808c19a7720827 · Candidate: amelie-lab-inversion-inversion-20261014T090028-kids-vibecoding-3c808c19a7720827
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] inversion: amelie-lab-inversion-inversion-20261014T090028-kids-vibecoding-3c808c19a7720827. Absicht: Kindern Programmieren beibringen über Gaming und Vibecoding. Modell: claude-subagent-manual (stand-in, Vertex unavailable). Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "cost_usd": 0.0,
+  "model_calls": 0,
+  "search_calls": 7,
+  "search_queries": 7
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.0.0"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-10-14T09:00:28Z"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Kindern Programmieren beibringen über Gaming und Vibecoding"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"<!-- proposed by the Lab's Inversion agent, run inversion-20261014T090028-kids-vibecoding; nothing was written to Amélie -->\n| 2026-10-14 | Lab | Pflichtfach Informatik Klasse 5/6 NRW, Kernlehrplan per RdErl. 09.06.2021 (BASS 15-21) (Klasse A) | OP-4 | 7 | 3 (ungeprüft): 1. Prompt-Protokoll als Leistungsnachweis: der deutschsprachige Vibecoding-Verlauf eines Kindes wird gegen die Kompetenzerwartungen des Kernlehrplans 5/6 abgebildet, damit fachfremde Lehrkräfte Programmierdenken im Text benoten können. (→ QUA-LiS NRW mit einem fachdidaktischen Lehrstuhl Informatik); 2. Umgedrehtes Vibecoding: die KI baut kleine Spiele mit gezielt kernlehrplanbezogenen Fehlern, Kinder finden und beschreiben sie, die Lehrkraft erhält den Lösungsschlüssel. (→ Gesellschaft für Informatik e.V. bzw. Bundesweite Informatikwettbewerbe, mit QUA-LiS NRW); 3. Kontofreier Vibecoding-Spielbaukasten-Modus in der staatlichen Schul-KI (AIS.chat, vormals telli), lehrkraftorganisiert, für unter 13-Jährige ohne eigenes kommerzielles Konto. (→ FWU Institut für Film und Bild als Betreiber von AIS.chat im Auftrag der Länder) | Fachfremd unterrichtende Lehrkräfte müssen im Pflichtfach Programmierkompetenzen benoten, die sie selbst nicht prüfen können, und für KI-gestütztes Programmieren gibt es kein erprobtes Bewertungsraster. |\n\n### Inversion run inversion-20261014T090028-kids-vibecoding — 2026-10-14 (intent: Kindern Programmieren beibringen über Gaming und Vibecoding)\n- **Learned:** Ein Pflichtfach-Erlass mit dokumentiertem Lehrkräftemangel ist ein tragfähiges OP-4-Ziel; der eigentliche Engpass ist die Prüfbarkeit, nicht das Erzeugen von Inhalten, und das Feld 'KI-Spielebaukasten für Kinder' ist kommerziell bereits dicht.\n- **Mistake:** Die RWTH-Evaluation mit den Fachfremd-Quoten und der Kernlehrplan-Volltext ließen sich nicht abrufen (Bot-Sperre), daher stützt sich die Belastung auf den Pressebericht; Amélies Zustandsdateien fehlten (Schwesterrepo nicht vorhanden), bib_find und Themen-Check entfielen.\n- **Next time:** Den Kernlehrplan-Volltext (Kompetenzerwartungen, Leistungsbewertung) direkt aus dem Lehrplannavigator abrufen und für C1 gezielt nach bestehenden Bewertungsrastern für KI-gestütztes Programmieren in deutschen Landesinstituten suchen.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): vibe coding children classroom assessment natural language prompts computational thinking rubric 2025 -> https://sites.bc.edu/devtech/wp-content/uploads/sites/181/2024/09/Validating-a-Creative-Coding-Rubric-through-expressive-activities-for-elementary-grades.pdf, https://edinstruments.org/instruments/computational-thinking-rubric-ctr, https://observatorio-cientifico.ua.es/documentos/63d479755222787c7aab7d6b, https://www.computingatschool.org.uk/resources/2016/december/computational-thinking-rubric-learning-behaviours-dispositions-and-perspectives\n  - C2 (ok): LLM generated buggy programs debugging exercises for novice programmers children study -> https://arxiv.org/abs/2411.14303v2, https://arxiv.org/html/2411.10455v1, https://arxiv.org/pdf/2306.03097\n  - C4 (ok): AI game maker for kids under 13 COPPA compliant classroom describe game in words generates code -> https://lab.rosebud.ai/coding-for-kids, https://www.producthunt.com/p/makie/makie, https://www.seeles.ai/solutions/educators, https://www.summerengine.com/ai-game-maker-for-kids\n  - C4 (ok): telli KI-Chatbot Schulen Altersgrenze Schüler unter 13 Datenschutz Bundesländer -> https://www.news4teachers.de/?p=159975, https://www.news4teachers.de/2026/05/staatliche-unterrichts-ki-aus-telli-wird-ais-chat-und-schulen-muessen-schon-wieder-alles-aendern/, https://fwu.de/wp-content/uploads/2026/04/xPressemitteilung-telli_BaWue-und-Hessen_V2.pdf\n"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"claude-subagent-manual (stand-in, Vertex unavailable)"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld plan, Teil 1 (laut gespeicherter Datei):
+{
+  "area": "Programmierunterricht für Kinder (ca. 9-13 Jahre) über Spiele und KI-gestütztes Programmieren in natürlicher Sprache (Vibecoding), im Spannungsfeld von Pflichtfach Informatik, Lehrkräftemangel und Altersgrenzen der KI-Dienste",
+  "class_hint": "A",
+  "contract_version": "1.0.0",
+  "mode_list": [
+    "Scratch- oder Code.org-Kurse mit Spielprojekten",
+    "Minecraft Education / Roblox-Studio-Kurse für Kinder",
+    "KI-Tutor-Chatbot, der Kindern beim Programmieren hilft",
+    "Gamifizierte Programmier-Lern-App mit Levels, Badges und Ranglisten",
+    "KI-Spielebaukasten: Kind beschreibt ein Spiel, die KI erzeugt es",
+    "Prompt-Engineering-Kurs für Kinder",
+    "Coding-Clubs, AGs und Game Jams / Hackathons für Kinder",
+    "Lernroboter und Mikrocontroller (Calliope mini, LEGO, micro:bit) mit KI-Erweiterung",
+    "KI-Arbeitsblatt- und Aufgabengenerator für Lehrkräfte",
+    "YouTube- oder Video-Tutorials zum Spieleprogrammieren",
+    "Eltern-Kind-Programmierkurse und Familien-Coding-Apps"
+  ],
+  "notes": "Manueller Stellvertreter-Lauf (Vertex nicht verfügbar). Amélies Zustandsdateien fehlen (Schwesterrepo nicht vorhanden): keine bereits invertierten Ziele, kein 'next time' der letzten Retro, kein Besetzungsatlas berücksichtigt.",
+  "target_queries": [
+    "Informatik Pflichtfach Klasse 5 6 Lehrermangel fachfremd unterrichtet Kerncurriculum",
+    "Kernlehrplan Informatik Klasse 5 und 6 NRW Pflichtfach Erlass",
+    "OpenAI terms of use minimum age 13 parental consent under 18"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld prior_art, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "answer": "Keine Treffer speziell zu Vibecoding mit Kindern; gefunden wurden Bewertungsraster für ScratchJr, kreatives Coding (Grundschule) und Computational Thinking.",
+    "candidate_id": "C1",
+    "pages": [
+      "https://sites.bc.edu/devtech/wp-content/uploads/sites/181/2024/09/Validating-a-Creative-Coding-Rubric-through-expressive-activities-for-elementary-grades.pdf",
+      "https://edinstruments.org/instruments/computational-thinking-rubric-ctr",
+      "https://observatorio-cientifico.ua.es/documentos/63d479755222787c7aab7d6b",
+      "https://www.computingatschool.org.uk/resources/2016/december/computational-thinking-rubric-learning-behaviours-dispositions-and-perspectives"
+    ],
+    "question": "vibe coding children classroom assessment natural language prompts computational thinking rubric 2025",
+    "status": "ok"
+  },
+  {
+    "answer": "Hochschul-Arbeiten zu KI-erzeugten Fehlerübungen (BugSpotter SIGCSE 2025, synthetische fehlerhafte Abgaben), keine zu Kindern gefunden.",
+    "candidate_id": "C2",
+    "pages": [
+      "https://arxiv.org/abs/2411.14303v2",
+      "https://arxiv.org/html/2411.10455v1",
+      "https://arxiv.org/pdf/2306.03097"
+    ],
+    "question": "LLM generated buggy programs debugging exercises for novice programmers children study",
+    "status": "ok"
+  },
+  {
+    "answer": "Kommerzielle Spielebaukästen per Sprache für Kinder und Schulen gefunden (Rosebud, Makie, Seele, Summer Engine); keine COPPA-Angaben in den Treffern.",
+    "candidate_id": "C4",
+    "pages": [
+      "https://lab.rosebud.ai/coding-for-kids",
+      "https://www.producthunt.com/p/makie/makie",
+      "https://www.seeles.ai/solutions/educators",
+      "https://www.summerengine.com/ai-game-maker-for-kids"
+    ],
+    "question": "AI game maker for kids under 13 COPPA compliant classroom describe game in words generates code",
+    "status": "ok"
+  },
+  {
+    "answer": "Staatliche Schul-KI telli (jetzt AIS.chat) mit EU-Servern und lehrkraftorganisiertem Zugang; keine Angabe zu einer Altersgrenze gefunden.",
+    "candidate_id": "C4",
+    "pages": [
+      "https://www.news4teachers.de/?p=159975",
+      "https://www.news4teachers.de/2026/05/staatliche-unterrichts-ki-aus-telli-wird-ais-chat-und-schulen-muessen-schon-wieder-alles-aendern/",
+      "https://fwu.de/wp-content/uploads/2026/04/xPressemitteilung-telli_BaWue-und-Hessen_V2.pdf"
+    ],
+    "question": "telli KI-Chatbot Schulen Altersgrenze Schüler unter 13 Datenschutz Bundesländer",
+    "status": "ok"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "contract_version": "1.0.0",
+  "kills": [
+    {
+      "candidate_id": "C6",
+      "failed_checks": [
+        "in_mode_or_dense",
+        "why_now"
+      ],
+      "reason": "Ein KI-Aufgaben- und Arbeitsblattgenerator steht in der verbotenen Mode-Liste, und die staatliche Schul-KI bietet Lehrkräften bereits vordefinierte Lernumgebungen; die Lücke ist nicht das Erzeugen von Aufgaben, sondern das Prüfen."
+    }
+  ],
+  "log_row": {
+    "anchor_class": "A",
+    "best_gap": "Fachfremd unterrichtende Lehrkräfte müssen im Pflichtfach Programmierkompetenzen benoten, die sie selbst nicht prüfen können, und für KI-gestütztes Programmieren gibt es kein erprobtes Bewertungsraster.",
+    "candidates": 7,
+    "operator": "OP-4",
+    "survivors": 3,
+    "target": "Pflichtfach Informatik Klasse 5/6 NRW, Kernlehrplan per RdErl. 09.06.2021 (BASS 15-21)"
+  },
+  "retro": {
+    "learned": "Ein Pflichtfach-Erlass mit dokumentiertem Lehrkräftemangel ist ein tragfähiges OP-4-Ziel; der eigentliche Engpass ist die Prüfbarkeit, nicht das Erzeugen von Inhalten, und das Feld 'KI-Spielebaukasten für Kinder' ist kommerziell bereits dicht.",
+    "mistake": "Die RWTH-Evaluation mit den Fachfremd-Quoten und der Kernlehrplan-Volltext ließen sich nicht abrufen (Bot-Sperre), daher stützt sich die Belastung auf den Pressebericht; Amélies Zustandsdateien fehlten (Schwesterrepo nicht vorhanden), bib_find und Themen-Check entfielen.",
+    "next_time": "Den Kernlehrplan-Volltext (Kompetenzerwartungen, Leistungsbewertung) direkt aus dem Lehrplannavigator abrufen und für C1 gezielt nach bestehenden Bewertungsrastern für KI-gestütztes Programmieren in deutschen Landesinstituten suchen."
+  },
+  "survivors": [
+    {
+      "buildable": "Ja: Protokollformat plus Raster, abgeleitet aus veröffentlichten Coding-Rubrics und den Kompetenzerwartungen; Pilot über Materialdatenbank und schulinterne Lehrpläne.",
+      "candidate_id": "C1",
+      "evidence_urls": [
+        "https://bass.schule.nrw/19420.htm",
+        "https://www.news4teachers.de/?p=144419",
+        "https://sites.bc.edu/devtech/wp-content/uploads/sites/181/2024/09/Validating-a-Creative-Coding-Rubric-through-expressive-activities-for-elementary-grades.pdf",
+        "https://edinstruments.org/instruments/computational-thinking-rubric-ctr"
+      ],
+      "gap": "Fachfremd unterrichtende Lehrkräfte müssen im Pflichtfach Programmierkompetenzen benoten, die sie selbst nicht prüfen können, und für KI-gestütztes Programmieren gibt es kein erprobtes Bewertungsraster.",
+      "gap_stands_alone": true,
+      "idea": "Prompt-Protokoll als Leistungsnachweis: der deutschsprachige Vibecoding-Verlauf eines Kindes wird gegen die Kompetenzerwartungen des Kernlehrplans 5/6 abgebildet, damit fachfremde Lehrkräfte Programmierdenken im Text benoten können.",
+      "rank": 1,
+      "recipient": "QUA-LiS NRW mit einem fachdidaktischen Lehrstuhl Informatik",
+      "recipient_kind": "agency",
+      "skeleton": "",
+      "who_has_problem": "Lehrkräfte im Pflichtfach Informatik 5/6 in NRW; der Bericht zum Informatik-Monitor nennt den Lehrkräftemangel als häufigstes Argument gegen das Pflichtfach, eine Suche fand Bewertungsraster nur für blockbasiertes bzw. kreatives Coding, nicht für Vibecoding.",
+      "why_now": "Lauffähige Browserspiele aus deutscher Kinderprosa und Versionsvergleich in Laiensprache sind erst mit Code-Sprachmodellen ab 2024 erschwinglich; 2018 gab es kein Artefakt 'Spezifikation führt zu Spiel'."
+    },
+    {
+      "buildable": "Ja: Fehlerkatalog aus den Inhaltsfeldern, Generator plus Spielvorlagen; der Hochschulansatz muss auf Altersgruppe und Spielkontext übertragen werden.",
+      "candidate_id": "C2",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2411.14303v2",
+        "https://arxiv.org/html/2411.10455v1",
+        "https://www.news4teachers.de/?p=144419"
+      ],
+      "gap": "Kinder, die Spiele per Sprache erzeugen lassen, üben nie, fremden Code zu lesen und zu prüfen, und fachfremde Lehrkräfte haben keine Fehlerübungen mit verlässlichem Lösungsschlüssel.",
+      "gap_stands_alone": true,
+      "idea": "Umgedrehtes Vibecoding: die KI baut kleine Spiele mit gezielt kernlehrplanbezogenen Fehlern, Kinder finden und beschreiben sie, die Lehrkraft erhält den Lösungsschlüssel.",
+      "rank": 2,
+      "recipient": "Gesellschaft für Informatik e.V. bzw. Bundesweite Informatikwettbewerbe, mit QUA-LiS NRW",
+      "recipient_kind": "association",
+      "skeleton": "",
+      "who_has_problem": "Lehrkräfte und Kinder im Pflichtfach 5/6; die gefundenen Studien zu KI-erzeugten Fehlerübungen betreffen Studierende im ersten Semester (BugSpotter, SIGCSE 2025), nicht Kinder.",
+      "why_now": "Kontrollierte Fehlererzeugung per Code-Modell ist belegt: laut BugSpotter-Abstract waren die erzeugten Übungen in der Lernwirkung mit lehrkrafterstellten vergleichbar."
+    },
+    {
+      "buildable": "Ja als Erweiterung einer bestehenden Plattform; ob AIS.chat Code ausführen darf, ist offen und muss beim Betreiber geprüft werden.",
+      "candidate_id": "C4",
+      "evidence_urls": [
+        "https://www.openai.com/terms",
+        "https://www.news4teachers.de/?p=159975",
+        "https://www.news4teachers.de/2026/05/staatliche-unterrichts-ki-aus-telli-wird-ais-chat-und-schulen-muessen-schon-wieder-alles-aendern/",
+        "https://lab.rosebud.ai/coding-for-kids",
+        "https://www.producthunt.com/p/makie/makie"
+      ],
+      "gap": "Kinder in Klasse 5/6 sind meist jünger als das Mindestalter kommerzieller KI-Dienste, sodass KI-gestütztes Programmieren im Pflichtunterricht an Konten und Elternerlaubnis scheitert.",
+      "gap_stands_alone": true,
+      "idea": "Kontofreier Vibecoding-Spielbaukasten-Modus in der staatlichen Schul-KI (AIS.chat, vormals telli), lehrkraftorganisiert, für unter 13-Jährige ohne eigenes kommerzielles Konto.",
+      "rank": 3,
+      "recipient": "FWU Institut für Film und Bild als Betreiber von AIS.chat im Auftrag der Länder",
+      "recipient_kind": "institution",
+      "skeleton": "",
+      "who_has_problem": "Schulen und Lehrkräfte; OpenAIs Nutzungsbedingungen verlangen laut Suchergebnis mindestens 13 Jahre und Elternerlaubnis unter 18, die staatliche Schul-KI wird laut Bericht nur über Lehrkräfte zugänglich gemacht.",
+      "why_now": "Die gemeinsame Länder-Infrastruktur mit EU-Servern und lehrkraftorganisiertem Zugang existiert erst seit 2025; kommerzielle Kinder-Spielebaukästen per Sprache (Rosebud, Makie, Seele, Summer Engine) zeigen, dass die Technik reif ist."
+    }
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"inversion-20261014T090028-kids-vibecoding"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[
+  "06-suche/amelie-inversions-log.md",
+  "06-suche/amelie-suchplaybook.md"
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld target, Teil 1 (laut gespeicherter Datei):
+{
+  "candidates": [
+    {
+      "check_queries": [
+        "vibe coding children classroom assessment natural language prompts computational thinking rubric 2025",
+        "Leistungsbewertung Informatik Klasse 5 6 fachfremd Bewertungsraster Programmierprojekte"
+      ],
+      "id": "C1",
+      "idea": "Prompt-Protokoll als Leistungsnachweis: Der Verlauf eines Vibecoding-Auftrags (deutsche Spielbeschreibung, Nachbesserungen, Testbeobachtungen) wird gegen die Kompetenzerwartungen des Kernlehrplans 5/6 abgebildet, sodass eine fachfremde Lehrkraft Zerlegung, Bedingungen und Wiederholung im Text des Kindes erkennen und benoten kann.",
+      "recipient": "QUA-LiS NRW (Lehrplannavigator, Materialdatenbank) gemeinsam mit einem fachdidaktischen Lehrstuhl Informatik",
+      "recipient_kind": "agency",
+      "why_now": "Sprachmodelle erzeugen seit 2024 aus deutscher Kinderprosa lauffähige Browserspiele und können Codeänderungen zwischen zwei Versionen in kindgerechter Sprache erklären; damit wird erstmals die Spezifikation statt des Codes zum prüfbaren Artefakt."
+    },
+    {
+      "check_queries": [
+        "LLM generated buggy programs debugging exercises for novice programmers children study"
+      ],
+      "id": "C2",
+      "idea": "Umgedrehtes Vibecoding: Die KI baut kleine Spiele mit gezielt eingebauten, kernlehrplanbezogenen Fehlern (falsche Bedingung, Endlosschleife, vertauschte Reihenfolge); die Kinder spielen, finden den Fehler und beschreiben ihn auf Deutsch, die Lehrkraft erhält den Lösungsschlüssel mit.",
+      "recipient": "Bundesweite Informatikwettbewerbe (BWINF, Informatik-Biber) oder Gesellschaft für Informatik e.V. mit QUA-LiS NRW",
+      "recipient_kind": "association",
+      "why_now": "Code-Modelle können seit 2024 zu einer Aufgabenbeschreibung kontrolliert fehlerhafte, lauffähige Programme mit Schwierigkeitssteuerung erzeugen (in Hochschulstudien mit lehrkrafterstellten Übungen vergleichbar); 2018 hätte jede Fehlervariante von Hand gebaut werden müssen."
+    },
+    {
+      "check_queries": [
+        "Kinder schreiben Spielregeln KI setzt sie in Computerspiel um Unterricht Präzision Sprache"
+      ],
+      "id": "C3",
+      "idea": "Pausenhofregel-Übersetzer: Kinder schreiben die Regeln eines Pausenspiels (Fangen, Völkerball) auf, die KI setzt sie wortwörtlich in ein spielbares Digitalspiel um; jede Mehrdeutigkeit wird als sichtbarer Spielfehler erlebbar und muss im Text präzisiert werden.",
+      "recipient": "Stiftung Kinder forschen in Kooperation mit kommunalen Medienzentren",
+      "recipient_kind": "institution",
+      "why_now": "Wörtliche Umsetzung deutscher Regeltexte in lauffähige Spiele ohne Programmierkenntnisse ist erst mit Code-Sprachmodellen ab 2024 im Klassenraum bezahlbar."
+    },
+    {
+      "check_queries": [
+        "telli KI-Chatbot Schulen Altersgrenze Schüler unter 13 Datenschutz Bundesländer",
+        "AI game maker for kids under 13 COPPA compliant classroom describe game in words generates code"
+      ],
+      "id": "C4",
+      "idea": "Kontofreie Vibecoding-Spielwiese in der staatlichen Schul-KI-Infrastruktur: ein lehrkraftorganisierter Spielbaukasten-Modus (Kind beschreibt, Spiel entsteht in einer Sandbox), damit unter 13-Jährige ohne eigenes Konto bei kommerziellen Diensten am Pflichtfach teilnehmen können.",
+      "recipient": "FWU Institut für Film und Bild als Betreiber von AIS.chat (vormals telli) im Auftrag der Länder",
+      "recipient_kind": "institution",
+      "why_now": "Die Länder betreiben seit 2025 eine gemeinsame Schul-KI (telli, inzwischen AIS.chat) mit EU-Servern und lehrkraftorganisiertem Zugang; zugleich verlangen kommerzielle Dienste ein Mindestalter von 13 und Elternerlaubnis unter 18."
+    },
+    {
+      "check_queries": [
+        "außerschulische Programmierprojekte anrechnen Informatikunterricht Leistungsbewertung Portfolio"
+      ],
+      "id": "C5",
+      "idea": "Mod-Brücke: Kinder bringen ein selbst gebautes Spiel oder Mod von zuhause mit; ein Werkzeug erklärt der Lehrkraft in Alltagssprache, welche Kernlehrplan-Kompetenzen darin stecken, sodass außerschulische Arbeit anrechenbar wird.",
+      "recipient": "Ministerium für Schule und Bildung NRW, Referat Informatik / Medienberatung NRW",
+      "recipient_kind": "agency",
+      "why_now": "Multimodale Modelle lesen seit 2024 fremden Spielcode und Projektdateien und fassen sie in Laiensprache zusammen."
+    },
+    {
+      "check_queries": [
+        "KI Aufgabengenerator Informatik Klassenarbeit Erwartungshorizont Lehrkräfte"
+      ],
+      "id": "C6",
+      "idea": "Klassenarbeitsgenerator Informatik 5/6: spielbasierte Prüfungsaufgaben mit Erwartungshorizont für fachfremde Lehrkräfte, automatisch an den Kernlehrplan angepasst.",
+      "recipient": "QUA-LiS NRW",
+      "recipient_kind": "agency",
+      "why_now": "Sprachmodelle erzeugen seit 2023 Aufgaben samt Erwartungshorizont in Sekunden."
+    },
+    {
+      "check_queries": [
+        "Schulen testen gegenseitig Schülerspiele Fehlerberichte Informatikunterricht"
+      ],
+      "id": "C7",
+      "idea": "Klassenübergreifender Spieletest: Klassen verschiedener Schulen spielen gegenseitig ihre per Vibecoding gebauten Spiele und geben strukturierte Fehlerberichte zurück, die auf Kernlehrplan-Kompetenzen abgebildet werden; die fachfremde Lehrkraft moderiert nur.",
+      "recipient": "Kommunale Medienzentren NRW im Verbund mit der Medienberatung NRW",
+      "recipient_kind": "agency",
+      "why_now": "Kindliche Fehlerberichte in Freitext lassen sich seit 2024 per Sprachmodell automatisch dem konkreten Codeabschnitt und einer Kompetenz zuordnen."
+    }
+  ],
+  "contract_version": "1.0.0",
+  "operator": "OP-4",
+  "shortlist": [
+    "C1",
+    "C2",
+    "C4",
+    "C6"
+  ],
+  "target": {
+    "anchor_class": "A",
+    "blind_spot": "Niemand bewertet die Lese- und Prüffähigkeit gegenüber KI-erzeugtem Code, obwohl Kinder Spiele zunehmend per Sprache erzeugen lassen; die Anbieter von KI-Spielebaukästen verdienen an Haushaltsabos, nicht an der Benotbarkeit im Pflichtunterricht.",
+    "name": "Pflichtfach Informatik Klasse 5/6 in NRW: Kernlehrplan Informatik, festgesetzt per RdErl. vom 09.06.2021 (BASS 15-21), in Kraft ab 01.08.2021 aufsteigend ab Klasse 5",
+    "source_label": "Klasse A: Runderlass des Ministeriums für Schule und Bildung NRW, BASS 15-21 (Kernlehrplan Klasse 5 und 6 Informatik)",
+    "source_url": "https://bass.schule.nrw/19420.htm",
+    "where_data_stops": "Die Kompetenzerwartungen stehen im Kernlehrplan, die Umsetzung in schulinternen Lehrplänen pro Schule; was Kinder tatsächlich können, endet in einer Zeugnisnote ohne Artefakt, und die Programme, die Kinder zuhause in Spielen bauen, kommen in der Schule nie an.",
+    "who_carries_burden": "Fachfremd unterrichtende Lehrkräfte, die Programmierkompetenzen von Zehn- bis Zwölfjährigen vermitteln und benoten müssen, ohne sie selbst prüfen zu können; laut Bericht gilt der Lehrkräftemangel als häufigstes Argument gegen das Pflichtfach.",
+    "who_pays": "Das Land NRW finanziert Pflichtstunden und Weiterbildungen (laut Informatik-Monitor-Bericht 336 weitergebildete Lehrkräfte in einem Jahr); Stiftungen und Verbände (GI, Stifterverband, Heinz Nixdorf Stiftung) profitieren als Agenda-Setter, Plattformanbieter von Lernsoftware als Lieferanten."
+  },
+  "thesis": "Die Pflicht besteht auf dem Papier, die Prüfkompetenz fehlt im Klassenraum: statt Programmieren durch Fachlehrkräfte prüfen zu lassen, wird die deutschsprachige Spezifikation und Fehlersuche des Kindes gegenüber KI-erzeugtem Spielcode zum benotbaren Nachweis, den auch eine fachfremde Lehrkraft lesen kann."
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "inversion-20261014T090028-kids-vibecoding-t01",
+    "status": "ok",
+    "summary": "Informatik Pflichtfach Klasse 5 6 Lehrermangel fachfremd unterrichtet Kerncurriculum",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T090028-kids-vibecoding-t02",
+    "status": "ok",
+    "summary": "OpenAI terms of use minimum age 13 parental consent under 18",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T090028-kids-vibecoding-t03",
+    "status": "ok",
+    "summary": "Kernlehrplan Informatik Klasse 5 und 6 NRW Pflichtfach schulentwicklung.nrw.de Lehrplannavigator",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T090028-kids-vibecoding-t04",
+    "status": "error",
+    "summary": "https://publications.rwth-aachen.de/record/1019237/files/1019237.pdf",
+    "tool": "verify_quote"
+  },
+  {
+    "call_id": "inversion-20261014T090028-kids-vibecoding-t05",
+    "status": "ok",
+    "summary": "https://bass.schule.nrw/19420.htm",
+    "tool": "verify_quote"
+  },
+  {
+    "call_id": "inversion-20261014T090028-kids-vibecoding-t06",
+    "status": "ok",
+    "summary": "https://www.news4teachers.de/?p=144419",
+    "tool": "verify_quote"
+  },
+  {
+    "call_id": "inversion-20261014T090028-kids-vibecoding-t07",
+    "status": "error",
+    "summary": "https://schulentwicklung.nrw.de/materialdatenbank/material/download/11681",
+    "tool": "verify_quote"
+  },
+  {
+    "call_id": "inversion-20261014T090028-kids-vibecoding-t08",
+    "status": "ok",
+    "summary": "https://www.news4teachers.de/?p=159975",
+    "tool": "verify_quote"
+  },
+  {
+    "call_id": "inversion-20261014T090028-kids-vibecoding-t09",
+    "status": "error",
+    "summary": "https://www.openai.com/terms",
+    "tool": "verify_quote"
+  },
+  {
+    "call_id": "inversion-20261014T090028-kids-vibecoding-t10",
+    "status": "ok",
+    "summary": "https://arxiv.org/abs/2411.14303v2",
+    "tool": "verify_quote"
+  },
+  {
+    "call_id": "inversion-20261014T090028-kids-vibecoding-t11",
+    "status": "ok",
+    "summary": "vibe coding children classroom assessment natural language prompts computational thinking rubric 2025",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T090028-kids-vibecoding-t12",
+    "status": "ok",
+    "summary": "telli KI-Chatbot Schulen Altersgrenze Schüler unter 13 Datenschutz Bundesländer",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T090028-kids-vibecoding-t13",
+    "status": "ok",
+    "summary": "LLM generated buggy programs debugging exercises for novice programmers children study",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T090028-kids-vibecoding-t14",
+    "status": "ok",
+    "summary": "AI game maker for kids under 13 COPPA compliant classroom describe game in words generates code",
+    "tool": "search"
+  }
+]

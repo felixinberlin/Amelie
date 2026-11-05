@@ -1,0 +1,485 @@
+{
+  "batch_id": "amelie-lab-scarcity-scarcity-20261015-playful-addiction-preventio-55f22f9699f99b44",
+  "contract_version": "1.0.0",
+  "created_at": "2026-10-15T20:33:23.455896+00:00",
+  "engine": "scarcity",
+  "existence_check": false,
+  "ideas": [
+    {
+      "local_id": "C1",
+      "record": {
+        "buildable": "Entwurf: 2 Min. Bildbriefing, 7 Min. drei Funksprüche mit Antwortkarten und eigener Lösung, 3 Min. freiwillige Figurenreflexion, 3 Min. Übergabebild. Vier frei vereinbarte Termine mit neuen Szenen; nur fiktiver Weltstand, keine Namen, Konsumdaten oder Anwesenheitsserie.",
+        "candidate_id": "C1",
+        "evidence_urls": [
+          "https://www.ls-suchtfragen-lsa.de/projekte/bzga_klarsichtparcours/",
+          "https://www.berlin-suchtpraevention.de/themen/schule-und-jugendarbeit/"
+        ],
+        "forced_by_constraint": "Der 15-Minuten-Wechsel erzwingt den knappen Bildzustand und die Übergabe an ein uninformiertes Folgeteam; gerade diese Unterbrechung wird zur kooperativen Spielregel. Ohne den Wechsel entfällt die Staffel; eine Fortsetzungsgeschichte allein wäre nicht engpassbedingt.",
+        "gap": "Beim Wechsel nach 15 Minuten muss eine neue Gruppe eine fiktive soziale Situation übernehmen können, ohne die gesamte Vorgeschichte gehört zu haben.",
+        "gap_stands_alone": true,
+        "idea": "Funkstaffel: Eine Gruppe hat im 15-Minuten-Stationsfenster eine fiktive Festivalcrew per Kartenfunk zu unterstützen; dann übernimmt die nächste Gruppe. Drei Bildsymbole statt Personenakte tragen eine hilfreiche Reaktion auf Gruppendruck weiter; beim nächsten Termin kehrt dieselbe Crew mit einem neuen Problem zurück.",
+        "rank": 1,
+        "recipient": "Landesstelle für Suchtfragen Sachsen-Anhalt mit geschulten KlarSicht-Fachkräften; hypothetischer Partner, keine Zusage",
+        "recipient_kind": "association",
+        "skeleton": "Papierfolge »Frittenmond«: Eine Alienband verlangt von einer fiktiven Figur, für den Backstagepass zu vapen. Das Team erfindet drei lustige, klare Antworten und einen unterstützenden Auftritt der Freundesfigur; die nächste Stationsgruppe führt eine Antwort weiter. Freiwillige Sprechrollen, Vorlesealternative und Pass-Karte; kein echter Konsumbericht. Spätere Folgen: Chatdruck, Werbetrick, Hilfeholen; fachlich prüfen lassen.",
+        "who_has_problem": "KlarSicht-Moderierende haben den dokumentierten Stationswechsel; eine Nachfrage nach Funkstaffeln ist unbekannt. Billigste Basis: vorhandenen Koffer nach Schulung ausleihen und die bestehenden Rollenspiele nutzen.",
+        "why_now": "Papierprototyp sofort umsetzbar; keine neue KI-Fähigkeit nötig. Die Nutzerentscheidung für spielerische Ideen ersetzt hier bewusst das ursprüngliche Neuheitskriterium, nicht die spätere Prüfung von Spaß und Nutzen."
+      }
+    }
+  ],
+  "intent": "Langfristige Suchtprävention spielerisch für 12–18-Jährige: echte kooperative Freude, offline oder hybrid, wiederkehrende Treffen; praktische Prototypen statt KI-Neuheitszwang",
+  "lab_id": "amelie-lab",
+  "model": "Codex subagent (stand-in; searches: WebSearch; no Vertex)",
+  "record": {
+    "accounting": {
+      "cost_usd": 0.0,
+      "model_calls": 0,
+      "search_calls": 6,
+      "search_queries": 12
+    },
+    "constraint": {
+      "constraint": {
+        "closed_workaround": "Eine unbegrenzt lange Episode ohne Abschluss oder ein bloßes Weiterreden überzieht den nächsten Stationswechsel; eine selbstständige längere Jugendclubrunde wäre dagegen ein anderes Format.",
+        "constraint_class": "temporal_throughput",
+        "evidence_quote": "das Modell des Stationswechsels nach 15 Minuten",
+        "source_label": "LS-LSA, KlarSicht-Koffer, Abschnitt Zielgruppe; abgerufen 15.10.2026, Seitendatum unbekannt",
+        "source_url": "https://www.ls-suchtfragen-lsa.de/projekte/bzga_klarsichtparcours/",
+        "statement": "Im gewählten KlarSicht-Gastformat wechseln die Gruppen nach 15 Minuten die Station; ein ergänzendes Spiel muss darin Einstieg, Spielhandlung, kurze Reflexion und Übergabe abschließen.",
+        "who_bears_it": "Geschulte KlarSicht-Moderierende und die jeweils wechselnde Jugendgruppe; die Anbieterbeschreibung nennt 12–17 Jahre und Jugendbildung sowie Jugendfreizeit.",
+        "why_binding_now": "Die Begrenzung gilt nur beim Anschluss an diesen dokumentierten Parcoursablauf, nicht allgemein für Jugendclubs oder die Aufmerksamkeit Jugendlicher. Ein konkreter Gastgeber und Einsatztermin sind noch unbekannt."
+      },
+      "contract_version": "1.0.0",
+      "rejected_soft": [
+        "Alle Jugendlichen haben eine kurze Aufmerksamkeitsspanne: nicht belegt.",
+        "Jeder Jugendclub hat nur 15 Minuten: nicht belegt.",
+        "Persönliche Offenlegung ist in allen Präventionsspielen verboten: nicht belegt."
+      ]
+    },
+    "contract_version": "1.1.0",
+    "created_at": "2026-10-15T20:33:23.455896+00:00",
+    "intent": "Langfristige Suchtprävention spielerisch für 12–18-Jährige: echte kooperative Freude, offline oder hybrid, wiederkehrende Treffen; praktische Prototypen statt KI-Neuheitszwang",
+    "invention": {
+      "candidates": [
+        {
+          "check_queries": [
+            "Welche Materialien bieten Fachstellen für Suchtprävention für kooperative 15-Minuten-Hörspielmissionen zu Gruppendruck, die bei späteren Jugendgruppentreffen fortgesetzt werden?"
+          ],
+          "id": "C1",
+          "idea": "Funkstaffel: Eine Gruppe hat im 15-Minuten-Stationsfenster eine fiktive Festivalcrew per Kartenfunk zu unterstützen; dann übernimmt die nächste Gruppe. Drei Bildsymbole statt Personenakte tragen eine hilfreiche Reaktion auf Gruppendruck weiter; beim nächsten Termin kehrt dieselbe Crew mit einem neuen Problem zurück.",
+          "recipient": "Landesstelle für Suchtfragen Sachsen-Anhalt mit geschulten KlarSicht-Fachkräften; hypothetischer Partner, keine Zusage",
+          "recipient_kind": "association",
+          "why_now": "Mit Papier, Figuren und optional vorproduziertem Ton heute baubar; 2018 ebenfalls möglich. Auf Nutzerwunsch zählt ein praktisch prüfbarer Spielprototyp, keine behauptete KI-Neuheit.",
+          "without_constraint": "Ohne den festen Gruppenwechsel entfällt die Funkübergabe zwischen getrennten Teams; dieselbe Gruppe könnte die Szene direkt zu Ende spielen. Der spezielle Staffelmechanismus verliert seinen Zweck, nicht jede erzählerische Präventionsübung."
+        },
+        {
+          "check_queries": [
+            "Welche suchtpräventiven Methoden für 12- bis 17-Jährige lassen Gruppen fiktive Comics zu Gruppendruck ohne persönliche Konsumoffenlegung gemeinsam weiterspielen?"
+          ],
+          "id": "C2",
+          "idea": "Comic-Staffel: Gruppen legen zu einer fiktiven Vape-Angebotsszene witzige Sprechblasen und einen überraschenden Ausweg; jede Stationsgruppe übernimmt ein Panel. Vier spätere Treffen nutzen neue Figuren; niemand berichtet über eigenen Konsum.",
+          "recipient": "Landesstelle für Suchtfragen Sachsen-Anhalt mit geschulten KlarSicht-Fachkräften; hypothetischer Partner, keine Zusage",
+          "recipient_kind": "association",
+          "why_now": "Mit Papier, Figuren und optional vorproduziertem Ton heute baubar; 2018 ebenfalls möglich. Auf Nutzerwunsch zählt ein praktisch prüfbarer Spielprototyp, keine behauptete KI-Neuheit.",
+          "without_constraint": "Ohne die 15-Minuten-Grenze bleibt gemeinsames Comic-Erfinden ein gutes Spiel; der spezifische Kollapstest scheitert."
+        },
+        {
+          "check_queries": [
+            "Welche Materialien bieten Tom und Lisa oder KlarSicht für kooperative Partyplanung in kurzen wiederholbaren Spielrunden für Jugendliche?"
+          ],
+          "id": "C3",
+          "idea": "Festival-Werkstatt: Gemeinsam legen Jugendliche Bühne, Rückzugsort und alkoholfreie Bar auf einen Spielplan; Ereigniskarten verändern die Party. Spätere Treffen bringen neue Bands und Wünsche; die Gruppe verhandelt Lösungen statt Wissenspunkte zu sammeln.",
+          "recipient": "Landesstelle für Suchtfragen Sachsen-Anhalt mit geschulten KlarSicht-Fachkräften; hypothetischer Partner, keine Zusage",
+          "recipient_kind": "association",
+          "why_now": "Mit Papier, Figuren und optional vorproduziertem Ton heute baubar; 2018 ebenfalls möglich. Auf Nutzerwunsch zählt ein praktisch prüfbarer Spielprototyp, keine behauptete KI-Neuheit.",
+          "without_constraint": "Ohne die 15-Minuten-Grenze bleibt die Festivalplanung sinnvoll und unterhaltsam; der Kollapstest scheitert."
+        },
+        {
+          "check_queries": [
+            "Welche wiederholbaren kooperativen Stationenspiele zur Suchtprävention werden für Jugendliche angeboten?"
+          ],
+          "id": "C4",
+          "idea": "Checkpoint-Schiebefenster: Ein rotierendes Team bekommt nur das letzte Bild einer fremden Episode und muss in 15 Minuten eine verständliche Anschlusskarte bauen; bei späteren Terminen wird dieselbe Konfliktszene aus einer anderen Figurenperspektive gespielt.",
+          "recipient": "Landesstelle für Suchtfragen Sachsen-Anhalt mit geschulten KlarSicht-Fachkräften; hypothetischer Partner, keine Zusage",
+          "recipient_kind": "association",
+          "why_now": "Mit Papier, Figuren und optional vorproduziertem Ton heute baubar; 2018 ebenfalls möglich. Auf Nutzerwunsch zählt ein praktisch prüfbarer Spielprototyp, keine behauptete KI-Neuheit.",
+          "without_constraint": "Ohne den Stationswechsel braucht es keine Rekonstruktion nur aus dem letzten fremden Bild; die Engpassmechanik wird trivial."
+        },
+        {
+          "check_queries": [
+            "Welche wiederholbaren kooperativen Stationenspiele zur Suchtprävention werden für Jugendliche angeboten?"
+          ],
+          "id": "C5",
+          "idea": "Geräusche-Garage: Gemeinsam entstehen absurde Soundeffekte und Hörszenen zu fiktiven Gruppendrucksituationen; beim Wiedersehen vertont die Gruppe eine neue Variante.",
+          "recipient": "Landesstelle für Suchtfragen Sachsen-Anhalt mit geschulten KlarSicht-Fachkräften; hypothetischer Partner, keine Zusage",
+          "recipient_kind": "association",
+          "why_now": "Mit Papier, Figuren und optional vorproduziertem Ton heute baubar; 2018 ebenfalls möglich. Auf Nutzerwunsch zählt ein praktisch prüfbarer Spielprototyp, keine behauptete KI-Neuheit.",
+          "without_constraint": "Ohne die 15-Minuten-Grenze bleibt gemeinsames Vertonen attraktiv; der Kollapstest scheitert."
+        },
+        {
+          "check_queries": [
+            "Welche wiederholbaren kooperativen Stationenspiele zur Suchtprävention werden für Jugendliche angeboten?"
+          ],
+          "id": "C6",
+          "idea": "Agentenbrief statt Gedächtnistest: Beim Stationswechsel schreibt die Gruppe maximal drei Handlungsoptionen für eine fiktive Person auf eine Übergabekarte; beim nächsten Termin werden neue Karten verglichen.",
+          "recipient": "Landesstelle für Suchtfragen Sachsen-Anhalt mit geschulten KlarSicht-Fachkräften; hypothetischer Partner, keine Zusage",
+          "recipient_kind": "association",
+          "why_now": "Mit Papier, Figuren und optional vorproduziertem Ton heute baubar; 2018 ebenfalls möglich. Auf Nutzerwunsch zählt ein praktisch prüfbarer Spielprototyp, keine behauptete KI-Neuheit.",
+          "without_constraint": "Ohne die erzwungene Übergabe kann dieselbe Gruppe ihre Optionen besprechen; eine gesonderte Übertragungskarte wird überflüssig."
+        }
+      ],
+      "contract_version": "1.1.0",
+      "shortlist": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "thesis": "Wenn die Gruppe nach 15 Minuten wechselt, muss die fortlaufende Spielhandlung ohne individuelle Erinnerung übergeben werden können."
+    },
+    "log_entry": "<!-- proposed by the Lab's Scarcity agent, run scarcity-20261015-playful-addiction-prevention; nothing was written to Amélie -->\n| 2026-10-15 | Lab | Im gewählten KlarSicht-Gastformat wechseln die Gruppen nach 15 Minuten die Station; ein ergänzendes Spiel muss darin Einstieg, Spielhandlung, kurze Reflexion und Übergabe abschließen. (temporal_throughput) | 6 | 1 (ungeprüft): 1. Funkstaffel: Eine Gruppe hat im 15-Minuten-Stationsfenster eine fiktive Festivalcrew per Kartenfunk zu unterstützen; dann übernimmt die nächste Gruppe. Drei Bildsymbole statt Personenakte tragen eine hilfreiche Reaktion auf Gruppendruck weiter; beim nächsten Termin kehrt dieselbe Crew mit einem neuen Problem zurück. (→ Landesstelle für Suchtfragen Sachsen-Anhalt mit geschulten KlarSicht-Fachkräften; hypothetischer Partner, keine Zusage) | Beim Wechsel nach 15 Minuten muss eine neue Gruppe eine fiktive soziale Situation übernehmen können, ohne die gesamte Vorgeschichte gehört zu haben. |\n\n### Scarcity run scarcity-20261015-playful-addiction-prevention — 2026-10-15 (intent: Langfristige Suchtprävention spielerisch für 12–18-Jährige: echte kooperative Freude, offline oder hybrid, wiederkehrende Treffen; praktische Prototypen statt KI-Neuheitszwang)\n- **Learned:** Sechs Spielhypothesen, drei priorisierte Folgeprüfungen, fünf Abbrüche, ein unvalidierter Prototyp; Quellenfunde sind keine Wirkungsnachweise. KlarSicht und Berliner Rollenspiele, Quiz und Escape Game bilden die belegte Basis, kein erfundener Mangel an Spielen.\n- **Mistake:** Absichtliche Anpassung an den Nutzerauftrag: Spaß und praktisch prüfbarer Nutzen statt erst seit 2024 möglicher KI. Die 15-Minuten-Grenze gilt nur im ausgewählten Gastformat; persönliche Offenlegung wird als Entwurfsentscheidung vermieden, nicht aufgrund einer behaupteten allgemeinen Vorschrift.\n- **Next time:** Eine Fachstelle um freiwilligen Papiervergleich bitten: bestehende Kurzstation gegen Funkstaffel, dann vier vereinbarte Wiederbesuche. Spielabschlusszeit, Regelrückfragen, anonymen Wieder-Spielwunsch und Reaktionen auf fiktive Druckszenen getrennt messen; Suchtpräventionswirkung bleibt ohne geeignete Langzeitstudie unbekannt.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): Welche Materialien bieten Fachstellen für Suchtprävention für kooperative 15-Minuten-Hörspielmissionen zu Gruppendruck, die bei späteren Jugendgruppentreffen fortgesetzt werden? -> https://www.nls-online.de/portfolio/der-gruene-koffer-methodenset-cannabispraevention/, https://www.landkreis-miltenberg.de/themen/kinder-jugend/suchtpraevention/materialien.html, https://www.fachstelle.at/wp-content/uploads/2021/02/Suchtpraevention-in-der-Schule-Version.pdf, https://www.ls-suchtfragen-lsa.de/projekte/bzga_klarsichtparcours/\n  - C2 (ok): Welche suchtpräventiven Methoden für 12- bis 17-Jährige lassen Gruppen fiktive Comics zu Gruppendruck ohne persönliche Konsumoffenlegung gemeinsam weiterspielen? -> https://initiative-gemeinsamkeit.de/connection-design-lab/, https://kommunale-suchtpraevention.de/sites/default/files/alles_sucht_oder_was_bachelorarbeit_maria_poehnitzsch_-_ohne_anhang.pdf, https://www.politische-jugendbildung-et.de/praxistools/unbox-it/, https://www.journals.infinite-science.de/index.php/dsk/article/view/1102\n  - C3 (ok): Welche Materialien bieten Tom und Lisa oder KlarSicht für kooperative Partyplanung in kurzen wiederholbaren Spielrunden für Jugendliche? -> https://www.kita.de/ratgeber/spielzeug/spiele/party-spiele-teenager/, https://playatme.com/party-games/minute-to-win-it-party-games-for-teens-household-items, https://www.kita.de/ratgeber/spielzeug/spiele/partyspiele-fuer-teenager/, https://www.kita.de/ratgeber/spielzeug/spiele/gesellschaftsspiele-fuer-teenager/\n",
+    "model": "Codex subagent (stand-in; searches: WebSearch; no Vertex)",
+    "prior_art": [
+      {
+        "answer": "Anbieter dokumentieren KlarSicht mit 15-Minuten-Wechsel, weitere ausleihbare Methodensets und Filme; sie belegen keinen Bedarf an genau dieser Funkstaffel. Der Vorschlag bleibt ein eigenständiger, nicht validierter Spieltest neben vorhandenen Methoden.",
+        "candidate_id": "C1",
+        "pages": [
+          "https://www.nls-online.de/portfolio/der-gruene-koffer-methodenset-cannabispraevention/",
+          "https://www.landkreis-miltenberg.de/themen/kinder-jugend/suchtpraevention/materialien.html",
+          "https://www.fachstelle.at/wp-content/uploads/2021/02/Suchtpraevention-in-der-Schule-Version.pdf",
+          "https://www.ls-suchtfragen-lsa.de/projekte/bzga_klarsichtparcours/",
+          "https://www.suchtvorbeugung.net/plus/",
+          "https://inpeos.de/wkk_downloads/",
+          "https://www.berlin-suchtpraevention.de/wp-content/uploads/2023/05/230512_Liste_interaktive_Materialien.pdf",
+          "https://www.vortiv.de/praeventionsangebote/jugendfilmtage/",
+          "https://www.nls-online.de/suchtpraevention-2/fachkraefte-fuer-suchtpraevention/",
+          "https://suchtpraevention.webraum.rlp.de/vor-ort/",
+          "https://www.ginko-stiftung.de/fachstelle/Home-kommunal/12245",
+          "https://www.berlin-suchtpraevention.de/15jahrefachstelle/suchtpraevention-zum-mitnehmen/",
+          "https://www.ls-suchtfragen-lsa.de/projekte/der-gruene-koffer/",
+          "https://www.hls-online.org/arbeitsbereiche/suchtpraevention/projekte/der-impuls/wettbewerbsbeitraege/gut-drauf-ein-seminar-um-freundschaft-glueck-und-abenteuer/",
+          "https://xn--suchtprvention-cib.rlp.de/media/46_br_auf-der-suche-nach.pdf",
+          "https://pubshop.bmb.gv.at/index.php?rex_media_file=453_suchtpraevention.pdf&rex_media_type=pubshop_download",
+          "https://www.drogenhilfe.eu/cms/images/05_Downloads/2013_Broschuere_Materialien.pdf",
+          "https://shop.bzga.de/pdf/20540000.pdf",
+          "https://de.wikipedia.org/wiki/Suchtpr%C3%A4vention",
+          "https://de.wikipedia.org/wiki/Rebound_%28Pr%C3%A4vention%29"
+        ],
+        "question": "Welche Materialien bieten Fachstellen für Suchtprävention für kooperative 15-Minuten-Hörspielmissionen zu Gruppendruck, die bei späteren Jugendgruppentreffen fortgesetzt werden?",
+        "status": "ok"
+      },
+      {
+        "answer": "Ein älterer Hochschulbericht beschreibt Comics zum Wiederholen von Gruppendruckreaktionen; GemEinsamkeit nutzt fiktive Szenarien ohne unmittelbare Selbstoffenlegung, aber zu sozialen Beziehungen. Keine dieser Überschneidungen beweist die Eignung oder Neuheit der vorgeschlagenen Staffel.",
+        "candidate_id": "C2",
+        "pages": [
+          "https://initiative-gemeinsamkeit.de/connection-design-lab/",
+          "https://kommunale-suchtpraevention.de/sites/default/files/alles_sucht_oder_was_bachelorarbeit_maria_poehnitzsch_-_ohne_anhang.pdf",
+          "https://www.politische-jugendbildung-et.de/praxistools/unbox-it/",
+          "https://www.journals.infinite-science.de/index.php/dsk/article/view/1102",
+          "https://materialien.aj-bayern.de/suchtpraevention/methoden-und-ansaetze-der-suchtpraevention/konsumkompass.html",
+          "https://www.ls-suchtfragen-lsa.de/projekte/bzga_klarsichtparcours/",
+          "https://inpeos.de/wkk_downloads/",
+          "https://suchtvorbeugung.ktn.gv.at/repos/files/suchtvorbeugung/pdfs/Lehrerhandbuch_Version2012.pdf",
+          "https://www.blaues-kreuz.de/de/blaues-kreuz/neuigkeiten-und-presse/pressemitteilungen/pressemitteilung/schonungslos-direkt-authentisch-dominik-forsters-weg-aus-der-crystal-sucht-als-comic-fuer-jugendliche",
+          "https://act-on.jff.de/methoden/medien-emotionen-wuerfeln-mit-bezugspersonen/",
+          "https://eudap.eu/unplugged/",
+          "https://demokratie.jff.de/methode/fake-or-real-klammeraktion/",
+          "https://www.blaues-kreuz.de/de/blaues-kreuz/neuigkeiten-und-presse/aktuelles/neuigkeiten/schonungslos-direkt-authentisch-dominik-forsters-weg-aus-der-crystal-sucht-als-comic-fuer-jugendliche-0",
+          "https://www.hogrefe.com/de/shop/can-stop-95150.html",
+          "https://www.bildung-stmk.gv.at/dam/jcr%3Af5deba2c-414a-42fa-b091-34575c5e5cd9/Suchtpr%3Fvention%20in%20der%20Schule_2012.pdf",
+          "https://www.praevention.at/fileadmin/user_upload/09_Infobox/Infomaterialien/Unterrichtsmaterial/Lehrerhandbuch_Version2012.pdf",
+          "https://www.mannheim.de/sites/default/files/2024-08/IRC_MMM_Handbuch.pdf",
+          "https://missionnichtrauchen.lu/download/5366/?tmstv=1757488248",
+          "https://de.wikipedia.org/wiki/Suchtpr%C3%A4vention",
+          "https://de.wikipedia.org/wiki/Rebound_%28Pr%C3%A4vention%29"
+        ],
+        "question": "Welche suchtpräventiven Methoden für 12- bis 17-Jährige lassen Gruppen fiktive Comics zu Gruppendruck ohne persönliche Konsumoffenlegung gemeinsam weiterspielen?",
+        "status": "ok"
+      },
+      {
+        "answer": "Die Suchtreffer liefern vor allem allgemeine Partyspiele und Jugendverbandsmaterialien, keinen direkten Nachweis der Tom-und-Lisa-Kurzfassung. Die bereits gelesene Berliner Anbieterübersicht beschreibt Tom & Lisa als Partyplanspiel; der Vorschlag wäre zunächst gegen dieses bestehende Angebot zu prüfen.",
+        "candidate_id": "C3",
+        "pages": [
+          "https://www.kita.de/ratgeber/spielzeug/spiele/party-spiele-teenager/",
+          "https://playatme.com/party-games/minute-to-win-it-party-games-for-teens-household-items",
+          "https://www.kita.de/ratgeber/spielzeug/spiele/partyspiele-fuer-teenager/",
+          "https://www.kita.de/ratgeber/spielzeug/spiele/gesellschaftsspiele-fuer-teenager/",
+          "https://www.jugendarbeit.online/dpf_einheit/mensch-aergere-dich-nicht-xxl/",
+          "https://lautstark-jrk.de/materialien/",
+          "https://www.kita.de/ratgeber/spielzeug/spiele/minispiele-party/",
+          "https://www.rezension.org/bestenlisten/beste-partyspiele/",
+          "https://www.mueller.de/p/wiped-out-partyspiel-ratespiel-fuer-familien-teenager-erwachsene-mit-loeschbaren-hinweisen-und-brille-fuer-3-bis-6-spieler-PPN3107836/",
+          "https://www.asmodee.de/produkte/so-kleever",
+          "https://printandpartygames.com/games/minute-to-win-it/",
+          "https://www.loodens.com/de/spiele/nur-eine/",
+          "https://www.lissa-preis.ch/file/download/574/Bildung_neu_gestalten_mit_Games.pdf",
+          "https://pocketbook.de/de_de/downloadable/download/sample/sample_id/8152062/",
+          "https://www.lehre.de/fileadmin/user_upload/Lehrscher-Bote-Dezember-2024.pdf",
+          "https://www.kja-wuppertal.de/export/sites/kja-wuppertal/teamo/Materialliste/2020_03-TEAMO-Materialliste.pdf",
+          "https://wiesbaden-international.de/wp-content/uploads/2024/11/Games-To-Go-2020.pdf"
+        ],
+        "question": "Welche Materialien bieten Tom und Lisa oder KlarSicht für kooperative Partyplanung in kurzen wiederholbaren Spielrunden für Jugendliche?",
+        "status": "ok"
+      }
+    ],
+    "result": {
+      "contract_version": "1.1.0",
+      "kills": [
+        {
+          "candidate_id": "C2",
+          "failed_checks": [
+            "not_forced",
+            "problem_evidence"
+          ],
+          "reason": "Comic-Weiterzeichnen ist bereits als Methode dokumentiert und wäre auch ohne 15-Minuten-Wechsel sinnvoll. Für die behauptete zusätzliche Freude oder bessere Umsetzbarkeit der Staffel fehlen Vergleichsdaten; das ist kein Existenzurteil."
+        },
+        {
+          "candidate_id": "C3",
+          "failed_checks": [
+            "not_forced",
+            "problem_evidence"
+          ],
+          "reason": "Partyplanung bleibt ohne den Stationswechsel ein sinnvolles Spiel und trifft mit Tom & Lisa auf einen belegten funktionalen Nachbarn. Kein belegter Bedarf an der Kürzung; die Suche lieferte überwiegend allgemeine Partyspiele."
+        },
+        {
+          "candidate_id": "C4",
+          "failed_checks": [
+            "problem_evidence",
+            "buildable"
+          ],
+          "reason": "Die Perspektivübergabe nutzt zwar den Wechsel, doch die absichtlich fehlende Vorgeschichte kann ohne konkreten getesteten Beispielsatz bloß Verwirrung erzeugen. Gegenüber der Funkstaffel ist noch kein eigener prüfbarer Nutzen oder ausformulierter Spielablauf vorhanden."
+        },
+        {
+          "candidate_id": "C5",
+          "failed_checks": [
+            "not_forced",
+            "problem_evidence"
+          ],
+          "reason": "Gemeinsames Vertonen bleibt ohne Zeitgrenze attraktiv; eine besondere Nachfrage oder ein Vorteil gegenüber bestehenden Methoden ist nicht belegt. Kein Abbruch allein wegen älterer Technik."
+        },
+        {
+          "candidate_id": "C6",
+          "failed_checks": [
+            "buildable",
+            "problem_evidence"
+          ],
+          "reason": "Die Übergabekarte ist allein noch keine ausreichend spielbare Erfahrung; ein konkreter eigener Konflikt- und Auflösungsmechanismus sowie ein belegter Zusatznutzen fehlen. Als Bestandteil der Funkstaffel statt eigenständiger Kandidat behandeln."
+        }
+      ],
+      "log_row": {
+        "best_gap": "Beim Wechsel nach 15 Minuten muss eine neue Gruppe eine fiktive soziale Situation übernehmen können, ohne die gesamte Vorgeschichte gehört zu haben.",
+        "candidates": 6,
+        "constraint": "Im gewählten KlarSicht-Gastformat wechseln die Gruppen nach 15 Minuten die Station; ein ergänzendes Spiel muss darin Einstieg, Spielhandlung, kurze Reflexion und Übergabe abschließen.",
+        "constraint_class": "temporal_throughput",
+        "survivors": 1
+      },
+      "retro": {
+        "learned": "Sechs Spielhypothesen, drei priorisierte Folgeprüfungen, fünf Abbrüche, ein unvalidierter Prototyp; Quellenfunde sind keine Wirkungsnachweise. KlarSicht und Berliner Rollenspiele, Quiz und Escape Game bilden die belegte Basis, kein erfundener Mangel an Spielen.",
+        "mistake": "Absichtliche Anpassung an den Nutzerauftrag: Spaß und praktisch prüfbarer Nutzen statt erst seit 2024 möglicher KI. Die 15-Minuten-Grenze gilt nur im ausgewählten Gastformat; persönliche Offenlegung wird als Entwurfsentscheidung vermieden, nicht aufgrund einer behaupteten allgemeinen Vorschrift.",
+        "next_time": "Eine Fachstelle um freiwilligen Papiervergleich bitten: bestehende Kurzstation gegen Funkstaffel, dann vier vereinbarte Wiederbesuche. Spielabschlusszeit, Regelrückfragen, anonymen Wieder-Spielwunsch und Reaktionen auf fiktive Druckszenen getrennt messen; Suchtpräventionswirkung bleibt ohne geeignete Langzeitstudie unbekannt."
+      },
+      "survivors": [
+        {
+          "buildable": "Entwurf: 2 Min. Bildbriefing, 7 Min. drei Funksprüche mit Antwortkarten und eigener Lösung, 3 Min. freiwillige Figurenreflexion, 3 Min. Übergabebild. Vier frei vereinbarte Termine mit neuen Szenen; nur fiktiver Weltstand, keine Namen, Konsumdaten oder Anwesenheitsserie.",
+          "candidate_id": "C1",
+          "evidence_urls": [
+            "https://www.ls-suchtfragen-lsa.de/projekte/bzga_klarsichtparcours/",
+            "https://www.berlin-suchtpraevention.de/themen/schule-und-jugendarbeit/"
+          ],
+          "forced_by_constraint": "Der 15-Minuten-Wechsel erzwingt den knappen Bildzustand und die Übergabe an ein uninformiertes Folgeteam; gerade diese Unterbrechung wird zur kooperativen Spielregel. Ohne den Wechsel entfällt die Staffel; eine Fortsetzungsgeschichte allein wäre nicht engpassbedingt.",
+          "gap": "Beim Wechsel nach 15 Minuten muss eine neue Gruppe eine fiktive soziale Situation übernehmen können, ohne die gesamte Vorgeschichte gehört zu haben.",
+          "gap_stands_alone": true,
+          "idea": "Funkstaffel: Eine Gruppe hat im 15-Minuten-Stationsfenster eine fiktive Festivalcrew per Kartenfunk zu unterstützen; dann übernimmt die nächste Gruppe. Drei Bildsymbole statt Personenakte tragen eine hilfreiche Reaktion auf Gruppendruck weiter; beim nächsten Termin kehrt dieselbe Crew mit einem neuen Problem zurück.",
+          "rank": 1,
+          "recipient": "Landesstelle für Suchtfragen Sachsen-Anhalt mit geschulten KlarSicht-Fachkräften; hypothetischer Partner, keine Zusage",
+          "recipient_kind": "association",
+          "skeleton": "Papierfolge »Frittenmond«: Eine Alienband verlangt von einer fiktiven Figur, für den Backstagepass zu vapen. Das Team erfindet drei lustige, klare Antworten und einen unterstützenden Auftritt der Freundesfigur; die nächste Stationsgruppe führt eine Antwort weiter. Freiwillige Sprechrollen, Vorlesealternative und Pass-Karte; kein echter Konsumbericht. Spätere Folgen: Chatdruck, Werbetrick, Hilfeholen; fachlich prüfen lassen.",
+          "who_has_problem": "KlarSicht-Moderierende haben den dokumentierten Stationswechsel; eine Nachfrage nach Funkstaffeln ist unbekannt. Billigste Basis: vorhandenen Koffer nach Schulung ausleihen und die bestehenden Rollenspiele nutzen.",
+          "why_now": "Papierprototyp sofort umsetzbar; keine neue KI-Fähigkeit nötig. Die Nutzerentscheidung für spielerische Ideen ersetzt hier bewusst das ursprüngliche Neuheitskriterium, nicht die spätere Prüfung von Spaß und Nutzen."
+        }
+      ]
+    },
+    "run_id": "scarcity-20261015-playful-addiction-prevention",
+    "state_missing": [],
+    "tool_calls": [
+      {
+        "call_id": "scarcity-20261015-playful-addiction-prevention-t01",
+        "pages": [
+          "https://www.klasse2000.de/faq",
+          "https://www.bzga.de/fileadmin/user_upload/PDF/studien/ev_klarsicht_mm_ta--06d04745cf7a7c50d535a04a045b56eb.pdf",
+          "https://www.klasse2000.de/downloads/evaluation",
+          "https://klaro-text.klasse2000.de/eltern-tipps/newsreader-eltern-tipps/gesucht-wir-suchen-gesundheitsfoerderer.html",
+          "https://www.rauch-frei.info/fileadmin/user_upload/PDF/BZGA-22-05193_Rauchfrei_durchs_Leben.pdf",
+          "https://shop.bzga.de/pdf/13329203.pdf",
+          "https://www.rauch-frei.info/fileadmin/rauch-frei.info/Quiz/Endlich_weg_von_der_Zigarette.pdf",
+          "https://v11.klasse2000.de/fileadmin/PDFs/Downloads/infomaterial/Klasse2000_Jahresbericht_2024-2025.pdf",
+          "https://lions-barbarossa.de/klasse-2000-suchtpraevention-grundschule/",
+          "https://klaro-text.klasse2000.de/eltern-tipps/newsreader-eltern-tipps/Klasse2000-ist-relevat-und-praxistauglich.html",
+          "https://klaro-text.klasse2000.de/newsreader-aktuelles-oben/25-jahre-klasse2000-mit-herz-und-haltung-2.html",
+          "https://www.bundesgesundheitsministerium.de/service/publikationen/details/meta-analyse-zur-effektivitaet-suchtpraeventiver-lebenskompetenzprogramme-in-deutschland",
+          "https://gpv.jena.de/de/praevention/schulbasierte_praeventionsprogramme/747697",
+          "https://www.nordthueringen.de/_daten/mm_objekte/2016/02/379337_0218_13367451.pdf",
+          "https://www.rauchfrei-info.de/",
+          "https://www.bioeg.de/forschung/studien/abgeschlossene-studien/studien-ab-1997/suchtpraevention/evaluation-des-klarsicht-mitmach-parcours-tabak-und-alkohol/",
+          "https://www.ls-suchtfragen-lsa.de/projekte/bzga_klarsichtparcours/",
+          "https://stiftung-sehnsucht.de/schule/praeventionsprogramme/",
+          "https://de.wikipedia.org/wiki/Klasse2000"
+        ],
+        "status": "ok",
+        "summary": "WebSearch own: 3 Suchanfragen; genaue Texte und Seiten im Suchledger",
+        "tool": "search"
+      },
+      {
+        "call_id": "scarcity-20261015-playful-addiction-prevention-t02",
+        "pages": [
+          "https://www.berlin-suchtpraevention.de/wp-content/uploads/2024/01/201203_Broschuere_Praevention_inklusiv_DE_FINAL.pdf",
+          "https://www.berlin-suchtpraevention.de/themen/schule-und-jugendarbeit/",
+          "https://www.berlin.de/projekte-mh/netzwerke/suchtverbund/info-pool/artikel.532755.php",
+          "https://link.springer.com/article/10.1007/s11553-023-01027-6",
+          "https://www.bpb.de/themen/infodienst/516609/und-was-nun/",
+          "https://www.graz.at/cms/dokumente/10352336_8114338/c2c84600/Drogenbericht-Suchtpraevention_Zeder_final.pdf",
+          "https://www.journals.infinite-science.de/index.php/dsk/article/view/2290",
+          "https://www.dhs.de/fileadmin/user_upload/pdf/digitale-bruecken/Abschlussbericht_Digitale_Bruecken.pdf",
+          "https://www.pag.de/faq/",
+          "https://w-kis.de/das-mobile-mitgehangen-mitgefangen/",
+          "https://reposit.haw-hamburg.de/bitstream/20.500.12738/7771/1/BA_Linda_Hahmann.pdf",
+          "https://www.blaues-kreuz.de/de/baden-wuerttemberg/boeblingen/begegnungsgruppe-boeblingen/gruppenregeln",
+          "https://www.reddit.com/r/Coaching/comments/1od3vw8/suche_menschen_mit_erfahrungen_mit_unseri%C3%B6sen/",
+          "https://www.caritas.de/neue-caritas/heftarchiv/jahrgang2019/artikel/gefluechtete-jugendliche-haben-ein-hohes-suchtrisiko--praeve",
+          "https://www.berlin.de/lb/drogen-sucht/themen/suchtpraevention/",
+          "https://www.reddit.com/r/selfhelp/comments/1od3mr4",
+          "https://www.thieme-connect.com/products/ejournals/conferencepdf/132833/10.1055/s-00000115.pdf",
+          "https://pzvs.berlin/produkt/veranstaltung-praeventionswerkstatt/",
+          "https://www.berlin.de/lb/lkbgg/_assets/bfg_82_heft_web.pdf?ts=1776858632",
+          "https://www.reddit.com/r/Psychologie/comments/1kzy5qy/drogenscreening_therapie/"
+        ],
+        "status": "ok",
+        "summary": "WebSearch own: 3 Suchanfragen; genaue Texte und Seiten im Suchledger",
+        "tool": "search"
+      },
+      {
+        "call_id": "scarcity-20261015-playful-addiction-prevention-t03",
+        "pages": [
+          "https://www.dji.de/fileadmin/user_upload/bibs2022/DJI_2022_RaFiK_Praevention_und_Intervention.pdf",
+          "https://www.elternkreis-koeln2.de/%C3%BCber-uns/gruppenregeln/",
+          "https://www.supro.at/downloads/supro_hinschauen_und_handeln_2026_web.pdf/%40%40download/file/SUPRO_Hinschauen_und_Handeln_2026_web.pdf",
+          "https://www.bpb.de/themen/infodienst/264235/gute-praxis-in-der-praevention/",
+          "https://www.schulministerium.nrw/sites/default/files/documents/Arbeitshilfe-2014.pdf",
+          "https://www.sucht-am-arbeitsplatz.de/fileadmin/user_upload/Literatur/Expertise_Standard_betriebliche_Suchtpraevention_2005.pdf",
+          "https://www.jugendarbeit.ch/download/99cj_supraejarb.pdf",
+          "https://www.pedocs.de/volltexte/2025/34162/pdf/Sturzenhecker_2025_Demokratiebildung_in_der_Jugendsozialarbeit.pdf",
+          "https://formulare.polizei.hessen.de/praevention/gemeinsam-sicher-in-hessen/sicher-fuer-kinder-und-jugendliche/brich-dein-schweigen-startseite/kooperationspartnerinnen-und-partner/kooperationspartner-brich-dein-schweigen-polizeipraesidium-frankfurt-am",
+          "https://fachverbandsucht.ch/fr/events/322",
+          "https://www.haufe.de/id/norm/anweisungen-fuer-das-straf-und-bussgeldverfahren-2012-4-faires-verfahren-HI2875230_p4.html",
+          "https://www.tagesschau.de/inland/zschaepe-aussage-faq-101.html",
+          "https://www.researchgate.net/publication/333619093_Pravention_und_Hilfe_bei_stoffgebundenen_und_stoffungebundenen_Suchterkrankungen_in_Niedersachsen_-_Erster_Forschungsbericht_fur_das_Niedersachsische_Ministerium_fur_Soziales_Gesundheit_und_Gleichstel",
+          "https://de.wikipedia.org/wiki/Schweigen_%28Recht%29",
+          "https://www.diplomica-verlag.de/sozialwissenschaften_95/theorie-und-praxis-der-motivierenden-gespraumlchsfuumlhrung-in-der-suchthilfe_160811.htm",
+          "https://www.researchgate.net/publication/379007405_Achtsamkeitsbasierte_Personlichkeitsbildung_in_der_Schule_zur_Starkung_von_suchtpraventiven_und_pro-demokratischen_Lebenskompetenzen",
+          "https://www.degruyterbrill.com/de/document/doi/10.1515/mks-2023-0034/html",
+          "https://www.bmbfsfj.bund.de/bmbfsfj/meta/aktuelle-meldungen-jugend/72628%21search?state=H4sIAAAAAAAAADWNsQrCMBRFf0XunMHEiDWr4tzBTTqE9lULMcH3kkFK_9204HbO4cKdMfhMN05vuFhCUJvf099G31MWuBmH09lauMcKxqBTW2nWoo0-NhbdovCasrTErX8SnN4rfArxFw5QkMS5kvSJaTeQ9LUVoWs9vKQomf0U62D0QWj5AaN7TE-ZAAAA",
+          "https://doczz.net/doc/5926782/suchtvorbeugung-in-den-schulen-der-sekundarstufen-i-und-i...",
+          "https://de.wikipedia.org/wiki/Schweigen"
+        ],
+        "status": "ok",
+        "summary": "WebSearch own: 3 Suchanfragen; genaue Texte und Seiten im Suchledger",
+        "tool": "search"
+      },
+      {
+        "call_id": "scarcity-20261015-playful-addiction-prevention-t04",
+        "pages": [
+          "https://www.nls-online.de/portfolio/der-gruene-koffer-methodenset-cannabispraevention/",
+          "https://www.landkreis-miltenberg.de/themen/kinder-jugend/suchtpraevention/materialien.html",
+          "https://www.fachstelle.at/wp-content/uploads/2021/02/Suchtpraevention-in-der-Schule-Version.pdf",
+          "https://www.ls-suchtfragen-lsa.de/projekte/bzga_klarsichtparcours/",
+          "https://www.suchtvorbeugung.net/plus/",
+          "https://inpeos.de/wkk_downloads/",
+          "https://www.berlin-suchtpraevention.de/wp-content/uploads/2023/05/230512_Liste_interaktive_Materialien.pdf",
+          "https://www.vortiv.de/praeventionsangebote/jugendfilmtage/",
+          "https://www.nls-online.de/suchtpraevention-2/fachkraefte-fuer-suchtpraevention/",
+          "https://suchtpraevention.webraum.rlp.de/vor-ort/",
+          "https://www.ginko-stiftung.de/fachstelle/Home-kommunal/12245",
+          "https://www.berlin-suchtpraevention.de/15jahrefachstelle/suchtpraevention-zum-mitnehmen/",
+          "https://www.ls-suchtfragen-lsa.de/projekte/der-gruene-koffer/",
+          "https://www.hls-online.org/arbeitsbereiche/suchtpraevention/projekte/der-impuls/wettbewerbsbeitraege/gut-drauf-ein-seminar-um-freundschaft-glueck-und-abenteuer/",
+          "https://xn--suchtprvention-cib.rlp.de/media/46_br_auf-der-suche-nach.pdf",
+          "https://pubshop.bmb.gv.at/index.php?rex_media_file=453_suchtpraevention.pdf&rex_media_type=pubshop_download",
+          "https://www.drogenhilfe.eu/cms/images/05_Downloads/2013_Broschuere_Materialien.pdf",
+          "https://shop.bzga.de/pdf/20540000.pdf",
+          "https://de.wikipedia.org/wiki/Suchtpr%C3%A4vention",
+          "https://de.wikipedia.org/wiki/Rebound_%28Pr%C3%A4vention%29"
+        ],
+        "status": "ok",
+        "summary": "WebSearch prior_art: 1 Suchanfragen; genaue Texte und Seiten im Suchledger",
+        "tool": "search"
+      },
+      {
+        "call_id": "scarcity-20261015-playful-addiction-prevention-t05",
+        "pages": [
+          "https://initiative-gemeinsamkeit.de/connection-design-lab/",
+          "https://kommunale-suchtpraevention.de/sites/default/files/alles_sucht_oder_was_bachelorarbeit_maria_poehnitzsch_-_ohne_anhang.pdf",
+          "https://www.politische-jugendbildung-et.de/praxistools/unbox-it/",
+          "https://www.journals.infinite-science.de/index.php/dsk/article/view/1102",
+          "https://materialien.aj-bayern.de/suchtpraevention/methoden-und-ansaetze-der-suchtpraevention/konsumkompass.html",
+          "https://www.ls-suchtfragen-lsa.de/projekte/bzga_klarsichtparcours/",
+          "https://inpeos.de/wkk_downloads/",
+          "https://suchtvorbeugung.ktn.gv.at/repos/files/suchtvorbeugung/pdfs/Lehrerhandbuch_Version2012.pdf",
+          "https://www.blaues-kreuz.de/de/blaues-kreuz/neuigkeiten-und-presse/pressemitteilungen/pressemitteilung/schonungslos-direkt-authentisch-dominik-forsters-weg-aus-der-crystal-sucht-als-comic-fuer-jugendliche",
+          "https://act-on.jff.de/methoden/medien-emotionen-wuerfeln-mit-bezugspersonen/",
+          "https://eudap.eu/unplugged/",
+          "https://demokratie.jff.de/methode/fake-or-real-klammeraktion/",
+          "https://www.blaues-kreuz.de/de/blaues-kreuz/neuigkeiten-und-presse/aktuelles/neuigkeiten/schonungslos-direkt-authentisch-dominik-forsters-weg-aus-der-crystal-sucht-als-comic-fuer-jugendliche-0",
+          "https://www.hogrefe.com/de/shop/can-stop-95150.html",
+          "https://www.bildung-stmk.gv.at/dam/jcr%3Af5deba2c-414a-42fa-b091-34575c5e5cd9/Suchtpr%3Fvention%20in%20der%20Schule_2012.pdf",
+          "https://www.praevention.at/fileadmin/user_upload/09_Infobox/Infomaterialien/Unterrichtsmaterial/Lehrerhandbuch_Version2012.pdf",
+          "https://www.mannheim.de/sites/default/files/2024-08/IRC_MMM_Handbuch.pdf",
+          "https://missionnichtrauchen.lu/download/5366/?tmstv=1757488248",
+          "https://de.wikipedia.org/wiki/Suchtpr%C3%A4vention",
+          "https://de.wikipedia.org/wiki/Rebound_%28Pr%C3%A4vention%29"
+        ],
+        "status": "ok",
+        "summary": "WebSearch prior_art: 1 Suchanfragen; genaue Texte und Seiten im Suchledger",
+        "tool": "search"
+      },
+      {
+        "call_id": "scarcity-20261015-playful-addiction-prevention-t06",
+        "pages": [
+          "https://www.kita.de/ratgeber/spielzeug/spiele/party-spiele-teenager/",
+          "https://playatme.com/party-games/minute-to-win-it-party-games-for-teens-household-items",
+          "https://www.kita.de/ratgeber/spielzeug/spiele/partyspiele-fuer-teenager/",
+          "https://www.kita.de/ratgeber/spielzeug/spiele/gesellschaftsspiele-fuer-teenager/",
+          "https://www.jugendarbeit.online/dpf_einheit/mensch-aergere-dich-nicht-xxl/",
+          "https://lautstark-jrk.de/materialien/",
+          "https://www.kita.de/ratgeber/spielzeug/spiele/minispiele-party/",
+          "https://www.rezension.org/bestenlisten/beste-partyspiele/",
+          "https://www.mueller.de/p/wiped-out-partyspiel-ratespiel-fuer-familien-teenager-erwachsene-mit-loeschbaren-hinweisen-und-brille-fuer-3-bis-6-spieler-PPN3107836/",
+          "https://www.asmodee.de/produkte/so-kleever",
+          "https://printandpartygames.com/games/minute-to-win-it/",
+          "https://www.loodens.com/de/spiele/nur-eine/",
+          "https://www.lissa-preis.ch/file/download/574/Bildung_neu_gestalten_mit_Games.pdf",
+          "https://pocketbook.de/de_de/downloadable/download/sample/sample_id/8152062/",
+          "https://www.lehre.de/fileadmin/user_upload/Lehrscher-Bote-Dezember-2024.pdf",
+          "https://www.kja-wuppertal.de/export/sites/kja-wuppertal/teamo/Materialliste/2020_03-TEAMO-Materialliste.pdf",
+          "https://wiesbaden-international.de/wp-content/uploads/2024/11/Games-To-Go-2020.pdf"
+        ],
+        "status": "ok",
+        "summary": "WebSearch prior_art: 1 Suchanfragen; genaue Texte und Seiten im Suchledger",
+        "tool": "search"
+      }
+    ],
+    "topic_check": [
+      {
+        "hits": [],
+        "term": "Funkstaffel"
+      },
+      {
+        "hits": [],
+        "term": "Comicstaffel"
+      },
+      {
+        "hits": [],
+        "term": "Suchtprävention"
+      }
+    ]
+  },
+  "revision": "55f22f9699f99b44b378270858654c4f99978ab1921c4f72a15b91ae0faf8321",
+  "run_id": "scarcity-20261015-playful-addiction-prevention"
+}

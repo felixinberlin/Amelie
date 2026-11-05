@@ -1,0 +1,95 @@
+{
+  "batch_id": "amelie-lab-lacunar-lacunar-20261025-duck-robot-8d7d7cb461f7a5ca",
+  "contract_version": "1.0.0",
+  "created_at": "2026-10-25T20:14:25+01:00",
+  "engine": "lacunar",
+  "existence_check": false,
+  "ideas": [
+    {
+      "local_id": "C1",
+      "record": {
+        "description": "Nutzung des tiefen Schwerpunkts und der breiten Watschelschritte der Microduck-Kinematik, um über 160mm Glaswollmatten und Balkenkanten im Drempel zu schreiten, ohne Einsinken.",
+        "evidence_urls": [
+          "https://github.com/apirrone/Open_Duck_Mini",
+          "https://pollen-robotics.com/microduck/"
+        ],
+        "id": "C1",
+        "title": "Avian-Kinematic Crawler mit dynamischer Selbstaufrichtung für lose Schüttungen"
+      }
+    }
+  ],
+  "intent": "Bisoziazion zwischen Vogel-Watschelgang / Sim-to-Real RL und der Kriechkeller-Inspektion im Brandenburger Altbau: Wie löst die Kinematik des Watschelgangs das Versacken im Baustellen-Schutt?",
+  "lab_id": "amelie-lab",
+  "model": "Antigravity (stand-in; grounded web retrieval)",
+  "record": {
+    "contract_version": "1.3.0",
+    "created_at": "2026-10-25T20:14:25+01:00",
+    "frames": {
+      "contract_version": "1.0.0",
+      "frame_a": {
+        "friction": "Räder graben sich in Schüttungen ein; Raupen laufen von den Ketten; starre Beine kippen um.",
+        "name": "Kriechkeller-Hindernisse im märkischen Altbau (Schlacke, Glaswolle, Feldsteine)",
+        "slots": {
+          "constraints": "Maximal 30 cm Durchfahrtshöhe, keine Funkmasten/kein Internet.",
+          "emotions": "Widerwille vor dem Schmutzkriechen, Zeitdruck vor Angebotserstellung.",
+          "goals": "Zerstörungsfreie visuelle und thermische Erfassung verdeckter Leitungen.",
+          "materials": "Lehmschlag, Schlackeschüttung, unbesäumte Kiefernbalken, lose Glaswolle.",
+          "mechanics": "Schmale Auflageflächen brechen durch; unebene Kanten verklemmen Fahrwerke.",
+          "rituals_timing": "Vor-Ort-Besichtigung mit Bauherrn vor Angebotsabgabe."
+        },
+        "source_label": "Baustellen-Terrain in Brandenburger Sanierungsobjekten",
+        "source_url": "https://github.com/apirrone/Open_Duck_Mini"
+      },
+      "frame_b": {
+        "domain": "Biologische Lokomotion und Sim-to-Real Reinforcement Learning",
+        "name": "Avian Waddle & Dynamic Balance Recovery (Microduck / LeRobot)",
+        "slots": {
+          "constraints": "Niedrige Motorkraft, passive elastische Sehnen.",
+          "emotions": "Überlebensinstinkt, Energieeffizienz.",
+          "goals": "Stabile Fortbewegung über Schlick, Treibsand und unebene Gerölle.",
+          "materials": "Breite Schwimmfuß-Flächen (TPU), tiefer Schwerpunkt, flexible Gelenk-Compliance.",
+          "mechanics": "Laterale Gewichtsverlagerung mit großem Standflächen-Sicherheitsbereich; Selbstaufrichtung nach Sturz.",
+          "rituals_timing": "Kontinuierliche 50-Hz-Gleichgewichtsschleife."
+        }
+      }
+    },
+    "intent": "Bisoziazion zwischen Vogel-Watschelgang / Sim-to-Real RL und der Kriechkeller-Inspektion im Brandenburger Altbau: Wie löst die Kinematik des Watschelgangs das Versacken im Baustellen-Schutt?",
+    "model": "Antigravity (stand-in; grounded web retrieval)",
+    "plan": {
+      "anchor_queries": [
+        "Open Duck Mini bipedal locomotion policy sim to real gait",
+        "Microduck bipedal robot terrain adaptation"
+      ],
+      "area": "Bipedale Fortbewegung in unstrukturierten Hohlräumen und Bau-Reststoffen",
+      "collider_hint": "Avian aquatic foot biomechanics (Schwimmfuß-Kinematik bei weichem Schlamm/Moor)",
+      "contract_version": "1.0.0",
+      "mode_list": [
+        "Vierrädrige Inspektions-Raupe mit Gummiketten",
+        "Endoskop-Schlauchkamera mit 10m Kabel",
+        "Fahrbare Drohne mit Rotorschutz",
+        "Kamerawagen an Zugseil",
+        "Klassische Taschenlampe mit Spiegel am Teleskopstab"
+      ],
+      "notes": "Bissoziation: Der Watschelgang einer Ente (Microduck / Open Duck) ist keine Spielerei, sondern eine physikalische Anpassung an nachgiebige, unebene Untergründe."
+    },
+    "result": {
+      "collider_mechanism": "Die laterale Gewichtsverlagerung des Watschelgangs in Kombination mit breiten TPU-Sohlen verhindert das Einsinken in weiche Dämmwolle, während die aktive Selbstaufrichtungs-Politik (Fall Recovery) ein Festfahren bei Balkenabstürzen unmöglich macht.",
+      "contract_version": "1.1.0",
+      "survivors": [
+        {
+          "description": "Nutzung des tiefen Schwerpunkts und der breiten Watschelschritte der Microduck-Kinematik, um über 160mm Glaswollmatten und Balkenkanten im Drempel zu schreiten, ohne Einsinken.",
+          "evidence_urls": [
+            "https://github.com/apirrone/Open_Duck_Mini",
+            "https://pollen-robotics.com/microduck/"
+          ],
+          "id": "C1",
+          "title": "Avian-Kinematic Crawler mit dynamischer Selbstaufrichtung für lose Schüttungen"
+        }
+      ]
+    },
+    "run_id": "lacunar-20261025-duck-robot",
+    "state_missing": []
+  },
+  "revision": "8d7d7cb461f7a5cab40d062786470d067221f2dbd521fa086f951275ec6ce117",
+  "run_id": "lacunar-20261025-duck-robot"
+}

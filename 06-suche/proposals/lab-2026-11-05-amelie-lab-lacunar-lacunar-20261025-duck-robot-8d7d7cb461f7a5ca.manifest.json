@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-lacunar-lacunar-20261025-duck-robot-8d7d7cb461f7a5ca",
+  "plan_id": "lab-2026-11-05-amelie-lab-lacunar-lacunar-20261025-duck-robot-8d7d7cb461f7a5ca",
+  "engine": "review",
+  "model": "Antigravity (stand-in; grounded web retrieval)",
+  "existence_check": false,
+  "survivors": {
+    "count": 1,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-lacunar-lacunar-20261025-duck-robot-8d7d7cb461f7a5ca.md",
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-lacunar-lacunar-20261025-duck-robot-8d7d7cb461f7a5ca.inbox.json",
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-lacunar-lacunar-20261025-duck-robot-8d7d7cb461f7a5ca.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 0,
+  "touches_memory": false,
+  "contracts": {
+    "lacunar-record": "1.3.0"
+  },
+  "contract_version": "1.0.0"
+}

@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-scarcity-scarcity-20261015-long-term-addiction-prevent-18cc84b1619e212b",
+  "plan_id": "lab-2026-11-05-amelie-lab-scarcity-scarcity-20261015-long-term-addiction-prevent-18cc84b1619e212b",
+  "engine": "review",
+  "model": "Codex subagent (stand-in; searches: WebSearch; no Vertex)",
+  "existence_check": false,
+  "survivors": {
+    "count": 0,
+    "status": "keine"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-scarcity-scarcity-20261015-long-term-addiction-prevent-18cc84b1619e212b.md",
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-scarcity-scarcity-20261015-long-term-addiction-prevent-18cc84b1619e212b.inbox.json",
+    "06-suche/proposals/lab-2026-11-05-amelie-lab-scarcity-scarcity-20261015-long-term-addiction-prevent-18cc84b1619e212b.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 6,
+  "touches_memory": false,
+  "contracts": {
+    "scarcity-record": "1.1.0"
+  },
+  "contract_version": "1.0.0"
+}

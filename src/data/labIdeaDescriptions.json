@@ -1710,6 +1710,306 @@
         "title": "Masonry crews' own square metre count",
         "description": "An offline app works out wall area for piecework bricklayers using the DIN 18330 rule: openings up to 2.50 m² are not deducted, larger ones are. The crew brings its own figure to the joint measurement and does not lose pay through wrong deductions."
       }
+    },
+    "amelie-lab-lacunar-lacunar-20261025-duck-robot-8d7d7cb461f7a5ca:C1": {
+      "de": {
+        "title": "Kriechkeller-Inspektor mit Watschelgang",
+        "description": "Ein zweibeiniger Roboter mit tiefem Schwerpunkt soll über lose Schüttungen und Balkenkanten kriechen. Handwerker prüfen damit feuchte Altbau-Kriechkeller vor der Sanierung."
+      },
+      "en": {
+        "title": "Waddling crawlspace inspection robot",
+        "description": "A bipedal robot with a low center of gravity navigates loose crawlspace rubble and ceiling joists. Contractors use it to inspect damp crawlspaces before renovation."
+      }
+    },
+    "amelie-lab-mark-mark-20261025-brandenburg-duck-scout-30320290de4fab5a:V1": {
+      "de": {
+        "title": "HIR-01: Autonomer Hohlraum-Inspektor im Systainer",
+        "description": "Ein kompakter Inspektionsroboter im Werkzeugkoffer liefert Fotos und Messdaten aus unzugänglichen Fehlböden. Er amortisiert sich für Baubetriebe ab der ersten vermiedenen Deckenöffnung."
+      },
+      "en": {
+        "title": "HIR-01: Autonomous cavity inspector in a Systainer",
+        "description": "A compact inspection robot packed into a tool case delivers photos and measurements from inaccessible cavities. It pays for itself after the first avoided ceiling opening."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261021-round3-addiction-preventio-e46a1d672038e103:C1": {
+      "de": {
+        "title": "Club-Umbau auf Probe",
+        "description": "Jugendliche bauen einen Club-Modellraum aus Karton mit Rückzugsecken und testen zwei Wochen lang eine genehmigte Raumänderung vor Ort."
+      },
+      "en": {
+        "title": "Trial youth club redesign",
+        "description": "Youth teams build a cardboard model of a youth club with quiet zones, testing a single approved room change for two weeks."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261021-round3-addiction-preventio-e46a1d672038e103:C2": {
+      "de": {
+        "title": "Regelwerkstatt für Pausenspiele",
+        "description": "Ein Brettspiel aus Papier wird mehrfach gespielt. Zwischen den Runden verändern Jugendliche Regeln so, dass Pausen ohne Punktverlust möglich sind."
+      },
+      "en": {
+        "title": "Rule workshop for games with pauses",
+        "description": "Youths play a paper game and adjust the rules between rounds so taking a break causes no penalty or loss of score."
+      }
+    },
+    "amelie-lab-scarcity-scarcity-20261021-round3-addiction-prevention-bee87c4ee6f0e535:C1": {
+      "de": {
+        "title": "Schlüssel-Quest ohne echte Kontodaten",
+        "description": "Teams lösen ein fiktives Problem mit einem verlorenen Beratungskonto. Die Lösung führt über einen zweiten Kontaktweg statt technische Entsperrung."
+      },
+      "en": {
+        "title": "Key quest without real account credentials",
+        "description": "Teams solve a simulated lost counselling account challenge. The solution relies on an alternative contact route rather than unlocking."
+      }
+    },
+    "amelie-lab-scarcity-scarcity-20261021-round3-addiction-prevention-bee87c4ee6f0e535:C2": {
+      "de": {
+        "title": "Plan-B-Werkstatt für Beratungskontakte",
+        "description": "Jugendliche gestalten unauffällige Notfallkarten mit neutraler Anlaufstelle und vorbereiteter Frage, ohne persönliche Angaben oder Konsumdaten."
+      },
+      "en": {
+        "title": "Plan B workshop for support contacts",
+        "description": "Youths craft discreet contact cards with public help addresses and ready-made questions, without recording personal data."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261021-round3-addiction-prevention-572d9255c5cf1653:C1": {
+      "de": {
+        "title": "Murmel-Umbauclub mit Rollenwechsel",
+        "description": "Eine modulare Kugelbahn wächst über mehrere Treffen. Teams probieren eigene Umbauten aus und dürfen jederzeit pausieren oder Aufgaben tauschen."
+      },
+      "en": {
+        "title": "Modular marble run club with flexible roles",
+        "description": "A collaborative marble run expands across sessions. Teams test their own modifications and may pause or switch roles freely."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261017-diy-electronics-sensors-ai-9ee2828685249b58:C1": {
+      "de": {
+        "title": "Kamerafreier Sturz- und Atemmonitor",
+        "description": "Ein Radarmodul an Decke oder Wand erkennt Stürze und Atembewegungen im Badezimmer über 24-GHz-FMCW, ohne Bilder aufzunehmen oder die Privatsphäre zu verletzen."
+      },
+      "en": {
+        "title": "Camera-free fall and respiration monitor",
+        "description": "A ceiling radar module detects falls and breathing motions in bathrooms using 24 GHz FMCW radar, avoiding cameras and protecting privacy."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261017-diy-electronics-sensors-ai-9ee2828685249b58:C2": {
+      "de": {
+        "title": "Haptisches Hindernismodul für Blindenstöcke",
+        "description": "Zwei optische Abstandssensoren erfassen Hindernisse in Kopfhöhe und Bordsteinkanten, die der Langstock verfehlt, und warnen durch gezielte Vibrationsimpulse."
+      },
+      "en": {
+        "title": "Haptic obstacle guidance for white canes",
+        "description": "Dual optical distance sensors scan head-height obstacles and curbs missed by a cane, alerting users through directional vibrations."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261017-diy-electronics-sensors-ai-9ee2828685249b58:C3": {
+      "de": {
+        "title": "Zittern ausgleichender Esslöffel",
+        "description": "Ein zweiachsiger Ausgleichsgriff dämpft unwillkürliches Zittern der Hand beim Essen mit Servomotoren ab, ohne willentliche Bewegungen zu behindern."
+      },
+      "en": {
+        "title": "Active tremor-cancelling eating utensil",
+        "description": "A two-axis motorized handle counteracts involuntary hand tremors during eating without restricting voluntary arm movements."
+      }
+    },
+    "amelie-lab-scarcity-scarcity-20261015-playful-addiction-preventio-55f22f9699f99b44:C1": {
+      "de": {
+        "title": "Funkstaffel für Festival-Crews",
+        "description": "Gruppen unterstützen eine fiktive Festivalkolonne per Funkkarte in kurzen Fenstern. Hilfreiche Reaktionen auf Gruppendruck werden symbolisch weitergegeben."
+      },
+      "en": {
+        "title": "Festival crew radio relay",
+        "description": "Teams assist a fictional festival crew through short radio card missions, passing on helpful peer pressure responses using symbols."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261015-playful-addiction-preventi-e79eae9490139340:C1": {
+      "de": {
+        "title": "Backstage-Kommando Festivalrettung",
+        "description": "Jugendliche retten gemeinsam ein fiktives Musikfestival, erfinden Pannen und Figuren und spielen das Finale zweimal mit anderen Entscheidungen durch."
+      },
+      "en": {
+        "title": "Backstage command festival rescue",
+        "description": "Youths team up to rescue a fictional music festival, creating characters and mishaps and replaying the finale with different choices."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261015-playful-addiction-preventi-e79eae9490139340:C2": {
+      "de": {
+        "title": "Die verschwundene Zugabe",
+        "description": "Teams erfinden Alibis und Hinweise für einen fiktiven Konzertabend und tauschen monatlich zwischen Rätselbauen und Detektivrolle."
+      },
+      "en": {
+        "title": "The missing encore mystery",
+        "description": "Teams create clues and alibis for a fictional concert night, rotating monthly between mystery builders and detective teams."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261015-playful-addiction-preventi-e79eae9490139340:C3": {
+      "de": {
+        "title": "Absurdes Freundschaftsministerium",
+        "description": "Eine gespielte Comedy-Serie über eine Behörde, die Freundschaften stempeln will. Das Ensemble stoppt Szenen und spielt sie solidarisch neu."
+      },
+      "en": {
+        "title": "Absurd Ministry of Friendship",
+        "description": "An improv comedy sketch series about a fictional agency trying to approve friendships. Teams pause and replay scenes with solidarity."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261015-playful-addiction-prevention-30cc44daa346c7fd:C1": {
+      "de": {
+        "title": "Rückspul-Radio mit alternativen Enden",
+        "description": "Jugendliche sprechen eine kurze Klangszene ein, frieren die Handlung per Signal ein und probieren zwei andere Ausgänge für brenzlige Situationen."
+      },
+      "en": {
+        "title": "Rewind radio with alternative endings",
+        "description": "Youths record a short audio scene, freeze the action on signal, and try out two different outcomes for tricky peer situations."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261015-playful-addiction-prevention-30cc44daa346c7fd:C2": {
+      "de": {
+        "title": "Stadt der tausend Auswege",
+        "description": "Mit Stadtplan und Geräuschen zeichnen Gruppen sichere Wege und Rückzugsorte für Abende ein, an denen Pläne kippen."
+      },
+      "en": {
+        "title": "City of a thousand exits",
+        "description": "Using maps and sound effects, groups map out safe routes and quiet meeting spots for nights when group plans go wrong."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261015-playful-addiction-prevention-30cc44daa346c7fd:C3": {
+      "de": {
+        "title": "Pausenpiraten auf Sendung",
+        "description": "In kurzen Funkepisoden lösen Jugendliche Missionen durch abgestimmte Neustart- und Pausensignale und schreiben die nächste Folge selbst."
+      },
+      "en": {
+        "title": "Pause pirates on air",
+        "description": "In short audio missions, youths solve collaborative challenges using agreed pause and restart signals, writing the next episode themselves."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261014T093417-fb83f5-b901ef5c0aaded3f:C5": {
+      "de": {
+        "title": "Fermentations-Simulation für Code",
+        "description": "Schulprojekte reifen über Nacht in einem virtuellen Brutkasten, der kleine Emergenzen und Code-Verhalten spielerisch sichtbar macht."
+      },
+      "en": {
+        "title": "Code fermentation simulation",
+        "description": "School code projects ferment overnight in a virtual incubator, visually illustrating code evolution and emerging systems."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261014T093417-fb83f5-b901ef5c0aaded3f:C16": {
+      "de": {
+        "title": "Code-Audit nach kreativen Aromen",
+        "description": "Ein Prüfwerkzeug sucht nicht nur Tippfehler, sondern hebt überraschende und unkonventionelle Lösungswege in Schülerprojekten hervor."
+      },
+      "en": {
+        "title": "Code audit for creative flavor",
+        "description": "A code reviewer flags unconventional patterns and surprising structures in student code rather than solely penalizing mistakes."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261014T093417-fb83f5-b901ef5c0aaded3f:C1": {
+      "de": {
+        "title": "Geschmacksprofile für Programmcode",
+        "description": "Ein pädagogisches Feedbacksystem beschreibt Eleganz und Struktur von Kindercode als Geschmacksprofil statt Schulnoten zu vergeben."
+      },
+      "en": {
+        "title": "Flavor profiles for programming code",
+        "description": "An educational feedback system describes structure and elegance in children code as flavor profiles rather than numerical grades."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261014T093417-fb83f5-b901ef5c0aaded3f:C3": {
+      "de": {
+        "title": "Sensorische Landkarte für Projekte",
+        "description": "Kinder verschlagworten ihre Spiele mit sensorischen Begriffen wie süß oder knusprig. Die Übersicht zeigt Lehrkräften kreative Cluster."
+      },
+      "en": {
+        "title": "Sensory project landscape",
+        "description": "Students tag their projects with sensory terms like sweet or crunchy, giving teachers a visual map of creative project clusters."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261014T093417-fb83f5-b901ef5c0aaded3f:C9": {
+      "de": {
+        "title": "Code-Brenn-Alarm für Sackgassen",
+        "description": "Ein dezenter Warnton weist im Editor darauf hin, wenn fehlerfreier Code in eine Endlosschleife oder logische Sackgasse gerät."
+      },
+      "en": {
+        "title": "Code burn alarm for dead ends",
+        "description": "A subtle editor cue alerts learners when syntactically valid code runs into an infinite loop or logical dead end."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261014T093417-fb83f5-b901ef5c0aaded3f:C20": {
+      "de": {
+        "title": "Code-Sommelier für Lehrkräfte",
+        "description": "Ein Unterrichtsassistent hilft bei der Bewertung kreativer Programme, indem er passende beschreibende Worte für Entwurfsstile vorschlägt."
+      },
+      "en": {
+        "title": "Code sommelier for educators",
+        "description": "A teaching assistant helps assess creative coding projects by suggesting descriptive feedback on coding styles and patterns."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261014T093417-017075-7813e1eab7a61eb7:C1": {
+      "de": {
+        "title": "Kindgerechte Code-Erklärungen",
+        "description": "Eine Lesehilfe erklärt blockbasierten Code in kindgerechter Sprache und veranschaulicht Schleifen und Verzweigungen mit Alltagsbeispielen."
+      },
+      "en": {
+        "title": "Child-friendly code explanations",
+        "description": "A reading assistant explains block-based code in accessible language, illustrating loops and branching with everyday analogies."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261014T090131-kids-vibecoding-a1664cfe8bab3a79:C1": {
+      "de": {
+        "title": "Trockenmauer-Modus für KI-Spiele",
+        "description": "Jeder Prompt erzeugt genau einen Baustein. Er wird erst ins Spiel gesetzt, wenn er für sich allein sichtbar funktioniert."
+      },
+      "en": {
+        "title": "Dry-stone mode for AI game builders",
+        "description": "Each prompt adds a single game mechanic, which is only integrated after working independently without breaking the rest."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261014T090131-kids-vibecoding-a1664cfe8bab3a79:C3": {
+      "de": {
+        "title": "Stein-herausnehmen-Probe im Spiel",
+        "description": "Das System nimmt gezielt eine Spielfunktion heraus, damit Kinder sehen, welche Teile ausfallen und welche Mechaniken tragend sind."
+      },
+      "en": {
+        "title": "Keystone removal test in game builds",
+        "description": "The system temporarily removes a single game feature so learners can observe dependencies and understand foundational mechanics."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261014T090131-kids-vibecoding-a1664cfe8bab3a79:C7": {
+      "de": {
+        "title": "Lagenweiser Rückbau von Spielen",
+        "description": "Kinder zerlegen ein fertiges Minispiel rückwärts in Prompts, um zu begreifen, wie Programme schrittweise aufgebaut werden."
+      },
+      "en": {
+        "title": "Layered reverse engineering of games",
+        "description": "Learners decompose an existing mini-game backwards into prompts to learn how systems are built step-by-step."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261014T090028-kids-vibecoding-3c808c19a7720827:C1": {
+      "de": {
+        "title": "Prompt-Protokoll als Leistungsnachweis",
+        "description": "Der deutsche Prompt-Verlauf eines Kindes wird mit Lehrplanzielen abgeglichen, damit Lehrkräfte informatisches Denken im Text bewerten können."
+      },
+      "en": {
+        "title": "Prompt log as curriculum evidence",
+        "description": "A student prompting history is mapped against curriculum goals so teachers can assess computational thinking in natural language."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261014T090028-kids-vibecoding-3c808c19a7720827:C2": {
+      "de": {
+        "title": "Umgedrehtes Vibecoding mit Fehlersuche",
+        "description": "Das System erzeugt kleine Spiele mit absichtlichen logischen Fehlern. Kinder spüren sie auf und erklären die Ursache."
+      },
+      "en": {
+        "title": "Inverted vibecoding with bug hunting",
+        "description": "The system generates mini-games with deliberate logic errors so learners can spot, diagnose, and explain the flaws."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261014T090028-kids-vibecoding-3c808c19a7720827:C4": {
+      "de": {
+        "title": "Kontofreier Schul-Vibecoding-Modus",
+        "description": "Ein geschützter Prompting-Baukasten in der Schul-KI ermöglicht Grundschülern das Ausprobieren von Spielideen ohne eigene Nutzerkonten."
+      },
+      "en": {
+        "title": "Account-free school vibecoding mode",
+        "description": "A privacy-safe prompting sandbox within school software allows young students to build game ideas without personal accounts."
+      }
     }
   }
 }
