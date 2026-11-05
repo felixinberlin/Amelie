@@ -1,0 +1,818 @@
+{
+  "batch_id": "amelie-lab-lacunar-lacunar-20261014T093417-fb83f5-b901ef5c0aaded3f",
+  "contract_version": "1.0.0",
+  "created_at": "2026-10-14T09:41:13Z",
+  "engine": "lacunar",
+  "existence_check": false,
+  "ideas": [
+    {
+      "local_id": "C5",
+      "record": {
+        "boden_type": "exploratory",
+        "buildable": "Ja, Forschungsprojekte wie AlphaEvolve und CodeEvolve zeigen, dass die Simulation von Code-Evolution mit KI-Technologien und evolutionären Algorithmen baubar ist.",
+        "candidate_id": "C5",
+        "collider_mechanism": "Ähnlich wie bei der Fermentation, wo Mikroorganismen organische Stoffe in neue Produkte umwandeln, simuliert die KI die \"Entwicklung\" des Codes durch Hinzufügen von Bugs oder Optimierungen, um zu zeigen, wie sich ein System über die Zeit \"transformiert\" und neue Eigenschaften (gute und schlechte) emergent hervorbringt. Der \"Brutschrank\" symbolisiert dabei die kontrollierte Umgebung für diese Entwicklung.",
+        "evidence_urls": [
+          "https://www.waxmann.com/fileadmin/media/zusatztexte/3606Kapitel02.pdf",
+          "https://www.schulministerium.nrw/sites/default/files/documents/Handreichung-fuer-Lehrkraefte.pdf",
+          "https://medium.com/@e.storefashion07/ai-generative-code-evolution-the-future-of-software-development-012f5e96125e",
+          "https://www.labnext70.news/news/ai-systems-code-optimisation-evolution"
+        ],
+        "gap": "Kindern und ihren Lehrern fehlt eine intuitive und interaktive Methode, um die dynamische, nicht-lineare Entwicklung und die emergenten Eigenschaften von Softwaresystemen über die Zeit zu erfahren und zu verstehen.",
+        "gap_stands_alone": true,
+        "idea": "Eine \"Fermentations-Simulation\" für Code: Code-Projekte werden über Nacht in einem virtuellen \"Brutschrank\" gelegt. Die KI simuliert, wie sich der Code mit der Zeit \"entwickelt\" (z.B. durch Hinzufügen von Bugs, Optimierungen, unerwarteten Verhaltensweisen), um Kindern die Emergenz von Systemen zu zeigen.",
+        "rank": 1,
+        "removed_assumption": "Code ist ein statisches Artefakt, dessen Eigenschaften und Verhalten vollständig durch seine initiale Implementierung bestimmt werden.",
+        "who_has_problem": "Kinder und ihre Lehrer, die ein tieferes Verständnis dafür entwickeln möchten, wie Softwaresysteme sich über die Zeit \"entwickeln\" und wie Emergenz in Code-Projekten funktioniert.",
+        "why_now": "Die jüngsten Fortschritte in der KI-Simulation von Code-Evolution, insbesondere durch den Einsatz von LLMs und evolutionären Algorithmen (z.B. AlphaEvolve, CodeEvolve), die Code generieren, optimieren und seine Entwicklung simulieren können, waren vor fünf Jahren nicht in diesem Umfang vorhanden."
+      }
+    },
+    {
+      "local_id": "C16",
+      "record": {
+        "boden_type": "exploratory",
+        "buildable": "Ja, obwohl die Identifizierung \"kreativer\" oder \"unerwarteter, aber interessanter\" Code-Strukturen anspruchsvoller ist als die Fehlererkennung, machen Fortschritte in der KI-gestützten Code-Analyse und LLMs die Entwicklung eines solchen Systems potenziell baubar.",
+        "candidate_id": "C16",
+        "collider_mechanism": "Ähnlich wie bei der Maillard-Reaktion, die eine Vielzahl von sekundären Aromen erzeugt, die nicht primär beabsichtigt waren, aber den Geschmack bereichern, identifiziert die KI hier \"unentdeckte Aromen\" im Code – also Code-Strukturen, die über die reine Funktionalität hinaus interessante, unkonventionelle oder emergent neue Eigenschaften erzeugen können.",
+        "evidence_urls": [
+          "https://www.waxmann.com/fileadmin/media/zusatztexte/3606Kapitel02.pdf",
+          "https://www.schulministerium.nrw/sites/default/files/documents/Handreichung-fuer-Lehrkraefte.pdf",
+          "https://about.gitlab.com/topics/agentic-ai/ai-code-analysis/",
+          "https://www.kimi.ai/de/resources/ai-code-review-tools"
+        ],
+        "gap": "Lehrern und Kindern fehlt ein Werkzeug, das nicht nur Fehler im Code aufzeigt, sondern auch ungewöhnliche oder kreative Code-Strukturen hervorhebt, die zu interessanten, wenn auch nicht immer beabsichtigten, neuen Möglichkeiten führen könnten.",
+        "gap_stands_alone": true,
+        "idea": "Eine Code-Audit-KI, die nicht nur Fehler findet, sondern auch \"unentdeckte Aromen\" im Code identifiziert – also kreative oder ungewöhnliche Code-Strukturen, die zu interessanten, aber vielleicht nicht intendierten Ergebnissen führen könnten, und diese hervorhebt.",
+        "rank": 2,
+        "removed_assumption": "Die Bewertung von Code konzentriert sich ausschließlich auf Korrektheit, Effizienz und Best Practices, und unkonventionelle Strukturen sind per Definition unerwünscht oder fehlerhaft.",
+        "who_has_problem": "Lehrer, die kreative Programmierprojekte von Kindern bewerten und übersehen könnten, dass unkonventionelle Code-Strukturen neue, interessante (wenn auch vielleicht unabsichtliche) Potenziale bergen.",
+        "why_now": "Die jüngsten Fortschritte in der semantischen Code-Analyse mittels Large Language Models (LLMs) ermöglichen es der KI, nicht nur Syntax und Fehler, sondern auch die potenziellen Auswirkungen und ungewöhnliche Muster im Code zu interpretieren und kreative Abweichungen zu erkennen, was vor fünf Jahren kaum möglich war."
+      }
+    },
+    {
+      "local_id": "C1",
+      "record": {
+        "boden_type": "combinational",
+        "buildable": "Ja, die zugrundeliegende KI-Code-Analyse ist mit bekannten Mitteln und existierenden Frameworks (z.B. derer, die GitLab, Kimi.ai oder Microsoft nutzen) baubar. Die Anpassung des Outputs an \"Geschmacksprofile\" ist eine UI/UX-Aufgabe.",
+        "candidate_id": "C1",
+        "collider_mechanism": "Die Maillard-Reaktion als Mechanismus, der eine chemische Transformation durch Bräunung beschreibt, deren Ergebnis in \"Geschmacksprofilen\" ausgedrückt wird, wird hier auf die \"Reifung\" von Code übertragen. Das Feedback basiert auf der \"sensorischen\" Wahrnehmung der Komplexität und Eleganz des Codes, analog zur Reaktion.",
+        "evidence_urls": [
+          "https://www.waxmann.com/fileadmin/media/zusatztexte/3606Kapitel02.pdf",
+          "https://www.schulministerium.nrw/sites/default/files/documents/Handreichung-fuer-Lehrkraefte.pdf",
+          "https://about.gitlab.com/topics/agentic-ai/ai-code-analysis/",
+          "https://www.kimi.ai/de/resources/ai-code-review-tools"
+        ],
+        "gap": "Kinder erhalten bei ihren Programmierprojekten oft nur binäres oder benotetes Feedback, das ihre kreativen Anstrengungen nicht differenziert würdigt oder im Entstehungsprozess leitet.",
+        "gap_stands_alone": true,
+        "idea": "Ein KI-Tool, das die Komplexität und \"Eleganz\" des Codes von Kinderprojekten während des Entstehungsprozesses analysiert und Echtzeit-Feedback in Form von \"Geschmacksprofilen\" (z.B. \"dieser Code hat einen unerwarteten, würzigen Twist!\") statt Noten gibt.",
+        "rank": 3,
+        "removed_assumption": "Die Bewertung von Code muss formal, metrisch oder normativ sein und kann nicht auf intuitiven, sensorischen Beschreibungen basieren.",
+        "who_has_problem": "Lehrer, die kreative Programmierprojekte von Kindern bewerten müssen, und Kinder, die eine motivierende, differenzierte Rückmeldung statt reiner Noten benötigen.",
+        "why_now": "Fortschritte in der KI-gestützten Code-Analyse, insbesondere in der Nutzung von maschinellem Lernen und NLP, ermöglichen es, den Kontext und die Struktur von Code zu verstehen und komplexe Muster zu erkennen, was über einfache Syntaxprüfungen hinausgeht. Fünf Jahre zuvor waren diese Modelle nicht so leistungsfähig oder zugänglich."
+      }
+    },
+    {
+      "local_id": "C3",
+      "record": {
+        "boden_type": "combinational",
+        "buildable": "Ja, die Analyse und Aggregation von subjektiven Textbeschreibungen mittels NLP ist mit bekannten KI-Technologien baubar. Die Herausforderung liegt in der Korrelation der \"Geschmacksprofile\" mit Code-Eigenschaften.",
+        "candidate_id": "C3",
+        "collider_mechanism": "Die Maillard-Reaktion erzeugt eine Vielzahl von Geschmacks- und Aromastoffen, die durch die Aggregation von Reaktionen entstehen. Hier werden individuelle, subjektive \"Geschmacks\"-Tags aggregiert, um eine \"sensorische Landkarte\" zu erstellen, analog zu der Komplexität der Aromen, die durch die Maillard-Reaktion entstehen.",
+        "evidence_urls": [
+          "https://www.waxmann.com/fileadmin/media/zusatztexte/3606Kapitel02.pdf",
+          "https://www.schulministerium.nrw/sites/default/files/documents/Handreichung-fuer-Lehrkraefte.pdf",
+          "https://pagadala-saiteja.medium.com/an-introduction-to-natural-language-processing-for-text-analysis-7856267266d5",
+          "https://www.splunk.com/en_us/blog/learn/natural-language-processing-nlp.html"
+        ],
+        "gap": "Lehrern fehlt eine Methode, um die subjektiven kreativen Ausdrucksformen in den Programmierprojekten von Kindern systematisch zu erfassen, zu aggregieren und daraus übergeordnete Muster oder \"kreative Cluster\" zu erkennen.",
+        "gap_stands_alone": true,
+        "idea": "Ein System, das es Kindern erlaubt, ihre Code-Projekte \"geschmacklich\" zu verschlagworten (z.B. \"süß\", \"sauer\", \"knusprig\", \"umami\"), und eine KI aggregiert diese subjektiven Beschreibungen zu einer \"sensorischen Landkarte\" der Projekte, die Lehrern hilft, kreative Cluster zu erkennen.",
+        "rank": 4,
+        "removed_assumption": "Die Beurteilung von Kreativität in Programmierung kann nicht durch die Aggregation subjektiver, sensorischer Beschreibungen von Laien objektiviert oder strukturiert werden.",
+        "who_has_problem": "Lehrer, die kreative Programmierprojekte von Kindern bewerten und verstehen möchten, um individuelle Lernwege und innovative Ansätze zu identifizieren.",
+        "why_now": "Fortschritte im Natural Language Processing (NLP), insbesondere in der Sentiment-Analyse, Themenmodellierung und Worteinbettungen, die es KIs ermöglichen, subjektive menschliche Beschreibungen zu verstehen und zu interpretieren, waren vor fünf Jahren nicht in diesem Umfang verfügbar."
+      }
+    },
+    {
+      "local_id": "C9",
+      "record": {
+        "boden_type": "combinational",
+        "buildable": "Ja, die zugrundeliegende Echtzeit-Code-Analyse für logische Probleme und Ineffizienz ist mit modernen KI-Entwicklungswerkzeugen und -Modellen baubar, wie sie in den Suchergebnissen (t19) beschrieben werden.",
+        "candidate_id": "C9",
+        "collider_mechanism": "Der \"Code-Brenn-Alarm\" nutzt das Prinzip der Maillard-Reaktion, bei der ein subtiles Anbrennen oder eine beginnende Verkohlung sofort sicht- oder riechbar wird. Hier wird ein ähnliches, vorwarnendes sensorisches Signal (Rauch, Alarm) eingesetzt, um auf ein sich anbahnendes Problem im Code hinzuweisen, bevor es zu einem vollständigen \"Verbrennen\" oder Absturz kommt.",
+        "evidence_urls": [
+          "https://www.waxmann.com/fileadmin/media/zusatztexte/3606Kapitel02.pdf",
+          "https://www.schulministerium.nrw/sites/default/files/documents/Handreichung-fuer-Lehrkraefte.pdf",
+          "https://about.gitlab.com/topics/agentic-ai/ai-code-analysis/",
+          "https://www.kimi.ai/de/resources/ai-code-review-tools"
+        ],
+        "gap": "Kindern fehlt eine intuitive, sofortige Rückmeldung über subtile logische Fehler oder Ineffizienzen in ihrem Code, die über einfache Syntaxfehler hinausgehen und den Lernfluss nicht unterbrechen.",
+        "gap_stands_alone": true,
+        "idea": "\"Code-Brenn-Alarm\": Wenn ein Kind Code schreibt, der syntaktisch korrekt ist, aber logisch in eine Sackgasse führt oder ineffizient ist (entspricht \"Anbrennen\"), gibt die KI einen subtilen akustischen Alarm oder eine visuelle \"Rauchentwicklung\" im Editor aus, um sofort auf das Problem aufmerksam zu machen.",
+        "rank": 5,
+        "removed_assumption": "Rückmeldung zu logischen Fehlern oder Ineffizienzen im Code erfolgt erst nach Ausführung, durch Tests oder durch manuelle Überprüfung.",
+        "who_has_problem": "Kinder, die Programmieren lernen, und ihre Lehrer, die ein Bedürfnis nach sofortigem, nicht-blockierendem Feedback zu subtilen Code-Problemen wie Ineffizienz oder logischen Sackgassen haben, die über Syntaxfehler hinausgehen.",
+        "why_now": "Fortschritte in der Echtzeit-KI-Code-Analyse und der Fähigkeit von Large Language Models (LLMs), Code-Logik und Ineffizienzen zu verstehen, ermöglichen es nun, subtile logische Probleme und \"Sackgassen\" zu erkennen, was über die Möglichkeiten reiner Syntax-Checker von vor fünf Jahren hinausgeht."
+      }
+    },
+    {
+      "local_id": "C20",
+      "record": {
+        "boden_type": "combinational",
+        "buildable": "Ja, die Kombination aus KI-gestützter Code-Analyse und der Fähigkeit von LLMs zur Generierung von deskriptiven Texten ist mit bekannten Mitteln baubar.",
+        "candidate_id": "C20",
+        "collider_mechanism": "Ein Sommelier analysiert die komplexen \"Geschmacksnuancen\" eines Weins und übersetzt sie in eine verständliche, beschreibende Sprache. Hier analysiert die KI die \"Geschmacksnuancen\" des Codes (Bitterness, Süße, Rauchigkeit) und hilft dem Lehrer, diese in passende, didaktisch wertvolle Kommentare zu fassen, analog zur Rolle des Sommeliers.",
+        "evidence_urls": [
+          "https://www.waxmann.com/fileadmin/media/zusatztexte/3606Kapitel02.pdf",
+          "https://www.schulministerium.nrw/sites/default/files/documents/Handreichung-fuer-Lehrkraefte.pdf",
+          "https://www.kimi.ai/de/resources/ai-code-review-tools",
+          "https://about.gitlab.com/topics/agentic-ai/ai-code-analysis/"
+        ],
+        "gap": "Lehrern fällt es schwer, die vielfältigen, oft subjektiven \"Geschmacksnuancen\" in kreativen Programmierprojekten von Kindern präzise zu identifizieren und sie in konstruktive, beschreibende Kommentare zu übersetzen.",
+        "gap_stands_alone": true,
+        "idea": "Ein \"Code-Sommelier-Assistent\" für Lehrer, der bei der Bewertung kreativer Programmierprojekte hilft, indem er verschiedene \"Geschmacksnuancen\" (z.B. \"bitterer Fehler\", \"süße Eleganz\", \"rauchige Komplexität\") im Code identifiziert und passende beschreibende Kommentare vorschlägt.",
+        "rank": 6,
+        "removed_assumption": "Die Bewertung von Code durch Lehrer muss sich auf technische Kriterien beschränken oder erfordert eine rein manuelle, aufwändige Formulierung von individuellem Feedback.",
+        "who_has_problem": "Lehrer, die kreative Programmierprojekte von Kindern bewerten müssen und Schwierigkeiten haben, die verschiedenen Aspekte (Fehler, Eleganz, Komplexität) präzise zu beschreiben und konstruktives Feedback zu geben.",
+        "why_now": "Die Entwicklung fortschrittlicher Large Language Models (LLMs) ermöglicht es der KI, nicht nur Code zu analysieren, sondern auch kontextbezogene, deskriptive Kommentare zu generieren, die spezifische \"Geschmacksnuancen\" im Code erfassen und formulieren können, was vor fünf Jahren in dieser Qualität nicht möglich war."
+      }
+    }
+  ],
+  "intent": "Kindern Programmieren beibringen über Gaming und Vibecoding",
+  "lab_id": "amelie-lab",
+  "model": "gemini-2.5-flash",
+  "record": {
+    "accounting": {
+      "cost_usd": 0.123564,
+      "model_calls": 10,
+      "search_calls": 6,
+      "search_queries": 19
+    },
+    "contract_version": "1.2.0",
+    "created_at": "2026-10-14T09:41:13Z",
+    "frames": {
+      "candidates": [
+        {
+          "check_queries": [
+            "KI-gestützte Code-Analyse für Eleganz",
+            "Gamifiziertes Code-Feedback für Kinder mit sensorischen Metaphern"
+          ],
+          "friction_point": "A: Bewertung ist linear und oft binär, B: Prozess ist hochkomplex, nicht-linear und emergent.",
+          "id": "C1",
+          "idea": "Ein KI-Tool, das die Komplexität und \"Eleganz\" des Codes von Kinderprojekten während des Entstehungsprozesses analysiert und Echtzeit-Feedback in Form von \"Geschmacksprofilen\" (z.B. \"dieser Code hat einen unerwarteten, würzigen Twist!\") statt Noten gibt.",
+          "typical_probability": 0.03
+        },
+        {
+          "check_queries": [
+            "Echtzeit Code-Qualitäts-Visualisierung für Anfänger",
+            "Akustisches Feedback für Code-Qualität in Lernumgebungen"
+          ],
+          "friction_point": "A: Feedback ist verzögert und retrospektiv, B: Rückmeldung (Geruch, Farbe, Geräusch) ist kontinuierlich und in Echtzeit.",
+          "id": "C2",
+          "idea": "Eine Schnittstelle für Code-Editoren für Kinder, die \"Maillard-Indikatoren\" einblendet: visuelle oder auditive Hinweise, die auf die \"Reifung\" oder \"Überhitzung\" von Code-Abschnitten hindeuten, basierend auf Mustern, die typischerweise zu einem \"gut gebräunten\" oder \"verbrannten\" Ergebnis führen.",
+          "typical_probability": 0.05
+        },
+        {
+          "check_queries": [
+            "KI-Analyse von subjektiven Beschreibungen kreativer Werke",
+            "Gamifizierte Metadaten-Erfassung für Kinder-Programmierprojekte"
+          ],
+          "friction_point": "A: Kreativität schwer objektiv zu bewerten, B: Ergebnis ist subjektiv im Genuss, aber objektiv in der chemischen Zusammensetzung.",
+          "id": "C3",
+          "idea": "Ein System, das es Kindern erlaubt, ihre Code-Projekte \"geschmacklich\" zu verschlagworten (z.B. \"süß\", \"sauer\", \"knusprig\", \"umami\"), und eine KI aggregiert diese subjektiven Beschreibungen zu einer \"sensorischen Landkarte\" der Projekte, die Lehrern hilft, kreative Cluster zu erkennen.",
+          "typical_probability": 0.02
+        },
+        {
+          "check_queries": [
+            "Generatives Design für Programmierrezepte",
+            "KI-gestützte Variation von Algorithmen für kreatives Programmieren"
+          ],
+          "friction_point": "A: Fehler führen zu Abzug oder \"falsch\", B: \"Fehler\" können neue, interessante Eigenschaften erzeugen.",
+          "id": "C4",
+          "idea": "Ein \"Rezeptbuch\" für Programmier-Challenges, bei dem Kinder nicht nur Code schreiben, sondern auch die \"Zutaten\" (Funktionen, Variablen) und \"Kochschritte\" (Algorithmen) dokumentieren, und eine KI schlägt \"Variationen\" vor, die zu neuen \"Geschmackserlebnissen\" führen.",
+          "typical_probability": 0.04
+        },
+        {
+          "check_queries": [
+            "KI-Simulation von Code-Evolution",
+            "Emergenz-Modellierung in Lern-Programmierumgebungen"
+          ],
+          "friction_point": "A: Die Bewertung ist oft eine singuläre Momentaufnahme nach Abschluss, B: Die \"Bewertung\" ist ein integraler, dynamischer Teil des Entstehungsprozesses.",
+          "id": "C5",
+          "idea": "Eine \"Fermentations-Simulation\" für Code: Code-Projekte werden über Nacht in einem virtuellen \"Brutschrank\" gelegt. Die KI simuliert, wie sich der Code mit der Zeit \"entwickelt\" (z.B. durch Hinzufügen von Bugs, Optimierungen, unerwarteten Verhaltensweisen), um Kindern die Emergenz von Systemen zu zeigen.",
+          "typical_probability": 0.01
+        },
+        {
+          "check_queries": [
+            "Korrelation von Code-Metriken mit sensorischen Eigenschaften",
+            "Intuitives Code-Bewertungssystem für Nicht-Programmierer"
+          ],
+          "friction_point": "A: Fokus auf Konsistenz und Genauigkeit der Bewertung, B: Prozess ist von Natur aus variabel und schwer exakt zu reproduzieren.",
+          "id": "C6",
+          "idea": "Eine \"Maillard-Reaktions-Tabelle\" für Code, die verschiedene Parameter (Code-Komplexität, Anzahl der Funktionen, Rekursionstiefe) mit \"Geschmacksprofilen\" (z.B. \"bitter\", \"süßlich\", \"röstig\") korreliert, um Lehrern einen intuitiveren Zugang zur Code-Analyse zu ermöglichen, ohne ins Detail gehen zu müssen.",
+          "typical_probability": 0.03
+        },
+        {
+          "check_queries": [
+            "Crowdsourced sensorische Bewertung von Code",
+            "KI-Visualisierung kollektiver Code-Perzeption"
+          ],
+          "friction_point": "A: Kreativität schwer objektiv zu bewerten, B: Ergebnis ist subjektiv im Genuss, aber objektiv in der chemischen Zusammensetzung.",
+          "id": "C7",
+          "idea": "Eine Plattform, auf der Kinder ihre Vibecoding-Projekte hochladen und andere Kinder (und Lehrer) können sie anonym \"verkosten\" und mit frei gewählten sensorischen Adjektiven beschreiben. Die KI visualisiert dann die \"kollektive sensorische Wahrnehmung\" des Codes.",
+          "typical_probability": 0.04
+        },
+        {
+          "check_queries": [
+            "Programmierkonzept-Aromarad",
+            "KI-gestützte synthetische Aromen für Code-Kombinationen"
+          ],
+          "friction_point": "A: Bewertung ist linear und oft binär, B: Prozess ist hochkomplex, nicht-linear und emergent.",
+          "id": "C8",
+          "idea": "Ein \"Aromarad\" für Programmierkonzepte: Jedes Konzept (Schleife, Bedingung, Variable) hat ein Grundaroma. Wenn diese kombiniert werden, erzeugt die KI ein \"Gesamtaroma\" des Projekts, das die Komplexität und den kreativen Einsatz der Konzepte widerspiegelt.",
+          "typical_probability": 0.02
+        },
+        {
+          "check_queries": [
+            "Echtzeit-Debugging-Feedback mit sensorischen Metaphern",
+            "Akustische Warnungen für ineffizienten Code"
+          ],
+          "friction_point": "A: Feedback ist verzögert und retrospektiv, B: Rückmeldung (Geruch, Farbe, Geräusch) ist kontinuierlich und in Echtzeit.",
+          "id": "C9",
+          "idea": "\"Code-Brenn-Alarm\": Wenn ein Kind Code schreibt, der syntaktisch korrekt ist, aber logisch in eine Sackgasse führt oder ineffizient ist (entspricht \"Anbrennen\"), gibt die KI einen subtilen akustischen Alarm oder eine visuelle \"Rauchentwicklung\" im Editor aus, um sofort auf das Problem aufmerksam zu machen.",
+          "typical_probability": 0.07
+        },
+        {
+          "check_queries": [
+            "KI-gestützter Reifegrad-Indikator für Programmierprojekte",
+            "Kontinuierliches Qualitäts-Feedback für Kinder-Code"
+          ],
+          "friction_point": "A: Die Bewertung ist oft eine singuläre Momentaufnahme nach Abschluss, B: Die \"Bewertung\" ist ein integraler, dynamischer Teil des Entstehungsprozesses.",
+          "id": "C10",
+          "idea": "Ein \"Reifegrad-Indikator\" für Programmierprojekte: Eine KI bewertet kontinuierlich den Code eines Kindes und zeigt an, ob das Projekt noch \"roh\", \"medium\" oder \"gut durchgebraten\" ist, basierend auf der Einhaltung von Best Practices und der Komplexität.",
+          "typical_probability": 0.06
+        },
+        {
+          "check_queries": [
+            "Sensorische Metaphern für Programmierfehler",
+            "KI-generierte Fehlgeschmacks-Szenarien im Code"
+          ],
+          "friction_point": "A: Fehler führen zu Abzug oder \"falsch\", B: \"Fehler\" können neue, interessante Eigenschaften erzeugen.",
+          "id": "C11",
+          "idea": "Anstelle von Fehlermeldungen zeigt die Entwicklungsumgebung \"Fehlgeschmacks-Szenarien\" an, die durch bestimmte Code-Muster entstehen (z.B. \"Dieser Code schmeckt nach Endlosschleife, wie saurer Wein\"). Kinder können dann lernen, diese \"Geschmäcker\" zu vermeiden.",
+          "typical_probability": 0.03
+        },
+        {
+          "check_queries": [
+            "Code-Smell-Visualisierung als Heatmap",
+            "Sensorische Metaphern für Code-Qualität in Entwicklungsumgebungen"
+          ],
+          "friction_point": "A: Feedback ist verzögert und retrospektiv, B: Rückmeldung (Geruch, Farbe, Geräusch) ist kontinuierlich und in Echtzeit.",
+          "id": "C12",
+          "idea": "Eine KI, die den \"Geruch\" von Code im Editor als Heatmap visualisiert. Je \"intensiver\" der Geruch (z.B. durch redundante Zeilen, hohe Komplexität, oder unerwartete Abhängigkeiten), desto \"heißer\" die Farbe, um auf Verbesserungspotenziale hinzuweisen.",
+          "typical_probability": 0.05
+        },
+        {
+          "check_queries": [
+            "Visueller Fortschrittsindikator für Programmierprojekte",
+            "KI-gesteuerte 'Garzustand'-Anzeige für Code"
+          ],
+          "friction_point": "A: Die Bewertung ist oft eine singuläre Momentaufnahme nach Abschluss, B: Die \"Bewertung\" ist ein integraler, dynamischer Teil des Entstehungsprozesses.",
+          "id": "C13",
+          "idea": "Ein System, das den \"Garzustand\" eines Projekts auf einer Achse von \"roh\" (viele Basisfehler) bis \"perfekt gebräunt\" (elegant, effizient, kreativ) darstellt und kontinuierlich aktualisiert, um Kindern und Lehrern den Lernfortschritt visuell und intuitiv zu vermitteln.",
+          "typical_probability": 0.04
+        },
+        {
+          "check_queries": [
+            "Peer-Review mit sensorischen Metaphern für Code",
+            "KI-Aggregation von subjektivem Code-Feedback"
+          ],
+          "friction_point": "A: Kreativität schwer objektiv zu bewerten, B: Ergebnis ist subjektiv im Genuss, aber objektiv in der chemischen Zusammensetzung.",
+          "id": "C14",
+          "idea": "Eine kollaborative Code-Verkostungs-App, bei der Kinder ihre Projekte teilen und andere Peer-Feedback in Form von \"Geschmacksprofilen\" (z.B. \"süß und leicht zu verstehen\", \"bitter und komplex\") abgeben. Eine KI fasst die Profile zusammen.",
+          "typical_probability": 0.05
+        },
+        {
+          "check_queries": [
+            "KI-generierte Programmieraufgaben nach ästhetischen Präferenzen",
+            "Geschmacksprofile für Code-Generierung"
+          ],
+          "friction_point": "A: Kreativität schwer objektiv zu bewerten, B: Ergebnis ist subjektiv im Genuss, aber objektiv in der chemischen Zusammensetzung.",
+          "id": "C15",
+          "idea": "Ein \"Rezeptgenerator\" für kreative Code-Projekte, der basierend auf den \"Geschmackspräferenzen\" des Kindes (z.B. \"Ich mag schnelle, bunte Spiele\") spezifische Code-Strukturen und Algorithmen vorschlägt, die zu diesen \"Geschmäcken\" passen.",
+          "typical_probability": 0.03
+        },
+        {
+          "check_queries": [
+            "KI-Erkennung kreativer Code-Muster",
+            "Audit-Tool für unerwartete Code-Eigenschaften"
+          ],
+          "friction_point": "A: Fehler führen zu Abzug oder \"falsch\", B: \"Fehler\" können neue, interessante Eigenschaften erzeugen.",
+          "id": "C16",
+          "idea": "Eine Code-Audit-KI, die nicht nur Fehler findet, sondern auch \"unentdeckte Aromen\" im Code identifiziert – also kreative oder ungewöhnliche Code-Strukturen, die zu interessanten, aber vielleicht nicht intendierten Ergebnissen führen könnten, und diese hervorhebt.",
+          "typical_probability": 0.02
+        },
+        {
+          "check_queries": [
+            "Visualisierung von API-Nutzung als Geruch",
+            "Sensorische Metaphern für Code-Abhängigkeiten"
+          ],
+          "friction_point": "A: Bewertung ist linear und oft binär, B: Prozess ist hochkomplex, nicht-linear und emergent.",
+          "id": "C17",
+          "idea": "Eine Programmierumgebung, die den \"Duft\" von Bibliotheks- oder API-Aufrufen visualisiert: Je häufiger ein bestimmter Befehl verwendet wird, desto stärker wird sein assoziierter \"Duft\" im Code-Editor dargestellt, um Kindern die \"Verwandtschaft\" von Funktionen zu zeigen.",
+          "typical_probability": 0.01
+        },
+        {
+          "check_queries": [
+            "KI-Messung des 'Sizzle-Faktors' von Code",
+            "Echtzeit-Feedback für ästhetische Code-Qualität"
+          ],
+          "friction_point": "A: Kreativität schwer objektiv zu bewerten, B: Ergebnis ist subjektiv im Genuss, aber objektiv in der chemischen Zusammensetzung.",
+          "id": "C18",
+          "idea": "Ein System, das den \"Sizzle-Faktor\" von Code misst – wie ansprechend oder \"spannend\" der Code für andere wirkt – und dies in Echtzeit im Editor anzeigt, um Kinder zu ermutigen, nicht nur funktionalen, sondern auch inspirierenden Code zu schreiben.",
+          "typical_probability": 0.06
+        },
+        {
+          "check_queries": [
+            "KI-Bewertung der Algorithmen-Vielfalt in Code",
+            "Maillard-Analogie für Code-Komposition"
+          ],
+          "friction_point": "A: Bewertung ist linear und oft binär, B: Prozess ist hochkomplex, nicht-linear und emergent.",
+          "id": "C19",
+          "idea": "Eine KI, die Code nicht nur auf Korrektheit prüft, sondern auch auf \"Geschmackliche Vielfalt\" – wie viele unterschiedliche Herangehensweisen oder Algorithmen in einem Projekt kombiniert wurden, um Kinder zu experimentelleren Ansätzen zu ermutigen.",
+          "typical_probability": 0.04
+        },
+        {
+          "check_queries": [
+            "KI-gestützte deskriptive Bewertung von Code",
+            "Code-Sommelier-Tool für Lehrkräfte"
+          ],
+          "friction_point": "A: Subjektivität der Kreativitätsbeurteilung, Mangel an eindeutigen Bewertungsstandards für Kreativität, B: Ergebnis ist subjektiv im Genuss, aber objektiv in der chemischen Zusammensetzung (neue Moleküle).",
+          "id": "C20",
+          "idea": "Ein \"Code-Sommelier-Assistent\" für Lehrer, der bei der Bewertung kreativer Programmierprojekte hilft, indem er verschiedene \"Geschmacksnuancen\" (z.B. \"bitterer Fehler\", \"süße Eleganz\", \"rauchige Komplexität\") im Code identifiziert und passende beschreibende Kommentare vorschlägt.",
+          "typical_probability": 0.07
+        }
+      ],
+      "distance": 5,
+      "frame_a": {
+        "friction": "Die manuelle Bewertung von kreativen Programmierprojekten bei Kindern ist inkonsistent, ungenau und hat Schwierigkeiten mit der Definition und Beurteilung von Kreativität.",
+        "name": "Herausforderungen bei der manuellen Bewertung kreativer Programmierprojekte von Kindern",
+        "slots": {
+          "constraints": "Zeitmangel der Bewerter, Subjektivität der Kreativitätsbeurteilung, Mangel an eindeutigen Bewertungsstandards für Kreativität, Schwierigkeit, kleine Fehler ganzheitlich zu bewerten.",
+          "emotions": "Frustration (bei Bewertern durch Inkonsistenz, bei Kindern durch unklares Feedback), Unsicherheit (bei Bewertern), Stolz/Enttäuschung (bei Kindern).",
+          "goals": "Objektive, faire und konsistente Bewertung der Leistung und Kreativität; Lernfortschritt der Kinder erfassen; motivierendes Feedback geben.",
+          "materials": "Kindliche Programmierprojekte (Code, visuelle Ausgaben, Interaktionen), Bewertungsraster, schriftliche Kommentare, Noten.",
+          "mechanics": "Menschliche Beobachtung, Interpretation, Abgleich mit Kriterien, subjektive Einschätzung, schriftliches Feedback.",
+          "rituals_timing": "Bewertung erfolgt nach Abschluss eines Projekts; oft einmalig; Feedback verzögert."
+        },
+        "source_label": "Typ D: research without a tool",
+        "source_url": "https://www.waxmann.com/fileadmin/media/zusatztexte/3606Kapitel02.pdf"
+      },
+      "frame_b": {
+        "domain": "Physikalische Prozesse / Chemie",
+        "name": "Maillard-Reaktion (nicht-enzymatische Bräunung)",
+        "slots": {
+          "constraints": "Temperatur (oft 140-165°C), pH-Wert, Wasseraktivität, Reaktionszeit, Verfügbarkeit der Edukte; unkontrollierbare Nebenreaktionen (Verbrennung).",
+          "emotions": "Genuss (beim Konsum des Endprodukts), Erwartung (beim Koch), Zufriedenheit (bei Gelingen), Enttäuschung (bei Misslingen, z.B. Anbrennen).",
+          "goals": "Erzeugung von Geschmacksstoffen, Aromen, Farbpigmenten (Bräunung), Texturveränderung; Verbesserung der sensorischen Eigenschaften.",
+          "materials": "Aminosäuren, reduzierende Zucker, Hitze, Feuchtigkeit, Lebensmittel (Brotkruste, gebratenes Fleisch, gerösteter Kaffee).",
+          "mechanics": "Komplexe Kaskade von chemischen Reaktionen (Kondensation, Umlagerungen, Polymerisation), bildet hunderte neue Verbindungen, nicht-linear, schwer vorhersagbar.",
+          "rituals_timing": "Kontinuierlicher Prozess während des Erhitzens; visuelle und olfaktorische Rückmeldungen während des Prozesses; oft intuitiv gesteuert durch Erfahrung."
+        }
+      },
+      "friction_points": [
+        "A: Bewertung ist linear und oft binär (richtig/falsch), B: Prozess ist hochkomplex, nicht-linear und emergent (viele kleine Reaktionen ergeben ein Ganzes).",
+        "A: Feedback ist verzögert und retrospektiv, B: Rückmeldung (Geruch, Farbe, Geräusch) ist kontinuierlich und in Echtzeit.",
+        "A: Kreativität ist schwer objektiv zu bewerten und die Definition ist unklar, B: Ergebnis ist subjektiv im Genuss, aber objektiv in der chemischen Zusammensetzung (neue Moleküle).",
+        "A: Fokus auf Konsistenz und Genauigkeit der Bewertung, B: Prozess ist von Natur aus variabel und schwer exakt zu reproduzieren (kleine Abweichungen führen zu großen Unterschieden im Ergebnis).",
+        "A: Bewerter ist extern und menschlich, B: Der \"Prozess\" selbst ist der Bewerter, der das Produkt fortlaufend transformiert.",
+        "A: Das Ziel ist eine \"objektive\" Note oder ein Urteil, B: Das Ziel ist eine geschmackliche und ästhetische \"Vollendung\", die oft über das rein Funktionale hinausgeht.",
+        "A: Fehler führen zu Abzug oder \"falsch\", B: \"Fehler\" (z.B. leichte Überbräunung) können neue, interessante Eigenschaften erzeugen.",
+        "A: Die Bewertung ist oft eine singuläre Momentaufnahme nach Abschluss, B: Die \"Bewertung\" ist ein integraler, dynamischer Teil des Entstehungsprozesses."
+      ],
+      "personas": [
+        {
+          "who": "Frau Müller, Grundschullehrerin",
+          "would_do": "Sie verzweifelt an der Bewertung der Kreativität bei Kinder-Programmierprojekten. Sie wünscht sich ein System, das ihr hilft, die individuellen Ansätze der Kinder besser zu würdigen und gleichzeitig einen roten Faden in der Bewertung zu haben, ohne überfordert zu sein."
+        },
+        {
+          "who": "Leo, 9 Jahre alt",
+          "would_do": "Er ist frustriert, wenn er für seine kreativen, aber vielleicht nicht direkt auf Lernziele ausgerichteten Programmierprojekte nur 'durchschnittlich' bekommt. Er wünscht sich, dass seine Kreativität besser erkannt und wertgeschätzt wird."
+        },
+        {
+          "who": "Herr Schmidt, Programmier-Dozent für Lehramtsstudierende",
+          "would_do": "Er sucht nach Methoden, um seinen Studenten beizubringen, wie sie über die reine Funktionalität hinaus Feedback geben können, ohne im subjektiven Chaos zu versinken, und wie man die 'Emergenz' von guter Programmierung messbar machen kann."
+        }
+      ],
+      "shortlist": [
+        "C1",
+        "C3",
+        "C5",
+        "C9",
+        "C16",
+        "C20"
+      ]
+    },
+    "intent": "Kindern Programmieren beibringen über Gaming und Vibecoding",
+    "log_entry": "<!-- proposed by the Lab's Lacunar agent, run lacunar-20261014T093417-fb83f5; nothing was written to Amélie -->\n| 14.10.2026 | Herausforderungen bei der manuellen Bewertung kreativer Programmierprojekte von Kindern | Maillard-Reaktion (nicht-enzymatische Bräunung) | 5 | 20 | 6: 1. Eine \"Fermentations-Simulation\" für Code: Code-Projekte werden über Nacht in einem virtuellen \"Brutschrank\" gelegt. Die KI simuliert, wie sich der Code mit der Zeit \"entwickelt\" (z.B. durch Hinzufügen von Bugs, Optimierungen, unerwarteten Verhaltensweisen), um Kindern die Emergenz von Systemen zu zeigen. (exploratory); 2. Eine Code-Audit-KI, die nicht nur Fehler findet, sondern auch \"unentdeckte Aromen\" im Code identifiziert – also kreative oder ungewöhnliche Code-Strukturen, die zu interessanten, aber vielleicht nicht intendierten Ergebnissen führen könnten, und diese hervorhebt. (exploratory); 3. Ein KI-Tool, das die Komplexität und \"Eleganz\" des Codes von Kinderprojekten während des Entstehungsprozesses analysiert und Echtzeit-Feedback in Form von \"Geschmacksprofilen\" (z.B. \"dieser Code hat einen unerwarteten, würzigen Twist!\") statt Noten gibt. (combinational); 4. Ein System, das es Kindern erlaubt, ihre Code-Projekte \"geschmacklich\" zu verschlagworten (z.B. \"süß\", \"sauer\", \"knusprig\", \"umami\"), und eine KI aggregiert diese subjektiven Beschreibungen zu einer \"sensorischen Landkarte\" der Projekte, die Lehrern hilft, kreative Cluster zu erkennen. (combinational); 5. \"Code-Brenn-Alarm\": Wenn ein Kind Code schreibt, der syntaktisch korrekt ist, aber logisch in eine Sackgasse führt oder ineffizient ist (entspricht \"Anbrennen\"), gibt die KI einen subtilen akustischen Alarm oder eine visuelle \"Rauchentwicklung\" im Editor aus, um sofort auf das Problem aufmerksam zu machen. (combinational); 6. Ein \"Code-Sommelier-Assistent\" für Lehrer, der bei der Bewertung kreativer Programmierprojekte hilft, indem er verschiedene \"Geschmacksnuancen\" (z.B. \"bitterer Fehler\", \"süße Eleganz\", \"rauchige Komplexität\") im Code identifiziert und passende beschreibende Kommentare vorschlägt. (combinational) | Kindern und ihren Lehrern fehlt eine intuitive und interaktive Methode, um die dynamische, nicht-lineare Entwicklung und die emergenten Eigenschaften von Softwaresystemen über die Zeit zu erfahren und zu verstehen. | — (not checked yet) |\n\n### Lacunar run lacunar-20261014T093417-fb83f5 — 14.10.2026 (intent: Kindern Programmieren beibringen über Gaming und Vibecoding)\n- **Learned:** Die Memory-Checks sind sehr spezifisch; selbst verwandte Lab-Vorschläge oder allgemeine Felder führen nicht unbedingt zu einem Kill, wenn die Anwendung oder der Blickwinkel der Idee neuartig ist. Die Abschlussnotizen des Tools zur Neuheit waren hilfreich bei der Verifizierung.\n- **Mistake:** Anfänglich habe ich einige bib_find-Ergebnisse mit Keyword-Matches als potenzielle Kills interpretiert, musste aber bei genauerer Betrachtung der Snippets feststellen, dass diese zu generisch waren (Lab-Vorschläge) oder in einem anderen Bereich lagen und die spezifische Kombination der Idee nicht abdeckten.\n- **Next time:** Für bereits vorhandene Memory-Checks, die einen Lab-Vorschlag oder eine sehr allgemeine Übereinstimmung zurückgeben, werde ich explizit nach der spezifischen Kombination von Schlüsselwörtern der Idee und dem Collider-Mechanismus suchen, um die Abdeckung der Idee klarer zu bestätigen.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): KI-gestützte Code-Analyse für Eleganz -> https://about.gitlab.com/topics/agentic-ai/ai-code-analysis/, https://medium.com/digital-solution-architecture-design/using-ai-to-modernize-code-analysis-and-remediation-65bc704d1ebe, https://www.kimi.ai/de/resources/ai-code-review-tools, https://sdh.global/de/blog/ai-ml/ai-in-code-review-how-it-works-and-tools-to-improve-quality/\n  - C3 (ok): KI-Analyse von subjektiven Beschreibungen kreativer Werke -> https://pagadala-saiteja.medium.com/an-introduction-to-natural-language-processing-for-text-analysis-7856267266d5, https://www.splunk.com/en_us/blog/learn/natural-language-processing-nlp.html, https://www.deeplearning.ai/resources/natural-language-processing, https://www.displayr.com/how-natural-language-processing-powers-text-analysis/\n  - C5 (ok): KI-Simulation von Code-Evolution -> https://medium.com/@e.storefashion07/ai-generative-code-evolution-the-future-of-software-development-012f5e96125e, https://algocademy.com/blog/genetic-algorithms-and-evolutionary-computation-harnessing-natures-wisdom-in-code/, https://www.ultralytics.com/blog/what-is-an-evolutionary-algorithm-a-quick-guide, https://www.labnext70.news/news/ai-systems-code-optimisation-evolution\n",
+    "model": "gemini-2.5-flash",
+    "plan": {
+      "anchor_queries": [
+        "Herausforderungen bei der manuellen Bewertung kreativer Programmierprojekte von Kindern",
+        "Kriterienkatalog für die Bewertung von Vibecoding-Projekten von Schülern",
+        "Lehrerhandbuch Bewertung Programmierübungen Grundschule"
+      ],
+      "area": "Kindern Programmieren beibringen über Gaming und Vibecoding",
+      "mode_list": [
+        "Visuelle Blockprogrammierung in einer Spielwelt (wie Scratch)",
+        "Erstellen eigener Spielmechaniken durch Drag-and-Drop-Skripte",
+        "Anpassen von Spielcharakteren oder Leveln durch Code",
+        "Lernen einer textbasierten Programmiersprache (z.B. Python) durch Minispiele",
+        "Programmieren von virtuellen Robotern oder Automatisierungen",
+        "Musik oder Soundeffekte mittels Code generieren (Vibecoding)",
+        "Interaktive Geschichten oder Animationen mit Programmierkonzepten erstellen",
+        "Lösen von Logikrätseln und Code-Challenges im Spielformat",
+        "Multiplayer-Spiele, bei denen die Spieler ihren eigenen Code einbringen",
+        "Ein \"Hacking\"-Spiel, das grundlegende Programmierprinzipien lehrt"
+      ]
+    },
+    "prior_art": [
+      {
+        "answer": "KI-gestützte Code-Analyse für Eleganz bezieht sich auf den Einsatz künstlicher Intelligenz, um die Qualität, Wartbarkeit und Lesbarkeit von Softwarecode zu bewerten und zu verbessern, was oft als \"Code-Eleganz\" verstanden wird. Diese Tools gehen über traditionelle statische Code-Analysen hinaus, indem sie maschinelles Lernen und natürliche Sprachverarbeitung nutzen, um den Kontext und die Struktur des Codes zu verstehen.\n\n**Beitrag zur Code-Eleganz durch KI-Analyse:**\n\n*   **Verbesserung der Code-Qualität:** KI-gestützte Tools können Code auf potenzielle Probleme analysieren und Vorschläge zur Verbesserung liefern, was zu saubererem und sichererem Code führt. Sie helfen, Fehler, Sicherheitslücken und Verstöße gegen Codierungsstandards zu erkennen.\n*   **Automatisierte Code-Reviews:** Diese Tools automatisieren wiederkehrende Review-Aufgaben, beschleunigen Entwicklungsworkflows und unterstützen Entwickler dabei, eine höhere Codequalität zu erreichen. Microsofts KI-gestützter Code-Review-Assistent hat beispielsweise die Bearbeitungszeiten von Pull Requests verkürzt und die Codequalität verbessert.\n*   **Erkennung komplexer Muster:** Im Gegensatz zu herkömmlichen Methoden, die sich auf Syntax und grundlegende Fehler konzentrieren, können KI-Tools komplexe Schwachstellen und Anomalien identifizieren, die bei manuellen Überprüfungen oft übersehen werden.\n*   **Fokus auf Wartbarkeit und Lesbarkeit:** Gut strukturierter, sauber geschriebener und gut dokumentierter Code erleichtert die Zusammenarbeit, reduziert Fehleranfälligkeit, technische Schulden und Wartungskosten. KI-Tools können die Wartbarkeit und Lesbarkeit von Code verbessern, indem sie beispielsweise Refactoring-Empfehlungen geben.\n*   **Einhaltung von Best Practices:** Moderne Tools bieten automatisierte Code-Review-Funktionalitäten, die sich an bewährten Coding-Praktiken orientieren und kontinuierliches Feedback liefern.\n\n**Metriken zur Bewertung der Code-Qualität (und Eleganz):**\n\nZur Bewertung der Code-Qualität, die eng mit der Eleganz zusammenhängt, werden verschiedene Metriken herangezogen:\n*   **Zyklomatische Komplexität:** Misst die Anzahl unabhängiger Pfade durch den Quellcode eines Programms und hilft, schwer zu testende und zu wartende Codeabschnitte zu identifizieren.\n*   **Code-Duplizierung:** Zeigt redundante Codeabschnitte an.\n*   **Code-Coverage:** Misst den Anteil des Codes, der durch Tests abgedeckt ist.\n*   **Wartbarkeitsindex (Maintainability Index):** Ein Maß dafür, wie einfach Code",
+        "candidate_id": "C1",
+        "pages": [
+          "https://about.gitlab.com/topics/agentic-ai/ai-code-analysis/",
+          "https://medium.com/digital-solution-architecture-design/using-ai-to-modernize-code-analysis-and-remediation-65bc704d1ebe",
+          "https://www.kimi.ai/de/resources/ai-code-review-tools",
+          "https://sdh.global/de/blog/ai-ml/ai-in-code-review-how-it-works-and-tools-to-improve-quality/",
+          "https://devblogs.microsoft.com/engineering-at-microsoft/enhancing-code-quality-at-scale-with-ai-powered-code-reviews/",
+          "https://entwickler.de/machine-learning/wie-beeinflusst-ki-unseren-quellcode",
+          "https://www.future-processing.com/blog/code-quality-metrics-that-you-should-measure/",
+          "https://codeant.ai/blogs/code-quality-metrics-to-track",
+          "https://moderne.ai/blog/code-quality-metrics-that-ai-coding-agents-can-actually-use",
+          "https://www.ibm.com/de-de/think/insights/ai-code-review",
+          "https://getdx.com/blog/3-metrics-for-measuring-the-impact-of-ai-on-code-quality/",
+          "https://diffray.ai/de/best-ai-code-review-tools/",
+          "https://www.sonarsource.com/de/solutions/ai-code-quality/"
+        ],
+        "question": "KI-gestützte Code-Analyse für Eleganz",
+        "status": "ok"
+      },
+      {
+        "answer": "KI-Analyse von subjektiven Beschreibungen kreativer Werke bezieht sich auf den Einsatz von Künstlicher Intelligenz (KI), insbesondere Natural Language Processing (NLP), um menschliche Beschreibungen von Kunst und anderen kreativen Inhalten zu verstehen und zu interpretieren.\n\n**Grundlagen und Methoden:**\nNatural Language Processing (NLP) ist ein Teilbereich der Künstlichen Intelligenz, der sich mit der Interaktion zwischen Computern und menschlicher Sprache befasst. Es ermöglicht Computern, menschliche Sprache zu verstehen, zu interpretieren und zu generieren. Im Kontext der Analyse subjektiver Beschreibungen kreativer Werke ist NLP ein wichtiges Werkzeug, um unstrukturierte Textdaten zu bereinigen und für die Analyse vorzubereiten.\n\nZu den Kerntechniken des NLP gehören:\n*   **Tokenisierung:** Zerlegung von Text in kleinere Einheiten wie Wörter oder Sätze.\n*   **Entfernung von Stoppwörtern:** Entfernung häufiger Wörter, die wenig zur Bedeutung eines Satzes beitragen (z.B. \"ein\", \"der\", \"und\").\n*   **Sentiment-Analyse:** Analyse der Stimmung oder Emotion hinter einem Text, nützlich für Marktforschung oder Kundenfeedback.\n*   **Themenmodellierung:** Identifizierung von Themen in großen Textsammlungen.\n*   **Worteinbettungen (Word Embeddings):** Dichte Vektorrepräsentationen, die die semantische Bedeutung von Wörtern basierend auf ihrem Kontext erfassen.\n\n**Herausforderungen und Bedenken:**\nDie Analyse subjektiver Beschreibungen kreativer Werke durch KI birgt verschiedene Herausforderungen und Bedenken:\n*   **Subjektivität und ästhetischer Wert:** Die Bewertung von Kunst ist subjektiv; ein Kunstwerk gilt als wertvoll, wenn es den Betrachter sinnlich berührt. KI-Systeme, die auf gelernten Mustern basieren, produzieren oft ähnliche Ergebnisse, was zu einem \"KI-Look\" führen kann, der Originalität reduziert. Es wird diskutiert, ob KI-Bilder \"tiefe Subjektivität\" ausdrücken können oder ob sie lediglich formell bleiben.\n*   **Urheberrecht und Authentizität:** Die Nutzung urheberrechtlich geschützter Werke zum Training von KI-Systemen erfordert die Zustimmung der Rechteinhaber. KI-basierte Kunstwerke stellen die menschliche Kreativität in Frage, da ihnen eine echte Urheberschaft fehlt, auch wenn sie ästhetische Empfindungen auslösen können.\n*   **Verlust der Wertschätzung:** Es besteht die Sorge, dass die Kennzeichnung von KI-generierten Inhalten dazu führen könnte, dass die menschliche kreative Leistung weniger gewürdigt wird. Kreative befürchten, dass das Publikum",
+        "candidate_id": "C3",
+        "pages": [
+          "https://pagadala-saiteja.medium.com/an-introduction-to-natural-language-processing-for-text-analysis-7856267266d5",
+          "https://www.splunk.com/en_us/blog/learn/natural-language-processing-nlp.html",
+          "https://www.deeplearning.ai/resources/natural-language-processing",
+          "https://www.displayr.com/how-natural-language-processing-powers-text-analysis/",
+          "https://www.monopol-magazin.de/ist-ki-kunst-aesthetisch-wertvoll",
+          "https://www.philomag.de/artikel/ist-ki-kunst-aesthetisch-wertvoll",
+          "https://www.ipsos.com/de-de/ki/kreativitaet",
+          "https://journals.univie.ac.at/index.php/mp/article/view/9282/9401",
+          "https://www.prolitteris.ch/beitraege/ki-analyse-von-urheberrechtlich-gesch%C3%BCtzten-werken",
+          "https://www.rhein-main-universitaeten.de/news/wenn-transparenz-die-kreativitaet-veraendert-studie-untersucht-auswirkungen-der-ki",
+          "https://publikationen.bibliothek.kit.edu/1000172202/153432931",
+          "https://www.dfki.de/fileadmin/user_upload/import/15922_s40702-025-01179-3.pdf"
+        ],
+        "question": "KI-Analyse von subjektiven Beschreibungen kreativer Werke",
+        "status": "ok"
+      },
+      {
+        "answer": "KI-Simulation von Code-Evolution bezieht sich auf den Prozess, bei dem Künstliche Intelligenz (KI) Code automatisch generiert, verbessert und optimiert. Dieser Bereich kombiniert Prinzipien des maschinellen Lernens, evolutionärer Algorithmen und der Verarbeitung natürlicher Sprache, um Code zu schaffen, der sich basierend auf Anforderungen und Kontext weiterentwickeln und anpassen kann.\n\n**Grundlagen und Konzepte**\nEvolutionäre Algorithmen (EAs) sind Optimierungstechniken, die von der natürlichen Selektion inspiriert sind und darauf abzielen, optimale oder nahezu optimale Lösungen für komplexe Probleme zu finden. Sie arbeiten iterativ und umfassen Schritte wie Initialisierung einer Lösungspopulation, Bewertung der Fitness jeder Lösung und Reproduktion durch Crossover (Kombination von Merkmalen) und Mutation (zufällige Änderungen). Genetische Algorithmen (GAs) sind eine Art von EA, bei der Lösungen als codierte Zeichenketten dargestellt werden und sich durch das Mischen erfolgreicher Lösungen und kleine zufällige Änderungen verbessern.\n\n**Aktuelle Entwicklungen und Projekte**\nMehrere Forschungsprojekte und Systeme demonstrieren die KI-Simulation der Code-Evolution:\n*   **AlphaEvolve von Google DeepMind:** Dieses System kombiniert große Sprachmodelle (LLMs) mit automatisierter Bewertung, um wissenschaftliche und technische Probleme zu lösen. AlphaEvolve schlägt Code-Modifikationen vor, testet diese anhand definierter Metriken und verbessert Algorithmen iterativ, wodurch ein evolutionärer Zyklus nachgeahmt wird. Es hat Berichten zufolge neuartige, nachweislich korrekte Algorithmen entdeckt und konnte bei mathematischen Benchmarks bestehende Lösungen übertreffen oder erreichen.\n*   **Darwin Goedel Machine (DGM):** Diese Forschung, die LLMs mit evolutionären Prinzipien verbindet, konzentriert sich auf die offene Evolution selbstverbessernder Agenten.\n*   **CodeEvolve:** Dieses Framework nutzt LLMs als Code-Optimierungsagenten und verwendet einen Insel-basierten genetischen Algorithmus, um die Populationsvielfalt zu erhalten. Es integriert einen neuartigen, inspirationsbasierten Crossover-Mechanismus und Meta-Prompting-Strategien zur dynamischen Erkundung des Lösungsraums. CodeEvolve hat in einigen anspruchsvollen Problemen eine bessere Leistung als AlphaEvolve gezeigt.\n\n**Phasen der KI in der Softwareentwicklung**\nDie Entwicklung der KI in der Softwareentwicklung lässt sich in drei Phasen unterteilen:\n1.  **Prädiktive Codierung:** Modelle wie Codex und Copilot ",
+        "candidate_id": "C5",
+        "pages": [
+          "https://medium.com/@e.storefashion07/ai-generative-code-evolution-the-future-of-software-development-012f5e96125e",
+          "https://algocademy.com/blog/genetic-algorithms-and-evolutionary-computation-harnessing-natures-wisdom-in-code/",
+          "https://www.ultralytics.com/blog/what-is-an-evolutionary-algorithm-a-quick-guide",
+          "https://www.labnext70.news/news/ai-systems-code-optimisation-evolution",
+          "https://www.youtube.com/watch?v=yT102za4OjU",
+          "https://arxiv.org/html/2510.14150v2",
+          "https://medium.com/@shuklaks/from-code-generation-to-code-cognition-the-quiet-evolution-of-ai-reasoning-75c786a65c50",
+          "https://www.researchgate.net/publication/395978205_From_Code_Generation_to_Code_Cognition_The_Quiet_Evolution_of_AI_Reasoning",
+          "https://www.beshapingthefuture.de/insights/die-evolution-ki-gestuetzter-softwareentwicklung-von-regelbasierten-tools-zu-agentenbasierten-systemen/"
+        ],
+        "question": "KI-Simulation von Code-Evolution",
+        "status": "ok"
+      }
+    ],
+    "result": {
+      "kills": [],
+      "log_row": {
+        "anchor": "Herausforderungen bei der manuellen Bewertung kreativer Programmierprojekte von Kindern",
+        "best_gap": "Kindern und ihren Lehrern fehlt eine intuitive und interaktive Methode, um die dynamische, nicht-lineare Entwicklung und die emergenten Eigenschaften von Softwaresystemen über die Zeit zu erfahren und zu verstehen.",
+        "candidates": 20,
+        "collider": "Maillard-Reaktion (nicht-enzymatische Bräunung)",
+        "distance": 5,
+        "survivors": 6
+      },
+      "retro": {
+        "learned": "Die Memory-Checks sind sehr spezifisch; selbst verwandte Lab-Vorschläge oder allgemeine Felder führen nicht unbedingt zu einem Kill, wenn die Anwendung oder der Blickwinkel der Idee neuartig ist. Die Abschlussnotizen des Tools zur Neuheit waren hilfreich bei der Verifizierung.",
+        "mistake": "Anfänglich habe ich einige bib_find-Ergebnisse mit Keyword-Matches als potenzielle Kills interpretiert, musste aber bei genauerer Betrachtung der Snippets feststellen, dass diese zu generisch waren (Lab-Vorschläge) oder in einem anderen Bereich lagen und die spezifische Kombination der Idee nicht abdeckten.",
+        "next_time": "Für bereits vorhandene Memory-Checks, die einen Lab-Vorschlag oder eine sehr allgemeine Übereinstimmung zurückgeben, werde ich explizit nach der spezifischen Kombination von Schlüsselwörtern der Idee und dem Collider-Mechanismus suchen, um die Abdeckung der Idee klarer zu bestätigen."
+      },
+      "survivors": [
+        {
+          "boden_type": "exploratory",
+          "buildable": "Ja, Forschungsprojekte wie AlphaEvolve und CodeEvolve zeigen, dass die Simulation von Code-Evolution mit KI-Technologien und evolutionären Algorithmen baubar ist.",
+          "candidate_id": "C5",
+          "collider_mechanism": "Ähnlich wie bei der Fermentation, wo Mikroorganismen organische Stoffe in neue Produkte umwandeln, simuliert die KI die \"Entwicklung\" des Codes durch Hinzufügen von Bugs oder Optimierungen, um zu zeigen, wie sich ein System über die Zeit \"transformiert\" und neue Eigenschaften (gute und schlechte) emergent hervorbringt. Der \"Brutschrank\" symbolisiert dabei die kontrollierte Umgebung für diese Entwicklung.",
+          "evidence_urls": [
+            "https://www.waxmann.com/fileadmin/media/zusatztexte/3606Kapitel02.pdf",
+            "https://www.schulministerium.nrw/sites/default/files/documents/Handreichung-fuer-Lehrkraefte.pdf",
+            "https://medium.com/@e.storefashion07/ai-generative-code-evolution-the-future-of-software-development-012f5e96125e",
+            "https://www.labnext70.news/news/ai-systems-code-optimisation-evolution"
+          ],
+          "gap": "Kindern und ihren Lehrern fehlt eine intuitive und interaktive Methode, um die dynamische, nicht-lineare Entwicklung und die emergenten Eigenschaften von Softwaresystemen über die Zeit zu erfahren und zu verstehen.",
+          "gap_stands_alone": true,
+          "idea": "Eine \"Fermentations-Simulation\" für Code: Code-Projekte werden über Nacht in einem virtuellen \"Brutschrank\" gelegt. Die KI simuliert, wie sich der Code mit der Zeit \"entwickelt\" (z.B. durch Hinzufügen von Bugs, Optimierungen, unerwarteten Verhaltensweisen), um Kindern die Emergenz von Systemen zu zeigen.",
+          "rank": 1,
+          "removed_assumption": "Code ist ein statisches Artefakt, dessen Eigenschaften und Verhalten vollständig durch seine initiale Implementierung bestimmt werden.",
+          "who_has_problem": "Kinder und ihre Lehrer, die ein tieferes Verständnis dafür entwickeln möchten, wie Softwaresysteme sich über die Zeit \"entwickeln\" und wie Emergenz in Code-Projekten funktioniert.",
+          "why_now": "Die jüngsten Fortschritte in der KI-Simulation von Code-Evolution, insbesondere durch den Einsatz von LLMs und evolutionären Algorithmen (z.B. AlphaEvolve, CodeEvolve), die Code generieren, optimieren und seine Entwicklung simulieren können, waren vor fünf Jahren nicht in diesem Umfang vorhanden."
+        },
+        {
+          "boden_type": "exploratory",
+          "buildable": "Ja, obwohl die Identifizierung \"kreativer\" oder \"unerwarteter, aber interessanter\" Code-Strukturen anspruchsvoller ist als die Fehlererkennung, machen Fortschritte in der KI-gestützten Code-Analyse und LLMs die Entwicklung eines solchen Systems potenziell baubar.",
+          "candidate_id": "C16",
+          "collider_mechanism": "Ähnlich wie bei der Maillard-Reaktion, die eine Vielzahl von sekundären Aromen erzeugt, die nicht primär beabsichtigt waren, aber den Geschmack bereichern, identifiziert die KI hier \"unentdeckte Aromen\" im Code – also Code-Strukturen, die über die reine Funktionalität hinaus interessante, unkonventionelle oder emergent neue Eigenschaften erzeugen können.",
+          "evidence_urls": [
+            "https://www.waxmann.com/fileadmin/media/zusatztexte/3606Kapitel02.pdf",
+            "https://www.schulministerium.nrw/sites/default/files/documents/Handreichung-fuer-Lehrkraefte.pdf",
+            "https://about.gitlab.com/topics/agentic-ai/ai-code-analysis/",
+            "https://www.kimi.ai/de/resources/ai-code-review-tools"
+          ],
+          "gap": "Lehrern und Kindern fehlt ein Werkzeug, das nicht nur Fehler im Code aufzeigt, sondern auch ungewöhnliche oder kreative Code-Strukturen hervorhebt, die zu interessanten, wenn auch nicht immer beabsichtigten, neuen Möglichkeiten führen könnten.",
+          "gap_stands_alone": true,
+          "idea": "Eine Code-Audit-KI, die nicht nur Fehler findet, sondern auch \"unentdeckte Aromen\" im Code identifiziert – also kreative oder ungewöhnliche Code-Strukturen, die zu interessanten, aber vielleicht nicht intendierten Ergebnissen führen könnten, und diese hervorhebt.",
+          "rank": 2,
+          "removed_assumption": "Die Bewertung von Code konzentriert sich ausschließlich auf Korrektheit, Effizienz und Best Practices, und unkonventionelle Strukturen sind per Definition unerwünscht oder fehlerhaft.",
+          "who_has_problem": "Lehrer, die kreative Programmierprojekte von Kindern bewerten und übersehen könnten, dass unkonventionelle Code-Strukturen neue, interessante (wenn auch vielleicht unabsichtliche) Potenziale bergen.",
+          "why_now": "Die jüngsten Fortschritte in der semantischen Code-Analyse mittels Large Language Models (LLMs) ermöglichen es der KI, nicht nur Syntax und Fehler, sondern auch die potenziellen Auswirkungen und ungewöhnliche Muster im Code zu interpretieren und kreative Abweichungen zu erkennen, was vor fünf Jahren kaum möglich war."
+        },
+        {
+          "boden_type": "combinational",
+          "buildable": "Ja, die zugrundeliegende KI-Code-Analyse ist mit bekannten Mitteln und existierenden Frameworks (z.B. derer, die GitLab, Kimi.ai oder Microsoft nutzen) baubar. Die Anpassung des Outputs an \"Geschmacksprofile\" ist eine UI/UX-Aufgabe.",
+          "candidate_id": "C1",
+          "collider_mechanism": "Die Maillard-Reaktion als Mechanismus, der eine chemische Transformation durch Bräunung beschreibt, deren Ergebnis in \"Geschmacksprofilen\" ausgedrückt wird, wird hier auf die \"Reifung\" von Code übertragen. Das Feedback basiert auf der \"sensorischen\" Wahrnehmung der Komplexität und Eleganz des Codes, analog zur Reaktion.",
+          "evidence_urls": [
+            "https://www.waxmann.com/fileadmin/media/zusatztexte/3606Kapitel02.pdf",
+            "https://www.schulministerium.nrw/sites/default/files/documents/Handreichung-fuer-Lehrkraefte.pdf",
+            "https://about.gitlab.com/topics/agentic-ai/ai-code-analysis/",
+            "https://www.kimi.ai/de/resources/ai-code-review-tools"
+          ],
+          "gap": "Kinder erhalten bei ihren Programmierprojekten oft nur binäres oder benotetes Feedback, das ihre kreativen Anstrengungen nicht differenziert würdigt oder im Entstehungsprozess leitet.",
+          "gap_stands_alone": true,
+          "idea": "Ein KI-Tool, das die Komplexität und \"Eleganz\" des Codes von Kinderprojekten während des Entstehungsprozesses analysiert und Echtzeit-Feedback in Form von \"Geschmacksprofilen\" (z.B. \"dieser Code hat einen unerwarteten, würzigen Twist!\") statt Noten gibt.",
+          "rank": 3,
+          "removed_assumption": "Die Bewertung von Code muss formal, metrisch oder normativ sein und kann nicht auf intuitiven, sensorischen Beschreibungen basieren.",
+          "who_has_problem": "Lehrer, die kreative Programmierprojekte von Kindern bewerten müssen, und Kinder, die eine motivierende, differenzierte Rückmeldung statt reiner Noten benötigen.",
+          "why_now": "Fortschritte in der KI-gestützten Code-Analyse, insbesondere in der Nutzung von maschinellem Lernen und NLP, ermöglichen es, den Kontext und die Struktur von Code zu verstehen und komplexe Muster zu erkennen, was über einfache Syntaxprüfungen hinausgeht. Fünf Jahre zuvor waren diese Modelle nicht so leistungsfähig oder zugänglich."
+        },
+        {
+          "boden_type": "combinational",
+          "buildable": "Ja, die Analyse und Aggregation von subjektiven Textbeschreibungen mittels NLP ist mit bekannten KI-Technologien baubar. Die Herausforderung liegt in der Korrelation der \"Geschmacksprofile\" mit Code-Eigenschaften.",
+          "candidate_id": "C3",
+          "collider_mechanism": "Die Maillard-Reaktion erzeugt eine Vielzahl von Geschmacks- und Aromastoffen, die durch die Aggregation von Reaktionen entstehen. Hier werden individuelle, subjektive \"Geschmacks\"-Tags aggregiert, um eine \"sensorische Landkarte\" zu erstellen, analog zu der Komplexität der Aromen, die durch die Maillard-Reaktion entstehen.",
+          "evidence_urls": [
+            "https://www.waxmann.com/fileadmin/media/zusatztexte/3606Kapitel02.pdf",
+            "https://www.schulministerium.nrw/sites/default/files/documents/Handreichung-fuer-Lehrkraefte.pdf",
+            "https://pagadala-saiteja.medium.com/an-introduction-to-natural-language-processing-for-text-analysis-7856267266d5",
+            "https://www.splunk.com/en_us/blog/learn/natural-language-processing-nlp.html"
+          ],
+          "gap": "Lehrern fehlt eine Methode, um die subjektiven kreativen Ausdrucksformen in den Programmierprojekten von Kindern systematisch zu erfassen, zu aggregieren und daraus übergeordnete Muster oder \"kreative Cluster\" zu erkennen.",
+          "gap_stands_alone": true,
+          "idea": "Ein System, das es Kindern erlaubt, ihre Code-Projekte \"geschmacklich\" zu verschlagworten (z.B. \"süß\", \"sauer\", \"knusprig\", \"umami\"), und eine KI aggregiert diese subjektiven Beschreibungen zu einer \"sensorischen Landkarte\" der Projekte, die Lehrern hilft, kreative Cluster zu erkennen.",
+          "rank": 4,
+          "removed_assumption": "Die Beurteilung von Kreativität in Programmierung kann nicht durch die Aggregation subjektiver, sensorischer Beschreibungen von Laien objektiviert oder strukturiert werden.",
+          "who_has_problem": "Lehrer, die kreative Programmierprojekte von Kindern bewerten und verstehen möchten, um individuelle Lernwege und innovative Ansätze zu identifizieren.",
+          "why_now": "Fortschritte im Natural Language Processing (NLP), insbesondere in der Sentiment-Analyse, Themenmodellierung und Worteinbettungen, die es KIs ermöglichen, subjektive menschliche Beschreibungen zu verstehen und zu interpretieren, waren vor fünf Jahren nicht in diesem Umfang verfügbar."
+        },
+        {
+          "boden_type": "combinational",
+          "buildable": "Ja, die zugrundeliegende Echtzeit-Code-Analyse für logische Probleme und Ineffizienz ist mit modernen KI-Entwicklungswerkzeugen und -Modellen baubar, wie sie in den Suchergebnissen (t19) beschrieben werden.",
+          "candidate_id": "C9",
+          "collider_mechanism": "Der \"Code-Brenn-Alarm\" nutzt das Prinzip der Maillard-Reaktion, bei der ein subtiles Anbrennen oder eine beginnende Verkohlung sofort sicht- oder riechbar wird. Hier wird ein ähnliches, vorwarnendes sensorisches Signal (Rauch, Alarm) eingesetzt, um auf ein sich anbahnendes Problem im Code hinzuweisen, bevor es zu einem vollständigen \"Verbrennen\" oder Absturz kommt.",
+          "evidence_urls": [
+            "https://www.waxmann.com/fileadmin/media/zusatztexte/3606Kapitel02.pdf",
+            "https://www.schulministerium.nrw/sites/default/files/documents/Handreichung-fuer-Lehrkraefte.pdf",
+            "https://about.gitlab.com/topics/agentic-ai/ai-code-analysis/",
+            "https://www.kimi.ai/de/resources/ai-code-review-tools"
+          ],
+          "gap": "Kindern fehlt eine intuitive, sofortige Rückmeldung über subtile logische Fehler oder Ineffizienzen in ihrem Code, die über einfache Syntaxfehler hinausgehen und den Lernfluss nicht unterbrechen.",
+          "gap_stands_alone": true,
+          "idea": "\"Code-Brenn-Alarm\": Wenn ein Kind Code schreibt, der syntaktisch korrekt ist, aber logisch in eine Sackgasse führt oder ineffizient ist (entspricht \"Anbrennen\"), gibt die KI einen subtilen akustischen Alarm oder eine visuelle \"Rauchentwicklung\" im Editor aus, um sofort auf das Problem aufmerksam zu machen.",
+          "rank": 5,
+          "removed_assumption": "Rückmeldung zu logischen Fehlern oder Ineffizienzen im Code erfolgt erst nach Ausführung, durch Tests oder durch manuelle Überprüfung.",
+          "who_has_problem": "Kinder, die Programmieren lernen, und ihre Lehrer, die ein Bedürfnis nach sofortigem, nicht-blockierendem Feedback zu subtilen Code-Problemen wie Ineffizienz oder logischen Sackgassen haben, die über Syntaxfehler hinausgehen.",
+          "why_now": "Fortschritte in der Echtzeit-KI-Code-Analyse und der Fähigkeit von Large Language Models (LLMs), Code-Logik und Ineffizienzen zu verstehen, ermöglichen es nun, subtile logische Probleme und \"Sackgassen\" zu erkennen, was über die Möglichkeiten reiner Syntax-Checker von vor fünf Jahren hinausgeht."
+        },
+        {
+          "boden_type": "combinational",
+          "buildable": "Ja, die Kombination aus KI-gestützter Code-Analyse und der Fähigkeit von LLMs zur Generierung von deskriptiven Texten ist mit bekannten Mitteln baubar.",
+          "candidate_id": "C20",
+          "collider_mechanism": "Ein Sommelier analysiert die komplexen \"Geschmacksnuancen\" eines Weins und übersetzt sie in eine verständliche, beschreibende Sprache. Hier analysiert die KI die \"Geschmacksnuancen\" des Codes (Bitterness, Süße, Rauchigkeit) und hilft dem Lehrer, diese in passende, didaktisch wertvolle Kommentare zu fassen, analog zur Rolle des Sommeliers.",
+          "evidence_urls": [
+            "https://www.waxmann.com/fileadmin/media/zusatztexte/3606Kapitel02.pdf",
+            "https://www.schulministerium.nrw/sites/default/files/documents/Handreichung-fuer-Lehrkraefte.pdf",
+            "https://www.kimi.ai/de/resources/ai-code-review-tools",
+            "https://about.gitlab.com/topics/agentic-ai/ai-code-analysis/"
+          ],
+          "gap": "Lehrern fällt es schwer, die vielfältigen, oft subjektiven \"Geschmacksnuancen\" in kreativen Programmierprojekten von Kindern präzise zu identifizieren und sie in konstruktive, beschreibende Kommentare zu übersetzen.",
+          "gap_stands_alone": true,
+          "idea": "Ein \"Code-Sommelier-Assistent\" für Lehrer, der bei der Bewertung kreativer Programmierprojekte hilft, indem er verschiedene \"Geschmacksnuancen\" (z.B. \"bitterer Fehler\", \"süße Eleganz\", \"rauchige Komplexität\") im Code identifiziert und passende beschreibende Kommentare vorschlägt.",
+          "rank": 6,
+          "removed_assumption": "Die Bewertung von Code durch Lehrer muss sich auf technische Kriterien beschränken oder erfordert eine rein manuelle, aufwändige Formulierung von individuellem Feedback.",
+          "who_has_problem": "Lehrer, die kreative Programmierprojekte von Kindern bewerten müssen und Schwierigkeiten haben, die verschiedenen Aspekte (Fehler, Eleganz, Komplexität) präzise zu beschreiben und konstruktives Feedback zu geben.",
+          "why_now": "Die Entwicklung fortschrittlicher Large Language Models (LLMs) ermöglicht es der KI, nicht nur Code zu analysieren, sondern auch kontextbezogene, deskriptive Kommentare zu generieren, die spezifische \"Geschmacksnuancen\" im Code erfassen und formulieren können, was vor fünf Jahren in dieser Qualität nicht möglich war."
+        }
+      ]
+    },
+    "run_id": "lacunar-20261014T093417-fb83f5",
+    "state_missing": [],
+    "tool_calls": [
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t01",
+        "status": "ok",
+        "summary": "beibring",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t02",
+        "status": "ok",
+        "summary": "vibecodi",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t03",
+        "status": "ok",
+        "summary": "kindern",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t04",
+        "status": "ok",
+        "summary": "Herausforderungen bei der manuellen Bewertung kreativer Programmierprojekte von Kindern",
+        "tool": "search"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t05",
+        "status": "ok",
+        "summary": "Kriterienkatalog für die Bewertung von Vibecoding-Projekten von Schülern",
+        "tool": "search"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t06",
+        "status": "ok",
+        "summary": "Lehrerhandbuch Bewertung Programmierübungen Grundschule",
+        "tool": "search"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t07",
+        "status": "ok",
+        "summary": "analysie, echtzeit",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t08",
+        "status": "ok",
+        "summary": "analysie",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t09",
+        "status": "ok",
+        "summary": "aggregie, erkennen",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t10",
+        "status": "ok",
+        "summary": "aggregie",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t11",
+        "status": "ok",
+        "summary": "emergenz, entwicke",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t12",
+        "status": "ok",
+        "summary": "emergenz",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t13",
+        "status": "ok",
+        "summary": "anbrenne, aufmerks",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t14",
+        "status": "ok",
+        "summary": "anbrenne",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t15",
+        "status": "ok",
+        "summary": "hervorhe, kreative",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t16",
+        "status": "ok",
+        "summary": "hervorhe",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t17",
+        "status": "ok",
+        "summary": "assisten, bewertun",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t18",
+        "status": "ok",
+        "summary": "assisten",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t19",
+        "status": "ok",
+        "summary": "KI-gestützte Code-Analyse für Eleganz",
+        "tool": "search"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t20",
+        "status": "ok",
+        "summary": "KI-Analyse von subjektiven Beschreibungen kreativer Werke",
+        "tool": "search"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t21",
+        "status": "ok",
+        "summary": "KI-Simulation von Code-Evolution",
+        "tool": "search"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t22",
+        "status": "ok",
+        "summary": "KI-gestützte Code-Analyse, Eleganz",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t23",
+        "status": "ok",
+        "summary": "KI-Analyse, subjektiv, Beschreibung, kreativ",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t24",
+        "status": "ok",
+        "summary": "KI-Simulation, Code-Evolution",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t25",
+        "status": "ok",
+        "summary": "Echtzeit-Feedback, sensorisch, Metapher",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t26",
+        "status": "ok",
+        "summary": "KI-Erkennung, kreativ, Code-Muster",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T093417-fb83f5-t27",
+        "status": "budget_exhausted",
+        "summary": "Code-Sommelier, Lehrkräfte, Bewertung",
+        "tool": "bib_find"
+      }
+    ],
+    "topic_check": [
+      {
+        "hits": [
+          "[dose, score 0.8] Pin Tumbler — Available"
+        ],
+        "term": "beibring"
+      },
+      {
+        "hits": [],
+        "term": "vibecodi"
+      },
+      {
+        "hits": [
+          "[dose, score 0.8] Bleifrei-Lotse — Available"
+        ],
+        "term": "kindern"
+      }
+    ]
+  },
+  "revision": "b901ef5c0aaded3fc5237f41505ec2c573f698f0c852ed05d7461312036664af",
+  "run_id": "lacunar-20261014T093417-fb83f5"
+}
