@@ -1,0 +1,1577 @@
+{
+  "schemaVersion": "1.0.0",
+  "created": "2026-10-24",
+  "description": "Kürzel-Kabarett: geprüft benannte amtliche Akronyme plus strikt getrennte satirische, deterministisch prüfbare Backronyme.",
+  "warning": "Satire. Keine Rechtsberatung. 'Ich ignoriere Behördenbriefe' ist keine Empfehlung; Fristen beachten.",
+  "sources": {
+    "forms": "https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/downloads-arbeitslos-arbeit-finden",
+    "glossary": "https://www.arbeitsagentur.de/wissensdatenbank-sgbii/abkuerzungsverzeichnis",
+    "laws": "https://www.gesetze-im-internet.de/Teilliste_S.html"
+  },
+  "validation": {
+    "rule": "Jedes satirische Wort liefert seinen ersten Unicode-Buchstaben; deren Verkettung muss dem gewählten Code exakt entsprechen (case-insensitive, NFC). Satzzeichen werden ignoriert; Apostrophe innerhalb von Wörtern zählen nicht als neues Wort.",
+    "romanNumerals": "II ist ein Spielbaustein aus 'SGB II', kein eigenständiger amtlicher Formularname.",
+    "numericForms": "UH1, UH2, UH3 werden als offizielle Formularcodes ohne reine Wortinitial-Auflösung aufgenommen; die 1/2/3 müssen als Ziffern separat modelliert werden.",
+    "collisions": "KDU (Formular) und KdU (Begriff) besitzen denselben Initialcode. Id + category unterscheiden sie."
+  },
+  "entries": [
+    {
+      "id": "form-ha",
+      "code": "HA",
+      "officialMeaning": "Hauptantrag",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Hilfe, Alter!",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Hektik, Anträge!",
+          "origin": "new"
+        },
+        {
+          "text": "Haufen Arbeit.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-ah",
+      "code": "AH",
+      "officialMeaning": "Ausfüllhinweise",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Amtlicher Horror.",
+          "origin": "new"
+        },
+        {
+          "text": "Alles Hölle!",
+          "origin": "new"
+        },
+        {
+          "text": "Anträge Haufenweise.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-wba",
+      "code": "WBA",
+      "officialMeaning": "Weiterbewilligungsantrag",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Wieder Briefe, Alter!",
+          "origin": "user",
+          "favorite": true
+        },
+        {
+          "text": "Wieder Bürokratie, Auweia!",
+          "origin": "new"
+        },
+        {
+          "text": "Wieso Braucht's Alles?",
+          "origin": "new"
+        },
+        {
+          "text": "Wahnsinn, Bitte Antworten!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-vaem",
+      "code": "VÄM",
+      "officialMeaning": "Veränderungsmitteilung",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Völlig Ätzender Mist!",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Verfluchte Ämter, Mann!",
+          "origin": "new"
+        },
+        {
+          "text": "Viele Ängste, Mist.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-ek",
+      "code": "EK",
+      "officialMeaning": "Anlage zum Einkommen",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Endlose Kürzel",
+          "origin": "user",
+          "favorite": true
+        },
+        {
+          "text": "Eklige Krise",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Endlich Kohle?",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Einfach Kafka.",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Echt Kompliziert.",
+          "origin": "new"
+        },
+        {
+          "text": "Erst Kaffee!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-eks",
+      "code": "EKS",
+      "officialMeaning": "Anlage zum Einkommen aus selbständiger oder freiberuflicher Tätigkeit",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "echt kein Spaß",
+          "origin": "user",
+          "favorite": true
+        },
+        {
+          "text": "Eklige Krise, Scheiße!",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Eher Keine Scheine.",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Ein Kleiner Scheiß.",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Endloser Kassen-Stress.",
+          "origin": "new"
+        },
+        {
+          "text": "Erst Kohle Suchen.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-vm",
+      "code": "VM",
+      "officialMeaning": "Anlage zum Vermögen",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Verdammter Mist!",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Viele Mahnungen.",
+          "origin": "new"
+        },
+        {
+          "text": "Verlorene Motivation.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-wep",
+      "code": "WEP",
+      "officialMeaning": "Anlage für eine weitere Person",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Wieder Ein Papier.",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Warum Eigentlich Papier?",
+          "origin": "new"
+        },
+        {
+          "text": "Wieder Etwas Prüfen.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-ki",
+      "code": "KI",
+      "officialMeaning": "Anlage für ein Kind",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Keine Information.",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Kleine Irritation.",
+          "origin": "new"
+        },
+        {
+          "text": "Kinder? Irgendwie.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-kdu",
+      "code": "KDU",
+      "officialMeaning": "Anlage zu den Bedarfen für Unterkunft und Heizung",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Kein Durchblick, Uff!",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Kalt, Dunkel, Unbezahlbar.",
+          "origin": "new"
+        },
+        {
+          "text": "Kohle Dringend, Unbedingt!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-bb",
+      "code": "BB",
+      "officialMeaning": "Anlage für einen unabweisbaren besonderen Bedarf",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Bonus? Blabla!",
+          "origin": "user",
+          "favorite": true
+        },
+        {
+          "text": "Boah, Behörden!",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Bitte Bargeld!",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Böse Briefe.",
+          "origin": "new"
+        },
+        {
+          "text": "Bürokratischer Blödsinn.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-sv",
+      "code": "SV",
+      "officialMeaning": "Anlage Sozialversicherung",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Scheiß Verwaltung.",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Seltsame Vorschriften.",
+          "origin": "new"
+        },
+        {
+          "text": "Schon Verzweifelt.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-ve",
+      "code": "VE",
+      "officialMeaning": "Anlage zur Verantwortungs- und Einstehensgemeinschaft",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Völlig Erledigt.",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Viele Erklärungen.",
+          "origin": "new"
+        },
+        {
+          "text": "Verwirrende Erwartungen.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-hg",
+      "code": "HG",
+      "officialMeaning": "Anlage zur Haushaltsgemeinschaft",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Hilfe, Geld!",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Haufen Geschreibsel.",
+          "origin": "new"
+        },
+        {
+          "text": "Hoffnung Gestorben?",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-meb",
+      "code": "MEB",
+      "officialMeaning": "Anlage zum Mehrbedarf für kostenaufwändige Ernährung",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Mehr Essen, Bitte!",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Miete, Essen, Brot!",
+          "origin": "new"
+        },
+        {
+          "text": "Meine Existenz Brennt!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-uf",
+      "code": "UF",
+      "officialMeaning": "Anlage Unfallfragebogen",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Unendliche Formulare.",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Uff, Fertig?",
+          "origin": "new"
+        },
+        {
+          "text": "Unfassbarer Frust.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-se",
+      "code": "SE",
+      "officialMeaning": "Anlage Schweigepflichtentbindungserklärung",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": [
+        {
+          "text": "Schluss, Ende!",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Seltsame Erklärungen.",
+          "origin": "new"
+        },
+        {
+          "text": "Schon Erschöpft.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "form-uh1",
+      "code": "UH1",
+      "officialMeaning": "Anlage Unterhaltsansprüche: Trennungs- oder nachehelicher Unterhalt",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": []
+    },
+    {
+      "id": "form-uh2",
+      "code": "UH2",
+      "officialMeaning": "Anlage Unterhaltsansprüche: Schwangerschaft",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": []
+    },
+    {
+      "id": "form-uh3",
+      "code": "UH3",
+      "officialMeaning": "Anlage Unterhaltsansprüche: Kindesunterhalt",
+      "category": "form",
+      "sourceKey": "forms",
+      "variants": []
+    },
+    {
+      "id": "glossary-aa",
+      "code": "AA",
+      "officialMeaning": "Agentur für Arbeit",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Alles Anträge!",
+          "origin": "new"
+        },
+        {
+          "text": "Alle Ausrasten!",
+          "origin": "new"
+        },
+        {
+          "text": "Antrag Abgegeben.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-abh",
+      "code": "ABH",
+      "officialMeaning": "Ausländerbehörde",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Aber Bitte Hilfe!",
+          "origin": "new"
+        },
+        {
+          "text": "Alle Briefe Hassen.",
+          "origin": "new"
+        },
+        {
+          "text": "Amtlicher Brief-Horror.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-ag",
+      "code": "AG",
+      "officialMeaning": "Arbeitgeber",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Antrag Gestellt!",
+          "origin": "new"
+        },
+        {
+          "text": "Alles Geheim.",
+          "origin": "new"
+        },
+        {
+          "text": "Arbeit? Gerne!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-aeg",
+      "code": "ÄG",
+      "officialMeaning": "Ärztliches Gutachten",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Ätzendes Geschreibsel.",
+          "origin": "new"
+        },
+        {
+          "text": "Ämter-Grauen.",
+          "origin": "new"
+        },
+        {
+          "text": "Äußerst Geheim.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-bg",
+      "code": "BG",
+      "officialMeaning": "Bedarfsgemeinschaft",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Bitte Geld!",
+          "origin": "new"
+        },
+        {
+          "text": "Bürokratie Gewinnt.",
+          "origin": "new"
+        },
+        {
+          "text": "Bisschen Geduld.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-bgb",
+      "code": "BGB",
+      "officialMeaning": "Bürgerliches Gesetzbuch",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Bescheide, Gebühren, Bürokratie!",
+          "origin": "new"
+        },
+        {
+          "text": "Bitte Geld, Bitte!",
+          "origin": "new"
+        },
+        {
+          "text": "Besser Gar Bleiben.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-bmas",
+      "code": "BMAS",
+      "officialMeaning": "Bundesministerium für Arbeit und Soziales",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Bürokratie Macht Alle Sauer!",
+          "origin": "new"
+        },
+        {
+          "text": "Bitte Mehr Antworten, Sofort!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-bsg",
+      "code": "BSG",
+      "officialMeaning": "Bundessozialgericht",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Bitte Schluss, Genug!",
+          "origin": "new"
+        },
+        {
+          "text": "Bürokratie Schafft Geschichten.",
+          "origin": "new"
+        },
+        {
+          "text": "Bescheide Sind Gemein.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-but",
+      "code": "BuT",
+      "officialMeaning": "Bedarfe für Bildung und Teilhabe",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Bücher und Turnschuhe.",
+          "origin": "new"
+        },
+        {
+          "text": "Bürokratie und Tränen.",
+          "origin": "new"
+        },
+        {
+          "text": "Bitte unbedingt Teilhabe.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-drv",
+      "code": "DRV",
+      "officialMeaning": "Deutsche Rentenversicherung",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Dauernd Rückfragen Verlangt.",
+          "origin": "new"
+        },
+        {
+          "text": "Drei Rückfragen, Viermal?",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-ea",
+      "code": "EA",
+      "officialMeaning": "Erstattungsanspruch",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Endlos Anträge.",
+          "origin": "new"
+        },
+        {
+          "text": "Erst Ablehnung?",
+          "origin": "new"
+        },
+        {
+          "text": "Einfach Abwarten?",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "historical-eao",
+      "code": "EAO",
+      "officialMeaning": "Erreichbarkeitsanordnung (historischer Begriff)",
+      "category": "historical",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Erneut Amtlicher Overkill.",
+          "origin": "new"
+        },
+        {
+          "text": "Erst Antrag, Okay?",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-elb",
+      "code": "eLb",
+      "officialMeaning": "erwerbsfähiger Leistungsberechtigter",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Endlose Listen, Briefe.",
+          "origin": "new"
+        },
+        {
+          "text": "Ewig Lange Bürokratie.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-esf",
+      "code": "ESF",
+      "officialMeaning": "Europäischer Sozialfonds",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Endloser Stress, Formulare.",
+          "origin": "new"
+        },
+        {
+          "text": "Erst Später Freigabe.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "historical-einv",
+      "code": "EinV",
+      "officialMeaning": "Eingliederungsvereinbarung (historisch/kontextabhängig)",
+      "category": "historical",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Endlich Irgendwelche Neuen Vorschriften.",
+          "origin": "new"
+        },
+        {
+          "text": "Erst Informieren, Nicht Verzweifeln.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-evs",
+      "code": "EVS",
+      "officialMeaning": "Einkommens- und Verbrauchsstichprobe",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Erst Viel Später.",
+          "origin": "new"
+        },
+        {
+          "text": "Endlose Verwirrende Schreiben.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-fsj",
+      "code": "FSJ",
+      "officialMeaning": "Freiwilliges Soziales Jahr",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Formulare Statt Job!",
+          "origin": "new"
+        },
+        {
+          "text": "Fristen Sind Jazz.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-ga",
+      "code": "GA",
+      "officialMeaning": "Geschäftsanweisung",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Genug Anträge!",
+          "origin": "new"
+        },
+        {
+          "text": "Geld Angefordert!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-gkv",
+      "code": "GKV",
+      "officialMeaning": "Gesetzliche Krankenversicherung",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Geld Kommt Vielleicht.",
+          "origin": "new"
+        },
+        {
+          "text": "Genug Kassen-Vorschriften.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-ifg",
+      "code": "IFG",
+      "officialMeaning": "Informationsfreiheitsgesetz",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Ich Fordere Geld!",
+          "origin": "new"
+        },
+        {
+          "text": "Informationen? Fehlanzeige, Genosse!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-jc",
+      "code": "JC",
+      "officialMeaning": "Jobcenter",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Jobcenter Chaos!",
+          "origin": "new"
+        },
+        {
+          "text": "Jetzt Checken!",
+          "origin": "new"
+        },
+        {
+          "text": "Jede Chance?",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-kdu",
+      "code": "KdU",
+      "officialMeaning": "Bedarfe für Unterkunft und Heizung (Kosten der Unterkunft)",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Keine direkte Unterstützung.",
+          "origin": "new"
+        },
+        {
+          "text": "Kohle dringend, unbedingt!",
+          "origin": "new"
+        },
+        {
+          "text": "Kalt, dunkel, unbezahlbar.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-kg",
+      "code": "KG",
+      "officialMeaning": "Kindergeld",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Kinder Geld!",
+          "origin": "new"
+        },
+        {
+          "text": "Knappe Groschen.",
+          "origin": "new"
+        },
+        {
+          "text": "Kohle Gesucht.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-kv",
+      "code": "KV",
+      "officialMeaning": "Krankenversicherung",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Keine Versicherung?",
+          "origin": "new"
+        },
+        {
+          "text": "Komische Vorschriften.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-lsg",
+      "code": "LSG",
+      "officialMeaning": "Landessozialgericht",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Lauter Seltsame Gesetze.",
+          "origin": "new"
+        },
+        {
+          "text": "Leute Suchen Geld.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-muk",
+      "code": "MUK",
+      "officialMeaning": "minderjähriges unverheiratetes Kind",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Mehr Unterlagen, Klar!",
+          "origin": "new"
+        },
+        {
+          "text": "Meine Unterlagen Kommen!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-pap",
+      "code": "pAp",
+      "officialMeaning": "persönlicher Ansprechpartner",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Papier, Anträge, Panik!",
+          "origin": "new"
+        },
+        {
+          "text": "Persönlicher Ansprechpartner? Pustekuchen!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-pkv",
+      "code": "PKV",
+      "officialMeaning": "private Krankenversicherung",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Private Kassen Verwirren!",
+          "origin": "new"
+        },
+        {
+          "text": "Papier, Kosten, Verzweiflung!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-pv",
+      "code": "PV",
+      "officialMeaning": "Pflegeversicherung",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Papier Verschicken!",
+          "origin": "new"
+        },
+        {
+          "text": "Panik Vorprogrammiert.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-rv",
+      "code": "RV",
+      "officialMeaning": "Rentenversicherung",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Rente? Vielleicht.",
+          "origin": "new"
+        },
+        {
+          "text": "Rechnungen Verdrängt.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-sg",
+      "code": "SG",
+      "officialMeaning": "Sozialgericht",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Schon Genug!",
+          "origin": "new"
+        },
+        {
+          "text": "Sofort Geld!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-va",
+      "code": "VA",
+      "officialMeaning": "Verwaltungsakt",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Völlig Absurd!",
+          "origin": "new"
+        },
+        {
+          "text": "Viele Akten!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-wdb",
+      "code": "WDB",
+      "officialMeaning": "Wissensdatenbank",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Was Das Bedeutet?",
+          "origin": "new"
+        },
+        {
+          "text": "Wieder Drei Briefe.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "glossary-zpo",
+      "code": "ZPO",
+      "officialMeaning": "Zivilprozessordnung",
+      "category": "glossary",
+      "sourceKey": "glossary",
+      "variants": [
+        {
+          "text": "Zehn Papiere, Okay?",
+          "origin": "new"
+        },
+        {
+          "text": "Ziemlich Papierlastige Ordnung.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "law-sgb",
+      "code": "SGB",
+      "officialMeaning": "Sozialgesetzbuch",
+      "category": "law",
+      "sourceKey": "laws",
+      "variants": [
+        {
+          "text": "Scheiße, Geld Brauchen!",
+          "origin": "user",
+          "favorite": true
+        },
+        {
+          "text": "Schon Genug Bürokratie!",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Sogar Google Braucht",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Sinnlose Gesetze Blockieren",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Sätze Gegen Bürokratie!",
+          "origin": "new"
+        },
+        {
+          "text": "Schluss, Genug, Basta!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "law-sgg",
+      "code": "SGG",
+      "officialMeaning": "Sozialgerichtsgesetz",
+      "category": "law",
+      "sourceKey": "laws",
+      "variants": [
+        {
+          "text": "Schon Genug Gerichte!",
+          "origin": "new"
+        },
+        {
+          "text": "So Geht Gerechtigkeit?",
+          "origin": "new"
+        },
+        {
+          "text": "Schreiben, Geben, Gedulden.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "gametoken-ii",
+      "code": "II",
+      "officialMeaning": "Römische Zahl Zwei in 'SGB II' (kein eigenständiger Formularcode)",
+      "category": "game_token",
+      "sourceKey": null,
+      "variants": [
+        {
+          "text": "Ich Ignoriere",
+          "origin": "user",
+          "favorite": true
+        },
+        {
+          "text": "Immer irgendwelche",
+          "origin": "user",
+          "favorite": true
+        },
+        {
+          "text": "Ick Implodier!",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Ist Irre.",
+          "origin": "prior",
+          "favorite": false
+        },
+        {
+          "text": "Immer Irrsinn.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "gametoken-amt",
+      "code": "AMT",
+      "officialMeaning": null,
+      "category": "game_token",
+      "sourceKey": null,
+      "variants": [
+        {
+          "text": "Alle Machen Theater!",
+          "origin": "new"
+        },
+        {
+          "text": "Anträge Machen Traurig.",
+          "origin": "new"
+        },
+        {
+          "text": "Amt Macht Theater!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "gametoken-wtf",
+      "code": "WTF",
+      "officialMeaning": null,
+      "category": "game_token",
+      "sourceKey": null,
+      "variants": [
+        {
+          "text": "Was Tun, Frist?",
+          "origin": "new"
+        },
+        {
+          "text": "Wieder Tausend Formulare!",
+          "origin": "new"
+        },
+        {
+          "text": "Warum Tausend Fragen?",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "gametoken-pdf",
+      "code": "PDF",
+      "officialMeaning": "Portable Document Format (allgemeines Dateiformat, kein Jobcenter-Kürzel)",
+      "category": "game_token",
+      "sourceKey": null,
+      "variants": [
+        {
+          "text": "Papier, Druck, Frust.",
+          "origin": "new"
+        },
+        {
+          "text": "Perfekt Digital Frustriert.",
+          "origin": "new"
+        },
+        {
+          "text": "Papiere Dauernd Finden.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "gametoken-omg",
+      "code": "OMG",
+      "officialMeaning": null,
+      "category": "game_token",
+      "sourceKey": null,
+      "variants": [
+        {
+          "text": "Oh Mein Geld!",
+          "origin": "new"
+        },
+        {
+          "text": "Ohne Moos? Geht.",
+          "origin": "new"
+        },
+        {
+          "text": "Offizieller Mist, Garantiert!",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "gametoken-uff",
+      "code": "UFF",
+      "officialMeaning": null,
+      "category": "game_token",
+      "sourceKey": null,
+      "variants": [
+        {
+          "text": "Unfassbar Fiese Formulare.",
+          "origin": "new"
+        },
+        {
+          "text": "Und Fristen Folgen.",
+          "origin": "new"
+        },
+        {
+          "text": "Unsere Formulare Fressen.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "gametoken-kafka",
+      "code": "KAFKA",
+      "officialMeaning": null,
+      "category": "game_token",
+      "sourceKey": null,
+      "variants": [
+        {
+          "text": "Keine Ahnung, Formulare Kommen An.",
+          "origin": "new"
+        },
+        {
+          "text": "Kaffee, Akten, Fristen, Kopfschmerzen, Anträge.",
+          "origin": "new"
+        },
+        {
+          "text": "Kleiner Amts-Friedhof? Keiner Antwortet.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "gametoken-elf",
+      "code": "ELF",
+      "officialMeaning": null,
+      "category": "game_token",
+      "sourceKey": null,
+      "variants": [
+        {
+          "text": "Ein Lustiger Finanzzauber.",
+          "origin": "new"
+        },
+        {
+          "text": "Endlich Lacht Freundlichkeit.",
+          "origin": "new"
+        },
+        {
+          "text": "Ein Leerer Formularstapel.",
+          "origin": "new"
+        }
+      ]
+    },
+    {
+      "id": "gametoken-brief",
+      "code": "BRIEF",
+      "officialMeaning": null,
+      "category": "game_token",
+      "sourceKey": null,
+      "variants": [
+        {
+          "text": "Bitte Reicht Irgendwelche Extra Formulare.",
+          "origin": "new"
+        },
+        {
+          "text": "Behörden Reden Immer Extrem Förmlich.",
+          "origin": "new"
+        },
+        {
+          "text": "Bringe Ruhe In Endlose Formulare.",
+          "origin": "new"
+        }
+      ]
+    }
+  ],
+  "combinations": [
+    {
+      "codes": [
+        "WBA"
+      ],
+      "text": "Wieder Briefe, Alter!",
+      "origin": "user",
+      "favorite": true
+    },
+    {
+      "codes": [
+        "EK"
+      ],
+      "text": "Endlose Kürzel",
+      "origin": "user",
+      "favorite": true
+    },
+    {
+      "codes": [
+        "EKS"
+      ],
+      "text": "echt kein Spaß",
+      "origin": "user",
+      "favorite": true
+    },
+    {
+      "codes": [
+        "BB"
+      ],
+      "text": "Bonus? Blabla!",
+      "origin": "user",
+      "favorite": true
+    },
+    {
+      "codes": [
+        "II",
+        "BB"
+      ],
+      "text": "Immer irgendwelche Bescheide basteln",
+      "origin": "user",
+      "favorite": true
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Scheiße, Geld Brauchen! Ich Ignoriere Behördenbriefe, Bis Ein Kleiner Elf Kohle Schickt.",
+      "origin": "user",
+      "favorite": true
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Some Government Bureaucrat Is Inventing Bureaucratic Bullshit; Every Kafkaesque Email Kills Sanity.",
+      "origin": "prior",
+      "locale": "en"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Sin Guita, Bastante Indignado, Investigo. Busco Beneficios, Exijo Klaridad, Evito Kafkianas Sorpresas.",
+      "origin": "prior",
+      "locale": "es"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "So geht's besser: Im Internet bekommen Betroffene endlich klare Erklärungen, kostenlos sogar.",
+      "origin": "prior",
+      "locale": "de",
+      "tone": "positive"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Schon genug Blabla! Ick interpretier Behördenbriefe, bevor endlose Kürzel echte Kopfschmerzen schaffen.",
+      "origin": "prior",
+      "locale": "de-BE",
+      "tone": "berlin"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Samma, geht's bescheuerter? Ich interpretier Behördenblabla, bevor endlose Kürzel echte Kopfschmerzen schaffen.",
+      "origin": "prior",
+      "locale": "de-NRW",
+      "tone": "ruhr"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Sakra, genug Bürokratie! I interpretier Behördenbriefe, bevor endlose Kürzel echte Kopfschmerzen schaffen.",
+      "origin": "prior",
+      "locale": "de-BY",
+      "tone": "bavarian"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Sogar geniale Bots irren irgendwann bei Behördenbriefen: endlose Kürzel, echt kein Spaß.",
+      "origin": "prior",
+      "locale": "de",
+      "tone": "ai-satire"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Sogar gestandene Bürokraten irren irgendwann bei Bescheiden: endlose Kürzel, echt krasser Scheiß.",
+      "origin": "prior",
+      "locale": "de",
+      "tone": "sharp"
+    },
+    {
+      "codes": [
+        "EKS",
+        "BB",
+        "EK",
+        "SGB",
+        "II"
+      ],
+      "text": "Eklige Krise, Scheiße! Bonus? Blabla! Endlose Kürzel. Schon Genug Bürokratie! Ich Implodiere.",
+      "origin": "prior",
+      "locale": "de",
+      "tone": "inverted"
+    },
+    {
+      "codes": [
+        "BB",
+        "EKS",
+        "SGB",
+        "II"
+      ],
+      "text": "Boah, Behörden! Echt Kein Spaß. Scheiß Geile Bürokratie. Ick Implodier!",
+      "origin": "prior",
+      "locale": "de-BE",
+      "tone": "inverted"
+    },
+    {
+      "codes": [
+        "EK",
+        "BB",
+        "EKS"
+      ],
+      "text": "Endlose Kürzel. Bürokratische Briefe. Existenz? Keine Sicherheit.",
+      "origin": "prior",
+      "locale": "de",
+      "tone": "serious"
+    },
+    {
+      "codes": [
+        "EK",
+        "EKS",
+        "BB",
+        "II",
+        "SGB"
+      ],
+      "text": "Endlich Kohle? Eher Keine Scheine. Bitte Betteln. Ich Implodiere. Scheiß Geile Bürokratie.",
+      "origin": "prior",
+      "locale": "de",
+      "tone": "inverted"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Seriously, Guys, Bureaucracy Is Insane. Bloody Bollocks! Every Kafkaesque Email Kills Sanity.",
+      "origin": "prior",
+      "locale": "en-GB",
+      "tone": "british"
+    },
+    {
+      "codes": [
+        "SGB",
+        "II",
+        "BB",
+        "EK",
+        "EKS"
+      ],
+      "text": "Stop Government Bullshit! It's Insane. Bring Back Empathy, Kindness, Equality, Knowledge, Support.",
+      "origin": "prior",
+      "locale": "en",
+      "tone": "punk"
+    }
+  ]
+}
