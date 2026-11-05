@@ -1,0 +1,382 @@
+# Proposals from plan lab-2026-11-05-amelie-lab-inversion-inversion-20261014T093417-017075-7813e1eab7a61eb7
+
+Packet: amelie-lab-inversion-inversion-20261014T093417-017075-7813e1eab7a61eb7 · Candidate: amelie-lab-inversion-inversion-20261014T093417-017075-7813e1eab7a61eb7
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] inversion: amelie-lab-inversion-inversion-20261014T093417-017075-7813e1eab7a61eb7. Absicht: Kindern Programmieren beibringen über Gaming und Vibecoding. Modell: deepseek/deepseek-chat. Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "cost_usd": 0.209899,
+  "model_calls": 6,
+  "search_calls": 4,
+  "search_queries": 13
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.0.0"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-10-14T09:38:55Z"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Kindern Programmieren beibringen über Gaming und Vibecoding"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"<!-- proposed by the Lab's Inversion agent, run inversion-20261014T093417-017075; nothing was written to Amélie -->\n| 2026-10-14 | Lab | Beschluss der Kultusministerkonferenz \"Strategie Bildung in der digitalen Welt\" (2016) (Klasse A) | OP-4 | 7 | 1 (ungeprüft): 1. KI-generierte, kontextsensitive Code-Erklärungen für Kinder: Eine Anwendung, die den von Kindern geschriebenen Code (z.B. in einer blockbasierten Umgebung) in einfacher, kindgerechter Sprache erklärt, Fehler identifiziert und Verbesserungsvorschläge macht, die auf spielerische Effekte abzielen (z.B. \"Dein Charakter bewegt sich nur einmal, weil der Befehl nicht in einer Schleife ist. Stell dir vor, du sagst jemandem nur einmal 'Spring!'\"). (→ Kommunale Bildungseinrichtungen oder pädagogische Hochschulen) | Kindern, die Programmieren lernen, fehlt ein Tool, das ihren selbstgeschriebenen Code in einfacher Sprache erklärt, Fehler aufzeigt und spielerische Verbesserungsvorschläge macht, ohne dass eine Lehrkraft ständig anwesend sein muss. |\n\n### Inversion run inversion-20261014T093417-017075 — 2026-10-14 (intent: Kindern Programmieren beibringen über Gaming und Vibecoding)\n- **Learned:** Die feine Abgrenzung zwischen allgemeinem Lehren von Programmierung/KI und spezifischen KI-gestützten Tools, die direkt den Code der Lernenden analysieren und erklären, ist entscheidend für die Bewertung, ob ein Feld überfüllt ist. Auch die Notwendigkeit, für jeden Aspekt einer Idee (Problem, Why Now, Buildable) Nachweise aus den Suchergebnissen zu finden, ist kritisch für die Survivors-Kriterien.\n- **Mistake:** Ich habe ursprünglich für C7 nicht bedacht, dass die 'evidence_urls' zwingend aus den Suchergebnissen stammen müssen, und wollte auf die Problembeschreibung des Targets zurückgreifen. Auch bei C1 musste ich die URL-Auswahl sorgfältiger überdenken, um die Verbindung zwischen den allgemeinen Suchergebnissen und der spezifischen Idee herzustellen.\n- **Next time:** Bei der Bewertung von Kandidaten, die auf neuen KI-Fähigkeiten basieren, explizit nach Suchergebnissen suchen, die diese spezifische Fähigkeit im Kontext der Zielgruppe/des Problems belegen, anstatt nur nach existierenden Anwendungen. Und falls keine spezifischen Suchergebnisse vorliegen, konsequent den Kandidaten killen, wenn die Nachweispflicht nicht erfüllt werden kann.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): KI Code Erklärungen Kinder Programmierung -> https://digital.tueftellab.de/course/view.php?id=135, https://coderizon.de/playground/, https://www.kindaling.de/ki-coding-computer, https://coding-for-tomorrow.de/alle-materialien/\n  - C3 (ok): KI adaptives Lernen Programmierung Kinder -> https://www.mitsm.de/wissen/wie-lernen-kinder-und-jugendliche-am-besten-ki-grundlagen/, https://www.theedadvocate.org/mind-blowing-these-7-ai-apps-are-quietly-reshaping-kids-learning/, https://medium.com/@gluskyview/how-ai-learning-works-for-elementary-kids-a-parents-guide-to-adaptive-education-e1154024da80, https://codingteading.com/de/\n  - C5 (ok): KI Unterrichtsmaterial Programmieren Grundschule -> https://www.stiftung-kinder-forschen.de/praxisanregungen/ideen-fuer-grundschulkinder/arbeitsblaetter-und-lernmaterialien/informatik-als-abenteuer/, https://it-for-kids.org/unterricht/, https://it-for-kids.org/download/, https://it-for-kids.org/unterricht/ki/\n"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"deepseek/deepseek-chat"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld plan, Teil 1 (laut gespeicherter Datei):
+{
+  "area": "Kindern Programmieren beibringen über Gaming und Vibecoding",
+  "class_hint": "A",
+  "mode_list": [
+    "Visuelle Programmierumgebungen für Kinder zur Spielentwicklung (z.B. Scratch)",
+    "Blockbasiertes Coding mit Echtzeit-Feedback für interaktive Animationen",
+    "Programmierung von Mikrocontrollern oder Robotern (z.B. Calliope mini, Lego Spike)",
+    "Musik- und Sounddesign durch Code (Vibecoding) in einer kinderfreundlichen Umgebung",
+    "Erstellung von Minecraft-Plugins oder Modifikationen mit Code",
+    "Textbasierte Einführung in Python durch spielerische Challenges",
+    "Entwicklung einfacher Apps oder Webseiten mit kindgerechten Frameworks",
+    "Game Jams oder Coding-Wettbewerbe für Kinder",
+    "Programmieren von virtueller Realität (VR) oder Augmented Reality (AR) Szenen",
+    "Storytelling und interaktive Geschichten durch Programmierung"
+  ],
+  "target_queries": [
+    "Beschluss der Kultusministerkonferenz 'Strategie Bildung in der digitalen Welt' 2016 und 2021 digitale Kompetenzen Grundschule Inhalte",
+    "Lehrplan Informatik Grundschule Baden-Württemberg Inhalte"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld prior_art, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "answer": "To explain AI code to children for programming, several resources offer practical approaches and tools. These resources often focus on hands-on learning, visual programming, and connecting AI concepts to children's everyday experiences.\n\n**Key Approaches and Tools for Teaching AI Code to Children:**\n\n*   **Visual Programming Environments:** Platforms like Scratch are frequently used to introduce programming concepts to children. Some resources, such as TüftelLab digital, combine Scratch with tools like \"Machine Learning for Kids\" to allow children to train their own AI models and program AI image recognition. Similarly, Coderizon Playground enables children to experiment with AI models and develop their own games, animations, and interactive projects using graphical building blocks without prior coding knowledge. Kindaling also mentions that children can assemble colored command blocks instead of typing code to build games, animations, and stories. Coding For Tomorrow offers projects like programming a chatbot in Scratch.\n\n*   **Practical, Project-Based Learning:** Children learn AI fundamentals most effectively through practical experiences that relate to their daily lives. This can involve solving real problems with AI, such as creating a program that recognizes pets in photos. KI macht Schule provides a programming guide that includes resources like Code Combat and Code Academy to help with programming skills essential for AI projects. IT4Kids offers free teaching materials where students act as a neural network for image recognition and train an AI using the Cubi learning software.\n\n*   **Understanding AI Concepts:** It's important for children to understand how AI works, not just to use it. Workshops often focus on training small AI models and critically and meaningfully using AI tools. Children can learn about training data, why algorithms sometimes make mistakes, and how to build simple AI models. GoStudent explains AI in a child-friendly way, covering what AI is, why it's needed, and how computers learn through machine learning. A book titled \"Künstliche Intelligenz selber programmieren für Dummies Junior\" aims to teach children how computers think and learn in a playful manner.\n\n*   **Connecting to Real-World Applications:** Children encounter AI daily through music streaming, games, or internet browsing. Resources emphasize discussing AI in everyday contexts, such as when a voice assistant responds or an app provides a recommendation. KI-Training",
+    "candidate_id": "C1",
+    "pages": [
+      "https://digital.tueftellab.de/course/view.php?id=135",
+      "https://coderizon.de/playground/",
+      "https://www.kindaling.de/ki-coding-computer",
+      "https://coding-for-tomorrow.de/alle-materialien/",
+      "https://www.mitsm.de/wissen/wie-lernen-kinder-und-jugendliche-am-besten-ki-grundlagen/",
+      "https://ki-macht-schule.de/site/how2code",
+      "https://it-for-kids.org/unterricht/ki/",
+      "https://www.gostudent.org/de-de/blog/kuenstliche-intelligenz-kindgerecht-erklaert",
+      "https://www.meinkinderradio.at/ki-was-ist-eigentlich-kuenstliche-intelligenz/",
+      "https://ki-trainingszentrum.com/ki-programme-fuer-kinder-im-ueberblick/",
+      "https://code.org/de"
+    ],
+    "question": "KI Code Erklärungen Kinder Programmierung",
+    "status": "ok"
+  },
+  {
+    "answer": "KI-adaptives Lernen in der Programmierung für Kinder nutzt künstliche Intelligenz, um Bildungserfahrungen zu personalisieren und an die individuellen Bedürfnisse jedes Kindes anzupassen. Dieser Ansatz zielt darauf ab, digitale Kompetenzen zu fördern, logisches Denken, Problemlösungsfähigkeiten und Kreativität zu entwickeln.\n\n**Grundlagen und Vorteile:**\nKI-gestützte Lernsysteme beginnen mit einer diagnostischen Bewertung, um den aktuellen Wissensstand eines Kindes zu ermitteln, Stärken zu identifizieren und Wissenslücken aufzudecken. Basierend darauf wird ein personalisierter Lernpfad erstellt, der sich kontinuierlich an die Leistung des Kindes anpasst. Dies ermöglicht es, Lerninhalte und Schwierigkeitsgrade anzupassen, wodurch das Lernen effektiver und auf die individuellen Bedürfnisse zugeschnitten wird. Kinder lernen dabei, wie Maschinen aus Daten lernen, indem sie statistische Muster erkennen, was sich vom menschlichen Lernen unterscheidet.\n\n**Anbieter und Programme:**\nEs gibt verschiedene Plattformen und Programme, die KI-adaptives Lernen und Programmierung für Kinder anbieten:\n\n*   **CodingTeading** stellt kostenlose Bildungsprogramme für Programmierung und KI für alle Altersgruppen bereit, vom Kindergarten bis zum Erwachsenenalter.\n*   **CleverMinds** vermittelt spielerisch zentrale KI- und Coding-Konzepte durch praktische Projekte.\n*   **Kindaling** bietet eine Übersicht über Coding-, Robotik- und KI-Kurse für Kinder im deutschsprachigen Raum, sowohl online als auch vor Ort.\n*   **Coderizon Playground** ermöglicht es Kindern und Jugendlichen, eigene KI-Modelle zu trainieren und zu testen, visuelles Programmieren zu entdecken und Projekte mit Hardware zu verbinden, alles direkt im Browser und ohne Vorkenntnisse. Es umfasst dreizehn KI-Module, darunter Bild-, Audio- und Textklassifikation.\n*   **AI World School (AIWS)** ist eine Online-Lernplattform, die KI- und Coding-Bildung für Kinder vom Vorschulalter bis zur Sekundarstufe anbietet, wobei altersgerechte blockbasierte Programmierwerkzeuge verwendet werden.\n*   **Machine Learning for Kids** unterstützt Kinder dabei, Projekte und Spiele mit selbst trainierten maschinellen Lernmodellen zu erstellen.\n*   **Cognimates** ist eine Open-Source-Plattform, auf der Kinder Spiele entwickeln, Roboter programmieren und eigene KI- und maschinelle Lernmodelle trainieren können.\n*   **AIClub** lehrt Kinder, ihre erste KI ohne Programmier- oder Mathematikkenntnisse zu erstellen und deckt Bereiche wie maschinelles L",
+    "candidate_id": "C3",
+    "pages": [
+      "https://www.mitsm.de/wissen/wie-lernen-kinder-und-jugendliche-am-besten-ki-grundlagen/",
+      "https://www.theedadvocate.org/mind-blowing-these-7-ai-apps-are-quietly-reshaping-kids-learning/",
+      "https://medium.com/@gluskyview/how-ai-learning-works-for-elementary-kids-a-parents-guide-to-adaptive-education-e1154024da80",
+      "https://codingteading.com/de/",
+      "https://clever-minds.ch/",
+      "https://www.kindaling.de/ki-coding-computer",
+      "https://coderizon.de/playground/",
+      "https://www.greenspringsschool.com/ai-for-kids/",
+      "https://codakid.com/blog/ai-for-kids/top-8-ai-tools-kids-can-use-to-learn-programming/",
+      "https://coursiv.io/blog/ai-coding-course-for-kids",
+      "https://code.org/",
+      "https://www.codeninjas.com/",
+      "https://hourofai.org/en-US/activities"
+    ],
+    "question": "KI adaptives Lernen Programmierung Kinder",
+    "status": "ok"
+  },
+  {
+    "answer": "Es gibt verschiedene Angebote für Unterrichtsmaterialien zum Thema Künstliche Intelligenz (KI) und Programmieren in der Grundschule. Diese Materialien zielen darauf ab, Kinder spielerisch an digitale Themen heranzuführen und ein grundlegendes Verständnis für KI und Algorithmen zu entwickeln.\n\nDie **Stiftung Kinder forschen** bietet im Rahmen von \"Informatik als Abenteuer\" kostenlose Unterrichtsmaterialien an, die digitale Themen wie Programmieren und Künstliche Intelligenz behandeln. Dazu gehören Aktivitäten, bei denen Kinder einem Roboter helfen, seinen Weg zu finden, und Fragen wie \"Wie schlau ist ein Computer?\" erkundet werden. Es gibt auch Materialien zu Algorithmen und Binärcode, die ab der 3. Klassenstufe eingesetzt werden können.\n\n**IT4Kids** stellt ebenfalls Unterrichtsmaterialien für das Programmieren in der Grundschule bereit. Sie nutzen spielerische Ansätze wie ein \"KI-Memory\" und Experimente, um Chancen und Risiken von KI kritisch zu beleuchten. Spezifische Materialien zu \"KI: Bilderkennung und Künstliche Intelligenz\" sind für die Klassen 3 bis 7 konzipiert und erklären, wie eine KI lernt und Bilder erkennt.\n\n**AppCamps** bietet digitale Unterrichtsmaterialien zu Künstlicher Intelligenz und Machine Learning an. Ein Beispiel ist die Entwicklung eines Chatbots, der ein Quiz erstellt und Antworten bewertet. Zudem gibt es Materialien zur \"KI-Kompetenz (AI Literacy)\" für Primar- und Sekundarstufe, die Schülerinnen und Schüler dazu anregen, Beispiele für KI im Alltag zu sammeln und deren sinnvollen Einsatz zu diskutieren.\n\nDie **Professur für Didaktik der Informatik der Technischen Universität München (TUM)** entwickelt seit 2016 Ideen, um Grundschulkindern das Programmieren näherzubringen. Die Materialien, die unter einer Creative Commons Lizenz verfügbar sind, sollen vermitteln, dass Computer das ausführen, was Menschen programmieren. Sie beinhalten bildhafte Anleitungen und Aufgaben, beispielsweise zum Beschreiben von Wegen in Parcours, oft unter Verwendung von Scratch.\n\nDer **Ernst Klett Verlag** bietet im Rahmen der Medienbildung für die Grundschule Materialien an, darunter ein Projekt zum Programmieren eines Hitzewarnsystems mit Calliope. Eine eigene Seite \"KI im Klassenzimmer\" bündelt Produkte und Materialien zum Thema KI aus verschiedenen Fachbereichen.\n\nDie Plattform **to-teach.ai** ermöglicht Lehrkräften, mithilfe von Künstlicher Intelligenz personalisierte Unterrichtsmaterialien und Übungsaufgaben für die Grundschule zu erstellen. Diese Ma",
+    "candidate_id": "C5",
+    "pages": [
+      "https://www.stiftung-kinder-forschen.de/praxisanregungen/ideen-fuer-grundschulkinder/arbeitsblaetter-und-lernmaterialien/informatik-als-abenteuer/",
+      "https://it-for-kids.org/unterricht/",
+      "https://it-for-kids.org/download/",
+      "https://it-for-kids.org/unterricht/ki/",
+      "https://appcamps.de/unterrichtsmaterial/kuenstliche-intelligenz/",
+      "https://www.edu.sot.tum.de/ddi/fuer-lehrkraefte/grundschule/",
+      "https://www.klett.de/inhalt/informatik/materialien-&-inspirationen/276099",
+      "https://to-teach.ai/grundschule?lng=de",
+      "https://www.bildungsserver.de/elixier/elixier2_list.php?feldname3=Systematik%2FFach&feldinhalt3=%22Informatik%22&bool3=and&feldname4=Systematik%2FFach&feldinhalt4=%22K%C3%BCnstliche+Intelligenz%22&bool4=and&&suche=erweitert&t=Suchen&esn=624",
+      "https://www.fellofish.com/blog/ki-im-grundschulunterricht-ein-praktischer-leitfaden",
+      "https://podcasts.apple.com/us/podcast/ki-verstehen-statt-programmieren/id1871864360"
+    ],
+    "question": "KI Unterrichtsmaterial Programmieren Grundschule",
+    "status": "ok"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "kills": [
+    {
+      "candidate_id": "C3",
+      "failed_checks": [
+        "in_mode_or_dense"
+      ],
+      "reason": "Die Idee eines adaptiven Generators für Programmier-Challenges für Kinder ist bereits durch multiple existierende Plattformen abgedeckt, die personalisierte Lernpfade und angepasste Schwierigkeitsgrade anbieten."
+    },
+    {
+      "candidate_id": "C5",
+      "failed_checks": [
+        "in_mode_or_dense"
+      ],
+      "reason": "Die Idee eines KI-gestützten Assistenten, der Lehrkräften hilft, Unterrichtsmaterialien für Programmierung zu erstellen, ist bereits durch Plattformen wie to-teach.ai umgesetzt, die personalisierte Unterrichtsmaterialien und Übungsaufgaben für die Grundschule generieren."
+    },
+    {
+      "candidate_id": "C7",
+      "failed_checks": [
+        "problem_evidence"
+      ],
+      "reason": "Es wurden keine spezifischen Suchergebnisse gefunden, die die Problemstellung der mangelnden Dokumentation von Lernprozessen oder die Realisierbarkeit einer KI-gestützten, narrativen Lernfortschrittsdokumentation belegen könnten, so dass keine referenzierbaren URLs für 'evidence_urls' vorliegen."
+    }
+  ],
+  "log_row": {
+    "anchor_class": "A",
+    "best_gap": "Kindern, die Programmieren lernen, fehlt ein Tool, das ihren selbstgeschriebenen Code in einfacher Sprache erklärt, Fehler aufzeigt und spielerische Verbesserungsvorschläge macht, ohne dass eine Lehrkraft ständig anwesend sein muss.",
+    "candidates": 7,
+    "operator": "OP-4",
+    "survivors": 1,
+    "target": "Beschluss der Kultusministerkonferenz \"Strategie Bildung in der digitalen Welt\" (2016)"
+  },
+  "retro": {
+    "learned": "Die feine Abgrenzung zwischen allgemeinem Lehren von Programmierung/KI und spezifischen KI-gestützten Tools, die direkt den Code der Lernenden analysieren und erklären, ist entscheidend für die Bewertung, ob ein Feld überfüllt ist. Auch die Notwendigkeit, für jeden Aspekt einer Idee (Problem, Why Now, Buildable) Nachweise aus den Suchergebnissen zu finden, ist kritisch für die Survivors-Kriterien.",
+    "mistake": "Ich habe ursprünglich für C7 nicht bedacht, dass die 'evidence_urls' zwingend aus den Suchergebnissen stammen müssen, und wollte auf die Problembeschreibung des Targets zurückgreifen. Auch bei C1 musste ich die URL-Auswahl sorgfältiger überdenken, um die Verbindung zwischen den allgemeinen Suchergebnissen und der spezifischen Idee herzustellen.",
+    "next_time": "Bei der Bewertung von Kandidaten, die auf neuen KI-Fähigkeiten basieren, explizit nach Suchergebnissen suchen, die diese spezifische Fähigkeit im Kontext der Zielgruppe/des Problems belegen, anstatt nur nach existierenden Anwendungen. Und falls keine spezifischen Suchergebnisse vorliegen, konsequent den Kandidaten killen, wenn die Nachweispflicht nicht erfüllt werden kann."
+  },
+  "survivors": [
+    {
+      "buildable": "Ja, die Generierung kindgerechter Erklärungen und Fehleranalysen aus Code ist mit aktuellen LLMs und Code-Analyse-Tools technisch machbar.",
+      "candidate_id": "C1",
+      "evidence_urls": [
+        "https://digital.tueftellab.de/course/view.php?id=135",
+        "https://coderizon.de/playground/",
+        "https://www.kindaling.de/ki-coding-computer",
+        "https://www.mitsm.de/wissen/wie-lernen-kinder-und-jugendliche-am-besten-ki-grundlagen/",
+        "https://coding-for-tomorrow.de/alle-materialien/"
+      ],
+      "gap": "Kindern, die Programmieren lernen, fehlt ein Tool, das ihren selbstgeschriebenen Code in einfacher Sprache erklärt, Fehler aufzeigt und spielerische Verbesserungsvorschläge macht, ohne dass eine Lehrkraft ständig anwesend sein muss.",
+      "gap_stands_alone": true,
+      "idea": "KI-generierte, kontextsensitive Code-Erklärungen für Kinder: Eine Anwendung, die den von Kindern geschriebenen Code (z.B. in einer blockbasierten Umgebung) in einfacher, kindgerechter Sprache erklärt, Fehler identifiziert und Verbesserungsvorschläge macht, die auf spielerische Effekte abzielen (z.B. \"Dein Charakter bewegt sich nur einmal, weil der Befehl nicht in einer Schleife ist. Stell dir vor, du sagst jemandem nur einmal 'Spring!'\").",
+      "rank": 1,
+      "recipient": "Kommunale Bildungseinrichtungen oder pädagogische Hochschulen",
+      "recipient_kind": "institution",
+      "who_has_problem": "Kinder, die Programmieren lernen, und Lehrkräfte, die sie dabei unterstützen, da individuelle Code-Erklärungen zeitaufwändig sind und spezialisiertes Wissen erfordern.",
+      "why_now": "Fortschritte in Large Language Models (LLMs) für die Generierung von kindgerechtem Text und die Fähigkeit, Code semantisch zu analysieren und zu interpretieren, ermöglichen personalisiertes, on-demand Feedback, das über statische Fehlermeldungen hinausgeht."
+    }
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"inversion-20261014T093417-017075"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld target, Teil 1 (laut gespeicherter Datei):
+{
+  "candidates": [
+    {
+      "check_queries": [
+        "KI Code Erklärungen Kinder Programmierung",
+        "LLM Code Fehleranalyse Grundschule"
+      ],
+      "id": "C1",
+      "idea": "KI-generierte, kontextsensitive Code-Erklärungen für Kinder: Eine Anwendung, die den von Kindern geschriebenen Code (z.B. in einer blockbasierten Umgebung) in einfacher, kindgerechter Sprache erklärt, Fehler identifiziert und Verbesserungsvorschläge macht, die auf spielerische Effekte abzielen (z.B. \"Dein Charakter bewegt sich nur einmal, weil der Befehl nicht in einer Schleife ist. Stell dir vor, du sagst jemandem nur einmal 'Spring!'\").",
+      "recipient": "Kommunale Bildungseinrichtungen oder pädagogische Hochschulen",
+      "recipient_kind": "institution",
+      "why_now": "Fortschritte in Large Language Models (LLMs) für die Generierung von kindgerechtem Text und die Fähigkeit, Code semantisch zu analysieren und zu interpretieren, ermöglichen personalisiertes, on-demand Feedback, das über statische Fehlermeldungen hinausgeht."
+    },
+    {
+      "check_queries": [
+        "KI Code Audio Visualisierung Kinder",
+        "Multimodale KI kreatives Coding Feedback"
+      ],
+      "id": "C2",
+      "idea": "\"Vibe-Assistant\": KI-gestütztes Sound- und Visualisierungs-Feedback für Code-Effekte: Ein Tool, das den visuellen oder auditiven Output von Code in Echtzeit analysiert (z.B. bei der Erstellung von Animationen oder Soundmustern) und in natürlicher Sprache oder durch intuitive Metaphern erklärt, wie bestimmte Codeänderungen die \"Vibes\" oder das \"Gefühl\" des Ergebnisses beeinflussen. (z.B. \"Wenn du die Geschwindigkeit erhöhst, wirkt die Musik aufgeregter!\" oder \"Mehr Rot macht die Szene energiegeladener!\")",
+      "recipient": "Forschungsinstitute für digitale Bildung oder Musikhochschulen mit medienpädagogischem Schwerpunkt",
+      "recipient_kind": "institution",
+      "why_now": "On-device Multimodale KI-Modelle, die simultan Code, Audio und visuelle Outputs verarbeiten und in Beziehung setzen können, um abstrakte Qualitäten wie \"Vibe\" zu interpretieren und kindgerecht zu kommunizieren."
+    },
+    {
+      "check_queries": [
+        "KI adaptives Lernen Programmierung Kinder",
+        "personalisierte Coding Challenges Grundschule"
+      ],
+      "id": "C3",
+      "idea": "Adaptive Spiel-Challenge-Generator für Programmierkonzepte: Eine KI, die basierend auf dem Lernfortschritt und den Interessen eines Kindes (identifiziert durch Interaktionen) maßgeschneiderte, spielerische Programmier-Challenges generiert, die spezifische Konzepte (Schleifen, Bedingungen, Variablen) aufgreifen und in einem Gaming-Kontext anwenden (z.B. \"Hilf dem Fuchs, durch ein Labyrinth zu finden, indem du ihm genaue Schrittbefehle gibst und wiederholst\").",
+      "recipient": "Bildungsministerium des Landes oder Landesinstitut für Schulentwicklung",
+      "recipient_kind": "agency",
+      "why_now": "Generative KI-Modelle, die kontextbezogene Aufgaben und Lernpfade erstellen können, kombiniert mit adaptiven Lernalgorithmen, die den individuellen Lernstil erkennen und darauf reagieren, um die Motivation hochzuhalten."
+    },
+    {
+      "check_queries": [
+        "KI Code-Vorschläge Kinder",
+        "Sprachgesteuerte Programmierung Grundschule"
+      ],
+      "id": "C4",
+      "idea": "\"Code-Baukasten-Berater\": KI-Empfehlungen für Projekte und Bausteine: Eine Anwendung, die Kinder bei der Auswahl von Bausteinen oder Funktionen für ihr Gaming- oder Vibecoding-Projekt unterstützt, indem sie auf Basis einer einfachen Sprachbeschreibung (z.B. \"Ich möchte ein Spiel, wo ein Raumschiff schießt\") relevante Code-Blöcke oder Code-Strukturen vorschlägt und Beispiele zeigt.",
+      "recipient": "Öffentliche Bibliotheken mit Makerspace-Angeboten oder Kinder- und Jugendprogramme",
+      "recipient_kind": "association",
+      "why_now": "Fortschritte in der natürlichen Sprachverarbeitung (NLP) und der Code-Generierung aus natürlichen Spracheingaben, die es ermöglichen, komplexe Programmierbibliotheken oder blockbasierte Systeme durch einfache Konversation zugänglicher zu machen."
+    },
+    {
+      "check_queries": [
+        "KI Unterrichtsmaterial Programmieren Grundschule",
+        "Lehrerassistenz digitale Kompetenzen KMK"
+      ],
+      "id": "C5",
+      "idea": "\"Lehrer-Assistent für Digitale Kompetenzen\": KI-gestütztes Unterrichtsmaterial für Programmierung: Ein Tool, das Lehrkräften, die keine Informatik-Spezialisten sind, hilft, altersgerechte Unterrichtseinheiten und Materialien zum Thema Programmierung und Vibecoding zu erstellen. Die KI schlägt konkrete Spielideen, Code-Beispiele und didaktische Hinweise vor, die auf den KMK-Kompetenzrahmen abgestimmt sind.",
+      "recipient": "Landesinstitute für Lehrerbildung und Schulentwicklung",
+      "recipient_kind": "agency",
+      "why_now": "Generative KI, die umfangreiche Lehrpläne und Fachinhalte verarbeiten kann, um maßgeschneiderte, didaktisch fundierte Unterrichtsentwürfe zu erstellen, inklusive Differenzierung für unterschiedliche Lernstände."
+    },
+    {
+      "check_queries": [
+        "KI visuelle Programmierung Musik Kinder",
+        "Code-Generierung aus Zeichnung Sound"
+      ],
+      "id": "C6",
+      "idea": "\"Code-Klang-Pinsel\": KI-generierte musikalische Muster aus visuellen Eingaben: Eine Anwendung, bei der Kinder visuelle Muster zeichnen oder importieren, und eine KI diese Muster in einfache musikalische oder klangliche Code-Strukturen übersetzt, die dann von den Kindern weiter verfeinert werden können. Dies würde einen intuitiven Einstieg ins \"Vibecoding\" über visuelle Kreativität ermöglichen.",
+      "recipient": "Kunsthochschulen oder Universitäten mit Forschung im Bereich Computational Creativity und Bildung",
+      "recipient_kind": "institution",
+      "why_now": "Neurale Netze, die visuelle Merkmale erkennen und in musikalische Parameter umwandeln können (z.B. Bild-zu-Musik-Generierung), in Kombination mit einfacher Code-Synthese für Audio."
+    },
+    {
+      "check_queries": [
+        "KI Lernfortschrittsdokumentation Programmierung",
+        "Automatisierte Evaluation Coding Kinder"
+      ],
+      "id": "C7",
+      "idea": "\"Digitaler Werkstattbericht\": KI-gestützte Dokumentation von Lernprozessen: Eine Anwendung, die den Fortschritt von Kindern in Programmierprojekten (Code-Versionen, Interaktionen, Feedback) automatisch dokumentiert und für Lehrkräfte oder Eltern in verständlichen Berichten zusammenfasst, inklusive visualisierter Lernkurven und hervorstechender Momente. Dies erleichtert die individuelle Bewertung und die Kommunikation des Kompetenzerwerbs.",
+      "recipient": "Bildungsforschungsinstitute oder Schulaufsichtsbehörden",
+      "recipient_kind": "institution",
+      "why_now": "Fortschritte in Prozess-Mining und Event-Log-Analyse kombiniert mit LLMs zur Generierung narrativer Zusammenfassungen aus strukturierten und unstrukturierten Daten des Lernverhaltens."
+    }
+  ],
+  "operator": "OP-4",
+  "shortlist": [
+    "C1",
+    "C3",
+    "C5",
+    "C7"
+  ],
+  "target": {
+    "anchor_class": "A",
+    "blind_spot": "Der praktische, spielerische und kreative Erwerb konkreter Programmierfähigkeiten, insbesondere im Bereich kreativen Codings (wie \"Vibecoding\") für jüngere Kinder, wird oft übersehen, da der Fokus auf abstrakte \"digitale Kompetenzen\" und deren Integration in bestehende Fächer liegt, deren Messung und Standardisierung schwierig ist.",
+    "name": "Beschluss der Kultusministerkonferenz \"Strategie Bildung in der digitalen Welt\" (2016)",
+    "source_label": "Klasse A: Beschluss",
+    "source_url": "https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2016/2016_12_08-Bildung-in-der-digitalen-Welt.pdf",
+    "where_data_stops": "Die Festlegung der Kompetenzen und Handlungsfelder ist in PDF-Dokumenten und politischen Beschlüssen verankert. Eine feingranulare Erfassung und Analyse des individuellen Kompetenzerwerbs im Bereich Programmieren oder Vibecoding bei Schülerinnen und Schülern ist im Schulalltag kaum vorhanden oder aggregiert.",
+    "who_carries_burden": "Lehrkräfte tragen die Hauptlast bei der Integration digitaler Kompetenzen in den Unterricht, oft ohne ausreichende spezifische Ausbildung oder dedizierte Unterrichtszeit für Programmierung. Schülerinnen und Schüler, die keinen Zugang zu außerschulischen Angeboten haben, tragen die Bürde, wichtige Grundkompetenzen nicht altersgerecht vermittelt zu bekommen.",
+    "who_pays": "Die Bundesländer finanzieren die Schulbildung und die digitale Infrastruktur. Softwareanbieter profitieren durch den Verkauf von Lizenzen und Dienstleistungen an Schulen."
+  },
+  "thesis": "Die Lücke zwischen dem Bildungsauftrag zur Vermittlung digitaler Kompetenzen, einschließlich der Programmiergrundlagen, und der tatsächlichen, personalisierten Umsetzung im Primarbereich kann durch KI-gestützte Werkzeuge geschlossen werden, die Lehrkräfte entlasten und spielerische, kreative Zugänge ermöglichen, wo personelle Kapazitäten und spezifische Fachkenntnisse fehlen."
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "inversion-20261014T093417-017075-t01",
+    "status": "ok",
+    "summary": "beibring",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T093417-017075-t02",
+    "status": "ok",
+    "summary": "vibecodi",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T093417-017075-t03",
+    "status": "ok",
+    "summary": "kindern",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T093417-017075-t04",
+    "status": "ok",
+    "summary": "Beschluss der Kultusministerkonferenz Strategie Bildung in der digitalen Welt 2016 und 2021 digitale Kompetenzen Grundschule Inhalte",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T093417-017075-t05",
+    "status": "ok",
+    "summary": "abzielen, anwendun",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T093417-017075-t06",
+    "status": "ok",
+    "summary": "abzielen",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T093417-017075-t07",
+    "status": "ok",
+    "summary": "adaptive, anwenden",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T093417-017075-t08",
+    "status": "ok",
+    "summary": "adaptive",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T093417-017075-t09",
+    "status": "ok",
+    "summary": "abgestim, assisten",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T093417-017075-t10",
+    "status": "ok",
+    "summary": "abgestim",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T093417-017075-t11",
+    "status": "ok",
+    "summary": "anwendun, berichte",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T093417-017075-t12",
+    "status": "ok",
+    "summary": "anwendun",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T093417-017075-t13",
+    "status": "ok",
+    "summary": "KI Code Erklärungen Kinder Programmierung",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T093417-017075-t14",
+    "status": "ok",
+    "summary": "KI adaptives Lernen Programmierung Kinder",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T093417-017075-t15",
+    "status": "ok",
+    "summary": "KI Unterrichtsmaterial Programmieren Grundschule",
+    "tool": "search"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld topic_check, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "hits": [
+      "[dose, score 0.8] Pin Tumbler — Available"
+    ],
+    "term": "beibring"
+  },
+  {
+    "hits": [],
+    "term": "vibecodi"
+  },
+  {
+    "hits": [
+      "[dose, score 0.8] Bleifrei-Lotse — Available"
+    ],
+    "term": "kindern"
+  }
+]
