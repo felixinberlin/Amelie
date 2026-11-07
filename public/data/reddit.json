@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T10:52:52.054Z",
+  "generatedAt": "2026-11-07T10:08:22.678Z",
   "period": "week",
   "source": "reddit.com Atom-Feeds (top.rss), Reihenfolge = Ranking; keine Scores",
   "feeds": [
@@ -7,7 +7,7 @@
       "sub": "SideProject",
       "group": "build",
       "period": "week",
-      "fetchedAt": "2026-11-06T10:52:52.054Z",
+      "fetchedAt": "2026-11-07T10:08:22.678Z",
       "stale": false,
       "error": null,
       "posts": [
@@ -60,12 +60,12 @@
           "excerpt": "I had this strange idea: what if old science fiction books were actually archives of startups that were never built? So I created Startup Archaeology. I used AI to extract inventions, technologies, and imagined systems from 100 science fiction books published between 1818 and 19…"
         },
         {
-          "id": "t3_1xn76pn",
-          "title": "One month building Hiraeth: a Moebius-inspired adventure game, with Opus 5.5, Astra, Tripo & Suno",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xn76pn/one_month_building_hiraeth_a_moebiusinspired/",
-          "author": "4nf",
-          "published": "2026-11-03T22:25:05+00:00",
-          "excerpt": "Hiraeth (Welsh word for longing or homesickness) is meant to be a Zelda style game where you go from planet to planet, explore the world, go into temples etc. I wanted it to feel a Moebius set of worlds. Here’s the teaser from a month of working on it. I used Opus 5.5 and Astra…"
+          "id": "t3_1xnf5tk",
+          "title": "I made a cable playground in the browser: pull cables between jacks and velcro them together",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xnf5tk/i_made_a_cable_playground_in_the_browser_pull/",
+          "author": "WalkinGood",
+          "published": "2026-11-04T04:41:33+00:00",
+          "excerpt": "Pocket Factory is my side project: a playground of tactile hardware controls for the web, such as keys, knobs, switches and cables that plug into little devices. This is the cable playground. Pull a cable out of a jack, plug it into another jack, then draw a velcro tie over a bu…"
         },
         {
           "id": "t3_1xnvrlr",
@@ -76,20 +76,20 @@
           "excerpt": "After struggling to land a job in 2024, when the market was pretty rough, I decided to take a different route and build something real. My goal was simple: either build something genuinely useful or gain more experience than anything else could offer. Two years and around 90 hou…"
         },
         {
+          "id": "t3_1xn76pn",
+          "title": "One month building Hiraeth: a Moebius-inspired adventure game, with Opus 5.5, Astra, Tripo & Suno",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xn76pn/one_month_building_hiraeth_a_moebiusinspired/",
+          "author": "4nf",
+          "published": "2026-11-03T22:25:05+00:00",
+          "excerpt": "Hiraeth (Welsh word for longing or homesickness) is meant to be a Zelda style game where you go from planet to planet, explore the world, go into temples etc. I wanted it to feel a Moebius set of worlds. Here’s the teaser from a month of working on it. I used Opus 5.5 and Astra…"
+        },
+        {
           "id": "t3_1xmx2v9",
           "title": "Mobile AR Laser Tag — Light Wars AR",
           "url": "https://www.reddit.com/r/SideProject/comments/1xmx2v9/mobile_ar_laser_tag_light_wars_ar/",
           "author": "32GB_of_RAM",
           "published": "2026-11-03T16:10:15+00:00",
           "excerpt": "https://apps.apple.com/us/app/light-wars-ar-laser-tag-party/id6508168951 https://play.google.com/store/apps/details?id=com.lasertag.lightwars One of my coolest projects yet. It’s been two years in development and it’s finally coming along! You can play with no external attachmen…"
-        },
-        {
-          "id": "t3_1xnf5tk",
-          "title": "I made a cable playground in the browser: pull cables between jacks and velcro them together",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xnf5tk/i_made_a_cable_playground_in_the_browser_pull/",
-          "author": "WalkinGood",
-          "published": "2026-11-04T04:41:33+00:00",
-          "excerpt": "Pocket Factory is my side project: a playground of tactile hardware controls for the web, such as keys, knobs, switches and cables that plug into little devices. This is the cable playground. Pull a cable out of a jack, plug it into another jack, then draw a velcro tie over a bu…"
         },
         {
           "id": "t3_1xnsilp",
@@ -100,14 +100,6 @@
           "excerpt": "Hey everyone, I've been working on a Mac app called Solas that turns your desktop into a little living pond. Fish swim around behind your windows while you’re using your Mac. The video probably explains it better than I can. It’s a bit of an unusual side project. A pond on your…"
         },
         {
-          "id": "t3_1xke4h5",
-          "title": "I built a focus app that doesn’t try to make you more productive. It just helps you slow down.",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xke4h5/i_built_a_focus_app_that_doesnt_try_to_make_you/",
-          "author": "suniltarge",
-          "published": "2026-10-31T16:09:07+00:00",
-          "excerpt": "I’ve been thinking about how we approach focus. Almost every productivity app tries to help us do more, work faster, or squeeze more out of our day. But sometimes, I don’t need another app pushing me to be productive. I just need something that helps me slow down and concentrate…"
-        },
-        {
           "id": "t3_1xl697u",
           "title": "I made a torrent client that searches multiple sites without leaving the terminal",
           "url": "https://www.reddit.com/r/SideProject/comments/1xl697u/i_made_a_torrent_client_that_searches_multiple/",
@@ -116,12 +108,12 @@
           "excerpt": "hey guys, i made tork, a torrent client where you can search across multiple sites and download stuff without leaving your terminal just type what youre looking for, pick a result and hit enter. no jumping between sites or copying magnet links around. it puts everything in one p…"
         },
         {
-          "id": "t3_1xk5nn0",
-          "title": "I built a free map of every Bengaluru startup hiring right now (9,000+ roles).",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xk5nn0/i_built_a_free_map_of_every_bengaluru_startup/",
-          "author": "Dry-Complaint-1934",
-          "published": "2026-10-31T09:21:12+00:00",
-          "excerpt": ""
+          "id": "t3_1xke4h5",
+          "title": "I built a focus app that doesn’t try to make you more productive. It just helps you slow down.",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xke4h5/i_built_a_focus_app_that_doesnt_try_to_make_you/",
+          "author": "suniltarge",
+          "published": "2026-10-31T16:09:07+00:00",
+          "excerpt": "I’ve been thinking about how we approach focus. Almost every productivity app tries to help us do more, work faster, or squeeze more out of our day. But sometimes, I don’t need another app pushing me to be productive. I just need something that helps me slow down and concentrate…"
         },
         {
           "id": "t3_1xmmp2z",
@@ -140,14 +132,6 @@
           "excerpt": "I built an app that writes “I built an app that” posts for apps I built in a weekend and will abandon by Wednesday 🚀 Hey r/SideProject (and r/SaaS , r/indiehackers , r/startups , sorry mods), TL;DR: I built LaunchPad AI™ . You tell it about the app you vibe coded over a weekend…"
         },
         {
-          "id": "t3_1xmvfcr",
-          "title": "I got tired of juggling 16 tabs on election night, so I built one window for all of it",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xmvfcr/i_got_tired_of_juggling_16_tabs_on_election_night/",
-          "author": "berealish",
-          "published": "2026-11-03T15:08:17+00:00",
-          "excerpt": "This has everything you need for election night (alcohol not included) You can customize everything about it, from which stream feeds are showing, to which races you are following in the odds/results, to the social posts on bluesky (no embed X feed, thanks elon!) to the sizing,…"
-        },
-        {
           "id": "t3_1xlsjwc",
           "title": "I released an app on Producthunt and would not do it again",
           "url": "https://www.reddit.com/r/SideProject/comments/1xlsjwc/i_released_an_app_on_producthunt_and_would_not_do/",
@@ -156,12 +140,12 @@
           "excerpt": "So I built a free webapp that I actually use very activly on my own and some friends and family actually use it as well. So I decided to release it on producthunt as well and it was an absolute horrible experience. I got bombarded my people wanting to sell me upvotes and now sin…"
         },
         {
-          "id": "t3_1xjrvhe",
-          "title": "I made a free, open-source phone app that debloats your TV over Wi-Fi: no PC, no root. Just hit 5,000 downloads",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xjrvhe/i_made_a_free_opensource_phone_app_that_debloats/",
-          "author": "manish9461",
-          "published": "2026-10-30T21:25:10+00:00",
-          "excerpt": "My XGIMI projector's home screen was mostly ads, and debloating it meant a laptop and ADB commands, or handing my TV to a coding agent over the network. So I built Tellyscope , an open-source phone app that cleans up Android TVs. It turns off ads, trackers and bloat in a few tap…"
+          "id": "t3_1xmvfcr",
+          "title": "I got tired of juggling 16 tabs on election night, so I built one window for all of it",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xmvfcr/i_got_tired_of_juggling_16_tabs_on_election_night/",
+          "author": "berealish",
+          "published": "2026-11-03T15:08:17+00:00",
+          "excerpt": "This has everything you need for election night (alcohol not included) You can customize everything about it, from which stream feeds are showing, to which races you are following in the odds/results, to the social posts on bluesky (no embed X feed, thanks elon!) to the sizing,…"
         },
         {
           "id": "t3_1xkfg5o",
@@ -172,20 +156,12 @@
           "excerpt": "I’ve been churning bank account signup bonuses for years and have made roughly $40k doing it. It’s a surprisingly lucrative hobby, but keeping track of everything can (unsurprisingly) be a pain. For years I relied on sites like Doctor of Credit to find offers, spreadsheets to tr…"
         },
         {
-          "id": "t3_1xjvg1m",
-          "title": "Got bored during a lecture, ended up testing my head-tracking wallpaper",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xjvg1m/got_bored_during_a_lecture_ended_up_testing_my/",
-          "author": "Apart-Medium6539",
-          "published": "2026-10-30T23:59:12+00:00",
-          "excerpt": "Got bored during a lecture, so here’s a demo of the project I’ve spent the past few months building: Holoscape. It uses your webcam to track your head and shift a 3D wallpaper’s perspective, making your screen feel like a window. I’ve been improving stability and performance—it…"
-        },
-        {
-          "id": "t3_1xjc50u",
-          "title": "I found a way to save on my electric bill",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xjc50u/i_found_a_way_to_save_on_my_electric_bill/",
-          "author": "ramramlab",
-          "published": "2026-10-30T10:53:23+00:00",
-          "excerpt": "The bulb is off. The light is pure code. A WebGL shader paints it in real time, while MediaPipe finds your hands and body so the glow lands where it should. I first tried training a model on the bulb, but clear glass is really hard to track, so I stuck a green sticker on it inst…"
+          "id": "t3_1xoio0f",
+          "title": "I built a history podcast generator you can interrupt. Ask it any topic and start learning",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xoio0f/i_built_a_history_podcast_generator_you_can/",
+          "author": "Goldenchild123",
+          "published": "2026-11-05T13:29:39+00:00",
+          "excerpt": "History is something I'm quite passionate about and at work I have experience with software development and LLMs. So I thought how can I bring these things together and built something that I would actually use. This is the results of many months of hard work! You type any topic…"
         },
         {
           "id": "t3_1xm3gky",
@@ -204,12 +180,36 @@
           "excerpt": "Most architecture diagrams are just pictures. You can't ask one, \"will this hold at 5k requests a second?\" I built Proschi so you can. You write your system as text. It draws the diagram, plays each request step by step, and simulates load, latency, availability, and cost. Your…"
         },
         {
-          "id": "t3_1xoio0f",
-          "title": "I built a history podcast generator you can interrupt. Ask it any topic and start learning",
-          "url": "https://www.reddit.com/r/SideProject/comments/1xoio0f/i_built_a_history_podcast_generator_you_can/",
-          "author": "Goldenchild123",
-          "published": "2026-11-05T13:29:39+00:00",
-          "excerpt": "History is something I'm quite passionate about and at work I have experience with software development and LLMs. So I thought how can I bring these things together and built something that I would actually use. This is the results of many months of hard work! You type any topic…"
+          "id": "t3_1xkiaum",
+          "title": "Update on my planet engine: the surface is now built from plate tectonics and climate",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xkiaum/update_on_my_planet_engine_the_surface_is_now/",
+          "author": "Fresh-Daikon-9408",
+          "published": "2026-10-31T18:56:18+00:00",
+          "excerpt": "A couple of days ago I shared my planet engine here, a personal project where you can fly from orbit down to the ground without any loading screen. Thanks again for all the feedback! It now has a name: Exolune. The rule from the start: a planet at 1:1 scale with the Earth, 6,378…"
+        },
+        {
+          "id": "t3_1xktedk",
+          "title": "I made an infinite driving game",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xktedk/i_made_an_infinite_driving_game/",
+          "author": "zaxwebs",
+          "published": "2026-11-01T03:52:00+00:00",
+          "excerpt": "Been building Planet 0 Drive, an endless low-poly driving game that runs right in your browser, even on mobile. No missions, no destination. Just drive, explore procedurally generated terrain, chase records, or cruise with friends. Built with Svelte + Three.js, featuring P2P mul…"
+        },
+        {
+          "id": "t3_1xme911",
+          "title": "My last post got 75 comments asking how a free Chrome extension makes money. Here are the straight answers.",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xme911/my_last_post_got_75_comments_asking_how_a_free/",
+          "author": "vickyburnwal",
+          "published": "2026-11-03T00:19:03+00:00",
+          "excerpt": "A while back I posted about building Chrome extensions as a cheap way to start: you can test an idea before investing serious time and money in something fancy. It led to some good discussion, and three questions kept coming up, so here’s what I actually do, with numbers. 1. How…"
+        },
+        {
+          "id": "t3_1xkx8cu",
+          "title": "LibreHold – an open-source, persistent browser strategy game",
+          "url": "https://www.reddit.com/r/SideProject/comments/1xkx8cu/librehold_an_opensource_persistent_browser/",
+          "author": "h3wro",
+          "published": "2026-11-01T07:47:08+00:00",
+          "excerpt": "Hey! I played Tribal Wars for years and loved it, but I gave up once almost every bit of progress could be bought with premium points. So for the past few months I've been building LibreHold.org , a persistent browser strategy game in the same spirit, free and fully open source.…"
         }
       ]
     },
@@ -218,8 +218,8 @@
       "group": "build",
       "period": "week",
       "fetchedAt": "2026-11-06T10:52:52.054Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xkgvh0",
@@ -428,8 +428,8 @@
       "group": "build",
       "period": "week",
       "fetchedAt": "2026-11-06T10:52:52.054Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xme2jm",
@@ -638,8 +638,8 @@
       "group": "build",
       "period": "week",
       "fetchedAt": "2026-11-06T10:52:52.054Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xldpuk",
@@ -704,8 +704,8 @@
       "group": "ideas",
       "period": "week",
       "fetchedAt": "2026-11-06T10:52:52.054Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xnc75q",
@@ -914,8 +914,8 @@
       "group": "oss",
       "period": "week",
       "fetchedAt": "2026-11-06T10:52:52.054Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xmvj88",
@@ -1124,8 +1124,8 @@
       "group": "oss",
       "period": "week",
       "fetchedAt": "2026-11-06T10:52:52.054Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xklaxs",
@@ -1334,8 +1334,8 @@
       "group": "oss",
       "period": "week",
       "fetchedAt": "2026-11-06T10:52:52.054Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xnbujt",
@@ -1544,8 +1544,8 @@
       "group": "ai",
       "period": "week",
       "fetchedAt": "2026-11-06T10:52:52.054Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xlfrhe",
@@ -1754,8 +1754,8 @@
       "group": "ai",
       "period": "week",
       "fetchedAt": "2026-11-06T10:52:52.054Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xjqyv2",
@@ -1964,8 +1964,8 @@
       "group": "civic",
       "period": "week",
       "fetchedAt": "2026-11-06T10:52:52.054Z",
-      "stale": false,
-      "error": null,
+      "stale": true,
+      "error": "HTTP 403",
       "posts": [
         {
           "id": "t3_1xo8rx9",
@@ -2063,7 +2063,7 @@
       "period": "week",
       "fetchedAt": null,
       "stale": true,
-      "error": "HTTP 500",
+      "error": "HTTP 403",
       "posts": []
     }
   ]
